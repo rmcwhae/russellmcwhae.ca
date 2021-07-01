@@ -1,8 +1,12 @@
+import adapter from '@sveltejs/adapter-static';
+
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
 	kit: {
-		target: 'body'
+		target: 'body',
+		amp: false,
+		adapter: adapter(),
+		vite: () => ({})
 	}
 };
 
-export default config;
