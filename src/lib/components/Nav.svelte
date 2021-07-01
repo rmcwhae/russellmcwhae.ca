@@ -2,10 +2,12 @@
 	// your script goes here
 </script>
 
-<ul>
-	<li><a href="/">Home</a></li>
-	<li><a href="journal">Journal</a></li>
-</ul>
+<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="journal">Journal</a></li>
+	</ul>
+</nav>
 
 <style>
 	/* your styles go here */
