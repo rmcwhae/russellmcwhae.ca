@@ -5,6 +5,11 @@ export default {
 	kit: {
 		target: 'body',
 		amp: false,
+		prerender: {
+			crawl: true,
+			enabled: true,
+			force: false,
+		},
 		adapter: adapter(),
 		vite: () => ({})
 	}
