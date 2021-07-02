@@ -10,3 +10,4 @@ draft: 1
 * Styles
 * About page with resume, skills
 * Photos endpoint with dir listing, individual gallery view
+* Push repo
