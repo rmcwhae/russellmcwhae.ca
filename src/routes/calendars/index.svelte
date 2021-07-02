@@ -43,11 +43,18 @@
 			filesize: 2
 		}
 	];
+	const [current, ...rest] = calendars;
 </script>
 
 <h1>Calendars</h1>
 
-{#each calendars as calendar}
+<h2>
+	<a href={'pdf/' + current.filename} target="_blank" rel="noopener noreferrer nofollow"
+		>{current.year}</a
+	>
+</h2>
+
+{#each rest as calendar}
 	<li>
 		<a href={'pdf/' + calendar.filename} target="_blank" rel="noopener noreferrer nofollow"
 			>{calendar.year}</a
@@ -68,8 +75,8 @@
 		target="_blank"
 		rel="noopener noreferrer nofollow">Calendar Wizard</a
 	>
-	plugin to create the basic table layout before heavy customization. There’s a steep learning
-	curve, but the result is highly original. I then send a print-ready PDF to
+	plugin to create the basic table layout before heavy customization. There’s a steep learning curve,
+	but the result is highly original. I then send a print-ready PDF to
 	<a href="https://www.dhq.ca" target="_blank" rel="noopener noreferrer nofollow"
 		>Digital Headquarters Imaging Centre</a
 	> for printing and binding.
