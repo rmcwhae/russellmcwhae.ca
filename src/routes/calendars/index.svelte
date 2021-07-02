@@ -54,6 +54,8 @@
 	>
 </h2>
 
+<h3>Previous Calendars</h3>
+
 {#each rest as calendar}
 	<li>
 		<a href={'pdf/' + calendar.filename} target="_blank" rel="noopener noreferrer nofollow"
