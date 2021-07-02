@@ -7,4 +7,5 @@ draft: 1
 ---
 * Verify footnotes, links, images in journal entries
 * Styles
-* Photos endpoint with dir listing
+* About page with resume, skills
+* Photos endpoint with dir listing, individual gallery view
