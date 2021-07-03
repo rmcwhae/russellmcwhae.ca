@@ -2,7 +2,7 @@ import fs from 'fs';
 import * as StringUtils from '$lib/utils/string'
 
 const galleries = fs
-.readdirSync('./content/gallery')
+.readdirSync('./static/galleries')
 .filter(folder => folder !== '.DS_Store')
 .sort((a, b) => {
   return new Date(StringUtils.extractDate(b)) - new Date(StringUtils.extractDate(a))

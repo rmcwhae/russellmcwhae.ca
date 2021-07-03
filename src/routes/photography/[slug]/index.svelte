@@ -9,8 +9,6 @@
 </script>
 
 <script>
-	import { Lightbox, LightboxImage, LightboxGallery } from 'svelte-lightbox';
-
 	export let gallery;
 </script>
 
@@ -18,11 +16,10 @@
 
 <p>{gallery.date}</p>
 
-<ul>
-	{#each gallery.images as image}
-		<li>{image}</li>
-	{/each}
-</ul>
+{#each gallery.images as image}
+	<p>{image.title}</p>
+	<!-- <img srcset={Logo1} type="image/webp" alt="testattribute" />  TODO build me -->
+{/each}
 
 <style>
 	/* your styles go here */
