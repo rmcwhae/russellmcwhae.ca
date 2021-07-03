@@ -18,6 +18,12 @@
 
 <p>{gallery.date}</p>
 
+<ul>
+	{#each gallery.images as image}
+		<li>{image}</li>
+	{/each}
+</ul>
+
 <style>
 	/* your styles go here */
 </style>
