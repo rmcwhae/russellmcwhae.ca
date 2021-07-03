@@ -12,7 +12,7 @@
 	export let post;
 </script>
 
-<p>{post.title}</p>
+<h1>{post.title}</h1>
 
 <p>
 	{post.description}
