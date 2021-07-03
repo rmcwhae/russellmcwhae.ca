@@ -40,4 +40,4 @@ This is a collection of cool outdoor videos I have found over the years, updated
 
 ## My Videos
 
-[rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae). Also see [Ski Videos](journal/skiing).
+[rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae). Also see [Ski Videos](/journal/skiing).

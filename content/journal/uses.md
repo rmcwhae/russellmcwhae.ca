@@ -40,7 +40,7 @@ alias workprojecttitle='cd ~/Repositories/workprojecttitle/workprojecttitleAPI &
 - 2019 MacBook Pro 16-inch (8-core Intel Core i9-9880H, 32 GB 2667 MHz DDR4 RAM, AMD Radeon Pro 5500M 4 GB, 1 TB SSD)
 - Previously, a Late 2013 15-inch MacBook Pro with Retina Display (4-core Intel Core i7-4850HQ, 16 GB 1600 MHz DDR3L RAM, NVIDIA GeForce GT 750M 2GB, 512 GB SSD)
 - Before that, a 15-inch mid-2007 MacBook Pro (Intel Core 2 Duo T7500, 4 GB 667MHz DDR2 RAM, NVIDIA GeForce 8600M GT 128 MB, aftermarket OCZ 120 GB SSD). The GPU in this laptop failed, requiring a logic-board replacement. Also, it seems that I tend to wait long enough between MacBook Pro upgrades that most quantifiable specs double in magnitude.
-- [27-inch LG 27UD68-W 4K Display](journal/the-upgrade-to-4k)
+- [27-inch LG 27UD68-W 4K Display](/journal/the-upgrade-to-4k)
 - [Ducky One 2 SF](https://www.duckychannel.com.tw/en/Ducky-One2-SF) RGB White mechanical keyboard with Cherry MX Brown switches. Being relatively new to mechanical keyboards, they really are game-changers.
 - Magic Trackpad 2
 - Desktop Windows PC: Intel Core i5-3570K overclocked to 4 GHz, 16 GB RAM, 500 GB SSD, 1 TB hardware RAID 1 array, ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB. I built this in 2012 with the intention of upgrading parts as needed—only a strong need to upgrade has yet to present itself. Let’s see how long this old hardware will last before it gets converted into a Linux box. Used for browser testing and storage.

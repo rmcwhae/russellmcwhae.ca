@@ -57,7 +57,7 @@ Content is managed sans database by the fabulously lightweight [Pico CMS](http:/
 
 ### Reading Time Estimates
 
-Reading time estimates for these articles assumes a [265 words per minute](https://help.medium.com/hc/en-us/articles/214991667-Read-time) speed. Admittedly, my notoriously [long](journal/30-going-on-13)-[winded](journal/faith) essays may require a slower pace to digest properly. The actual word count is done via a custom Pico plugin, which I may get around to releasing someday.
+Reading time estimates for these articles assumes a [265 words per minute](https://help.medium.com/hc/en-us/articles/214991667-Read-time) speed. Admittedly, my notoriously [long](/journal/30-going-on-13)-[winded](/journal/faith) essays may require a slower pace to digest properly. The actual word count is done via a custom Pico plugin, which I may get around to releasing someday.
 
 ### The Photo Gallery
 
