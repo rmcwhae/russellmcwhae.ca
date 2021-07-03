@@ -5,7 +5,7 @@ author: Russell McWhae
 date: 2021-07-01
 draft: 1
 ---
-* Verify footnotes, links, images in journal entries
+* Verify footnotes, links, images, anchors in journal entries
 * Journal 404 handling
 * Styles
 * About page with resume, skills
