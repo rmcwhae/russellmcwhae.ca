@@ -19,7 +19,7 @@
 
 <ul>
 	{#each galleries as gallery}
-		<li><a href={'photos/' + gallery.slug}>{gallery.title}</a> {gallery.date}</li>
+		<li><a href={'/photography/' + gallery.slug}>{gallery.title}</a> {gallery.date}</li>
 	{/each}
 </ul>
 
