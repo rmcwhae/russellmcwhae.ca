@@ -63,7 +63,7 @@ Though a bit dated now, these bodies work very well for stills and are quite lig
 
 Lately, I’ve been trying to challenge myself creatively by primarily shooting with a single lens for six months to a year.
 
-The lenses used in my [2020 calendar](calendars) are as follows:
+The lenses used in my [2020 calendar](/calendars) are as follows:
 
 | Month     | Lens (mm)    |
 | --------- | ------------ |

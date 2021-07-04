@@ -31,7 +31,7 @@ Now, on the thirtieth reunion of this occasion, I have decided to reverse the ty
 
 Youth is wasted on the young, as the cliché goes. I’ve had a few years to think about what this means now and am well into the grey area of “emerging adulthood”—no longer a teen, yet not quite an adult—so here are some ideas on [life, the universe, and everything](https://en.wikipedia.org/wiki/Answer_to_Life,_the_Universe,_and_Everything), from the perspective of a now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside. The outdoors—and what spending time outside can do for you—will be a major theme in this essay.
 
-Please do consider taking the roughly [90 minutes](/journal/about-this-site#mcb_toc_head4) to read through this as there is hopefully something here that will resonate with you or otherwise be worth your while.
+Please do consider taking the roughly 90 minutes to read through this as there is hopefully something here that will resonate with you or otherwise be worth your while.
 
 This brings me to my first thought: the importance of reading (yes, really). While this may seem to be an antiquated idea, especially in this age of endless digital media consumption, I will attempt to argue in the next section that reading remains as vital as ever—perhaps even *more* so.
 
@@ -185,7 +185,7 @@ I struggled to identify with many of my high-earning co-workers, which I would s
 
 ***
 
-On an ascent of [Mount Lefroy](http://russellmcwhae.ca/photos/Mount-Lefroy-July-2014) in the summer of 2014, my party of five guys around my age arrived at Abbott Pass hut one evening, the typical starting point to climb Mounts Lefroy, Huber, and Victoria, all 11,000 foot peaks by Lake Louise. A group of eight women (including two guides) was there for their final night of a multi-day trip of guiding and instruction, and they had thus far been unsuccessful in their attempts to climb Mounts Huber and Victoria.
+On an ascent of Mount Lefroy in the summer of 2014, my party of five guys around my age arrived at Abbott Pass hut one evening, the typical starting point to climb Mounts Lefroy, Huber, and Victoria, all 11,000 foot peaks by Lake Louise. A group of eight women (including two guides) was there for their final night of a multi-day trip of guiding and instruction, and they had thus far been unsuccessful in their attempts to climb Mounts Huber and Victoria.
 
 Although Mounts Lefroy and Victoria are quite close geographically to each other, it is actually recommended to climb them at different times in the summer mountaineering season. The easiest route up Lefroy is to ascend an up-to-40-degree gulley, which is best done around May or June when lingering winter snowpack (about a metre or so) covers the underlying glacial ice, as it is easier to kick steps in supportive snow instead of scratching up exposed ice once the snow has melted away completely later in the summer. Mount Victoria, on the other hand, is best done in August when the route is likelier to be drier overall. Mount Huber shares the start of the main route up Mount Victoria, so it, too, is easiest later in the summer. We opted to split the difference and go in July, hoping to attempt all three 11,000ers. The window for climbing Lefroy was rapidly closing, however, with wet spring avalanches of the rapidly deteriorating snowpack becoming a concern. In late spring and summer, the upper layer of the snowpack can freeze solid overnight, providing supportive fast-travel conditions for a few hours each morning, but with daytime heating the snow can turn into unsupportive mush (called isothermal snow) and becomes more prone to wet avalanches.
 
@@ -769,7 +769,7 @@ Friend 1: You’re going to kill the joke! Cut the puns!
 
 ***
 
-Friend, in a detailed planning email for our Victoria, [Lefroy](photos/Mount-Lefroy-July-2014), and Huber attempt:
+Friend, in a detailed planning email for our Victoria, Lefroy, and Huber attempt:
 
 >Gear List
 >
@@ -874,7 +874,7 @@ Like I said, nothing but classy, intelligent conversation.
 
 ## How to Find Out What to Do With Your Life
 
-Throughout my twenties, I have had a few different careers. Immediately after high school, I completed a degree in civil engineering in four years. My first full-time job was working as a structural engineer on an oil-sands project for a large company. With no disrespect to those that work in this industry, it was not for me. Then I tried scientific research, working on a Master’s of Science in Biomedical Engineering. While this had a slightly more flexible schedule than the corporate world (where every single hour was tracked), the slow pace of research was challenging to get excited about. In my free time, I have learned outdoor and wedding [photography](photography), [web design](design), [writing](journal), basic stock-market investing, and outdoor pursuits—all fields that do offer career opportunities. I thought that by my mid-twenties I would have established my career trajectory—and would most certainly have been on track by the *old* age of 30.
+Throughout my twenties, I have had a few different careers. Immediately after high school, I completed a degree in civil engineering in four years. My first full-time job was working as a structural engineer on an oil-sands project for a large company. With no disrespect to those that work in this industry, it was not for me. Then I tried scientific research, working on a Master’s of Science in Biomedical Engineering. While this had a slightly more flexible schedule than the corporate world (where every single hour was tracked), the slow pace of research was challenging to get excited about. In my free time, I have learned outdoor and wedding [photography](/photography), web design, [writing](/journal), basic stock-market investing, and outdoor pursuits—all fields that do offer career opportunities. I thought that by my mid-twenties I would have established my career trajectory—and would most certainly have been on track by the *old* age of 30.
 
 Gone are the days of getting hired by one company and working there for your entire career. Us millenials will likely work for a number of different companies, organizations, or clients throughout our careers, perhaps including some drastic industry changes.
 
@@ -886,7 +886,7 @@ I worked through the brilliant [The Story Of My Work](https://thestoryofmywork.c
 
 You start with stories of accomplishments in your life that are meaningful to you, the things that you talk about when telling stories to other people. They can be things you believed you did well, you enjoyed doing, and gave you a sense of satisfaction or achievement, but *not* achievements that were important to others but not you.
 
-My stories included backcountry skiing and outdoor pursuits; writing; photography; and web/graphic design, including my [annual calendars](calendars).[^8] There was little in the way of science or engineering.
+My stories included backcountry skiing and outdoor pursuits; writing; photography; and web/graphic design, including my [annual calendars](/calendars).[^8] There was little in the way of science or engineering.
 
 [^8]:People often ask me which service I use to make these calendars. There is actually no service. I create them in Adobe Indesign and use [Calendar Wizard](http://calendarwizard.sourceforge.net) to create the basic table layout before heavily customizing it. There’s a steep learning curve, but the end result is highly original. I then send a print-ready PDF to [Digital Headquarters Imaging Centre](https://www.dhq.ca), the printer that I’ve been using for five years now.
 
