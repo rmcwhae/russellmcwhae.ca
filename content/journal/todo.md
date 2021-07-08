@@ -11,4 +11,4 @@ draft: 1
 * Journal 404 handling
 * Styles
 * Photos endpoint with dir listing, individual gallery view
-* Push repo
+* Make repo public once deployed
