@@ -12,5 +12,6 @@ draft: 1
 -   Journal 404 handling
 -   night mode switcher, typekit font selection
 -   Photos endpoint with dir listing, individual gallery view
+-   Photo gallery breadcrumbs
 -   Make repo public once deployed
 -   Use rsync over ssh to deploy updated files
