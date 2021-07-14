@@ -10,6 +10,7 @@
         <li><a href="/calendars">Calendars</a></li>
         <li><a href="/about">About</a></li>
     </ul>
+    <div><button>Mode</button></div>
 </nav>
 
 <style>
@@ -26,5 +27,13 @@
         align-items: center;
         border-bottom: 1px solid #ccc;
         margin-bottom: var(--s1);
+    }
+    @media only screen and (max-width: 1024px) {
+        nav {
+            margin-left: calc(-1 * var(--s0));
+            margin-right: calc(-1 * var(--s0));
+            padding-left: var(--s0);
+            padding-right: var(--s0);
+        }
     }
 </style>

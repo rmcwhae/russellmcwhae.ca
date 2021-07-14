@@ -16,6 +16,13 @@
 <style>
     main {
         max-width: 1024px;
+        padding: 0 var(--s0);
         margin: 0 auto;
+    }
+    @media only screen and (max-width: 1024px) {
+        main {
+            margin: 0 var(--s0);
+            padding: 0;
+        }
     }
 </style>
