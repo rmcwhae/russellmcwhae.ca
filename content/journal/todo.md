@@ -10,7 +10,7 @@ draft: 1
 -   Update uses, about-this-site
 -   About page with resume, skills
 -   Journal 404 handling
--   Styles
+-   night mode switcher, typekit font selection
 -   Photos endpoint with dir listing, individual gallery view
 -   Make repo public once deployed
 -   Use rsync over ssh to deploy updated files
