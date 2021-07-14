@@ -16,7 +16,8 @@
 
         --background-color: #eee;
         --text-color: black;
-        --grey: #ccc;
+        --light-grey: #ccc;
+        --medium-grey: #888;
     }
 
     body {
@@ -34,12 +35,14 @@
         body {
             --background-color: black;
             --text-color: white;
-            --grey: #333;
+            --light-grey: #333;
+            --medium-grey: #999;
         }
     }
     html body[data-theme='light'] {
         --background-color: #eee;
         --text-color: black;
-        --grey: #ccc;
+        --light-grey: #ccc;
+        --medium-grey: #888;
     }
 </style>
