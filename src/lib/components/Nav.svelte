@@ -16,12 +16,11 @@
     li {
         display: inline;
     }
-    li:not(:last-child)::after {
+    li:not(:last-child) {
         margin-right: var(--s0);
     }
     nav {
-        padding: var(--s-1) 0;
-
+        padding: var(--s1) 0;
         display: flex;
         justify-content: space-between;
         align-items: center;

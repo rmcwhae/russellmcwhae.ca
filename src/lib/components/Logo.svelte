@@ -2,7 +2,7 @@
     import Icon from '$lib/components/Icon.svelte'
 </script>
 
-<Icon viewBox="0 0 1211.956 617.417">
+<Icon viewBox="0 0 1211.956 617.417" height="1.5em">
     <path
         d="m320 157.417c0-66.274-53.726-120-120-120h-180v240h180c66.274 0 120-53.726 120-120z"
         fill="none"
