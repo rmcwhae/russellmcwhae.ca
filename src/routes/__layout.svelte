@@ -6,11 +6,16 @@
     // your script goes here
 </script>
 
-<Nav />
 <Styles />
 <Reset />
-<slot />
+<main>
+    <Nav />
+    <slot />
+</main>
 
 <style>
-    /* your styles go here */
+    main {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
 </style>
