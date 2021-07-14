@@ -14,15 +14,9 @@
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
 
-        --blue-color-wheel-degrees: 214;
-        --blue: hsl(var(--blue-color-wheel-degrees), 65%, 41%);
-        --blue-lt: hsl(var(--blue-color-wheel-degrees), 75%, 60%);
-        --grey: hsl(0, 0%, 67%);
-        --grey-lt: hsl(0, 0%, 80%);
-        --dark-grey: hsl(0, 0%, 40%);
-
         --background-color: #eee;
         --text-color: black;
+        --grey: #ccc;
     }
 
     body {
@@ -40,10 +34,12 @@
         body {
             --background-color: black;
             --text-color: white;
+            --grey: #333;
         }
     }
     html body[data-theme='light'] {
         --background-color: #eee;
         --text-color: black;
+        --grey: #ccc;
     }
 </style>
