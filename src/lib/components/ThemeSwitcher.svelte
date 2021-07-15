@@ -2,6 +2,9 @@
     import { onMount } from 'svelte'
     import { theme as userTheme } from '$lib/stores/theme'
 
+    import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
+    import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte'
+
     onMount(() => {
         if (!$userTheme) {
             userTheme.set(
@@ -24,18 +27,36 @@
     <button title="Use {nextTheme} theme" on:click={changeTheme}>
         {#if !loading}
             <span aria-hidden="true" class="icon">
-                <!-- {#if nextTheme === "dark"}
-        {:else}
-        {/if} -->
+                {#if nextTheme === 'dark'}
+                    <IoIosMoon />
+                {:else}
+                    <IoIosSunny />
+                {/if}
             </span>
-            <span class="text">
+            <!-- <span class="text">
                 {#if nextTheme === 'dark'}Dark{:else}Light{/if}
                 mode
-            </span>
+            </span> -->
         {/if}
     </button>
 </div>
 
 <style>
-    /* your styles go here */
+    button {
+        border: 1px solid var(--medium-grey);
+        color: var(--medium-grey);
+        background: transparent;
+        height: 1.8rem;
+        border-radius: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    button .icon {
+        height: 1rem;
+        width: 1rem;
+    }
 </style>
