@@ -3,7 +3,7 @@
     import { theme as userTheme } from '$lib/stores/theme'
 
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
-    import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte'
+    import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
 
     onMount(() => {
         if (!$userTheme) {
@@ -24,7 +24,7 @@
 </script>
 
 <div>
-    <button title="Use {nextTheme} theme" on:click={changeTheme}>
+    <!-- <button title="Use {nextTheme} theme" on:click={changeTheme}>
         {#if !loading}
             <span aria-hidden="true" class="icon">
                 {#if nextTheme === 'dark'}
@@ -33,30 +33,81 @@
                     <IoIosSunny />
                 {/if}
             </span>
-            <!-- <span class="text">
-                {#if nextTheme === 'dark'}Dark{:else}Light{/if}
-                mode
-            </span> -->
         {/if}
-    </button>
+    </button> -->
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label class="toggle-wrapper">
+        <div
+            class={nextTheme === 'dark' ? 'toggle disabled' : 'toggle enabled'}
+        >
+            <div class="icons">
+                <IoMdSunny />
+                <IoIosMoon />
+            </div>
+            <input
+                id="toggle"
+                name="toggle"
+                type="checkbox"
+                on:click={changeTheme}
+            />
+        </div>
+    </label>
 </div>
 
 <style>
-    button {
-        border: 1px solid var(--medium-grey);
-        color: var(--medium-grey);
-        background: transparent;
-        height: 1.8rem;
-        border-radius: 0.9rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 1rem;
-        cursor: pointer;
-        font-size: 0.9rem;
+    .toggle-wrapper {
+        width: 130px;
+        display: block;
+        margin: auto; /* Centering for demo */
+        --transition: var(--duration) ease;
     }
-    button .icon {
-        height: 1rem;
-        width: 1rem;
+
+    .toggle {
+        height: 65px;
+        width: 130px;
+        background: var(--text-color);
+        border-radius: 40px;
+        padding: 12px;
+        position: relative;
+        transition: background var(--transition);
+        cursor: pointer;
+    }
+
+    .toggle::before {
+        content: '';
+        display: block;
+        height: 41px;
+        width: 41px;
+        border-radius: 30px;
+        background: var(--background-color);
+        position: absolute;
+        z-index: 2;
+        transform: translate(0);
+        transition: transform var(--transition), background var(--transition);
+    }
+
+    .toggle.enabled::before {
+        transform: translateX(65px);
+    }
+
+    .toggle input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .toggle .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        margin: 0 5px;
+    }
+
+    :global(.toggle .icons svg) {
+        fill: var(--background-color);
+        height: 30px;
+        width: 30px;
+        z-index: 0;
     }
 </style>
