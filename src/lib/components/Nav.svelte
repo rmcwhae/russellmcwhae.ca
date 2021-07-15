@@ -56,8 +56,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid var(--light-grey);
-        margin-bottom: var(--s1);
+        /* border-bottom: 1px solid var(--light-grey); */
+        /* margin-bottom: var(--s1); */
     }
     li a {
         text-decoration: none;
