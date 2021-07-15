@@ -65,7 +65,9 @@
     .toggle {
         height: 65px;
         width: 130px;
-        background: var(--text-color);
+        /* background: var(--text-color); */
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
         border-radius: 40px;
         padding: 12px;
         position: relative;
@@ -79,7 +81,7 @@
         height: 41px;
         width: 41px;
         border-radius: 30px;
-        background: var(--background-color);
+        background: var(--text-color);
         position: absolute;
         z-index: 2;
         transform: translate(0);
@@ -105,7 +107,7 @@
     }
 
     :global(.toggle .icons svg) {
-        fill: var(--background-color);
+        fill: var(--text-color);
         height: 30px;
         width: 30px;
         z-index: 0;
