@@ -20,21 +20,9 @@
     $: changeTheme = () => {
         userTheme.set(nextTheme)
     }
-    const loading = typeof window === 'undefined'
 </script>
 
 <div>
-    <!-- <button title="Use {nextTheme} theme" on:click={changeTheme}>
-        {#if !loading}
-            <span aria-hidden="true" class="icon">
-                {#if nextTheme === 'dark'}
-                    <IoIosMoon />
-                {:else}
-                    <IoIosSunny />
-                {/if}
-            </span>
-        {/if}
-    </button> -->
     <!-- svelte-ignore a11y-label-has-associated-control -->
     <label class="toggle-wrapper">
         <div
@@ -103,7 +91,7 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        margin: 0 5px;
+        /* margin: 0 5px; */
     }
 
     :global(.toggle .icons svg) {
