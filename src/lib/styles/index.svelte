@@ -2,6 +2,7 @@
     :root {
         --radius: 4px;
         --ratio: 1.5;
+        --duration: 0.2s;
         --s-5: calc(var(--s-4) / var(--ratio));
         --s-4: calc(var(--s-3) / var(--ratio));
         --s-3: calc(var(--s-2) / var(--ratio));
@@ -21,8 +22,11 @@
     }
 
     body {
+        overflow-x: hidden;
         color: var(--text-color);
         background: var(--background-color);
+        transition: color ease var(--duration);
+        transition: background-color ease var(--duration);
         margin: 0;
         box-sizing: border-box;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -44,5 +48,13 @@
         --text-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
+    }
+    .full-width {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
 </style>
