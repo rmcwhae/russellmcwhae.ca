@@ -13,6 +13,7 @@
     <ul>
         <li>
             <a
+                sveltekit:prefetch
                 href="/photography"
                 aria-current={$page.path === '/photography'
                     ? 'page'
@@ -21,6 +22,7 @@
         </li>
         <li>
             <a
+                sveltekit:prefetch
                 href="/calendars"
                 aria-current={$page.path === '/calendars' ? 'page' : undefined}
                 >Calendars</a
@@ -28,6 +30,7 @@
         </li>
         <li>
             <a
+                sveltekit:prefetch
                 href="/journal"
                 aria-current={$page.path === '/journal' ? 'page' : undefined}
                 >Journal</a
@@ -35,6 +38,7 @@
         </li>
         <li>
             <a
+                sveltekit:prefetch
                 href="/projects"
                 aria-current={$page.path === '/projects' ? 'page' : undefined}
                 >Projects</a
@@ -42,6 +46,7 @@
         </li>
         <li>
             <a
+                sveltekit:prefetch
                 href="/about"
                 aria-current={$page.path === '/about' ? 'page' : undefined}
                 >About</a
