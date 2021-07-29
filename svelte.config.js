@@ -10,7 +10,7 @@ const { imagetools } = pack
 
 const config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
-    preprocess: [mdsvex(mdsvexConfig), [preprocess()]],
+    preprocess: [mdsvex(mdsvexConfig), preprocess()],
     kit: {
         target: 'body',
         amp: false,
