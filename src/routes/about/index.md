@@ -24,8 +24,8 @@ View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [Lin
 
 ### Apps I developed
 
-* [VisitER](https://visiter.herokuapp.com/), an online emergency-room check-in system for parents of autistic children. ([GitHub repo](https://github.com/hitony7/WaitTimes))
-* [Pirate Battleship](http://battleship-lhl.herokuapp.com/), a unique take on the classic Battleship game. ([GitHub repo](https://github.com/rmcwhae/battleship))
+-   [VisitER](https://visiter.herokuapp.com/), an online emergency-room check-in system for parents of autistic children. ([GitHub repo](https://github.com/hitony7/WaitTimes))
+-   [Pirate Battleship](http://battleship-lhl.herokuapp.com/), a unique take on the classic Battleship game. ([GitHub repo](https://github.com/rmcwhae/battleship))
 
 ## About this Site
 
@@ -55,9 +55,9 @@ There are no cookies or tracking beyond analyzing the log files with [AWStats](h
 
 Content is managed sans database by the fabulously lightweight [Pico CMS](http://picocms.org), with text written in [Markdown](https://daringfireball.net/projects/markdown/) format. After years of battling [WordPress](https://wordpress.org)’s ever-increasing bloat, it is entirely refreshing to develop from the ground up, implementing features one at a time, rather than paring things down.
 
-### Reading Time Estimates
+<!-- ### Reading Time Estimates
 
-Reading time estimates for these articles assumes a [265 words per minute](https://help.medium.com/hc/en-us/articles/214991667-Read-time) speed. Admittedly, my notoriously [long](/journal/30-going-on-13)-[winded](/journal/faith) essays may require a slower pace to digest properly. The actual word count is done via a custom Pico plugin, which I may get around to releasing someday.
+Reading time estimates for these articles assumes a [265 words per minute](https://help.medium.com/hc/en-us/articles/214991667-Read-time) speed. Admittedly, my notoriously [long](/journal/30-going-on-13)-[winded](/journal/faith) essays may require a slower pace to digest properly. The actual word count is done via a custom Pico plugin, which I may get around to releasing someday. -->
 
 ### The Photo Gallery
 
@@ -65,10 +65,10 @@ Most off-the-shelf self-hosted photo galleries are too complicated or ugly, so I
 
 ### Other Scripts
 
-- [Responsive Nav](http://responsive-nav.com) for the collapsing main menu
-- [Backstretch](http://www.jquery-backstretch.com) for the rotating homepage images
-- [Font Awesome](https://fontawesome.com) for various icons
-- [bigfoot.js](http://bigfootjs.com) for footnotes[^1]
+-   [Responsive Nav](http://responsive-nav.com) for the collapsing main menu
+-   [Backstretch](http://www.jquery-backstretch.com) for the rotating homepage images
+-   [Font Awesome](https://fontawesome.com) for various icons
+-   [bigfoot.js](http://bigfootjs.com) for footnotes[^1]
 
 [^1]: Like this one!
 
@@ -76,10 +76,10 @@ For a full list of the tools I use, see “[What I use](/journal/uses)”.
 
 ## Elsewhere
 
-- [rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae)
-- [@russellmcwhae on Instagram](https://www.instagram.com/russellmcwhae/)
-- [russellmcwhae on 500px](https://500px.com/russellmcwhae)
-- [LinkedIn](https://www.linkedin.com/in/rmcwhae/)
-- [@rmcwhae on Medium](https://medium.com/@rmcwhae)
-- [rmcwhae on Github](https://github.com/rmcwhae)
-- [rmcwhae on CodePen](https://codepen.io/rmcwhae)
+-   [rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae)
+-   [@russellmcwhae on Instagram](https://www.instagram.com/russellmcwhae/)
+-   [russellmcwhae on 500px](https://500px.com/russellmcwhae)
+-   [LinkedIn](https://www.linkedin.com/in/rmcwhae/)
+-   [@rmcwhae on Medium](https://medium.com/@rmcwhae)
+-   [rmcwhae on Github](https://github.com/rmcwhae)
+-   [rmcwhae on CodePen](https://codepen.io/rmcwhae)
