@@ -12,11 +12,11 @@ Similar to [photography](/photography), graphic design—especially web design�
 
 Photography and design are complementary skills. Design principles provide an expanded tool kit to use in photography. Similarly, being able to take photos allows me to readily incorporate them into my design work.
 
-### Professional Résumé
+### Professional Resume
 
 I completed an undergraduate degree in civil engineering, graduating from the University of Alberta in 2011, and worked as a structural engineer for just over three years.
 
-In early 2019, I earned an MSc. in biomedical engineering from the University of Calgary. My [thesis](/pdf/ucalgary_2019_mcwhae_russell.pdf) (8 MB PDF; 31k words), “Intercellular Gap Junction Communication in the Bovine Annulus Fibrosus,” investigated cell-cell signalling in the intervertebral disc.
+In early 2019, I earned an MSc. in biomedical engineering from the University of Calgary. My [thesis](/pdf/ucalgary_2019_mcwhae_russell.pdf) (8 MB PDF; 31k words), “Intercellular Gap Junction Communication in the Bovine Annulus Fibrosus,” investigated cell-cell signaling in the intervertebral disc.
 
 Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.lighthouselabs.ca) web development boot camp course from July to October 2019.
 
