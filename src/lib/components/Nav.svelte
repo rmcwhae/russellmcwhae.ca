@@ -13,13 +13,6 @@
     <ul>
         <li>
             <a
-                href="/journal"
-                aria-current={$page.path === '/journal' ? 'page' : undefined}
-                >Journal</a
-            >
-        </li>
-        <li>
-            <a
                 href="/photography"
                 aria-current={$page.path === '/photography'
                     ? 'page'
@@ -31,6 +24,20 @@
                 href="/calendars"
                 aria-current={$page.path === '/calendars' ? 'page' : undefined}
                 >Calendars</a
+            >
+        </li>
+        <li>
+            <a
+                href="/journal"
+                aria-current={$page.path === '/journal' ? 'page' : undefined}
+                >Journal</a
+            >
+        </li>
+        <li>
+            <a
+                href="/projects"
+                aria-current={$page.path === '/projects' ? 'page' : undefined}
+                >Projects</a
             >
         </li>
         <li>
