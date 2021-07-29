@@ -1,26 +1,20 @@
 <script context="module">
-    const allPosts = import.meta.glob('./*.md')
-
-    let body = []
-
-    for (let path in allPosts) {
-        body.push(
-            allPosts[path]().then(({ metadata }) => {
-                return { path, metadata }
-            })
-        )
-    }
-
     export async function load() {
-        const unsortedPosts = await Promise.all(body)
-        const posts = unsortedPosts
-            .filter((post) => !post.metadata.draft)
-            .sort((a, b) => {
-                return new Date(b.metadata.date) - new Date(a.metadata.date)
-            })
+        const posts = Object.entries(
+            import.meta.globEager('/content/journal/*.md')
+        )
+            .map(([, post]) => ({
+                // frontmatter data
+                ...post.metadata,
+                // the processed Svelte component from the markdown file
+            }))
+            .filter((post) => !post.draft)
+            .sort((a, b) => (a.date < b.date ? 1 : -1))
 
         return {
-            props: { posts },
+            props: {
+                posts,
+            },
         }
     }
 </script>
@@ -42,9 +36,11 @@
 </p>
 
 <ul>
-    {#each posts as { path, metadata: { title } }}
+    {#each posts as { path, slug, title, description, date, readingTime }}
         <li>
-            <a href={`/journal/${path.replace('.md', '')}`}>{title}</a>
+            <a sveltekit:prefetch href={'/journal/' + slug}
+                >{title} / {date} / {description} / {readingTime.text}</a
+            >
         </li>
     {/each}
 </ul>
