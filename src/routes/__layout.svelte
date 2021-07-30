@@ -4,8 +4,8 @@
     import Reset from '$lib/styles/reset.svelte'
 </script>
 
-<Styles />
 <Reset />
+<Styles />
 <main>
     <Nav />
     <slot />

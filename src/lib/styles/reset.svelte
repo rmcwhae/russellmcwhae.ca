@@ -58,9 +58,12 @@
     }
 
     /* Natural flow and rhythm in articles by default */
-    /* article > * + * {
-        margin-top: 1em;
-    } */
+    article > * + * {
+        margin-top: var(--s1);
+    }
+    blockquote > * + * {
+        margin-top: var(--s1);
+    }
 
     /* Inherit fonts for inputs and buttons */
     input,

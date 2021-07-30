@@ -68,7 +68,22 @@
         font-size: 0.85em;
         letter-spacing: 0.125em;
     }
-    hr {
+    nav.toc a {
+        text-decoration: none;
+    }
+    nav.toc .toc-level-2 {
+        margin-left: var(--s2);
+    }
+    article > * + * {
+        margin-top: var(--s2);
+    }
+    article > blockquote {
+        margin-left: var(--s2);
+        margin-right: var(--s2);
+        font-size: 0.9em;
+    }
+    article > hr,
+    div > hr {
         height: 1px;
         margin: var(--s3) 0;
         padding: 0;
@@ -77,8 +92,5 @@
         color: var(--light-grey);
         text-align: center;
         overflow: visible;
-    }
-    main p {
-        margin-bottom: var(--s0);
     }
 </style>
