@@ -65,7 +65,7 @@
     }
     .uppercase {
         text-transform: uppercase;
-        font-size: 0.85em;
+        font-size: 0.9em;
         letter-spacing: 0.125em;
     }
 </style>
