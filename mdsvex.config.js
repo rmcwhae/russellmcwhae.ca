@@ -1,4 +1,5 @@
 import path from 'path'
+import find from 'unist-util-find'
 import toc from '@jsdevtools/rehype-toc'
 import rehypeSlug from 'rehype-slug'
 import remarkfootnotes from 'remark-footnotes'
@@ -20,7 +21,12 @@ const config = {
     ],
     rehypePlugins: [
         rehypeSlug,
-        toc,
+        [
+            toc,
+            {
+                customizeTOC,
+            },
+        ],
         [
             autolink,
             {
@@ -45,5 +51,28 @@ function slug() {
             //     ? new Date(file.data.fm.date).toLocaleDateString()
             //     : undefined,
         }
+    }
+}
+
+function customizeTOC(toc) {
+    const isEmpty = !find(toc, (node) => node.type === 'text' && !!node.value)
+    if (isEmpty) {
+        return false
+    }
+
+    const heading = {
+        type: 'element',
+        tagName: 'h2',
+        children: [{ type: 'text', value: 'Table of Contents' }],
+        properties: {
+            className: 'app-toc__heading',
+        },
+    }
+
+    return {
+        type: 'element',
+        tagName: 'div',
+        properties: { className: 'toc-container' },
+        children: [heading, toc],
     }
 }
