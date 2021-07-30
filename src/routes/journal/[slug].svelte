@@ -46,9 +46,9 @@
             <Date {date} />
         </div>
         <h1>{title}</h1>
-        <div>
+        <div class="grey">
             <span>{readingTime.words} words</span>
-            •
+            &middot;
             <span>{readingTime.text}</span>
         </div>
     </header>
