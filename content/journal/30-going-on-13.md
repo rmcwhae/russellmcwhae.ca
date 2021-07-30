@@ -36,7 +36,7 @@ Please do consider taking the roughly 90 minutes to read through this as there i
 
 This brings me to my first thought: the importance of reading (yes, really). While this may seem to be an antiquated idea, especially in this age of endless digital media consumption, I will attempt to argue in the next section that reading remains as vital as ever—perhaps even _more_ so.
 
-(The story in the prologue continues in the [Mistakes and Mentorship in the Mountains](/journal/30-going-on-13#m#mistakes-and-mentorship-in-the-mountains) section, though this essay is intended to be read sequentially.)
+(The story in the prologue continues in the [Mistakes and Mentorship in the Mountains](/journal/30-going-on-13#mistakes-and-mentorship-in-the-mountains) section, though this essay is intended to be read sequentially.)
 
 ## Too Long; Read Anyway
 
