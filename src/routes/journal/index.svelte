@@ -36,14 +36,31 @@
     head.
 </p>
 
-<ul>
-    {#each posts as { slug, title, description, date, readingTime }}
-        <li>
+{#each posts as { slug, title, description, date, readingTime }}
+    <section>
+        <div>
             <Date {date} />
+            <span class="grey secondary">{readingTime.text}</span>
+        </div>
+        <h2><a sveltekit:prefetch href={'/journal/' + slug}>{title}</a></h2>
+        {#if description}
+            <p>{description}</p>
+        {/if}
+    </section>
+{/each}
 
-            <a sveltekit:prefetch href={'/journal/' + slug}
-                >{title} / {description} / {readingTime.text}</a
-            >
-        </li>
-    {/each}
-</ul>
+<style>
+    .secondary {
+        margin-left: var(--s-1);
+    }
+    h2 {
+        font-size: var(--s2);
+        font-weight: normal;
+    }
+    h2 a {
+        text-decoration: none;
+    }
+    section {
+        margin: var(--s2) 0;
+    }
+</style>

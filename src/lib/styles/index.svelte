@@ -60,4 +60,12 @@
     .footnote-backref {
         margin-left: var(--s-2);
     }
+    .grey {
+        color: var(--medium-grey);
+    }
+    .uppercase {
+        text-transform: uppercase;
+        font-size: 0.85em;
+        letter-spacing: 0.125em;
+    }
 </style>

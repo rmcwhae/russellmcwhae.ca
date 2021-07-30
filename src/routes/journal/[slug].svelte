@@ -41,13 +41,15 @@
 </script>
 
 <article>
-    <h1>{title}</h1>
-    <Date {date} />
-    <div>
-        <span>{readingTime.words} words</span>
-        •
-        <span>{readingTime.text}</span>
-    </div>
+    <header>
+        <Date {date} />
+        <h1>{title}</h1>
+        <div>
+            <span>{readingTime.words} words</span>
+            •
+            <span>{readingTime.text}</span>
+        </div>
+    </header>
     <svelte:component this={component} />
 </article>
 <div>
