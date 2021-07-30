@@ -7,8 +7,6 @@ import readingTime from 'remark-reading-time'
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
-    layout: './src/lib/components/Metadata.svelte',
-
     smartypants: {
         dashes: 'oldschool',
     },

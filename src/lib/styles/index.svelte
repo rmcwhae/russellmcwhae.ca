@@ -57,4 +57,7 @@
         margin-left: -50vw;
         margin-right: -50vw;
     }
+    .footnote-backref {
+        margin-left: var(--s-2);
+    }
 </style>
