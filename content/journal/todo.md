@@ -6,9 +6,9 @@ date: 2021-07-01
 draft: 1
 ---
 
--   Verify footnotes, links, images, anchors in journal entries
--   Update uses, about-this-site
--   About page with resume, skills
+-   Verify ~~footnotes~~, links (photos/\*), images, ~~anchors in journal entries~~
+-   Update uses, about (about with resume, skills)
+-   Reading list page (linked from about)
 -   Journal 404 handling
 -   night mode switcher, typekit font selection
 -   Photos endpoint with dir listing, individual gallery view
