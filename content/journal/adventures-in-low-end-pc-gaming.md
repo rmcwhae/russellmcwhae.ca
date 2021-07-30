@@ -47,7 +47,7 @@ Typically, my gaming involves binging an occasional last-generation, single-play
 
 Naturally, the urge to upgrade a machine increases the more you use it. And so, after seven years, the time has finally come to upgrade my PC.
 
-With PC-component prices endlessly ballooning—seriously, why are so many gamers spending \$1–2k+ on video cards?—the goal in upgrading my PC was to spend as few dollars as possible. As in, to be as arbitrarily and absurdly stingy as possible. For some peculiar reason, this tends to be more satisfying in the long run than spending top dollar on the latest hardware and watching it rapidly become obsolete.
+With PC-component prices endlessly ballooning—seriously, why are so many gamers spending $1–2k+ on video cards?—the goal in upgrading my PC was to spend as few dollars as possible. As in, to be as arbitrarily and absurdly stingy as possible. For some peculiar reason, this tends to be more satisfying in the long run than spending top dollar on the latest hardware and watching it rapidly become obsolete.
 
 With the upgrade paradigm established, it was time to address the two most aggravatingly inadequate areas of my PC’s performance: storage and graphics.
 
