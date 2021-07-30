@@ -31,8 +31,7 @@
 </script>
 
 <script>
-    // import { format } from 'date-fns'
-    // import ButtonLink from '$lib/components/ButtonLink.svelte'
+    import Date from '$lib/components/Date.svelte'
     export let title
     export let date
     export let readingTime
@@ -43,7 +42,7 @@
 
 <article>
     <h1>{title}</h1>
-    <p>{date}</p>
+    <Date {date} />
     <div>
         <span>{readingTime.words} words</span>
         •
@@ -54,12 +53,10 @@
 <div>
     {#if previous}
         <a href={`/journal/${previous.slug}`}>{previous.title}</a>
-        <!-- <ButtonLink isBack href={`/blog/${previous.slug}`}>{previous.title}</ButtonLink> -->
     {:else}
         <div />
     {/if}
     {#if next}
         <a href={`/journal/${next.slug}`}>{next.title}</a>
-        <!-- <ButtonLink href={`/blog/${next.slug}`}>{next.title}</ButtonLink> -->
     {/if}
 </div>

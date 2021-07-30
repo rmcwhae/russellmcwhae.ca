@@ -20,6 +20,7 @@
 </script>
 
 <script>
+    import Date from '$lib/components/Date.svelte'
     export let posts
 </script>
 
@@ -36,10 +37,12 @@
 </p>
 
 <ul>
-    {#each posts as { path, slug, title, description, date, readingTime }}
+    {#each posts as { slug, title, description, date, readingTime }}
         <li>
+            <Date {date} />
+
             <a sveltekit:prefetch href={'/journal/' + slug}
-                >{title} / {date} / {description} / {readingTime.text}</a
+                >{title} / {description} / {readingTime.text}</a
             >
         </li>
     {/each}
