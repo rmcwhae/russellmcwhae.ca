@@ -11,3 +11,9 @@
 <p class="date">by: {author}</p>
 
 <slot />
+
+<style>
+    :global(.footnote-backref) {
+        margin-left: var(--s-2);
+    }
+</style>
