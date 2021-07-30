@@ -52,6 +52,7 @@
             <span>{readingTime.text}</span>
         </div>
     </header>
+    <h2>Table of Contents</h2>
     <svelte:component this={component} />
 </article>
 <div>

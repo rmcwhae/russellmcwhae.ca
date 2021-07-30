@@ -1,8 +1,9 @@
 import path from 'path'
 import toc from '@jsdevtools/rehype-toc'
 import rehypeSlug from 'rehype-slug'
-import remarkfootnotes from 'remark-footnotes' // TODO get me working
+import remarkfootnotes from 'remark-footnotes'
 import readingTime from 'remark-reading-time'
+import autolink from 'rehype-autolink-headings'
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
@@ -17,7 +18,16 @@ const config = {
         remarkfootnotes,
         slug,
     ],
-    rehypePlugins: [rehypeSlug, toc],
+    rehypePlugins: [
+        rehypeSlug,
+        toc,
+        [
+            autolink,
+            {
+                behavior: 'wrap',
+            },
+        ],
+    ],
 }
 
 export default config

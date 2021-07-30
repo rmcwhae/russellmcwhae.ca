@@ -63,10 +63,21 @@
     .grey {
         color: var(--medium-grey);
     }
-    .uppercase {
+    .uppercase,
+    article strong {
         text-transform: uppercase;
         font-size: 0.85em;
         letter-spacing: 0.125em;
+        font-weight: normal;
+    }
+    nav.toc {
+        padding-bottom: var(--s-2);
+        /* padding-top: var(--s2); */
+        border-bottom: 1px solid var(--light-grey);
+        border-top: 1px solid var(--light-grey);
+    }
+    nav.toc li {
+        margin-top: var(--s-2);
     }
     nav.toc a {
         text-decoration: none;
@@ -81,6 +92,14 @@
         margin-left: var(--s2);
         margin-right: var(--s2);
         font-size: 0.9em;
+    }
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+        text-decoration: none;
     }
     article > hr,
     div > hr {
