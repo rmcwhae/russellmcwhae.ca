@@ -42,7 +42,9 @@
 
 <article>
     <header>
-        <Date {date} />
+        <div class="uppercase">
+            <Date {date} />
+        </div>
         <h1>{title}</h1>
         <div>
             <span>{readingTime.words} words</span>
@@ -62,3 +64,14 @@
         <a href={`/journal/${next.slug}`}>{next.title}</a>
     {/if}
 </div>
+
+<style>
+    h1 {
+        font-size: 3em;
+        line-height: 1.2em;
+    }
+    article {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+</style>

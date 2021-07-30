@@ -65,7 +65,20 @@
     }
     .uppercase {
         text-transform: uppercase;
-        font-size: 0.9em;
+        font-size: 0.85em;
         letter-spacing: 0.125em;
+    }
+    hr {
+        height: 1px;
+        margin: var(--s3) 0;
+        padding: 0;
+        border: none;
+        border-top: 1px solid var(--light-grey);
+        color: var(--light-grey);
+        text-align: center;
+        overflow: visible;
+    }
+    main p {
+        margin-bottom: var(--s0);
     }
 </style>
