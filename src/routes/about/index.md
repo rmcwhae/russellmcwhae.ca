@@ -75,7 +75,6 @@ Most off-the-shelf self-hosted photo galleries are too complicated or ugly, so I
 
 -   [rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae)
 -   [@russellmcwhae on Instagram](https://www.instagram.com/russellmcwhae/)
--   [russellmcwhae on 500px](https://500px.com/russellmcwhae)
 -   [LinkedIn](https://www.linkedin.com/in/rmcwhae/)
 -   [@rmcwhae on Medium](https://medium.com/@rmcwhae)
 -   [rmcwhae on Github](https://github.com/rmcwhae)
