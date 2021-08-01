@@ -7,7 +7,7 @@ draft: 1
 category: TODO
 ---
 
--   Verify ~~footnotes~~, links (photos/\*), images, ~~anchors in journal entries~~
+-   Verify ~~footnotes~~, links to PDFs (photos/\*), images, ~~anchors in journal entries~~
 -   Update ~~uses~~, about (about with resume, skills)
 -   Reading list page (linked from about)
 -   Journal 404 handling

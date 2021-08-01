@@ -105,7 +105,7 @@ _Arma 3_ is the game I keep going back to. When you first start out or resume pl
 
 For a modest price, I breathed new life into an already-ancient PC, with tangible everyday performance gains. Such upgrades have proven to be uniquely satisfying—be they on older PCs, bikes, or even cars—beyond the fleeting rush of paying top-dollar for top-of-the-line equipment. They are usually highly educational too, requiring extensive research to predict and resolve the incompatibility issues that inevitably arise in mishmashing the current with the bygone. There is something unusually entertaining about the pairing of such old and new hardware—something in the juxtaposition of cutting edge and shiny versus outdated and used.
 
-Total upgrade cost: \$150. Affordably revitalizing a trusty-but-dated piece of equipment, not smashing said piece of equipment in frustration while troubleshooting multiple Windows Screens of Death, and subsequently fragging virtual enemies slightly faster than before: priceless. There are some things money can’t buy, for everything else there’s…leftover AMEX points?
+Total upgrade cost: $150. Affordably revitalizing a trusty-but-dated piece of equipment, not smashing said piece of equipment in frustration while troubleshooting multiple Windows Screens of Death, and subsequently fragging virtual enemies slightly faster than before: priceless. There are some things money can’t buy, for everything else there’s…leftover AMEX points?
 
 Projects like this are fun diversions that do not need to cost much money—a great way to keep occupied until we can get outside again.
 
