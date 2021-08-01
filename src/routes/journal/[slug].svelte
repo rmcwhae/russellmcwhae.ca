@@ -66,7 +66,9 @@
             <Date {date} />
         </div>
         <h1>{title}</h1>
-        <p>{description}</p>
+        {#if description}
+            <p>{description}</p>
+        {/if}
         <div class="grey">
             <span>{category}</span>
             &middot;
