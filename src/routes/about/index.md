@@ -2,7 +2,7 @@
 title: About Me
 description: I like to spend time outside and to create beautiful things.
 author: Russell McWhae
-date: 2019-03-01
+date: 2021-07-31
 draft: 0
 ---
 
@@ -24,7 +24,7 @@ View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [Lin
 
 ## About this Site
 
-This latest incarnation of my personal website was built with SvelteKit. View the source code here: TODO. It it statically generated and deployed to a shared host.
+This latest incarnation of my personal website was built with SvelteKit. View the source code here: TODO. It is statically generated and deployed to a shared host.
 
 <!-- ## About this Site
 
