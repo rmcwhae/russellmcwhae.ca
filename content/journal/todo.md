@@ -8,7 +8,7 @@ category: TODO
 ---
 
 -   Verify ~~footnotes~~, links (photos/\*), images, ~~anchors in journal entries~~
--   Update uses, about (about with resume, skills)
+-   Update ~~uses~~, about (about with resume, skills)
 -   Reading list page (linked from about)
 -   Journal 404 handling
 -   night mode switcher size, typekit font selection

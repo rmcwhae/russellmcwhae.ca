@@ -13,6 +13,12 @@
             .sort((a, b) => (a.date < b.date ? 1 : -1))
         const { slug } = page.params
         const index = posts.findIndex((post) => slug === post.slug)
+        if (index === -1) {
+            console.log('returning 404')
+            return {
+                status: 404,
+            }
+        }
         const {
             title,
             date,
