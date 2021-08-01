@@ -4,7 +4,9 @@ description: This is a short description, end with a period.
 author: Russell McWhae
 date: 2018-08-03
 draft: 1
+category: Stuff
 ---
+
 Content here. Heading 1 will appear above and in ToC. Change hidden to 0.
 
 ## Heading Two

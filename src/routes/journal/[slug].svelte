@@ -13,9 +13,14 @@
             .sort((a, b) => (a.date < b.date ? 1 : -1))
         const { slug } = page.params
         const index = posts.findIndex((post) => slug === post.slug)
-        const { title, date, readingTime, component, description } = posts[
-            index
-        ]
+        const {
+            title,
+            date,
+            readingTime,
+            component,
+            description,
+            category,
+        } = posts[index]
         // next/previous posts
         const next = posts[index - 1]
         const previous = posts[index + 1]
@@ -23,6 +28,7 @@
             props: {
                 title,
                 date,
+                category,
                 readingTime,
                 next,
                 description,
@@ -40,6 +46,7 @@
 
     export let title
     export let date
+    export let category
     export let description
     export let readingTime
     export let component
@@ -55,6 +62,8 @@
         <h1>{title}</h1>
         <p>{description}</p>
         <div class="grey">
+            <span>{category}</span>
+            &middot;
             <span>{readingTime.words} words</span>
             &middot;
             <span>{readingTime.text}</span>

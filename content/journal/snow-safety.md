@@ -4,6 +4,7 @@ description: A list of hand-picked resources on avalanche risk management.
 author: Russell McWhae
 date: 2019-03-05
 draft: 0
+category: Outdoors
 ---
 
 These are some excellent web pages, ebooks, and videos on snow safety. My hope is that this list will provide some affirmed, focused information amid the overwhelming volume of online content on the topic. These resources are intended to complement—not substitute—a proper ski mentorship: a good starting point on this concept is to read [my thoughts on ski mentorship](/journal/30-going-on-13#mistakes-and-mentorship-in-the-mountains).

@@ -4,13 +4,14 @@ description: Outstanding tasks.
 author: Russell McWhae
 date: 2021-07-01
 draft: 1
+category: TODO
 ---
 
 -   Verify ~~footnotes~~, links (photos/\*), images, ~~anchors in journal entries~~
 -   Update uses, about (about with resume, skills)
 -   Reading list page (linked from about)
 -   Journal 404 handling
--   night mode switcher, typekit font selection
+-   night mode switcher size, typekit font selection
 -   Photos endpoint with dir listing, individual gallery view
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed

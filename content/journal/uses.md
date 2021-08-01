@@ -4,6 +4,7 @@ description: Tools used in my work
 author: Russell McWhae
 date: 2020-03-01
 draft: 0
+category: Tech
 ---
 
 These are the tools I use in my professional and creative workflows. Inspired by [uses.tech](https://uses.tech) via the [Syntax](https://syntax.fm/) podcast.

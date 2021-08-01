@@ -4,6 +4,7 @@ description: All good things must come to an end.
 author: Russell McWhae
 date: 2021-02-24
 draft: 0
+category: Reflection
 ---
 
 _You are driving on a two-lane highway winding its way through the foothills. Ahead, an unsuspecting tourist barely manages the speed limit as you catch up to them. A straightaway opens. You double downshift to third, dump the clutch, and floor the accelerator. The engine screams, boost builds, the turbo kicks in, and you’re already in the passing lane. You are sucked back into your seat as you row through fourth and fifth and change back into your lane. The tourist with rental plates vanishes from your rearview mirror as the next corner begins._

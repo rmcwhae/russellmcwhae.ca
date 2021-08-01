@@ -4,6 +4,7 @@ description: Mountain-town life has finally happened.
 author: Russell McWhae
 date: 2020-11-15
 draft: 0
+category: Reflection
 ---
 
 **1:45 PM, February 24, 2018**  

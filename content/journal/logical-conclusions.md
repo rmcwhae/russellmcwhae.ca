@@ -4,6 +4,7 @@ description: How long should we pursue dreams and passions?
 author: Russell McWhae
 date: 2021-05-15
 draft: 1
+category: Outdoors
 ---
 
 As soon as I could walk I was on skis. Somewhere there is a video of me as a toddler shuffling around our childhood home on mini skis. Hockey was not in the cards; my brothers and I were destined to spend our childhood winters skiing.

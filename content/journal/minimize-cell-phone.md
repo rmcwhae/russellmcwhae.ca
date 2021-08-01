@@ -3,6 +3,7 @@ title: How to minimize your cell-phone bill
 author: Russell McWhae
 date: 2019-10-28
 draft: 0
+category: Tech
 ---
 
 Canada [often ranks](https://nationalpost.com/news/canada/why-canadian-cell-phone-bills-are-among-the-most-expensive-on-the-planet) among the most expensive countries for wireless phone plans. Our current mobility-provider landscape consists of the Big Three national companies — Telus, Rogers, and Bell — dominating most ([97%](https://www.whistleout.ca/CellPhones/Guides/canada-phone-plan-pricing)) of the market, with a few smaller providers piggybacking off the network infrastructure of these larger companies. In a few provinces (Saskatchewan, Manitoba, and Québec), competitive provincial carriers drive down mobile-plan costs from the national carriers.

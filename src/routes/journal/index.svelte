@@ -25,11 +25,14 @@
 
 <div class="flex">
     <div>
-        {#each posts as { slug, title, description, date, readingTime }}
+        {#each posts as { slug, title, description, date, readingTime, category }}
             <section>
                 <div class="uppercase">
                     <Date {date} />
-                    <span class="grey secondary">{readingTime.text}</span>
+                    &middot;
+                    <span class="grey">{category}</span>
+                    &middot;
+                    <span class="grey">{readingTime.text}</span>
                 </div>
                 <h2>
                     <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>

@@ -3,7 +3,7 @@ title: Human-Triggered Avalanches
 description: Why it is not as simple as “they shouldn’t have been there.”
 date: '2020-02-27'
 draft: 1
-category: 'Outdoors'
+category: Outdoors
 ---
 
 **12:00 PM, February 23, 2019**  

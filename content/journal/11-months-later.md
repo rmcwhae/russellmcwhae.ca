@@ -4,6 +4,7 @@ description: Finding my stride in Revy.
 author: Russell McWhae
 date: 2021-06-10
 draft: 0
+category: Reflection
 ---
 
 **6:45 PM, April 3, 2021**  
@@ -15,19 +16,19 @@ I’d been hoping for exactly such a change of scenery as the day before had bee
 
 A friend of mine was also on the same ferry, recognizing me despite my new wheels ([RIP, Ruby](/journal/goodbye-ruby-subie)[^1]), so we chatted for a few minutes.
 
-[^1]: I replaced Ruby with a 2013 Ford Escape SE, with 96 000 kilometers, purchased in Salmon Arm. The used car market, like most second-hand markets in Revy, is full of obscenely overpriced rubbish. To price your used car, simply follow this formula: find the going rate for your vehicle in a nearby city, then double it (triple if it’s a Tacoma or 4Runner). Then add 20% for every 20 000 kilometers *under* 200 000 kilometers on the odometer. Guaranteed to sell in minutes!
+[^1]: I replaced Ruby with a 2013 Ford Escape SE, with 96 000 kilometers, purchased in Salmon Arm. The used car market, like most second-hand markets in Revy, is full of obscenely overpriced rubbish. To price your used car, simply follow this formula: find the going rate for your vehicle in a nearby city, then double it (triple if it’s a Tacoma or 4Runner). Then add 20% for every 20 000 kilometers _under_ 200 000 kilometers on the odometer. Guaranteed to sell in minutes!
 
 Overhead, pastel hues colored scattered clouds. Slightly lower on the horizon, snow-covered mountain peaks rose out of forest-covered hills. When viewed directly, the foreshortening makes the below-treeline portions of these mountains look impossibly steep, despite having numerous cut-blocks wherein heavy logging equipment could presumably operate without tipping over sideways and rolling downhill. Looking north (or south) from middle of the lake gives a unique perspective: ridges can be traced from where they begin at the lakeshore all the way up to treeline and beyond. The angle of most of these slopes is around 30 degrees, so, a peak that rises 2000 vertical meters (2 kilometers) above the water level would have a continuous ridge over six kilometers long as it stretches from the waterfront into the alpine. This kind of vertical scale is nowhere to be found in the prairies.
 
-The sunset was not so memorable that I got out my camera—today, you get the thousand-word version of this moment instead of a pretty picture—though I couldn’t help but stop for a minute and bask in the natural splendor of the valley: lake, mountains, forests, cut-blocks, and all. My camera would imperfectly capture it, even had the sunset been of the superlative quality, and my words also suffer a similar inefficacy.  *What a ridiculously gorgeous, wild place to live! *Beautiful* British Columbia, indeed.*
+The sunset was not so memorable that I got out my camera—today, you get the thousand-word version of this moment instead of a pretty picture—though I couldn’t help but stop for a minute and bask in the natural splendor of the valley: lake, mountains, forests, cut-blocks, and all. My camera would imperfectly capture it, even had the sunset been of the superlative quality, and my words also suffer a similar inefficacy. *What a ridiculously gorgeous, wild place to live! *Beautiful* British Columbia, indeed.*
 
 The sun set, and the rain started as I exited the ferry and began the 25-minute drive back to town.
 
-***
+---
 
-Normally, spring means ski traverses. For the last five years (except March–April 2020, when the world shut down), I would plan, prepare for, and attempt ski traverses come late winter. These traverses, especially of the multi-day, tent-bound variety, are some of the most rewarding experiences I have had. To go on such expeditions, and to spend time camping on glaciers, summiting remote peaks, crossing frozen lakes, and generally being *out there*, sometimes a day or more from the nearest highway, is such a pure form of adventure, hard to find anywhere in or near a metropolitan area.
+Normally, spring means ski traverses. For the last five years (except March–April 2020, when the world shut down), I would plan, prepare for, and attempt ski traverses come late winter. These traverses, especially of the multi-day, tent-bound variety, are some of the most rewarding experiences I have had. To go on such expeditions, and to spend time camping on glaciers, summiting remote peaks, crossing frozen lakes, and generally being _out there_, sometimes a day or more from the nearest highway, is such a pure form of adventure, hard to find anywhere in or near a metropolitan area.
 
-My ski season is usually preparation for traverse season. When living in the city, I would bicycle commute, occasionally at minus 30 (yes, I was one of *those* guys), and do weekly upper-body workouts to help prepare for hauling a big backpack over multiple days (the highlight being able to do one-armed pull-ups for a time). But the best training for skiing is skiing—and also the most fun—so that meant spending both weekend days and vacation time ski-touring around Kananaskis, Banff, Rogers Pass, or even the coast, for the entire winter. There were a few years there where I *could not* get enough skiing.
+My ski season is usually preparation for traverse season. When living in the city, I would bicycle commute, occasionally at minus 30 (yes, I was one of _those_ guys), and do weekly upper-body workouts to help prepare for hauling a big backpack over multiple days (the highlight being able to do one-armed pull-ups for a time). But the best training for skiing is skiing—and also the most fun—so that meant spending both weekend days and vacation time ski-touring around Kananaskis, Banff, Rogers Pass, or even the coast, for the entire winter. There were a few years there where I _could not_ get enough skiing.
 
 Naturally, I skied as much as possible this season: 34 days of touring (the windy Dome ski was Day 32, more on Days 33 and 34 in a minute), and 21 at Revelstoke Mountain Resort (RMR). I basically haven’t resort skied in five years but got a season pass to RMR in order to attend occasional “IT meetings” in the gondola. (Even with the season pass, the average cost for every time I skied RMR was still around $60, which hurts my [notoriously parsimonious](/journal/minimize-cell-phone) attitude. I’m on the fence about getting another pass next year.) I skied only one summit this year (Video peak) and two couloirs (Christmas couloir, and the Northeast couloir on Glacier Crest).
 
@@ -37,7 +38,7 @@ Despite a good volume of skiing, this year was not typical in terms of my ambiti
 
 [^2]: Now that my day job is focused on avalanche safety (at least indirectly), recreational skiing is no longer as strong of a juxtaposition to my work week as, say, structural engineering was. As I now receive a dose of snow safety during the week, perhaps it means that a lesser dose on the weekend suffices. The extreme case of this phenomenon are the ski guides who abandon recreational skiing as they ski enough at work.
 
-Living in Revy means much shorter commutes than in Calgary, and I don’t recall setting an alarm any earlier than 6 AM for most of the ski season (in Calgary, 5 AM—or earlier—wake-ups are normal). This only served to lessen my desire to wake up early, an incompatibility with spring ski missions. 
+Living in Revy means much shorter commutes than in Calgary, and I don’t recall setting an alarm any earlier than 6 AM for most of the ski season (in Calgary, 5 AM—or earlier—wake-ups are normal). This only served to lessen my desire to wake up early, an incompatibility with spring ski missions.
 Despite other parties ticking off impressive objectives this spring, I was not in the right headspace for doing so myself—though it would take one final ski trip to finally appreciate this.
 
 ## Ski Days 33 and 34
@@ -54,7 +55,7 @@ Our Siffleur traverse would be a total of about 100 kilometers, which we decided
 
 On April 17, we dirtbagged overnight in the Siffleur Falls parking lot and were on the go just after three AM the next “day” (somehow alpine starts seem easier when they’re not from your own bed). All the snow had melted at this low of an elevation, so we carried our boots and skis on our packs.
 
-Our route took us along a cut line for about six kilometers until we could put skis on. We started skinning, though it was slow going. Snow depth varied from a few inches to a few feet, almost all of it a breakable crust—again, knee and soul destroying—over the notorious Rockies facets (incohesive, sugar-like granules that collapse when weighted). Breaking trail consisted of punching a ski through the 1–2 inch crust, then taking a half step backwards to unhook the other ski from the crust above it, kicking down the corresponding heel to raise that ski tip up, then punching it down again as the crust and facets gave way. It took an hour to go two kilometers; the only breaks were areas too thin to ski that required walking. 
+Our route took us along a cut line for about six kilometers until we could put skis on. We started skinning, though it was slow going. Snow depth varied from a few inches to a few feet, almost all of it a breakable crust—again, knee and soul destroying—over the notorious Rockies facets (incohesive, sugar-like granules that collapse when weighted). Breaking trail consisted of punching a ski through the 1–2 inch crust, then taking a half step backwards to unhook the other ski from the crust above it, kicking down the corresponding heel to raise that ski tip up, then punching it down again as the crust and facets gave way. It took an hour to go two kilometers; the only breaks were areas too thin to ski that required walking.
 
 We pushed on until after four PM, 13 hours on the go. We had made it 22 kilometers, 10 short of our day-one objective. Tent, dinner, rehydration, bed.
 
@@ -64,11 +65,11 @@ So we bailed.
 
 The return trip, with a track already punched in, took a few hours less than the 13 to get in, but there were no ski turns due to the flat nature of the route. I did not remove my skins once.
 
-This kind of suffering I usually live for, but this experience effectively dissolved all my FOMO of seeing others pull off big objectives this season. When you’re not genuinely excited to be doing something and you force it, at best it won’t be any fun, and at worst, it’s outright dangerous as you aren’t bringing your A-game to a committing objective. Still, it was *exquisite* to escape basically all reminders of the pandemic for just a few days.
+This kind of suffering I usually live for, but this experience effectively dissolved all my FOMO of seeing others pull off big objectives this season. When you’re not genuinely excited to be doing something and you force it, at best it won’t be any fun, and at worst, it’s outright dangerous as you aren’t bringing your A-game to a committing objective. Still, it was _exquisite_ to escape basically all reminders of the pandemic for just a few days.
 
 We made it back to Banff that evening and camped at Tunnel Mountain. I tried to ignore my phone, for, as far as the rest of the world was concerned, I was still out in the middle of nowhere for one more day.
 
-***
+---
 
 They say that most people come to Revy for the skiing, but summers here can be equally as fun. After this last ski trip, my skis were relegated to the closet.
 
@@ -80,10 +81,10 @@ I have also become reacquainted with another old friend: rock climbing. I always
 
 Though it rains a lot this time of year, it nonetheless feels like the valley fog that so enshrouded us for most of the winter has lifted. When moving somewhere new, it takes some time to get your bearings and establish your crew. I have found great people and am genuinely psyched to spend my free time outside this summer.
 
-***
+---
 
-Living in Revy still feels like a dream. I don’t miss waking up in the middle of the city, nor do I miss rush hour (despite having cycle commuted), nor do I miss the frigid prairie winters (*especially* having cycle commuted), nor do I miss how your postal code correlates to your paycheck (we’ve got only two postal codes here—that includes you, Snob Hill). I could go on but don’t want this to get whiny. As I discussed in my [last reflection](/journal/a-new-chapter), there are pros and cons to mountain life. (I guess that makes these essays a software pro’s prose on mountain-life pros.)
+Living in Revy still feels like a dream. I don’t miss waking up in the middle of the city, nor do I miss rush hour (despite having cycle commuted), nor do I miss the frigid prairie winters (_especially_ having cycle commuted), nor do I miss how your postal code correlates to your paycheck (we’ve got only two postal codes here—that includes you, Snob Hill). I could go on but don’t want this to get whiny. As I discussed in my [last reflection](/journal/a-new-chapter), there are pros and cons to mountain life. (I guess that makes these essays a software pro’s prose on mountain-life pros.)
 
-Another perk to living in a ski town is that city friends come and visit every so often. It’s great to see friends when they’re relaxing and on vacation mode—probably when most people are at their best. I would like nothing more than to have a place of my own and a spare bedroom for visitors; alas, the real-estate madness makes that difficult at the moment. Some day, perhaps. 
+Another perk to living in a ski town is that city friends come and visit every so often. It’s great to see friends when they’re relaxing and on vacation mode—probably when most people are at their best. I would like nothing more than to have a place of my own and a spare bedroom for visitors; alas, the real-estate madness makes that difficult at the moment. Some day, perhaps.
 
 It’s now warm out, and pandemic restrictions have shown the first few signs of loosening. There are trails to bike, pitches to climb, and water to jump into. The magic of summer in Camp Revy extends so far beyond the twice-daily magic hours.

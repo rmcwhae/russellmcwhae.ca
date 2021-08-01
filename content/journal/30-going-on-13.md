@@ -4,6 +4,7 @@ description: An unapologetically verbose reflection on hitting the big Three-Oh.
 author: Russell McWhae
 date: 2018-12-19
 draft: 0
+category: Outdoors
 ---
 
 **7:30 PM, July 27, 2013**  

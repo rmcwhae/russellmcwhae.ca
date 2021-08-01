@@ -4,6 +4,7 @@ description: A geeky look at how to have fun on the cheap.
 author: Russell McWhae
 date: 2020-04-03
 draft: 0
+category: Tech
 ---
 
 **3:56 AM, July 24, 2035**  
