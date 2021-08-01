@@ -20,6 +20,7 @@
 
 <script>
     import Date from '$lib/components/Date.svelte'
+
     export let posts
 </script>
 
