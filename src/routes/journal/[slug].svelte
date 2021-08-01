@@ -32,6 +32,9 @@
 
 <script>
     import Date from '$lib/components/Date.svelte'
+    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
+    import RightChevron from '$lib/components/icons/RightChevron.svelte'
+
     export let title
     export let date
     export let readingTime
@@ -54,16 +57,22 @@
     </header>
     <svelte:component this={component} />
 </article>
-<div>
+<nav>
     {#if previous}
-        <a href={`/journal/${previous.slug}`}>{previous.title}</a>
+        <a href={'/journal/' + previous.slug}>
+            <LeftChevron />
+            {previous.title}</a
+        >
     {:else}
         <div />
     {/if}
     {#if next}
-        <a href={`/journal/${next.slug}`}>{next.title}</a>
+        <a href={'/journal/' + next.slug} class="right"
+            >{next.title}
+            <RightChevron />
+        </a>
     {/if}
-</div>
+</nav>
 
 <style>
     h1 {
@@ -73,5 +82,23 @@
     article {
         max-width: 700px;
         margin: 0 auto;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: var(--s3);
+        margin-bottom: var(--s3);
+        flex-wrap: wrap;
+    }
+    a {
+        text-decoration: none;
+        vertical-align: middle;
+    }
+    a:first-child {
+        margin-right: var(--s0);
+    }
+    .right {
+        text-align: right;
+        margin-left: auto;
     }
 </style>

@@ -1,5 +1,5 @@
 <script>
-    import Icon from '$lib/components/Icon.svelte'
+    import Icon from '$lib/components/icons/Icon.svelte'
 </script>
 
 <Icon viewBox="0 0 1211.956 617.417" height="1.5em">
