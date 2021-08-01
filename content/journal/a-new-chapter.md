@@ -21,8 +21,6 @@ _Now that sounds like a sweet gig_, I thought. We shortly parted ways with the o
 
 At the time, I was in grad school and spending more time skiing than was perhaps responsible. This encounter did not cross my mind again for a few years—but a seed had been planted.
 
----
-
 ## A Change of Scenery
 
 For quite some time now, I’ve been wanting to leave the city. Three years ago [I wrote](/journal/faith#final-words):
