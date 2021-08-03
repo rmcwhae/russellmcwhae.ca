@@ -33,7 +33,7 @@ Now, on the thirtieth reunion of this occasion, I have decided to reverse the ty
 
 Youth is wasted on the young, as the cliché goes. I’ve had a few years to think about what this means now and am well into the grey area of “emerging adulthood”—no longer a teen, yet not quite an adult—so here are some ideas on [life, the universe, and everything](https://en.wikipedia.org/wiki/Answer_to_Life,_the_Universe,_and_Everything), from the perspective of a now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside. The outdoors—and what spending time outside can do for you—will be a major theme in this essay.
 
-Please do consider taking the roughly two hours to read through this as there is hopefully something here that will resonate with you or otherwise be worth your while.
+Please do consider taking the two (or more) hours to read through this as there is hopefully something here that will resonate with you or otherwise be worth your while.
 
 This brings me to my first thought: the importance of reading (yes, really). While this may seem to be an antiquated idea, especially in this age of endless digital media consumption, I will attempt to argue in the next section that reading remains as vital as ever—perhaps even _more_ so.
 
