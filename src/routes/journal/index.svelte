@@ -28,19 +28,19 @@
     <div>
         {#each posts as { slug, title, description, date, readingTime, category }}
             <section>
-                <div class="uppercase">
-                    <Date {date} />
-                    &middot;
-                    <span class="grey">{category}</span>
-                    &middot;
-                    <span class="grey">{readingTime.text}</span>
-                </div>
                 <h2>
                     <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
                 </h2>
                 {#if description}
                     <p>{description}</p>
                 {/if}
+                <div class="uppercase grey">
+                    <Date {date} />
+                    &middot;
+                    <span>{category}</span>
+                    &middot;
+                    <span>{readingTime.text}</span>
+                </div>
             </section>
         {/each}
     </div>
@@ -58,9 +58,6 @@
 </div>
 
 <style>
-    .secondary {
-        margin-left: var(--s-3);
-    }
     h2 {
         font-size: 2em;
         line-height: 1.2em;

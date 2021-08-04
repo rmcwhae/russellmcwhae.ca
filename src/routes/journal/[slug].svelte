@@ -62,17 +62,14 @@
 
 <article>
     <header>
-        <div class="uppercase">
-            <Date {date} />
-        </div>
         <h1>{title}</h1>
         {#if description}
             <p>{description}</p>
         {/if}
-        <div class="grey">
-            <span>{category}</span>
+        <div class="uppercase grey">
+            <Date {date} />
             &middot;
-            <span>{readingTime.words} words</span>
+            <span>{category}</span>
             &middot;
             <span>{readingTime.text}</span>
         </div>
