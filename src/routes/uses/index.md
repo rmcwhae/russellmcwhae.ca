@@ -42,7 +42,11 @@ macOS all the way!
 -   [27-inch LG 27UD68-W 4K Display](/journal/the-upgrade-to-4k)
 -   [Ducky One 2 SF](https://www.duckychannel.com.tw/en/Ducky-One2-SF) RGB White mechanical keyboard with Cherry MX Brown switches. Being relatively new to mechanical keyboards, they really are game-changers.
 -   Magic Trackpad 2
--   Desktop Windows PC: Intel Core i5-3570K overclocked to 4 GHz, 16 GB RAM, 500 GB SSD, 1 TB hardware RAID 1 array, ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB. I built this in 2012 with the intention of upgrading parts as needed—only a strong need to upgrade has yet to present itself. Let’s see how long this old hardware will last before it gets converted into a Linux box. Used for browser testing and storage.
+-   Desktop Windows PC: Intel Core i5-3570K overclocked to 4 GHz, 16 GB RAM, 500 GB SSD, 1 TB hardware RAID 1 array, ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB. I built this in 2012 with the intention of upgrading parts as needed—only a strong need to upgrade has yet to present itself. Let’s see how long this old hardware will last before it gets converted into a Linux box. Used for browser testing and storage. I backup photos from my laptop to my PC’s RAID 1 array via `rsync`:
+
+```
+alias photobackup="rsync -avzP --exclude '.DS_Store' --delete --backup --backup-dir=\"//Volumes/PhotosfromrMBP/backups/backup_$(date +\%Y-\%m-\%d_\%H-\%M)\" ~/Pictures/ //Volumes/PhotosfromrMBP/"
+```
 
 ## Camera Gear
 
@@ -66,8 +70,3 @@ Lately, I’ve been trying to challenge myself creatively by primarily shooting 
 
 -   GorillaPod
 -   Circular polarizing filter
--   I backup photos from my mac to my PC’s RAID 1 array via `rsync`:
-
-```
-alias photobackup="rsync -avzP --exclude '.DS_Store' --delete --backup --backup-dir=\"//Volumes/PhotosfromrMBP/backups/backup_$(date +\%Y-\%m-\%d_\%H-\%M)\" ~/Pictures/ //Volumes/PhotosfromrMBP/"
-```
