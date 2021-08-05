@@ -12,7 +12,7 @@ Similar to [photography](/photography), graphic designâ€”especially web designâ€
 
 Photography and design are complementary skills. Design principles provide an expanded tool kit to use in photography. Similarly, being able to take photos allows me to readily incorporate them into my design work.
 
-### Professional Resume
+## Professional Resume
 
 I completed an undergraduate degree in civil engineering, graduating from the University of Alberta in 2011, and worked as a structural engineer-in-training for just over three years.
 
