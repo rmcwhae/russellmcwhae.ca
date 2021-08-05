@@ -93,6 +93,9 @@
         margin-right: var(--s2);
         font-size: 0.9em;
     }
+    pre > code {
+        white-space: pre-wrap;
+    }
     h1 a,
     h2 a,
     h3 a,
