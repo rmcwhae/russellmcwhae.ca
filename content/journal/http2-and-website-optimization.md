@@ -6,6 +6,13 @@ draft: false
 category: Tech
 ---
 
+<script>
+    import Caption from '$lib/components/Caption.svelte'
+    import Akamai from '$static/journal-images/http2-akamai.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Site from '$static/journal-images/http2-site.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Devtools from '$static/journal-images/http2-devtools.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+</script>
+
 Dabbling in web design in the late 2000s as mobile devices were just starting to enter the digital landscape, I developed an appreciation for website optimization. At the time, optimization generally meant shrinking and compressing images (especially with data-limited mobile plans), minimizing page and script file-sizes, and a frequent tip that came up — and [still comes up](https://blog.hubspot.com/marketing/reduce-http-requests) — was that _you should minimize the number of HTTP requests (network requests sent between your browser and a webserver) your page makes._ This meant serving ideally no more than one stylesheet, one JavaScript file (i.e., multiple files concatenated together), and one image sprite (see [CSS Sprites](https://css-tricks.com/css-sprites/)) with your web page to minimize its loading time.
 
 The underlying theory was that over the then-current HTTP/1.1 protocol, each additional HTTP request would add latency and thus page-loading time. Multiple separate files would take longer to download than an equivalent concatenated file.
@@ -73,7 +80,9 @@ After many years of global use, performance limits in HTTP/1.1 were being tested
 
 HTTP/2’s main advantage over HTTP/1.1 is performance. Akamai made a [clever demo](https://http2.akamai.com/demo) illustrating HTTP/2’s **up to 2x** speed increase:
 
-![Akamai demo: up to 2x speed increase in HTTP/2](1__WOgReZNQERIOd7olSwrtEg.png)_Akamai demo: up to 2x speed increase in HTTP/2_
+<Caption text="Akamai demo: up to 2x speed increase in HTTP/2.">
+  <img srcset={Akamai} type="image/webp" alt="Akamai demo: up to 2x speed increase in HTTP/2."/>
+</Caption>
 
 This drastically reduced load time is the result of several new features in HTTP/2:
 
@@ -103,7 +112,9 @@ While performance enhancements are highly desirable in web development, adoption
 
 Having remained largely ignorant of the onset of HTTP/2, I was delighted to find that [my website](http://russellmcwhae.ca) was delivered over the HTTP/2 protocol, without any updating or configuring on my part (Yes, my homepage comes in at a hefty 4.8 MB download, contradicting my earlier remark about web-page optimization. For now, this is a case of _do as I say, not as I do_):
 
-![My portfolio homepage. Note the “h2” under Protocol corresponding to HTTP/2.](1__9OeRkMiPs7GFsW6g5nLiCQ.png)_My portfolio homepage. Note the “h2” under Protocol corresponding to HTTP/2._
+<Caption text="My portfolio homepage (a previous version). Note the “h2” under Protocol corresponding to HTTP/2.">
+  <img srcset={Site} type="image/webp" alt="My portfolio homepage. Note the “h2” under Protocol corresponding to HTTP/2."/>
+</Caption>
 
 As support for HTTP/2 required updates to both web servers and web browsers alike, adoption was low at its inception in 2015 but has since grown substantially: current usage of HTTP/2 sits at [just over 40%](https://w3techs.com/technologies/details/ce-http2/all/all) at the time of this writing. [Most modern browsers](https://caniuse.com/#feat=http2) also started supporting HTTP/2 in 2015. Its use should steadily increase going forward.
 
@@ -124,7 +135,9 @@ Certain optimization techniques intended for HTTP/1.1 are still considered good 
 
 HTTP/3, previously known as HTTP-over-QUIC, is the next major revision to the HTTP protocol and aims to further reduce client-server latency and page-load times. It accomplishes this by forgoing the familiar TCP network transport layer for the newer QUIC (Quick UDP Internet Connections) transport layer. QUIC is already being tested on certain websites such as [YouTube](https://www.youtube.com/). For more information on this upcoming standard, see _Tonino Jankov’s_ [What Is HTTP/3 — Lowdown on the Fast New UDP-Based Protocol](https://kinsta.com/blog/http3/).
 
-![YouTube network requests in Chrome Developer Tools. Note the “http/2+quic/46” protocol corresponding to HTTP/3.](1__dlyFc3ddTJRHDwNhWlEu__g.png)_YouTube network requests in Chrome Developer Tools. Note the “http/2+quic/46” protocol corresponding to HTTP/3._
+<Caption text="YouTube network requests in Chrome Developer Tools. Note the “http/2+quic/46” protocol corresponding to HTTP/3.">
+  <img srcset={Devtools} type="image/webp" alt="YouTube network requests in Chrome Developer Tools. Note the “http/2+quic/46” protocol corresponding to HTTP/3."/>
+</Caption>
 
 ## Final words
 
