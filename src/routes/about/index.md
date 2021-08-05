@@ -26,6 +26,10 @@ View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [Lin
 
 This latest incarnation of my personal website was built with SvelteKit. It is statically generated and deployed to a shared host.
 
+## Tools I use
+
+See [the tools](/uses) I use.
+
 ## Contact Me
 
 Email [my-first-name]@russellmcwhae.ca.
