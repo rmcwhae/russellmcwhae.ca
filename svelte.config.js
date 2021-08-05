@@ -19,7 +19,11 @@ const config = {
             crawl: true,
             enabled: true,
         },
-        adapter: adapter(),
+        adapter: adapter({
+            pages: 'build',
+            assets: 'build',
+            fallback: null,
+        }),
         vite: {
             resolve: {
                 alias: {
