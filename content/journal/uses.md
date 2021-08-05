@@ -1,6 +1,6 @@
 ---
 title: What I use
-description: Tools used in my work
+description: Tools used in my work.
 author: Russell McWhae
 date: 2020-03-01
 draft: 0
@@ -49,9 +49,9 @@ macOS all the way!
 ### Bodies
 
 -   Sony a6000
--   Sony NEX-6
+-   Sony NEX-6, converted to shoot infrared per [this walkthrough](http://www.ir-photo.net/ir_nex6mod.html)
 
-Though a bit dated now, these bodies work very well for stills and are quite light and compact. Newer, more expensive gear does not necessarily translate into better photos.
+Though a bit dated now, these bodies work very well for stills and are quite light and compact.
 
 ### Lenses
 
