@@ -7,6 +7,16 @@ draft: 0
 category: Tech
 ---
 
+<script>
+    import Caption from '$lib/components/Caption.svelte'
+    import ScreenAndKeyboard from '$static/journal-images/LG-screen-and-keyboard.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import OnScreenControl from '$static/journal-images/LG-OnScreen-Control.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import FourteenFortyP from '$static/journal-images/LG-1440p.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Interference from '$static/journal-images/LG-interference.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+</script>
+
+<img srcset={ScreenAndKeyboard} type="image/webp" alt="LG 27UD68-W"/>
+
 My very first smartphone was the iPhone 4, which I purchased in September 2010. I had held out from owning previous generations of the iPhone as the original iPhone was never officially available in Canada, and the iPhones 3G and 3GS were largely iterative, under-the-hood improvements over their respective predecessors. The iPhone 4 introduced a breakthrough new technology previously unseen in any Apple product: the Retina display, a display with twice as many pixels in each linear direction (640 x 960 vs. 320 x 480) on the same-size 3.5-inch screen as before. This quadrupled the total number of pixels within the same physical area, resulting in far sharper text and graphics. Individual pixels could not be seen by the naked eye.
 
 This was to be the way of the future. Gradually, advances in hardware engineering and reductions in manufacturing costs allowed larger Retina displays to be developed: the iPad got a Retina display in March 2012, and the first 15-inch Retina MacBook Pro was announced in June 2012. An Apple-sanctioned, desktop-size Retina display wasn’t to arrive until October 2014 with the 27-inch 5K iMac, though support for external 4K monitors had already begun with the second-generation 15-inch Retina MacBook Pro in the fall of 2013 (“Late 2013”). Was this to finally be the age of desktop Retina displays?
@@ -14,7 +24,6 @@ This was to be the way of the future. Gradually, advances in hardware engineerin
 In fall 2013, I upgraded my 2007 Santa Rosa MacBook Pro to a then-brand-new Late 2013 15-inch MacBook Pro with Retina Display. Again, I had deliberately avoided the first-gen Retina MacBook Pro, as early adoption of Apple products usually ends in heartbreak. I bought the middle-spec model, which had a few important upgrades over the base model: a discrete NVIDIA GeForce GT 750M graphics card and 16 GB of RAM. This graphics chip could theoretically run an external 4K (3840 x 2160) display at a refresh rate of 60 Hz (4K60). Though macOS lacked support for 4K60 at the time (30 Hz was possible, which is noticeably less fluid than the standard 60 Hz), my Late 2013 Retina MacBook Pro later proved to be the first—and now oldest—Mac capable of running 4K60 thanks to its Thunderbolt 2 ports. Given the expense of 4K monitors in 2013 as well as the lack of software support—it wasn’t until May 2014 that macOS would learn to [play nice with 4K displays](https://www.anandtech.com/show/8023/apple-releases-osx-10-9-3-improved-4k-display)—it would be a while before I started to seriously consider buying a 4K monitor.
 
 While I never owned a 27-inch Apple Thunderbolt display—instead opting for the cheaper ASUS PB278Q with similar 2560 x 1440 (1440p) resolution and 27-inch size—I was determined to hold out for an official Apple desktop-size Retina display until WWDC 2016. Leading up to WWDC 2016, rumours suggesting an Apple 4K or 5K display with a powerful internal GPU circulated; instead, Apple was to discontinue making external displays entirely. The very next day after the WWDC keynote, I went to my local [Memory Express](https://www.memoryexpress.com) to buy a 4K monitor. Enter the LG 27UD68-W.
-<img src="journal/assets/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W" />
 
 ## LG 27UD68-W
 
@@ -22,7 +31,9 @@ Reviews on this LG monitor were somewhat scarce, save for some customer reviews 
 
 The on-screen display (OSD) is managed by a single joystick on the bottom of the panel with five possible inputs: four cardinal directions and a click. It is good fun to use, though the joystick itself blinks while the monitor is sleeping (brightly enough for light to bleed into nearby vent holes), which cannot be disabled in the OSD. If this monitor is used in a bedroom, some electrical tape may be necessary to dim the blinking. LG makes a macOS app called OnScreen Control that allows you to change various settings without going through the OSD.
 
-<img src="journal/assets/LG-OnScreen-Control.png" alt="LG OSD" />
+<Caption text="OnScreen Control">
+  <img srcset={OnScreenControl} type="image/webp" alt="OnScreen Control"/>
+</Caption>
 
 ## Performance
 
@@ -30,7 +41,9 @@ Ever since Apple rewrote the entire macOS GUI to work on Retina displays startin
 
 Running the 4K display in the default “Looks like 1920 x 1080” mode really isn’t ideal since text and interface elements are huge, and the additional screen real estate of 1440p is missing. I have been running the LG in 1440p mode along with the MacBook Pro’s native display at its default resolution (2880 x 1800 in “Looks like 1440 x 900” mode) for almost two months now, and the setup doesn’t seem to run all that slower or hotter compared to a non-4K 1440p monitor for _most_ tasks.
 
-<img src="journal/assets/LG-1440p.png" alt="LG 1440p mode" />
+<Caption text="1440p mode">
+  <img srcset={FourteenFortyP} type="image/webp" alt="1440p mode"/>
+</Caption>
 
 Playing 4K YouTube videos seems to be much more optimized in Safari than in Chrome: fullscreen 4K video playback in Chrome causes an audible fan-speed spike to 5000 RPM or more, whereas 4K playback in Safari is quieter with a max fan speed of around 3600 RPM. (**UPDATE August 3, 2018**: Google has [changed the codec](https://9to5mac.com/2017/01/12/youtube%E2%80%A4com-no-longer-supports-4k-video-playback-in-safari/) of 4K YouTube videos, and 4K YouTube playback is no longer supported in Safari. Back to noisy Chrome for 4K YouTube viewing, _sigh_.)
 
@@ -58,7 +71,9 @@ Though this doesn’t directly relate to the LG review, here are some findings o
 
 I tried everything: disconnecting and reconnecting the mouse, re-pairing the mouse, resetting the NVRAM, resetting the SMC, and not running the laptop in clamshell mode. Restarting my computer would sometimes give up to a few hours of reliable Bluetooth connection, but the issues always returned. It turns out that the source of all this trouble was the monitor cable. When I first got the LG, I carelessly tucked the mini-DP-to-DP cable underneath the laptop that sits raised on my custom laptop stand. Moving the cable a few inches lower to the underneath of the desk eliminated the interference completely.
 
-<img src="journal/assets/LG-interference.jpg" alt="LG interference" />
+<Caption text="Display cable interference">
+  <img srcset={Interference} type="image/webp" alt="Display cable interference"/>
+</Caption>
 
 ## 4K Gaming
 
