@@ -3,6 +3,7 @@ import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
 import pack from 'vite-imagetools'
 import preprocess from 'svelte-preprocess'
+import path from 'path'
 
 const { imagetools } = pack
 
@@ -20,6 +21,11 @@ const config = {
         },
         adapter: adapter(),
         vite: {
+            resolve: {
+                alias: {
+                    $static: path.resolve('static'),
+                },
+            },
             plugins: [imagetools()],
         },
     },
