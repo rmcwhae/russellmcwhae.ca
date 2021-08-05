@@ -16,5 +16,4 @@ category: TODO
 -   Photos endpoint with dir listing, individual gallery view
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
--   Use rsync over ssh to deploy updated files
--   Build <category> page for journal entries
+-   Build <category> page for journal entries; journal hero images?
