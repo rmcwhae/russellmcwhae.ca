@@ -17,3 +17,4 @@ category: TODO
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
 -   Use rsync over ssh to deploy updated files
+-   Build <category> page for journal entries
