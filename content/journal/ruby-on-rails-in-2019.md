@@ -6,7 +6,16 @@ draft: false
 category: Tech
 ---
 
-![Rails](1__uKibwseMgeqaYahlvv__BfA.png)
+<script>
+    import Logo from '$static/journal-images/rails-1.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Trends from '$static/journal-images/rails-2.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import JungleFrontEnd from '$static/journal-images/rails-3.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import JungleBackEnd from '$static/journal-images/rails-4.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import LinkedIn from '$static/journal-images/rails-5.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Caption from '$lib/components/Caption.svelte'
+</script>
+
+<img srcset={Logo} type="image/webp" alt="Ruby on Rails"/>
 
 Back-end web developers have an abundant — perhaps overwhelming — selection of server-side frameworks to choose from in 2019: [Express](https://expressjs.com/) on [Node.js](https://nodejs.org/en/); [Django](https://www.djangoproject.com/) on [Python](https://www.python.org/); [Ruby on Rails](https://rubyonrails.org/); [Laravel](https://laravel.com/), [CodeIgniter](https://codeigniter.com/), or [Symfony](https://symfony.com/) on [PHP](https://www.php.net/); and [Spring](https://spring.io/) on [Java](https://www.java.com); among many more. Such server-side frameworks are intended to accelerate the creation of web applications, usually by providing helper libraries that minimize the coding required in development.
 
@@ -35,7 +44,9 @@ Ruby on Rails rose in popularity as a server-side language and subsequently unde
 
 Rails’ market share reached an [estimated 0.5%](https://w3techs.com/technologies/history_overview/programming_language/ms/y) among all web servers in 2010 and has grown steadily to an estimated 2.7% in 2019 (over [400,000](https://www.similartech.com/compare/php-vs-ruby-on-rails) known websites). Overshadowed by PHP’s consistent 75–80% share, Rails may appear as a niche language; nevertheless, Rails serves as the backbone for many mega-trafficked websites today, including [Github](https://github.com/), [Shopify](https://shopify.com/), [Airbnb](https://airbnb.com/), [Square](https://squareup.com/), and [Kickstarter](https://www.kickstarter.com/). Its source code is still under active development, as evidenced by the very recent release of Rails 6.0; however, an overall sentiment of decline in Rails’ popularity has been observed in recent years:
 
-![Monthly popularity in Stack Overflow questions of select web-programming languages. From [Stack Overflow Trends](https://insights.stackoverflow.com/trends?tags=node.js%2Cruby-on-rails%2Cphp%2Cdjango).](1__jfzbczmMi1iqsIGb9yzcEg.png)_Monthly popularity in Stack Overflow questions of select web-programming languages. From [Stack Overflow Trends](https://insights.stackoverflow.com/trends?tags=node.js%2Cruby-on-rails%2Cphp%2Cdjango)._
+<Caption text='Monthly popularity in Stack Overflow questions of select web-programming languages. From <a href="https://insights.stackoverflow.com/trends?tags=node.js%2Cruby-on-rails%2Cphp%2Cdjango">Stack Overflow Trends</a>.'>
+<img srcset={Trends} type="image/webp" alt="Monthly popularity in Stack Overflow questions of select web-programming languages."/>
+</Caption>
 
 As competing technologies gain popularity in the web-application space — Node.js has experienced an especially meteoric rise to eminence — Rails is perhaps facing the same scenario that led to its inception: new languages can offer improved solutions (like cleaner code and less technical baggage) compared to existing, older languages. As Rails continues to age, it will have to tread the line between mature software (which has the advantages of stability, popularity, and familiarity) and legacy software (where support for older environments can stifle innovation and exacerbate cruft in its codebase).
 
@@ -43,9 +54,13 @@ As competing technologies gain popularity in the web-application space — N
 
 As a developer, I found Ruby on Rails to have a near-perfect amount of server verbosity. For example, running a simple e-commerce site (from [this repository](https://github.com/lighthouse-labs/jungle-rails), part of the [Lighthouse Labs](https://www.lighthouselabs.ca/) web development boot camp) results in a fantastically concise set of server console outputs, as demonstrated in the following two screenshots:
 
-![Front-end view of Jungle Rails.](1__gHIr3oBMnW4mEbwlqSWUwA.png)_Front-end view of Jungle Rails._
+<Caption text='Front-end view of Jungle Rails.'>
+<img srcset={JungleFrontEnd} type="image/webp" alt="Front-end view of Jungle Rails."/>
+</Caption>
 
-![The corresponding server console for loading the Jungle Rail’s homepage. Just the right amount of verbosity!](1__c98I79jvPI9ANbkvXRganA.png)_The corresponding server console for loading the Jungle Rail’s homepage. Just the right amount of verbosity!_
+<Caption text='The corresponding server console for loading the Jungle Rail’s homepage. Just the right amount of verbosity!'>
+<img srcset={JungleBackEnd} type="image/webp" alt="The corresponding server console for loading the Jungle Rail’s homepage. Just the right amount of verbosity!"/>
+</Caption>
 
 Upon page load, the server outputs the GET request location (“/”) and time, the controller that was used (the “index” action of “ProductsController”), the templates that were rendered (products/\_product.html.erb, products/index.html.erb, and layouts/\_top-nav.html.erb), and the database queries called by [Active Record](https://guides.rubyonrails.org/active_record_basics.html) (Ruby’s built-in [Object Relational Management](https://en.wikipedia.org/wiki/Object-relational_mapping) \[ORM\] framework). These outputs are quite helpful in development and debugging.
 
@@ -77,7 +92,9 @@ The high salaries commanded by experienced Rails developers can perhaps be attri
 
 Sampling the current job market (conducting a worldwide LinkedIn search for “node.js developer,” “PHP developer,” and “rails developer”) provides additional insight into this situation:
 
-![Worldwide LinkedIn postings for three web development languages. Performed September 20, 2019.](1__XGXfFGTXvRGQZspbklzxgQ.png)_Worldwide LinkedIn postings for three web development languages. Performed September 20, 2019._
+<Caption text="Worldwide LinkedIn postings for three web development languages. Performed September 20, 2019.">
+  <img srcset={LinkedIn} type="image/webp" alt="Worldwide LinkedIn postings for three web development languages. Performed September 20, 2019."/>
+</Caption>
 
 Rails developer jobs are roughly an order of magnitude (10x) more scarce than either PHP or Node.js developer jobs! This certainly adds credence to the Rails-niche notion. The low supply of Rails developers may drive up the demand — and thus salaries — for them.
 
