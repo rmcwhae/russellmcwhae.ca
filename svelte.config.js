@@ -17,7 +17,6 @@ const config = {
         prerender: {
             crawl: true,
             enabled: true,
-            force: false,
         },
         adapter: adapter(),
         vite: {

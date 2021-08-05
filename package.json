@@ -13,7 +13,7 @@
     "devDependencies": {
         "@jsdevtools/rehype-toc": "^3.0.2",
         "@sveltejs/adapter-static": "^1.0.0-next.13",
-        "@sveltejs/kit": "next",
+        "@sveltejs/kit": "^1.0.0-next.142",
         "date-fns": "^2.23.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
@@ -27,12 +27,12 @@
         "rehype-slug": "^4.0.1",
         "remark-footnotes": "^2.0.0",
         "remark-reading-time": "^1.0.1",
-        "svelte": "^3.34.0",
+        "svelte": "^3.42.1",
         "svelte-icons": "^2.1.0",
         "svelte-preprocess": "^4.7.4",
         "unified": "^9.2.1",
         "unist-util-find": "^1.0.2",
-        "vite-imagetools": "^3.4.0-next.7"
+        "vite-imagetools": "^3.6.8"
     },
     "type": "module"
 }
