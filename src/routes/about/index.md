@@ -24,52 +24,7 @@ View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [Lin
 
 ## About this Site
 
-This latest incarnation of my personal website was built with SvelteKit. View the source code here: TODO. It is statically generated and deployed to a shared host.
-
-<!-- ## About this Site
-
-This website, designed to work on modern mobile and desktop browsers, is a random patchwork of scripts cobbled together that somehow hasn’t exploded yet. It is as close to being built from scratch as is reasonably practicable these days, short of reinventing [jQuery](https://jquery.com). I eschewed off-the-shelf solutions such as [Wix](http://wix.com) and [Squarespace](http://squarespace.com) that advertise “no coding required” as I had actually learned how to code in high school—and why do things the easy way when you can do them the very-time-consuming hard way? (My advice for climbing mountains is much the same: why pay for guiding services when you can take a decade to learn alpinism? The joy is in the journey, as they say.)
-
-For the longest time, this site’s ballooning source code wasn’t even under version control, but now it resides in a [GIT](https://git-scm.com) repository. I develop locally on my Mac—see [this excellent tutorial](https://getgrav.org/blog/macos-mojave-apache-multiple-php-versions) on the Grav Development Blog for details on setting up a local testing server on macOS—then publish to a private [Bitbucket](https://bitbucket.org/) repository with an automatic webhook to update the production server (see [this tutorial](https://getgrav.org/blog/developing-with-github-part-2)).
-
-For [my journal](/journal), I want the emphasis to be on text—à la [Daring Fireball](https://daringfireball.net) or [Pixel Envy](https://pxlnv.com)—not bright images or fancy animations that can hamper legibility.
-
-Style is essential to me, both in the design of my website and in my writing. I am primarily self-taught in graphic design with no formal education beyond an evening course at [ACAD](https://www.acad.ca) several years ago.
-
-For information on graphics design and typography, see [Butterick’s Practical Typography](https://practicaltypography.com) or Ellen Lupton’s books _Thinking with Type: A Critical Guide for Designers, Writers, Editors, & Students_ and _Type on Screen: A Critical Guide for Designers, Writers, Developers, and Students_.
-
-The inverted/dark theme of this website was inspired by the dark mode concept that is all the rage in UI design these days. [Photos](/photography) sure do look good this way.
-
-For writing style, I refer to [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/) and Diana Hacker’s [A Canadian Writer’s Reference](https://www.goodreads.com/book/show/888794.A_Canadian_Writer_s_Reference). I like hyphens, em-dashes, and conjunctive adverbs. My style of writing is very concise, which has been said to be more time-consuming than otherwise—though you’re likely seeing this as my preferred way of doing things by now. -->
-<!--
-### Colophon
-
-This site is hosted on the cheapest possible shared plan from [Namecheap](http://namecheap.com), which is more than adequate for the minimal traffic it receives.
-
-Fonts are served by [Adobe Typekit](https://typekit.com).
-
-There are no cookies or tracking beyond analyzing the log files with [AWStats](https://awstats.sourceforge.io). -->
-
-<!-- Content is managed sans database by the fabulously lightweight [Pico CMS](http://picocms.org), with text written in [Markdown](https://daringfireball.net/projects/markdown/) format. After years of battling [WordPress](https://wordpress.org)’s ever-increasing bloat, it is entirely refreshing to develop from the ground up, implementing features one at a time, rather than paring things down. -->
-
-<!-- ### Reading Time Estimates
-
-Reading time estimates for these articles assumes a [265 words per minute](https://help.medium.com/hc/en-us/articles/214991667-Read-time) speed. Admittedly, my notoriously [long](/journal/30-going-on-13)-[winded](/journal/faith) essays may require a slower pace to digest properly. The actual word count is done via a custom Pico plugin, which I may get around to releasing someday. -->
-
-<!-- ### The Photo Gallery
-
-Most off-the-shelf self-hosted photo galleries are too complicated or ugly, so I created my own. [Photos](https://russellmcwhae.ca/photography) are served with a custom PHP script that simply lists images from their parent folders while generating and serving thumbnails. Inline page formatting is done with [Justified Gallery](https://miromannino.github.io/Justified-Gallery/), and the full-screen lightbox is done with [fancyBox](https://fancyapps.com/fancybox/3/).
-
-### Other Scripts
-
--   [Responsive Nav](http://responsive-nav.com) for the collapsing main menu
--   [Backstretch](http://www.jquery-backstretch.com) for the rotating homepage images
--   [Font Awesome](https://fontawesome.com) for various icons
--   [bigfoot.js](http://bigfootjs.com) for footnotes[^1]
-
-[^1]: Like this one! -->
-
-<!-- For a full list of the tools I use, see “[What I use](/journal/uses)”. -->
+This latest incarnation of my personal website was built with SvelteKit. It is statically generated and deployed to a shared host.
 
 ## Elsewhere
 
