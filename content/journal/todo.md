@@ -8,6 +8,7 @@ category: TODO
 ---
 
 -   Verify ~~footnotes~~, links to PDFs (photos/\*), images, ~~anchors in journal entries~~
+-   Styles: nested blockquotes
 -   Update ~~uses~~, about (about with resume, skills)
 -   Reading list page (linked from about)
 -   Journal 404 handling
