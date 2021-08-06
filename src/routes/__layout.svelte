@@ -10,7 +10,7 @@
     <div class="left">
         <Nav />
     </div>
-    <div>
+    <div class="right">
         <slot />
     </div>
 </main>
@@ -21,6 +21,10 @@
     }
     .left {
         min-width: 220px;
+        position: fixed;
+    }
+    .right {
+        margin-left: calc(220px + var(--s4));
     }
     main div {
         margin: var(--s4);
