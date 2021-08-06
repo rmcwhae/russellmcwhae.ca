@@ -1,24 +1,27 @@
 # My Portfolio
 
-Built with SvelteKit.
+This is my portfolio, deployed to https://russellmcwhae.ca. Feel free to have a look under the hood. Built using [SvelteKit](https://kit.svelte.dev/).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+
+Note: photos are not under source control as they would take too much space.
 
 ## Building
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+To create the static export, run:
 
 ```bash
 npm run build
 ```
 
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+This will create files in `/build` that can be deployed as you see fit. In my case, I am using `rsync` to deploy these to a shared host with a local terminal alias in my `.zprofile` (requires setting up a key such as `id_rsa_deploy` for password-less SSH access):
+
+```bash
+alias deploy="cd <local-repo-directory> && npm run build && rsync -zhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
+```
