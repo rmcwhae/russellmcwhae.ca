@@ -62,17 +62,20 @@
 
 <article>
     <header>
-        <h1>{title}</h1>
-        {#if description}
-            <p>{description}</p>
-        {/if}
         <div class="uppercase grey">
             <Date {date} />
             &middot;
             <span>{category}</span>
             &middot;
+            <span>{readingTime.words} words</span>
+            &middot;
             <span>{readingTime.text}</span>
         </div>
+        <h1>{title}</h1>
+
+        {#if description}
+            <p>{description}</p>
+        {/if}
     </header>
     <svelte:component this={component} />
 </article>
@@ -94,6 +97,10 @@
 </nav>
 
 <style>
+    header {
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+    }
     h1 {
         font-size: 3em;
         line-height: 1.2em;
@@ -115,6 +122,9 @@
     }
     a:first-child {
         margin-right: var(--s0);
+    }
+    p {
+        font-size: 1.1em;
     }
     .right {
         text-align: right;
