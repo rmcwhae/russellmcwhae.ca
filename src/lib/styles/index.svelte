@@ -29,8 +29,7 @@
         transition: background-color ease var(--duration);
         margin: 0;
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        font-family: azo-sans-web, sans-serif;
     }
     a {
         color: var(--text-color);
