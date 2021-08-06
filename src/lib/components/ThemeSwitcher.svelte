@@ -44,20 +44,19 @@
 
 <style>
     .toggle-wrapper {
-        width: 130px;
+        width: 50px;
         display: block;
         margin: auto; /* Centering for demo */
         --transition: var(--duration) ease;
     }
 
     .toggle {
-        height: 65px;
-        width: 130px;
-        /* background: var(--text-color); */
+        height: 24px;
+        width: 50px;
         color: var(--text-color);
         border: 1px solid var(--text-color);
         border-radius: 40px;
-        padding: 12px;
+        padding: 2px;
         position: relative;
         transition: background var(--transition);
         cursor: pointer;
@@ -66,8 +65,8 @@
     .toggle::before {
         content: '';
         display: block;
-        height: 41px;
-        width: 41px;
+        height: 18px;
+        width: 18px;
         border-radius: 30px;
         background: var(--text-color);
         position: absolute;
@@ -77,7 +76,7 @@
     }
 
     .toggle.enabled::before {
-        transform: translateX(65px);
+        transform: translateX(26px);
     }
 
     .toggle input {
@@ -96,8 +95,8 @@
 
     :global(.toggle .icons svg) {
         fill: var(--text-color);
-        height: 30px;
-        width: 30px;
+        height: 18px;
+        width: 18px;
         z-index: 0;
     }
 </style>
