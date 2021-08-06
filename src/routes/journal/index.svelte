@@ -59,12 +59,12 @@
 
 <!-- </div> -->
 <style>
-    .box {
+    /* .box {
         background: var(--light-grey);
         height: 1px;
         width: 100%;
         margin-bottom: var(--s2);
-    }
+    } */
     h2 {
         font-size: 1.6em;
         line-height: 1.2em;

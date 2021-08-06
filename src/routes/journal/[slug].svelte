@@ -62,7 +62,8 @@
 
 <article>
     <header>
-        <div class="uppercase grey">
+        <h1>{title}</h1>
+        <div class="uppercase grey sub">
             <Date {date} />
             &middot;
             <span>{category}</span>
@@ -71,8 +72,6 @@
             &middot;
             <span>{readingTime.text}</span>
         </div>
-        <h1>{title}</h1>
-
         {#if description}
             <p>{description}</p>
         {/if}
@@ -97,6 +96,11 @@
 </nav>
 
 <style>
+    .sub {
+        font-size: 0.8em;
+        margin-top: var(--s-2);
+        margin-bottom: var(--s-2);
+    }
     header {
         padding-bottom: var(--s0);
         border-bottom: 1px solid var(--light-grey);

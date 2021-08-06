@@ -72,8 +72,8 @@
     nav.toc {
         padding-bottom: var(--s-2);
         /* padding-top: var(--s2); */
-        border-bottom: 1px solid var(--light-grey);
-        border-top: 1px solid var(--light-grey);
+        /* border-bottom: 1px solid var(--light-grey); */
+        /* border-top: 1px solid var(--light-grey); */
     }
     nav.toc li {
         margin-top: var(--s-2);
