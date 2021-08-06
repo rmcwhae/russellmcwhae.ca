@@ -46,7 +46,6 @@
     .toggle-wrapper {
         width: 50px;
         display: block;
-        margin: auto; /* Centering for demo */
         --transition: var(--duration) ease;
     }
 

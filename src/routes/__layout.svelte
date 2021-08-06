@@ -7,20 +7,25 @@
 <Reset />
 <Styles />
 <main>
-    <Nav />
-    <slot />
+    <div class="left">
+        <Nav />
+    </div>
+    <div>
+        <slot />
+    </div>
 </main>
 
 <style>
     main {
-        max-width: 1024px;
-        padding: 0 var(--s0);
-        margin: 0 auto;
+        display: flex;
     }
-    @media only screen and (max-width: 1024px) {
-        main {
-            margin: 0 var(--s0);
-            padding: 0;
-        }
+    .left {
+        min-width: 220px;
+    }
+    main div {
+        margin: var(--s4);
+    }
+    main .left {
+        margin-right: 0;
     }
 </style>

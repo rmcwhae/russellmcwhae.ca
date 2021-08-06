@@ -5,11 +5,13 @@
 </script>
 
 <nav>
-    <a
-        href="/"
-        aria-current={$page.path === '/' ? 'page' : undefined}
-        class="logo"><Logo /></a
-    >
+    <div>
+        <a
+            href="/"
+            aria-current={$page.path === '/' ? 'page' : undefined}
+            class="logo"><Logo /></a
+        >
+    </div>
     <ul>
         <li>
             <a
@@ -31,17 +33,17 @@
         <li>
             <a
                 sveltekit:prefetch
-                href="/journal"
-                aria-current={$page.path === '/journal' ? 'page' : undefined}
-                >Journal</a
+                href="/projects"
+                aria-current={$page.path === '/projects' ? 'page' : undefined}
+                >Projects</a
             >
         </li>
         <li>
             <a
                 sveltekit:prefetch
-                href="/projects"
-                aria-current={$page.path === '/projects' ? 'page' : undefined}
-                >Projects</a
+                href="/journal"
+                aria-current={$page.path === '/journal' ? 'page' : undefined}
+                >Journal</a
             >
         </li>
         <li>
@@ -57,40 +59,26 @@
 </nav>
 
 <style>
-    li {
-        display: inline;
+    ul {
+        margin-top: var(--s4);
+        margin-bottom: var(--s4);
     }
-    li:not(:last-child) {
+    /* li:not(:last-child) {
         margin-right: var(--s0);
-    }
-    nav {
-        padding: var(--s0) 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* border-bottom: 1px solid var(--light-grey); */
-        /* margin-bottom: var(--s1); */
-    }
+    } */
     li a {
         text-decoration: none;
-        font-size: 0.8em;
-        letter-spacing: 0.125em;
-        text-transform: uppercase;
+        padding: var(--s-3) 0;
+        display: block;
     }
     a {
-        color: var(--medium-grey);
-        transition: color 0.17s;
-    }
-    a:hover,
-    [aria-current] {
         color: var(--text-color);
+        transition: all 0.17s;
     }
-    @media only screen and (max-width: 1024px) {
-        nav {
-            margin-left: calc(-1 * var(--s0));
-            margin-right: calc(-1 * var(--s0));
-            padding-left: var(--s0);
-            padding-right: var(--s0);
-        }
+    [aria-current] {
+        font-weight: 700;
+    }
+    a:hover {
+        /* color: var(--medium-grey); */
     }
 </style>
