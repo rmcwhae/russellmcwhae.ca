@@ -76,7 +76,8 @@
         transition: all 0.17s;
     }
     [aria-current] {
-        font-weight: 700;
+        /* font-weight: 700; */
+        color: var(--medium-grey);
     }
     a:hover {
         /* color: var(--medium-grey); */
