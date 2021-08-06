@@ -102,8 +102,8 @@
         margin-bottom: var(--s-2);
     }
     header {
-        padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
+        /* padding-bottom: var(--s0); */
+        /* border-bottom: 1px solid var(--light-grey); */
     }
     h1 {
         font-size: 3em;

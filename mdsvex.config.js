@@ -63,7 +63,7 @@ function customizeTOC(toc) {
     const heading = {
         type: 'element',
         tagName: 'h2',
-        children: [{ type: 'text', value: 'Table of Contents' }],
+        children: [{ type: 'text', value: 'Contents' }],
         properties: {
             className: 'app-toc__heading',
         },
