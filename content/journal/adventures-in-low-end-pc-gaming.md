@@ -1,5 +1,5 @@
 ---
-title: Adventures in Low-End PC Gaming
+title: Adventures in Low-end PC Gaming
 description: A geeky look at how to have fun on the cheap.
 author: Russell McWhae
 date: 2020-04-03
