@@ -1,29 +1,10 @@
 <script>
-    import Carousel from '$lib/components/Carousel.svelte'
-
-    const images = [
-        { path: '/test.png', id: 'image1' },
-        { path: '/begbie.jpg', id: 'image2' },
-        { path: '/arrowlake.jpg', id: 'image3' },
-    ]
+    import Portrait from '$static/2019portrait.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 
-<div class="full-width">
-    <Carousel
-        {images}
-        imageSpacing={0}
-        controlColor={'white'}
-        controlScale={1}
-        displayControls={false}
-        autoplay={true}
-        autoplaySpeed={5000}
-    />
-</div>
+<h1>Hi, I’m Russell.</h1>
 
-<p>
-    I take&nbsp;<a href="photography">photos</a>, print&nbsp;<a href="calendars"
-        >calendars</a
-    >,
-    <a href="journal">write</a>, and&nbsp;build&nbsp;<a href="about">websites</a
-    >.
-</p>
+<img srcset={Portrait} type="image/webp" alt="Russell Portrait" />
+
+<style>
+</style>
