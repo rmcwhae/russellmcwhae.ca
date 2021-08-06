@@ -56,7 +56,9 @@ function slug() {
 
 function customizeTOC(toc) {
     const isEmpty = !find(toc, (node) => node.type === 'text' && !!node.value)
-    if (isEmpty) {
+    const minHeaders = 3
+    
+    if (isEmpty || toc.children[0].children.length <= minHeaders) {
         return false
     }
 
@@ -71,7 +73,7 @@ function customizeTOC(toc) {
 
     return {
         type: 'element',
-        tagName: 'div',
+        tagName: 'aside',
         properties: { className: 'toc-container' },
         children: [heading, toc],
     }
