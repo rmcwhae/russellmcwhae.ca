@@ -11,14 +11,17 @@
             }))
             .filter((post) => !post.draft)
             .sort((a, b) => (a.date < b.date ? 1 : -1))
+
         const { slug } = page.params
         const index = posts.findIndex((post) => slug === post.slug)
+
         if (index === -1) {
-            console.log('returning 404')
             return {
                 status: 404,
+                error: new Error('Page not found'),
             }
         }
+
         const {
             title,
             date,
@@ -27,9 +30,9 @@
             description,
             category,
         } = posts[index]
-        // next/previous posts
         const next = posts[index - 1]
         const previous = posts[index + 1]
+
         return {
             props: {
                 title,
@@ -110,7 +113,7 @@
         line-height: 1.2em;
     }
     article {
-        max-width: 700px;
+        max-width: 560px;
         margin: 0 auto;
     }
     nav {
@@ -128,7 +131,8 @@
         margin-right: var(--s0);
     }
     p {
-        font-size: 1.1em;
+        font-size: 1.5em;
+        font-weight: 300;
     }
     .right {
         text-align: right;
