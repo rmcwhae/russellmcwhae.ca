@@ -16,7 +16,7 @@ macOS all the way!
 ### Editor and Terminal
 
 -   [VS Code](https://code.visualstudio.com/) with the fabulous [JetBrains Mono](https://www.jetbrains.com/lp/mono/) typeface.
--   Previously, I used [Coda 2](https://panic.com/coda/) for quite a few years. I’m excited to see what Panic does with [Nova](https://panic.com/nova/).
+-   Previously, I used [Coda 2](https://panic.com/coda/) for quite a few years.
 -   [Spaceship ZSH](https://denysdovhan.com/spaceship-prompt/).
 -   Locally installed Apache, PHP, and MariaDB. See the [excellent tutorial](https://getgrav.org/blog/macos-catalina-apache-multiple-php-versions) on the Grav blog for setup instructions. Thanks to the use of [Homebrew](https://brew.sh/), this setup no longer breaks during major macOS upgrades (where files like `httpd.conf` and `php.ini` were frequently overwritten, requiring a trip into Time Machine). [Docker](https://www.docker.com/) has effectively make this setup obsolete; however, I’ve maintained this local AMP stack since 2007 across two MacBook Pros and countless OS upgrades, and it’s fun to pretend to be a sysadmin.
 

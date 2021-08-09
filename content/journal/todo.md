@@ -7,11 +7,10 @@ draft: 1
 category: TODO
 ---
 
--   Verify ~~footnotes~~, links to PDFs and `photos/\*`, ~~images~~, ~~anchors in journal entries~~
+-   Verify `photos/\*` links in journal entries
 -   Styles: nested blockquotes, journal headline widow prevention?
--   Update ~~uses~~, about (about with resume, skills)
+-   Update about (about with resume, skills)
 -   Book Reading list page (linked from about)
--   Journal 404 handling
 -   Build <category> page for journal entries; journal hero images?
 -   Photos endpoint with dir listing, individual gallery view
 -   Photo gallery breadcrumbs
