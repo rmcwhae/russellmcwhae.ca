@@ -57,8 +57,8 @@ function slug() {
 function customizeTOC(toc) {
     const isEmpty = !find(toc, (node) => node.type === 'text' && !!node.value)
     const minHeaders = 3
-    
-    if (isEmpty || toc.children[0].children.length <= minHeaders) {
+
+    if (isEmpty || toc.children[0].children.length < minHeaders) {
         return false
     }
 
