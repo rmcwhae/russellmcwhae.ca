@@ -101,8 +101,8 @@
 <style>
     .sub {
         font-size: 0.8em;
-        margin-top: var(--s-2);
-        margin-bottom: var(--s-2);
+        margin-top: var(--s-1);
+        margin-bottom: var(--s-1);
     }
     header {
         /* padding-bottom: var(--s0); */
@@ -111,6 +111,7 @@
     h1 {
         font-size: 3em;
         line-height: 1.2em;
+        margin: 0 0 var(--s-1);
     }
     article {
         max-width: 560px;
@@ -133,6 +134,9 @@
     p {
         font-size: 1.5em;
         font-weight: 300;
+        margin: 0;
+        padding-bottom: var(--s-1);
+        border-bottom: 1px solid var(--light-grey);
     }
     .right {
         text-align: right;
