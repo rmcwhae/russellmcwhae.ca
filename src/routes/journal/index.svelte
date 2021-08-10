@@ -56,9 +56,14 @@
     h2 {
         font-size: 1.6em;
         line-height: 1.2em;
+        margin-bottom: 0;
     }
     h2 a {
         text-decoration: none;
+    }
+    .sub {
+        margin-top: var(--s-1);
+        margin-bottom: var(--s-1);
     }
     section {
         border-top: 1px solid var(--light-grey);
@@ -73,14 +78,7 @@
     }
     p {
         font-size: 1.1em;
-        margin-bottom: 0;
-    }
-    .flex {
-        display: flex;
-    }
-    .flex > * {
-        flex-grow: 1;
-        max-width: 50%;
+        margin: 0;
     }
     .archive {
         /* Define the element as a grid container */
