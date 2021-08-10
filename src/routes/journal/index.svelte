@@ -24,6 +24,12 @@
     export let posts
 </script>
 
+<!-- <p>
+    Writing is my way of making sense of things, both by exploring subjects from
+    many different angles, and by discussing the ideas of others who have
+    wrestled with similar questions. I hope you’ll join me for a glimpse into my
+    head.
+</p> -->
 <!-- <div class="flex"> -->
 <div class="archive">
     {#each posts as { slug, title, description, date, readingTime, category }}
@@ -32,38 +38,32 @@
             <h2>
                 <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
             </h2>
-            <div class="uppercase grey sub">
-                <Date {date} />
-                &middot;
-                <span>{category}</span>
-                &middot;
-                <span>{readingTime.text}</span>
+            <div class="ml">
+                <div class="uppercase grey sub">
+                    <Date {date} />
+                    &middot;
+                    <span>{category}</span>
+                    &middot;
+                    <span>{readingTime.text}</span>
+                </div>
+                {#if description}
+                    <p>{description}</p>
+                {/if}
             </div>
-            {#if description}
-                <p>{description}</p>
-            {/if}
         </section>
     {/each}
 </div>
-<!-- <p>
-        Welcome to my online journal. This is a collection of infrequently
-        published, generally long-winded thoughts on topics that are important
-        to me. In publishing on such a seldom basis, my aim is to prevent
-        information overload and instead provide concise,
-        polished-until-they-shine works that remain relevant beyond staying at
-        the top of a news feed for a few days. Writing is my way of making sense
-        of things, both by exploring subjects from many different angles, and by
-        discussing the ideas of others who have wrestled with similar questions.
-        I hope you’ll join me for a glimpse into my head.
-    </p> -->
 
 <!-- </div> -->
 <style>
-    /* .box {
+    .box {
         background: var(--light-grey);
         height: 1px;
         width: 100%;
         margin-bottom: var(--s2);
+    }
+    /* .ml {
+        margin-left: var(--s1);
     } */
     h2 {
         font-size: 1.6em;
