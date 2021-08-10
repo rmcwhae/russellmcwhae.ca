@@ -59,6 +59,9 @@
 </nav>
 
 <style>
+    nav {
+        color: var(--high-contrast-color);
+    }
     ul {
         margin-top: var(--s4);
         margin-bottom: var(--s4);
@@ -72,12 +75,14 @@
         display: block;
     }
     a {
-        color: var(--text-color);
+        color: var(--high-contrast-color);
         transition: all 0.17s;
     }
     [aria-current] {
         /* font-weight: 700; */
-        color: var(--medium-grey);
+        text-decoration: underline;
+        /* border-left: 5px solid var(--high-contrast-color); */
+        /* margin-left: -5px; */
     }
     a:hover {
         /* color: var(--medium-grey); */
