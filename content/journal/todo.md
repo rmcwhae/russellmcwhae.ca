@@ -12,6 +12,6 @@ category: TODO
 -   Update about (about with resume, skills)
 -   Book Reading list page (linked from about)
 -   Build <category> page for journal entries; journal hero images?
--   Photos endpoint with dir listing, individual gallery view
+-   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
