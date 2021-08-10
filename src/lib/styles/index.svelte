@@ -36,6 +36,11 @@
     a {
         color: var(--high-contrast-color);
     }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
     @media (prefers-color-scheme: dark) {
         body {
             --background-color: black;
@@ -76,7 +81,7 @@
     .toc-container {
         margin-left: 620px;
         position: fixed;
-        top: 185px;
+        top: var(--s4);
     }
     nav.toc {
         padding-bottom: var(--s-2);
