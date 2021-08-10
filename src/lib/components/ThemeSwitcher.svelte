@@ -44,16 +44,16 @@
 
 <style>
     .toggle-wrapper {
-        width: 50px;
+        width: 44px;
         display: block;
         --transition: var(--duration) ease;
     }
 
     .toggle {
-        height: 24px;
-        width: 50px;
-        color: var(--text-color);
-        border: 1px solid var(--text-color);
+        height: 22px;
+        width: 44px;
+        color: var(--high-contrast-color);
+        border: 1px solid var(--high-contrast-color);
         border-radius: 40px;
         padding: 2px;
         position: relative;
@@ -64,10 +64,10 @@
     .toggle::before {
         content: '';
         display: block;
-        height: 18px;
-        width: 18px;
+        height: 16px;
+        width: 16px;
         border-radius: 30px;
-        background: var(--text-color);
+        background: var(--high-contrast-color);
         position: absolute;
         z-index: 2;
         transform: translate(0);
@@ -75,7 +75,7 @@
     }
 
     .toggle.enabled::before {
-        transform: translateX(26px);
+        transform: translateX(22px);
     }
 
     .toggle input {
@@ -93,7 +93,7 @@
     }
 
     :global(.toggle .icons svg) {
-        fill: var(--text-color);
+        fill: var(--high-contrast-color);
         height: 18px;
         width: 18px;
         z-index: 0;
