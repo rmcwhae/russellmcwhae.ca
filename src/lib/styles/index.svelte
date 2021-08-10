@@ -71,6 +71,9 @@
     .grey {
         /* color: var(--medium-grey); */
     }
+    article img {
+        max-width: 100%;
+    }
     .uppercase,
     article strong {
         text-transform: uppercase;
