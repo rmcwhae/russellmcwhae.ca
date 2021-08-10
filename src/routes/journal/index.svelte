@@ -74,7 +74,6 @@
     }
     p {
         font-size: 1.3rem;
-        font-weight: 300;
         margin: 0;
     }
     .archive {

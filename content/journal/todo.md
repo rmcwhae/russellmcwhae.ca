@@ -8,7 +8,7 @@ category: TODO
 ---
 
 -   Verify `photos/\*` links in journal entries
--   Styles: nested blockquotes, journal headline widow prevention?
+-   Styles: journal headline widow prevention?
 -   Update about (about with resume, skills)
 -   Book Reading list page (linked from about)
 -   Build <category> page for journal entries; journal hero images?

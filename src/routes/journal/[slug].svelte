@@ -133,7 +133,6 @@
     }
     p {
         font-size: 1.3rem;
-        font-weight: 300;
         margin: 0;
         padding-bottom: var(--s-1);
         border-bottom: 1px solid var(--light-grey);
