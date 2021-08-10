@@ -30,11 +30,9 @@
     wrestled with similar questions. I hope you’ll join me for a glimpse into my
     head.
 </p> -->
-<!-- <div class="flex"> -->
 <div class="archive">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>
-            <div class="box" />
             <h2>
                 <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
             </h2>
@@ -54,17 +52,7 @@
     {/each}
 </div>
 
-<!-- </div> -->
 <style>
-    .box {
-        background: var(--light-grey);
-        height: 1px;
-        width: 100%;
-        margin-bottom: var(--s2);
-    }
-    /* .ml {
-        margin-left: var(--s1);
-    } */
     h2 {
         font-size: 1.6em;
         line-height: 1.2em;
@@ -73,15 +61,19 @@
         text-decoration: none;
     }
     section {
+        border-top: 1px solid var(--light-grey);
         /* margin: var(--s2) 0; */
+    }
+    .archive {
+        padding-bottom: var(--s1);
+        border-bottom: 1px solid var(--light-grey);
     }
     .sub {
         font-size: 0.8em;
-        margin-top: var(--s-2);
-        margin-bottom: var(--s-2);
     }
     p {
         font-size: 1.1em;
+        margin-bottom: 0;
     }
     .flex {
         display: flex;
@@ -96,6 +88,6 @@
         /* Auto-fit as many items on a row as possible without going under 180px */
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         /* A little spacing between articles */
-        grid-gap: var(--s2);
+        grid-gap: var(--s1);
     }
 </style>
