@@ -36,18 +36,16 @@
             <h2>
                 <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
             </h2>
-            <div class="ml">
-                <div class="uppercase grey sub">
-                    <Date {date} />
-                    &middot;
-                    <span>{category}</span>
-                    &middot;
-                    <span>{readingTime.text}</span>
-                </div>
-                {#if description}
-                    <p>{description}</p>
-                {/if}
+            <div class="uppercase grey sub">
+                <Date {date} />
+                &middot;
+                <span>{category}</span>
+                &middot;
+                <span>{readingTime.text}</span>
             </div>
+            {#if description}
+                <p>{description}</p>
+            {/if}
         </section>
     {/each}
 </div>
@@ -62,27 +60,26 @@
         text-decoration: none;
     }
     .sub {
-        margin-top: var(--s-1);
-        margin-bottom: var(--s-1);
+        font-size: 0.8rem;
+        margin-top: var(--s-2);
+        margin-bottom: var(--s-2);
     }
     section {
         border-top: 1px solid var(--light-grey);
+        padding-bottom: var(--s1);
         /* margin: var(--s2) 0; */
     }
     .archive {
-        padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
     }
-    .sub {
-        font-size: 0.8em;
-    }
     p {
-        font-size: 1.1em;
+        font-size: 1.3rem;
+        font-weight: 300;
         margin: 0;
     }
     .archive {
         /* Define the element as a grid container */
-        display: grid;
+        /* display: grid; */
         /* Auto-fit as many items on a row as possible without going under 180px */
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         /* A little spacing between articles */

@@ -61,6 +61,7 @@
 <style>
     nav {
         color: var(--high-contrast-color);
+        font-size: 1rem;
     }
     ul {
         list-style: none;

@@ -100,16 +100,16 @@
 
 <style>
     .sub {
-        font-size: 0.8em;
-        margin-top: var(--s-1);
-        margin-bottom: var(--s-1);
+        font-size: 0.8rem;
+        margin-top: var(--s-2);
+        margin-bottom: var(--s-2);
     }
     header {
         /* padding-bottom: var(--s0); */
         /* border-bottom: 1px solid var(--light-grey); */
     }
     h1 {
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 1.2em;
         margin: 0 0 var(--s-1);
     }
@@ -132,7 +132,7 @@
         margin-right: var(--s0);
     }
     p {
-        font-size: 1.5em;
+        font-size: 1.3rem;
         font-weight: 300;
         margin: 0;
         padding-bottom: var(--s-1);

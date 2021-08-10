@@ -31,7 +31,8 @@
         margin: 0;
         box-sizing: border-box;
         font-family: azo-sans-web, sans-serif;
-        font-size: 1em;
+        font-size: 1.125rem;
+        line-height: 1.625rem;
     }
     a {
         color: var(--high-contrast-color);
@@ -77,7 +78,7 @@
     .uppercase,
     article strong {
         text-transform: uppercase;
-        font-size: 0.85em;
+        font-size: 0.8rem;
         letter-spacing: 0.125em;
         font-weight: normal;
     }
