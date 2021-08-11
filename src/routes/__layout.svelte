@@ -23,7 +23,7 @@
     .content {
         margin: var(--s4) var(--s4) var(--s0) 250px;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
         main {
             margin: var(--s0);
         }
