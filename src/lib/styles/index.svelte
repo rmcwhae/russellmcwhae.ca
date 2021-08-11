@@ -83,6 +83,11 @@
         letter-spacing: 0.125em;
         font-weight: normal;
     }
+    .sub {
+        font-size: 0.8rem;
+        margin-top: var(--s-3);
+        margin-bottom: var(--s-3);
+    }
     .toc-container {
         /* margin-left: 620px;
         position: fixed;

@@ -59,11 +59,6 @@
     h2 a {
         text-decoration: none;
     }
-    .sub {
-        font-size: 0.8rem;
-        margin-top: var(--s-2);
-        margin-bottom: var(--s-2);
-    }
     section {
         border-top: 1px solid var(--light-grey);
         /* padding-bottom: var(--s1); */

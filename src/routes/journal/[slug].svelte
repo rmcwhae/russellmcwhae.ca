@@ -99,11 +99,6 @@
 </nav>
 
 <style>
-    .sub {
-        font-size: 0.8rem;
-        margin-top: var(--s-2);
-        margin-bottom: var(--s-2);
-    }
     header {
         margin-left: calc(-1 * var(--s4));
         margin-right: calc(-1 * var(--s4));
