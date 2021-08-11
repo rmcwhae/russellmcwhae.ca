@@ -90,4 +90,9 @@
     a:hover {
         /* color: var(--medium-grey); */
     }
+    /* @media (max-width: 1024px) {
+        nav {
+            margin: 0;
+        }
+    } */
 </style>

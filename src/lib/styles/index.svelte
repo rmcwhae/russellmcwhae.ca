@@ -66,15 +66,16 @@
         margin-left: -50vw;
         margin-right: -50vw;
     }
+    .restricted-width {
+        max-width: 560px;
+    }
     .footnote-backref {
         margin-left: var(--s-2);
     }
-    .grey {
-        /* color: var(--medium-grey); */
-    }
-    article img {
+    img {
         max-width: 100%;
     }
+
     .uppercase,
     article strong {
         text-transform: uppercase;

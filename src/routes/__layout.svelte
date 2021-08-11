@@ -7,29 +7,32 @@
 <Reset />
 <Styles />
 <main>
-    <div class="left">
+    <div class="sidebar">
         <Nav />
     </div>
-    <div class="right">
+    <div class="content">
         <slot />
     </div>
 </main>
 
 <style>
-    main {
-        display: flex;
-    }
-    .left {
-        min-width: 220px;
+    .sidebar {
+        margin: 0 0 var(--s0) var(--s4);
         position: fixed;
     }
-    .right {
-        margin-left: calc(220px + var(--s4));
+    .content {
+        margin: var(--s4) 0 0 250px;
     }
-    main div {
-        margin: var(--s4);
-    }
-    main .left {
-        margin-right: 0;
+    @media (max-width: 1024px) {
+        main {
+            margin: var(--s0);
+        }
+        .sidebar {
+            position: inherit;
+        }
+        .sidebar,
+        .content {
+            margin: 0;
+        }
     }
 </style>

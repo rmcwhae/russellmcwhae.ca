@@ -63,7 +63,7 @@
     export let previous
 </script>
 
-<article>
+<article class="restricted-width">
     <header>
         <h1>{title}</h1>
         <div class="uppercase grey sub">
@@ -104,17 +104,12 @@
         margin-top: var(--s-2);
         margin-bottom: var(--s-2);
     }
-    header {
-        /* padding-bottom: var(--s0); */
-        /* border-bottom: 1px solid var(--light-grey); */
-    }
     h1 {
         font-size: 2.5em;
         line-height: 1.2em;
         margin: 0 0 var(--s-1);
     }
     article {
-        max-width: 560px;
         margin: 0 auto;
     }
     nav {
