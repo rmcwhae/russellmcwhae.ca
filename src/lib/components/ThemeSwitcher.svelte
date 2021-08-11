@@ -98,4 +98,9 @@
         width: inherit;
         z-index: 0;
     }
+    @media screen and (max-width: 1023px) {
+        .toggle-wrapper {
+            margin: 0 auto;
+        }
+    }
 </style>
