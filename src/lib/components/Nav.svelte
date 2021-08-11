@@ -5,12 +5,11 @@
 
     let mobileMenuOpen = false
 
-    $: console.log('mobileMenuOpen', mobileMenuOpen)
-
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
         window.document.body.classList.toggle('overflow-hidden')
     }
+
     function hideMenu() {
         mobileMenuOpen = false
         window.document.body.classList.remove('overflow-hidden')
@@ -214,8 +213,6 @@
         .nav-toggle {
             display: block;
         }
-    }
-    @media (max-width: 1023px) {
         :global(#logo svg) {
             height: 21px !important; /* TODO be less lazy than using !important */
         }
