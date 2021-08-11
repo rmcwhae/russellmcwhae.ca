@@ -16,6 +16,7 @@
         --s5: calc(var(--s4) * var(--ratio));
 
         --background-color: white;
+        --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(88, 88, 88);
         --high-contrast-color: black;
         --light-grey: #ccc;
@@ -45,6 +46,8 @@
     @media (prefers-color-scheme: dark) {
         body {
             --background-color: black;
+            --background-color-transparent: rgba(0, 0, 0, 0.8);
+
             --high-contrast-color: white;
             --text-color: rgb(172, 172, 172);
             --light-grey: #333;
@@ -53,10 +56,14 @@
     }
     html body[data-theme='light'] {
         --background-color: white;
+        --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(88, 88, 88);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
+    }
+    .overflow-hidden {
+        overflow: hidden;
     }
     .full-width {
         width: 100vw;

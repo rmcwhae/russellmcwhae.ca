@@ -19,16 +19,19 @@
 
 <nav>
     <div id="logo" class:active={mobileMenuOpen}>
-        <a href="/" aria-current={$page.path === '/' ? 'page' : undefined}
-            ><Logo /></a
+        <a
+            href="/"
+            aria-current={$page.path === '/' ? 'page' : undefined}
+            on:click={hideMenu}><Logo /></a
         >
     </div>
-    <div class="nav-menu" class:active={mobileMenuOpen} on:click={hideMenu}>
+    <div class="nav-menu" class:active={mobileMenuOpen}>
         <ul>
             <li>
                 <a
                     sveltekit:prefetch
                     href="/photography"
+                    on:click={hideMenu}
                     aria-current={$page.path === '/photography'
                         ? 'page'
                         : undefined}>Photography</a
@@ -38,6 +41,7 @@
                 <a
                     sveltekit:prefetch
                     href="/calendars"
+                    on:click={hideMenu}
                     aria-current={$page.path === '/calendars'
                         ? 'page'
                         : undefined}>Calendars</a
@@ -46,6 +50,7 @@
             <li>
                 <a
                     sveltekit:prefetch
+                    on:click={hideMenu}
                     href="/projects"
                     aria-current={$page.path === '/projects'
                         ? 'page'
@@ -55,6 +60,7 @@
             <li>
                 <a
                     sveltekit:prefetch
+                    on:click={hideMenu}
                     href="/journal"
                     aria-current={$page.path === '/journal'
                         ? 'page'
@@ -64,6 +70,7 @@
             <li>
                 <a
                     sveltekit:prefetch
+                    on:click={hideMenu}
                     href="/about"
                     aria-current={$page.path === '/about' ? 'page' : undefined}
                     >About</a
@@ -78,7 +85,7 @@
         <span class="icon-bar" />
     </div>
 </nav>
-<div class="nav-overlay" on:click={toggle} class:active={mobileMenuOpen} />
+<div class="nav-overlay" class:active={mobileMenuOpen} />
 
 <style>
     nav {
@@ -145,7 +152,7 @@
         bottom: 0;
         left: 0;
         background-color: var(--background-color);
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: var(--background-color-transparent);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         z-index: 1;
@@ -185,6 +192,7 @@
         }
         .nav-menu {
             position: absolute;
+            left: 0;
             width: 100%;
             height: 0;
             padding: 0;
