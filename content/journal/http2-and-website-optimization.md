@@ -36,7 +36,7 @@ Cache-Control: no-cache
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_14\_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36
 DNT: 1
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,\*/\*;q=0.8,application/signed-exchange;v=b3
+Accept: text/html,application/xhtml+xml,…
 Accept-Encoding: gzip, deflate
 Accept-Language: en-US,en;q=0.9,fr;q=0.8
 ```
