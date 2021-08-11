@@ -95,8 +95,8 @@
     ul {
         list-style: none;
         padding-left: 0;
-        /* margin-top: var(--s4); */
-        /* margin-bottom: var(--s4); */
+        margin-top: var(--s4);
+        margin-bottom: var(--s4);
     }
     /* li:not(:last-child) {
         margin-right: var(--s0);
@@ -108,7 +108,6 @@
     }
     a {
         color: var(--high-contrast-color);
-        transition: all 0.17s;
     }
     [aria-current] {
         /* font-weight: 700; */
@@ -133,7 +132,7 @@
         width: 26px;
         height: 2px;
         background-color: var(--high-contrast-color);
-        transition-duration: 0.3s;
+        transition-duration: var(--duration);
     }
     .icon-bar:nth-child(1) {
         top: 20px;
@@ -157,7 +156,6 @@
         z-index: 1;
         opacity: 0;
         visibility: hidden;
-        transition-duration: var(--duration);
     }
     .nav-overlay.active {
         opacity: 1;
@@ -184,6 +182,10 @@
     @media screen and (max-width: 1023px) {
         nav {
             height: 50px;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: var(--s0);
         }
         #logo {
             position: relative;
