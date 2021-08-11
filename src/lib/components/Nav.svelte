@@ -96,8 +96,8 @@
     ul {
         list-style: none;
         padding-left: 0;
-        margin-top: var(--s4);
-        margin-bottom: var(--s4);
+        /* margin-top: var(--s4); */
+        /* margin-bottom: var(--s4); */
     }
     /* li:not(:last-child) {
         margin-right: var(--s0);
