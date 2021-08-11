@@ -107,13 +107,10 @@
         /* border-top: 1px solid var(--light-grey); */
     }
     nav.toc li {
-        margin-top: var(--s-2);
+        margin-top: var(--s-5);
     }
     nav.toc a {
         text-decoration: none;
-    }
-    nav.toc .toc-level-2 {
-        margin-left: var(--s2);
     }
     article > * + * {
         margin-top: var(--s2);

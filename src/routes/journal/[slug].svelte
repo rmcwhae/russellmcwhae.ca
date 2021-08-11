@@ -100,8 +100,8 @@
 
 <style>
     header {
-        margin-left: calc(-1 * var(--s4));
-        margin-right: calc(-1 * var(--s4));
+        margin-left: calc(-1 * var(--s3));
+        margin-right: calc(-1 * var(--s3));
     }
     @media (max-width: 1200px) {
         header {
