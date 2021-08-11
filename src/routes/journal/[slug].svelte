@@ -112,7 +112,7 @@
     h1 {
         font-size: 2.5em;
         line-height: 1.2em;
-        margin: 0 0 var(--s-1);
+        margin: 0;
     }
     article {
         margin: 0 auto;
