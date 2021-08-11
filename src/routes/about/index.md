@@ -20,24 +20,19 @@ Photography and design are complementary skills. Design principles provide an ex
 
 I completed an undergraduate degree in civil engineering, graduating from the University of Alberta in 2011, and worked as a structural engineer-in-training for just over three years.
 
-In early 2019, I earned an MSc. in biomedical engineering from the University of Calgary. My [thesis](/pdf/ucalgary_2019_mcwhae_russell.pdf) (8 MB PDF; 31k words), “Intercellular Gap Junction Communication in the Bovine Annulus Fibrosus,” investigated cell-cell signaling in the intervertebral disc.
-
+In early 2019, I earned an MSc. in biomedical engineering from the University of Calgary. My thesis, “[Intercellular Gap Junction Communication in the Bovine Annulus Fibrosus](https://prism.ucalgary.ca/handle/1880/109915),” investigated cell-cell signaling in the intervertebral disc.
 Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.lighthouselabs.ca) web development boot camp course from July to October 2019. I have now been working as a web developer, specializing in front-end work.
 
 View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [LinkedIn profile](https://www.linkedin.com/in/russellmcwhae/).
-
-## About this Site
-
-This latest incarnation of my personal website was built with SvelteKit. It is statically generated and deployed to a shared host.
 
 ## Tools I use
 
 See [the tools](/uses) I use.
 
-## Contact Me
+<!-- ## Contact Me -->
 
-Email [my-first-name]@russellmcwhae.ca.
+<!-- Email [my-first-name]@russellmcwhae.ca. -->
 
-## Elsewhere
+<!-- ## Elsewhere -->
 
-<Elsewhere />
+<!-- <Elsewhere /> -->
