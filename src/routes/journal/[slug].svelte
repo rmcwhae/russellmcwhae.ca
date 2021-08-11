@@ -127,7 +127,7 @@
         margin-right: var(--s0);
     }
     p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin: 0;
         padding-bottom: var(--s-1);
         border-bottom: 1px solid var(--light-grey);

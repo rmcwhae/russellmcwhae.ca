@@ -67,7 +67,7 @@
         margin-right: -50vw;
     }
     .restricted-width {
-        max-width: 560px;
+        max-width: 580px;
     }
     .footnote-backref {
         margin-left: var(--s-2);
@@ -84,12 +84,12 @@
         font-weight: normal;
     }
     .toc-container {
-        margin-left: 620px;
+        /* margin-left: 620px;
         position: fixed;
-        top: var(--s4);
+        top: var(--s4); */
     }
     nav.toc {
-        padding-bottom: var(--s-2);
+        /* padding-bottom: var(--s-2); */
         /* padding-top: var(--s2); */
         /* border-bottom: 1px solid var(--light-grey); */
         /* border-top: 1px solid var(--light-grey); */
