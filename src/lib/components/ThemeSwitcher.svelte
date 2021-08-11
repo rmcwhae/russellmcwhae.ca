@@ -16,8 +16,10 @@
             userTheme.set($userTheme) // to trigger side effect
         }
     })
+
     $: nextTheme = $userTheme === 'dark' ? 'light' : 'dark'
-    $: changeTheme = () => {
+
+    function changeTheme() {
         userTheme.set(nextTheme)
     }
 </script>
