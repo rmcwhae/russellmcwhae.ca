@@ -65,7 +65,7 @@
         /* margin: var(--s2) 0; */
     }
     p {
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
         margin: 0;
     }
     .archive {
