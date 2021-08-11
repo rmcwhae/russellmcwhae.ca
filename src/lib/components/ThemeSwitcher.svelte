@@ -95,7 +95,7 @@
     :global(.toggle .icons svg) {
         fill: var(--high-contrast-color);
         height: 18px;
-        width: 18px;
+        width: inherit;
         z-index: 0;
     }
 </style>
