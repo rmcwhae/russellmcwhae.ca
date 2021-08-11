@@ -66,7 +66,7 @@
     }
     section {
         border-top: 1px solid var(--light-grey);
-        padding-bottom: var(--s1);
+        /* padding-bottom: var(--s1); */
         /* margin: var(--s2) 0; */
     }
     .archive {
