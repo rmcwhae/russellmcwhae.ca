@@ -104,6 +104,16 @@
         margin-top: var(--s-2);
         margin-bottom: var(--s-2);
     }
+    header {
+        margin-left: calc(-1 * var(--s4));
+        margin-right: calc(-1 * var(--s4));
+    }
+    @media (max-width: 1200px) {
+        header {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
     h1 {
         font-size: 2.5em;
         line-height: 1.2em;
