@@ -16,4 +16,4 @@ category: TODO
 -   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
--   Prevent bubbling of theme switcher button on mobile
+-   Landscape mobile menu
