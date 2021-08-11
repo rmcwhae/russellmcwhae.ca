@@ -70,7 +70,8 @@
         /* margin: var(--s2) 0; */
     }
     .archive {
-        border-bottom: 1px solid var(--light-grey);
+        /* border-bottom: 1px solid var(--light-grey); */
+        /* padding-bottom: var(--s1); */
     }
     p {
         font-size: 1.2rem;
