@@ -2,20 +2,20 @@
 title: That New-website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
-date: 2021-08-11
+date: 2021-08-12
 draft: 0
 category: Tech
 ---
 
-Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries) make it an ideal tool for a variety of web projects, such as this website.
+Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, such as this website.
+
+The previous version of this website, built in summer 2016, used a PHP back-end with jQuery for basic front-end interactivity. At the time, I described it as “a random patchwork of scripts cobbled together that somehow hasn’t exploded yet.” Now that I make my livelihood as a software developer, better code quality was certainly an objective of this rebuild.
 
 ## Design
 
 Design minimalism: no colour, like in the mtns black and white. Eye-searing light/dark mode changer
 
 ## Development
-
-The previous version of this website, built in summer 2016, used a PHP back-end with jQuery for basic front-end interactivity. At the time, I described it as “a random patchwork of scripts cobbled together that somehow hasn’t exploded yet.” Better code quality was certainly an objective of this rebuild.
 
 ### Notable Packages
 
