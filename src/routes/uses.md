@@ -1,5 +1,5 @@
 ---
-title: What I use
+title: What I Use
 layout: page
 ---
 

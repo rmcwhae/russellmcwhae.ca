@@ -21,4 +21,4 @@ View my [current résumé](/pdf/mcwhae_russell_resume.pdf), or check out my [Lin
 
 ## Tools I use
 
-See [the tools](/uses) I use.
+See “[What I Use](/uses)”.
