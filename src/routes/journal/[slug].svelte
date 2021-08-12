@@ -77,7 +77,7 @@
             <span>{readingTime.text}</span>
         </div>
         {#if description}
-            <p>{description}</p>
+            <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
     </header>
     <svelte:component this={component} />
