@@ -82,7 +82,9 @@
     img {
         max-width: 100%;
     }
-
+    article {
+        margin: 0 auto;
+    }
     .uppercase,
     article strong {
         text-transform: uppercase;
@@ -94,11 +96,6 @@
         font-size: 0.85rem;
         margin-top: var(--s-3);
         margin-bottom: var(--s-3);
-    }
-    .toc-container {
-        /* margin-left: 620px;
-        position: fixed;
-        top: var(--s4); */
     }
     nav.toc {
         /* padding-bottom: var(--s-2); */
@@ -120,7 +117,7 @@
         margin-right: var(--s2);
         font-size: 0.9em;
     }
-    pre > code {
+    pre code {
         white-space: pre-wrap;
     }
     h1 a,
@@ -139,6 +136,11 @@
     h5,
     h6 {
         color: var(--high-contrast-color);
+    }
+    h1 {
+        font-size: 2.5em;
+        line-height: 1.2em;
+        margin: 0;
     }
     h3 {
         font-size: 1rem;

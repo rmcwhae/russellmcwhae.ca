@@ -99,7 +99,7 @@
 </article>
 
 <style>
-    header {
+    /* header {
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3));
     }
@@ -108,15 +108,7 @@
             margin-left: 0;
             margin-right: 0;
         }
-    }
-    h1 {
-        font-size: 2.5em;
-        line-height: 1.2em;
-        margin: 0;
-    }
-    article {
-        margin: 0 auto;
-    }
+    } */
     nav {
         display: flex;
         justify-content: space-between;
