@@ -7,6 +7,10 @@ draft: 0
 category: Reflection
 ---
 
+## Table of Contents
+
+## Introduction
+
 In the dark 2011 film _We Need to Talk About Kevin_, titular Kevin, unwanted by his mother Eva since birth, dedicates his existence to her sadistic torment. In [his review](http://www.rogerebert.com/reviews/we-need-to-talk-about-kevin-2012), Roger Ebert describes Kevin as “a clever little monster who glares at Eva hurtfully, soils his pants deliberately and drives her into such a fury that she breaks his arm. In any other movie, that would be child abuse. In this one, it is Kevin’s triumph.” Culminating in a murderous rampage at his home and high school that comes at the extreme cost of his own freedom, Kevin scores the ultimate victory against his mother: she becomes a widowed, disgraced social pariah for having raised such a twisted, savage son. In the final scene, Kevin is anxiously awaiting his transfer to an adult maximum-security prison, when Eva asks him, “Why?” He responds, “I used to think I knew. Now I’m not so sure.”
 
 What had been a hardened, resolute desire to inflict maximum damage upon his mother at all costs was no longer so ironclad. It began to show the first signs of softening. Recently, my own hardened, cynical attitude toward faith—and a good number of other things—similarly underwent its own softening process.

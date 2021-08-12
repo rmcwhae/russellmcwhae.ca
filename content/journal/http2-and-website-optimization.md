@@ -13,6 +13,9 @@ category: Tech
     import Devtools from '$static/journal-images/http2-devtools.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 
+## Table of Contents
+## Introduction
+
 Dabbling in web design in the late 2000s as mobile devices were just starting to enter the digital landscape, I developed an appreciation for website optimization. At the time, optimization generally meant shrinking and compressing images (especially with data-limited mobile plans), minimizing page and script file-sizes, and a frequent tip that came up — and [still comes up](https://blog.hubspot.com/marketing/reduce-http-requests) — was that _you should minimize the number of HTTP requests (network requests sent between your browser and a webserver) your page makes._ This meant serving ideally no more than one stylesheet, one JavaScript file (i.e., multiple files concatenated together), and one image sprite (see [CSS Sprites](https://css-tricks.com/css-sprites/)) with your web page to minimize its loading time.
 
 The underlying theory was that over the then-current HTTP/1.1 protocol, each additional HTTP request would add latency and thus page-loading time. Multiple separate files would take longer to download than an equivalent concatenated file.

@@ -17,6 +17,10 @@ category: Tech
 
 <img srcset={Logo} type="image/webp" alt="Ruby on Rails"/>
 
+## Table of Contents
+
+## Introduction
+
 Back-end web developers have an abundant — perhaps overwhelming — selection of server-side frameworks to choose from in 2019: [Express](https://expressjs.com/) on [Node.js](https://nodejs.org/en/); [Django](https://www.djangoproject.com/) on [Python](https://www.python.org/); [Ruby on Rails](https://rubyonrails.org/); [Laravel](https://laravel.com/), [CodeIgniter](https://codeigniter.com/), or [Symfony](https://symfony.com/) on [PHP](https://www.php.net/); and [Spring](https://spring.io/) on [Java](https://www.java.com); among many more. Such server-side frameworks are intended to accelerate the creation of web applications, usually by providing helper libraries that minimize the coding required in development.
 
 Interestingly, Ruby on Rails developers [often rank](https://insights.stackoverflow.com/survey/2019#top-paying-technologies) among the top earners of web developers, despite the relatively low overall popularity of Rails servers. Rails is open source — as is the much [more popular](https://www.similartech.com/compare/php-vs-ruby-on-rails) PHP — yet prides itself on a [unique doctrine](https://rubyonrails.org/doctrine/) that appears to attract fastidious developers.

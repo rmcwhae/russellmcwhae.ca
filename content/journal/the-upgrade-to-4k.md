@@ -17,6 +17,10 @@ category: Tech
 
 <img srcset={ScreenAndKeyboard} type="image/webp" alt="LG 27UD68-W"/>
 
+## Table of Contents
+
+## Introduction
+
 My very first smartphone was the iPhone 4, which I purchased in September 2010. I had held out from owning previous generations of the iPhone as the original iPhone was never officially available in Canada, and the iPhones 3G and 3GS were largely iterative, under-the-hood improvements over their respective predecessors. The iPhone 4 introduced a breakthrough new technology previously unseen in any Apple product: the Retina display, a display with twice as many pixels in each linear direction (640 x 960 vs. 320 x 480) on the same-size 3.5-inch screen as before. This quadrupled the total number of pixels within the same physical area, resulting in far sharper text and graphics. Individual pixels could not be seen by the naked eye.
 
 This was to be the way of the future. Gradually, advances in hardware engineering and reductions in manufacturing costs allowed larger Retina displays to be developed: the iPad got a Retina display in March 2012, and the first 15-inch Retina MacBook Pro was announced in June 2012. An Apple-sanctioned, desktop-size Retina display wasn’t to arrive until October 2014 with the 27-inch 5K iMac, though support for external 4K monitors had already begun with the second-generation 15-inch Retina MacBook Pro in the fall of 2013 (“Late 2013”). Was this to finally be the age of desktop Retina displays?
