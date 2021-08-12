@@ -82,7 +82,9 @@ Back to driver installation—and the next round of complications. With a vanill
 
 Optical drive excised, Windows allowed AMD display drivers to be installed without getting stuck. However, upon reboot, a “RadeonSoftware.exe - Bad Image” error came up:
 
-> C:\Windows\SYSTEM32\igdrcl64.dll is either not designed to run on Windows or it contains an error. Try installing the program again using the original installation media or contact your system administrator or the software vendor for support. Error status 0xc000012f.
+```
+C:\Windows\SYSTEM32\igdrcl64.dll is either not designed to run on Windows or it contains an error. Try installing the program again using the original installation media or contact your system administrator or the software vendor for support. Error status 0xc000012f.
+```
 
 Everything still apparently worked, but error messages usually happen for a reason. Some additional Googling pointed toward the integrated graphics chips on the processor. I had long since disabled it as the PC has always had a discrete GPU. Turning it back on in BIOS/UEFI quashed the error message. Because Windows.
 
