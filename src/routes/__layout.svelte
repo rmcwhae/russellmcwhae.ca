@@ -21,7 +21,7 @@
         position: fixed;
     }
     .content {
-        margin: var(--s4) var(--s4) var(--s0) 250px;
+        margin: var(--s4) var(--s4) var(--s0) 300px;
     }
     @media (max-width: 1023px) {
         main {
