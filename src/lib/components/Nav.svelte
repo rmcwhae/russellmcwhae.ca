@@ -89,7 +89,7 @@
 <style>
     nav {
         color: var(--high-contrast-color);
-        font-size: 1rem;
+        /* font-size: 1rem; */
         z-index: 2;
     }
     ul {

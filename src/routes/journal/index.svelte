@@ -52,7 +52,7 @@
 
 <style>
     h2 {
-        font-size: 1.6em;
+        font-size: 1.5em;
         line-height: 1.2em;
         margin-bottom: 0;
     }

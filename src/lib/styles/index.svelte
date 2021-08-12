@@ -17,7 +17,7 @@
 
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(88, 88, 88);
+        --text-color: rgb(119, 119, 119);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
@@ -31,7 +31,7 @@
         transition: background-color ease var(--duration);
         margin: 0;
         box-sizing: border-box;
-        font-family: azo-sans-web, sans-serif;
+        font-family: source-sans-3, azo-sans-web, sans-serif;
         font-size: 1.125rem;
         line-height: 1.625rem;
     }
@@ -57,7 +57,7 @@
     html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(88, 88, 88);
+        --text-color: rgb(119, 119, 119);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
@@ -74,7 +74,7 @@
         margin-right: -50vw;
     }
     .restricted-width {
-        max-width: 580px;
+        max-width: 600px;
     }
     .footnote-backref {
         margin-left: var(--s-2);
@@ -86,12 +86,12 @@
     .uppercase,
     article strong {
         text-transform: uppercase;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         letter-spacing: 0.125em;
         font-weight: normal;
     }
     .sub {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         margin-top: var(--s-3);
         margin-bottom: var(--s-3);
     }
@@ -139,6 +139,11 @@
     h5,
     h6 {
         color: var(--high-contrast-color);
+    }
+    h3 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
     article > hr,
     div > hr {
