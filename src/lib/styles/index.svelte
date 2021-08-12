@@ -115,9 +115,10 @@
     article > * + * {
         margin-top: var(--s2);
     }
-    article > blockquote {
-        margin-left: var(--s2);
-        margin-right: var(--s2);
+    article blockquote,
+    article pre {
+        margin-left: var(--s1);
+        margin-right: var(--s1);
         font-size: 0.9em;
     }
     pre code {
