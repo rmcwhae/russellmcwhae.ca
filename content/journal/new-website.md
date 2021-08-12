@@ -31,7 +31,9 @@ As for typography, simplicity again prevails: all fonts are different weights of
 
 ## Development
 
-As mentioned, this website is built using SvelteKit, including a static export. Journal entries are written in Markdown, so migrating these from the old PHP back-end involved pasting all the Markdown files into this project—it doesn’t get much simpler than that!
+As mentioned, this website is built using SvelteKit. Under the hood, SvelteKit uses [Vite](https://vitejs.dev/) for bundling, which was fabulously quick and reliable. Hot-module replacement worked brilliantly.
+
+My journal entries are written in Markdown, so transferring these from the old PHP back-end involved simply pasting all the Markdown files into this project—data migration doesn’t get much simpler than that!
 
 ### Browser Support
 
@@ -56,4 +58,4 @@ I likely could get away with the free tier on Heroku or another cloud service su
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I’ll echo the consensus that seems to be developing around SvelteKit: that it offers a terrific developer experience, building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
+This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I’ll echo the consensus that seems to be developing around SvelteKit (pun intended): that it offers a terrific developer experience, building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
