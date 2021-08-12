@@ -17,3 +17,6 @@ category: TODO
 -   Make repo public once deployed
 -   Landscape mobile menu, mobile fonts
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
+-   Performance testing
+-   Submit for review
+-   Clean Adobe WebFonts once done
