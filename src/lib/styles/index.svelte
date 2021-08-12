@@ -97,6 +97,9 @@
         margin-top: var(--s-3);
         margin-bottom: var(--s-3);
     }
+    .nowrap {
+        white-space: nowrap;
+    }
     nav.toc {
         /* padding-bottom: var(--s-2); */
         /* padding-top: var(--s2); */
@@ -139,7 +142,7 @@
     }
     h1 {
         font-size: 2.5em;
-        line-height: 1.2em;
+        line-height: 1em;
         margin: 0;
     }
     h3 {

@@ -52,6 +52,7 @@
     import Date from '$lib/components/Date.svelte'
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
+    import { preventLastTwoWordWrap } from '$lib/utils/string'
 
     export let title
     export let date
@@ -65,7 +66,7 @@
 
 <article class="restricted-width">
     <header>
-        <h1>{title}</h1>
+        <h1>{@html preventLastTwoWordWrap(title)}</h1>
         <div class="uppercase grey sub">
             <Date {date} />
             &middot;
