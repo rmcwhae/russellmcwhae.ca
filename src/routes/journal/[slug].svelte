@@ -80,23 +80,23 @@
         {/if}
     </header>
     <svelte:component this={component} />
+    <nav>
+        {#if previous}
+            <a href={'/journal/' + previous.slug}>
+                <LeftChevron />
+                {previous.title}</a
+            >
+        {:else}
+            <div />
+        {/if}
+        {#if next}
+            <a href={'/journal/' + next.slug} class="right"
+                >{next.title}
+                <RightChevron />
+            </a>
+        {/if}
+    </nav>
 </article>
-<nav>
-    {#if previous}
-        <a href={'/journal/' + previous.slug}>
-            <LeftChevron />
-            {previous.title}</a
-        >
-    {:else}
-        <div />
-    {/if}
-    {#if next}
-        <a href={'/journal/' + next.slug} class="right"
-            >{next.title}
-            <RightChevron />
-        </a>
-    {/if}
-</nav>
 
 <style>
     header {
