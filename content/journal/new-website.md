@@ -1,5 +1,5 @@
 ---
-title: That New-website Look
+title: That New-Website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
 date: 2021-08-12
@@ -7,19 +7,37 @@ draft: 0
 category: Tech
 ---
 
-Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, such as this website.
+<script>
+import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'
+  </script>
 
-The previous version of this website, built in summer 2016, used a PHP back-end with jQuery for basic front-end interactivity. At the time, I described it as “a random patchwork of scripts cobbled together that somehow hasn’t exploded yet.” Now that I make my livelihood as a software developer, better code quality was certainly an objective of this rebuild.
+Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, especially relatively simple websites such as this one.
+
+The previous version of this website, built in summer 2016, used a PHP back-end with jQuery for basic front-end interactivity. At the time, I described it as “a random patchwork of scripts cobbled together that somehow hasn’t exploded yet.” Five years later, I now make my livelihood as a software developer, so better code quality was certainly an objective of this rebuild.
+
+This post is a quick look at how I designed and developed this latest incarnation of my personal website.
 
 ## Design
 
-Design minimalism: no colour, like in the mtns black and white. Eye-searing light/dark mode changer
+My goal in redesigning this website was to keep it as simple as possible. Except for images, everything is black and white. I found no good reason to incorporate colour into the design and thus left it out. This high-contrast monochromatic colour scheme naturally symbolizes snow and rock in the mountains. In few other environments are things so often black and white.
+
+Depending on your device settings, you may be viewing this site in light or dark mode. This can be changed in the menu, or via this convenient button:
+
+<ThemeSwitcher />
+
+Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme. That, or it’s just bad UX, but I aint gonna change it.
+
+As for typography, simplicity again prevails: all fonts are different weights of a single typeface.
 
 ## Development
 
+As mentioned, this website is built using SvelteKit, including a static export. Journal entries are written in Markdown, so migrating these from the old PHP back-end involved pasting all the Markdown files into this project—it doesn’t get much simpler than that!
+
 ### Notable Packages
 
--   [MDSvex](https://mdsvex.pngwn.io/)
+The following packages were quite helpful in the development of this site:
+
+-   [mdsvex](https://mdsvex.pngwn.io/): for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
 -   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
 
 ### Deployment
@@ -34,6 +52,4 @@ I likely could get away with the free tier on Heroku or another cloud service su
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I‘ll echo the consenus that seems to be developing around SvelteKit: that it offers a terrific developer experience, building modern, speedy websites with minimal tinkering. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
-
-## Ideas
+This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I‘ll echo the consensus that seems to be developing around SvelteKit: that it offers a terrific developer experience, building modern, speedy websites with minimal tinkering. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
