@@ -1,5 +1,5 @@
 ---
-title: How to Minimize Your Cell-phone Bill
+title: How to Minimize Your Phone Bill
 description: Use less cellular data to both save money and become less attached to your phone.
 author: Russell McWhae
 date: 2019-10-28
