@@ -56,4 +56,4 @@ I likely could get away with the free tier on Heroku or another cloud service su
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I‘ll echo the consensus that seems to be developing around SvelteKit: that it offers a terrific developer experience, building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
+This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I’ll echo the consensus that seems to be developing around SvelteKit: that it offers a terrific developer experience, building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
