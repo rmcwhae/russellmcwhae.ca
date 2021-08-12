@@ -7,6 +7,10 @@ import remarkToc from 'remark-toc'
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
+    layout: {
+        page: './src/lib/components/Page.svelte',
+    },
+
     smartypants: {
         dashes: 'oldschool',
     },
