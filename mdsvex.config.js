@@ -1,8 +1,8 @@
 import path from 'path'
 import remarkfootnotes from 'remark-footnotes'
 import readingTime from 'remark-reading-time'
-import autolink from 'rehype-autolink-headings'
 import remarkToc from 'remark-toc'
+import remarkSlug from 'remark-slug'
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
@@ -15,15 +15,14 @@ const config = {
         dashes: 'oldschool',
     },
 
-    remarkPlugins: [remarkToc, readingTime(), remarkfootnotes, slug],
-    rehypePlugins: [
-        [
-            autolink,
-            {
-                behavior: 'wrap',
-            },
-        ],
+    remarkPlugins: [
+        remarkToc,
+        remarkSlug,
+        readingTime(),
+        remarkfootnotes,
+        slug,
     ],
+    rehypePlugins: [],
 }
 
 export default config
