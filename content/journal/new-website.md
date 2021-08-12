@@ -33,6 +33,10 @@ As for typography, simplicity again prevails: all fonts are different weights of
 
 As mentioned, this website is built using SvelteKit, including a static export. Journal entries are written in Markdown, so migrating these from the old PHP back-end involved pasting all the Markdown files into this project—it doesn’t get much simpler than that!
 
+### Browser Support
+
+I haven‘t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then get a [real one](https://bestvpn.org/outdatedbrowser/en).
+
 ### Notable Packages
 
 The following packages were quite helpful in the development of this site:
