@@ -110,7 +110,8 @@
     a {
         color: var(--high-contrast-color);
     }
-    [aria-current] {
+    [aria-current],
+    a:hover {
         /* font-weight: 700; */
         text-decoration: underline;
         /* border-left: 5px solid var(--high-contrast-color); */
