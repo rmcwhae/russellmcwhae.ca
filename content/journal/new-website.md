@@ -27,6 +27,27 @@ Depending on your device settings, you may be viewing this site in light or dark
 
 Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme. That might be a bit of reach…kind of like when that bomber jug is a few inches beyond your full extension. I’ll stop now.
 
+For spacing within the layout, I implemented Every Layout’s [Modular scale](https://every-layout.dev/rudiments/modular-scale/), that defines harmonic root-level CSS variables:
+
+```
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+```
+
+Margins and padding can then be defined with values such as `var(--s0)` etc., thus hopefully promoting visual harmony in the layout.
+
 As for typography, simplicity again prevails: all fonts are different weights of a single typeface.
 
 ## Development
