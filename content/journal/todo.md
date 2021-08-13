@@ -21,3 +21,4 @@ category: TODO
 -   Submit for review?
 -   Calendars page
 -   Projects page
+-   Home page
