@@ -117,15 +117,9 @@
         margin-right: var(--s0);
     }
     p {
-        font-size: 1.6rem;
         margin: 0;
+        line-height: 1.2em;
         padding-bottom: var(--s2);
-    }
-    @media (max-width: 1023px) {
-        p {
-            font-size: 1em;
-            line-height: 1.2em;
-        }
     }
     .right {
         text-align: right;
