@@ -44,6 +44,14 @@
     a {
         color: var(--high-contrast-color);
     }
+    main a {
+        text-decoration: none;
+        box-shadow: inset 0 0 0 0 var(--light-grey);
+        transition: var(--duration);
+    }
+    main a:hover {
+        box-shadow: inset 0 -5px 0 0 var(--text-color);
+    }
     *,
     *::before,
     *::after {
