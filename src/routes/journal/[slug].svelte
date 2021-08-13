@@ -119,8 +119,7 @@
     p {
         font-size: 1.6rem;
         margin: 0;
-        padding-bottom: var(--s-1);
-        border-bottom: 1px solid var(--light-grey);
+        padding-bottom: var(--s2);
     }
     @media (max-width: 1023px) {
         p {

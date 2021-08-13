@@ -99,6 +99,9 @@
     article {
         margin: 0 auto;
     }
+    article header {
+        border-bottom: 1px solid var(--light-grey);
+    }
     article header,
     article nav {
         margin-left: calc(-1 * var(--s3));
@@ -194,7 +197,7 @@
         margin: var(--s3) 0;
         padding: 0;
         border: none;
-        border-top: 1px solid var(--light-grey);
+        border-top: 1px dashed var(--light-grey);
         color: var(--light-grey);
         text-align: center;
         overflow: visible;
