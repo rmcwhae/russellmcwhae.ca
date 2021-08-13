@@ -91,6 +91,7 @@
         color: var(--high-contrast-color);
         font-size: 1rem;
         z-index: 2;
+        position: fixed;
     }
     ul {
         list-style: none;
@@ -181,7 +182,7 @@
     }
     @media screen and (max-width: 1023px) {
         nav {
-            height: 50px;
+            position: inherit;
         }
         ul {
             margin-top: 0;
@@ -216,7 +217,7 @@
             display: block;
         }
         :global(#logo svg) {
-            height: 21px !important; /* TODO be less lazy than using !important */
+            height: 25px !important; /* TODO be less lazy than using !important */
         }
     }
 </style>

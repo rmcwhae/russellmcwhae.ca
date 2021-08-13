@@ -100,7 +100,7 @@
 </article>
 
 <style>
-    /* header,
+    header,
     nav {
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3));
@@ -111,7 +111,7 @@
             margin-left: 0;
             margin-right: 0;
         }
-    } */
+    }
     nav {
         display: flex;
         justify-content: space-between;
@@ -137,7 +137,6 @@
     @media (max-width: 1023px) {
         p {
             font-size: 1em;
-            text-align: center;
         }
     }
     .right {

@@ -30,7 +30,7 @@
     wrestled with similar questions. I hope you’ll join me for a glimpse into my
     head.
 </p> -->
-<div class="archive">
+<div class="archive restricted-width">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>
             <h2>
@@ -54,15 +54,20 @@
     h2 {
         font-size: 1.5em;
         line-height: 1.2em;
-        margin-bottom: 0;
+        margin: 0;
     }
     h2 a {
         text-decoration: none;
     }
-    section {
+    section:first-of-type {
+        padding-bottom: var(--s1);
+    }
+    section:not(:first-of-type) {
+        padding: var(--s1) 0;
         border-top: 1px solid var(--light-grey);
-        /* padding-bottom: var(--s1); */
-        /* margin: var(--s2) 0; */
+    }
+    section:last-of-type {
+        padding-bottom: 0;
     }
     p {
         /* font-size: 1.2rem; */
@@ -71,15 +76,15 @@
     .archive {
         margin: 0 auto;
         /* Define the element as a grid container */
-        display: grid;
+        /* display: grid; */
         /* Auto-fit as many items on a row as possible without going under the min */
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
         /* A little spacing between articles */
-        grid-gap: var(--s1);
+        /* grid-gap: var(--s1); */
     }
     @media (max-width: 1023px) {
         .archive {
-            grid-template-columns: 1fr;
+            /* grid-template-columns: 1fr; */
         }
     }
 </style>
