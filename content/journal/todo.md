@@ -19,6 +19,6 @@ category: TODO
 -   Performance testing
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Submit for review?
--   Calendars page try grid for previous
+-   Calendars page finish
 -   Projects page
 -   Home page 5-photo grid, journal widget?

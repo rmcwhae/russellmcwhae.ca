@@ -96,14 +96,21 @@
 
 <h2>Previous Calendars</h2>
 
-{#each rest as { filename, year, filesize }}
-    <Calendar {filename} {year} {filesize} />
-{/each}
+<div class="past">
+    {#each rest as { filename, year, filesize }}
+        <Calendar {filename} {year} {filesize} />
+    {/each}
+</div>
 
 <style>
     /* h1 {
         padding-bottom: var(--s2);
     } */
+    .past {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: var(--s-2);
+    }
     main {
         display: flex;
         align-items: center;
@@ -147,6 +154,9 @@
         }
         main {
             margin-top: 0;
+        }
+        .past {
+            grid-template-columns: 1fr;
         }
     }
 </style>
