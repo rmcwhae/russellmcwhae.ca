@@ -50,7 +50,7 @@
         transition: var(--duration);
     }
     main a:hover {
-        box-shadow: inset 0 -5px 0 0 var(--text-color);
+        box-shadow: inset 0 -4px 0 0 var(--medium-grey);
     }
     *,
     *::before,
