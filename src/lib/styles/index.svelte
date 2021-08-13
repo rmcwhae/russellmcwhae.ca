@@ -135,6 +135,9 @@
         background: rgba(127, 127, 127, 0.15);
         border-radius: var(--radius);
     }
+    article li p {
+        margin: 0;
+    }
     pre,
     code {
         white-space: pre-wrap;
