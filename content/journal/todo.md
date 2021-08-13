@@ -7,10 +7,10 @@ draft: 1
 category: TODO
 ---
 
--   Verify `photos/\*` links in journal entries, pdf
+-   Build <category> page for journal entries; journal hero images?
 -   Update about with skills
 -   Book Reading list page (linked from about)
--   Build <category> page for journal entries; journal hero images?
+-   Verify `photos/\*` links in journal entries
 -   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
