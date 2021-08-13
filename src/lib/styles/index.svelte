@@ -32,8 +32,8 @@
         margin: 0;
         box-sizing: border-box;
         font-family: source-sans-3, azo-sans-web, sans-serif;
-        font-size: 1.125rem;
-        line-height: 1.625rem;
+        font-size: 1.25rem;
+        line-height: 1.8rem;
     }
     a {
         color: var(--high-contrast-color);
@@ -74,7 +74,7 @@
         margin-right: -50vw;
     }
     .restricted-width {
-        max-width: 600px;
+        max-width: 650px;
     }
     .footnote-backref {
         margin-left: var(--s-2);
@@ -86,16 +86,21 @@
         margin: 0 auto;
     }
     .uppercase,
-    article strong {
+    article strong,
+    .sub {
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         letter-spacing: 0.125em;
         font-weight: normal;
     }
     .sub {
-        font-size: 0.85rem;
         margin-top: var(--s-3);
         margin-bottom: var(--s-3);
+    }
+    @media (max-width: 1023px) {
+        .sub {
+            text-align: center;
+        }
     }
     .nowrap {
         white-space: nowrap;
@@ -142,9 +147,15 @@
         color: var(--high-contrast-color);
     }
     h1 {
-        font-size: 2.5em;
+        font-size: 3rem;
         line-height: 1em;
         margin: 0;
+    }
+    @media (max-width: 1023px) {
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
     }
     h3 {
         font-size: 1rem;

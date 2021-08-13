@@ -100,12 +100,14 @@
 </article>
 
 <style>
-    /* header {
+    /* header,
+    nav {
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3));
     }
-    @media (max-width: 1200px) {
-        header {
+    @media screen and (max-width: 1200px) {
+        header,
+        nav {
             margin-left: 0;
             margin-right: 0;
         }
@@ -127,10 +129,16 @@
         margin-right: var(--s0);
     }
     p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         margin: 0;
         padding-bottom: var(--s-1);
         border-bottom: 1px solid var(--light-grey);
+    }
+    @media (max-width: 1023px) {
+        p {
+            font-size: 1em;
+            text-align: center;
+        }
     }
     .right {
         text-align: right;
