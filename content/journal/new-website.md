@@ -25,7 +25,7 @@ Depending on your device settings, you may be viewing this site in light or dark
 
 <ThemeSwitcher />
 
-Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme. That, or it’s just bad UX, but I aint gonna change it.
+Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme. That might be a bit of reach…kind of like when that bomber jug is a few inches beyond your full extension. I’ll stop now.
 
 As for typography, simplicity again prevails: all fonts are different weights of a single typeface.
 
