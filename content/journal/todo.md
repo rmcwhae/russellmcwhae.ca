@@ -22,3 +22,4 @@ category: TODO
 -   Calendars page
 -   Projects page
 -   Home page
+-   Header width extensions via negative margin on non-post pages
