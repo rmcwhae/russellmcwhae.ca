@@ -99,6 +99,18 @@
     article {
         margin: 0 auto;
     }
+    article header,
+    article nav {
+        margin-left: calc(-1 * var(--s3));
+        margin-right: calc(-1 * var(--s3));
+    }
+    @media screen and (max-width: 1200px) {
+        article header,
+        article nav {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
     .uppercase,
     article strong,
     .sub {

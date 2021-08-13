@@ -3,7 +3,9 @@
 </script>
 
 <article class="restricted-width">
-    <h1>{title}</h1>
+    <header>
+        <h1>{title}</h1>
+    </header>
     <slot />
 </article>
 
