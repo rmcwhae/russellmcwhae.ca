@@ -39,7 +39,7 @@
             border-right: none;
             min-height: inherit;
             width: inherit;
-            margin: var(--s-1) 0 var(--s0) var(--s0);
+            margin: var(--s-1) 0 var(--s2) var(--s0);
             padding: 0;
             /* padding: var(--s-1) 0 var(--s0) var(--s0); */
         }
