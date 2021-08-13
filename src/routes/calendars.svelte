@@ -48,16 +48,19 @@
     const [current, ...rest] = calendars
 </script>
 
-<h1>Calendars</h1>
+<!-- <header>
+    <h1>Calendars</h1>
+</header> -->
 
 <main class="full-bleed">
-    <h2>
-        <a
-            href={'pdf/' + current.filename}
-            target="_blank"
-            rel="noopener noreferrer nofollow">{current.year}</a
-        >
-    </h2>
+    <a
+        href={'pdf/' + current.filename}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+    >
+        <h4>{current.year} Calendar</h4>
+        <aside class="uppercase">{current.filesize} MB PDF</aside>
+    </a>
 </main>
 
 <article class="restricted-width">
@@ -94,6 +97,29 @@
 {/each}
 
 <style>
+    h1 {
+        padding-bottom: var(--s2);
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: calc(-1 * var(--s2));
+    }
+    main a {
+        display: block;
+    }
+    main a,
+    main a:hover {
+        box-shadow: none;
+    }
+    h4 {
+        font-weight: 400;
+        margin: 0;
+        font-size: 3em;
+        line-height: 1em;
+    }
     article {
         margin: var(--s4) auto;
     }
@@ -109,6 +135,9 @@
         :global(.full-bleed) {
             margin-left: calc(-1 * var(--s0));
             margin-right: calc(-1 * var(--s0));
+        }
+        main {
+            margin-top: 0;
         }
     }
 </style>
