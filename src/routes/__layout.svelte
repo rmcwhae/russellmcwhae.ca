@@ -49,23 +49,4 @@
             width: inherit;
         }
     }
-    /* .sidebar {
-        margin: 0 0 var(--s0) var(--s4);
-        position: fixed;
-    }
-    .content {
-        margin: var(--s4) var(--s4) var(--s0) 300px;
-    }
-    @media (max-width: 1023px) {
-        main {
-            margin: var(--s0);
-        }
-        .sidebar {
-            position: inherit;
-        }
-        .sidebar,
-        .content {
-            margin: 0;
-        }
-    } */
 </style>
