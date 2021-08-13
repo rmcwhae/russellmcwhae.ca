@@ -89,7 +89,7 @@
 <style>
     nav {
         color: var(--high-contrast-color);
-        font-size: 1rem;
+        font-size: 1.125rem;
         z-index: 2;
         position: fixed;
     }
@@ -104,7 +104,7 @@
     } */
     li a {
         text-decoration: none;
-        padding: var(--s-3) 0;
+        padding: var(--s-5) 0;
         display: block;
     }
     a {
