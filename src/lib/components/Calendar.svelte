@@ -4,10 +4,7 @@
     export let filename
 </script>
 
-<section
-    class="full-bleed"
-    style={`background-image: url(static/calendar-images/${year}.jpg)`}
->
+<section style={`background-image: url(static/calendar-images/${year}.jpg)`}>
     <a
         href={'pdf/' + filename}
         target="_blank"

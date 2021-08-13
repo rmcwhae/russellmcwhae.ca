@@ -130,15 +130,15 @@
     article {
         margin: var(--s4) auto;
     }
-    :global(.full-bleed) {
-        margin-left: calc(-1 * var(--s2));
-        margin-right: calc(-1 * var(--s2));
-    }
     :global(.shadow) {
         text-shadow: 0 0 30px rgb(0 0 0 / 70%);
     }
     :global(.shadow > *) {
         color: white;
+    }
+    :global(.full-bleed) {
+        margin-left: calc(-1 * var(--s2));
+        margin-right: calc(-1 * var(--s2));
     }
     @media (max-width: 1023px) {
         :global(.full-bleed) {
