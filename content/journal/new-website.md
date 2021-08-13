@@ -19,13 +19,13 @@ This post is a quick look at how I designed and developed this latest incarnatio
 
 ## Design
 
-My goal in redesigning this website was to keep it as simple as possible. Except for images, everything is black and white. I found no good reason to incorporate colour into the design and thus left it out. This high-contrast monochromatic colour scheme naturally symbolizes snow and rock in the mountains. In few other environments are things so often black and white.
+My goal in redesigning this website was to keep it as simple as possible. Except for images, everything is black and white. I found no good reason to incorporate colour into the design and thus left it out. This high-contrast, monochromatic colour scheme naturally symbolizes snow and rock in the mountains. In few other environments are things so often black and white.
 
 Depending on your device settings, you may be viewing this site in light or dark mode. This can be changed in the menu, or via this convenient button:
 
 <ThemeSwitcher />
 
-Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme. That might be a bit of reach…kind of like when that bomber jug is a few inches beyond your full extension. I’ll stop now.
+Your eyeballs will likely get zapped when going from dark to light mode. While good user experience would be to reduce the contrast between light and dark mode by dulling the colours, I have intentionally keep the transition quite jarring. Snowblindness can happen easily enough up high in the mountains, so a minor dose of it here might strengthen the symbolism of my black-and-white colour scheme.
 
 For spacing within the layout, I implemented Every Layout’s [Modular scale](https://every-layout.dev/rudiments/modular-scale/), that defines harmonic root-level CSS variables:
 
@@ -46,7 +46,7 @@ For spacing within the layout, I implemented Every Layout’s [Modular scale](ht
 }
 ```
 
-Margins and padding can then be defined with values such as `var(--s0)` etc., thus hopefully promoting visual harmony in the layout.
+Margins and padding can then be defined with values such as `var(--s0)` etc., which are perhaps less arbitrary than otherwise.
 
 As for typography, simplicity again prevails: all fonts are different weights of a single typeface.
 
