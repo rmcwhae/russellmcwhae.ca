@@ -17,7 +17,7 @@ In early 2019, I earned an MSc. in biomedical engineering from the University of
 
 Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.lighthouselabs.ca) web development boot camp course from July to October 2019. I have now been working as a web developer, specializing in front-end work.
 
-<p>View my <a href="/pdf/mcwhae_russell_resume.pdf" target="_blank">current résumé</a>, or check out my <a href="https://www.linkedin.com/in/russellmcwhae/" rel="nofollow">LinkedIn profile</a>.</p>
+<p>View my <a href="/pdf/mcwhae_russell_resume.pdf" target="_blank">current résumé</a>, or check out my <a href="https://www.linkedin.com/in/rmcwhae/" rel="nofollow">LinkedIn profile</a>.</p>
 
 ## Tools I use
 
