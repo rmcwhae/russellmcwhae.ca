@@ -1,4 +1,6 @@
 <script>
+    import Calendar from '$lib/components/Calendar.svelte'
+
     const calendars = [
         {
             year: 2021,
@@ -48,51 +50,65 @@
 
 <h1>Calendars</h1>
 
-<h2>
-    <a
-        href={'pdf/' + current.filename}
-        target="_blank"
-        rel="noopener noreferrer nofollow">{current.year}</a
-    >
-</h2>
-
-<h3>Previous Calendars</h3>
-
-{#each rest as calendar}
-    <li>
+<main class="full-bleed">
+    <h2>
         <a
-            href={'pdf/' + calendar.filename}
+            href={'pdf/' + current.filename}
             target="_blank"
-            rel="noopener noreferrer nofollow">{calendar.year}</a
+            rel="noopener noreferrer nofollow">{current.year}</a
         >
-        ({calendar.filesize} MB PDF)
-    </li>
+    </h2>
+</main>
+
+<article class="restricted-width">
+    <p>
+        Initially created as Christmas gifts for family and friends, these
+        calendars are an effort to do more with my photography. It’s hard to
+        stand out in the crowded, high-volume world of online photography, so
+        printing can be a way to make photography less ephemeral. Calendars
+        provide a high-density collection of photographs in an affordable
+        physical product.
+    </p>
+    <p>
+        I design the calendars in Adobe Indesign with the <a
+            href="http://calendarwizard.sourceforge.net"
+            target="_blank"
+            rel="noopener noreferrer nofollow">Calendar Wizard</a
+        >
+        plugin to create the basic table layout before heavy customization. There’s
+        a steep learning curve, but the result is highly original. I then send a
+        print-ready PDF to
+        <a
+            href="https://www.dhq.ca"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            >Digital Headquarters Imaging Centre</a
+        > for printing and binding.
+    </p>
+</article>
+
+<h2>Previous Calendars</h2>
+
+{#each rest as { filename, year, filesize }}
+    <Calendar {filename} {year} {filesize} />
 {/each}
 
-<p>
-    Initially created as Christmas gifts for family and friends, these calendars
-    are an effort to do more with my photography. It’s hard to stand out in the
-    crowded, high-volume world of online photography, so printing can be a way
-    to make photography less ephemeral. Calendars provide a high-density
-    collection of photographs in an affordable physical product.
-</p>
-<p>
-    I design the calendars in Adobe Indesign with the <a
-        href="http://calendarwizard.sourceforge.net"
-        target="_blank"
-        rel="noopener noreferrer nofollow">Calendar Wizard</a
-    >
-    plugin to create the basic table layout before heavy customization. There’s a
-    steep learning curve, but the result is highly original. I then send a print-ready
-    PDF to
-    <a
-        href="https://www.dhq.ca"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        >Digital Headquarters Imaging Centre</a
-    > for printing and binding.
-</p>
-
 <style>
-    /* your styles go here */
+    article {
+        margin: var(--s4) auto;
+    }
+    main {
+        height: 100vh;
+        background: blue;
+    }
+    :global(.full-bleed) {
+        margin-left: calc(-1 * var(--s2));
+        margin-right: calc(-1 * var(--s2));
+    }
+    @media (max-width: 1023px) {
+        :global(.full-bleed) {
+            margin-left: calc(-1 * var(--s0));
+            margin-right: calc(-1 * var(--s0));
+        }
+    }
 </style>
