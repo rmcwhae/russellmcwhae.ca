@@ -97,6 +97,7 @@
         text-transform: uppercase;
         font-size: 0.9rem;
         letter-spacing: 0.125em;
+        line-height: 1.2em;
         font-weight: normal;
     }
     .sub {
@@ -119,7 +120,7 @@
         padding-left: var(--s1);
         margin-right: var(--s1);
         border-left: 1px solid var(--light-grey);
-        font-size: 0.9em;
+        font-size: 1.1rem;
     }
     article pre {
         border-left: 1px solid var(--light-grey);

@@ -74,7 +74,7 @@
             &middot;
             <span>{readingTime.words} words</span>
             &middot;
-            <span>{readingTime.text}</span>
+            <span class="nowrap">{readingTime.text}</span>
         </div>
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
@@ -137,6 +137,7 @@
     @media (max-width: 1023px) {
         p {
             font-size: 1em;
+            line-height: 1.2em;
         }
     }
     .right {
