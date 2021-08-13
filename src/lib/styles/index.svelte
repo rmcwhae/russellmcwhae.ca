@@ -131,9 +131,9 @@
         font-size: 1.1rem;
     }
     article pre {
-        border-left: 1px solid var(--light-grey);
-        padding-left: var(--s1);
-        margin-right: var(--s1);
+        padding: var(--s-1) var(--s1);
+        background: rgba(127, 127, 127, 0.15);
+        border-radius: var(--radius);
     }
     pre,
     code {
