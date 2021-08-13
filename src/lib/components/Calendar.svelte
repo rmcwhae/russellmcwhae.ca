@@ -35,6 +35,7 @@
         font-weight: 400;
         margin: 0;
         font-size: 2em;
+        line-height: 1em;
     }
     aside {
         font-size: 1rem;
