@@ -52,10 +52,14 @@
     <h1>Calendars</h1>
 </header> -->
 
-<main class="full-bleed">
+<main
+    class="full-bleed"
+    style={`background-image: url(static/calendar-images/${current.year}.jpg)`}
+>
     <a
         href={'pdf/' + current.filename}
         target="_blank"
+        class="shadow"
         rel="noopener noreferrer nofollow"
     >
         <h4>{current.year} Calendar</h4>
@@ -97,15 +101,18 @@
 {/each}
 
 <style>
-    h1 {
+    /* h1 {
         padding-bottom: var(--s2);
-    }
+    } */
     main {
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         margin-top: calc(-1 * var(--s2));
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
     }
     main a {
         display: block;
@@ -123,13 +130,15 @@
     article {
         margin: var(--s4) auto;
     }
-    main {
-        height: 100vh;
-        background: blue;
-    }
     :global(.full-bleed) {
         margin-left: calc(-1 * var(--s2));
         margin-right: calc(-1 * var(--s2));
+    }
+    :global(.shadow) {
+        text-shadow: 0 0 30px rgb(0 0 0 / 70%);
+    }
+    :global(.shadow > *) {
+        color: white;
     }
     @media (max-width: 1023px) {
         :global(.full-bleed) {

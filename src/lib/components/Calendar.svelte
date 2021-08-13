@@ -4,10 +4,14 @@
     export let filename
 </script>
 
-<section class="full-bleed">
+<section
+    class="full-bleed"
+    style={`background-image: url(static/calendar-images/${year}.jpg)`}
+>
     <a
         href={'pdf/' + filename}
         target="_blank"
+        class="shadow"
         rel="noopener noreferrer nofollow"
     >
         <h4>{year}</h4>
@@ -27,7 +31,8 @@
         box-shadow: none;
     }
     section {
-        background: red;
+        background-size: cover;
+        background-position: center center;
     }
     h4 {
         font-weight: 400;
