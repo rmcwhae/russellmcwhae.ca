@@ -4,7 +4,7 @@
     export let filename
 </script>
 
-<section style={`background-image: url(static/calendar-images/${year}.jpg)`}>
+<section style={`background-image: url(/calendar-images/${year}.jpg)`}>
     <a
         href={'pdf/' + filename}
         target="_blank"

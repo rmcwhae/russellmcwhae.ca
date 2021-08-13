@@ -54,7 +54,7 @@
 
 <main
     class="full-bleed"
-    style={`background-image: url(static/calendar-images/${current.year}.jpg)`}
+    style={`background-image: url(/calendar-images/${current.year}.jpg)`}
 >
     <a
         href={'pdf/' + current.filename}
