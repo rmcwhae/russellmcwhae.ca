@@ -89,22 +89,22 @@
 <style>
     nav {
         color: var(--high-contrast-color);
-        font-size: 1.125rem;
+        font-size: 1.3rem;
         z-index: 2;
         position: fixed;
     }
     ul {
         list-style: none;
         padding-left: 0;
-        margin-top: var(--s4);
-        margin-bottom: var(--s4);
+        margin-top: var(--s3);
+        margin-bottom: var(--s3);
     }
     /* li:not(:last-child) {
         margin-right: var(--s0);
     } */
     li a {
         text-decoration: none;
-        padding: var(--s-5) 0;
+        padding: var(--s-3) 0;
         display: block;
     }
     a {
@@ -113,7 +113,7 @@
     [aria-current],
     a:hover {
         /* font-weight: 700; */
-        text-decoration: underline;
+        /* text-decoration: underline; */
         /* border-left: 5px solid var(--high-contrast-color); */
         /* margin-left: -5px; */
     }
