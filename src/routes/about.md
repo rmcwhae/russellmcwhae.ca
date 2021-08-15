@@ -21,7 +21,7 @@ I completed an undergraduate degree in civil engineering, graduating from the Un
 
 In early 2019, I earned an MSc. in biomedical engineering from the University of Calgary. My thesis, “[Intercellular Gap Junction Communication in the Bovine Annulus Fibrosus](https://prism.ucalgary.ca/handle/1880/109915),” investigated cell-cell signaling in the intervertebral disc.
 
-Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.lighthouselabs.ca) web development boot camp course from July to October 2019. I have now been working as a web developer, specializing in front-end work.
+Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.lighthouselabs.ca) web development boot camp course from July to October 2019. I have now been working as a web developer, specializing in front-end work, out of Revelstoke, BC.
 
 <p>View my <a href="/pdf/mcwhae_russell_resume.pdf" target="_blank">current résumé</a>, or check out my <a href="https://www.linkedin.com/in/rmcwhae/" rel="nofollow">LinkedIn profile</a>.</p>
 

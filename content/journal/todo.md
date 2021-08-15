@@ -24,3 +24,4 @@ category: TODO
 -   Projects page
 -   Home page 5-photo grid, journal widget?
 -   Code word wrap on uses page…
+-   Favicon
