@@ -11,7 +11,7 @@ layout: page
 
 Growing up in Calgary, Alberta, Canada I spent time mountain biking, hiking and downhill skiing in the Canadian Rocky Mountains. My interest in outdoor pursuits has continually increased and now includes backcountry skiing, rock and ice climbing, and mountaineering. As my outdoor experience grew, I began to venture further into the backcountry and started bringing a camera to share my experiences in hard-to-reach places. This has become my preferred style of photography: finding awe-inspiring landscapes, frequently far and high in the mountains.
 
-Similar to [photography](/photography), graphic design—especially web design—requires a keen technical understanding. Coding has always come naturally to me, but it is the combination of the logic of coding and the creative side of design that makes the web a rewarding medium to design for. I cut my teeth back in the days of Internet Explorer 6 and have kept up with the evolution of the web over the years.
+Similar to photography, graphic design—especially web design—requires a keen technical understanding. Coding has always come naturally to me, but it is the combination of the logic of coding and the creative side of design that makes the web a rewarding medium to design for. I cut my teeth back in the days of Internet Explorer 6 and have kept up with the evolution of the web over the years.
 
 Photography and design are complementary skills. Design principles provide an expanded tool kit to use in photography. Similarly, being able to take photos allows me to readily incorporate them into my design work.
 
