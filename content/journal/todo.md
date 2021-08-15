@@ -19,6 +19,8 @@ category: TODO
 -   Performance testing
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Submit for review?
--   Calendars page finish
+-   Calendars page finish hero buttons
+-   Smaller h2 mobile
 -   Projects page
 -   Home page 5-photo grid, journal widget?
+-   Code word wrap on uses page…
