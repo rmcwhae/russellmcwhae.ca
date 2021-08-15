@@ -122,7 +122,7 @@
     p {
         margin: 0;
         line-height: 1.2em;
-        padding-bottom: var(--s2);
+        padding-bottom: var(--s0);
     }
     .right {
         text-align: right;

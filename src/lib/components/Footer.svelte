@@ -38,6 +38,7 @@
     @media (max-width: 1023px) {
         .icons {
             justify-content: center;
+            margin: var(--s0) 0;
         }
     }
 </style>

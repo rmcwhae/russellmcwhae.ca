@@ -11,6 +11,6 @@
 
 <style>
     h1 {
-        padding-bottom: var(--s2);
+        padding-bottom: var(--s0);
     }
 </style>

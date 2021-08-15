@@ -196,6 +196,10 @@
             font-size: 1.5em;
             /* text-align: center; */
         }
+        h2 {
+            font-size: 1.25em;
+            /* text-align: center; */
+        }
     }
     h3 {
         font-size: 1rem;
