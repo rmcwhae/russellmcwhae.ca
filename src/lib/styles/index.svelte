@@ -17,11 +17,11 @@
 
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(99, 99, 99);
+        --text-color: rgb(75, 75, 75);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
-        --blue: rgb(33, 60, 133);
+        --blue: rgb(48, 89, 202);
         --blue-light: rgb(175, 194, 240);
     }
 
@@ -75,11 +75,11 @@
     html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(99, 99, 99);
+        --text-color: rgb(75, 75, 75);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
-        --blue: rgb(33, 60, 133);
+        --blue: rgb(48, 89, 202);
         --blue-light: rgb(175, 194, 240);
     }
     .overflow-hidden {
