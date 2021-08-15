@@ -18,11 +18,7 @@
 
 <nav>
     <div id="logo" class:active={mobileMenuOpen}>
-        <a
-            href="/"
-            aria-current={$page.path === '/' ? 'page' : undefined}
-            on:click={hideMenu}><Logo /></a
-        >
+        <a href="/" on:click={hideMenu}><Logo /></a>
     </div>
     <div class="nav-menu" class:active={mobileMenuOpen}>
         <ul>
@@ -31,7 +27,7 @@
                     sveltekit:prefetch
                     href="/photography"
                     on:click={hideMenu}
-                    aria-current={$page.path === '/photography'
+                    aria-current={$page.path.includes('/photography')
                         ? 'page'
                         : undefined}>Photography</a
                 >
@@ -61,7 +57,7 @@
                     sveltekit:prefetch
                     on:click={hideMenu}
                     href="/journal"
-                    aria-current={$page.path === '/journal'
+                    aria-current={$page.path.includes('/journal')
                         ? 'page'
                         : undefined}>Journal</a
                 >
@@ -110,8 +106,18 @@
     a {
         color: var(--high-contrast-color);
     }
-    [aria-current],
-    a:hover {
+    li {
+        position: relative;
+    }
+    [aria-current]::before {
+        content: '';
+        position: absolute;
+        top: var(--s-2);
+        bottom: var(--s-2);
+        left: calc(var(--s2) * -1);
+        width: 5px;
+        display: block;
+        background-color: var(--high-contrast-color);
         /* font-weight: 700; */
         /* text-decoration: underline; */
         /* border-left: 5px solid var(--high-contrast-color); */
