@@ -85,7 +85,7 @@
 <style>
     nav {
         color: var(--high-contrast-color);
-        font-size: 1.3rem;
+        font-size: 1.125rem;
         z-index: 2;
         position: fixed;
     }
