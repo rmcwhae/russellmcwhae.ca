@@ -129,7 +129,7 @@
     .sub {
         text-transform: uppercase;
         font-size: 1rem;
-        letter-spacing: 0.125em;
+        letter-spacing: 0.05em;
         line-height: 1.2em;
         font-weight: normal;
     }
