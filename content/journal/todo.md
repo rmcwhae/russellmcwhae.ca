@@ -25,3 +25,4 @@ category: TODO
 -   Home page 5-photo grid, journal widget?
 -   Code word wrap on uses page…
 -   Favicon
+-   Image height to avoid jump when loading
