@@ -167,7 +167,7 @@
     pre,
     code {
         white-space: pre-wrap;
-        font-size: 0.95em;
+        font-size: 0.8em;
     }
     h1 a,
     h2 a,

@@ -64,7 +64,7 @@
 
     pre {
         font-family: monospace, monospace; /* 1 */
-        font-size: 0.9em; /* 2 */
+        font-size: 1em; /* 2 */
     }
 
     /* Text-level semantics

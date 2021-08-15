@@ -89,5 +89,14 @@
         .archive {
             /* grid-template-columns: 1fr; */
         }
+        h2 {
+            font-size: 1.25em;
+        }
+        section:first-of-type {
+            padding-bottom: var(--s0);
+        }
+        section:not(:first-of-type) {
+            padding: var(--s0) 0;
+        }
     }
 </style>
