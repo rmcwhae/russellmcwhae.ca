@@ -17,7 +17,7 @@
 
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(104, 104, 104);
+        --text-color: rgb(99, 99, 99);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
@@ -75,7 +75,7 @@
     html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(104, 104, 104);
+        --text-color: rgb(99, 99, 99);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
