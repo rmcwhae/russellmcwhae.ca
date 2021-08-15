@@ -32,8 +32,8 @@
         margin: 0;
         box-sizing: border-box;
         font-family: source-sans-3, azo-sans-web, sans-serif;
-        font-size: 1.25rem;
-        line-height: 1.8rem;
+        font-size: 1.125rem;
+        line-height: 1.625rem;
     }
     @media screen and (max-width: 1023px) {
         body {
@@ -88,7 +88,7 @@
         margin-right: -50vw;
     }
     .restricted-width {
-        max-width: 650px;
+        max-width: 620px;
     }
     .footnote-backref {
         margin-left: var(--s-2);
