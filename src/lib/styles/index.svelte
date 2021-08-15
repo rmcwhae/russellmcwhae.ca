@@ -96,6 +96,8 @@
     }
     article img {
         width: calc(100% + 2 * var(--s3));
+        margin-left: calc(-1 * var(--s3));
+        margin-right: calc(-1 * var(--s3));
     }
     article {
         margin: 0 auto;
@@ -105,9 +107,11 @@
     }
     article header,
     article nav,
-    article img {
-        margin-left: calc(-1 * var(--s3));
-        margin-right: calc(-1 * var(--s3));
+    article img,
+    article h2,
+    article h3 {
+        /* margin-left: calc(-1 * var(--s3)); */
+        /* margin-right: calc(-1 * var(--s3)); */
     }
     @media screen and (max-width: 1200px) {
         article header,
