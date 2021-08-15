@@ -1,5 +1,6 @@
 <script>
     import Calendar from '$lib/components/Calendar.svelte'
+    import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
     const calendars = [
         {
@@ -52,22 +53,29 @@
     <h1>Calendars</h1>
 </header> -->
 
-<main
-    class="full-bleed"
-    style={`background-image: url(/calendar-images/${current.year}.jpg)`}
->
-    <a
-        href={'pdf/' + current.filename}
-        target="_blank"
-        class="shadow"
-        rel="noopener noreferrer nofollow"
-    >
+<main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
+    <div class="shadow">
         <h4>{current.year} Calendar</h4>
-        <aside class="uppercase">{current.filesize} MB PDF</aside>
-    </a>
+        <div class="uppercase">{current.filesize} MB PDF</div>
+        <a
+            href={'pdf/' + current.filename}
+            target="_blank"
+            class="uppercase knockout"
+            rel="noopener noreferrer nofollow"
+            >Preview <RightChevron />
+        </a>
+        <a
+            href={'pdf/' + current.filename}
+            target="_blank"
+            class="uppercase knockout"
+            rel="noopener noreferrer nofollow"
+            >Purchase <RightChevron />
+        </a>
+    </div>
 </main>
 
 <article class="restricted-width">
+    <h2>About</h2>
     <p>
         Initially created as Christmas gifts for family and friends, these
         calendars are an effort to do more with my photography. It’s hard to
@@ -122,7 +130,7 @@
         background-position: center center;
     }
     main a {
-        display: block;
+        /* display: block; */
     }
     main a,
     main a:hover {
@@ -143,15 +151,11 @@
     :global(.shadow > *) {
         color: white;
     }
-    :global(.full-bleed) {
-        margin-left: calc(-1 * var(--s2));
-        margin-right: calc(-1 * var(--s2));
+    :global(.knockout) {
+        border: 1px solid white;
+        padding: var(--s-2) var(--s-1);
     }
     @media (max-width: 1023px) {
-        :global(.full-bleed) {
-            margin-left: calc(-1 * var(--s0));
-            margin-right: calc(-1 * var(--s0));
-        }
         main {
             margin-top: 0;
         }

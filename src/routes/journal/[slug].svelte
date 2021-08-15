@@ -104,7 +104,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: var(--s3);
-        margin-bottom: var(--s3);
+        /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s2);
         border-top: 1px solid var(--light-grey);

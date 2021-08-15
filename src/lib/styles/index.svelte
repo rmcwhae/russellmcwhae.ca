@@ -93,8 +93,8 @@
     .footnote-backref {
         margin-left: var(--s-2);
     }
-    img {
-        max-width: 100%;
+    article img {
+        width: calc(100% + 2 * var(--s3));
     }
     article {
         margin: 0 auto;
@@ -103,15 +103,20 @@
         border-bottom: 1px solid var(--light-grey);
     }
     article header,
-    article nav {
+    article nav,
+    article img {
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3));
     }
     @media screen and (max-width: 1200px) {
         article header,
-        article nav {
+        article nav,
+        article img {
             margin-left: 0;
             margin-right: 0;
+        }
+        article img {
+            width: 100%;
         }
     }
     .uppercase,
