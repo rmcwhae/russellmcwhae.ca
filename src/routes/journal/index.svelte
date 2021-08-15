@@ -59,6 +59,9 @@
     h2 a {
         text-decoration: none;
     }
+    h2 a:hover {
+        color: var(--blue);
+    }
     section:first-of-type {
         padding-bottom: var(--s1);
     }
