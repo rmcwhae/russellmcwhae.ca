@@ -32,7 +32,7 @@
         margin-right: var(--s-2);
     }
     :global(.icons svg) {
-        height: 1.5rem;
+        height: 1.5rem !important;
     }
     @media (max-width: 1023px) {
         .icons {
