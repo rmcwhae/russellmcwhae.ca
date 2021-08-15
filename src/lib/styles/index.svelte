@@ -129,7 +129,7 @@
     article strong,
     .sub {
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: 1rem;
         letter-spacing: 0.125em;
         line-height: 1.2em;
         font-weight: normal;
@@ -148,6 +148,11 @@
     }
     article > * + * {
         margin-top: var(--s2);
+    }
+    @media (max-width: 1023px) {
+        article > * + * {
+            margin-top: var(--s1);
+        }
     }
     article blockquote {
         margin-left: 0;

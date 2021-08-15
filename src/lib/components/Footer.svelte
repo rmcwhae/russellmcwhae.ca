@@ -31,13 +31,16 @@
     }
     :global(.icons svg) {
         height: 1.5rem !important;
-        width: auto;
+        width: auto !important;
         display: inline;
     }
     @media (max-width: 1023px) {
         .icons {
             text-align: center;
             margin: var(--s0) 0;
+        }
+        .icons a:not(:last-of-type) {
+            margin-right: var(--s0);
         }
     }
 </style>
