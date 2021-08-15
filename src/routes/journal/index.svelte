@@ -60,7 +60,7 @@
         text-decoration: none;
     }
     h2 a:hover {
-        color: var(--blue);
+        /* color: var(--blue); */
     }
     section:first-of-type {
         padding-bottom: var(--s1);
