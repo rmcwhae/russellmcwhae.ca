@@ -154,7 +154,7 @@
         padding-left: var(--s1);
         margin-right: var(--s1);
         border-left: 1px solid var(--light-grey);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
     article pre {
         padding: var(--s-1) var(--s1);
