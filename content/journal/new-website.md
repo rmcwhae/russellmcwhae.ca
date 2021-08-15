@@ -72,7 +72,7 @@ The following packages were quite helpful in the development of this site:
 As this website is still hosted on a shared Namecheap account, I perform the static export locally and upload only the final bundle of files. To automate this, I created a local terminal alias that builds and then `rsync`s the files over `ssh` when I type `deploy`:
 
 ```
-alias deploy="cd <local-repo-directory> && npm run build && rsync -zhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
+alias deploy="cd <local-repo-directory> && npm run build && rsync -cvzhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
 ```
 
 I likely could get away with the free tier on Heroku or another cloud service such as Amazon S3; however, that would require putting all my images in the cloud and crunching them during the static export process. I have enough images that it might start testing the limits of the free tiers of such cloud services, so I’ve decided to do all the building locally instead. I am also the only one working on this website, so there isn‘t a strong case for proper cloud deployments.
