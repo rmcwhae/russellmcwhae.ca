@@ -26,18 +26,17 @@
         font-size: 1rem;
         color: var(--high-contrast-color);
     }
-    .icons {
-        display: flex;
-    }
     .icons a:not(:last-of-type) {
         margin-right: var(--s-2);
     }
     :global(.icons svg) {
         height: 1.5rem !important;
+        width: auto;
+        display: inline;
     }
     @media (max-width: 1023px) {
         .icons {
-            justify-content: center;
+            text-align: center;
             margin: var(--s0) 0;
         }
     }

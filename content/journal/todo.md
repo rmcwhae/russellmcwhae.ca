@@ -26,4 +26,3 @@ category: TODO
 -   Code word wrap on uses page…
 -   Favicon
 -   Image height to avoid jump when loading
--   Safari icons glitch
