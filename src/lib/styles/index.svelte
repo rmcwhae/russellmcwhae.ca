@@ -14,7 +14,9 @@
         --s3: calc(var(--s2) * var(--ratio));
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
-
+    }
+    :root,
+    html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(75, 75, 75);
@@ -43,27 +45,10 @@
             line-height: 1.8rem;
         }
     }
-    a {
-        color: var(--blue);
-    }
-    main a {
-        text-decoration: none;
-        box-shadow: inset 0 0 0 0 var(--blue-light);
-        transition: var(--duration);
-    }
-    main a:hover {
-        box-shadow: inset 0 -5px 0 0 var(--blue-light);
-    }
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
     @media (prefers-color-scheme: dark) {
         body {
             --background-color: black;
             --background-color-transparent: rgba(0, 0, 0, 0.8);
-
             --high-contrast-color: white;
             --text-color: rgb(172, 172, 172);
             --light-grey: #333;
@@ -72,16 +57,26 @@
             --blue-light: rgb(56, 67, 102);
         }
     }
-    html body[data-theme='light'] {
-        --background-color: white;
-        --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(75, 75, 75);
-        --high-contrast-color: black;
-        --light-grey: #ccc;
-        --medium-grey: #888;
-        --blue: rgb(48, 89, 202);
-        --blue-light: rgb(175, 194, 240);
+    a {
+        color: var(--high-contrast-color);
     }
+    main a {
+        text-decoration: underline;
+        /* box-shadow: inset 0 0 0 0 var(--blue-light); */
+        transition: var(--duration);
+    }
+    main ul {
+        padding-left: var(--s1);
+    }
+    main a:hover {
+        /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
     .overflow-hidden {
         overflow: hidden;
     }
@@ -138,11 +133,6 @@
         margin-top: var(--s-3);
         margin-bottom: var(--s-3);
     }
-    /* @media (max-width: 1023px) {
-        .sub {
-            text-align: center;
-        }
-    } */
     .nowrap {
         white-space: nowrap;
     }
