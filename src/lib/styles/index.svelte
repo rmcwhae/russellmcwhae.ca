@@ -21,6 +21,8 @@
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
+        --blue: rgb(33, 60, 133);
+        --blue-light: rgb(175, 194, 240);
     }
 
     body {
@@ -42,15 +44,15 @@
         }
     }
     a {
-        color: var(--high-contrast-color);
+        color: var(--blue);
     }
     main a {
         text-decoration: none;
-        box-shadow: inset 0 0 0 0 var(--light-grey);
+        box-shadow: inset 0 0 0 0 var(--blue-light);
         transition: var(--duration);
     }
     main a:hover {
-        box-shadow: inset 0 -4px 0 0 var(--medium-grey);
+        box-shadow: inset 0 -5px 0 0 var(--blue-light);
     }
     *,
     *::before,
@@ -66,6 +68,8 @@
             --text-color: rgb(172, 172, 172);
             --light-grey: #333;
             --medium-grey: #999;
+            --blue: rgb(175, 199, 255);
+            --blue-light: rgb(56, 67, 102);
         }
     }
     html body[data-theme='light'] {
@@ -75,6 +79,8 @@
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
+        --blue: rgb(33, 60, 133);
+        --blue-light: rgb(175, 194, 240);
     }
     .overflow-hidden {
         overflow: hidden;

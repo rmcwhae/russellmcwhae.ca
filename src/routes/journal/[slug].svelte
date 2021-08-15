@@ -109,6 +109,9 @@
         padding-top: var(--s2);
         border-top: 1px solid var(--light-grey);
     }
+    nav a {
+        color: var(--high-contrast-color);
+    }
     a {
         text-decoration: none;
         vertical-align: middle;

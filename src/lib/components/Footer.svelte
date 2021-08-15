@@ -24,6 +24,7 @@
 <style>
     a {
         font-size: 1rem;
+        color: var(--high-contrast-color);
     }
     .icons {
         display: flex;
