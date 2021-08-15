@@ -6,7 +6,7 @@
         "dev": "svelte-kit dev --port 4000 --host",
         "build-images": "ipp --input content/galleries --output static/galleries",
         "build": "rm -rf build && mkdir build && svelte-kit build",
-        "preview": "svelte-kit preview",
+        "preview": "svelte-kit preview --port 4000",
         "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
