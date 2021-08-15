@@ -72,7 +72,7 @@
             &middot;
             <span>{category}</span>
             &middot;
-            <span>{readingTime.words} words</span>
+            <span class="nowrap">{readingTime.words} words</span>
             &middot;
             <span class="nowrap">{readingTime.text}</span>
         </div>
