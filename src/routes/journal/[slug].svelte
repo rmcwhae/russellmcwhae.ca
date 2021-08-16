@@ -66,7 +66,6 @@
 
 <article class="restricted-width">
     <header>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
         <div class="uppercase grey sub">
             <Date {date} />
             &middot;
@@ -76,6 +75,7 @@
             &middot;
             <span class="nowrap">{readingTime.text}</span>
         </div>
+        <h1>{@html preventLastTwoWordWrap(title)}</h1>
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
@@ -107,7 +107,7 @@
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 1px solid var(--light-grey);
+        border-top: 2px solid var(--high-contrast-color);
     }
     nav a {
         color: var(--high-contrast-color);
