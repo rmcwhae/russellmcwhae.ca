@@ -19,7 +19,7 @@
     html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
-        --text-color: rgb(75, 75, 75);
+        --text-color: rgb(100, 100, 100);
         --high-contrast-color: black;
         --light-grey: #ccc;
         --medium-grey: #888;
@@ -135,8 +135,7 @@
         font-weight: normal;
     }
     .sub {
-        /* margin-top: var(--s-3); */
-        margin-bottom: var(--s-3);
+        margin-bottom: var(--s-5);
     }
     .nowrap {
         white-space: nowrap;
@@ -212,7 +211,7 @@
         margin: var(--s3) 0;
         padding: 0;
         border: none;
-        border-top: 1px dashed var(--medium-grey);
+        border-top: 1px solid var(--light-grey);
         color: var(--light-grey);
         text-align: center;
         overflow: visible;

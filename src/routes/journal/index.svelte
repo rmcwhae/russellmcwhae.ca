@@ -33,9 +33,6 @@
 <div class="archive restricted-width">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>
-            <h2>
-                <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
-            </h2>
             <div class="uppercase grey sub">
                 <Date {date} />
                 &middot;
@@ -43,6 +40,9 @@
                 &middot;
                 <span>{readingTime.text}</span>
             </div>
+            <h2>
+                <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
+            </h2>
             {#if description}
                 <p>{description}</p>
             {/if}
