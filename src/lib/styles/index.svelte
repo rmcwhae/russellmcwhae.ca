@@ -99,9 +99,6 @@
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3));
     }
-    article {
-        margin: 0 auto;
-    }
     article header {
         color: var(--high-contrast-color);
         /* margin-bottom: var(--s3); */
@@ -148,6 +145,9 @@
     @media (max-width: 1023px) {
         article > * + * {
             margin-top: var(--s1);
+        }
+        article {
+            margin: 0 auto;
         }
     }
     article blockquote {

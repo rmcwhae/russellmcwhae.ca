@@ -100,6 +100,10 @@
 </article>
 
 <style>
+    h1 {
+        margin-top: var(--s-1);
+        margin-bottom: var(--s-1);
+    }
     nav {
         display: flex;
         justify-content: space-between;

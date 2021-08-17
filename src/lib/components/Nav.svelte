@@ -85,9 +85,10 @@
 <style>
     nav {
         color: var(--high-contrast-color);
-        font-size: 1.125rem;
+        font-size: 1rem;
         z-index: 2;
         position: fixed;
+        font-weight: 700;
     }
     ul {
         list-style: none;
@@ -100,7 +101,7 @@
     } */
     li a {
         text-decoration: none;
-        padding: var(--s-3) 0;
+        padding: var(--s-4) 0;
         display: block;
     }
     a {
