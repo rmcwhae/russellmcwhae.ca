@@ -101,17 +101,18 @@
 
 <style>
     h1 {
-        margin-top: var(--s-1);
-        margin-bottom: var(--s-1);
+        margin-top: var(--s-3);
+        margin-bottom: var(--s-3);
     }
     nav {
+        font-weight: 700;
         display: flex;
         justify-content: space-between;
         margin-top: var(--s3);
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 2px solid var(--high-contrast-color);
+        /* border-top: 1px solid var(--high-contrast-color); */
     }
     nav a {
         color: var(--high-contrast-color);
@@ -126,7 +127,8 @@
     p {
         margin: 0;
         line-height: 1.2em;
-        padding-bottom: var(--s0);
+        /* padding-bottom: var(--s0); */
+        font-weight: 700;
     }
     .right {
         text-align: right;

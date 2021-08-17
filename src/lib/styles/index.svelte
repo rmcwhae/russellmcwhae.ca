@@ -103,7 +103,7 @@
         color: var(--high-contrast-color);
         /* margin-bottom: var(--s3); */
         margin-bottom: var(--s0);
-        border-bottom: 2px solid var(--high-contrast-color);
+        /* border-bottom: 1px solid var(--high-contrast-color); */
     }
     article header,
     article nav,
@@ -159,7 +159,8 @@
     }
     article pre {
         padding: var(--s-1) var(--s1);
-        background: rgba(127, 127, 127, 0.15);
+        /* background: rgba(127, 127, 127, 0.15); */
+        border: 1px solid var(--light-grey);
         border-radius: var(--radius);
     }
     article li p {
