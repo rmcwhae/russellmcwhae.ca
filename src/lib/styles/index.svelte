@@ -103,7 +103,7 @@
         color: var(--high-contrast-color);
         /* margin-bottom: var(--s3); */
         margin-bottom: var(--s0);
-        /* border-bottom: 1px solid var(--high-contrast-color); */
+        border-bottom: 2px solid var(--high-contrast-color);
     }
     article header,
     article nav,
