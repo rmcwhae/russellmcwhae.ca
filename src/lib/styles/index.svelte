@@ -104,6 +104,8 @@
     }
     article header {
         color: var(--high-contrast-color);
+        /* margin-bottom: var(--s3); */
+        margin-bottom: var(--s0);
         border-bottom: 2px solid var(--high-contrast-color);
     }
     article header,
@@ -129,13 +131,13 @@
     article strong,
     .sub {
         text-transform: uppercase;
-        font-size: 1rem;
-        letter-spacing: 0.05em;
+        font-size: 0.95rem;
+        letter-spacing: 0.075em;
         line-height: 1.2em;
-        font-weight: normal;
+        font-weight: 700;
     }
     .sub {
-        margin-bottom: var(--s-5);
+        /* margin-top: var(--s1); */
     }
     .nowrap {
         white-space: nowrap;
@@ -186,7 +188,7 @@
         color: var(--high-contrast-color);
     }
     h1 {
-        font-size: 3rem;
+        font-size: 3.25rem;
         line-height: 1em;
         margin: 0;
     }
@@ -198,6 +200,9 @@
         h2 {
             font-size: 1.25em;
             /* text-align: center; */
+        }
+        article header {
+            text-align: center;
         }
     }
     h3 {

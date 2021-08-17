@@ -37,7 +37,7 @@
     @media (max-width: 1023px) {
         .icons {
             text-align: center;
-            margin: var(--s0) 0;
+            margin: var(--s0) 0 var(--s2);
         }
         .icons a:not(:last-of-type) {
             margin-right: var(--s0);
