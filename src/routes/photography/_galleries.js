@@ -2,7 +2,7 @@ import fs from 'fs'
 import * as StringUtils from '$lib/utils/string'
 
 const galleries = fs
-    .readdirSync('./static/galleries')
+    .readdirSync('./content/galleries')
     .filter((file) => file !== '.DS_Store')
     .filter((file) => file !== 'manifest.json')
     .sort((a, b) => {
