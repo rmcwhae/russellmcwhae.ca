@@ -193,6 +193,7 @@
     }
     h1 {
         font-size: 3.25rem;
+        font-weight: 600;
         line-height: 1em;
         margin: 0;
     }

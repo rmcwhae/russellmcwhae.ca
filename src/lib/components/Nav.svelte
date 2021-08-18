@@ -89,7 +89,7 @@
         font-size: 1rem;
         z-index: 2;
         position: fixed;
-        font-weight: 700;
+        font-weight: 600;
     }
     ul {
         list-style: none;

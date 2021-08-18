@@ -105,14 +105,14 @@
         margin-bottom: var(--s-3);
     }
     nav {
-        font-weight: 700;
+        /* font-weight: 600; */
         display: flex;
         justify-content: space-between;
         margin-top: var(--s3);
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 2px solid var(--high-contrast-color);
+        border-top: 1px solid var(--high-contrast-color);
     }
     nav a {
         color: var(--high-contrast-color);
@@ -122,7 +122,7 @@
         vertical-align: middle;
     }
     .sub {
-        border-top: 1px solid var(--medium-grey);
+        border-top: 1px solid var(--high-contrast-color);
         padding-top: var(--s-1);
     }
     a:first-child {
