@@ -100,10 +100,9 @@
         margin-right: calc(-1 * var(--s3));
     }
     article header {
-        color: var(--high-contrast-color);
         /* margin-bottom: var(--s3); */
-        margin-bottom: var(--s0);
-        border-bottom: 2px solid var(--high-contrast-color);
+        margin-bottom: var(--s4);
+        /* border-bottom: 2px solid var(--high-contrast-color); */
     }
     article header,
     article nav,
@@ -131,7 +130,7 @@
         font-size: 0.95rem;
         letter-spacing: 0.075em;
         line-height: 1.2em;
-        font-weight: 700;
+        /* font-weight: 700; */
     }
     .sub {
         /* margin-top: var(--s1); */
