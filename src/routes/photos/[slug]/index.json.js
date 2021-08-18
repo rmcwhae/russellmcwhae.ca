@@ -4,7 +4,7 @@ export function get({ params }) {
     const gallery = GalleryHelpers.getGalleries().find(
         (post) => post.slug === params.slug
     )
-    const images = GalleryHelpers.getImages(gallery)
+    const images = GalleryHelpers.getImages('galleries', 0, gallery.slug)
 
     if (gallery) {
         return {

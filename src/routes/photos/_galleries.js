@@ -23,14 +23,14 @@ export function getGalleries() {
         })
 }
 
-export function getImages(gallery) {
+export function getImages(folder, reverseSort = false, slug = '') {
     const images = fs
-        .readdirSync('./static/galleries/' + gallery.slug)
+        .readdirSync('./static/' + folder + '/' + slug)
         .filter((folder) => folder !== '.DS_Store')
         .map((image) => {
-            const src = generateSrc(gallery.slug, image)
+            const src = generateSrc(folder, slug, image)
             const { width, height } = imageSize(
-                './static/galleries/' + gallery.slug + '/' + image
+                './static/' + folder + '/' + slug + '/' + image
             )
 
             return {
@@ -42,9 +42,15 @@ export function getImages(gallery) {
             }
         })
 
-    return images
+    console.log('images', images)
+
+    return reverseSort ? images.reverse() : images
 }
 
-function generateSrc(slug, image) {
-    return '/galleries/' + slug + '/' + image
+// Helpers
+
+function generateSrc(folder, slug, image) {
+    const second = slug ? slug + '/' : ''
+    return '/' + folder + '/' + second + image
 }
+// TODO ^ make this less ridiculous…
