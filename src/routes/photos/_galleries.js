@@ -42,8 +42,6 @@ export function getImages(folder, reverseSort = false, slug = '') {
             }
         })
 
-    console.log('images', images)
-
     return reverseSort ? images.reverse() : images
 }
 
