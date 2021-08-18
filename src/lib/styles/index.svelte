@@ -142,6 +142,10 @@
     article > * + * {
         margin-top: var(--s2);
     }
+
+    article {
+        margin-left: 10%;
+    }
     @media (max-width: 1023px) {
         article > * + * {
             margin-top: var(--s1);
