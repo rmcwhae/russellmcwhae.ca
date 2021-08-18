@@ -1,28 +1,6 @@
-<script context="module">
-	export async function load({ fetch }) {
-		try {
-			const galleries = await fetch('/photography.json').then((r) => r.json());
-			return { props: { galleries } };
-		} catch (error) {
-			console.error(error);
-		}
-	}
-</script>
+<h1>Portfolio</h1>
 
-<script>
-	export let galleries = [];
-</script>
-
-<h1>Photography</h1>
-
-<h2>All Galleries</h2>
-
-<ul>
-	{#each galleries as gallery}
-		<li><a href={'/photography/' + gallery.slug}>{gallery.title}</a> {gallery.date}</li>
-	{/each}
-</ul>
-
-<style>
-	/* your styles go here */
-</style>
+<p>
+    These are my favourite images. Also see <a href="/photos">Photos by event</a
+    >.
+</p>

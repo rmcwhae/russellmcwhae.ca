@@ -11,7 +11,7 @@ category: TODO
 -   Verify `photos/\*` links in journal entries
 -   Update about with skills
 -   Book Reading list page (linked from about)
--   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo
+-   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo; lightbox; responsive images
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
 -   Clean Adobe WebFonts once done

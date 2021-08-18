@@ -27,7 +27,8 @@
                     sveltekit:prefetch
                     href="/photography"
                     on:click={hideMenu}
-                    aria-current={$page.path.includes('/photography')
+                    aria-current={$page.path.includes('/photography') ||
+                    $page.path.includes('/photos')
                         ? 'page'
                         : undefined}>Photography</a
                 >
