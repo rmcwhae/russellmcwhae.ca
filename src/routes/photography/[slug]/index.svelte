@@ -16,8 +16,6 @@
     export let gallery
 
     const { images, title, date } = gallery
-
-    console.log('images', images)
 </script>
 
 <h1>{title}</h1>
