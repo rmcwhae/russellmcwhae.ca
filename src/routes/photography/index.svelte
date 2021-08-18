@@ -15,8 +15,7 @@
 <h1>Portfolio</h1>
 
 <p>
-    These are my favourite images. Also see <a href="/photos">Photos by event</a
-    >.
+    These are my favourite photos. Also see <a href="/photos">Events</a>.
 </p>
 
 <Gallery {images} rowHeight="400" />
