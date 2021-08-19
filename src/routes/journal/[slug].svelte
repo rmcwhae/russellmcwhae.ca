@@ -112,7 +112,7 @@
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 1px solid var(--high-contrast-color);
+        border-top: 1px solid var(--text-color);
     }
     nav a {
         color: var(--high-contrast-color);
@@ -122,7 +122,7 @@
         vertical-align: middle;
     }
     .sub {
-        border-top: 1px solid var(--light-grey);
+        border-top: 1px solid var(--text-color);
         padding-top: var(--s-4);
     }
     a:first-child {

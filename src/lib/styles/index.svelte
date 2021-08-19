@@ -100,17 +100,13 @@
         margin-right: calc(-1 * var(--s3));
     }
     article header {
-        /* margin-bottom: var(--s3); */
-        margin-bottom: var(--s4);
-        /* border-bottom: 2px solid var(--high-contrast-color); */
+        margin-bottom: var(--s3);
     }
     article header,
     article nav,
-    article img,
-    article h2,
-    article h3 {
-        /* margin-left: calc(-1 * var(--s3)); */
-        /* margin-right: calc(-1 * var(--s3)); */
+    article img {
+        margin-left: calc(-1 * var(--s2));
+        margin-right: calc(-1 * var(--s2));
     }
     article h2 {
         margin-top: var(--s4);

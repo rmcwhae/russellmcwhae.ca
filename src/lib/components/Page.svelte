@@ -8,9 +8,3 @@
     </header>
     <slot />
 </article>
-
-<style>
-    h1 {
-        padding-bottom: var(--s0);
-    }
-</style>
