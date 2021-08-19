@@ -2,10 +2,16 @@
     export let src
     export let width
     export let height
+    export let title
+    export let description
 </script>
 
-<!-- markup (zero or more items) goes here -->
-
-<style>
-    /* your styles go here */
-</style>
+<img
+    {title}
+    {description}
+    data-src={src}
+    {width}
+    {height}
+    class="lazyload"
+    alt={src}
+/>
