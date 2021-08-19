@@ -66,10 +66,6 @@
 
 <article class="restricted-width">
     <header>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
-        {/if}
         <div class="sub">
             <Date {date} />
             &middot;
@@ -79,6 +75,10 @@
             &middot;
             <span class="nowrap">{readingTime.text}</span>
         </div>
+        <h1>{@html preventLastTwoWordWrap(title)}</h1>
+        {#if description}
+            <p>{@html preventLastTwoWordWrap(description)}</p>
+        {/if}
     </header>
     <svelte:component this={component} />
     <nav>
@@ -101,7 +101,7 @@
 
 <style>
     h1 {
-        margin-top: var(--s0);
+        margin: var(--s-4) 0;
         /* margin-bottom: var(--s-3); */
     }
     nav {
@@ -112,7 +112,7 @@
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 1px solid var(--text-color);
+        border-top: 1px solid var(--light-grey);
     }
     nav a {
         color: var(--high-contrast-color);
@@ -122,8 +122,6 @@
         vertical-align: middle;
     }
     .sub {
-        border-top: 1px solid var(--text-color);
-        padding-top: var(--s-4);
     }
     a:first-child {
         margin-right: var(--s0);
@@ -132,7 +130,8 @@
         margin: 0;
         line-height: 1.2em;
         padding: var(--s-2) 0;
-        color: var(--high-contrast-color);
+        border-bottom: 1px solid var(--light-grey);
+        padding-bottom: var(--s-1);
     }
     @media screen and (min-width: 1023px) {
         p {

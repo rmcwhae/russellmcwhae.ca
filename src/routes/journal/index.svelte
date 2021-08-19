@@ -33,7 +33,7 @@
 <div class="archive">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>
-            <div class="uppercase grey sub">
+            <div class="sub">
                 <Date {date} />
                 &middot;
                 <span>{category}</span>

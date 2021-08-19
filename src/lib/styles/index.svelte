@@ -195,9 +195,9 @@
         color: var(--high-contrast-color);
     }
     h1 {
-        font-size: 3.25rem;
+        font-size: 3rem;
         font-weight: 600;
-        line-height: 1em;
+        line-height: 1.1em;
         margin: 0;
     }
     @media (max-width: 1023px) {
