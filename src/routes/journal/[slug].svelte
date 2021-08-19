@@ -70,7 +70,7 @@
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
-        <div class="uppercase sub">
+        <div class="sub">
             <Date {date} />
             &middot;
             <span>{category}</span>
@@ -101,8 +101,8 @@
 
 <style>
     h1 {
-        margin-top: var(--s-3);
-        margin-bottom: var(--s-3);
+        margin-top: var(--s0);
+        /* margin-bottom: var(--s-3); */
     }
     nav {
         /* font-weight: 600; */
@@ -122,20 +122,22 @@
         vertical-align: middle;
     }
     .sub {
-        border-top: 1px solid var(--high-contrast-color);
-        padding-top: var(--s-1);
+        border-top: 1px solid var(--light-grey);
+        padding-top: var(--s-4);
     }
     a:first-child {
         margin-right: var(--s0);
     }
     p {
         margin: 0;
-        font-size: 1.3em;
         line-height: 1.2em;
         padding: var(--s-2) 0;
         color: var(--high-contrast-color);
-
-        /* font-weight: 700; */
+    }
+    @media screen and (min-width: 1023px) {
+        p {
+            font-size: 1.2em;
+        }
     }
     .right {
         text-align: right;
