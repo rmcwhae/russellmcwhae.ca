@@ -49,6 +49,11 @@
     const [current, ...rest] = calendars
 </script>
 
+<article>
+    <h1>Calendars</h1>
+    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
+</article>
+
 <!-- <main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
     <div class="shadow">
         <h4>{current.year} Calendar</h4>
@@ -136,7 +141,7 @@
         line-height: 1em;
     }
     article {
-        margin: var(--s4) auto;
+        margin: 0 auto var(--s2);
     }
     :global(.shadow) {
         text-shadow: 0 0 30px rgb(0 0 0 / 70%);
@@ -148,7 +153,7 @@
         border: 1px solid white;
         padding: var(--s-2) var(--s-1);
     }
-    @media (max-width: 1023px) {
+    @media (max-width: 800px) {
         main {
             margin-top: 0;
         }

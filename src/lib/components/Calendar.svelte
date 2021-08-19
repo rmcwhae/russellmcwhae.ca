@@ -29,7 +29,7 @@
         margin-bottom: var(--s-1);
         text-decoration: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 801px) {
         .current {
             grid-column: span 2;
         }
