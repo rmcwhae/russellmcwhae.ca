@@ -49,11 +49,7 @@
     const [current, ...rest] = calendars
 </script>
 
-<!-- <header>
-    <h1>Calendars</h1>
-</header> -->
-
-<main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
+<!-- <main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
     <div class="shadow">
         <h4>{current.year} Calendar</h4>
         <div class="uppercase">{current.filesize} MB PDF</div>
@@ -72,7 +68,15 @@
             >Purchase <RightChevron />
         </a>
     </div>
-</main>
+</main> -->
+
+<!-- <h2>Previous Calendars</h2> -->
+
+<div class="past">
+    {#each calendars as { filename, year, filesize }, index}
+        <Calendar {filename} {year} {filesize} {index} />
+    {/each}
+</div>
 
 <article class="restricted-width">
     <h2>About</h2>
@@ -102,14 +106,6 @@
     </p>
 </article>
 
-<h2>Previous Calendars</h2>
-
-<div class="past">
-    {#each rest as { filename, year, filesize }}
-        <Calendar {filename} {year} {filesize} />
-    {/each}
-</div>
-
 <style>
     /* h1 {
         padding-bottom: var(--s2);
@@ -128,9 +124,6 @@
         height: 100vh;
         background-size: cover;
         background-position: center center;
-    }
-    main a {
-        /* display: block; */
     }
     main a,
     main a:hover {

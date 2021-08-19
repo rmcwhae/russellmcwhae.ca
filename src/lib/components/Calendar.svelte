@@ -2,9 +2,14 @@
     export let year
     export let filesize
     export let filename
+    export let index
+    console.log('index', index)
 </script>
 
-<section style={`background-image: url(/calendar-images/${year}.jpg)`}>
+<section
+    style={`background-image: url(/calendar-images/${year}.jpg)`}
+    class:current={index === 0}
+>
     <a
         href={'pdf/' + filename}
         target="_blank"
@@ -22,6 +27,12 @@
         padding: var(--s5) 0;
         display: block;
         margin-bottom: var(--s-1);
+        text-decoration: none;
+    }
+    @media (min-width: 1024px) {
+        .current {
+            grid-column: span 2;
+        }
     }
     a,
     a:hover {
