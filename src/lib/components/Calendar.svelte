@@ -3,7 +3,6 @@
     export let filesize
     export let filename
     export let index
-    console.log('index', index)
 </script>
 
 <section
