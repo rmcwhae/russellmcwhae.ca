@@ -101,6 +101,9 @@
     }
     article header {
         margin-bottom: var(--s3);
+        /* padding-bottom: var(--s3); */
+        /* border-top: 2px solid var(--medium-grey); */
+        /* border-bottom: 2px solid var(--medium-grey); */
     }
     article header,
     article nav,
@@ -136,7 +139,7 @@
     .sub {
         font-weight: 600;
         font-size: 1rem;
-        color: var(--medium-grey);
+        /* color: var(--medium-grey); */
     }
     .nowrap {
         white-space: nowrap;
@@ -224,7 +227,7 @@
         margin: var(--s3) 0;
         padding: 0;
         border: none;
-        border-top: 1px solid var(--light-grey);
+        border-top: 1px dashed var(--light-grey);
         color: var(--light-grey);
         text-align: center;
         overflow: visible;

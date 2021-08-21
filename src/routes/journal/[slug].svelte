@@ -79,6 +79,7 @@
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
+        <div class="box" />
     </header>
     <svelte:component this={component} />
     <nav>
@@ -104,15 +105,22 @@
         margin: var(--s-4) 0;
         /* margin-bottom: var(--s-3); */
     }
+    .box {
+        margin-top: var(--s1);
+        display: block;
+        height: 4px;
+        width: var(--s3);
+        background: var(--high-contrast-color);
+    }
     nav {
         /* font-weight: 600; */
         display: flex;
         justify-content: space-between;
-        margin-top: var(--s3);
+        margin-top: var(--s2);
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
-        padding-top: var(--s0);
-        border-top: 1px solid var(--light-grey);
+        padding-top: var(--s3);
+        border-top: 2px solid var(--medium-grey);
     }
     nav a {
         color: var(--high-contrast-color);
@@ -121,17 +129,13 @@
         text-decoration: none;
         vertical-align: middle;
     }
-    .sub {
-    }
     a:first-child {
         margin-right: var(--s0);
     }
     p {
         margin: 0;
         line-height: 1.2em;
-        padding: var(--s-2) 0;
-        border-bottom: 1px solid var(--light-grey);
-        padding-bottom: var(--s-1);
+        padding-top: var(--s-2);
     }
     @media screen and (min-width: 1023px) {
         p {
