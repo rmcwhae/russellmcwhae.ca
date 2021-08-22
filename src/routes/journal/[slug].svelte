@@ -79,7 +79,7 @@
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
-        <div class="box" />
+        <!-- <div class="box" /> -->
     </header>
     <svelte:component this={component} />
     <nav>
@@ -105,6 +105,10 @@
         margin: var(--s-4) 0;
         /* margin-bottom: var(--s-3); */
     }
+    header {
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+    }
     .box {
         margin-top: var(--s1);
         display: block;
@@ -126,7 +130,7 @@
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s3);
-        border-top: 1px solid var(--high-contrast-color);
+        border-top: 1px solid var(--light-grey);
     }
     nav a {
         color: var(--high-contrast-color);
