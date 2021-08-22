@@ -112,6 +112,12 @@
         width: var(--s3);
         background: var(--high-contrast-color);
     }
+    @media screen and (max-width: 1023px) {
+        .box {
+            margin: 0 auto;
+            display: inline-block;
+        }
+    }
     nav {
         /* font-weight: 600; */
         display: flex;
