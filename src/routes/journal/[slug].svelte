@@ -126,7 +126,7 @@
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
         padding-top: var(--s3);
-        border-top: 2px solid var(--medium-grey);
+        border-top: 1px solid var(--high-contrast-color);
     }
     nav a {
         color: var(--high-contrast-color);
