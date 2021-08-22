@@ -50,7 +50,7 @@
 </script>
 
 <article>
-    <h1>Calendars</h1>
+    <!-- <h1>Calendars</h1> -->
     <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
 </article>
 
