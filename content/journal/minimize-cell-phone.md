@@ -89,6 +89,8 @@ An effective way to minimize your cell-phone bill in Canada (and anywhere, reall
 
 **UPDATE March 9, 2021**: I finally upgraded my ancient iPhone 6—with a cracked screen held together by superglue—to a used, unlocked iPhone XR in December 2019. Hopefully, this one will last five years as well. The plan stayed the same, so my monthly bill has dropped to $22.11/month, averaged over the last 4.5 years. Let the savings continue!
 
+**UPDATE August 22, 2021**: I built an automated scraper ([Github repo](https://github.com/rmcwhae/koodo-prepaid-promo-scraper)) to check for promotions on Koodo’s web page and email me the results. Also, my monthly average phone bill is now $21.44.
+
 ## References
 
 -   Postman, Neil. _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_. New York, N.Y., U.S.A.: Penguin Books, 2006.
