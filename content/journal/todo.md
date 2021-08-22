@@ -12,6 +12,7 @@ category: TODO
 -   Update about with skills
 -   Book Reading list page (linked from about)
 -   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo; lightbox; responsive images; refactor helpers
+-   Reusable `<Gallery>` component; resizing bug
 -   Photo gallery breadcrumbs
 -   Make repo public once deployed
 -   Clean Adobe WebFonts once done
@@ -21,6 +22,7 @@ category: TODO
 -   Submit for review?
 -   Projects page
 -   Home page 5-photo grid, journal widget?
--   Code word wrap on uses page…
 -   Favicon
 -   Image height to avoid jump when loading
+-   Breadcrumbs like on The Verge
+-   Image caption border-bottom?

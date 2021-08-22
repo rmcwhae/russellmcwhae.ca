@@ -100,10 +100,7 @@
         margin-right: calc(-1 * var(--s3));
     }
     article header {
-        margin-bottom: var(--s3);
-        /* padding-bottom: var(--s3); */
-        /* border-top: 2px solid var(--medium-grey); */
-        /* border-bottom: 2px solid var(--medium-grey); */
+        margin-bottom: var(--s4);
     }
     article header,
     article nav,
@@ -179,6 +176,7 @@
     code {
         white-space: pre-wrap;
         font-size: 0.8em;
+        word-break: break-word;
     }
     h1 a,
     h2 a,
@@ -214,6 +212,7 @@
         }
         article header {
             text-align: center;
+            margin-bottom: var(--s1);
         }
     }
     h3 {
