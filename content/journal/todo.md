@@ -18,6 +18,7 @@ category: TODO
 -   Clean Adobe WebFonts once done
 -   SEO tags etc.
 -   Performance testing
+-   Publish date bug
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Submit for review?
 -   Projects page
