@@ -27,6 +27,7 @@ export function getImages(folder, reverseSort = false, slug = '') {
     const images = fs
         .readdirSync('./static/' + folder + '/' + slug)
         .filter((folder) => folder !== '.DS_Store')
+        .filter((folder) => folder !== 'g')
         .map((image) => {
             const src = generateSrc(folder, slug, image)
             const { width, height } = imageSize(
