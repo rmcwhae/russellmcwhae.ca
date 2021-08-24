@@ -48,10 +48,17 @@
         grid-template-rows: repeat(2, 1fr);
         grid-gap: var(--s2);
     }
-    p,
-    .big {
+    .grid div {
+        padding-bottom: var(--s-2);
+        border-bottom: 1px solid var(--light-grey);
+    }
+    p {
         margin-top: 0;
         font-size: 1.2em;
+    }
+    .big {
+        font-size: 1.2em;
+        padding-bottom: var(--s-2);
     }
     .box1 {
         grid-column-start: 1;
@@ -91,7 +98,6 @@
     @media (max-width: 599px) {
         .grid {
             grid-gap: var(--s1);
-
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: minmax(40px, 1fr);
         }
