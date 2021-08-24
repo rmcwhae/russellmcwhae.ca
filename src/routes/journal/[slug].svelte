@@ -126,10 +126,10 @@
         /* font-weight: 600; */
         display: flex;
         justify-content: space-between;
-        margin-top: var(--s2);
+        margin-top: var(--s4);
         /* margin-bottom: var(--s3); */
         flex-wrap: wrap;
-        padding-top: var(--s3);
+        padding-top: var(--s0);
         border-top: 1px solid var(--light-grey);
     }
     nav a {
