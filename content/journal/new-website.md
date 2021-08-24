@@ -2,7 +2,7 @@
 title: That New-Website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
-date: 2021-08-22
+date: 2021-08-23
 draft: 0
 category: Tech
 ---
@@ -52,13 +52,13 @@ As for typography, simplicity again prevails: all fonts are different weights of
 
 ## Development
 
-As mentioned, this website is built using SvelteKit. Under the hood, SvelteKit uses [Vite](https://vitejs.dev/) for bundling, which was fabulously quick and reliable. Hot-module replacement worked brilliantly.
+As mentioned, this website is built using SvelteKit. Under the hood, SvelteKit uses [Vite](https://vitejs.dev/) for bundling, which was fabulously quick and reliable.
 
 My journal entries are written in Markdown, so transferring these from the old PHP back-end involved simply pasting all the Markdown files into this project—data migration doesn’t get much simpler than that!
 
 ### Browser Support
 
-I haven‘t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then get a [real one](https://bestvpn.org/outdatedbrowser/en).
+I haven‘t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then it is time [to upgrade](https://bestvpn.org/outdatedbrowser/en).
 
 ### Notable Packages
 

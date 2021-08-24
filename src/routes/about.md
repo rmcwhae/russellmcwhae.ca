@@ -7,18 +7,7 @@ layout: page
     import Portrait from '$static/2019portrait.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 
-<style>
-    img {
-        margin-top: calc(-1 * var(--s2))
-    }
-    @media screen and (max-width: 1023px) {
-        img {
-            margin-top: 0;
-        }
-    }
-</style>
-
-<img srcset={Portrait} type="image/webp" alt="Russell Portrait" />
+<img srcset={Portrait} type="image/webp" alt="Russell Portrait" class="mt-0" />
 
 Growing up in Calgary, Alberta, Canada I spent time mountain biking, hiking and downhill skiing in the Canadian Rocky Mountains. My interest in outdoor pursuits has continually increased and now includes backcountry skiing and basic mountaineering. As my outdoor experience grew, I began to venture further into the backcountry and started bringing a camera to share my experiences in hard-to-reach places. This has become my preferred style of photography: finding awe-inspiring landscapes, frequently far and high in the mountains.
 

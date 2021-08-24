@@ -31,6 +31,9 @@
         overflow-x: hidden;
         color: var(--text-color);
         background: var(--background-color);
+        /* background: var(--background-color) url('./static/test.png') no-repeat;
+        background-position: bottom center;
+        background-size: 16rem auto; */
         transition: color ease var(--duration);
         transition: background-color ease var(--duration);
         margin: 0;
@@ -95,9 +98,19 @@
         margin-left: var(--s-2);
     }
     article img {
-        width: calc(100% + 2 * var(--s3));
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /* width: calc(100% + 2 * var(--s3));
         margin-left: calc(-1 * var(--s3));
-        margin-right: calc(-1 * var(--s3));
+        margin-right: calc(-1 * var(--s3)); */
+    }
+    @media screen and (max-width: 600px) {
+        article img {
+            width: calc(100% + 2 * var(--s0));
+            margin-left: calc(-1 * var(--s0));
+            margin-right: calc(-1 * var(--s0));
+        }
     }
     article header {
         margin-bottom: var(--s4);
@@ -105,8 +118,8 @@
     article header,
     article nav,
     article img {
-        margin-left: calc(-1 * var(--s2));
-        margin-right: calc(-1 * var(--s2));
+        /* margin-left: calc(-1 * var(--s2));
+        margin-right: calc(-1 * var(--s2)); */
     }
     article h2 {
         margin-top: var(--s4);
@@ -116,13 +129,9 @@
     }
     @media screen and (max-width: 1200px) {
         article header,
-        article nav,
-        article img {
+        article nav {
             margin-left: 0;
             margin-right: 0;
-        }
-        article img {
-            width: 100%;
         }
     }
     .uppercase,
@@ -230,5 +239,13 @@
         color: var(--light-grey);
         text-align: center;
         overflow: visible;
+    }
+    .mt-0 {
+        margin-top: calc(-1 * var(--s2));
+    }
+    @media screen and (max-width: 1023px) {
+        .mt-0 {
+            margin-top: 0;
+        }
     }
 </style>

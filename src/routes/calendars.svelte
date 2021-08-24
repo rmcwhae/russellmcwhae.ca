@@ -49,11 +49,6 @@
     const [current, ...rest] = calendars
 </script>
 
-<article>
-    <!-- <h1>Calendars</h1> -->
-    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
-</article>
-
 <!-- <main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
     <div class="shadow">
         <h4>{current.year} Calendar</h4>
@@ -77,11 +72,16 @@
 
 <!-- <h2>Previous Calendars</h2> -->
 
-<div class="past">
+<div class="past mt-0">
     {#each calendars as { filename, year, filesize }, index}
         <Calendar {filename} {year} {filesize} {index} />
     {/each}
 </div>
+
+<article>
+    <!-- <h1>Calendars</h1> -->
+    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
+</article>
 
 <article class="restricted-width">
     <h2>About</h2>
