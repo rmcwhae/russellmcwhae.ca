@@ -18,16 +18,24 @@
             </p>
         </div>
         <div class="box2">
-            <a href="photos" class="big"><h3>Photos</h3></a>
+            <a href="photos" class="big"
+                >view my <h3>Photos</h3></a
+            >
         </div>
         <div class="box3">
-            <a href="calendars" class="big"><h3>Calendars</h3></a>
+            <a href="calendars" class="big"
+                >preview my <h3>Calendars</h3></a
+            >
         </div>
         <div class="box4">
-            <a href="projects" class="big"><h3>Projects</h3></a>
+            <a href="projects" class="big"
+                >check out my <h3>Projects</h3></a
+            >
         </div>
         <div class="box5">
-            <a href="journal" class="big"><h3>Journal</h3></a>
+            <a href="journal" class="big"
+                >read my <h3>Journal</h3></a
+            >
         </div>
     </div>
 
