@@ -8,6 +8,11 @@
 
 <h1>Hi, <a href="about">I’m Russell</a>.</h1>
 
+<p>
+    I’m a front-end-biased web developer with a background in structural
+    engineering and biomedical research who likes spending time outside.
+</p>
+
 <div class="grid">
     <figure class="box1">
         <img srcset={YohoBugs} type="image/webp" alt="Bugaboos from Yoho" />
@@ -32,6 +37,9 @@
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 20vw);
         grid-gap: var(--s-2);
+    }
+    p {
+        font-size: 1.2em;
     }
     img {
         width: 200%;
