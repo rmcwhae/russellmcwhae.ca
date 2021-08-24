@@ -18,16 +18,16 @@
             </p>
         </div>
         <div class="box2">
-            <a href="photos" class="big">Photos</a>
+            <h2><a href="photos" class="big">Photos</a></h2>
         </div>
         <div class="box3">
-            <a href="calendars" class="big">Calendars</a>
+            <h2><a href="calendars" class="big">Calendars</a></h2>
         </div>
         <div class="box4">
-            <a href="projects" class="big">Projects</a>
+            <h2><a href="projects" class="big">Projects</a></h2>
         </div>
         <div class="box5">
-            <a href="journal" class="big">Journal</a>
+            <h2><a href="journal" class="big">Journal</a></h2>
         </div>
     </div>
 
@@ -56,9 +56,10 @@
         margin-top: 0;
         font-size: 1.2em;
     }
-    .big {
-        font-size: 1.2em;
-        padding-bottom: var(--s-2);
+    h2 {
+        /* font-size: 1.2em; */
+        margin-top: 0;
+        /* padding-bottom: var(--s-2); */
     }
     .box1 {
         grid-column-start: 1;
@@ -91,11 +92,15 @@
         grid-row-end: 3;
     }
     @media (max-width: 1023px) {
-        h1 {
-            text-align: center;
+        .wrapper {
+            margin-top: var(--s2);
         }
     }
     @media (max-width: 599px) {
+        h1 {
+            text-align: center;
+        }
+
         .grid {
             grid-gap: var(--s1);
             grid-template-columns: repeat(2, 1fr);
