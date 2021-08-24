@@ -18,16 +18,16 @@
             </p>
         </div>
         <div class="box2">
-            <h2><a href="photos" class="big">Photos</a></h2>
+            <a href="photos" class="big"><h3>Photos</h3></a>
         </div>
         <div class="box3">
-            <h2><a href="calendars" class="big">Calendars</a></h2>
+            <a href="calendars" class="big"><h3>Calendars</h3></a>
         </div>
         <div class="box4">
-            <h2><a href="projects" class="big">Projects</a></h2>
+            <a href="projects" class="big"><h3>Projects</h3></a>
         </div>
         <div class="box5">
-            <h2><a href="journal" class="big">Journal</a></h2>
+            <a href="journal" class="big"><h3>Journal</h3></a>
         </div>
     </div>
 
@@ -37,6 +37,9 @@
 <style>
     .wrapper {
         max-width: 1400px;
+    }
+    .big {
+        display: block;
     }
     a {
         text-decoration: none;
@@ -56,7 +59,7 @@
         margin-top: 0;
         font-size: 1.2em;
     }
-    h2 {
+    h3 {
         /* font-size: 1.2em; */
         margin-top: 0;
         /* padding-bottom: var(--s-2); */
