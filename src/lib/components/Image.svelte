@@ -9,9 +9,9 @@
 <img
     {title}
     {description}
-    data-src={src}
+    data-src={`http://localhost:8000/?path=${title}&format=webp&width={width}`}
+    data-sizes="auto"
     {width}
     {height}
-    class="lazyload"
     alt={src}
 />
