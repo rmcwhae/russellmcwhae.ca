@@ -105,23 +105,6 @@
         margin: var(--s-4) 0;
         /* margin-bottom: var(--s-3); */
     }
-    header {
-        padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
-    }
-    .box {
-        margin-top: var(--s1);
-        display: block;
-        height: 4px;
-        width: var(--s3);
-        background: var(--high-contrast-color);
-    }
-    @media screen and (max-width: 1023px) {
-        .box {
-            margin: 0 auto;
-            display: inline-block;
-        }
-    }
     nav {
         /* font-weight: 600; */
         display: flex;

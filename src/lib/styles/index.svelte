@@ -106,6 +106,10 @@
         margin-left: calc(-1 * var(--s3));
         margin-right: calc(-1 * var(--s3)); */
     }
+    article header {
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+    }
     @media screen and (max-width: 600px) {
         article img,
         .full-bleed {

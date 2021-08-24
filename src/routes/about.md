@@ -1,6 +1,6 @@
 ---
 title: About Me
-layout: page
+layout: pagenoheader
 ---
 
 <script>

@@ -3,8 +3,6 @@ title: What I Use
 layout: page
 ---
 
-# What I Use
-
 These are the tools I use in my professional and creative workflows. Inspired by [uses.tech](https://uses.tech) via the [Syntax](https://syntax.fm/) podcast.
 
 ## Software
