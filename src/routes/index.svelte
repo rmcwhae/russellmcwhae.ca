@@ -70,7 +70,7 @@
     h3 {
         /* font-size: 1.2em; */
         margin-top: 0;
-        /* padding-bottom: var(--s-2); */
+        line-height: 1em;
     }
     .box1 {
         grid-column-start: 1;
