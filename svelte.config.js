@@ -21,20 +21,20 @@ const config = {
         //     webp: true,
         //     avif: true,
         // }),
-        svelteImage({
-            outputDir: '/g',
+        // svelteImage({
+        //     outputDir: '/g',
 
-            trace: {
-                background: '#fff',
-                color: '#000',
-                threshold: 120,
-            },
+        //     trace: {
+        //         background: '#fff',
+        //         color: '#000',
+        //         threshold: 120,
+        //     },
 
-            // should be ./static for Sapper and ./public for plain Svelte projects
-            publicDir: './static/',
-            processFolders: ['portfolio-images'],
-            placeholder: 'trace', // or "blur",
-        }),
+        //     // should be ./static for Sapper and ./public for plain Svelte projects
+        //     publicDir: './static/',
+        //     processFolders: ['portfolio-images'],
+        //     placeholder: 'trace', // or "blur",
+        // }),
         preprocess(),
     ],
     kit: {

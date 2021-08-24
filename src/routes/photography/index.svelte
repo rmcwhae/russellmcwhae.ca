@@ -23,5 +23,5 @@
 </p>
 <!-- <Image src="RMCWHAE-20210504-DSC00303-Edit-Edit.jpg" /> -->
 {#each images as { title, src, width, height }}
-    <Image {src} />
+    <!-- <Image {src} /> -->
 {/each}

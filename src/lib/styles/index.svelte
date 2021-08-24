@@ -97,7 +97,8 @@
     .footnote-backref {
         margin-left: var(--s-2);
     }
-    article img {
+    article img,
+    .full-bleed {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -106,7 +107,8 @@
         margin-right: calc(-1 * var(--s3)); */
     }
     @media screen and (max-width: 600px) {
-        article img {
+        article img,
+        .full-bleed {
             width: calc(100% + 2 * var(--s0));
             margin-left: calc(-1 * var(--s0));
             margin-right: calc(-1 * var(--s0));
