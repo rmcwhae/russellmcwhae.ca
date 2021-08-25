@@ -23,7 +23,7 @@
         height: 100%;
     }
     aside {
-        width: 28rem;
+        width: 26rem;
         padding: var(--s2) var(--s2);
         /* border-right: 1px solid var(--light-grey); */
         /* margin-right: var(--s2); */

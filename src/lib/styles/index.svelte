@@ -238,7 +238,7 @@
     article > hr,
     div > hr {
         height: 1px;
-        margin: var(--s3) 0;
+        /* margin: var(--s3) 0; */
         padding: 0;
         border: none;
         border-top: 1px dashed var(--light-grey);

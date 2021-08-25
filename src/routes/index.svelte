@@ -12,13 +12,13 @@
                 I’m a front-end-biased web developer with a background in
                 structural engineering and biomedical research who likes
                 spending time outside.
-                <span class="uppercase nowrap"
+                <span class="sub nowrap"
                     ><a href="about">More About Me <RightChevron /></a></span
                 >
             </p>
         </div>
         <div class="box2">
-            <a href="photos" class="big"
+            <a href="photography" class="big"
                 >view my <h3>Photos</h3></a
             >
         </div>
@@ -44,7 +44,7 @@
 
 <style>
     .wrapper {
-        max-width: 1400px;
+        max-width: 1200px;
     }
     .big {
         display: block;
@@ -66,6 +66,7 @@
     p {
         margin-top: 0;
         font-size: 1.2em;
+        line-height: 1.4em;
     }
     h3 {
         /* font-size: 1.2em; */
