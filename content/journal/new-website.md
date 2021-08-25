@@ -58,7 +58,7 @@ My journal entries are written in Markdown, so transferring these from the old P
 
 ### Browser Support
 
-I haven‘t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then it is time [to upgrade](https://bestvpn.org/outdatedbrowser/en).
+I haven’t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then it is time [to upgrade](https://bestvpn.org/outdatedbrowser/en).
 
 ### Notable Packages
 
