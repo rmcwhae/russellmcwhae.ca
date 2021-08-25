@@ -10,7 +10,7 @@
     class:current={index === 0}
 >
     <a
-        href={'pdf/' + filename}
+        href={'/pdf/' + filename}
         target="_blank"
         class="shadow"
         rel="noopener noreferrer nofollow"
