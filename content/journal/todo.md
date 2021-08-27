@@ -12,8 +12,8 @@ category: TODO
 -   Update about with skills
 -   Book Reading list page (linked from about)
 -   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo; lightbox; responsive images; refactor helpers
--   Reusable `<Gallery>` component; resizing bug
--   Photo gallery breadcrumbs
+-   Photos navigate by keypress
+-   Photo gallery breadcrumbs like on The Verge
 -   Make repo public once deployed
 -   Clean Adobe WebFonts once done
 -   SEO tags etc.
@@ -22,8 +22,6 @@ category: TODO
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Submit for review?
 -   Projects page
--   Home page 5-photo grid, journal widget?
 -   Debug color switcher in light mode…
 -   Image height to avoid jump when loading
--   Breadcrumbs like on The Verge
 -   Image caption border-bottom?
