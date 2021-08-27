@@ -8,12 +8,9 @@
 </script>
 
 <script>
-    // import Gallery from 'svelte-gallery'
     import Image from 'svelte-image'
     // import Image from 'svimg'
-    export let images
-
-    // console.log('images[0]', images[0])
+    // export let images
 </script>
 
 <h1>Portfolio</h1>
@@ -21,7 +18,8 @@
 <p>
     These are my favourite photos. Also see <a href="/photos">Events</a>.
 </p>
-<!-- <Image src="RMCWHAE-20210504-DSC00303-Edit-Edit.jpg" /> -->
-{#each images as { title, src, width, height }}
-    <!-- <Image {src} /> -->
-{/each}
+
+<Image src="portfolio-images/RMCWHAE-20210504-DSC00303-Edit-Edit.jpg" />
+<Image src="portfolio-images/RMCWHAE-20210611-DSC03897.jpg" />
+<Image src="portfolio-images/RMCWHAE-20210109-DSC03464-Edit-Enhanced.jpg" />
+<!-- Preprocessors only have access to a component's source code, so src strings MUST be hardcoded. Let's find a way to automate this… -->
