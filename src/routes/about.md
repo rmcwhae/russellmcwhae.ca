@@ -25,6 +25,6 @@ Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.li
 
 <p>View my <a href="/pdf/mcwhae_russell_resume.pdf" target="_blank">current résumé</a>, or check out my <a href="https://www.linkedin.com/in/rmcwhae/" rel="nofollow">LinkedIn profile</a>.</p>
 
-## Tools I use
+## Etc.
 
-See “[What I Use](/uses)”.
+-   [What I Use](/uses)

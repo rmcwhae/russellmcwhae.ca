@@ -9,7 +9,7 @@
     <div class="grid">
         <div class="box1">
             <p>
-                I’m a front-end-biased web developer with a background in
+                I’m a front end–biased web developer with a background in
                 structural engineering and biomedical research who likes
                 spending time outside.
                 <span class="sub nowrap"
