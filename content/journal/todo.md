@@ -23,7 +23,7 @@ category: TODO
 -   Submit for review?
 -   Projects page
 -   Home page 5-photo grid, journal widget?
--   Favicon
+-   Debug color switcher in light mode…
 -   Image height to avoid jump when loading
 -   Breadcrumbs like on The Verge
 -   Image caption border-bottom?
