@@ -23,5 +23,4 @@ category: TODO
 -   Submit for review?
 -   Projects page
 -   Debug color switcher in light mode…
--   Image height to avoid jump when loading
 -   Image caption border-bottom?
