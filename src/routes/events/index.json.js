@@ -8,9 +8,6 @@ export async function get() {
     })
 
     const sortedEvents = events
-        .sort((a, b) => {
-            return new Date(b.date) - new Date(a.date)
-        })
         .map((event) => {
             const { name } = event
             const { title, date } = parseTitleAndDate(name)
@@ -19,6 +16,9 @@ export async function get() {
                 title,
                 date,
             }
+        })
+        .sort((a, b) => {
+            return new Date(b.date) - new Date(a.date)
         })
 
     const promises = sortedEvents.map((event) => getImagesForEvent(event.name))
