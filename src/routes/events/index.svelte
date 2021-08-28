@@ -21,7 +21,7 @@
     export let events
 </script>
 
-<h1>Events</h1>
+<!-- <h1>Events</h1> -->
 
 <Breadcrumbs {items} />
 

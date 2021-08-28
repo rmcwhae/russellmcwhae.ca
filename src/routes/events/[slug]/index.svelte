@@ -22,10 +22,15 @@
     ]
 </script>
 
-<h1>{title}</h1>
-
 <Breadcrumbs {items} />
 
+<h1>{title}</h1>
 <p class="sub">{date} &middot; {count} photos</p>
 
 <Gallery {images} />
+
+<style>
+    h1 {
+        margin: var(--s0) 0;
+    }
+</style>

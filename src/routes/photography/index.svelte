@@ -16,7 +16,7 @@
     export let images
 </script>
 
-<h1>Portfolio</h1>
+<!-- <h1>Portfolio</h1> -->
 <Breadcrumbs {items} />
 <div>
     <p class="big">This is a showcase of my favourite photos.</p>
