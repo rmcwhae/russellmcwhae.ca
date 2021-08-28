@@ -18,6 +18,8 @@
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-svelte3": "^3.2.0",
         "image-size": "^1.0.0",
+        "imagekit": "^3.2.0",
+        "imagekit-javascript": "^1.4.1",
         "lazysizes": "^5.3.2",
         "mdsvex": "^0.9.8",
         "postcss": "^8.3.5",

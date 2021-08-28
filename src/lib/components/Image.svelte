@@ -1,17 +1,19 @@
 <script>
-    export let src
-    export let width
-    export let height
-    export let title
-    export let description
+    import { generateSrc, generateSrcSets, sizes } from '$lib/utils/images'
+
+    export let value
+    const { name, filePath, width, height, thumbnail } = value
+
+    $: srcset = generateSrcSets(filePath)
+    $: src = generateSrc(filePath)
 </script>
 
-<img
-    {title}
-    {description}
-    data-src={`http://localhost:8000/?path=${title}&format=webp&width={width}`}
-    data-sizes="auto"
-    {width}
-    {height}
-    alt={src}
-/>
+<!-- TODO make thumbnail… -->
+<img {srcset} {src} {sizes} {width} {height} alt={name} />
+
+<style>
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>
