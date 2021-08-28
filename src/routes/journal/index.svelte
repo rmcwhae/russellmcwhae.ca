@@ -20,6 +20,9 @@
 
 <script>
     import Date from '$lib/components/Date.svelte'
+    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
+
+    const items = [{ text: 'Journal' }]
 
     export let posts
 </script>
@@ -30,6 +33,7 @@
     wrestled with similar questions. I hope you’ll join me for a glimpse into my
     head.
 </p> -->
+<Breadcrumbs {items} />
 <div class="archive">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>
@@ -88,7 +92,7 @@
     }
     .archive {
         /* max-width: 1200px; */
-        margin: 0 auto;
+        margin: var(--s1) auto 0;
         /* Define the element as a grid container */
         /* display: grid; */
         /* Auto-fit as many items on a row as possible without going under the min */
