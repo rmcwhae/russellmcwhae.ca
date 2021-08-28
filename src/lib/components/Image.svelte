@@ -7,6 +7,7 @@
     export let width
     export let height
     export let thumbnail
+    export let lockedRatio = false
 
     $: srcset = generateSrcSets(filePath)
 </script>
@@ -20,11 +21,17 @@
     {height}
     alt={name}
     class="lazyload"
+    class:lockedRatio
 />
 
 <style>
     img {
         width: 100%;
         height: auto;
+    }
+    .lockedRatio {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
     }
 </style>

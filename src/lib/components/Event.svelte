@@ -11,12 +11,34 @@
 </script>
 
 <section>
-    <h2><a href={'/events/' + eventName}>{title}</a></h2>
-
+    <a href={'/events/' + eventName}>
+        <Image {name} {filePath} {width} {height} lockedRatio />
+        <h2>{title}</h2>
+    </a>
     <p class="sub">{date} &middot; {count} photos</p>
-
-    <Image {name} {filePath} {width} {height} />
 </section>
 
 <style>
+    /* div {
+        position: relative;
+    } */
+    h2 {
+        margin: 0;
+        padding: var(--s-1) var(--s1) 0 0;
+        /* position: absolute; */
+        /* bottom: 0; */
+        /* left: 0; */
+        background: var(--background-color);
+    }
+    a {
+        text-decoration: none;
+    }
+    p {
+        margin-top: var(--s-3);
+    }
+    section {
+        margin-top: var(--s3);
+        padding-bottom: var(--s-3);
+        border-bottom: 1px solid var(--light-grey);
+    }
 </style>
