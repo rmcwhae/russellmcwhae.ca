@@ -4,7 +4,6 @@ import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-netlify'
 import pack from 'vite-imagetools'
 import preprocess from 'svelte-preprocess'
-// import svelteImage from 'svelte-image'
 // import imagePreprocessor from 'svimg'
 import path from 'path'
 
@@ -22,22 +21,6 @@ const config = {
         //     webp: true,
         //     avif: true,
         // }),
-        // svelteImage({
-        //     outputDir: 'g/',
-
-        //     sizes: [400, 800, 1200, 2000], // array of sizes for srcset in pixels
-        //     breakpoints: [375, 768, 1024, 2048],
-
-        //     trace: {
-        //         background: '#fff',
-        //         color: '#000',
-        //         threshold: 120,
-        //     },
-
-        //     // should be ./static for Sapper and ./public for plain Svelte projects
-        //     publicDir: './static/',
-        //     placeholder: 'trace', // or "blur",
-        // }),
         preprocess(),
     ],
     kit: {
@@ -53,9 +36,6 @@ const config = {
             fallback: null,
         }),
         vite: {
-            optimizeDeps: {
-                include: ['blurhash'],
-            },
             ssr: {
                 noExternal: ['svimg'],
             },
