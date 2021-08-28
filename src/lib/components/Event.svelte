@@ -23,22 +23,18 @@
         position: relative;
     } */
     h2 {
-        margin: 0;
-        padding: var(--s-1) var(--s1) 0 0;
-        /* position: absolute; */
-        /* bottom: 0; */
-        /* left: 0; */
-        background: var(--background-color);
+        margin: var(--s0) 0 0;
     }
     a {
         text-decoration: none;
     }
     p {
         margin-top: var(--s-3);
+        margin-bottom: 0;
     }
     section {
-        margin-top: var(--s3);
-        padding-bottom: var(--s-3);
+        margin-top: var(--s2);
+        padding-bottom: var(--s0);
         border-bottom: 1px solid var(--light-grey);
     }
 </style>
