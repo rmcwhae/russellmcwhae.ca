@@ -15,8 +15,7 @@
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
     }
-    :root,
-    html body[data-theme='light'] {
+    :root {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(100, 100, 100);
@@ -25,6 +24,29 @@
         --medium-grey: #888;
         --blue: rgb(48, 89, 202);
         --blue-light: rgb(175, 194, 240);
+    }
+    html body[data-theme='dark'] {
+        --background-color: black;
+        --background-color-transparent: rgba(0, 0, 0, 0.8);
+        --high-contrast-color: white;
+        --text-color: rgb(172, 172, 172);
+        --light-grey: rgb(66, 66, 66);
+        --medium-grey: #999;
+        --blue: rgb(175, 199, 255);
+        --blue-light: rgb(56, 67, 102);
+    }
+    @media (prefers-color-scheme: dark) {
+        /* Necessary to duplicate code to prevent flash on dark mode */
+        :root {
+            --background-color: black;
+            --background-color-transparent: rgba(0, 0, 0, 0.8);
+            --high-contrast-color: white;
+            --text-color: rgb(172, 172, 172);
+            --light-grey: rgb(66, 66, 66);
+            --medium-grey: #999;
+            --blue: rgb(175, 199, 255);
+            --blue-light: rgb(56, 67, 102);
+        }
     }
 
     body {
@@ -46,18 +68,6 @@
         body {
             font-size: 1.2rem;
             line-height: 1.8rem;
-        }
-    }
-    @media (prefers-color-scheme: dark) {
-        body {
-            --background-color: black;
-            --background-color-transparent: rgba(0, 0, 0, 0.8);
-            --high-contrast-color: white;
-            --text-color: rgb(172, 172, 172);
-            --light-grey: rgb(66, 66, 66);
-            --medium-grey: #999;
-            --blue: rgb(175, 199, 255);
-            --blue-light: rgb(56, 67, 102);
         }
     }
     a {
