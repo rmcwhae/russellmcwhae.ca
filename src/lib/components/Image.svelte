@@ -8,7 +8,6 @@
     $: srcset = generateSrcSets(filePath)
 </script>
 
-<!-- TODO make thumbnail… -->
 <img
     data-sizes="auto"
     data-srcset={srcset}
