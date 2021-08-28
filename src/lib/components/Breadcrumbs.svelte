@@ -3,9 +3,6 @@
 
     const final = items[items.length - 1].text
     const links = items.slice(0, -1)
-
-    console.log('final', final)
-    console.log('links', links)
 </script>
 
 <ul class="sub">
