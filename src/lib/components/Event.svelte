@@ -23,7 +23,7 @@
         position: relative;
     } */
     h2 {
-        margin: var(--s0) 0 0;
+        margin: var(--s-4) 0 0;
     }
     a {
         text-decoration: none;
