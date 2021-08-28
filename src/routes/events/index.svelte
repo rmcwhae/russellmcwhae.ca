@@ -10,7 +10,7 @@
 </script>
 
 <script>
-    import Image from '$lib/components/Image.svelte'
+    import Event from '$lib/components/Event.svelte'
 
     export let events
 </script>
@@ -19,12 +19,6 @@
 
 <p><a href="/photography">Portfolio</a> / Events</p>
 
-{#each events as { name: eventName, featuredImage: { name, filePath, width, height }, date, count, title }}
-    <section>
-        <h2><a href={'/events/' + eventName}>{title}</a></h2>
-
-        <p class="sub">{date} &middot; {count} photos</p>
-
-        <Image {name} {filePath} {width} {height} />
-    </section>
+{#each events as { name: eventName, featuredImage, date, count, title }}
+    <Event {eventName} {featuredImage} {date} {count} {title} />
 {/each}
