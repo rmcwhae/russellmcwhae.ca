@@ -9,6 +9,6 @@
 </script>
 
 <!-- <Gallery {images} {rowHeight} {gutter} imageComponent={Image} /> -->
-{#each images as { name, filePath, width, height }}
-    <Image {name} {filePath} {width} {height} />
+{#each images as { name, filePath, width, height, thumbnail }}
+    <Image {name} {filePath} {width} {height} {thumbnail} />
 {/each}
