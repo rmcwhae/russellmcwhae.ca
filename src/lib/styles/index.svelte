@@ -72,7 +72,7 @@
         border-radius: var(--radius);
     }
     a.button:hover {
-        background-color: var(--light-grey);
+        border-color: var(--medium-grey);
     }
     main a {
         text-decoration: underline;

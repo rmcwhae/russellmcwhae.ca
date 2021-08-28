@@ -18,15 +18,27 @@
 
 <h1>Portfolio</h1>
 <Breadcrumbs {items} />
-<p class="big">This is a showcase of my favourite photos.</p>
-<p>
-    Also see <a href="/events">Events</a>.
-</p>
+<div>
+    <p class="big">This is a showcase of my favourite photos.</p>
+    <p class="nowrap second">
+        <a href="/events" class="button">All Events</a>
+    </p>
+</div>
 
 <Gallery {images} />
 
 <style>
     .big {
         font-size: 1.2em;
+        /* TODO make me reusable and responsive (disable on mobile…) */
+    }
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+    }
+    .second {
+        margin-left: var(--s0);
     }
 </style>
