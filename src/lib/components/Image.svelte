@@ -2,8 +2,11 @@
     import { generateSrcSets, sizes } from '$lib/utils/images'
     import 'lazysizes'
 
-    export let value
-    const { name, filePath, width, height, thumbnail } = value
+    export let name
+    export let filePath
+    export let width
+    export let height
+    export let thumbnail
 
     $: srcset = generateSrcSets(filePath)
 </script>

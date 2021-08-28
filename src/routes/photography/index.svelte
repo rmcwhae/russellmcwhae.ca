@@ -8,7 +8,8 @@
 </script>
 
 <script>
-    import Image from '$lib/components/Image.svelte'
+    import Gallery from '$lib/components/Gallery.svelte'
+
     export let images
 </script>
 
@@ -18,6 +19,4 @@
     These are my favourite photos. Also see <a href="/events">Events</a>.
 </p>
 
-{#each images as image}
-    <Image value={image} />
-{/each}
+<Gallery {images} />

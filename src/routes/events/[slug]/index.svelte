@@ -9,11 +9,13 @@
 </script>
 
 <script>
-    import Image from '$lib/components/Image.svelte'
+    import Gallery from '$lib/components/Gallery.svelte'
 
     export let event
 
     const { images, count, date, title } = event
+
+    console.log('event', event)
 </script>
 
 <h1>{title}</h1>
@@ -26,6 +28,4 @@
 
 <p class="sub">{date} &middot; {count} photos</p>
 
-{#each images as image}
-    <Image value={image} />
-{/each}
+<Gallery {images} />

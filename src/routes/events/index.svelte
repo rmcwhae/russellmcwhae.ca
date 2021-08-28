@@ -19,12 +19,12 @@
 
 <p><a href="/photography">Portfolio</a> / Events</p>
 
-{#each events as { name, featuredImage, date, count, title }}
+{#each events as { name: eventName, featuredImage: { name, filePath, width, height }, date, count, title }}
     <section>
-        <h2><a href={'/events/' + name}>{title}</a></h2>
+        <h2><a href={'/events/' + eventName}>{title}</a></h2>
 
         <p class="sub">{date} &middot; {count} photos</p>
 
-        <Image value={featuredImage} />
+        <Image {name} {filePath} {width} {height} />
     </section>
 {/each}
