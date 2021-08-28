@@ -16,8 +16,10 @@
     export let images
 </script>
 
-<!-- <h1>Portfolio</h1> -->
 <Breadcrumbs {items} />
+
+<h1>Portfolio</h1>
+
 <div>
     <p class="big">This is a showcase of my favourite photos.</p>
     <p class="nowrap second">
@@ -40,5 +42,11 @@
     }
     .second {
         margin-left: var(--s0);
+    }
+    h1 {
+        margin: var(--s0) 0;
+    }
+    p {
+        margin-top: 0;
     }
 </style>

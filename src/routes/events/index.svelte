@@ -21,9 +21,9 @@
     export let events
 </script>
 
-<!-- <h1>Events</h1> -->
-
 <Breadcrumbs {items} />
+
+<h1>Events</h1>
 
 <div>
     {#each events as { name: eventName, featuredImage, date, count, title }}
@@ -36,5 +36,9 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: var(--s2);
+    }
+    h1 {
+        margin: var(--s0) 0;
+        /* TODO make me DRYer */
     }
 </style>
