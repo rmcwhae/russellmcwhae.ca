@@ -31,7 +31,7 @@
     }
     .lockedRatio {
         width: 100%;
-        height: 20vh;
+        height: 16vh;
         object-fit: cover;
     }
 </style>
