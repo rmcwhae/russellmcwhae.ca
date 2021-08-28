@@ -7,12 +7,12 @@
     export let count
     export let featuredImage
 
-    const { name, filePath, width, height } = featuredImage
+    const { name, filePath, width, height, thumbnail } = featuredImage
 </script>
 
 <section>
     <a href={'/events/' + eventName}>
-        <Image {name} {filePath} {width} {height} lockedRatio />
+        <Image {name} {filePath} {width} {height} {thumbnail} lockedRatio />
         <h2>{title}</h2>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>

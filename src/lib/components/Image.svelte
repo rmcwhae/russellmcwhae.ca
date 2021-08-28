@@ -9,7 +9,7 @@
     export let thumbnail
     export let lockedRatio = false
 
-    $: srcset = generateSrcSets(filePath)
+    const srcset = generateSrcSets(filePath)
 </script>
 
 <img
