@@ -11,13 +11,19 @@
 
 <script>
     import Event from '$lib/components/Event.svelte'
+    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
+
+    const items = [
+        { text: 'Portfolio', url: '/photography' },
+        { text: 'Events' },
+    ]
 
     export let events
 </script>
 
 <h1>Events</h1>
 
-<p><a href="/photography">Portfolio</a> / Events</p>
+<Breadcrumbs {items} />
 
 <div>
     {#each events as { name: eventName, featuredImage, date, count, title }}
