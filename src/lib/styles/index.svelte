@@ -54,7 +54,7 @@
             --background-color-transparent: rgba(0, 0, 0, 0.8);
             --high-contrast-color: white;
             --text-color: rgb(172, 172, 172);
-            --light-grey: #333;
+            --light-grey: rgb(66, 66, 66);
             --medium-grey: #999;
             --blue: rgb(175, 199, 255);
             --blue-light: rgb(56, 67, 102);
