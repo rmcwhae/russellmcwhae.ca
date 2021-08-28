@@ -29,11 +29,11 @@
         text-decoration: none;
     }
     p {
-        margin-top: var(--s-3);
+        margin-top: 0;
         margin-bottom: 0;
     }
     section {
-        margin-top: var(--s0);
+        /* margin-top: var(--s0); */
         /* padding-bottom: var(--s0); */
         /* border-bottom: 1px solid var(--light-grey); */
     }
