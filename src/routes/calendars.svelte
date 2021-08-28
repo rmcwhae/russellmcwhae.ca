@@ -118,7 +118,7 @@
     .past {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* grid-gap: var(--s-2); */
+        grid-gap: var(--s-2);
     }
     main {
         display: flex;
