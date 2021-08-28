@@ -6,3 +6,4 @@ node_modules
 /static/galleries
 /static/portfolio-images
 /static/g
+.env
