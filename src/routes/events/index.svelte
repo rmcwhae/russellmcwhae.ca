@@ -10,7 +10,7 @@
 </script>
 
 <script>
-    import * as StringUtils from '$lib/utils/string'
+    import Image from '$lib/components/Image.svelte'
 
     export let events
 </script>
@@ -19,11 +19,12 @@
 
 <p><a href="/photography">Portfolio</a> / Events</p>
 
-<ul>
-    {#each events as { name }}
-        <li>
-            <a href={'/events/' + name}>{StringUtils.createTitle(name)}</a>
-            {StringUtils.extractDate(name)}
-        </li>
-    {/each}
-</ul>
+{#each events as { name, featuredImage, date, count, title }}
+    <section>
+        <h2><a href={'/events/' + name}>{title}</a></h2>
+
+        <p class="sub">{date} &middot; {count} photos</p>
+
+        <Image value={featuredImage} />
+    </section>
+{/each}

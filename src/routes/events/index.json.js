@@ -8,24 +8,49 @@ export async function get() {
     })
 
     const sortedEvents = events
+        .sort((a, b) => {
+            return new Date(b.date) - new Date(a.date)
+        })
         .map((event) => {
             const { name } = event
             const { title, date } = parseTitleAndDate(name)
-
             return {
                 ...event,
                 title,
                 date,
-                featuredImage: '', // TODO get featured image too…
             }
         })
-        .sort((a, b) => {
-            return new Date(b.date) - new Date(a.date)
-        })
+
+    const promises = sortedEvents.map((event) => getImagesForEvent(event.name))
+
+    const allImages = await Promise.all(promises)
+
+    const eventsWithImages = sortedEvents.map((event, index) => {
+        const images = allImages[index]
+        return {
+            ...event,
+            count: images.length,
+            featuredImage: getFeaturedImage(images),
+        }
+    })
 
     return {
-        body: JSON.stringify({ events: sortedEvents }),
+        body: JSON.stringify({ events: eventsWithImages }),
     }
+}
+
+function getImagesForEvent(name) {
+    return ImageKitNodeServices.listFiles({
+        path: '/events/' + name,
+        sort: 'ASC_NAME',
+    })
+}
+
+function getFeaturedImage(images) {
+    return (
+        images.find((image) => image.tags && image.tags.includes('featured')) ||
+        images[0]
+    )
 }
 
 export function parseTitleAndDate(slug) {
