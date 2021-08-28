@@ -17,11 +17,16 @@
 </script>
 
 <h1>Portfolio</h1>
-
 <Breadcrumbs {items} />
-
+<p class="big">This is a showcase of my favourite photos.</p>
 <p>
-    These are my favourite photos. Also see <a href="/events">Events</a>.
+    Also see <a href="/events">Events</a>.
 </p>
 
 <Gallery {images} />
+
+<style>
+    .big {
+        font-size: 1.2em;
+    }
+</style>

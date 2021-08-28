@@ -63,6 +63,17 @@
     a {
         color: var(--high-contrast-color);
     }
+    a.button {
+        font-weight: 600;
+        font-size: 1rem;
+        padding: var(--s-1) var(--s1);
+        text-decoration: none;
+        border: 1px solid var(--light-grey);
+        border-radius: var(--radius);
+    }
+    a.button:hover {
+        background-color: var(--light-grey);
+    }
     main a {
         text-decoration: underline;
         /* box-shadow: inset 0 0 0 0 var(--blue-light); */
