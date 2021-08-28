@@ -1,7 +1,7 @@
-import * as ImageKitServices from '$lib/services/imagekit'
+import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 
 export async function get() {
-    const images = await ImageKitServices.getFiles({
+    const images = await ImageKitNodeServices.listFiles({
         path: '/portfolio/',
         sort: 'DESC_NAME',
     })
