@@ -15,7 +15,8 @@
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
     }
-    :root {
+    :root,
+    html body[data-theme='light'] {
         --background-color: white;
         --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(100, 100, 100);
