@@ -1,10 +1,6 @@
 ---
 title: Outdoor Videos
-description: Some of my favourite outdoor videos.
-author: Russell McWhae
-date: 2019-02-27
-draft: 0
-category: Outdoors
+layout: page
 ---
 
 This is a collection of cool outdoor videos I have found over the years, updated occasionally.
@@ -41,4 +37,4 @@ This is a collection of cool outdoor videos I have found over the years, updated
 
 ## My Videos
 
-[rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae). Also see [Ski Videos](/journal/skiing).
+[rmcwhae on YouTube](https://www.youtube.com/user/rmcwhae).

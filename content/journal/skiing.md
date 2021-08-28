@@ -3,7 +3,7 @@ title: Ski Videos
 description: Some backcountry skiing GoPro footage.
 author: Russell McWhae
 date: 2017-02-11
-draft: 0
+draft: 1
 category: Outdoors
 ---
 

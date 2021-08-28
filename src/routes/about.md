@@ -28,3 +28,4 @@ Wanting to further my coding skills, I took the [Lighthouse Labs](https://www.li
 ## Etc.
 
 -   [What I Use](/uses)
+-   [Outdoor Videos](/videos)
