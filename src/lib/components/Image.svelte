@@ -1,5 +1,6 @@
 <script>
     import { generateSrc, generateSrcSets, sizes } from '$lib/utils/images'
+    import 'lazysizes'
 
     export let value
     const { name, filePath, width, height, thumbnail } = value
@@ -9,7 +10,16 @@
 </script>
 
 <!-- TODO make thumbnail… -->
-<img {srcset} {src} {sizes} {width} {height} alt={name} />
+<img
+    data-sizes="auto"
+    data-srcset={srcset}
+    src={thumbnail}
+    {sizes}
+    {width}
+    {height}
+    alt={name}
+    class="lazyload"
+/>
 
 <style>
     img {
