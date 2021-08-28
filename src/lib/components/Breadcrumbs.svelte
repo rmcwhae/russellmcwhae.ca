@@ -49,7 +49,8 @@
         display: block;
         padding: var(--s-2) var(--s0) 0px var(--s1);
     }
-    li:first-child a {
+    li:first-child a,
+    li:first-child span {
         padding-left: 0;
     }
 </style>
