@@ -3,7 +3,5 @@ node_modules
 /.svelte-kit
 /package
 /build
-/static/galleries
-/static/portfolio-images
-/static/g
 .env
+/content/photos
