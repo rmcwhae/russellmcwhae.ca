@@ -7,18 +7,21 @@ export async function get() {
         type: 'folder',
     })
 
-    const sortedEvents = events.map((event) => {
-        const { name } = event
-        const { title, date } = parseTitleAndDate(name)
+    const sortedEvents = events
+        .map((event) => {
+            const { name } = event
+            const { title, date } = parseTitleAndDate(name)
 
-        return {
-            ...event,
-            title,
-            date,
-        }
-    })
-
-    // TODO get featured image too…
+            return {
+                ...event,
+                title,
+                date,
+                featuredImage: '', // TODO get featured image too…
+            }
+        })
+        .sort((a, b) => {
+            return new Date(b.date) - new Date(a.date)
+        })
 
     return {
         body: JSON.stringify({ events: sortedEvents }),
