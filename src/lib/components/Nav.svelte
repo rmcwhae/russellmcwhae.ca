@@ -28,7 +28,7 @@
                     href="/photography"
                     on:click={hideMenu}
                     aria-current={$page.path.includes('/photography') ||
-                    $page.path.includes('/photos')
+                    $page.path.includes('/events')
                         ? 'page'
                         : undefined}>Photography</a
                 >
