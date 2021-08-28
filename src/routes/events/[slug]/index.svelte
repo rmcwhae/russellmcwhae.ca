@@ -14,8 +14,6 @@
     export let event
 
     const { images, count, date, title } = event
-
-    console.log('event', event)
 </script>
 
 <h1>{title}</h1>
