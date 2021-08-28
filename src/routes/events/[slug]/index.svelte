@@ -9,14 +9,11 @@
 </script>
 
 <script>
-    import * as StringUtils from '$lib/utils/string'
     import Image from '$lib/components/Image.svelte'
 
     export let event
 
-    const { images, slug, count } = event
-    const date = StringUtils.extractDate(slug)
-    const title = StringUtils.createTitle(slug)
+    const { images, count, date, title } = event
 </script>
 
 <h1>{title}</h1>

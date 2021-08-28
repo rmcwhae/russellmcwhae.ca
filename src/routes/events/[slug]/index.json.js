@@ -1,4 +1,5 @@
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
+import { parseTitleAndDate } from '../index.json'
 
 export async function get({ params }) {
     const images = await ImageKitNodeServices.listFiles({
@@ -6,12 +7,15 @@ export async function get({ params }) {
         sort: 'ASC_NAME',
     })
 
+    const { title, date } = parseTitleAndDate(params.slug)
+
     if (images) {
         return {
             body: JSON.stringify({
-                slug: params.slug,
-                images,
                 count: images.length,
+                title,
+                date,
+                images,
             }),
         }
     } else {
