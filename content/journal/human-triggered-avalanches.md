@@ -27,7 +27,7 @@ Unharmed, I righted myself and regrouped with my partners. My boots had filled w
 
 ![Looking down the summit ridge post-release. Note the chunks of snow to the left of the skier.](cirque_south_ridge.jpeg)_Looking down the summit ridge post-release. Note the chunks of snow to the left of the skier._
 
-With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue attempting our objective, which we completed without further incident. ([More photos from the day](https://russellmcwhae.ca/photos/Cirque-Peak-North-Couloir-February-2019).) There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn’t strictly necessary as the North Couloir is relatively low-angle, though it makes descending the upper rocky section more palatable.
+With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue attempting our objective, which we completed without further incident. There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn’t strictly necessary as the North Couloir is relatively low-angle, though it makes descending the upper rocky section more palatable.
 
 ---
 

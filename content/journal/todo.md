@@ -7,22 +7,22 @@ draft: 1
 category: TODO
 ---
 
--   Build <category> page for journal entries; journal hero images?
--   Verify `photos/\*` links in journal entries
--   Update about with skills
--   Book Reading list page (linked from about)
--   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo; lightbox; responsive images; refactor helpers
--   Photos navigate by keypress
--   Photo gallery breadcrumbs like on The Verge
+## Launch checklist
+
+-   Update "That New-Website Look"
 -   Clean Adobe WebFonts once done
 -   SEO tags etc.
 -   Performance testing
 -   Publish date bug
--   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
--   Submit for review?
 -   Projects page
--   Debug color switcher in light mode…
--   Image caption border-bottom?
+-   Debug color switcher (less WET code…)
 -   Update repo readme
--   Netlify adapter for deployment?
--   Update "That New-Website Look"
+
+## Later Ideas
+
+-   Build <category> page for journal entries; journal hero images?
+-   Photos navigate by keypress
+-   Submit for review?
+-   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
+-   Update about with skills
+-   Book Reading list page (linked from about)
