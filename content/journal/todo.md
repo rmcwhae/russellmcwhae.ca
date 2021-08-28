@@ -14,7 +14,6 @@ category: TODO
 -   Photos endpoint with dir listing, individual gallery view, name `img_DSC000-featured.jpg` as cover photo; lightbox; responsive images; refactor helpers
 -   Photos navigate by keypress
 -   Photo gallery breadcrumbs like on The Verge
--   Make repo public once deployed
 -   Clean Adobe WebFonts once done
 -   SEO tags etc.
 -   Performance testing
@@ -24,3 +23,6 @@ category: TODO
 -   Projects page
 -   Debug color switcher in light mode…
 -   Image caption border-bottom?
+-   Update repo readme
+-   Netlify adapter for deployment?
+-   Update "That New-Website Look"

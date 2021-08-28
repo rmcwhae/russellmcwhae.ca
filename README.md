@@ -1,6 +1,6 @@
 # My Portfolio
 
-This is my portfolio, deployed to https://russellmcwhae.ca. Feel free to have a look under the hood. Built using [SvelteKit](https://kit.svelte.dev/).
+This is my portfolio, deployed to https://rmcwhae.netlify.app/ (awaiting actual launch). Feel free to have a look under the hood. Built using [SvelteKit](https://kit.svelte.dev/).
 
 ## Developing
 
