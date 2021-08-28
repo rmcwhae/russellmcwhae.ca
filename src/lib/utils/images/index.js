@@ -1,7 +1,7 @@
 import { IMAGEKIT_URL_ENDPOINT } from '$root/env'
 import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
 
-const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 2000]
+const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 const MAX_BREAKPOINT = Math.max(...BREAKPOINTS)
 
 function buildURL(image, width = '') {
