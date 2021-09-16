@@ -2,7 +2,8 @@
     import Icon from './Icon.svelte'
 </script>
 
-<Icon>
-    <path d="M0 0h24v24H0z" fill="none" />
-    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+<Icon viewBox="0 0 105 167">
+    <path
+        d="m20.833 0 83.334 83.333-83.334 83.334-20.833-20.834 62.5-62.5-62.5-62.5z"
+    />
 </Icon>

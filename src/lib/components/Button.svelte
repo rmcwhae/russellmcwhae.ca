@@ -10,10 +10,29 @@
 
 <a {href} class="button">
     {#if left}
-        <LeftChevron />
+        <span class="chevron left">
+            <LeftChevron />
+        </span>
     {/if}
-    {text}
+    <span>{text}</span>
     {#if right}
-        <RightChevron />
+        <span class="chevron right">
+            <RightChevron />
+        </span>
     {/if}
 </a>
+
+<style>
+    .chevron {
+        font-size: 0.75em;
+    }
+    a {
+        display: inline-flex;
+    }
+    .left {
+        margin-right: var(--s-2);
+    }
+    .right {
+        margin-left: var(--s-2);
+    }
+</style>
