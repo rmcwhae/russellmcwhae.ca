@@ -20,9 +20,6 @@
 
 <script>
     import Date from '$lib/components/Date.svelte'
-    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
-
-    const items = [{ text: 'Journal' }]
 
     export let posts
 </script>
@@ -33,7 +30,6 @@
     wrestled with similar questions. I hope you’ll join me for a glimpse into my
     head.
 </p> -->
-<Breadcrumbs {items} />
 <div class="archive">
     {#each posts as { slug, title, description, date, readingTime, category }}
         <section>

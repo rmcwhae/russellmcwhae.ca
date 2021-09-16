@@ -53,7 +53,7 @@
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
-    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
+    import Button from '$lib/components/Button.svelte'
 
     export let title
     export let date
@@ -67,9 +67,8 @@
     const items = [{ text: 'Journal', url: '/journal' }, { text: title }]
 </script>
 
-<Breadcrumbs {items} />
-
 <article class="restricted-width">
+    <Button left href="/journal" text="All entries" />
     <header>
         <div class="sub">
             <Date {date} />

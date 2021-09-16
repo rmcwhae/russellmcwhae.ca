@@ -9,21 +9,17 @@
 
 <script>
     import Gallery from '$lib/components/Gallery.svelte'
-    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
-
-    const items = [{ text: 'Portfolio' }]
+    import Button from '$lib/components/BUtton.svelte'
 
     export let images
 </script>
-
-<Breadcrumbs {items} />
 
 <h1>Portfolio</h1>
 
 <div>
     <p class="big">This is a showcase of my favourite photos.</p>
     <p class="nowrap second">
-        <a href="/events" class="button">All Events</a>
+        <Button right href="/events" text="All events" />
     </p>
 </div>
 

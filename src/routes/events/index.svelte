@@ -11,17 +11,12 @@
 
 <script>
     import Event from '$lib/components/Event.svelte'
-    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'
-
-    const items = [
-        { text: 'Portfolio', url: '/photography' },
-        { text: 'Events' },
-    ]
+    import Button from '$lib/components/Button.svelte'
 
     export let events
 </script>
 
-<Breadcrumbs {items} />
+<Button href="/photography" text="Portfolio" left />
 
 <h1>Events</h1>
 
