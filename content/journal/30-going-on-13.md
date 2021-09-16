@@ -422,7 +422,7 @@ Mentorship is thus mandatory in outdoor pursuits. There are no substitutes for a
 
 ## So You Want to Backcountry&nbsp;Ski?
 
-You might have seen my photos or [videos](/journal/skiing) of skiing up and down mountains and across glaciers and want to do likewise.[^2] Perhaps you yearn to escape the crowds, expense, and often icy conditions of resort downhill skiing and instead slay backcountry powder. A common lament I hear is “I’m a strong enough downhill skier (or snowboarder) and want to get into backcountry skiing but don’t have anyone to go with.” Now that you’ve met me, you’ve got your in…right?
+You might have seen my photos or videos of skiing up and down mountains and across glaciers and want to do likewise.[^2] Perhaps you yearn to escape the crowds, expense, and often icy conditions of resort downhill skiing and instead slay backcountry powder. A common lament I hear is “I’m a strong enough downhill skier (or snowboarder) and want to get into backcountry skiing but don’t have anyone to go with.” Now that you’ve met me, you’ve got your in…right?
 
 [^2]: For non-backcountry skiers, [backcountry skiing or ski touring](https://youtu.be/Nep4OeSEM0Q) refers to skiing outside of ski resorts with specialized skis, boots, bindings, and climbing skins that allow you to ascend ski slopes before peeling off your climbing skins in order to ski back down. It is not to be confused with cross-country skiing or resort downhill skiing.
 
