@@ -9,7 +9,7 @@
 
 <script>
     import Gallery from '$lib/components/Gallery.svelte'
-    import Button from '$lib/components/BUtton.svelte'
+    import Button from '$lib/components/Button.svelte'
 
     export let images
 </script>
