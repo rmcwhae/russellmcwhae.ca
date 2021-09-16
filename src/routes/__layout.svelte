@@ -3,10 +3,12 @@
     import Styles from '$lib/styles/index.svelte'
     import Reset from '$lib/styles/reset.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import Loading from '$lib/components/Loading.svelte'
 </script>
 
 <Reset />
 <Styles />
+<Loading />
 <div>
     <aside>
         <Nav />
