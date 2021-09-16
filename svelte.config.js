@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
-// import adapter from '@sveltejs/adapter-static'
-import adapter from '@sveltejs/adapter-netlify'
+import adapter from '@sveltejs/adapter-static'
+// import adapter from '@sveltejs/adapter-netlify'
 import pack from 'vite-imagetools'
 import preprocess from 'svelte-preprocess'
 // import imagePreprocessor from 'svimg'
@@ -37,7 +37,7 @@ const config = {
         }),
         vite: {
             ssr: {
-                noExternal: ['svimg'],
+                noExternal: [],
             },
             resolve: {
                 alias: {
