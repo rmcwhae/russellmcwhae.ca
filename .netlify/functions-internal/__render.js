@@ -3433,7 +3433,7 @@ var require_lodash = __commonJS({
             return func(number);
           };
         }
-        var createSet = !(Set2 && 1 / setToArray(new Set2([, -0]))[1] == INFINITY) ? noop3 : function(values2) {
+        var createSet = !(Set2 && 1 / setToArray(new Set2([, -0]))[1] == INFINITY) ? noop2 : function(values2) {
           return new Set2(values2);
         };
         function createToPairs(keysFunc) {
@@ -3660,7 +3660,7 @@ var require_lodash = __commonJS({
         function getAllKeysIn(object) {
           return baseGetAllKeys(object, keysIn, getSymbolsIn);
         }
-        var getData = !metaMap ? noop3 : function(func) {
+        var getData = !metaMap ? noop2 : function(func) {
           return metaMap.get(func);
         };
         function getFuncName(func) {
@@ -5511,7 +5511,7 @@ var require_lodash = __commonJS({
           position -= target.length;
           return position >= 0 && string.slice(position, end) == target;
         }
-        function escape3(string) {
+        function escape2(string) {
           string = toString(string);
           return string && reHasUnescapedHtml.test(string) ? string.replace(reUnescapedHtml, escapeHtmlChar) : string;
         }
@@ -5845,7 +5845,7 @@ var require_lodash = __commonJS({
           }
           return this;
         }
-        function noop3() {
+        function noop2() {
         }
         function nthArg(n) {
           n = toInteger(n);
@@ -6114,7 +6114,7 @@ var require_lodash = __commonJS({
         lodash.divide = divide;
         lodash.endsWith = endsWith;
         lodash.eq = eq;
-        lodash.escape = escape3;
+        lodash.escape = escape2;
         lodash.escapeRegExp = escapeRegExp;
         lodash.every = every;
         lodash.find = find;
@@ -6200,7 +6200,7 @@ var require_lodash = __commonJS({
         lodash.multiply = multiply;
         lodash.nth = nth;
         lodash.noConflict = noConflict;
-        lodash.noop = noop3;
+        lodash.noop = noop2;
         lodash.now = now;
         lodash.pad = pad;
         lodash.padEnd = padEnd;
@@ -16913,6 +16913,7 @@ var require_safe_buffer = __commonJS({
     function SafeBuffer(arg, encodingOrOffset, length) {
       return Buffer2(arg, encodingOrOffset, length);
     }
+    SafeBuffer.prototype = Object.create(Buffer2.prototype);
     copyProps(Buffer2, SafeBuffer);
     SafeBuffer.from = function(arg, encodingOrOffset, length) {
       if (typeof arg === "number") {
@@ -17496,7 +17497,7 @@ var require_assert = __commonJS({
     function _getClass(arg) {
       return Object.prototype.toString.call(arg).slice(8, -1);
     }
-    function noop3() {
+    function noop2() {
     }
     var types2 = {
       bool: {
@@ -17573,7 +17574,7 @@ var require_assert = __commonJS({
       var keys = Object.keys(types2);
       var out;
       if (process.env.NODE_NDEBUG) {
-        out = noop3;
+        out = noop2;
       } else {
         out = function(arg, msg) {
           if (!arg) {
@@ -17583,7 +17584,7 @@ var require_assert = __commonJS({
       }
       keys.forEach(function(k) {
         if (ndebug) {
-          out[k] = noop3;
+          out[k] = noop2;
           return;
         }
         var type = types2[k];
@@ -17596,7 +17597,7 @@ var require_assert = __commonJS({
       keys.forEach(function(k) {
         var name = "optional" + _capitalize(k);
         if (ndebug) {
-          out[name] = noop3;
+          out[name] = noop2;
           return;
         }
         var type = types2[k];
@@ -17612,7 +17613,7 @@ var require_assert = __commonJS({
       keys.forEach(function(k) {
         var name = "arrayOf" + _capitalize(k);
         if (ndebug) {
-          out[name] = noop3;
+          out[name] = noop2;
           return;
         }
         var type = types2[k];
@@ -17632,7 +17633,7 @@ var require_assert = __commonJS({
       keys.forEach(function(k) {
         var name = "optionalArrayOf" + _capitalize(k);
         if (ndebug) {
-          out[name] = noop3;
+          out[name] = noop2;
           return;
         }
         var type = types2[k];
@@ -17658,7 +17659,7 @@ var require_assert = __commonJS({
           return;
         }
         if (ndebug) {
-          out[k] = noop3;
+          out[k] = noop2;
           return;
         }
         out[k] = assert[k];
@@ -30435,7 +30436,7 @@ var require_jsprim = __commonJS({
       }
       var c;
       var pbase = -1;
-      var base = options2.base;
+      var base2 = options2.base;
       var start;
       var mult = 1;
       var value = 0;
@@ -30457,19 +30458,19 @@ var require_jsprim = __commonJS({
       if (str[idx] === "0") {
         if (options2.allowPrefix) {
           pbase = prefixToBase(str.charCodeAt(idx + 1));
-          if (pbase !== -1 && (!baseOverride || pbase === base)) {
-            base = pbase;
+          if (pbase !== -1 && (!baseOverride || pbase === base2)) {
+            base2 = pbase;
             idx += 2;
           }
         }
         if (pbase === -1 && options2.leadingZeroIsOctal) {
-          base = 8;
+          base2 = 8;
         }
       }
       for (start = idx; idx < len; ++idx) {
         c = translateDigit(str.charCodeAt(idx));
-        if (c !== -1 && c < base) {
-          value *= base;
+        if (c !== -1 && c < base2) {
+          value *= base2;
           value += c;
         } else {
           break;
@@ -41152,7 +41153,7 @@ var require_uri_all = __commonJS({
         }
       };
       var maxInt = 2147483647;
-      var base = 36;
+      var base2 = 36;
       var tMin = 1;
       var tMax = 26;
       var skew = 38;
@@ -41168,7 +41169,7 @@ var require_uri_all = __commonJS({
         "not-basic": "Illegal input >= 0x80 (not a basic code point)",
         "invalid-input": "Invalid input"
       };
-      var baseMinusTMin = base - tMin;
+      var baseMinusTMin = base2 - tMin;
       var floor = Math.floor;
       var stringFromCharCode = String.fromCharCode;
       function error$1(type) {
@@ -41227,7 +41228,7 @@ var require_uri_all = __commonJS({
         if (codePoint - 97 < 26) {
           return codePoint - 97;
         }
-        return base;
+        return base2;
       };
       var digitToBasic = function digitToBasic2(digit, flag) {
         return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
@@ -41236,7 +41237,7 @@ var require_uri_all = __commonJS({
         var k = 0;
         delta = firstTime ? floor(delta / damp) : delta >> 1;
         delta += floor(delta / numPoints);
-        for (; delta > baseMinusTMin * tMax >> 1; k += base) {
+        for (; delta > baseMinusTMin * tMax >> 1; k += base2) {
           delta = floor(delta / baseMinusTMin);
         }
         return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
@@ -41259,12 +41260,12 @@ var require_uri_all = __commonJS({
         }
         for (var index2 = basic > 0 ? basic + 1 : 0; index2 < inputLength; ) {
           var oldi = i;
-          for (var w = 1, k = base; ; k += base) {
+          for (var w = 1, k = base2; ; k += base2) {
             if (index2 >= inputLength) {
               error$1("invalid-input");
             }
             var digit = basicToDigit(input.charCodeAt(index2++));
-            if (digit >= base || digit > floor((maxInt - i) / w)) {
+            if (digit >= base2 || digit > floor((maxInt - i) / w)) {
               error$1("overflow");
             }
             i += digit * w;
@@ -41272,7 +41273,7 @@ var require_uri_all = __commonJS({
             if (digit < t) {
               break;
             }
-            var baseMinusT = base - t;
+            var baseMinusT = base2 - t;
             if (w > floor(maxInt / baseMinusT)) {
               error$1("overflow");
             }
@@ -41368,13 +41369,13 @@ var require_uri_all = __commonJS({
               }
               if (_currentValue == n) {
                 var q2 = delta;
-                for (var k = base; ; k += base) {
+                for (var k = base2; ; k += base2) {
                   var t = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
                   if (q2 < t) {
                     break;
                   }
                   var qMinusT = q2 - t;
-                  var baseMinusT = base - t;
+                  var baseMinusT = base2 - t;
                   output.push(stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0)));
                   q2 = floor(qMinusT / baseMinusT);
                 }
@@ -41717,12 +41718,12 @@ var require_uri_all = __commonJS({
         }
         return uriTokens.join("");
       }
-      function resolveComponents(base2, relative) {
+      function resolveComponents(base3, relative) {
         var options2 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
         var skipNormalization = arguments[3];
         var target = {};
         if (!skipNormalization) {
-          base2 = parse(serialize(base2, options2), options2);
+          base3 = parse(serialize(base3, options2), options2);
           relative = parse(serialize(relative, options2), options2);
         }
         options2 = options2 || {};
@@ -41742,32 +41743,32 @@ var require_uri_all = __commonJS({
             target.query = relative.query;
           } else {
             if (!relative.path) {
-              target.path = base2.path;
+              target.path = base3.path;
               if (relative.query !== void 0) {
                 target.query = relative.query;
               } else {
-                target.query = base2.query;
+                target.query = base3.query;
               }
             } else {
               if (relative.path.charAt(0) === "/") {
                 target.path = removeDotSegments(relative.path);
               } else {
-                if ((base2.userinfo !== void 0 || base2.host !== void 0 || base2.port !== void 0) && !base2.path) {
+                if ((base3.userinfo !== void 0 || base3.host !== void 0 || base3.port !== void 0) && !base3.path) {
                   target.path = "/" + relative.path;
-                } else if (!base2.path) {
+                } else if (!base3.path) {
                   target.path = relative.path;
                 } else {
-                  target.path = base2.path.slice(0, base2.path.lastIndexOf("/") + 1) + relative.path;
+                  target.path = base3.path.slice(0, base3.path.lastIndexOf("/") + 1) + relative.path;
                 }
                 target.path = removeDotSegments(target.path);
               }
               target.query = relative.query;
             }
-            target.userinfo = base2.userinfo;
-            target.host = base2.host;
-            target.port = base2.port;
+            target.userinfo = base3.userinfo;
+            target.host = base3.host;
+            target.port = base3.port;
           }
-          target.scheme = base2.scheme;
+          target.scheme = base3.scheme;
         }
         target.fragment = relative.fragment;
         return target;
@@ -47378,7 +47379,7 @@ var require_ajv = __commonJS({
     function setLogger(self2) {
       var logger = self2._opts.logger;
       if (logger === false) {
-        self2.logger = { log: noop3, warn: noop3, error: noop3 };
+        self2.logger = { log: noop2, warn: noop2, error: noop2 };
       } else {
         if (logger === void 0)
           logger = console;
@@ -47387,7 +47388,7 @@ var require_ajv = __commonJS({
         self2.logger = logger;
       }
     }
-    function noop3() {
+    function noop2() {
     }
   }
 });
@@ -48778,33 +48779,33 @@ var require_oauth_sign = __commonJS({
       }).map(function(p) {
         return p.join("=");
       }).join("&");
-      var base = [
+      var base2 = [
         rfc3986(httpMethod ? httpMethod.toUpperCase() : "GET"),
         rfc3986(base_uri),
         rfc3986(normalized)
       ].join("&");
-      return base;
+      return base2;
     }
     function hmacsign(httpMethod, base_uri, params, consumer_secret, token_secret) {
-      var base = generateBase(httpMethod, base_uri, params);
+      var base2 = generateBase(httpMethod, base_uri, params);
       var key = [
         consumer_secret || "",
         token_secret || ""
       ].map(rfc3986).join("&");
-      return sha(key, base, "sha1");
+      return sha(key, base2, "sha1");
     }
     function hmacsign256(httpMethod, base_uri, params, consumer_secret, token_secret) {
-      var base = generateBase(httpMethod, base_uri, params);
+      var base2 = generateBase(httpMethod, base_uri, params);
       var key = [
         consumer_secret || "",
         token_secret || ""
       ].map(rfc3986).join("&");
-      return sha(key, base, "sha256");
+      return sha(key, base2, "sha256");
     }
     function rsasign(httpMethod, base_uri, params, private_key, token_secret) {
-      var base = generateBase(httpMethod, base_uri, params);
+      var base2 = generateBase(httpMethod, base_uri, params);
       var key = private_key || "";
-      return rsa(key, base);
+      return rsa(key, base2);
     }
     function plaintext(consumer_secret, token_secret) {
       var key = [
@@ -50584,16 +50585,16 @@ var require_request2 = __commonJS({
     };
     Request2.prototype.qs = function(q2, clobber) {
       var self2 = this;
-      var base;
+      var base2;
       if (!clobber && self2.uri.query) {
-        base = self2._qs.parse(self2.uri.query);
+        base2 = self2._qs.parse(self2.uri.query);
       } else {
-        base = {};
+        base2 = {};
       }
       for (var i in q2) {
-        base[i] = q2[i];
+        base2[i] = q2[i];
       }
-      var qs = self2._qs.stringify(base);
+      var qs = self2._qs.stringify(base2);
       if (qs === "") {
         return self2;
       }
@@ -65293,20 +65294,45 @@ init_shims();
 
 // .svelte-kit/output/server/app.js
 init_shims();
-
-// node_modules/@sveltejs/kit/dist/ssr.js
-init_shims();
-
-// node_modules/@sveltejs/kit/dist/adapter-utils.js
-init_shims();
-function isContentTypeTextual(content_type) {
-  if (!content_type)
-    return true;
-  const [type] = content_type.split(";");
-  return type === "text/plain" || type === "application/json" || type === "application/x-www-form-urlencoded" || type === "multipart/form-data";
+var import_imagekit = __toModule(require_dist());
+var import_date_fns = __toModule(require_date_fns());
+var import_imagekit_javascript = __toModule(require_imagekit_cjs());
+var import_lazysizes = __toModule(require_lazysizes());
+var __accessCheck = (obj, member, msg) => {
+  if (!member.has(obj))
+    throw TypeError("Cannot " + msg);
+};
+var __privateGet = (obj, member, getter) => {
+  __accessCheck(obj, member, "read from private field");
+  return getter ? getter.call(obj) : member.get(obj);
+};
+var __privateAdd = (obj, member, value) => {
+  if (member.has(obj))
+    throw TypeError("Cannot add the same private member more than once");
+  member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+};
+var __privateSet = (obj, member, value, setter) => {
+  __accessCheck(obj, member, "write to private field");
+  setter ? setter.call(obj, value) : member.set(obj, value);
+  return value;
+};
+var _map;
+function get_single_valued_header(headers, key) {
+  const value = headers[key];
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return void 0;
+    }
+    if (value.length > 1) {
+      throw new Error(`Multiple headers provided for ${key}. Multiple may be provided only for set-cookie`);
+    }
+    return value[0];
+  }
+  return value;
 }
-
-// node_modules/@sveltejs/kit/dist/ssr.js
+function coalesce_to_error(err) {
+  return err instanceof Error || err && err.name && err.message ? err : new Error(JSON.stringify(err));
+}
 function lowercase_keys(obj) {
   const clone2 = {};
   for (const key in obj) {
@@ -65324,15 +65350,17 @@ function error(body) {
 function is_string(s2) {
   return typeof s2 === "string" || s2 instanceof String;
 }
-async function render_endpoint(request, route) {
+function is_content_type_textual(content_type) {
+  if (!content_type)
+    return true;
+  const [type] = content_type.split(";");
+  return type === "text/plain" || type === "application/json" || type === "application/x-www-form-urlencoded" || type === "multipart/form-data";
+}
+async function render_endpoint(request, route, match) {
   const mod = await route.load();
   const handler2 = mod[request.method.toLowerCase().replace("delete", "del")];
   if (!handler2) {
     return;
-  }
-  const match = route.pattern.exec(request.path);
-  if (!match) {
-    return error("could not parse parameters from request path");
   }
   const params = route.params(match);
   const response = await handler2({ ...request, params });
@@ -65345,8 +65373,8 @@ async function render_endpoint(request, route) {
   }
   let { status = 200, body, headers = {} } = response;
   headers = lowercase_keys(headers);
-  const type = headers["content-type"];
-  const is_type_textual = isContentTypeTextual(type);
+  const type = get_single_valued_header(headers, "content-type");
+  const is_type_textual = is_content_type_textual(type);
   if (!is_type_textual && !(body instanceof Uint8Array || is_string(body))) {
     return error(`${preface}: body must be an instance of string or Uint8Array if content-type is not a supported textual content-type`);
   }
@@ -65581,31 +65609,30 @@ function stringifyString(str) {
   result += '"';
   return result;
 }
-function noop() {
+function noop$1() {
 }
-function safe_not_equal(a, b) {
+function safe_not_equal$1(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
 Promise.resolve();
-var subscriber_queue = [];
-function writable(value, start = noop) {
+var subscriber_queue$1 = [];
+function writable$1(value, start = noop$1) {
   let stop;
-  const subscribers = [];
+  const subscribers = new Set();
   function set(new_value) {
-    if (safe_not_equal(value, new_value)) {
+    if (safe_not_equal$1(value, new_value)) {
       value = new_value;
       if (stop) {
-        const run_queue = !subscriber_queue.length;
-        for (let i = 0; i < subscribers.length; i += 1) {
-          const s2 = subscribers[i];
-          s2[1]();
-          subscriber_queue.push(s2, value);
+        const run_queue = !subscriber_queue$1.length;
+        for (const subscriber of subscribers) {
+          subscriber[1]();
+          subscriber_queue$1.push(subscriber, value);
         }
         if (run_queue) {
-          for (let i = 0; i < subscriber_queue.length; i += 2) {
-            subscriber_queue[i][0](subscriber_queue[i + 1]);
+          for (let i = 0; i < subscriber_queue$1.length; i += 2) {
+            subscriber_queue$1[i][0](subscriber_queue$1[i + 1]);
           }
-          subscriber_queue.length = 0;
+          subscriber_queue$1.length = 0;
         }
       }
     }
@@ -65613,19 +65640,16 @@ function writable(value, start = noop) {
   function update(fn) {
     set(fn(value));
   }
-  function subscribe2(run2, invalidate = noop) {
+  function subscribe2(run2, invalidate = noop$1) {
     const subscriber = [run2, invalidate];
-    subscribers.push(subscriber);
-    if (subscribers.length === 1) {
-      stop = start(set) || noop;
+    subscribers.add(subscriber);
+    if (subscribers.size === 1) {
+      stop = start(set) || noop$1;
     }
     run2(value);
     return () => {
-      const index2 = subscribers.indexOf(subscriber);
-      if (index2 !== -1) {
-        subscribers.splice(index2, 1);
-      }
-      if (subscribers.length === 0) {
+      subscribers.delete(subscriber);
+      if (subscribers.size === 0) {
         stop();
         stop = null;
       }
@@ -65679,11 +65703,11 @@ async function render_response({
         is_private = true;
       maxage = loaded.maxage;
     });
-    const session = writable($session);
+    const session = writable$1($session);
     const props = {
       stores: {
-        page: writable(null),
-        navigating: writable(null),
+        page: writable$1(null),
+        navigating: writable$1(null),
         session
       },
       page: page2,
@@ -65768,8 +65792,8 @@ async function render_response({
     if (body2)
       attributes += ` data-body="${hash(body2)}"`;
     return `<script ${attributes}>${json}<\/script>`;
-  }).join("\n\n			")}
-		`.replace(/^\t{2}/gm, "");
+  }).join("\n\n	")}
+		`;
   const headers = {
     "content-type": "text/html"
   };
@@ -65790,7 +65814,7 @@ function try_serialize(data, fail) {
     return devalue(data);
   } catch (err) {
     if (fail)
-      fail(err);
+      fail(coalesce_to_error(err));
     return null;
   }
 }
@@ -65865,6 +65889,7 @@ async function load_node({
   const { module: module2 } = node;
   let uses_credentials = false;
   const fetched = [];
+  let set_cookie_headers = [];
   let loaded;
   const page_proxy = new Proxy(page2, {
     get: (target, prop, receiver) => {
@@ -65907,13 +65932,13 @@ async function load_node({
         const asset = options2.manifest.assets.find((d2) => d2.file === filename || d2.file === filename_html);
         if (asset) {
           response = options2.read ? new Response(options2.read(asset.file), {
-            headers: asset.type ? {
-              "content-type": asset.type
-            } : {}
+            headers: asset.type ? { "content-type": asset.type } : {}
           }) : await fetch(`http://${page2.host}/${asset.file}`, opts);
-        } else if (resolved.startsWith(options2.paths.base || "/") && !resolved.startsWith("//")) {
-          const relative = resolved.replace(options2.paths.base, "");
-          const headers = { ...opts.headers };
+        } else if (resolved.startsWith("/") && !resolved.startsWith("//")) {
+          const relative = resolved;
+          const headers = {
+            ...opts.headers
+          };
           if (opts.credentials !== "omit") {
             uses_credentials = true;
             headers.cookie = request.headers.cookie;
@@ -65930,7 +65955,7 @@ async function load_node({
             method: opts.method || "GET",
             headers,
             path: relative,
-            rawBody: opts.body,
+            rawBody: opts.body == null ? null : new TextEncoder().encode(opts.body),
             query: new URLSearchParams(search)
           }, options2, {
             fetched: url2,
@@ -65961,7 +65986,7 @@ async function load_node({
             }
           }
           const external_request = new Request(url2, opts);
-          response = await options2.hooks.serverFetch.call(null, external_request);
+          response = await options2.hooks.externalFetch.call(null, external_request);
         }
         if (response) {
           const proxy = new Proxy(response, {
@@ -65970,14 +65995,17 @@ async function load_node({
                 const body = await response2.text();
                 const headers = {};
                 for (const [key2, value] of response2.headers) {
-                  if (key2 !== "etag" && key2 !== "set-cookie")
+                  if (key2 === "set-cookie") {
+                    set_cookie_headers = set_cookie_headers.concat(value);
+                  } else if (key2 !== "etag") {
                     headers[key2] = value;
+                  }
                 }
                 if (!opts.body || typeof opts.body === "string") {
                   fetched.push({
                     url: url2,
                     body: opts.body,
-                    json: `{"status":${response2.status},"statusText":${s(response2.statusText)},"headers":${s(headers)},"body":${escape(body)}}`
+                    json: `{"status":${response2.status},"statusText":${s(response2.statusText)},"headers":${s(headers)},"body":${escape$1(body)}}`
                   });
                 }
                 return body;
@@ -66019,10 +66047,11 @@ async function load_node({
     loaded: normalize(loaded),
     context: loaded.context || context,
     fetched,
+    set_cookie_headers,
     uses_credentials
   };
 }
-var escaped = {
+var escaped$2 = {
   "<": "\\u003C",
   ">": "\\u003E",
   "/": "\\u002F",
@@ -66036,15 +66065,15 @@ var escaped = {
   "\u2028": "\\u2028",
   "\u2029": "\\u2029"
 };
-function escape(str) {
+function escape$1(str) {
   let result = '"';
   for (let i = 0; i < str.length; i += 1) {
     const char = str.charAt(i);
     const code = char.charCodeAt(0);
     if (char === '"') {
       result += '\\"';
-    } else if (char in escaped) {
-      result += escaped[char];
+    } else if (char in escaped$2) {
+      result += escaped$2[char];
     } else if (code >= 55296 && code <= 57343) {
       const next = str.charCodeAt(i + 1);
       if (code <= 56319 && next >= 56320 && next <= 57343) {
@@ -66060,13 +66089,13 @@ function escape(str) {
   return result;
 }
 var absolute = /^([a-z]+:)?\/?\//;
-function resolve(base, path) {
-  const base_match = absolute.exec(base);
+function resolve(base2, path) {
+  const base_match = absolute.exec(base2);
   const path_match = absolute.exec(path);
   if (!base_match) {
-    throw new Error(`bad base path: "${base}"`);
+    throw new Error(`bad base path: "${base2}"`);
   }
-  const baseparts = path_match ? [] : base.slice(base_match[0].length).split("/");
+  const baseparts = path_match ? [] : base2.slice(base_match[0].length).split("/");
   const pathparts = path_match ? path.slice(path_match[0].length).split("/") : path.split("/");
   baseparts.pop();
   for (let i = 0; i < pathparts.length; i += 1) {
@@ -66080,9 +66109,6 @@ function resolve(base, path) {
   }
   const prefix = path_match && path_match[0] || base_match && base_match[0] || "";
   return `${prefix}${baseparts.join("/")}`;
-}
-function coalesce_to_error(err) {
-  return err instanceof Error ? err : new Error(JSON.stringify(err));
 }
 async function respond_with_error({ request, options: options2, state, $session, status, error: error2 }) {
   const default_layout = await options2.load_component(options2.manifest.layout);
@@ -66140,7 +66166,7 @@ async function respond_with_error({ request, options: options2, state, $session,
     });
   } catch (err) {
     const error3 = coalesce_to_error(err);
-    options2.handle_error(error3);
+    options2.handle_error(error3, request);
     return {
       status: 500,
       headers: {},
@@ -66158,7 +66184,7 @@ async function respond$1(opts) {
     nodes = await Promise.all(route.a.map((id) => id ? options2.load_component(id) : void 0));
   } catch (err) {
     const error3 = coalesce_to_error(err);
-    options2.handle_error(error3);
+    options2.handle_error(error3, request);
     return await respond_with_error({
       request,
       options: options2,
@@ -66180,6 +66206,7 @@ async function respond$1(opts) {
   let branch = [];
   let status = 200;
   let error2;
+  let set_cookie_headers = [];
   ssr:
     if (page_config.ssr) {
       let context = {};
@@ -66198,20 +66225,21 @@ async function respond$1(opts) {
             });
             if (!loaded)
               return;
+            set_cookie_headers = set_cookie_headers.concat(loaded.set_cookie_headers);
             if (loaded.loaded.redirect) {
-              return {
+              return with_cookies({
                 status: loaded.loaded.status,
                 headers: {
                   location: encodeURI(loaded.loaded.redirect)
                 }
-              };
+              }, set_cookie_headers);
             }
             if (loaded.loaded.error) {
               ({ status, error: error2 } = loaded.loaded);
             }
           } catch (err) {
             const e = coalesce_to_error(err);
-            options2.handle_error(e);
+            options2.handle_error(e, request);
             status = 500;
             error2 = e;
           }
@@ -66246,19 +66274,19 @@ async function respond$1(opts) {
                   break ssr;
                 } catch (err) {
                   const e = coalesce_to_error(err);
-                  options2.handle_error(e);
+                  options2.handle_error(e, request);
                   continue;
                 }
               }
             }
-            return await respond_with_error({
+            return with_cookies(await respond_with_error({
               request,
               options: options2,
               state,
               $session,
               status,
               error: error2
-            });
+            }), set_cookie_headers);
           }
         }
         if (loaded && loaded.loaded.context) {
@@ -66270,21 +66298,21 @@ async function respond$1(opts) {
       }
     }
   try {
-    return await render_response({
+    return with_cookies(await render_response({
       ...opts,
       page_config,
       status,
       error: error2,
       branch: branch.filter(Boolean)
-    });
+    }), set_cookie_headers);
   } catch (err) {
     const error3 = coalesce_to_error(err);
-    options2.handle_error(error3);
-    return await respond_with_error({
+    options2.handle_error(error3, request);
+    return with_cookies(await respond_with_error({
       ...opts,
       status: 500,
       error: error3
-    });
+    }), set_cookie_headers);
   }
 }
 function get_page_config(leaf, options2) {
@@ -66294,7 +66322,13 @@ function get_page_config(leaf, options2) {
     hydrate: "hydrate" in leaf ? !!leaf.hydrate : options2.hydrate
   };
 }
-async function render_page(request, route, options2, state) {
+function with_cookies(response, set_cookie_headers) {
+  if (set_cookie_headers.length) {
+    response.headers["set-cookie"] = set_cookie_headers;
+  }
+  return response;
+}
+async function render_page(request, route, match, options2, state) {
   if (state.initiator === route) {
     return {
       status: 404,
@@ -66302,7 +66336,6 @@ async function render_page(request, route, options2, state) {
       body: `Not found: ${request.path}`
     };
   }
-  const match = route.pattern.exec(request.path);
   const params = route.params(match);
   const page2 = {
     host: request.host,
@@ -66344,65 +66377,68 @@ function read_only_form_data() {
   };
 }
 var ReadOnlyFormData = class {
-  #map;
   constructor(map) {
-    this.#map = map;
+    __privateAdd(this, _map, void 0);
+    __privateSet(this, _map, map);
   }
   get(key) {
-    const value = this.#map.get(key);
+    const value = __privateGet(this, _map).get(key);
     return value && value[0];
   }
   getAll(key) {
-    return this.#map.get(key);
+    return __privateGet(this, _map).get(key);
   }
   has(key) {
-    return this.#map.has(key);
+    return __privateGet(this, _map).has(key);
   }
   *[Symbol.iterator]() {
-    for (const [key, value] of this.#map) {
+    for (const [key, value] of __privateGet(this, _map)) {
       for (let i = 0; i < value.length; i += 1) {
         yield [key, value[i]];
       }
     }
   }
   *entries() {
-    for (const [key, value] of this.#map) {
+    for (const [key, value] of __privateGet(this, _map)) {
       for (let i = 0; i < value.length; i += 1) {
         yield [key, value[i]];
       }
     }
   }
   *keys() {
-    for (const [key] of this.#map)
+    for (const [key] of __privateGet(this, _map))
       yield key;
   }
   *values() {
-    for (const [, value] of this.#map) {
+    for (const [, value] of __privateGet(this, _map)) {
       for (let i = 0; i < value.length; i += 1) {
         yield value[i];
       }
     }
   }
 };
+_map = new WeakMap();
 function parse_body(raw, headers) {
-  if (!raw || typeof raw !== "string")
+  if (!raw)
     return raw;
-  const [type, ...directives] = headers["content-type"].split(/;\s*/);
+  const content_type = headers["content-type"];
+  const [type, ...directives] = content_type ? content_type.split(/;\s*/) : [];
+  const text = () => new TextDecoder(headers["content-encoding"] || "utf-8").decode(raw);
   switch (type) {
     case "text/plain":
-      return raw;
+      return text();
     case "application/json":
-      return JSON.parse(raw);
+      return JSON.parse(text());
     case "application/x-www-form-urlencoded":
-      return get_urlencoded(raw);
+      return get_urlencoded(text());
     case "multipart/form-data": {
       const boundary = directives.find((directive) => directive.startsWith("boundary="));
       if (!boundary)
         throw new Error("Missing boundary");
-      return get_multipart(raw, boundary.slice("boundary=".length));
+      return get_multipart(text(), boundary.slice("boundary=".length));
     }
     default:
-      throw new Error(`Invalid Content-Type ${type}`);
+      return raw;
   }
 }
 function get_urlencoded(text) {
@@ -66464,40 +66500,43 @@ async function respond(incoming, options2, state = {}) {
       return {
         status: 301,
         headers: {
-          location: encodeURI(path + (q2 ? `?${q2}` : ""))
+          location: options2.paths.base + path + (q2 ? `?${q2}` : "")
         }
       };
     }
   }
+  const headers = lowercase_keys(incoming.headers);
+  const request = {
+    ...incoming,
+    headers,
+    body: parse_body(incoming.rawBody, headers),
+    params: {},
+    locals: {}
+  };
   try {
-    const headers = lowercase_keys(incoming.headers);
     return await options2.hooks.handle({
-      request: {
-        ...incoming,
-        headers,
-        body: parse_body(incoming.rawBody, headers),
-        params: {},
-        locals: {}
-      },
-      resolve: async (request) => {
+      request,
+      resolve: async (request2) => {
         if (state.prerender && state.prerender.fallback) {
           return await render_response({
             options: options2,
-            $session: await options2.hooks.getSession(request),
+            $session: await options2.hooks.getSession(request2),
             page_config: { ssr: false, router: true, hydrate: true },
             status: 200,
             branch: []
           });
         }
         for (const route of options2.manifest.routes) {
-          if (!route.pattern.test(request.path))
+          const match = route.pattern.exec(request2.path);
+          if (!match)
             continue;
-          const response = route.type === "endpoint" ? await render_endpoint(request, route) : await render_page(request, route, options2, state);
+          const response = route.type === "endpoint" ? await render_endpoint(request2, route, match) : await render_page(request2, route, match, options2, state);
           if (response) {
             if (response.status === 200) {
-              if (!/(no-store|immutable)/.test(response.headers["cache-control"])) {
+              const cache_control = get_single_valued_header(response.headers, "cache-control");
+              if (!cache_control || !/(no-store|immutable)/.test(cache_control)) {
                 const etag = `"${hash(response.body || "")}"`;
-                if (request.headers["if-none-match"] === etag) {
+                if (request2.headers["if-none-match"] === etag) {
                   return {
                     status: 304,
                     headers: {},
@@ -66510,20 +66549,20 @@ async function respond(incoming, options2, state = {}) {
             return response;
           }
         }
-        const $session = await options2.hooks.getSession(request);
+        const $session = await options2.hooks.getSession(request2);
         return await respond_with_error({
-          request,
+          request: request2,
           options: options2,
           state,
           $session,
           status: 404,
-          error: new Error(`Not found: ${request.path}`)
+          error: new Error(`Not found: ${request2.path}`)
         });
       }
     });
   } catch (err) {
     const e = coalesce_to_error(err);
-    options2.handle_error(e);
+    options2.handle_error(e, request);
     return {
       status: 500,
       headers: {},
@@ -66531,13 +66570,7 @@ async function respond(incoming, options2, state = {}) {
     };
   }
 }
-
-// .svelte-kit/output/server/app.js
-var import_imagekit = __toModule(require_dist());
-var import_date_fns = __toModule(require_date_fns());
-var import_imagekit_javascript = __toModule(require_imagekit_cjs());
-var import_lazysizes = __toModule(require_lazysizes());
-function noop2() {
+function noop() {
 }
 function run(fn) {
   return fn();
@@ -66548,12 +66581,12 @@ function blank_object() {
 function run_all(fns) {
   fns.forEach(run);
 }
-function safe_not_equal2(a, b) {
+function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
 function subscribe(store, ...callbacks) {
   if (store == null) {
-    return noop2;
+    return noop;
   }
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
@@ -66577,15 +66610,15 @@ function getContext(key) {
   return get_current_component().$$.context.get(key);
 }
 Promise.resolve();
-var escaped2 = {
+var escaped = {
   '"': "&quot;",
   "'": "&#39;",
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;"
 };
-function escape2(html) {
-  return String(html).replace(/["'&<>]/g, (match) => escaped2[match]);
+function escape(html) {
+  return String(html).replace(/["'&<>]/g, (match) => escaped[match]);
 }
 function each(items, fn) {
   let str = "";
@@ -66643,11 +66676,11 @@ function create_ssr_component(fn) {
 function add_attribute(name, value, boolean) {
   if (value == null || boolean && !value)
     return "";
-  return ` ${name}${value === true ? "" : `=${typeof value === "string" ? JSON.stringify(escape2(value)) : `"${value}"`}`}`;
+  return ` ${name}${value === true ? "" : `=${typeof value === "string" ? JSON.stringify(escape(value)) : `"${value}"`}`}`;
 }
 function afterUpdate() {
 }
-var css$f = {
+var css$k = {
   code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
   map: `{"version":3,"file":"root.svelte","sources":["root.svelte"],"sourcesContent":["<!-- This file is generated by @sveltejs/kit \u2014 do not edit it! -->\\n<script>\\n\\timport { setContext, afterUpdate, onMount } from 'svelte';\\n\\n\\t// stores\\n\\texport let stores;\\n\\texport let page;\\n\\n\\texport let components;\\n\\texport let props_0 = null;\\n\\texport let props_1 = null;\\n\\texport let props_2 = null;\\n\\n\\tsetContext('__svelte__', stores);\\n\\n\\t$: stores.page.set(page);\\n\\tafterUpdate(stores.page.notify);\\n\\n\\tlet mounted = false;\\n\\tlet navigated = false;\\n\\tlet title = null;\\n\\n\\tonMount(() => {\\n\\t\\tconst unsubscribe = stores.page.subscribe(() => {\\n\\t\\t\\tif (mounted) {\\n\\t\\t\\t\\tnavigated = true;\\n\\t\\t\\t\\ttitle = document.title || 'untitled page';\\n\\t\\t\\t}\\n\\t\\t});\\n\\n\\t\\tmounted = true;\\n\\t\\treturn unsubscribe;\\n\\t});\\n<\/script>\\n\\n<svelte:component this={components[0]} {...(props_0 || {})}>\\n\\t{#if components[1]}\\n\\t\\t<svelte:component this={components[1]} {...(props_1 || {})}>\\n\\t\\t\\t{#if components[2]}\\n\\t\\t\\t\\t<svelte:component this={components[2]} {...(props_2 || {})}/>\\n\\t\\t\\t{/if}\\n\\t\\t</svelte:component>\\n\\t{/if}\\n</svelte:component>\\n\\n{#if mounted}\\n\\t<div id=\\"svelte-announcer\\" aria-live=\\"assertive\\" aria-atomic=\\"true\\">\\n\\t\\t{#if navigated}\\n\\t\\t\\t{title}\\n\\t\\t{/if}\\n\\t</div>\\n{/if}\\n\\n<style>\\n\\t#svelte-announcer {\\n\\t\\tposition: absolute;\\n\\t\\tleft: 0;\\n\\t\\ttop: 0;\\n\\t\\tclip: rect(0 0 0 0);\\n\\t\\tclip-path: inset(50%);\\n\\t\\toverflow: hidden;\\n\\t\\twhite-space: nowrap;\\n\\t\\twidth: 1px;\\n\\t\\theight: 1px;\\n\\t}\\n</style>"],"names":[],"mappings":"AAsDC,iBAAiB,eAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CACnB,SAAS,CAAE,MAAM,GAAG,CAAC,CACrB,QAAQ,CAAE,MAAM,CAChB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC"}`
 };
@@ -66672,7 +66705,7 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.props_1(props_1);
   if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
     $$bindings.props_2(props_2);
-  $$result.css.add(css$f);
+  $$result.css.add(css$k);
   {
     stores.page.set(page2);
   }
@@ -66687,7 +66720,11 @@ ${validate_component(components[0] || missing_component, "svelte:component").$$r
 
 ${``}`;
 });
+var base = "";
+var assets = "";
 function set_paths(paths) {
+  base = paths.base;
+  assets = paths.assets || base;
 }
 function set_prerendering(value) {
 }
@@ -66697,30 +66734,28 @@ var user_hooks = /* @__PURE__ */ Object.freeze({
 });
 var template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8" />\n\n        <link\n            rel="apple-touch-icon"\n            sizes="180x180"\n            href="/apple-touch-icon.png"\n        />\n        <link rel="icon" href="/icon.svg" type="image/svg+xml" />\n        <link\n            rel="icon"\n            type="image/png"\n            sizes="32x32"\n            href="/favicon-32x32.png"\n        />\n        <link\n            rel="icon"\n            type="image/png"\n            sizes="16x16"\n            href="/favicon-16x16.png"\n        />\n        <link rel="manifest" href="/site.webmanifest" />\n        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />\n        <meta name="msapplication-TileColor" content="#da532c" />\n        <meta name="theme-color" content="#ffffff" />\n\n        <link rel="stylesheet" href="https://use.typekit.net/pzh3hif.css" />\n        <meta name="viewport" content="width=device-width, initial-scale=1" />\n        ' + head + "\n    </head>\n    <body>\n        " + body + "\n    </body>\n</html>\n";
 var options = null;
-var default_settings = { paths: { "base": "", "assets": "/." } };
+var default_settings = { paths: { "base": "", "assets": "" } };
 function init(settings = default_settings) {
   set_paths(settings.paths);
   set_prerendering(settings.prerendering || false);
+  const hooks = get_hooks(user_hooks);
   options = {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-3acbbb2f.js",
-      css: ["/./_app/assets/start-a8cd1609.css", "/./_app/assets/vendor-4d25fe4c.css"],
-      js: ["/./_app/start-3acbbb2f.js", "/./_app/chunks/vendor-0e1e7714.js"]
+      file: assets + "/_app/start-f66351f4.js",
+      css: [assets + "/_app/assets/start-61d1577b.css", assets + "/_app/assets/vendor-899dbddf.css"],
+      js: [assets + "/_app/start-f66351f4.js", assets + "/_app/chunks/vendor-59d3ad3e.js"]
     },
     fetched: void 0,
     floc: false,
-    get_component_path: (id) => "/./_app/" + entry_lookup[id],
+    get_component_path: (id) => assets + "/_app/" + entry_lookup[id],
     get_stack: (error2) => String(error2),
-    handle_error: (error2) => {
-      if (error2.frame) {
-        console.error(error2.frame);
-      }
-      console.error(error2.stack);
+    handle_error: (error2, request) => {
+      hooks.handleError({ error: error2, request });
       error2.stack = options.get_stack(error2);
     },
-    hooks: get_hooks(user_hooks),
+    hooks,
     hydrate: true,
     initiator: void 0,
     load_component,
@@ -66740,7 +66775,7 @@ function init(settings = default_settings) {
 var d = decodeURIComponent;
 var empty = () => ({});
 var manifest = {
-  assets: [{ "file": ".DS_Store", "size": 14340, "type": null }, { "file": "2019portrait.jpg", "size": 284389, "type": "image/jpeg" }, { "file": "android-chrome-192x192.png", "size": 2660, "type": "image/png" }, { "file": "android-chrome-512x512.png", "size": 8318, "type": "image/png" }, { "file": "apple-touch-icon.png", "size": 2172, "type": "image/png" }, { "file": "assiniboine.png", "size": 823458, "type": "image/png" }, { "file": "browserconfig.xml", "size": 246, "type": "application/xml" }, { "file": "calendar-images/2015.jpg", "size": 117527, "type": "image/jpeg" }, { "file": "calendar-images/2016.jpg", "size": 116959, "type": "image/jpeg" }, { "file": "calendar-images/2017.jpg", "size": 108623, "type": "image/jpeg" }, { "file": "calendar-images/2018.jpg", "size": 204531, "type": "image/jpeg" }, { "file": "calendar-images/2019.jpg", "size": 170363, "type": "image/jpeg" }, { "file": "calendar-images/2020.jpg", "size": 107834, "type": "image/jpeg" }, { "file": "calendar-images/2021.jpg", "size": 141207, "type": "image/jpeg" }, { "file": "collage.jpg", "size": 1688691, "type": "image/jpeg" }, { "file": "cutout.png", "size": 7695666, "type": "image/png" }, { "file": "favicon-16x16.png", "size": 564, "type": "image/png" }, { "file": "favicon-32x32.png", "size": 902, "type": "image/png" }, { "file": "favicon.ico", "size": 15086, "type": "image/vnd.microsoft.icon" }, { "file": "galleries/.DS_Store", "size": 10244, "type": null }, { "file": "galleries/Bugaboos_July-2021/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03900.jpg", "size": 651299, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03902.jpg", "size": 493647, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03910.jpg", "size": 826033, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03920.jpg", "size": 594131, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03939.jpg", "size": 575681, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03942-Edit.jpg", "size": 412129, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03946.jpg", "size": 1181406, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC03985.jpg", "size": 893907, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC04000.jpg", "size": 1468261, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210723-DSC04010.jpg", "size": 682391, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04014.jpg", "size": 359721, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04015.jpg", "size": 633914, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04017-Pano.jpg", "size": 501273, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04018.jpg", "size": 1118696, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04023.jpg", "size": 1113814, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04024.jpg", "size": 655555, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04028.jpg", "size": 1300252, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04030.jpg", "size": 372865, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04034.jpg", "size": 898503, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04038.jpg", "size": 336332, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04050.jpg", "size": 704015, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04053-2.jpg", "size": 963187, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04053.jpg", "size": 906206, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04058.jpg", "size": 1002575, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04059.jpg", "size": 203645, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210724-DSC04064.jpg", "size": 794755, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210725-DSC04071.jpg", "size": 874314, "type": "image/jpeg" }, { "file": "galleries/Bugaboos_July-2021/RMCWHAE-20210725-DSC04090-Pano.jpg", "size": 1116705, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC00006.jpg", "size": 654255, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC00713.jpg", "size": 591027, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC00760.jpg", "size": 535964, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC09955.jpg", "size": 611246, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC09961.jpg", "size": 428010, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC09963.jpg", "size": 569966, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC09967.jpg", "size": 768428, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200718-DSC09973.jpg", "size": 703278, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200719-DSC00013.jpg", "size": 380303, "type": "image/jpeg" }, { "file": "galleries/Carnarvon-Lake_July-2020/RMCWHAE-20200719-DSC00809.jpg", "size": 378166, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00619.jpg", "size": 620393, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00630.jpg", "size": 664023, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00639.jpg", "size": 721439, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00652.jpg", "size": 729258, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00657.jpg", "size": 365456, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC00690.jpg", "size": 1193620, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09631.jpg", "size": 428644, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09632.jpg", "size": 857165, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09637.jpg", "size": 703384, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09645-Edit.jpg", "size": 875369, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09659.jpg", "size": 1125959, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09689.jpg", "size": 892693, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09696.jpg", "size": 1249415, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09703.jpg", "size": 704837, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09730.jpg", "size": 535687, "type": "image/jpeg" }, { "file": "galleries/Forgetmenot-and-Sandy-Ann_June-2020/RMCWHAE-20200606-DSC09733-Edit.jpg", "size": 553213, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5510.jpg", "size": 1305462, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5511.jpg", "size": 1481603, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5514.jpg", "size": 1286029, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5516.jpg", "size": 634539, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5522.jpg", "size": 1150234, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5523.jpg", "size": 649882, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/IMG_5527.jpg", "size": 641320, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03024.jpg", "size": 485923, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03027.jpg", "size": 545589, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03034.jpg", "size": 878789, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03036.jpg", "size": 1738224, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03042.jpg", "size": 606544, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03050.jpg", "size": 336296, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03064.jpg", "size": 386659, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03071.jpg", "size": 345919, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03073.jpg", "size": 280664, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03085.jpg", "size": 439281, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03086.jpg", "size": 699336, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03088.jpg", "size": 576378, "type": "image/jpeg" }, { "file": "galleries/MacKenzie-Cartier_September-2020/RMCWHAE-20200903-DSC03089.jpg", "size": 657794, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03628.jpg", "size": 1483660, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03630.jpg", "size": 1452923, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03633.jpg", "size": 1170014, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03635.jpg", "size": 1307973, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03648.jpg", "size": 1655095, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03654.jpg", "size": 2148772, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03656.jpg", "size": 2155702, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03658.jpg", "size": 2142048, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03660.jpg", "size": 2152875, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03662.jpg", "size": 2125087, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03664.jpg", "size": 2120975, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03666.jpg", "size": 2108795, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03675.jpg", "size": 2139079, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03676.jpg", "size": 2118759, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03678.jpg", "size": 2090735, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03685.jpg", "size": 2191647, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03687.jpg", "size": 2138692, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03702.jpg", "size": 1766353, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03720.jpg", "size": 1718522, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03732.jpg", "size": 1564177, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03735.jpg", "size": 1723054, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03737.jpg", "size": 1712742, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03738.jpg", "size": 1704175, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03755.jpg", "size": 1629557, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03757.jpg", "size": 1632109, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03759.jpg", "size": 1634554, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03782.jpg", "size": 1715744, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03785.jpg", "size": 1746553, "type": "image/jpeg" }, { "file": "galleries/Mt-Abriel_April-2021/RMCWHAE-20210403-DSC03791.jpg", "size": 617585, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/.DS_Store", "size": 6148, "type": null }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02837.jpg", "size": 941476, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02846.jpg", "size": 962873, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02859.jpg", "size": 1383542, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02869.jpg", "size": 1067391, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02880.jpg", "size": 1131943, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-DSC02885.jpg", "size": 1358592, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200815-RMCWHAE-20200815-DSC02973-Min Horizon Noise.jpg", "size": 262306, "type": "image/jpeg" }, { "file": "galleries/Rossland_August-2020/RMCWHAE-20200816-DSC02989.jpg", "size": 433655, "type": "image/jpeg" }, { "file": "icon.svg", "size": 725, "type": "image/svg+xml" }, { "file": "journal-images/.DS_Store", "size": 6148, "type": null }, { "file": "journal-images/LG-1440p.png", "size": 461725, "type": "image/png" }, { "file": "journal-images/LG-OnScreen-Control.png", "size": 245924, "type": "image/png" }, { "file": "journal-images/LG-interference.jpg", "size": 610914, "type": "image/jpeg" }, { "file": "journal-images/LG-screen-and-keyboard.jpg", "size": 593856, "type": "image/jpeg" }, { "file": "journal-images/http2-akamai.png", "size": 288772, "type": "image/png" }, { "file": "journal-images/http2-devtools.png", "size": 61418, "type": "image/png" }, { "file": "journal-images/http2-site.png", "size": 670434, "type": "image/png" }, { "file": "journal-images/koodo-prepaid.png", "size": 148541, "type": "image/png" }, { "file": "journal-images/rails-1.jpg", "size": 58187, "type": "image/jpeg" }, { "file": "journal-images/rails-2.png", "size": 101748, "type": "image/png" }, { "file": "journal-images/rails-3.png", "size": 221243, "type": "image/png" }, { "file": "journal-images/rails-4.png", "size": 131378, "type": "image/png" }, { "file": "journal-images/rails-5.png", "size": 110163, "type": "image/png" }, { "file": "mstile-150x150.png", "size": 2567, "type": "image/png" }, { "file": "pdf/1984-Final-Essay.pdf", "size": 64525, "type": "application/pdf" }, { "file": "pdf/2015calendar.pdf", "size": 1089344, "type": "application/pdf" }, { "file": "pdf/2016calendar.pdf", "size": 7363967, "type": "application/pdf" }, { "file": "pdf/2017calendar.pdf", "size": 1205437, "type": "application/pdf" }, { "file": "pdf/2018calendar.pdf", "size": 2068085, "type": "application/pdf" }, { "file": "pdf/2019calendar.pdf", "size": 2138799, "type": "application/pdf" }, { "file": "pdf/2020calendar.pdf", "size": 1717785, "type": "application/pdf" }, { "file": "pdf/2021calendar.pdf", "size": 2126500, "type": "application/pdf" }, { "file": "pdf/essay1.pdf", "size": 70038, "type": "application/pdf" }, { "file": "pdf/essay2.pdf", "size": 89945, "type": "application/pdf" }, { "file": "pdf/mcwhae_russell_resume.pdf", "size": 65756, "type": "application/pdf" }, { "file": "pdf/ucalgary_2019_mcwhae_russell.pdf", "size": 8354435, "type": "application/pdf" }, { "file": "portfolio-images/.DS_Store", "size": 6148, "type": null }, { "file": "portfolio-images/RMCWHAE-20130531-DSC00226.jpg", "size": 1360338, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20130727-DSC00756-Pano.jpg", "size": 507608, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20130921-DSC01084.jpg", "size": 289984, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20131224-DSC01555.jpg", "size": 558245, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140321-DSC01879.jpg", "size": 341462, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140321-DSC01895.jpg", "size": 304381, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140717-DSC02494.jpg", "size": 174975, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140803-DSC00925.jpg", "size": 248684, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140804-DSC00943.jpg", "size": 214517, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20140914-DSC02885.jpg", "size": 977159, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20141019-DSC02957.jpg", "size": 393846, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150217-DSC03341.jpg", "size": 1062168, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150305-DSC00379.jpg", "size": 373422, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150512-DSC03485.jpg", "size": 330362, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150528-_DSC0492.jpg", "size": 751496, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150610-_DSC0557.jpg", "size": 572321, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150613-_DSC0632.jpg", "size": 1414439, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150614-_DSC0654.jpg", "size": 742187, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150802-DSC00884.jpg", "size": 980122, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20150803-DSC00896.jpg", "size": 140550, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151001-DSC01056.jpg", "size": 301271, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151001-DSC01079.jpg", "size": 183043, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151128-DSC01592.jpg", "size": 708384, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151228-DSC04898.jpg", "size": 126565, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151229-DSC04816.jpg", "size": 323721, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20151230-tofinopano5B.jpg", "size": 342888, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160123-DSC05280.jpg", "size": 556404, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160219-DSC05117-Edit.jpg", "size": 390537, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160322-DSC05583.jpg", "size": 601857, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160402-DSC05271.jpg", "size": 530159, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160407-koocanusapano.jpg", "size": 566640, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160416-DSC06006-Edit.jpg", "size": 252273, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160504-DSC06165.jpg", "size": 158082, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160529-DSC05712.jpg", "size": 386539, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160619-DSC06880-Edit.jpg", "size": 399872, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160620-DSC07134-Pano.jpg", "size": 433095, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160709-DSC08276.jpg", "size": 518589, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160728-DSC08381.jpg", "size": 502023, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20160802-DSC08635-Pano.jpg", "size": 572654, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20161002-DSC06317.jpg", "size": 312109, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20161029-DSC06351.jpg", "size": 359768, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20161102-DSC06359.jpg", "size": 566072, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20161230-DSC09284-Edit-Edit.jpg", "size": 425316, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170102-DSC09370.jpg", "size": 490192, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170103-DSC06475.jpg", "size": 457434, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170103-DSC09415.jpg", "size": 644262, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170202-DSC09582.jpg", "size": 487936, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170209-DSC09789.jpg", "size": 1021011, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170221-DSC09899-Pano.jpg", "size": 359089, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170221-DSC09903.jpg", "size": 268013, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170326-DSC06526.jpg", "size": 252905, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170422-DSC00583.jpg", "size": 419562, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170611-DSC00827.jpg", "size": 1217092, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170729-DSC02327.jpg", "size": 250903, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170805-DSC02697-Edit.jpg", "size": 146059, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170806-DSC02759.jpg", "size": 300573, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170806-DSC07703.jpg", "size": 141830, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170806-DSC07723.jpg", "size": 165479, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170806-RMCWHAE-20170806-DSC02724.jpg", "size": 862551, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20170816-DSC02942.jpg", "size": 215642, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171128-DSC07962.jpg", "size": 424719, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171203-DSC08027.jpg", "size": 134481, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171211-DSC03846.jpg", "size": 417447, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171222-DSC03962.jpg", "size": 816450, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171230-DSC08196.jpg", "size": 1128736, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20171230-DSC08208.jpg", "size": 2073342, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180221-DSC04522.jpg", "size": 367579, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180224-DSC04532.jpg", "size": 171446, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180311-DSC04546.jpg", "size": 612888, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180505-DSC04871.jpg", "size": 499426, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180513-DSC04944-Steve.jpg", "size": 798235, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180513-DSC05009.jpg", "size": 570622, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180617-DSC05125.jpg", "size": 225350, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180617-DSC05131.jpg", "size": 624473, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180728-DSC05422.jpg", "size": 894429, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180811-DSC05483.jpg", "size": 219422, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20180907-RMCWHAE-20180907-DSC06197-Median.jpg", "size": 708643, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20181230-DSC07022.jpg", "size": 258050, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190124-DSC07232.jpg", "size": 176200, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190128-DSC07455.jpg", "size": 434113, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190406-DSC08195.jpg", "size": 728228, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190416-DSC08280.jpg", "size": 512046, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190601-DSC08458.jpg", "size": 573339, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190908-DSC09266.jpg", "size": 342947, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190908-DSC09330.jpg", "size": 573668, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20190908-DSC09355.jpg", "size": 864976, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20200606-DSC09703.jpg", "size": 720940, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20200815-DSC02869.jpg", "size": 1066942, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20200903-DSC03064.jpg", "size": 386250, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20201206-DSC03263-Edit.jpg", "size": 953123, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20210109-DSC03461-Edit.jpg", "size": 384813, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20210109-DSC03464-Edit-Enhanced.jpg", "size": 242176, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20210504-DSC00303-Edit-Edit.jpg", "size": 933705, "type": "image/jpeg" }, { "file": "portfolio-images/RMCWHAE-20210611-DSC03897.jpg", "size": 706400, "type": "image/jpeg" }, { "file": "safari-pinned-tab.svg", "size": 9550, "type": "image/svg+xml" }, { "file": "site.webmanifest", "size": 426, "type": "application/manifest+json" }],
+  assets: [{ "file": ".DS_Store", "size": 10244, "type": null }, { "file": "2019portrait.jpg", "size": 284389, "type": "image/jpeg" }, { "file": "android-chrome-192x192.png", "size": 2660, "type": "image/png" }, { "file": "android-chrome-512x512.png", "size": 8318, "type": "image/png" }, { "file": "apple-touch-icon.png", "size": 2172, "type": "image/png" }, { "file": "assiniboine.png", "size": 823458, "type": "image/png" }, { "file": "browserconfig.xml", "size": 246, "type": "application/xml" }, { "file": "calendar-images/2015.jpg", "size": 117527, "type": "image/jpeg" }, { "file": "calendar-images/2016.jpg", "size": 116959, "type": "image/jpeg" }, { "file": "calendar-images/2017.jpg", "size": 108623, "type": "image/jpeg" }, { "file": "calendar-images/2018.jpg", "size": 204531, "type": "image/jpeg" }, { "file": "calendar-images/2019.jpg", "size": 170363, "type": "image/jpeg" }, { "file": "calendar-images/2020.jpg", "size": 107834, "type": "image/jpeg" }, { "file": "calendar-images/2021.jpg", "size": 141207, "type": "image/jpeg" }, { "file": "collage.jpg", "size": 1688691, "type": "image/jpeg" }, { "file": "cutout.png", "size": 7695666, "type": "image/png" }, { "file": "favicon-16x16.png", "size": 564, "type": "image/png" }, { "file": "favicon-32x32.png", "size": 902, "type": "image/png" }, { "file": "favicon.ico", "size": 15086, "type": "image/vnd.microsoft.icon" }, { "file": "icon.svg", "size": 725, "type": "image/svg+xml" }, { "file": "journal-images/.DS_Store", "size": 6148, "type": null }, { "file": "journal-images/LG-1440p.png", "size": 461725, "type": "image/png" }, { "file": "journal-images/LG-OnScreen-Control.png", "size": 245924, "type": "image/png" }, { "file": "journal-images/LG-interference.jpg", "size": 610914, "type": "image/jpeg" }, { "file": "journal-images/LG-screen-and-keyboard.jpg", "size": 593856, "type": "image/jpeg" }, { "file": "journal-images/http2-akamai.png", "size": 288772, "type": "image/png" }, { "file": "journal-images/http2-devtools.png", "size": 61418, "type": "image/png" }, { "file": "journal-images/http2-site.png", "size": 670434, "type": "image/png" }, { "file": "journal-images/koodo-prepaid.png", "size": 148541, "type": "image/png" }, { "file": "journal-images/rails-1.jpg", "size": 58187, "type": "image/jpeg" }, { "file": "journal-images/rails-2.png", "size": 101748, "type": "image/png" }, { "file": "journal-images/rails-3.png", "size": 221243, "type": "image/png" }, { "file": "journal-images/rails-4.png", "size": 131378, "type": "image/png" }, { "file": "journal-images/rails-5.png", "size": 110163, "type": "image/png" }, { "file": "mstile-150x150.png", "size": 2567, "type": "image/png" }, { "file": "pdf/1984-Final-Essay.pdf", "size": 64525, "type": "application/pdf" }, { "file": "pdf/2015calendar.pdf", "size": 1089344, "type": "application/pdf" }, { "file": "pdf/2016calendar.pdf", "size": 7363967, "type": "application/pdf" }, { "file": "pdf/2017calendar.pdf", "size": 1205437, "type": "application/pdf" }, { "file": "pdf/2018calendar.pdf", "size": 2068085, "type": "application/pdf" }, { "file": "pdf/2019calendar.pdf", "size": 2138799, "type": "application/pdf" }, { "file": "pdf/2020calendar.pdf", "size": 1717785, "type": "application/pdf" }, { "file": "pdf/2021calendar.pdf", "size": 2126500, "type": "application/pdf" }, { "file": "pdf/essay1.pdf", "size": 70038, "type": "application/pdf" }, { "file": "pdf/essay2.pdf", "size": 89945, "type": "application/pdf" }, { "file": "pdf/mcwhae_russell_resume.pdf", "size": 65756, "type": "application/pdf" }, { "file": "pdf/ucalgary_2019_mcwhae_russell.pdf", "size": 8354435, "type": "application/pdf" }, { "file": "safari-pinned-tab.svg", "size": 9550, "type": "image/svg+xml" }, { "file": "site.webmanifest", "size": 426, "type": "application/manifest+json" }],
   layout: "src/routes/__layout.svelte",
   error: "src/routes/__error.svelte",
   routes: [
@@ -66826,6 +66861,13 @@ var manifest = {
     },
     {
       type: "page",
+      pattern: /^\/videos\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/videos.md"],
+      b: ["src/routes/__error.svelte"]
+    },
+    {
+      type: "page",
       pattern: /^\/about\/?$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/about.md"],
@@ -66843,7 +66885,8 @@ var manifest = {
 var get_hooks = (hooks) => ({
   getSession: hooks.getSession || (() => ({})),
   handle: hooks.handle || (({ request, resolve: resolve2 }) => resolve2(request)),
-  serverFetch: hooks.serverFetch || fetch
+  handleError: hooks.handleError || (({ error: error2 }) => console.error(error2.stack)),
+  externalFetch: hooks.externalFetch || fetch
 });
 var module_lookup = {
   "src/routes/__layout.svelte": () => Promise.resolve().then(function() {
@@ -66876,6 +66919,9 @@ var module_lookup = {
   "src/routes/events/[slug]/index.svelte": () => Promise.resolve().then(function() {
     return index;
   }),
+  "src/routes/videos.md": () => Promise.resolve().then(function() {
+    return videos;
+  }),
   "src/routes/about.md": () => Promise.resolve().then(function() {
     return about;
   }),
@@ -66883,11 +66929,15 @@ var module_lookup = {
     return uses;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "/./_app/pages/__layout.svelte-afafda88.js", "css": ["/./_app/assets/pages/__layout.svelte-95775333.css", "/./_app/assets/Icon.svelte_svelte&type=style&lang-f75d3b08.css", "/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/ThemeSwitcher-48f54688.css"], "js": ["/./_app/pages/__layout.svelte-afafda88.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Icon-5d9877d3.js", "/./_app/chunks/ThemeSwitcher-e99ed5d9.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "/./_app/pages/__error.svelte-b658ce31.js", "css": ["/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/__error.svelte-b658ce31.js", "/./_app/chunks/vendor-0e1e7714.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "/./_app/pages/index.svelte-2c163320.js", "css": ["/./_app/assets/pages/index.svelte-9dce2405.css", "/./_app/assets/Icon.svelte_svelte&type=style&lang-f75d3b08.css", "/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/index.svelte-2c163320.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/RightChevron-fa31d628.js", "/./_app/chunks/Icon-5d9877d3.js"], "styles": [] }, "src/routes/photography/index.svelte": { "entry": "/./_app/pages/photography/index.svelte-3b8eeafa.js", "css": ["/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/Image-76ec4ce8.css"], "js": ["/./_app/pages/photography/index.svelte-3b8eeafa.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Image-11de1a81.js"], "styles": [] }, "src/routes/calendars.svelte": { "entry": "/./_app/pages/calendars.svelte-5740b9e4.js", "css": ["/./_app/assets/pages/calendars.svelte-851292df.css", "/./_app/assets/Icon.svelte_svelte&type=style&lang-f75d3b08.css", "/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/calendars.svelte-5740b9e4.js", "/./_app/chunks/vendor-0e1e7714.js"], "styles": [] }, "src/routes/projects.md": { "entry": "/./_app/pages/projects.md-1e06202f.js", "css": ["/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/projects.md-1e06202f.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Page-8b144f83.js"], "styles": [] }, "src/routes/journal/index.svelte": { "entry": "/./_app/pages/journal/index.svelte-749c9a9b.js", "css": ["/./_app/assets/pages/journal/index.svelte-a78f6049.css", "/./_app/assets/Date-551daebf.css", "/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/ThemeSwitcher-48f54688.css"], "js": ["/./_app/pages/journal/index.svelte-749c9a9b.js", "/./_app/chunks/Date-04e8f7f9.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/ThemeSwitcher-e99ed5d9.js"], "styles": [] }, "src/routes/journal/[slug].svelte": { "entry": "/./_app/pages/journal/[slug].svelte-e04286f5.js", "css": ["/./_app/assets/pages/journal/[slug].svelte-aa5329ab.css", "/./_app/assets/Icon.svelte_svelte&type=style&lang-f75d3b08.css", "/./_app/assets/Date-551daebf.css", "/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/ThemeSwitcher-48f54688.css"], "js": ["/./_app/pages/journal/[slug].svelte-e04286f5.js", "/./_app/chunks/Date-04e8f7f9.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/ThemeSwitcher-e99ed5d9.js", "/./_app/chunks/Icon-5d9877d3.js", "/./_app/chunks/RightChevron-fa31d628.js"], "styles": [] }, "src/routes/events/index.svelte": { "entry": "/./_app/pages/events/index.svelte-daa47626.js", "css": ["/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/Image-76ec4ce8.css"], "js": ["/./_app/pages/events/index.svelte-daa47626.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Image-11de1a81.js"], "styles": [] }, "src/routes/events/[slug]/index.svelte": { "entry": "/./_app/pages/events/[slug]/index.svelte-9adebc52.js", "css": ["/./_app/assets/vendor-4d25fe4c.css", "/./_app/assets/Image-76ec4ce8.css"], "js": ["/./_app/pages/events/[slug]/index.svelte-9adebc52.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Image-11de1a81.js"], "styles": [] }, "src/routes/about.md": { "entry": "/./_app/pages/about.md-289a3e95.js", "css": ["/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/about.md-289a3e95.js", "/./_app/chunks/vendor-0e1e7714.js"], "styles": [] }, "src/routes/uses.md": { "entry": "/./_app/pages/uses.md-663f936d.js", "css": ["/./_app/assets/vendor-4d25fe4c.css"], "js": ["/./_app/pages/uses.md-663f936d.js", "/./_app/chunks/vendor-0e1e7714.js", "/./_app/chunks/Page-8b144f83.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-6213b33f.js", "css": ["assets/pages/__layout.svelte-dee6903c.css", "assets/Icon.svelte_svelte&type=style&lang-5f4bf783.css", "assets/vendor-899dbddf.css", "assets/ThemeSwitcher-e285047d.css"], "js": ["pages/__layout.svelte-6213b33f.js", "chunks/vendor-59d3ad3e.js", "chunks/Icon-d364c8b6.js", "chunks/ThemeSwitcher-79e88253.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "pages/__error.svelte-1262fb3f.js", "css": ["assets/vendor-899dbddf.css"], "js": ["pages/__error.svelte-1262fb3f.js", "chunks/vendor-59d3ad3e.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-b66735f9.js", "css": ["assets/pages/index.svelte-c8cf3fda.css", "assets/Icon.svelte_svelte&type=style&lang-5f4bf783.css", "assets/vendor-899dbddf.css"], "js": ["pages/index.svelte-b66735f9.js", "chunks/vendor-59d3ad3e.js", "chunks/RightChevron-2fe06f95.js", "chunks/Icon-d364c8b6.js"], "styles": [] }, "src/routes/photography/index.svelte": { "entry": "pages/photography/index.svelte-3c193dba.js", "css": ["assets/pages/photography/index.svelte-527bce4d.css", "assets/vendor-899dbddf.css", "assets/Image-38fbd277.css", "assets/Breadcrumbs-46786d3d.css"], "js": ["pages/photography/index.svelte-3c193dba.js", "chunks/vendor-59d3ad3e.js", "chunks/Gallery-ceab3ed0.js", "chunks/Image-6d6d9040.js", "chunks/Breadcrumbs-64c45cf8.js"], "styles": [] }, "src/routes/calendars.svelte": { "entry": "pages/calendars.svelte-62539ec7.js", "css": ["assets/pages/calendars.svelte-0bc0823c.css", "assets/Icon.svelte_svelte&type=style&lang-5f4bf783.css", "assets/vendor-899dbddf.css"], "js": ["pages/calendars.svelte-62539ec7.js", "chunks/vendor-59d3ad3e.js"], "styles": [] }, "src/routes/projects.md": { "entry": "pages/projects.md-70c9151d.js", "css": ["assets/vendor-899dbddf.css"], "js": ["pages/projects.md-70c9151d.js", "chunks/vendor-59d3ad3e.js", "chunks/Page-aa0a0c9e.js"], "styles": [] }, "src/routes/journal/index.svelte": { "entry": "pages/journal/index.svelte-212258c6.js", "css": ["assets/pages/journal/index.svelte-2800439e.css", "assets/Date-f62de129.css", "assets/vendor-899dbddf.css", "assets/ThemeSwitcher-e285047d.css", "assets/Breadcrumbs-46786d3d.css"], "js": ["pages/journal/index.svelte-212258c6.js", "chunks/Date-1fc8c3c0.js", "chunks/vendor-59d3ad3e.js", "chunks/ThemeSwitcher-79e88253.js", "chunks/Breadcrumbs-64c45cf8.js"], "styles": [] }, "src/routes/journal/[slug].svelte": { "entry": "pages/journal/[slug].svelte-75bcc85c.js", "css": ["assets/pages/journal/[slug].svelte-950051e3.css", "assets/Icon.svelte_svelte&type=style&lang-5f4bf783.css", "assets/Date-f62de129.css", "assets/vendor-899dbddf.css", "assets/ThemeSwitcher-e285047d.css", "assets/Breadcrumbs-46786d3d.css"], "js": ["pages/journal/[slug].svelte-75bcc85c.js", "chunks/Date-1fc8c3c0.js", "chunks/vendor-59d3ad3e.js", "chunks/ThemeSwitcher-79e88253.js", "chunks/Icon-d364c8b6.js", "chunks/RightChevron-2fe06f95.js", "chunks/Breadcrumbs-64c45cf8.js"], "styles": [] }, "src/routes/events/index.svelte": { "entry": "pages/events/index.svelte-14e68ec6.js", "css": ["assets/pages/events/index.svelte-6cb89689.css", "assets/vendor-899dbddf.css", "assets/Image-38fbd277.css", "assets/Breadcrumbs-46786d3d.css"], "js": ["pages/events/index.svelte-14e68ec6.js", "chunks/vendor-59d3ad3e.js", "chunks/Image-6d6d9040.js", "chunks/Breadcrumbs-64c45cf8.js"], "styles": [] }, "src/routes/events/[slug]/index.svelte": { "entry": "pages/events/[slug]/index.svelte-493ebd1c.js", "css": ["assets/pages/events/[slug]/index.svelte-16a42b30.css", "assets/vendor-899dbddf.css", "assets/Image-38fbd277.css", "assets/Breadcrumbs-46786d3d.css"], "js": ["pages/events/[slug]/index.svelte-493ebd1c.js", "chunks/vendor-59d3ad3e.js", "chunks/Gallery-ceab3ed0.js", "chunks/Image-6d6d9040.js", "chunks/Breadcrumbs-64c45cf8.js"], "styles": [] }, "src/routes/videos.md": { "entry": "pages/videos.md-633069f5.js", "css": ["assets/vendor-899dbddf.css"], "js": ["pages/videos.md-633069f5.js", "chunks/vendor-59d3ad3e.js", "chunks/Page-aa0a0c9e.js"], "styles": [] }, "src/routes/about.md": { "entry": "pages/about.md-5b661ab7.js", "css": ["assets/vendor-899dbddf.css"], "js": ["pages/about.md-5b661ab7.js", "chunks/vendor-59d3ad3e.js"], "styles": [] }, "src/routes/uses.md": { "entry": "pages/uses.md-85d67cdb.js", "css": ["assets/vendor-899dbddf.css"], "js": ["pages/uses.md-85d67cdb.js", "chunks/vendor-59d3ad3e.js", "chunks/Page-aa0a0c9e.js"], "styles": [] } };
 async function load_component(file) {
+  const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
     module: await module_lookup[file](),
-    ...metadata_lookup[file]
+    entry: assets + "/_app/" + entry,
+    css: css2.map((dep) => assets + "/_app/" + dep),
+    js: js.map((dep) => assets + "/_app/" + dep),
+    styles
   };
 }
 function render(request, {
@@ -66949,9 +66999,7 @@ async function get$1() {
     path: "/events/",
     type: "folder"
   });
-  const sortedEvents = events.sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  }).map((event) => {
+  const sortedEvents = events.map((event) => {
     const { name } = event;
     const { title, date } = parseTitleAndDate(name);
     return {
@@ -66959,6 +67007,8 @@ async function get$1() {
       title,
       date
     };
+  }).sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
   });
   const promises = sortedEvents.map((event) => getImagesForEvent(event.name));
   const allImages = await Promise.all(promises);
@@ -67045,7 +67095,7 @@ var page = {
     return store.subscribe(fn);
   }
 };
-var css$e = {
+var css$j = {
   code: ".icon.svelte-hrbktx{vertical-align:middle}.with-icon{display:inline-flex;align-items:baseline}.with-icon .icon.svelte-hrbktx{margin-inline-end:1rem}",
   map: `{"version":3,"file":"Icon.svelte","sources":["Icon.svelte"],"sourcesContent":["<script>\\n    export let viewBox = '0 0 24 24'\\n    export let height = '1em'\\n<\/script>\\n\\n<svg\\n    class=\\"icon\\"\\n    style=\\"height: {height}\\"\\n    xmlns=\\"http://www.w3.org/2000/svg\\"\\n    {viewBox}\\n    fill=\\"currentColor\\"\\n>\\n    <slot />\\n</svg>\\n\\n<style>\\n    .icon {\\n        vertical-align: middle;\\n    }\\n\\n    :global(.with-icon) {\\n        display: inline-flex;\\n        align-items: baseline;\\n    }\\n\\n    :global(.with-icon) .icon {\\n        margin-inline-end: 1rem;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAgBI,KAAK,cAAC,CAAC,AACH,cAAc,CAAE,MAAM,AAC1B,CAAC,AAEO,UAAU,AAAE,CAAC,AACjB,OAAO,CAAE,WAAW,CACpB,WAAW,CAAE,QAAQ,AACzB,CAAC,AAEO,UAAU,AAAC,CAAC,KAAK,cAAC,CAAC,AACvB,iBAAiB,CAAE,IAAI,AAC3B,CAAC"}`
 };
@@ -67056,32 +67106,32 @@ var Icon = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.viewBox(viewBox);
   if ($$props.height === void 0 && $$bindings.height && height !== void 0)
     $$bindings.height(height);
-  $$result.css.add(css$e);
-  return `<svg class="${"icon svelte-hrbktx"}" style="${"height: " + escape2(height)}" xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("viewBox", viewBox, 0)} fill="${"currentColor"}">${slots.default ? slots.default({}) : ``}</svg>`;
+  $$result.css.add(css$j);
+  return `<svg class="${"icon svelte-hrbktx"}" style="${"height: " + escape(height)}" xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("viewBox", viewBox, 0)} fill="${"currentColor"}">${slots.default ? slots.default({}) : ``}</svg>`;
 });
 var Logo$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Icon, "Icon").$$render($$result, { viewBox: "0 0 4000 2334", height: "4em" }, {}, {
     default: () => `<path d="${"m350 1079.17v-675h506.288c186.691 0 338.033 150.808 338.033 337.5 0 186.691-151.342 337.5-338.033 337.5zm735.371 417.546-252.017-359.213h22.934c217.804 0 394.37-178.029 394.37-395.833 0-217.809-176.566-395.834-394.37-395.834h-564.621v1691.67h58.333v-900h414.571l631.187 900h68.78l-344.775-492.392 528.616-754.941 873.392 1247.33h68.779l-626.129-894.204 523.796-748.058 1149.92 1642.26h68.779l-1219.38-1739.24 34.229 49.062-34.229-49.062-557.5 795.92-246.813-352.483-34.317-46.658-563.537 801.671z"}"></path>`
   })}`;
 });
-var subscriber_queue2 = [];
-function writable2(value, start = noop2) {
+var subscriber_queue = [];
+function writable(value, start = noop) {
   let stop;
   const subscribers = new Set();
   function set(new_value) {
-    if (safe_not_equal2(value, new_value)) {
+    if (safe_not_equal(value, new_value)) {
       value = new_value;
       if (stop) {
-        const run_queue = !subscriber_queue2.length;
+        const run_queue = !subscriber_queue.length;
         for (const subscriber of subscribers) {
           subscriber[1]();
-          subscriber_queue2.push(subscriber, value);
+          subscriber_queue.push(subscriber, value);
         }
         if (run_queue) {
-          for (let i = 0; i < subscriber_queue2.length; i += 2) {
-            subscriber_queue2[i][0](subscriber_queue2[i + 1]);
+          for (let i = 0; i < subscriber_queue.length; i += 2) {
+            subscriber_queue[i][0](subscriber_queue[i + 1]);
           }
-          subscriber_queue2.length = 0;
+          subscriber_queue.length = 0;
         }
       }
     }
@@ -67089,11 +67139,11 @@ function writable2(value, start = noop2) {
   function update(fn) {
     set(fn(value));
   }
-  function subscribe2(run2, invalidate = noop2) {
+  function subscribe2(run2, invalidate = noop) {
     const subscriber = [run2, invalidate];
     subscribers.add(subscriber);
     if (subscribers.size === 1) {
-      stop = start(set) || noop2;
+      stop = start(set) || noop;
     }
     run2(value);
     return () => {
@@ -67109,7 +67159,7 @@ function writable2(value, start = noop2) {
 var storageKey = "user-theme";
 var localStorageEnabled = typeof localStorage !== "undefined" && localStorage;
 var themeStore = (initial) => {
-  const { set: setStore, ...store } = writable2(initial);
+  const { set: setStore, ...store } = writable(initial);
   return {
     ...store,
     set: (value) => {
@@ -67122,7 +67172,7 @@ var themeStore = (initial) => {
   };
 };
 var theme = themeStore(localStorageEnabled ? localStorage.getItem(storageKey) : "");
-var css$d = {
+var css$i = {
   code: "svg.svelte-c8tyih{stroke:currentColor;fill:currentColor;stroke-width:0;width:100%;height:auto;max-height:100%}",
   map: '{"version":3,"file":"IconBase.svelte","sources":["IconBase.svelte"],"sourcesContent":["<script>\\n  export let title = null;\\n  export let viewBox;\\n<\/script>\\n\\n<style>\\n  svg {\\n    stroke: currentColor;\\n    fill: currentColor;\\n    stroke-width: 0;\\n    width: 100%;\\n    height: auto;\\n    max-height: 100%;\\n  }  \\n</style>\\n\\n<svg xmlns=\\"http://www.w3.org/2000/svg\\" {viewBox}>\\n  {#if title}\\n    <title>{title}</title>\\n  {/if}\\n  <slot />\\n</svg>\\n"],"names":[],"mappings":"AAME,GAAG,cAAC,CAAC,AACH,MAAM,CAAE,YAAY,CACpB,IAAI,CAAE,YAAY,CAClB,YAAY,CAAE,CAAC,CACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,AAClB,CAAC"}'
 };
@@ -67133,8 +67183,8 @@ var IconBase = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.title(title);
   if ($$props.viewBox === void 0 && $$bindings.viewBox && viewBox !== void 0)
     $$bindings.viewBox(viewBox);
-  $$result.css.add(css$d);
-  return `<svg xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("viewBox", viewBox, 0)} class="${"svelte-c8tyih"}">${title ? `<title>${escape2(title)}</title>` : ``}${slots.default ? slots.default({}) : ``}</svg>`;
+  $$result.css.add(css$i);
+  return `<svg xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("viewBox", viewBox, 0)} class="${"svelte-c8tyih"}">${title ? `<title>${escape(title)}</title>` : ``}${slots.default ? slots.default({}) : ``}</svg>`;
 });
 var IoIosMoon = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(IconBase, "IconBase").$$render($$result, Object.assign({ viewBox: "0 0 512 512" }, $$props), {}, {
@@ -67146,7 +67196,7 @@ var IoMdSunny = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     default: () => `<path d="${"M277.3 32h-42.7v64h42.7V32zm129.1 43.7L368 114.1l29.9 29.9 38.4-38.4-29.9-29.9zm-300.8 0l-29.9 29.9 38.4 38.4 29.9-29.9-38.4-38.4zM256 128c-70.4 0-128 57.6-128 128s57.6 128 128 128 128-57.6 128-128-57.6-128-128-128zm224 106.7h-64v42.7h64v-42.7zm-384 0H32v42.7h64v-42.7zM397.9 368L368 397.9l38.4 38.4 29.9-29.9-38.4-38.4zm-283.8 0l-38.4 38.4 29.9 29.9 38.4-38.4-29.9-29.9zm163.2 48h-42.7v64h42.7v-64z"}"></path>`
   })}`;
 });
-var css$c = {
+var css$h = {
   code: ".toggle-wrapper.svelte-349hbp.svelte-349hbp{width:44px;display:block;--transition:var(--duration) ease}.toggle.svelte-349hbp.svelte-349hbp{height:22px;width:44px;color:var(--high-contrast-color);border:1px solid var(--high-contrast-color);border-radius:40px;padding:2px;position:relative;transition:background var(--transition);cursor:pointer}.toggle.svelte-349hbp.svelte-349hbp::before{content:'';display:block;height:16px;width:16px;border-radius:30px;background:var(--high-contrast-color);position:absolute;z-index:2;transform:translate(0);transition:transform var(--transition), background var(--transition)}.toggle.enabled.svelte-349hbp.svelte-349hbp::before{transform:translateX(22px)}.toggle.svelte-349hbp input.svelte-349hbp{opacity:0;position:absolute;top:0}.toggle.svelte-349hbp .icons.svelte-349hbp{display:flex;justify-content:space-between;align-items:center;height:100%}.toggle .icons svg{fill:var(--high-contrast-color);height:18px;width:inherit;z-index:0}@media screen and (max-width: 1023px){.toggle-wrapper.svelte-349hbp.svelte-349hbp{margin:0 auto}}",
   map: `{"version":3,"file":"ThemeSwitcher.svelte","sources":["ThemeSwitcher.svelte"],"sourcesContent":["<script>\\n    import { onMount } from 'svelte'\\n    import { theme as userTheme } from '$lib/stores/theme'\\n\\n    import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'\\n    import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'\\n\\n    onMount(() => {\\n        if (!$userTheme) {\\n            userTheme.set(\\n                window.matchMedia('(prefers-color-scheme: dark)').matches\\n                    ? 'dark'\\n                    : 'light'\\n            )\\n        } else {\\n            userTheme.set($userTheme) // to trigger side effect\\n        }\\n    })\\n\\n    $: nextTheme = $userTheme === 'dark' ? 'light' : 'dark'\\n\\n    function changeTheme() {\\n        userTheme.set(nextTheme)\\n    }\\n<\/script>\\n\\n<div>\\n    <!-- svelte-ignore a11y-label-has-associated-control -->\\n    <label class=\\"toggle-wrapper\\">\\n        <div\\n            class={nextTheme === 'dark' ? 'toggle disabled' : 'toggle enabled'}\\n        >\\n            <div class=\\"icons\\">\\n                <IoMdSunny />\\n                <IoIosMoon />\\n            </div>\\n            <input\\n                id=\\"toggle\\"\\n                name=\\"toggle\\"\\n                type=\\"checkbox\\"\\n                on:click={changeTheme}\\n            />\\n        </div>\\n    </label>\\n</div>\\n\\n<style>\\n    .toggle-wrapper {\\n        width: 44px;\\n        display: block;\\n        --transition: var(--duration) ease;\\n    }\\n\\n    .toggle {\\n        height: 22px;\\n        width: 44px;\\n        color: var(--high-contrast-color);\\n        border: 1px solid var(--high-contrast-color);\\n        border-radius: 40px;\\n        padding: 2px;\\n        position: relative;\\n        transition: background var(--transition);\\n        cursor: pointer;\\n    }\\n\\n    .toggle::before {\\n        content: '';\\n        display: block;\\n        height: 16px;\\n        width: 16px;\\n        border-radius: 30px;\\n        background: var(--high-contrast-color);\\n        position: absolute;\\n        z-index: 2;\\n        transform: translate(0);\\n        transition: transform var(--transition), background var(--transition);\\n    }\\n\\n    .toggle.enabled::before {\\n        transform: translateX(22px);\\n    }\\n\\n    .toggle input {\\n        opacity: 0;\\n        position: absolute;\\n        top: 0;\\n    }\\n\\n    .toggle .icons {\\n        display: flex;\\n        justify-content: space-between;\\n        align-items: center;\\n        height: 100%;\\n        /* margin: 0 5px; */\\n    }\\n\\n    :global(.toggle .icons svg) {\\n        fill: var(--high-contrast-color);\\n        height: 18px;\\n        width: inherit;\\n        z-index: 0;\\n    }\\n    @media screen and (max-width: 1023px) {\\n        .toggle-wrapper {\\n            margin: 0 auto;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"AA+CI,eAAe,4BAAC,CAAC,AACb,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,YAAY,CAAE,oBAAoB,AACtC,CAAC,AAED,OAAO,4BAAC,CAAC,AACL,MAAM,CAAE,IAAI,CACZ,KAAK,CAAE,IAAI,CACX,KAAK,CAAE,IAAI,qBAAqB,CAAC,CACjC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,qBAAqB,CAAC,CAC5C,aAAa,CAAE,IAAI,CACnB,OAAO,CAAE,GAAG,CACZ,QAAQ,CAAE,QAAQ,CAClB,UAAU,CAAE,UAAU,CAAC,IAAI,YAAY,CAAC,CACxC,MAAM,CAAE,OAAO,AACnB,CAAC,AAED,mCAAO,QAAQ,AAAC,CAAC,AACb,OAAO,CAAE,EAAE,CACX,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,CACZ,KAAK,CAAE,IAAI,CACX,aAAa,CAAE,IAAI,CACnB,UAAU,CAAE,IAAI,qBAAqB,CAAC,CACtC,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,SAAS,CAAE,UAAU,CAAC,CAAC,CACvB,UAAU,CAAE,SAAS,CAAC,IAAI,YAAY,CAAC,CAAC,CAAC,UAAU,CAAC,IAAI,YAAY,CAAC,AACzE,CAAC,AAED,OAAO,oCAAQ,QAAQ,AAAC,CAAC,AACrB,SAAS,CAAE,WAAW,IAAI,CAAC,AAC/B,CAAC,AAED,qBAAO,CAAC,KAAK,cAAC,CAAC,AACX,OAAO,CAAE,CAAC,CACV,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,AACV,CAAC,AAED,qBAAO,CAAC,MAAM,cAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,IAAI,AAEhB,CAAC,AAEO,kBAAkB,AAAE,CAAC,AACzB,IAAI,CAAE,IAAI,qBAAqB,CAAC,CAChC,MAAM,CAAE,IAAI,CACZ,KAAK,CAAE,OAAO,CACd,OAAO,CAAE,CAAC,AACd,CAAC,AACD,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACnC,eAAe,4BAAC,CAAC,AACb,MAAM,CAAE,CAAC,CAAC,IAAI,AAClB,CAAC,AACL,CAAC"}`
 };
@@ -67154,23 +67204,23 @@ var ThemeSwitcher = create_ssr_component(($$result, $$props, $$bindings, slots) 
   let nextTheme;
   let $userTheme, $$unsubscribe_userTheme;
   $$unsubscribe_userTheme = subscribe(theme, (value) => $userTheme = value);
-  $$result.css.add(css$c);
+  $$result.css.add(css$h);
   nextTheme = $userTheme === "dark" ? "light" : "dark";
   $$unsubscribe_userTheme();
   return `<div>
-    <label class="${"toggle-wrapper svelte-349hbp"}"><div class="${escape2(null_to_empty(nextTheme === "dark" ? "toggle disabled" : "toggle enabled")) + " svelte-349hbp"}"><div class="${"icons svelte-349hbp"}">${validate_component(IoMdSunny, "IoMdSunny").$$render($$result, {}, {}, {})}
+    <label class="${"toggle-wrapper svelte-349hbp"}"><div class="${escape(null_to_empty(nextTheme === "dark" ? "toggle disabled" : "toggle enabled")) + " svelte-349hbp"}"><div class="${"icons svelte-349hbp"}">${validate_component(IoMdSunny, "IoMdSunny").$$render($$result, {}, {}, {})}
                 ${validate_component(IoIosMoon, "IoIosMoon").$$render($$result, {}, {}, {})}</div>
             <input id="${"toggle"}" name="${"toggle"}" type="${"checkbox"}" class="${"svelte-349hbp"}"></div></label>
 </div>`;
 });
-var css$b = {
+var css$g = {
   code: "nav.svelte-hj9n15.svelte-hj9n15{color:var(--high-contrast-color);font-size:1rem;z-index:2;position:fixed;font-weight:600}ul.svelte-hj9n15.svelte-hj9n15{list-style:none;padding-left:0;margin-top:var(--s4);margin-bottom:var(--s4)}li.svelte-hj9n15 a.svelte-hj9n15{text-decoration:none;padding:var(--s-4) 0;display:block}a.svelte-hj9n15.svelte-hj9n15{color:var(--high-contrast-color)}li.svelte-hj9n15.svelte-hj9n15{position:relative}[aria-current].svelte-hj9n15.svelte-hj9n15::before{content:'';position:absolute;top:var(--s-2);bottom:var(--s-2);left:calc(var(--s2) * -1);width:5px;display:block;background-color:var(--high-contrast-color)}.nav-toggle.svelte-hj9n15.svelte-hj9n15{z-index:2;display:none;position:absolute;top:0;right:0;width:50px;height:50px;cursor:pointer}span.icon-bar.svelte-hj9n15.svelte-hj9n15{position:absolute;right:var(--s0);display:block;width:26px;height:2px;background-color:var(--high-contrast-color);transition-duration:var(--duration)}.icon-bar.svelte-hj9n15.svelte-hj9n15:nth-child(1){top:20px}.icon-bar.svelte-hj9n15.svelte-hj9n15:nth-child(2){top:27px}.icon-bar.svelte-hj9n15.svelte-hj9n15:nth-child(3){top:34px}.nav-overlay.svelte-hj9n15.svelte-hj9n15{position:absolute;top:0;right:0;bottom:0;left:0;background-color:var(--background-color);background-color:var(--background-color-transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1;opacity:0;visibility:hidden}.nav-overlay.active.svelte-hj9n15.svelte-hj9n15{opacity:1;visibility:visible}.nav-toggle.active.svelte-hj9n15 .icon-bar.svelte-hj9n15:nth-child(1){top:24px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);transform:rotate(45deg)}.nav-toggle.active.svelte-hj9n15 .icon-bar.svelte-hj9n15:nth-child(2){width:0}.nav-toggle.active.svelte-hj9n15 .icon-bar.svelte-hj9n15:nth-child(3){top:24px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);transform:rotate(-45deg)}@media screen and (max-width: 1023px){nav.svelte-hj9n15.svelte-hj9n15{position:inherit}ul.svelte-hj9n15.svelte-hj9n15{margin-top:0;margin-bottom:var(--s0)}#logo.svelte-hj9n15.svelte-hj9n15{position:relative;z-index:2}.nav-menu.svelte-hj9n15.svelte-hj9n15{position:absolute;left:0;width:100%;height:0;padding:0;overflow:hidden;z-index:2}.nav-menu.active.svelte-hj9n15.svelte-hj9n15{height:auto}.nav-menu.svelte-hj9n15 li.svelte-hj9n15{width:100%;margin-bottom:0}.nav-menu.svelte-hj9n15 li a.svelte-hj9n15{width:100%;padding:var(--s-1) 0;text-align:center}.nav-toggle.svelte-hj9n15.svelte-hj9n15{display:block}#logo svg{height:25px !important}}",
   map: `{"version":3,"file":"Nav.svelte","sources":["Nav.svelte"],"sourcesContent":["<script>\\n    import { page } from '$app/stores'\\n    import Logo from '$lib/components/Logo.svelte'\\n    import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'\\n\\n    let mobileMenuOpen = false\\n\\n    function toggle() {\\n        mobileMenuOpen = !mobileMenuOpen\\n        window.document.body.classList.toggle('overflow-hidden')\\n    }\\n\\n    function hideMenu() {\\n        mobileMenuOpen = false\\n        window.document.body.classList.remove('overflow-hidden')\\n    }\\n<\/script>\\n\\n<nav>\\n    <div id=\\"logo\\" class:active={mobileMenuOpen}>\\n        <a href=\\"/\\" on:click={hideMenu}><Logo /></a>\\n    </div>\\n    <div class=\\"nav-menu\\" class:active={mobileMenuOpen}>\\n        <ul>\\n            <li>\\n                <a\\n                    sveltekit:prefetch\\n                    href=\\"/photography\\"\\n                    on:click={hideMenu}\\n                    aria-current={$page.path.includes('/photography') ||\\n                    $page.path.includes('/events')\\n                        ? 'page'\\n                        : undefined}>Photography</a\\n                >\\n            </li>\\n            <li>\\n                <a\\n                    sveltekit:prefetch\\n                    href=\\"/calendars\\"\\n                    on:click={hideMenu}\\n                    aria-current={$page.path === '/calendars'\\n                        ? 'page'\\n                        : undefined}>Calendars</a\\n                >\\n            </li>\\n            <li>\\n                <a\\n                    sveltekit:prefetch\\n                    on:click={hideMenu}\\n                    href=\\"/projects\\"\\n                    aria-current={$page.path === '/projects'\\n                        ? 'page'\\n                        : undefined}>Projects</a\\n                >\\n            </li>\\n            <li>\\n                <a\\n                    sveltekit:prefetch\\n                    on:click={hideMenu}\\n                    href=\\"/journal\\"\\n                    aria-current={$page.path.includes('/journal')\\n                        ? 'page'\\n                        : undefined}>Journal</a\\n                >\\n            </li>\\n            <li>\\n                <a\\n                    sveltekit:prefetch\\n                    on:click={hideMenu}\\n                    href=\\"/about\\"\\n                    aria-current={$page.path === '/about' ? 'page' : undefined}\\n                    >About</a\\n                >\\n            </li>\\n        </ul>\\n        <ThemeSwitcher />\\n    </div>\\n    <div class=\\"nav-toggle\\" on:click={toggle} class:active={mobileMenuOpen}>\\n        <span class=\\"icon-bar\\" />\\n        <span class=\\"icon-bar\\" />\\n        <span class=\\"icon-bar\\" />\\n    </div>\\n</nav>\\n<div class=\\"nav-overlay\\" class:active={mobileMenuOpen} />\\n\\n<style>\\n    nav {\\n        color: var(--high-contrast-color);\\n        font-size: 1rem;\\n        z-index: 2;\\n        position: fixed;\\n        font-weight: 600;\\n    }\\n    ul {\\n        list-style: none;\\n        padding-left: 0;\\n        margin-top: var(--s4);\\n        margin-bottom: var(--s4);\\n    }\\n    /* li:not(:last-child) {\\n        margin-right: var(--s0);\\n    } */\\n    li a {\\n        text-decoration: none;\\n        padding: var(--s-4) 0;\\n        display: block;\\n    }\\n    a {\\n        color: var(--high-contrast-color);\\n    }\\n    li {\\n        position: relative;\\n    }\\n    [aria-current]::before {\\n        content: '';\\n        position: absolute;\\n        top: var(--s-2);\\n        bottom: var(--s-2);\\n        left: calc(var(--s2) * -1);\\n        width: 5px;\\n        display: block;\\n        background-color: var(--high-contrast-color);\\n        /* font-weight: 700; */\\n        /* text-decoration: underline; */\\n        /* border-left: 5px solid var(--high-contrast-color); */\\n        /* margin-left: -5px; */\\n    }\\n    .nav-toggle {\\n        z-index: 2;\\n        display: none;\\n        position: absolute;\\n        top: 0;\\n        right: 0;\\n        width: 50px;\\n        height: 50px;\\n        cursor: pointer;\\n    }\\n    span.icon-bar {\\n        position: absolute;\\n        right: var(--s0);\\n        display: block;\\n        width: 26px;\\n        height: 2px;\\n        background-color: var(--high-contrast-color);\\n        transition-duration: var(--duration);\\n    }\\n    .icon-bar:nth-child(1) {\\n        top: 20px;\\n    }\\n    .icon-bar:nth-child(2) {\\n        top: 27px;\\n    }\\n    .icon-bar:nth-child(3) {\\n        top: 34px;\\n    }\\n    .nav-overlay {\\n        position: absolute;\\n        top: 0;\\n        right: 0;\\n        bottom: 0;\\n        left: 0;\\n        background-color: var(--background-color);\\n        background-color: var(--background-color-transparent);\\n        backdrop-filter: blur(6px);\\n        -webkit-backdrop-filter: blur(6px);\\n        z-index: 1;\\n        opacity: 0;\\n        visibility: hidden;\\n    }\\n    .nav-overlay.active {\\n        opacity: 1;\\n        visibility: visible;\\n    }\\n\\n    /* ICON BARS ANIMATION */\\n\\n    .nav-toggle.active .icon-bar:nth-child(1) {\\n        top: 24px;\\n        -webkit-transform: rotate(45deg);\\n        -moz-transform: rotate(45deg);\\n        transform: rotate(45deg);\\n    }\\n    .nav-toggle.active .icon-bar:nth-child(2) {\\n        width: 0;\\n    }\\n    .nav-toggle.active .icon-bar:nth-child(3) {\\n        top: 24px;\\n        -webkit-transform: rotate(-45deg);\\n        -moz-transform: rotate(-45deg);\\n        transform: rotate(-45deg);\\n    }\\n    @media screen and (max-width: 1023px) {\\n        nav {\\n            position: inherit;\\n        }\\n        ul {\\n            margin-top: 0;\\n            margin-bottom: var(--s0);\\n        }\\n        #logo {\\n            position: relative;\\n            z-index: 2;\\n        }\\n        .nav-menu {\\n            position: absolute;\\n            left: 0;\\n            width: 100%;\\n            height: 0;\\n            padding: 0;\\n            overflow: hidden;\\n            z-index: 2;\\n        }\\n        .nav-menu.active {\\n            height: auto;\\n        }\\n        .nav-menu li {\\n            width: 100%;\\n            margin-bottom: 0;\\n        }\\n        .nav-menu li a {\\n            width: 100%;\\n            padding: var(--s-1) 0;\\n            text-align: center;\\n        }\\n        .nav-toggle {\\n            display: block;\\n        }\\n        :global(#logo svg) {\\n            height: 25px !important; /* TODO be less lazy than using !important */\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"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"}`
 };
 var Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
   $$unsubscribe_page = subscribe(page, (value) => $page = value);
-  $$result.css.add(css$b);
+  $$result.css.add(css$g);
   $$unsubscribe_page();
   return `<nav class="${"svelte-hj9n15"}"><div id="${"logo"}" class="${["svelte-hj9n15", ""].join(" ").trim()}"><a href="${"/"}" class="${"svelte-hj9n15"}">${validate_component(Logo$1, "Logo").$$render($$result, {}, {}, {})}</a></div>
     <div class="${["nav-menu svelte-hj9n15", ""].join(" ").trim()}"><ul class="${"svelte-hj9n15"}"><li class="${"svelte-hj9n15"}"><a sveltekit:prefetch href="${"/photography"}"${add_attribute("aria-current", $page.path.includes("/photography") || $page.path.includes("/events") ? "page" : void 0, 0)} class="${"svelte-hj9n15"}">Photography</a></li>
@@ -67184,20 +67234,20 @@ var Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         <span class="${"icon-bar svelte-hj9n15"}"></span></div></nav>
 <div class="${["nav-overlay svelte-hj9n15", ""].join(" ").trim()}"></div>`;
 });
-var css$a = {
-  code: ":root{--radius:4px;--ratio:1.5;--duration:0.2s;--s-5:calc(var(--s-4) / var(--ratio));--s-4:calc(var(--s-3) / var(--ratio));--s-3:calc(var(--s-2) / var(--ratio));--s-2:calc(var(--s-1) / var(--ratio));--s-1:calc(var(--s0) / var(--ratio));--s0:1rem;--s1:calc(var(--s0) * var(--ratio));--s2:calc(var(--s1) * var(--ratio));--s3:calc(var(--s2) * var(--ratio));--s4:calc(var(--s3) * var(--ratio));--s5:calc(var(--s4) * var(--ratio))}:root,html body[data-theme='light']{--background-color:white;--background-color-transparent:rgba(255, 255, 255, 0.8);--text-color:rgb(100, 100, 100);--high-contrast-color:black;--light-grey:#ccc;--medium-grey:#888;--blue:rgb(48, 89, 202);--blue-light:rgb(175, 194, 240)}body{overflow-x:hidden;color:var(--text-color);background:var(--background-color);transition:color ease var(--duration);transition:background-color ease var(--duration);margin:0;box-sizing:border-box;font-family:source-sans-3, azo-sans-web, sans-serif;font-size:1.125rem;line-height:1.625rem}@media screen and (max-width: 1023px){body{font-size:1.2rem;line-height:1.8rem}}@media(prefers-color-scheme: dark){body{--background-color:black;--background-color-transparent:rgba(0, 0, 0, 0.8);--high-contrast-color:white;--text-color:rgb(172, 172, 172);--light-grey:#333;--medium-grey:#999;--blue:rgb(175, 199, 255);--blue-light:rgb(56, 67, 102)}}a{color:var(--high-contrast-color)}main a{text-decoration:underline;transition:var(--duration)}main ul{padding-left:var(--s1)}*,*::before,*::after{box-sizing:border-box}.overflow-hidden{overflow:hidden}.full-width{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.restricted-width{max-width:620px}.footnote-backref{margin-left:var(--s-2)}article img,.full-bleed{width:100%;margin-left:0;margin-right:0}article header{padding-bottom:var(--s0);border-bottom:1px solid var(--light-grey)}@media screen and (max-width: 600px){article img,.full-bleed{width:calc(100% + 2 * var(--s0));margin-left:calc(-1 * var(--s0));margin-right:calc(-1 * var(--s0))}}article header{margin-bottom:var(--s4)}article h2{margin-top:var(--s4)}article h3{margin-top:var(--s3)}@media screen and (max-width: 1200px){article header,article nav{margin-left:0;margin-right:0}}.uppercase,article strong{text-transform:uppercase;font-size:0.95rem;letter-spacing:0.075em;line-height:1.2em}.sub{font-weight:600;font-size:1rem}.nowrap{white-space:nowrap}article>*+*{margin-top:var(--s1)}article{margin-left:10%}@media(max-width: 1023px){article>*+*{margin-top:var(--s0)}article{margin:0 auto}}article blockquote{margin-left:0;padding-left:var(--s1);margin-right:var(--s1);border-left:1px solid var(--light-grey);font-size:1.05rem}article pre{padding:var(--s-1) var(--s1);border:1px solid var(--light-grey);border-radius:var(--radius)}article li p{margin:0}pre,code{white-space:pre-wrap;font-size:0.8em;word-break:break-word}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{text-decoration:none;color:var(--high-contrast-color)}h1,h2,h3,h4,h5,h6{color:var(--high-contrast-color)}h1{font-size:3rem;font-weight:600;line-height:1.1em;margin:0}@media(max-width: 1023px){h1{font-size:1.5em}h2{font-size:1.25em}article header{text-align:center;margin-bottom:var(--s1)}}h3{font-size:1rem;text-transform:uppercase;letter-spacing:0.1em}article>hr,div>hr{height:1px;padding:0;border:none;border-top:1px dashed var(--light-grey);color:var(--light-grey);text-align:center;overflow:visible}.mt-0{margin-top:calc(-1 * var(--s2))}@media screen and (max-width: 1023px){.mt-0{margin-top:0}}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<style global>\\n    :global(:root) {\\n        --radius: 4px;\\n        --ratio: 1.5;\\n        --duration: 0.2s;\\n        --s-5: calc(var(--s-4) / var(--ratio));\\n        --s-4: calc(var(--s-3) / var(--ratio));\\n        --s-3: calc(var(--s-2) / var(--ratio));\\n        --s-2: calc(var(--s-1) / var(--ratio));\\n        --s-1: calc(var(--s0) / var(--ratio));\\n        --s0: 1rem;\\n        --s1: calc(var(--s0) * var(--ratio));\\n        --s2: calc(var(--s1) * var(--ratio));\\n        --s3: calc(var(--s2) * var(--ratio));\\n        --s4: calc(var(--s3) * var(--ratio));\\n        --s5: calc(var(--s4) * var(--ratio));\\n    }\\n    :global(:root),\\n    :global(html) :global(body[data-theme='light']) {\\n        --background-color: white;\\n        --background-color-transparent: rgba(255, 255, 255, 0.8);\\n        --text-color: rgb(100, 100, 100);\\n        --high-contrast-color: black;\\n        --light-grey: #ccc;\\n        --medium-grey: #888;\\n        --blue: rgb(48, 89, 202);\\n        --blue-light: rgb(175, 194, 240);\\n    }\\n\\n    :global(body) {\\n        overflow-x: hidden;\\n        color: var(--text-color);\\n        background: var(--background-color);\\n        /* background: var(--background-color) url('./static/test.png') no-repeat;\\n        background-position: bottom center;\\n        background-size: 16rem auto; */\\n        transition: color ease var(--duration);\\n        transition: background-color ease var(--duration);\\n        margin: 0;\\n        box-sizing: border-box;\\n        font-family: source-sans-3, azo-sans-web, sans-serif;\\n        font-size: 1.125rem;\\n        line-height: 1.625rem;\\n    }\\n    @media screen and (max-width: 1023px) {\\n        :global(body) {\\n            font-size: 1.2rem;\\n            line-height: 1.8rem;\\n        }\\n    }\\n    @media (prefers-color-scheme: dark) {\\n        :global(body) {\\n            --background-color: black;\\n            --background-color-transparent: rgba(0, 0, 0, 0.8);\\n            --high-contrast-color: white;\\n            --text-color: rgb(172, 172, 172);\\n            --light-grey: #333;\\n            --medium-grey: #999;\\n            --blue: rgb(175, 199, 255);\\n            --blue-light: rgb(56, 67, 102);\\n        }\\n    }\\n    :global(a) {\\n        color: var(--high-contrast-color);\\n    }\\n    :global(main) :global(a) {\\n        text-decoration: underline;\\n        /* box-shadow: inset 0 0 0 0 var(--blue-light); */\\n        transition: var(--duration);\\n    }\\n    :global(main) :global(ul) {\\n        padding-left: var(--s1);\\n    }\\n    :global(main) :global(a:hover) {\\n        /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */\\n    }\\n    :global(*),\\n    :global(*::before),\\n    :global(*::after) {\\n        box-sizing: border-box;\\n    }\\n\\n    :global(.overflow-hidden) {\\n        overflow: hidden;\\n    }\\n    :global(.full-width) {\\n        width: 100vw;\\n        position: relative;\\n        left: 50%;\\n        right: 50%;\\n        margin-left: -50vw;\\n        margin-right: -50vw;\\n    }\\n    :global(.restricted-width) {\\n        max-width: 620px;\\n    }\\n    :global(.footnote-backref) {\\n        margin-left: var(--s-2);\\n    }\\n    :global(article) :global(img),\\n    :global(.full-bleed) {\\n        width: 100%;\\n        margin-left: 0;\\n        margin-right: 0;\\n        /* width: calc(100% + 2 * var(--s3));\\n        margin-left: calc(-1 * var(--s3));\\n        margin-right: calc(-1 * var(--s3)); */\\n    }\\n    :global(article) :global(header) {\\n        padding-bottom: var(--s0);\\n        border-bottom: 1px solid var(--light-grey);\\n    }\\n    @media screen and (max-width: 600px) {\\n        :global(article) :global(img),\\n        :global(.full-bleed) {\\n            width: calc(100% + 2 * var(--s0));\\n            margin-left: calc(-1 * var(--s0));\\n            margin-right: calc(-1 * var(--s0));\\n        }\\n    }\\n    :global(article) :global(header) {\\n        margin-bottom: var(--s4);\\n    }\\n    :global(article) :global(header),\\n    :global(article) :global(nav),\\n    :global(article) :global(img) {\\n        /* margin-left: calc(-1 * var(--s2));\\n        margin-right: calc(-1 * var(--s2)); */\\n    }\\n    :global(article) :global(h2) {\\n        margin-top: var(--s4);\\n    }\\n    :global(article) :global(h3) {\\n        margin-top: var(--s3);\\n    }\\n    @media screen and (max-width: 1200px) {\\n        :global(article) :global(header),\\n        :global(article) :global(nav) {\\n            margin-left: 0;\\n            margin-right: 0;\\n        }\\n    }\\n    :global(.uppercase),\\n    :global(article) :global(strong) {\\n        text-transform: uppercase;\\n        font-size: 0.95rem;\\n        letter-spacing: 0.075em;\\n        line-height: 1.2em;\\n        /* font-weight: 700; */\\n    }\\n    :global(.sub) {\\n        font-weight: 600;\\n        font-size: 1rem;\\n        /* color: var(--medium-grey); */\\n    }\\n    :global(.nowrap) {\\n        white-space: nowrap;\\n    }\\n    :global(article) > :global(*) + :global(*) {\\n        margin-top: var(--s1);\\n    }\\n\\n    :global(article) {\\n        margin-left: 10%;\\n    }\\n    @media (max-width: 1023px) {\\n        :global(article) > :global(*) + :global(*) {\\n            margin-top: var(--s0);\\n        }\\n        :global(article) {\\n            margin: 0 auto;\\n        }\\n    }\\n    :global(article) :global(blockquote) {\\n        margin-left: 0;\\n        padding-left: var(--s1);\\n        margin-right: var(--s1);\\n        border-left: 1px solid var(--light-grey);\\n        font-size: 1.05rem;\\n    }\\n    :global(article) :global(pre) {\\n        padding: var(--s-1) var(--s1);\\n        /* background: rgba(127, 127, 127, 0.15); */\\n        border: 1px solid var(--light-grey);\\n        border-radius: var(--radius);\\n    }\\n    :global(article) :global(li) :global(p) {\\n        margin: 0;\\n    }\\n    :global(pre),\\n    :global(code) {\\n        white-space: pre-wrap;\\n        font-size: 0.8em;\\n        word-break: break-word;\\n    }\\n    :global(h1) :global(a),\\n    :global(h2) :global(a),\\n    :global(h3) :global(a),\\n    :global(h4) :global(a),\\n    :global(h5) :global(a),\\n    :global(h6) :global(a) {\\n        text-decoration: none;\\n        color: var(--high-contrast-color);\\n    }\\n    :global(h1),\\n    :global(h2),\\n    :global(h3),\\n    :global(h4),\\n    :global(h5),\\n    :global(h6) {\\n        color: var(--high-contrast-color);\\n    }\\n    :global(h1) {\\n        font-size: 3rem;\\n        font-weight: 600;\\n        line-height: 1.1em;\\n        margin: 0;\\n    }\\n    @media (max-width: 1023px) {\\n        :global(h1) {\\n            font-size: 1.5em;\\n            /* text-align: center; */\\n        }\\n        :global(h2) {\\n            font-size: 1.25em;\\n            /* text-align: center; */\\n        }\\n        :global(article) :global(header) {\\n            text-align: center;\\n            margin-bottom: var(--s1);\\n        }\\n    }\\n    :global(h3) {\\n        font-size: 1rem;\\n        text-transform: uppercase;\\n        letter-spacing: 0.1em;\\n    }\\n    :global(article) > :global(hr),\\n    :global(div) > :global(hr) {\\n        height: 1px;\\n        /* margin: var(--s3) 0; */\\n        padding: 0;\\n        border: none;\\n        border-top: 1px dashed var(--light-grey);\\n        color: var(--light-grey);\\n        text-align: center;\\n        overflow: visible;\\n    }\\n    :global(.mt-0) {\\n        margin-top: calc(-1 * var(--s2));\\n    }\\n    @media screen and (max-width: 1023px) {\\n        :global(.mt-0) {\\n            margin-top: 0;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"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"}`
+var css$f = {
+  code: ":root{--radius:4px;--ratio:1.5;--duration:0.2s;--s-5:calc(var(--s-4) / var(--ratio));--s-4:calc(var(--s-3) / var(--ratio));--s-3:calc(var(--s-2) / var(--ratio));--s-2:calc(var(--s-1) / var(--ratio));--s-1:calc(var(--s0) / var(--ratio));--s0:1rem;--s1:calc(var(--s0) * var(--ratio));--s2:calc(var(--s1) * var(--ratio));--s3:calc(var(--s2) * var(--ratio));--s4:calc(var(--s3) * var(--ratio));--s5:calc(var(--s4) * var(--ratio))}:root,html body[data-theme='light']{--background-color:white;--background-color-transparent:rgba(255, 255, 255, 0.8);--text-color:rgb(100, 100, 100);--high-contrast-color:black;--light-grey:#ccc;--medium-grey:#888;--blue:rgb(48, 89, 202);--blue-light:rgb(175, 194, 240)}html body[data-theme='dark']{--background-color:black;--background-color-transparent:rgba(0, 0, 0, 0.8);--high-contrast-color:white;--text-color:rgb(172, 172, 172);--light-grey:rgb(66, 66, 66);--medium-grey:#999;--blue:rgb(175, 199, 255);--blue-light:rgb(56, 67, 102)}@media(prefers-color-scheme: dark){:root{--background-color:black;--background-color-transparent:rgba(0, 0, 0, 0.8);--high-contrast-color:white;--text-color:rgb(172, 172, 172);--light-grey:rgb(66, 66, 66);--medium-grey:#999;--blue:rgb(175, 199, 255);--blue-light:rgb(56, 67, 102)}}body{overflow-x:hidden;color:var(--text-color);background:var(--background-color);transition:color ease var(--duration);transition:background-color ease var(--duration);margin:0;box-sizing:border-box;font-family:source-sans-3, azo-sans-web, sans-serif;font-size:1.125rem;line-height:1.625rem}@media screen and (max-width: 1023px){body{font-size:1.2rem;line-height:1.8rem}}a{color:var(--high-contrast-color)}a.button{font-weight:600;font-size:1rem;padding:var(--s-1) var(--s1);text-decoration:none;border:1px solid var(--light-grey);border-radius:var(--radius)}a.button:hover{border-color:var(--medium-grey)}main a{text-decoration:underline;transition:var(--duration)}main ul{padding-left:var(--s1)}*,*::before,*::after{box-sizing:border-box}.overflow-hidden{overflow:hidden}.full-width{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.restricted-width{max-width:620px}.footnote-backref{margin-left:var(--s-2)}article img,.full-bleed{width:100%;margin-left:0;margin-right:0}article header{padding-bottom:var(--s0);border-bottom:1px solid var(--light-grey)}@media screen and (max-width: 600px){article img,.full-bleed{width:calc(100% + 2 * var(--s0));margin-left:calc(-1 * var(--s0));margin-right:calc(-1 * var(--s0))}}article header{margin-bottom:var(--s4)}article h2{margin-top:var(--s4)}article h3{margin-top:var(--s3)}@media screen and (max-width: 1200px){article header,article nav{margin-left:0;margin-right:0}}.uppercase,article strong{text-transform:uppercase;font-size:0.95rem;letter-spacing:0.075em;line-height:1.2em}.sub{font-weight:600;font-size:1rem}.nowrap{white-space:nowrap}article>*+*{margin-top:var(--s1)}article{margin-left:10%}@media(max-width: 1023px){article>*+*{margin-top:var(--s0)}article{margin:0 auto}}article blockquote{margin-left:0;padding-left:var(--s1);margin-right:var(--s1);border-left:1px solid var(--light-grey);font-size:1.05rem}article pre{padding:var(--s-1) var(--s1);border:1px solid var(--light-grey);border-radius:var(--radius)}article li p{margin:0}pre,code{white-space:pre-wrap;font-size:0.8em;word-break:break-word}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{text-decoration:none;color:var(--high-contrast-color)}h1,h2,h3,h4,h5,h6{color:var(--high-contrast-color)}h1{font-size:3rem;font-weight:600;line-height:1.1em;margin:0}@media(max-width: 1023px){h1{font-size:1.5em}h2{font-size:1.25em}article header{text-align:center;margin-bottom:var(--s1)}}h3{font-size:1rem;text-transform:uppercase;letter-spacing:0.1em}article>hr,div>hr{height:1px;padding:0;border:none;border-top:1px dashed var(--light-grey);color:var(--light-grey);text-align:center;overflow:visible}.mt-0{margin-top:calc(-1 * var(--s2))}@media screen and (max-width: 1023px){.mt-0{margin-top:0}}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<style global>\\n    :global(:root) {\\n        --radius: 4px;\\n        --ratio: 1.5;\\n        --duration: 0.2s;\\n        --s-5: calc(var(--s-4) / var(--ratio));\\n        --s-4: calc(var(--s-3) / var(--ratio));\\n        --s-3: calc(var(--s-2) / var(--ratio));\\n        --s-2: calc(var(--s-1) / var(--ratio));\\n        --s-1: calc(var(--s0) / var(--ratio));\\n        --s0: 1rem;\\n        --s1: calc(var(--s0) * var(--ratio));\\n        --s2: calc(var(--s1) * var(--ratio));\\n        --s3: calc(var(--s2) * var(--ratio));\\n        --s4: calc(var(--s3) * var(--ratio));\\n        --s5: calc(var(--s4) * var(--ratio));\\n    }\\n    :global(:root),\\n    :global(html) :global(body[data-theme='light']) {\\n        --background-color: white;\\n        --background-color-transparent: rgba(255, 255, 255, 0.8);\\n        --text-color: rgb(100, 100, 100);\\n        --high-contrast-color: black;\\n        --light-grey: #ccc;\\n        --medium-grey: #888;\\n        --blue: rgb(48, 89, 202);\\n        --blue-light: rgb(175, 194, 240);\\n    }\\n    :global(html) :global(body[data-theme='dark']) {\\n        --background-color: black;\\n        --background-color-transparent: rgba(0, 0, 0, 0.8);\\n        --high-contrast-color: white;\\n        --text-color: rgb(172, 172, 172);\\n        --light-grey: rgb(66, 66, 66);\\n        --medium-grey: #999;\\n        --blue: rgb(175, 199, 255);\\n        --blue-light: rgb(56, 67, 102);\\n    }\\n    @media (prefers-color-scheme: dark) {\\n        /* Necessary to duplicate code to prevent flash on dark mode */\\n        :global(:root) {\\n            --background-color: black;\\n            --background-color-transparent: rgba(0, 0, 0, 0.8);\\n            --high-contrast-color: white;\\n            --text-color: rgb(172, 172, 172);\\n            --light-grey: rgb(66, 66, 66);\\n            --medium-grey: #999;\\n            --blue: rgb(175, 199, 255);\\n            --blue-light: rgb(56, 67, 102);\\n        }\\n    }\\n\\n    :global(body) {\\n        overflow-x: hidden;\\n        color: var(--text-color);\\n        background: var(--background-color);\\n        /* background: var(--background-color) url('./static/test.png') no-repeat;\\n        background-position: bottom center;\\n        background-size: 16rem auto; */\\n        transition: color ease var(--duration);\\n        transition: background-color ease var(--duration);\\n        margin: 0;\\n        box-sizing: border-box;\\n        font-family: source-sans-3, azo-sans-web, sans-serif;\\n        font-size: 1.125rem;\\n        line-height: 1.625rem;\\n    }\\n    @media screen and (max-width: 1023px) {\\n        :global(body) {\\n            font-size: 1.2rem;\\n            line-height: 1.8rem;\\n        }\\n    }\\n    :global(a) {\\n        color: var(--high-contrast-color);\\n    }\\n    :global(a.button) {\\n        font-weight: 600;\\n        font-size: 1rem;\\n        padding: var(--s-1) var(--s1);\\n        text-decoration: none;\\n        border: 1px solid var(--light-grey);\\n        border-radius: var(--radius);\\n    }\\n    :global(a.button:hover) {\\n        border-color: var(--medium-grey);\\n    }\\n    :global(main) :global(a) {\\n        text-decoration: underline;\\n        /* box-shadow: inset 0 0 0 0 var(--blue-light); */\\n        transition: var(--duration);\\n    }\\n    :global(main) :global(ul) {\\n        padding-left: var(--s1);\\n    }\\n    :global(main) :global(a:hover) {\\n        /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */\\n    }\\n    :global(*),\\n    :global(*::before),\\n    :global(*::after) {\\n        box-sizing: border-box;\\n    }\\n\\n    :global(.overflow-hidden) {\\n        overflow: hidden;\\n    }\\n    :global(.full-width) {\\n        width: 100vw;\\n        position: relative;\\n        left: 50%;\\n        right: 50%;\\n        margin-left: -50vw;\\n        margin-right: -50vw;\\n    }\\n    :global(.restricted-width) {\\n        max-width: 620px;\\n    }\\n    :global(.footnote-backref) {\\n        margin-left: var(--s-2);\\n    }\\n    :global(article) :global(img),\\n    :global(.full-bleed) {\\n        width: 100%;\\n        margin-left: 0;\\n        margin-right: 0;\\n        /* width: calc(100% + 2 * var(--s3));\\n        margin-left: calc(-1 * var(--s3));\\n        margin-right: calc(-1 * var(--s3)); */\\n    }\\n    :global(article) :global(header) {\\n        padding-bottom: var(--s0);\\n        border-bottom: 1px solid var(--light-grey);\\n    }\\n    @media screen and (max-width: 600px) {\\n        :global(article) :global(img),\\n        :global(.full-bleed) {\\n            width: calc(100% + 2 * var(--s0));\\n            margin-left: calc(-1 * var(--s0));\\n            margin-right: calc(-1 * var(--s0));\\n        }\\n    }\\n    :global(article) :global(header) {\\n        margin-bottom: var(--s4);\\n    }\\n    :global(article) :global(header),\\n    :global(article) :global(nav),\\n    :global(article) :global(img) {\\n        /* margin-left: calc(-1 * var(--s2));\\n        margin-right: calc(-1 * var(--s2)); */\\n    }\\n    :global(article) :global(h2) {\\n        margin-top: var(--s4);\\n    }\\n    :global(article) :global(h3) {\\n        margin-top: var(--s3);\\n    }\\n    @media screen and (max-width: 1200px) {\\n        :global(article) :global(header),\\n        :global(article) :global(nav) {\\n            margin-left: 0;\\n            margin-right: 0;\\n        }\\n    }\\n    :global(.uppercase),\\n    :global(article) :global(strong) {\\n        text-transform: uppercase;\\n        font-size: 0.95rem;\\n        letter-spacing: 0.075em;\\n        line-height: 1.2em;\\n        /* font-weight: 700; */\\n    }\\n    :global(.sub) {\\n        font-weight: 600;\\n        font-size: 1rem;\\n        /* color: var(--medium-grey); */\\n    }\\n    :global(.nowrap) {\\n        white-space: nowrap;\\n    }\\n    :global(article) > :global(*) + :global(*) {\\n        margin-top: var(--s1);\\n    }\\n\\n    :global(article) {\\n        margin-left: 10%;\\n    }\\n    @media (max-width: 1023px) {\\n        :global(article) > :global(*) + :global(*) {\\n            margin-top: var(--s0);\\n        }\\n        :global(article) {\\n            margin: 0 auto;\\n        }\\n    }\\n    :global(article) :global(blockquote) {\\n        margin-left: 0;\\n        padding-left: var(--s1);\\n        margin-right: var(--s1);\\n        border-left: 1px solid var(--light-grey);\\n        font-size: 1.05rem;\\n    }\\n    :global(article) :global(pre) {\\n        padding: var(--s-1) var(--s1);\\n        /* background: rgba(127, 127, 127, 0.15); */\\n        border: 1px solid var(--light-grey);\\n        border-radius: var(--radius);\\n    }\\n    :global(article) :global(li) :global(p) {\\n        margin: 0;\\n    }\\n    :global(pre),\\n    :global(code) {\\n        white-space: pre-wrap;\\n        font-size: 0.8em;\\n        word-break: break-word;\\n    }\\n    :global(h1) :global(a),\\n    :global(h2) :global(a),\\n    :global(h3) :global(a),\\n    :global(h4) :global(a),\\n    :global(h5) :global(a),\\n    :global(h6) :global(a) {\\n        text-decoration: none;\\n        color: var(--high-contrast-color);\\n    }\\n    :global(h1),\\n    :global(h2),\\n    :global(h3),\\n    :global(h4),\\n    :global(h5),\\n    :global(h6) {\\n        color: var(--high-contrast-color);\\n    }\\n    :global(h1) {\\n        font-size: 3rem;\\n        font-weight: 600;\\n        line-height: 1.1em;\\n        margin: 0;\\n    }\\n    @media (max-width: 1023px) {\\n        :global(h1) {\\n            font-size: 1.5em;\\n            /* text-align: center; */\\n        }\\n        :global(h2) {\\n            font-size: 1.25em;\\n            /* text-align: center; */\\n        }\\n        :global(article) :global(header) {\\n            text-align: center;\\n            margin-bottom: var(--s1);\\n        }\\n    }\\n    :global(h3) {\\n        font-size: 1rem;\\n        text-transform: uppercase;\\n        letter-spacing: 0.1em;\\n    }\\n    :global(article) > :global(hr),\\n    :global(div) > :global(hr) {\\n        height: 1px;\\n        /* margin: var(--s3) 0; */\\n        padding: 0;\\n        border: none;\\n        border-top: 1px dashed var(--light-grey);\\n        color: var(--light-grey);\\n        text-align: center;\\n        overflow: visible;\\n    }\\n    :global(.mt-0) {\\n        margin-top: calc(-1 * var(--s2));\\n    }\\n    @media screen and (max-width: 1023px) {\\n        :global(.mt-0) {\\n            margin-top: 0;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"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"}`
 };
 var Styles = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$a);
+  $$result.css.add(css$f);
   return ``;
 });
-var css$9 = {
+var css$e = {
   code: "html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance:button}button::-moz-focus-inner,[type='button']::-moz-focus-inner,[type='reset']::-moz-focus-inner,[type='submit']::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type='button']:-moz-focusring,[type='reset']:-moz-focusring,[type='submit']:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type='checkbox'],[type='radio']{box-sizing:border-box;padding:0}[type='number']::-webkit-inner-spin-button,[type='number']::-webkit-outer-spin-button{height:auto}[type='search']{-webkit-appearance:textfield;outline-offset:-2px}[type='search']::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}",
   map: "{\"version\":3,\"file\":\"reset.svelte\",\"sources\":[\"reset.svelte\"],\"sourcesContent\":[\"<style global>\\n    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\\n\\n    /* Document\\n   ========================================================================== */\\n\\n    /**\\n * 1. Correct the line height in all browsers.\\n * 2. Prevent adjustments of font size after orientation changes in iOS.\\n */\\n\\n    :global(html) {\\n        line-height: 1.15; /* 1 */\\n        -webkit-text-size-adjust: 100%; /* 2 */\\n    }\\n\\n    /* Sections\\n   ========================================================================== */\\n\\n    /**\\n * Remove the margin in all browsers.\\n */\\n\\n    :global(body) {\\n        margin: 0;\\n    }\\n\\n    /**\\n * Render the `main` element consistently in IE.\\n */\\n\\n    :global(main) {\\n        display: block;\\n    }\\n\\n    /**\\n * Correct the font size and margin on `h1` elements within `section` and\\n * `article` contexts in Chrome, Firefox, and Safari.\\n */\\n\\n    :global(h1) {\\n        /* font-size: 2em; */\\n        /* margin: 0.67em 0; */\\n    }\\n\\n    /* Grouping content\\n   ========================================================================== */\\n\\n    /**\\n * 1. Add the correct box sizing in Firefox.\\n * 2. Show the overflow in Edge and IE.\\n */\\n\\n    :global(hr) {\\n        box-sizing: content-box; /* 1 */\\n        height: 0; /* 1 */\\n        overflow: visible; /* 2 */\\n    }\\n\\n    /**\\n * 1. Correct the inheritance and scaling of font size in all browsers.\\n * 2. Correct the odd `em` font sizing in all browsers.\\n */\\n\\n    :global(pre) {\\n        font-family: monospace, monospace; /* 1 */\\n        font-size: 1em; /* 2 */\\n    }\\n\\n    /* Text-level semantics\\n   ========================================================================== */\\n\\n    /**\\n * Remove the gray background on active links in IE 10.\\n */\\n\\n    :global(a) {\\n        background-color: transparent;\\n    }\\n\\n    /**\\n * 1. Remove the bottom border in Chrome 57-\\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\\n */\\n\\n    :global(abbr[title]) {\\n        border-bottom: none; /* 1 */\\n        text-decoration: underline; /* 2 */\\n        text-decoration: underline dotted; /* 2 */\\n    }\\n\\n    /**\\n * Add the correct font weight in Chrome, Edge, and Safari.\\n */\\n\\n    :global(b),\\n    :global(strong) {\\n        font-weight: bolder;\\n    }\\n\\n    /**\\n * 1. Correct the inheritance and scaling of font size in all browsers.\\n * 2. Correct the odd `em` font sizing in all browsers.\\n */\\n\\n    :global(code),\\n    :global(kbd),\\n    :global(samp) {\\n        font-family: monospace, monospace; /* 1 */\\n        /* font-size: 1em; 2 */\\n    }\\n\\n    /**\\n * Add the correct font size in all browsers.\\n */\\n\\n    :global(small) {\\n        font-size: 80%;\\n    }\\n\\n    /**\\n * Prevent `sub` and `sup` elements from affecting the line height in\\n * all browsers.\\n */\\n\\n    :global(sub),\\n    :global(sup) {\\n        font-size: 75%;\\n        line-height: 0;\\n        position: relative;\\n        vertical-align: baseline;\\n    }\\n\\n    :global(sub) {\\n        bottom: -0.25em;\\n    }\\n\\n    :global(sup) {\\n        top: -0.5em;\\n    }\\n\\n    /* Embedded content\\n   ========================================================================== */\\n\\n    /**\\n * Remove the border on images inside links in IE 10.\\n */\\n\\n    :global(img) {\\n        border-style: none;\\n    }\\n\\n    /* Forms\\n   ========================================================================== */\\n\\n    /**\\n * 1. Change the font styles in all browsers.\\n * 2. Remove the margin in Firefox and Safari.\\n */\\n\\n    :global(button),\\n    :global(input),\\n    :global(optgroup),\\n    :global(select),\\n    :global(textarea) {\\n        font-family: inherit; /* 1 */\\n        font-size: 100%; /* 1 */\\n        line-height: 1.15; /* 1 */\\n        margin: 0; /* 2 */\\n    }\\n\\n    /**\\n * Show the overflow in IE.\\n * 1. Show the overflow in Edge.\\n */\\n\\n    :global(button),\\n    :global(input) {\\n        /* 1 */\\n        overflow: visible;\\n    }\\n\\n    /**\\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\\n * 1. Remove the inheritance of text transform in Firefox.\\n */\\n\\n    :global(button),\\n    :global(select) {\\n        /* 1 */\\n        text-transform: none;\\n    }\\n\\n    /**\\n * Correct the inability to style clickable types in iOS and Safari.\\n */\\n\\n    :global(button),\\n    :global([type='button']),\\n    :global([type='reset']),\\n    :global([type='submit']) {\\n        -webkit-appearance: button;\\n    }\\n\\n    /**\\n * Remove the inner border and padding in Firefox.\\n */\\n\\n    :global(button::-moz-focus-inner),\\n    :global([type='button']::-moz-focus-inner),\\n    :global([type='reset']::-moz-focus-inner),\\n    :global([type='submit']::-moz-focus-inner) {\\n        border-style: none;\\n        padding: 0;\\n    }\\n\\n    /**\\n * Restore the focus styles unset by the previous rule.\\n */\\n\\n    :global(button:-moz-focusring),\\n    :global([type='button']:-moz-focusring),\\n    :global([type='reset']:-moz-focusring),\\n    :global([type='submit']:-moz-focusring) {\\n        outline: 1px dotted ButtonText;\\n    }\\n\\n    /**\\n * Correct the padding in Firefox.\\n */\\n\\n    :global(fieldset) {\\n        padding: 0.35em 0.75em 0.625em;\\n    }\\n\\n    /**\\n * 1. Correct the text wrapping in Edge and IE.\\n * 2. Correct the color inheritance from `fieldset` elements in IE.\\n * 3. Remove the padding so developers are not caught out when they zero out\\n *    `fieldset` elements in all browsers.\\n */\\n\\n    :global(legend) {\\n        box-sizing: border-box; /* 1 */\\n        color: inherit; /* 2 */\\n        display: table; /* 1 */\\n        max-width: 100%; /* 1 */\\n        padding: 0; /* 3 */\\n        white-space: normal; /* 1 */\\n    }\\n\\n    /**\\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\\n */\\n\\n    :global(progress) {\\n        vertical-align: baseline;\\n    }\\n\\n    /**\\n * Remove the default vertical scrollbar in IE 10+.\\n */\\n\\n    :global(textarea) {\\n        overflow: auto;\\n    }\\n\\n    /**\\n * 1. Add the correct box sizing in IE 10.\\n * 2. Remove the padding in IE 10.\\n */\\n\\n    :global([type='checkbox']),\\n    :global([type='radio']) {\\n        box-sizing: border-box; /* 1 */\\n        padding: 0; /* 2 */\\n    }\\n\\n    /**\\n * Correct the cursor style of increment and decrement buttons in Chrome.\\n */\\n\\n    :global([type='number']::-webkit-inner-spin-button),\\n    :global([type='number']::-webkit-outer-spin-button) {\\n        height: auto;\\n    }\\n\\n    /**\\n * 1. Correct the odd appearance in Chrome and Safari.\\n * 2. Correct the outline style in Safari.\\n */\\n\\n    :global([type='search']) {\\n        -webkit-appearance: textfield; /* 1 */\\n        outline-offset: -2px; /* 2 */\\n    }\\n\\n    /**\\n * Remove the inner padding in Chrome and Safari on macOS.\\n */\\n\\n    :global([type='search']::-webkit-search-decoration) {\\n        -webkit-appearance: none;\\n    }\\n\\n    /**\\n * 1. Correct the inability to style clickable types in iOS and Safari.\\n * 2. Change font properties to `inherit` in Safari.\\n */\\n\\n    :global(::-webkit-file-upload-button) {\\n        -webkit-appearance: button; /* 1 */\\n        font: inherit; /* 2 */\\n    }\\n\\n    /* Interactive\\n   ========================================================================== */\\n\\n    /*\\n * Add the correct display in Edge, IE 10+, and Firefox.\\n */\\n\\n    :global(details) {\\n        display: block;\\n    }\\n\\n    /*\\n * Add the correct display in all browsers.\\n */\\n\\n    :global(summary) {\\n        display: list-item;\\n    }\\n\\n    /* Misc\\n   ========================================================================== */\\n\\n    /**\\n * Add the correct display in IE 10+.\\n */\\n\\n    :global(template) {\\n        display: none;\\n    }\\n\\n    /**\\n * Add the correct display in IE 10.\\n */\\n\\n    :global([hidden]) {\\n        display: none;\\n    }\\n</style>\\n\"],\"names\":[],\"mappings\":\"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\"}"
 };
 var Reset = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$9);
+  $$result.css.add(css$e);
   return ``;
 });
 var IoLogoLinkedin = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -67216,23 +67266,23 @@ var IoIosMail = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <path d="${"M256 295.1c14.8 0 28.7-5.8 39.1-16.4L452 119c-5.5-4.4-12.3-7-19.8-7H79.9c-7.5 0-14.4 2.6-19.8 7L217 278.7c10.3 10.5 24.2 16.4 39 16.4z"}"></path>`
   })}`;
 });
-var css$8 = {
+var css$d = {
   code: "a.svelte-1r8x03v.svelte-1r8x03v{font-size:1rem;color:var(--high-contrast-color)}.icons.svelte-1r8x03v a.svelte-1r8x03v:not(:last-of-type){margin-right:var(--s-2)}.icons svg{height:1.5rem !important;width:auto !important;display:inline}@media(max-width: 1023px){.icons.svelte-1r8x03v.svelte-1r8x03v{text-align:center;margin:var(--s0) 0 var(--s2)}.icons.svelte-1r8x03v a.svelte-1r8x03v:not(:last-of-type){margin-right:var(--s0)}}",
   map: `{"version":3,"file":"Footer.svelte","sources":["Footer.svelte"],"sourcesContent":["<script>\\n    import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte'\\n    import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte'\\n    import IoIosMail from 'svelte-icons/io/IoIosMail.svelte'\\n<\/script>\\n\\n<div class=\\"icons\\">\\n    <a\\n        href=\\"javascript:window.location.href=atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')\\"\\n        rel=\\"noopener noreferrer nofollow\\"><IoIosMail /></a\\n    >\\n    <a\\n        href=\\"https://github.com/rmcwhae\\"\\n        rel=\\"noopener noreferrer nofollow\\"\\n        target=\\"_blank\\"><IoLogoGithub /></a\\n    >\\n    <a\\n        href=\\"https://www.linkedin.com/notifications/\\"\\n        rel=\\"noopener noreferrer nofollow\\"\\n        target=\\"_blank\\"><IoLogoLinkedin /></a\\n    >\\n</div>\\n\\n<style>\\n    a {\\n        font-size: 1rem;\\n        color: var(--high-contrast-color);\\n    }\\n    .icons a:not(:last-of-type) {\\n        margin-right: var(--s-2);\\n    }\\n    :global(.icons svg) {\\n        height: 1.5rem !important;\\n        width: auto !important;\\n        display: inline;\\n    }\\n    @media (max-width: 1023px) {\\n        .icons {\\n            text-align: center;\\n            margin: var(--s0) 0 var(--s2);\\n        }\\n        .icons a:not(:last-of-type) {\\n            margin-right: var(--s0);\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"AAwBI,CAAC,8BAAC,CAAC,AACC,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,qBAAqB,CAAC,AACrC,CAAC,AACD,qBAAM,CAAC,gBAAC,KAAK,aAAa,CAAC,AAAC,CAAC,AACzB,YAAY,CAAE,IAAI,KAAK,CAAC,AAC5B,CAAC,AACO,UAAU,AAAE,CAAC,AACjB,MAAM,CAAE,MAAM,CAAC,UAAU,CACzB,KAAK,CAAE,IAAI,CAAC,UAAU,CACtB,OAAO,CAAE,MAAM,AACnB,CAAC,AACD,MAAM,AAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACxB,MAAM,8BAAC,CAAC,AACJ,UAAU,CAAE,MAAM,CAClB,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,CAAC,IAAI,IAAI,CAAC,AACjC,CAAC,AACD,qBAAM,CAAC,gBAAC,KAAK,aAAa,CAAC,AAAC,CAAC,AACzB,YAAY,CAAE,IAAI,IAAI,CAAC,AAC3B,CAAC,AACL,CAAC"}`
 };
 var Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$8);
+  $$result.css.add(css$d);
   return `<div class="${"icons svelte-1r8x03v"}"><a href="${"javascript:window.location.href=atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')"}" rel="${"noopener noreferrer nofollow"}" class="${"svelte-1r8x03v"}">${validate_component(IoIosMail, "IoIosMail").$$render($$result, {}, {}, {})}</a>
     <a href="${"https://github.com/rmcwhae"}" rel="${"noopener noreferrer nofollow"}" target="${"_blank"}" class="${"svelte-1r8x03v"}">${validate_component(IoLogoGithub, "IoLogoGithub").$$render($$result, {}, {}, {})}</a>
     <a href="${"https://www.linkedin.com/notifications/"}" rel="${"noopener noreferrer nofollow"}" target="${"_blank"}" class="${"svelte-1r8x03v"}">${validate_component(IoLogoLinkedin, "IoLogoLinkedin").$$render($$result, {}, {}, {})}</a>
 </div>`;
 });
-var css$7 = {
+var css$c = {
   code: "div.svelte-1w1obtu{display:flex;height:100%}aside.svelte-1w1obtu{width:26rem;padding:var(--s2) var(--s2);min-height:100vh}footer.svelte-1w1obtu{position:fixed;bottom:0;left:var(--s2);padding:var(--s0) 0}main.svelte-1w1obtu{margin:var(--s2) var(--s2) var(--s1) 0;width:100%}@media(max-width: 1023px){div.svelte-1w1obtu{display:inherit}aside.svelte-1w1obtu{border-right:none;min-height:inherit;width:inherit;margin:var(--s-1) 0 var(--s0) var(--s0);padding:0}footer.svelte-1w1obtu{position:inherit;padding:0 var(--s0)}main.svelte-1w1obtu{margin:var(--s0);padding:0;width:inherit}}",
   map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script>\\n    import Nav from '$lib/components/Nav.svelte'\\n    import Styles from '$lib/styles/index.svelte'\\n    import Reset from '$lib/styles/reset.svelte'\\n    import Footer from '$lib/components/Footer.svelte'\\n<\/script>\\n\\n<Reset />\\n<Styles />\\n<div>\\n    <aside>\\n        <Nav />\\n    </aside>\\n    <main>\\n        <slot />\\n    </main>\\n</div>\\n<footer><Footer /></footer>\\n\\n<style>\\n    div {\\n        display: flex;\\n        height: 100%;\\n    }\\n    aside {\\n        width: 26rem;\\n        padding: var(--s2) var(--s2);\\n        /* border-right: 1px solid var(--light-grey); */\\n        /* margin-right: var(--s2); */\\n        min-height: 100vh;\\n    }\\n    footer {\\n        position: fixed;\\n        bottom: 0;\\n        left: var(--s2);\\n        padding: var(--s0) 0;\\n    }\\n    main {\\n        margin: var(--s2) var(--s2) var(--s1) 0;\\n        width: 100%;\\n    }\\n    @media (max-width: 1023px) {\\n        div {\\n            display: inherit;\\n        }\\n        aside {\\n            border-right: none;\\n            min-height: inherit;\\n            width: inherit;\\n            margin: var(--s-1) 0 var(--s0) var(--s0);\\n            padding: 0;\\n            /* padding: var(--s-1) 0 var(--s0) var(--s0); */\\n        }\\n        footer {\\n            position: inherit;\\n            padding: 0 var(--s0);\\n        }\\n        main {\\n            margin: var(--s0);\\n            padding: 0;\\n            width: inherit;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"AAoBI,GAAG,eAAC,CAAC,AACD,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,AAChB,CAAC,AACD,KAAK,eAAC,CAAC,AACH,KAAK,CAAE,KAAK,CACZ,OAAO,CAAE,IAAI,IAAI,CAAC,CAAC,IAAI,IAAI,CAAC,CAG5B,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,MAAM,eAAC,CAAC,AACJ,QAAQ,CAAE,KAAK,CACf,MAAM,CAAE,CAAC,CACT,IAAI,CAAE,IAAI,IAAI,CAAC,CACf,OAAO,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,AACxB,CAAC,AACD,IAAI,eAAC,CAAC,AACF,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,IAAI,IAAI,CAAC,CAAC,IAAI,IAAI,CAAC,CAAC,CAAC,CACvC,KAAK,CAAE,IAAI,AACf,CAAC,AACD,MAAM,AAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACxB,GAAG,eAAC,CAAC,AACD,OAAO,CAAE,OAAO,AACpB,CAAC,AACD,KAAK,eAAC,CAAC,AACH,YAAY,CAAE,IAAI,CAClB,UAAU,CAAE,OAAO,CACnB,KAAK,CAAE,OAAO,CACd,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,CAAC,IAAI,IAAI,CAAC,CAAC,IAAI,IAAI,CAAC,CACxC,OAAO,CAAE,CAAC,AAEd,CAAC,AACD,MAAM,eAAC,CAAC,AACJ,QAAQ,CAAE,OAAO,CACjB,OAAO,CAAE,CAAC,CAAC,IAAI,IAAI,CAAC,AACxB,CAAC,AACD,IAAI,eAAC,CAAC,AACF,MAAM,CAAE,IAAI,IAAI,CAAC,CACjB,OAAO,CAAE,CAAC,CACV,KAAK,CAAE,OAAO,AAClB,CAAC,AACL,CAAC"}`
 };
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$7);
+  $$result.css.add(css$c);
   return `${validate_component(Reset, "Reset").$$render($$result, {}, {}, {})}
 ${validate_component(Styles, "Styles").$$render($$result, {}, {}, {})}
 <div class="${"svelte-1w1obtu"}"><aside class="${"svelte-1w1obtu"}">${validate_component(Nav, "Nav").$$render($$result, {}, {}, {})}</aside>
@@ -67253,7 +67303,7 @@ var _error = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { title } = $$props;
   if ($$props.title === void 0 && $$bindings.title && title !== void 0)
     $$bindings.title(title);
-  return `<h1>${escape2(title)}</h1>`;
+  return `<h1>${escape(title)}</h1>`;
 });
 var __error = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -67268,12 +67318,12 @@ var RightChevron = create_ssr_component(($$result, $$props, $$bindings, slots) =
     <path d="${"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"}"></path>`
   })}`;
 });
-var css$6 = {
+var css$b = {
   code: ".wrapper.svelte-1wkv6yg.svelte-1wkv6yg{max-width:1200px}.big.svelte-1wkv6yg.svelte-1wkv6yg{display:block}a.svelte-1wkv6yg.svelte-1wkv6yg{text-decoration:none}.grid.svelte-1wkv6yg.svelte-1wkv6yg{margin:var(--s2) 0;display:grid;grid-template-columns:repeat(4, 1fr);grid-template-rows:repeat(2, 1fr);grid-gap:var(--s2)}.grid.svelte-1wkv6yg div.svelte-1wkv6yg{padding-bottom:var(--s-2);border-bottom:1px solid var(--light-grey)}p.svelte-1wkv6yg.svelte-1wkv6yg{margin-top:0;font-size:1.2em;line-height:1.4em}h3.svelte-1wkv6yg.svelte-1wkv6yg{margin-top:0;line-height:1em}.box1.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:1;grid-column-end:3;grid-row-start:1;grid-row-end:3}.box2.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:3;grid-column-end:4;grid-row-start:1;grid-row-end:2}.box3.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:4;grid-column-end:5;grid-row-start:1;grid-row-end:2}.box4.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:3;grid-column-end:4;grid-row-start:2;grid-row-end:3}.box5.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:4;grid-column-end:5;grid-row-start:2;grid-row-end:3}@media(max-width: 1023px){.wrapper.svelte-1wkv6yg.svelte-1wkv6yg{margin-top:var(--s2)}}@media(max-width: 599px){h1.svelte-1wkv6yg.svelte-1wkv6yg{text-align:center}.grid.svelte-1wkv6yg.svelte-1wkv6yg{grid-gap:var(--s1);grid-template-columns:repeat(2, 1fr);grid-template-rows:minmax(40px, 1fr)}.box1.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:1;grid-column-end:3;grid-row-start:1;grid-row-end:2}.box2.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:1;grid-column-end:2;grid-row-start:2;grid-row-end:3}.box3.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:2;grid-column-end:3;grid-row-start:2;grid-row-end:3}.box4.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:1;grid-column-end:2;grid-row-start:3;grid-row-end:4}.box5.svelte-1wkv6yg.svelte-1wkv6yg{grid-column-start:2;grid-column-end:3;grid-row-start:3;grid-row-end:4}}",
   map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script>\\n    import Collage from '$static/collage.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'\\n    import RightChevron from '$lib/components/icons/RightChevron.svelte'\\n<\/script>\\n\\n<div class=\\"wrapper\\">\\n    <h1>Hi, I\u2019m Russell.</h1>\\n\\n    <div class=\\"grid\\">\\n        <div class=\\"box1\\">\\n            <p>\\n                I\u2019m a front end\u2013biased web developer with a background in\\n                structural engineering and biomedical research who likes\\n                spending time outside.\\n                <span class=\\"sub nowrap\\"\\n                    ><a href=\\"about\\">More About Me <RightChevron /></a></span\\n                >\\n            </p>\\n        </div>\\n        <div class=\\"box2\\">\\n            <a href=\\"photography\\" class=\\"big\\"\\n                >view my <h3>Photos</h3></a\\n            >\\n        </div>\\n        <div class=\\"box3\\">\\n            <a href=\\"calendars\\" class=\\"big\\"\\n                >preview my <h3>Calendars</h3></a\\n            >\\n        </div>\\n        <div class=\\"box4\\">\\n            <a href=\\"projects\\" class=\\"big\\"\\n                >check out my <h3>Projects</h3></a\\n            >\\n        </div>\\n        <div class=\\"box5\\">\\n            <a href=\\"journal\\" class=\\"big\\"\\n                >read my <h3>Journal</h3></a\\n            >\\n        </div>\\n    </div>\\n\\n    <img srcset={Collage} alt=\\"Photo Collage\\" class=\\"full-bleed\\" />\\n</div>\\n\\n<style>\\n    .wrapper {\\n        max-width: 1200px;\\n    }\\n    .big {\\n        display: block;\\n    }\\n    a {\\n        text-decoration: none;\\n    }\\n    .grid {\\n        margin: var(--s2) 0;\\n        display: grid;\\n        grid-template-columns: repeat(4, 1fr);\\n        grid-template-rows: repeat(2, 1fr);\\n        grid-gap: var(--s2);\\n    }\\n    .grid div {\\n        padding-bottom: var(--s-2);\\n        border-bottom: 1px solid var(--light-grey);\\n    }\\n    p {\\n        margin-top: 0;\\n        font-size: 1.2em;\\n        line-height: 1.4em;\\n    }\\n    h3 {\\n        /* font-size: 1.2em; */\\n        margin-top: 0;\\n        line-height: 1em;\\n    }\\n    .box1 {\\n        grid-column-start: 1;\\n        grid-column-end: 3;\\n        grid-row-start: 1;\\n        grid-row-end: 3;\\n    }\\n    .box2 {\\n        grid-column-start: 3;\\n        grid-column-end: 4;\\n        grid-row-start: 1;\\n        grid-row-end: 2;\\n    }\\n    .box3 {\\n        grid-column-start: 4;\\n        grid-column-end: 5;\\n        grid-row-start: 1;\\n        grid-row-end: 2;\\n    }\\n    .box4 {\\n        grid-column-start: 3;\\n        grid-column-end: 4;\\n        grid-row-start: 2;\\n        grid-row-end: 3;\\n    }\\n    .box5 {\\n        grid-column-start: 4;\\n        grid-column-end: 5;\\n        grid-row-start: 2;\\n        grid-row-end: 3;\\n    }\\n    @media (max-width: 1023px) {\\n        .wrapper {\\n            margin-top: var(--s2);\\n        }\\n    }\\n    @media (max-width: 599px) {\\n        h1 {\\n            text-align: center;\\n        }\\n\\n        .grid {\\n            grid-gap: var(--s1);\\n            grid-template-columns: repeat(2, 1fr);\\n            grid-template-rows: minmax(40px, 1fr);\\n        }\\n        .box1 {\\n            grid-column-start: 1;\\n            grid-column-end: 3;\\n            grid-row-start: 1;\\n            grid-row-end: 2;\\n        }\\n        .box2 {\\n            grid-column-start: 1;\\n            grid-column-end: 2;\\n            grid-row-start: 2;\\n            grid-row-end: 3;\\n        }\\n        .box3 {\\n            grid-column-start: 2;\\n            grid-column-end: 3;\\n            grid-row-start: 2;\\n            grid-row-end: 3;\\n        }\\n        .box4 {\\n            grid-column-start: 1;\\n            grid-column-end: 2;\\n            grid-row-start: 3;\\n            grid-row-end: 4;\\n        }\\n        .box5 {\\n            grid-column-start: 2;\\n            grid-column-end: 3;\\n            grid-row-start: 3;\\n            grid-row-end: 4;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"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"}`
 };
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$6);
+  $$result.css.add(css$b);
   return `<div class="${"wrapper svelte-1wkv6yg"}"><h1 class="${"svelte-1wkv6yg"}">Hi, I\u2019m Russell.</h1>
 
     <div class="${"grid svelte-1wkv6yg"}"><div class="${"box1 svelte-1wkv6yg"}"><p class="${"svelte-1wkv6yg"}">I\u2019m a front end\u2013biased web developer with a background in
@@ -67307,7 +67357,7 @@ function getClient() {
 function url(options2) {
   return getClient().url(options2);
 }
-var BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 2e3, 3e3];
+var BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800];
 var MAX_BREAKPOINT = Math.max(...BREAKPOINTS);
 function buildURL(image, width = "") {
   return url({
@@ -67325,34 +67375,77 @@ function generateSrcSets(image) {
 }
 var sizes = BREAKPOINTS.slice(0, -1).map((breakpoint) => `(max-width: ${breakpoint}px) ${breakpoint}px`);
 sizes.push(`${MAX_BREAKPOINT}px`);
-var css$5 = {
-  code: "img.svelte-1qs1fq2{width:100%;height:auto}",
-  map: `{"version":3,"file":"Image.svelte","sources":["Image.svelte"],"sourcesContent":["<script>\\n    import { generateSrcSets, sizes } from '$lib/utils/images'\\n    import 'lazysizes'\\n\\n    export let value\\n    const { name, filePath, width, height, thumbnail } = value\\n\\n    $: srcset = generateSrcSets(filePath)\\n<\/script>\\n\\n<img\\n    data-sizes=\\"auto\\"\\n    data-srcset={srcset}\\n    src={thumbnail}\\n    {sizes}\\n    {width}\\n    {height}\\n    alt={name}\\n    class=\\"lazyload\\"\\n/>\\n\\n<style>\\n    img {\\n        width: 100%;\\n        height: auto;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAsBI,GAAG,eAAC,CAAC,AACD,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AAChB,CAAC"}`
+var css$a = {
+  code: "img.svelte-xq8ndw{width:100%;height:auto}.lockedRatio.svelte-xq8ndw{width:100%;height:180px;object-fit:cover}",
+  map: `{"version":3,"file":"Image.svelte","sources":["Image.svelte"],"sourcesContent":["<script>\\n    import { generateSrcSets, sizes } from '$lib/utils/images'\\n    import 'lazysizes'\\n\\n    export let name\\n    export let filePath\\n    export let width\\n    export let height\\n    export let thumbnail\\n    export let lockedRatio = false\\n\\n    const srcset = generateSrcSets(filePath)\\n<\/script>\\n\\n<img\\n    data-sizes=\\"auto\\"\\n    data-srcset={srcset}\\n    src={thumbnail}\\n    {sizes}\\n    {width}\\n    {height}\\n    alt={name}\\n    class=\\"lazyload\\"\\n    class:lockedRatio\\n/>\\n\\n<style>\\n    img {\\n        width: 100%;\\n        height: auto;\\n    }\\n    .lockedRatio {\\n        width: 100%;\\n        height: 180px;\\n        object-fit: cover;\\n    }\\n</style>\\n"],"names":[],"mappings":"AA2BI,GAAG,cAAC,CAAC,AACD,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AAChB,CAAC,AACD,YAAY,cAAC,CAAC,AACV,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,KAAK,CACb,UAAU,CAAE,KAAK,AACrB,CAAC"}`
 };
 var Image = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let srcset;
-  let { value } = $$props;
-  const { name, filePath, width, height, thumbnail } = value;
-  if ($$props.value === void 0 && $$bindings.value && value !== void 0)
-    $$bindings.value(value);
-  $$result.css.add(css$5);
-  srcset = generateSrcSets(filePath);
-  return `<img data-sizes="${"auto"}"${add_attribute("data-srcset", srcset, 0)}${add_attribute("src", thumbnail, 0)}${add_attribute("sizes", sizes, 0)}${add_attribute("width", width, 0)}${add_attribute("height", height, 0)}${add_attribute("alt", name, 0)} class="${"lazyload svelte-1qs1fq2"}">`;
+  let { name } = $$props;
+  let { filePath } = $$props;
+  let { width } = $$props;
+  let { height } = $$props;
+  let { thumbnail } = $$props;
+  let { lockedRatio = false } = $$props;
+  const srcset = generateSrcSets(filePath);
+  if ($$props.name === void 0 && $$bindings.name && name !== void 0)
+    $$bindings.name(name);
+  if ($$props.filePath === void 0 && $$bindings.filePath && filePath !== void 0)
+    $$bindings.filePath(filePath);
+  if ($$props.width === void 0 && $$bindings.width && width !== void 0)
+    $$bindings.width(width);
+  if ($$props.height === void 0 && $$bindings.height && height !== void 0)
+    $$bindings.height(height);
+  if ($$props.thumbnail === void 0 && $$bindings.thumbnail && thumbnail !== void 0)
+    $$bindings.thumbnail(thumbnail);
+  if ($$props.lockedRatio === void 0 && $$bindings.lockedRatio && lockedRatio !== void 0)
+    $$bindings.lockedRatio(lockedRatio);
+  $$result.css.add(css$a);
+  return `<img data-sizes="${"auto"}"${add_attribute("data-srcset", srcset, 0)}${add_attribute("src", thumbnail, 0)}${add_attribute("sizes", sizes, 0)}${add_attribute("width", width, 0)}${add_attribute("height", height, 0)}${add_attribute("alt", name, 0)} class="${["lazyload svelte-xq8ndw", lockedRatio ? "lockedRatio" : ""].join(" ").trim()}">`;
 });
+var Gallery_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { images } = $$props;
+  if ($$props.images === void 0 && $$bindings.images && images !== void 0)
+    $$bindings.images(images);
+  return `
+${each(images, ({ name, filePath, width, height, thumbnail }) => `${validate_component(Image, "Image").$$render($$result, { name, filePath, width, height, thumbnail }, {}, {})}`)}`;
+});
+var css$9 = {
+  code: "ul.svelte-c42b22.svelte-c42b22{display:inline;margin:0;padding:0}li.svelte-c42b22.svelte-c42b22{display:inline-block;margin:15px -9px 4px 6px;position:relative}li.svelte-c42b22.svelte-c42b22::before{border-right:1px solid var(--light-grey);border-top:1px solid var(--light-grey);background:transparent;content:'';height:100%;left:0;position:absolute;top:0;-webkit-transform:skewX(27deg);transform:skewX(27deg);width:100%;z-index:-1}a.svelte-c42b22.svelte-c42b22{text-decoration:none}li.svelte-c42b22 a.svelte-c42b22,li.svelte-c42b22 span.svelte-c42b22{display:block;padding:var(--s-2) var(--s0) 0px var(--s1)}li.svelte-c42b22:first-child a.svelte-c42b22,li.svelte-c42b22:first-child span.svelte-c42b22{padding-left:0}",
+  map: `{"version":3,"file":"Breadcrumbs.svelte","sources":["Breadcrumbs.svelte"],"sourcesContent":["<script>\\n    export let items\\n\\n    const final = items[items.length - 1].text\\n    const links = items.slice(0, -1)\\n<\/script>\\n\\n<ul class=\\"sub\\">\\n    {#each links as { url, text } (url)}\\n        <li><a href={url}>{text}</a></li>\\n    {/each}\\n    <li><span>{final}</span></li>\\n</ul>\\n\\n<style>\\n    ul {\\n        display: inline;\\n        margin: 0;\\n        padding: 0;\\n    }\\n    li {\\n        display: inline-block;\\n        margin: 15px -9px 4px 6px;\\n        position: relative;\\n    }\\n\\n    li::before {\\n        border-right: 1px solid var(--light-grey);\\n        border-top: 1px solid var(--light-grey);\\n        background: transparent;\\n        content: '';\\n        height: 100%;\\n        left: 0;\\n        position: absolute;\\n        top: 0;\\n        -webkit-transform: skewX(27deg);\\n        transform: skewX(27deg);\\n        width: 100%;\\n        z-index: -1;\\n    }\\n    a {\\n        text-decoration: none;\\n    }\\n    li a,\\n    li span {\\n        display: block;\\n        padding: var(--s-2) var(--s0) 0px var(--s1);\\n    }\\n    li:first-child a,\\n    li:first-child span {\\n        padding-left: 0;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAeI,EAAE,4BAAC,CAAC,AACA,OAAO,CAAE,MAAM,CACf,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,AACd,CAAC,AACD,EAAE,4BAAC,CAAC,AACA,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,GAAG,CACzB,QAAQ,CAAE,QAAQ,AACtB,CAAC,AAED,8BAAE,QAAQ,AAAC,CAAC,AACR,YAAY,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,CACzC,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,CACvC,UAAU,CAAE,WAAW,CACvB,OAAO,CAAE,EAAE,CACX,MAAM,CAAE,IAAI,CACZ,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,iBAAiB,CAAE,MAAM,KAAK,CAAC,CAC/B,SAAS,CAAE,MAAM,KAAK,CAAC,CACvB,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,EAAE,AACf,CAAC,AACD,CAAC,4BAAC,CAAC,AACC,eAAe,CAAE,IAAI,AACzB,CAAC,AACD,gBAAE,CAAC,eAAC,CACJ,gBAAE,CAAC,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,KAAK,CACd,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,IAAI,CAAC,CAAC,GAAG,CAAC,IAAI,IAAI,CAAC,AAC/C,CAAC,AACD,gBAAE,YAAY,CAAC,eAAC,CAChB,gBAAE,YAAY,CAAC,IAAI,cAAC,CAAC,AACjB,YAAY,CAAE,CAAC,AACnB,CAAC"}`
+};
+var Breadcrumbs = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { items } = $$props;
+  const final = items[items.length - 1].text;
+  const links = items.slice(0, -1);
+  if ($$props.items === void 0 && $$bindings.items && items !== void 0)
+    $$bindings.items(items);
+  $$result.css.add(css$9);
+  return `<ul class="${"sub svelte-c42b22"}">${each(links, ({ url: url2, text }) => `<li class="${"svelte-c42b22"}"><a${add_attribute("href", url2, 0)} class="${"svelte-c42b22"}">${escape(text)}</a></li>`)}
+    <li class="${"svelte-c42b22"}"><span class="${"svelte-c42b22"}">${escape(final)}</span></li>
+</ul>`;
+});
+var css$8 = {
+  code: ".big.svelte-11yf5gi{font-size:1.2em}div.svelte-11yf5gi{display:flex;align-items:center;justify-content:space-between}.second.svelte-11yf5gi{margin-left:var(--s0)}h1.svelte-11yf5gi{margin:var(--s0) 0}p.svelte-11yf5gi{margin-top:0}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load({ fetch }) {\\n        const images = await fetch(\`/photography.json\`).then((r) => r.json())\\n        return {\\n            props: images,\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Gallery from '$lib/components/Gallery.svelte'\\n    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'\\n\\n    const items = [{ text: 'Portfolio' }]\\n\\n    export let images\\n<\/script>\\n\\n<Breadcrumbs {items} />\\n\\n<h1>Portfolio</h1>\\n\\n<div>\\n    <p class=\\"big\\">This is a showcase of my favourite photos.</p>\\n    <p class=\\"nowrap second\\">\\n        <a href=\\"/events\\" class=\\"button\\">All Events</a>\\n    </p>\\n</div>\\n\\n<Gallery {images} />\\n\\n<style>\\n    .big {\\n        font-size: 1.2em;\\n        /* TODO make me reusable and responsive (disable on mobile\u2026) */\\n    }\\n    div {\\n        display: flex;\\n        align-items: center;\\n        justify-content: space-between;\\n        /* flex-wrap: wrap; */\\n    }\\n    .second {\\n        margin-left: var(--s0);\\n    }\\n    h1 {\\n        margin: var(--s0) 0;\\n    }\\n    p {\\n        margin-top: 0;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAgCI,IAAI,eAAC,CAAC,AACF,SAAS,CAAE,KAAK,AAEpB,CAAC,AACD,GAAG,eAAC,CAAC,AACD,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,aAAa,AAElC,CAAC,AACD,OAAO,eAAC,CAAC,AACL,WAAW,CAAE,IAAI,IAAI,CAAC,AAC1B,CAAC,AACD,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,AACvB,CAAC,AACD,CAAC,eAAC,CAAC,AACC,UAAU,CAAE,CAAC,AACjB,CAAC"}`
+};
 async function load$4({ fetch: fetch2 }) {
   const images = await fetch2(`/photography.json`).then((r) => r.json());
   return { props: images };
 }
 var Photography = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  const items = [{ text: "Portfolio" }];
   let { images } = $$props;
   if ($$props.images === void 0 && $$bindings.images && images !== void 0)
     $$bindings.images(images);
-  return `<h1>Portfolio</h1>
+  $$result.css.add(css$8);
+  return `${validate_component(Breadcrumbs, "Breadcrumbs").$$render($$result, { items }, {}, {})}
 
-<p>These are my favourite photos. Also see <a href="${"/events"}">Events</a>.
-</p>
+<h1 class="${"svelte-11yf5gi"}">Portfolio</h1>
 
-${each(images, (image) => `${validate_component(Image, "Image").$$render($$result, { value: image }, {}, {})}`)}`;
+<div class="${"svelte-11yf5gi"}"><p class="${"big svelte-11yf5gi"}">This is a showcase of my favourite photos.</p>
+    <p class="${"nowrap second svelte-11yf5gi"}"><a href="${"/events"}" class="${"button"}">All Events</a></p></div>
+
+${validate_component(Gallery_1, "Gallery").$$render($$result, { images }, {}, {})}`;
 });
 var index$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -67360,7 +67453,7 @@ var index$3 = /* @__PURE__ */ Object.freeze({
   "default": Photography,
   load: load$4
 });
-var css$4 = {
+var css$7 = {
   code: "a.svelte-104vsji{text-align:center;padding:var(--s5) 0;display:block;margin-bottom:var(--s-1);text-decoration:none}@media(min-width: 801px){.current.svelte-104vsji{grid-column:span 2}}a.svelte-104vsji,a.svelte-104vsji:hover{box-shadow:none}section.svelte-104vsji{background-size:cover;background-position:center center}h4.svelte-104vsji{font-weight:400;margin:0;font-size:2em;line-height:1em}aside.svelte-104vsji{font-size:1rem}",
   map: '{"version":3,"file":"Calendar.svelte","sources":["Calendar.svelte"],"sourcesContent":["<script>\\n    export let year\\n    export let filesize\\n    export let filename\\n    export let index\\n<\/script>\\n\\n<section\\n    style={`background-image: url(/calendar-images/${year}.jpg)`}\\n    class:current={index === 0}\\n>\\n    <a\\n        href={\'/pdf/\' + filename}\\n        target=\\"_blank\\"\\n        class=\\"shadow\\"\\n        rel=\\"noopener noreferrer nofollow\\"\\n    >\\n        <h4>{year}</h4>\\n        <aside class=\\"uppercase\\">{filesize} MB PDF</aside>\\n    </a>\\n</section>\\n\\n<style>\\n    a {\\n        text-align: center;\\n        padding: var(--s5) 0;\\n        display: block;\\n        margin-bottom: var(--s-1);\\n        text-decoration: none;\\n    }\\n    @media (min-width: 801px) {\\n        .current {\\n            grid-column: span 2;\\n        }\\n    }\\n    a,\\n    a:hover {\\n        box-shadow: none;\\n    }\\n    section {\\n        background-size: cover;\\n        background-position: center center;\\n    }\\n    h4 {\\n        font-weight: 400;\\n        margin: 0;\\n        font-size: 2em;\\n        line-height: 1em;\\n    }\\n    aside {\\n        font-size: 1rem;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAuBI,CAAC,eAAC,CAAC,AACC,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,CACpB,OAAO,CAAE,KAAK,CACd,aAAa,CAAE,IAAI,KAAK,CAAC,CACzB,eAAe,CAAE,IAAI,AACzB,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACvB,QAAQ,eAAC,CAAC,AACN,WAAW,CAAE,IAAI,CAAC,CAAC,AACvB,CAAC,AACL,CAAC,AACD,gBAAC,CACD,gBAAC,MAAM,AAAC,CAAC,AACL,UAAU,CAAE,IAAI,AACpB,CAAC,AACD,OAAO,eAAC,CAAC,AACL,eAAe,CAAE,KAAK,CACtB,mBAAmB,CAAE,MAAM,CAAC,MAAM,AACtC,CAAC,AACD,EAAE,eAAC,CAAC,AACA,WAAW,CAAE,GAAG,CAChB,MAAM,CAAE,CAAC,CACT,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACpB,CAAC,AACD,KAAK,eAAC,CAAC,AACH,SAAS,CAAE,IAAI,AACnB,CAAC"}'
 };
@@ -67377,14 +67470,14 @@ var Calendar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.filename(filename);
   if ($$props.index === void 0 && $$bindings.index && index2 !== void 0)
     $$bindings.index(index2);
-  $$result.css.add(css$4);
-  return `<section${add_attribute("style", `background-image: url(/calendar-images/${year}.jpg)`, 0)} class="${["svelte-104vsji", index2 === 0 ? "current" : ""].join(" ").trim()}"><a${add_attribute("href", "/pdf/" + filename, 0)} target="${"_blank"}" class="${"shadow svelte-104vsji"}" rel="${"noopener noreferrer nofollow"}"><h4 class="${"svelte-104vsji"}">${escape2(year)}</h4>
-        <aside class="${"uppercase svelte-104vsji"}">${escape2(filesize)} MB PDF</aside></a>
+  $$result.css.add(css$7);
+  return `<section${add_attribute("style", `background-image: url(/calendar-images/${year}.jpg)`, 0)} class="${["svelte-104vsji", index2 === 0 ? "current" : ""].join(" ").trim()}"><a${add_attribute("href", "/pdf/" + filename, 0)} target="${"_blank"}" class="${"shadow svelte-104vsji"}" rel="${"noopener noreferrer nofollow"}"><h4 class="${"svelte-104vsji"}">${escape(year)}</h4>
+        <aside class="${"uppercase svelte-104vsji"}">${escape(filesize)} MB PDF</aside></a>
 </section>`;
 });
-var css$3 = {
-  code: ".past.svelte-15ya0l0{display:grid;grid-template-columns:repeat(2, 1fr)}article.svelte-15ya0l0{margin:0 auto var(--s2)}.shadow{text-shadow:0 0 30px rgb(0 0 0 / 70%)}.shadow > *{color:white}.knockout{border:1px solid white;padding:var(--s-2) var(--s-1)}@media(max-width: 800px){.past.svelte-15ya0l0{grid-template-columns:1fr}}",
-  map: `{"version":3,"file":"calendars.svelte","sources":["calendars.svelte"],"sourcesContent":["<script>\\n    import Calendar from '$lib/components/Calendar.svelte'\\n    import RightChevron from '$lib/components/icons/RightChevron.svelte'\\n\\n    const calendars = [\\n        {\\n            year: 2021,\\n            filename: '2021calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2020,\\n            filename: '2020calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2019,\\n            filename: '2019calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2018,\\n            filename: '2018calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2017,\\n            filename: '2017calendar.pdf',\\n            image: '.jpg',\\n            filesize: 1,\\n        },\\n        {\\n            year: 2016,\\n            filename: '2016calendar.pdf',\\n            image: '.jpg',\\n            filesize: 7,\\n        },\\n        {\\n            year: 2015,\\n            filename: '2015calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n    ]\\n    const [current, ...rest] = calendars\\n<\/script>\\n\\n<!-- <main style={\`background-image: url(/calendar-images/\${current.year}.jpg)\`}>\\n    <div class=\\"shadow\\">\\n        <h4>{current.year} Calendar</h4>\\n        <div class=\\"uppercase\\">{current.filesize} MB PDF</div>\\n        <a\\n            href={'pdf/' + current.filename}\\n            target=\\"_blank\\"\\n            class=\\"uppercase knockout\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Preview <RightChevron />\\n        </a>\\n        <a\\n            href={'pdf/' + current.filename}\\n            target=\\"_blank\\"\\n            class=\\"uppercase knockout\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Purchase <RightChevron />\\n        </a>\\n    </div>\\n</main> -->\\n\\n<!-- <h2>Previous Calendars</h2> -->\\n\\n<div class=\\"past mt-0\\">\\n    {#each calendars as { filename, year, filesize }, index}\\n        <Calendar {filename} {year} {filesize} {index} />\\n    {/each}\\n</div>\\n\\n<article>\\n    <!-- <h1>Calendars</h1> -->\\n    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>\\n</article>\\n\\n<article class=\\"restricted-width\\">\\n    <h2>About</h2>\\n    <p>\\n        Initially created as Christmas gifts for family and friends, these\\n        calendars are an effort to do more with my photography. It\u2019s hard to\\n        stand out in the crowded, high-volume world of online photography, so\\n        printing can be a way to make photography less ephemeral. Calendars\\n        provide a high-density collection of photographs in an affordable\\n        physical product.\\n    </p>\\n    <p>\\n        I design the calendars in Adobe Indesign with the <a\\n            href=\\"http://calendarwizard.sourceforge.net\\"\\n            target=\\"_blank\\"\\n            rel=\\"noopener noreferrer nofollow\\">Calendar Wizard</a\\n        >\\n        plugin to create the basic table layout before heavy customization. There\u2019s\\n        a steep learning curve, but the result is highly original. I then send a\\n        print-ready PDF to\\n        <a\\n            href=\\"https://www.dhq.ca\\"\\n            target=\\"_blank\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Digital Headquarters Imaging Centre</a\\n        > for printing and binding.\\n    </p>\\n</article>\\n\\n<style>\\n    /* h1 {\\n        padding-bottom: var(--s2);\\n    } */\\n    .past {\\n        display: grid;\\n        grid-template-columns: repeat(2, 1fr);\\n        /* grid-gap: var(--s-2); */\\n    }\\n    main {\\n        display: flex;\\n        align-items: center;\\n        justify-content: center;\\n        text-align: center;\\n        margin-top: calc(-1 * var(--s2));\\n        height: 100vh;\\n        background-size: cover;\\n        background-position: center center;\\n    }\\n    main a,\\n    main a:hover {\\n        box-shadow: none;\\n    }\\n    h4 {\\n        font-weight: 400;\\n        margin: 0;\\n        font-size: 3em;\\n        line-height: 1em;\\n    }\\n    article {\\n        margin: 0 auto var(--s2);\\n    }\\n    :global(.shadow) {\\n        text-shadow: 0 0 30px rgb(0 0 0 / 70%);\\n    }\\n    :global(.shadow > *) {\\n        color: white;\\n    }\\n    :global(.knockout) {\\n        border: 1px solid white;\\n        padding: var(--s-2) var(--s-1);\\n    }\\n    @media (max-width: 800px) {\\n        main {\\n            margin-top: 0;\\n        }\\n        .past {\\n            grid-template-columns: 1fr;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"AAqHI,KAAK,eAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,OAAO,CAAC,CAAC,CAAC,GAAG,CAAC,AAEzC,CAAC,AAqBD,OAAO,eAAC,CAAC,AACL,MAAM,CAAE,CAAC,CAAC,IAAI,CAAC,IAAI,IAAI,CAAC,AAC5B,CAAC,AACO,OAAO,AAAE,CAAC,AACd,WAAW,CAAE,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,AAC1C,CAAC,AACO,WAAW,AAAE,CAAC,AAClB,KAAK,CAAE,KAAK,AAChB,CAAC,AACO,SAAS,AAAE,CAAC,AAChB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CACvB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,KAAK,CAAC,AAClC,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAIvB,KAAK,eAAC,CAAC,AACH,qBAAqB,CAAE,GAAG,AAC9B,CAAC,AACL,CAAC"}`
+var css$6 = {
+  code: ".past.svelte-owyidc{display:grid;grid-template-columns:repeat(2, 1fr);grid-gap:var(--s-2)}article.svelte-owyidc{margin:0 auto var(--s2)}.shadow{text-shadow:0 0 30px rgb(0 0 0 / 70%)}.shadow > *{color:white}.knockout{border:1px solid white;padding:var(--s-2) var(--s-1)}@media(max-width: 800px){.past.svelte-owyidc{grid-template-columns:1fr}}",
+  map: `{"version":3,"file":"calendars.svelte","sources":["calendars.svelte"],"sourcesContent":["<script>\\n    import Calendar from '$lib/components/Calendar.svelte'\\n    import RightChevron from '$lib/components/icons/RightChevron.svelte'\\n\\n    const calendars = [\\n        {\\n            year: 2021,\\n            filename: '2021calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2020,\\n            filename: '2020calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2019,\\n            filename: '2019calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2018,\\n            filename: '2018calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n        {\\n            year: 2017,\\n            filename: '2017calendar.pdf',\\n            image: '.jpg',\\n            filesize: 1,\\n        },\\n        {\\n            year: 2016,\\n            filename: '2016calendar.pdf',\\n            image: '.jpg',\\n            filesize: 7,\\n        },\\n        {\\n            year: 2015,\\n            filename: '2015calendar.pdf',\\n            image: '.jpg',\\n            filesize: 2,\\n        },\\n    ]\\n    const [current, ...rest] = calendars\\n<\/script>\\n\\n<!-- <main style={\`background-image: url(/calendar-images/\${current.year}.jpg)\`}>\\n    <div class=\\"shadow\\">\\n        <h4>{current.year} Calendar</h4>\\n        <div class=\\"uppercase\\">{current.filesize} MB PDF</div>\\n        <a\\n            href={'pdf/' + current.filename}\\n            target=\\"_blank\\"\\n            class=\\"uppercase knockout\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Preview <RightChevron />\\n        </a>\\n        <a\\n            href={'pdf/' + current.filename}\\n            target=\\"_blank\\"\\n            class=\\"uppercase knockout\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Purchase <RightChevron />\\n        </a>\\n    </div>\\n</main> -->\\n\\n<!-- <h2>Previous Calendars</h2> -->\\n\\n<div class=\\"past mt-0\\">\\n    {#each calendars as { filename, year, filesize }, index}\\n        <Calendar {filename} {year} {filesize} {index} />\\n    {/each}\\n</div>\\n\\n<article>\\n    <!-- <h1>Calendars</h1> -->\\n    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>\\n</article>\\n\\n<article class=\\"restricted-width\\">\\n    <h2>About</h2>\\n    <p>\\n        Initially created as Christmas gifts for family and friends, these\\n        calendars are an effort to do more with my photography. It\u2019s hard to\\n        stand out in the crowded, high-volume world of online photography, so\\n        printing can be a way to make photography less ephemeral. Calendars\\n        provide a high-density collection of photographs in an affordable\\n        physical product.\\n    </p>\\n    <p>\\n        I design the calendars in Adobe Indesign with the <a\\n            href=\\"http://calendarwizard.sourceforge.net\\"\\n            target=\\"_blank\\"\\n            rel=\\"noopener noreferrer nofollow\\">Calendar Wizard</a\\n        >\\n        plugin to create the basic table layout before heavy customization. There\u2019s\\n        a steep learning curve, but the result is highly original. I then send a\\n        print-ready PDF to\\n        <a\\n            href=\\"https://www.dhq.ca\\"\\n            target=\\"_blank\\"\\n            rel=\\"noopener noreferrer nofollow\\"\\n            >Digital Headquarters Imaging Centre</a\\n        > for printing and binding.\\n    </p>\\n</article>\\n\\n<style>\\n    /* h1 {\\n        padding-bottom: var(--s2);\\n    } */\\n    .past {\\n        display: grid;\\n        grid-template-columns: repeat(2, 1fr);\\n        grid-gap: var(--s-2);\\n    }\\n    main {\\n        display: flex;\\n        align-items: center;\\n        justify-content: center;\\n        text-align: center;\\n        margin-top: calc(-1 * var(--s2));\\n        height: 100vh;\\n        background-size: cover;\\n        background-position: center center;\\n    }\\n    main a,\\n    main a:hover {\\n        box-shadow: none;\\n    }\\n    h4 {\\n        font-weight: 400;\\n        margin: 0;\\n        font-size: 3em;\\n        line-height: 1em;\\n    }\\n    article {\\n        margin: 0 auto var(--s2);\\n    }\\n    :global(.shadow) {\\n        text-shadow: 0 0 30px rgb(0 0 0 / 70%);\\n    }\\n    :global(.shadow > *) {\\n        color: white;\\n    }\\n    :global(.knockout) {\\n        border: 1px solid white;\\n        padding: var(--s-2) var(--s-1);\\n    }\\n    @media (max-width: 800px) {\\n        main {\\n            margin-top: 0;\\n        }\\n        .past {\\n            grid-template-columns: 1fr;\\n        }\\n    }\\n</style>\\n"],"names":[],"mappings":"AAqHI,KAAK,cAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,OAAO,CAAC,CAAC,CAAC,GAAG,CAAC,CACrC,QAAQ,CAAE,IAAI,KAAK,CAAC,AACxB,CAAC,AAqBD,OAAO,cAAC,CAAC,AACL,MAAM,CAAE,CAAC,CAAC,IAAI,CAAC,IAAI,IAAI,CAAC,AAC5B,CAAC,AACO,OAAO,AAAE,CAAC,AACd,WAAW,CAAE,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,AAC1C,CAAC,AACO,WAAW,AAAE,CAAC,AAClB,KAAK,CAAE,KAAK,AAChB,CAAC,AACO,SAAS,AAAE,CAAC,AAChB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CACvB,OAAO,CAAE,IAAI,KAAK,CAAC,CAAC,IAAI,KAAK,CAAC,AAClC,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAIvB,KAAK,cAAC,CAAC,AACH,qBAAqB,CAAE,GAAG,AAC9B,CAAC,AACL,CAAC"}`
 };
 var Calendars = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const calendars2 = [
@@ -67431,17 +67524,17 @@ var Calendars = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       filesize: 2
     }
   ];
-  $$result.css.add(css$3);
+  $$result.css.add(css$6);
   return `
 
 
 
-<div class="${"past mt-0 svelte-15ya0l0"}">${each(calendars2, ({ filename, year, filesize }, index2) => `${validate_component(Calendar, "Calendar").$$render($$result, { filename, year, filesize, index: index2 }, {}, {})}`)}</div>
+<div class="${"past mt-0 svelte-owyidc"}">${each(calendars2, ({ filename, year, filesize }, index2) => `${validate_component(Calendar, "Calendar").$$render($$result, { filename, year, filesize, index: index2 }, {}, {})}`)}</div>
 
-<article class="${"svelte-15ya0l0"}">
+<article class="${"svelte-owyidc"}">
     <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p></article>
 
-<article class="${"restricted-width svelte-15ya0l0"}"><h2>About</h2>
+<article class="${"restricted-width svelte-owyidc"}"><h2>About</h2>
     <p>Initially created as Christmas gifts for family and friends, these
         calendars are an effort to do more with my photography. It\u2019s hard to
         stand out in the crowded, high-volume world of online photography, so
@@ -67466,7 +67559,7 @@ var Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { title } = $$props;
   if ($$props.title === void 0 && $$bindings.title && title !== void 0)
     $$bindings.title(title);
-  return `<article class="${"restricted-width"}"><header><h1>${escape2(title)}</h1></header>
+  return `<article class="${"restricted-width"}"><header><h1>${escape(title)}</h1></header>
     ${slots.default ? slots.default({}) : ``}</article>`;
 });
 var metadata$k = {
@@ -67554,7 +67647,7 @@ Despite other parties ticking off impressive objectives this spring, I was not i
 <ol><li id="${"fn-1"}">I replaced Ruby with a 2013 Ford Escape SE, with 96 000 kilometers, purchased in Salmon Arm. The used car market, like most second-hand markets in Revy, is full of obscenely overpriced rubbish. To price your used car, simply follow this formula: find the going rate for your vehicle in a nearby city, then double it (triple if it\u2019s a Tacoma or 4Runner). Then add 20% for every 20 000 kilometers <em>under</em> 200 000 kilometers on the odometer. Guaranteed to sell in minutes!<a href="${"#fnref-1"}" class="${"footnote-backref"}">\u21A9</a></li>
 <li id="${"fn-2"}">Now that my day job is focused on avalanche safety (at least indirectly), recreational skiing is no longer as strong of a juxtaposition to my work week as, say, structural engineering was. As I now receive a dose of snow safety during the week, perhaps it means that a lesser dose on the weekend suffices. The extreme case of this phenomenon are the ski guides who abandon recreational skiing as they ski enough at work.<a href="${"#fnref-2"}" class="${"footnote-backref"}">\u21A9</a></li></ol></div>`;
 });
-var __glob_5_0 = /* @__PURE__ */ Object.freeze({
+var __glob_6_0 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _11_months_later,
@@ -67585,14 +67678,14 @@ var _30_going_on_13 = create_ssr_component(($$result, $$props, $$bindings, slots
 <li><p><a href="${"#materialism-and-minimalism"}">Materialism and Minimalism</a></p></li>
 <li><p><a href="${"#skepticism-success-and-happiness"}">Skepticism, Success and Happiness</a></p></li>
 <li><p><a href="${"#comfort-or-adventure"}">Comfort or Adventure</a></p></li>
-<li><p><a href="${"#mistakes-and-mentorship-in-the-mountains"}">Mistakes and Mentorship in the\xA0Mountains</a></p></li>
-<li><p><a href="${"#so-you-want-to-backcountry-ski"}">So You Want to Backcountry\xA0Ski?</a></p></li>
+<li><p><a href="${"#mistakes-and-mentorship-in-themountains"}">Mistakes and Mentorship in the\xA0Mountains</a></p></li>
+<li><p><a href="${"#so-you-want-to-backcountryski"}">So You Want to Backcountry\xA0Ski?</a></p></li>
 <li><p><a href="${"#fun-times-outside"}">Fun Times Outside</a></p>
 <ul><li><a href="${"#get-off-my-lawn"}">Get Off My Lawn</a></li>
 <li><a href="${"#30-going-on-13"}">30 Going on 13</a></li>
 <li><a href="${"#a-creepy-tenant"}">A Creepy Tenant</a></li>
 <li><a href="${"#light-and-fast"}">Light and Fast</a></li>
-<li><a href="${"#an-alternative-super-bowl-sunday"}">An Alternative Super Bowl\xA0Sunday</a></li>
+<li><a href="${"#an-alternative-super-bowlsunday"}">An Alternative Super Bowl\xA0Sunday</a></li>
 <li><a href="${"#a-quiet-romantic-getaway"}">A Quiet Romantic Getaway</a></li>
 <li><a href="${"#nachos"}">Nachos</a></li>
 <li><a href="${"#quote-wall"}">Quote Wall</a></li></ul></li>
@@ -67754,7 +67847,7 @@ No matter how I try, I find my way into the same old jam</em><br>
 <p>Early retirement as defined by aforementioned Mr. Money Mustache\u2014he retired at thirty\u2014is predicated on the notion of having better things to do besides work. Sadly, it seems too many of us lack meaningful pursuits beyond chasing the dollar and accumulating wealth, which come with their share of pitfalls as I have argued. Oscar Wilde\u2019s hackneyed quotation captures this thought: \u201CTo live is the rarest thing in the world. Most people exist, that is all.\u201D Similarly to how I fail to understand people content to hang out in the city and do nothing more adventurous than try a new restaurant, I suppose that many wouldn\u2019t understand my preference to wake up in a tent during a blizzard instead of my own bed\u2014<em>You just don\u2019t know what you\u2019re missing!</em> Alas, the outdoors isn\u2019t for everyone; \u201CDifferent strokes for different folks,\u201D to continue with the worn-out phrases.</p>
 <p>All I know is that when I get caught up thinking\u2014perhaps <em>overthinking</em> is more accurate\u2014about things like this, nothing resets the mind quite like spending time outside. It is a return to the simple, to managing basic needs and spending time either alone or with becoming-closer friends. The absolute best conversations I\u2019ve had have been outdoors, so I will continue to spend time outside, while trying not to craft my image entirely in my pursuits as they aren\u2019t going to last forever.</p>
 <p>If city life works for you, great. If you live in the city and seek more adventure, spending time outside is the best way I\u2019ve found to satisfy that craving\u2014just start slowly and deliberately expand your experience level, a topic I\u2019ll address next. If you\u2019re already an outdoorsy city dweller and entertain dreams of jumping off the corporate bandwagon, remember that the adventure lifestyle isn\u2019t without its own challenges. Apply Mr. Money Mustache\u2019s radical early retirement message and you may find yourself with more freedom sooner than expected. And if you\u2019re a ski bum and want more money\u2014well, there\u2019s always the lottery.</p>
-<h2 id="${"mistakes-and-mentorship-in-the-mountains"}">Mistakes and Mentorship in the\xA0Mountains</h2>
+<h2 id="${"mistakes-and-mentorship-in-themountains"}">Mistakes and Mentorship in the\xA0Mountains</h2>
 <p><strong>3:30 AM, July 27, 2013</strong><br>
 After not sleeping a wink in the Goat Creek parking lot near Canmore, Alberta, we set off to attempt the Rundle traverse. We\u2014a ragtag group of six newbie climbers\u2014started hiking up the East End of Rundle (EEOR) off under a clear, dark ski. Our first mistake was our group size: six is double or triple the size you want for an objective like the Rundle traverse, a huge day covering the 11 individual summits of Mount Rundle between Canmore and Banff with a few pitches of technical climbing.</p>
 <p>I had met two of the guys in our party on an introductory mountaineering course earlier that summer. With a few additions our Rundle traverse team had expanded to six, with two unable to attend a meet-and-greet session at Wasootch slabs a few days beforehand (which served as my cursory introduction to trad climbing). This was our second mistake: not knowing each other well and not having previously climbed a less ambitious objective together.</p>
@@ -67818,7 +67911,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <p>There is no room for ego in the mountains; however, this is more readily preached than practiced. I have spent enough time outside now to see multiple doctors and lawyers spazz out in the backcountry while attempting objectives beyond their abilities. While I don\u2019t mean to single out these professions, they do tend to attract Type A personalities, the kind that doesn\u2019t like to back down from challenges.<sup id="${"fnref-1"}"><a href="${"#fn-1"}" class="${"footnote-ref"}">1</a></sup> While assertiveness and self-confidence\u2014dare I say ego\u2014may get you quite far in a controlled environment like the city, there are exactly <em>zero</em> substitutes for a long, deliberate apprenticeship in the outdoors. I can sit here and repeat this ad nauseam, though you may not be convinced until you actually experience it\u2014just <em>please</em> think about what you\u2019re doing before getting into trouble. There is also the angle that the long hours required by such professions cut into training time, thus contributing to poor fitness, which is never an asset outside.</p>
 <p>\u201CDon\u2019t be an idiot,\u201D writes Phil Tomlinson in the disclaimer to his excellent <a href="${"http://mountainwagon.com"}" rel="${"nofollow"}">Mountain Wagon</a> blog, \u201CThis shit is dangerous and fucking hard. Learn before you go and remember it\u2019s better to turn around and come back another day than push on and die.\u201D The quickest way to develop competence is to learn from experts. There is <em>no</em> shame in this, as in the case of hiring guides to take you up easy mountains. Everyone has to start somewhere, and it\u2019s certainly not worth your life to cheap out on instruction or gear when it comes to the outdoors.</p>
 <p>Mentorship is thus mandatory in outdoor pursuits. There are no substitutes for a long apprenticeship in the outdoors, in which you slowly and deliberately build up your experience, fitness, gear, and level of acceptable risk. It takes years to do this stuff properly.</p>
-<h2 id="${"so-you-want-to-backcountry-ski"}">So You Want to Backcountry\xA0Ski?</h2>
+<h2 id="${"so-you-want-to-backcountryski"}">So You Want to Backcountry\xA0Ski?</h2>
 <p>You might have seen my photos or <a href="${"/journal/skiing"}">videos</a> of skiing up and down mountains and across glaciers and want to do likewise.<sup id="${"fnref-2"}"><a href="${"#fn-2"}" class="${"footnote-ref"}">2</a></sup> Perhaps you yearn to escape the crowds, expense, and often icy conditions of resort downhill skiing and instead slay backcountry powder. A common lament I hear is \u201CI\u2019m a strong enough downhill skier (or snowboarder) and want to get into backcountry skiing but don\u2019t have anyone to go with.\u201D Now that you\u2019ve met me, you\u2019ve got your in\u2026right?</p>
 <p>First I need to scare you. Like the slopes you want to ski, the learning curve in backcountry skiing is <em>steep</em> (sorry). As it likely took you years of downhill skiing to slowly build up from skiing the bunny slopes to being able to crush double-black diamond runs without a hint of fear (if you aren\u2019t yet here in your downhill skiing career, <em>please</em> wait until you are as weak ski ability is an underappreciated liability in the backcountry), the learning curve with backcountry skiing can take just as many years\u2014if not quite a few more\u2014to master.</p>
 <p>It takes a season or two to figure out your gear. As an overview (and this is by no means comprehensive), the backcountry-skiing learning curve comprises: getting your gear purchased and optimized; learning how to transition your bindings, boots, and skins from ski to walk mode and back efficiently; learning how to assess snowpack stability (decidedly non-trivial); learning how to balance while making kick turns in the uptrack; knowing how to break trail and create good uptracks; practicing your transceiver, probe, and shovel skills in single- and better yet multi-burial situations; getting your clothing layers right; understanding group dynamics and being able to voice your opinion in front of others; and organizing your nutrition. Additional topics include snow-avalanche climatology (knowing the snowpack characteristics in coastal, intermountain, and continental climate zones), wilderness first aid, permit systems like in Canada\u2019s <a href="${"https://www.pc.gc.ca/en/pn-np/bc/glacier/visit/hiver-winter/ski"}" rel="${"nofollow"}">Glacier National Park</a>, glacier travel and crevasse rescue, winter camping, whiteout navigation, and alpine skills like rappelling. To master all of these skills, budget a solid five to eight years. While harder to qualify, developing a strong mental game takes time too.</p>
@@ -67841,7 +67934,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <h2 id="${"fun-times-outside"}">Fun Times Outside</h2>
 <p>These short stories had nowhere else to go, so they are included here to highlight some memorable outdoor experiences from the last few years. Some of them may also connect with this piece\u2019s theme of immature adults.</p>
 <h3 id="${"get-off-my-lawn"}">Get Off My Lawn</h3>
-<p>The first time I skied <a href="${"https://russellmcwhae.ca/photos/Mount-Field-January-2014"}" rel="${"nofollow"}">Mount Field</a>, my trail-breaking shift ended up being the final push to the summit. Mount Field is an easy one-day ski for those with a solid year or so of backcountry-skiing experience. My party of four had leapfrogged with a group of split-boarders on the ascent, all of us working together to create an uptrack all the way up the mountain. Cutting a fresh uptrack\u2014called breaking trail\u2014is hard work for the leader as his or her skis sink into the snow with each step, while followers can shuffle along with relative ease. Taking turns breaking trail ensures that no one person gets too exhausted compared to other group members (assuming similar fitness levels).</p>
+<p>The first time I skied Mount Field], my trail-breaking shift ended up being the final push to the summit. Mount Field is an easy one-day ski for those with a solid year or so of backcountry-skiing experience. My party of four had leapfrogged with a group of split-boarders on the ascent, all of us working together to create an uptrack all the way up the mountain. Cutting a fresh uptrack\u2014called breaking trail\u2014is hard work for the leader as his or her skis sink into the snow with each step, while followers can shuffle along with relative ease. Taking turns breaking trail ensures that no one person gets too exhausted compared to other group members (assuming similar fitness levels).</p>
 <p>There is an art to creating good uptracks: they are not too steep and make effective use of terrain while managing avalanche hazard. At this time in my backcountry-skiing career, I was still figuring things out. Nonetheless, we had chosen our objective in accordance with the <a href="${"http://avalanche.ca/"}" rel="${"nofollow"}">daily avalanche bulletin</a> and gotten an early start.</p>
 <p>After exchanging celebratory fist-bumps with the split-boarders when they arrived at the summit, I was offered first tracks down the mountain, an honour usually bestowed to the one who did the most trail-breaking. While I didn\u2019t necessarily do any more trail-breaking than anyone else, my final push to the summit made me the likely candidate for first tracks, which I unhesitatingly indulged.</p>
 <p>Skiing down from the summit, I encountered a party of two climbing our uptrack. This is quite routine as following an existing uptrack is much easier than creating your own, and many popular backcountry-ski locations have established uptracks throughout the season due to high traffic (snowfall may partially or completely bury old uptracks, requiring new ones to be made). I stopped to chat with the group of two, an old man and a young woman, as travellers in the backcountry are usually pretty friendly.</p>
@@ -67863,7 +67956,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <p>The day we were to depart the Guy hut, which we ever-so-maturely took to calling the \u201CGay\u201D hut, and head to Stanley Mitchell hut, now referred to as \u201C<a href="${"https://www.urbandictionary.com/define.php?term=S%26M"}" rel="${"nofollow"}">S&amp;M</a>\u201D hut, started as a whiteout. While huts must be booked well in advance, inclement weather can delay or otherwise affect intended schedules, so huts are sometimes stuffed beyond their capacity as parties overstay their booking and wait for a more favourable weather window. Staying an unscheduled night at a hut is hardly a cardinal sin and is definitely preferable to getting into trouble. With this in mind, we had no qualms about spending another night at the Guy hut but grew bored with the unimproving conditions and set off mid-morning into white nothingness.</p>
 <p>The route began with a ridge descent onto the des Poilus glacier. In a proper whiteout, visibility is reduced to a few metres, and being on the broad, low-angled, snow-covered des Poilus glacier felt like being inside a ping-pong ball. You could see <em>nothing</em>. I\u2019ve unintentionally skied off a couple of (fortunately) small wind lips in whiteouts now\u2014you really can\u2019t see anything beyond your ski tips.</p>
 <p>I took the front position for this section, responsible for routefinding, and picked my way slowly down the low-angled ramp formed by the glacier. I had my phone GPS app to use but no exact tracks to follow. According to the map, the glacier gradually descends down to a lake, where the route then forks into two different options: a more direct route up and over Isolated Col, or a flatter, lengthier route around a feature known as the Whaleback.</p>
-<p>Skiing slowly in the whiteout, I could start to see something ahead\u2014a wide, fairly flat horizontal shape. Inching my way forward at this point, the shape became clear: a cliff! I was standing on top of the 10-metre cliff formed where the glacier calved off into the lake below. Regrouping, we roped up. Skiing downhill while roped up for glacier travel is incontrovertibly cumbersome and awkward, but this tradeoff is preferable to someone skiing off a cliff. Needing to get around the cliff and down to the lake, we had a choice between left and right. We chose right (west) arbitrarily as it was a 50:50 chance of choosing the best option. (On a later summer <a href="${"https://russellmcwhae.ca/photos/Mont-Des-Poilus-August-2017"}" rel="${"nofollow"}">trip in same the area</a> with much better visibility, it became clear that left/east would have been a slightly easier option.) We made it down to the frozen lake without further incident.</p>
+<p>Skiing slowly in the whiteout, I could start to see something ahead\u2014a wide, fairly flat horizontal shape. Inching my way forward at this point, the shape became clear: a cliff! I was standing on top of the 10-metre cliff formed where the glacier calved off into the lake below. Regrouping, we roped up. Skiing downhill while roped up for glacier travel is incontrovertibly cumbersome and awkward, but this tradeoff is preferable to someone skiing off a cliff. Needing to get around the cliff and down to the lake, we had a choice between left and right. We chose right (west) arbitrarily as it was a 50:50 chance of choosing the best option. (On a later summer <a href="${"/events/Mont-Des-Poilus_August-2017"}">trip in same the area</a> with much better visibility, it became clear that left/east would have been a slightly easier option.) We made it down to the frozen lake without further incident.</p>
 <p>The going was slow as the whiteout continued. Gradually we followed the drainage from the lake down into treeline (the Whaleback route), where whiteout navigation was much easier as trees gave texture and depth. There was a day-old skin track in this section of the route that we followed to Stanley Mitchell hut. Along the way, we crossed a large path of avalanche debris, including hundreds of toppled old-growth trees, many of them snapped like matchsticks. Old trees in avalanche debris is an indication that avalanches in such areas occur <em>very</em> rarely, allowing trees to grow tall in the absence of avalanche activity over multiple decades. Earlier in the winter, an historic avalanche cycle had affected much of the Rockies, with large, destructive avalanches wiping out many hectares of old-growth forest. Conditions had appeared to stabilize for our trip, though we were wary of a large cornice overhanging part of the Whaleback route and didn\u2019t linger underneath it. At no point during the day did the storm relent. We made it safely to Stanley Mitchell hut around dinner time.</p>
 <p>Also staying at the hut was a guided group organized by a local Alpine Club chapter. It was their day-old skin track along the Whaleback that we found. They numbered about 15, including a ski guide, apprentice ski guide, hut coordinator to help with cooking, and paying clients, many of whom had flown in from the States.</p>
 <p>It was at this point in the trip that the effects on our GI systems of multiple days of eating sugary junk, pepperoni sticks, and dehydrated food started becoming evident. In a word: <em>gas</em>. Similar to the increasing relaxation of digestive sphincters, so, too, did verbal filters progressively soften.</p>
@@ -67877,7 +67970,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <p>We skied out after two nights at Stanley Mitchell hut, completing our traverse, and bought cheeseburgers.</p>
 <h3 id="${"a-creepy-tenant"}">A Creepy Tenant</h3>
 <p>On top of Black Rock Mountain in the Ghost wilderness area there is an old fire lookout. Built <a href="${"http://bobspirko.ca/Hiking/BlackRock/BlackRock.htm"}" rel="${"nofollow"}">in 1928</a>, it has been abandoned for a number of decades now. Black Rock lies at the very eastern edge of the Canadian Rocky mountains and offers quite excellent views of the front ranges, foothills, and prairies, with skyscrapers in downtown Calgary (about 100 km away) visible on a clear day.</p>
-<p>After spending a mostly sleepless, windy night on the summit in <a href="${"https://russellmcwhae.ca/photos/Black-Rock-April-2016"}" rel="${"nofollow"}">April 2016</a>, I was nonetheless delighted with the photographic opportunities of the fire lookout and returned in May 2017 to shoot engagement photos for some friends. Our idea was to hike up before the sunset, spend the night, and wake up in time for sunrise, thus getting two instances of golden hour to take photos.</p>
+<p>After spending a mostly sleepless, windy night on the summit in <a href="${"/events/Black-Rock_April-2016"}">April 2016</a>, I was nonetheless delighted with the photographic opportunities of the fire lookout and returned in May 2017 to shoot engagement photos for some friends. Our idea was to hike up before the sunset, spend the night, and wake up in time for sunrise, thus getting two instances of golden hour to take photos.</p>
 <p>Upon reaching the old fire lookout at sundown, we found an open, mostly eaten can of beans, among other trash in the dilapidated old building. No windows remained, nor did the roof provide complete coverage from rain, though we had scheduled a rain-free night for the purpose of the photos. My friends, the couple, crawled into a shared, sealed bivy sac, a cocoon from which they weren\u2019t to emerge until the following morning. I set up my sleeping bag on an air mattress, without giving a second thought as to <em>who</em> might have been eating the beans.</p>
 <p>Higher-end headlamps used in outdoor applications offer a red-light mode in addition to a white lamp. Such headlamps can be selectively switched from bright white light to a dim red light, which can help maintain your pupil dilation and thus night vision while not blinding anyone else in close quarters, such as in a tent or backcountry hut. As anyone who has tried falling asleep in a crammed hut while some gumby haphazardly blasts the room with bright white eye-scorching rays can attest, red-light headlamps are indeed a clever backcountry innovation.</p>
 <p>A rustling sound began a few minutes after I crawled into my sleeping bag in the fire lookout. Having dealt with mice in dodgy student rental houses before, I knew exactly what this sound meant; however, not anticipating critters this far above tree-line, I had left my food in a waterproof dry bag on the floor.</p>
@@ -67889,7 +67982,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <p>I hung my boots and backpack from the ceiling, leaving exactly nothing on the floor except my sleeping pad.</p>
 <p>For the third and final time that night, I crawled into my sleeping bag and switched off my headlamp.</p>
 <h3 id="${"light-and-fast"}">Light and Fast</h3>
-<p>In <a href="${"https://russellmcwhae.ca/photos/Squamish-May-2014"}" rel="${"nofollow"}">May 2014</a> I went on a climbing trip to Squamish, BC, with two friends. We spent the first few days working on some easy single-pitch trad climbs and bouldering, slowly learning to trust Squamish\u2019s grippy, solid granite, which was an entirely refreshing experience compared to polished, chossy Bow Valley limestone.</p>
+<p>In <a href="${"/events/Squamish_May-2014"}">May 2014</a> I went on a climbing trip to Squamish, BC, with two friends. We spent the first few days working on some easy single-pitch trad climbs and bouldering, slowly learning to trust Squamish\u2019s grippy, solid granite, which was an entirely refreshing experience compared to polished, chossy Bow Valley limestone.</p>
 <p>Trad climbing, short for \u201Ctraditional\u201D climbing, involves the use of removable pieces of gear that fit into various weaknesses in the rock like cracks.<sup id="${"fnref-3"}"><a href="${"#fn-3"}" class="${"footnote-ref"}">3</a></sup> There are quite a few different pieces of removable gear that can be used, so, not knowing exactly which pieces to use, we had brought <em>everything</em>: a set of Metolius micro cams, Black Diamond Camalot cams up to size 4, nuts, hexes, a few tricams, and at least 10 alpine draws. Our gear was an amalgamation of another climber\u2019s old track rack and some of our own additions.</p>
 <p>On the final day of the trip, we decided to attempt an easy multi-pitch trad climb, <a href="${"https://www.mountainproject.com/route/105934199/banana-peel"}" rel="${"nofollow"}">Banana Peel</a>, rated at 5.7. I remember seeing an online report about a dad who had taken his two daughters up the climb. We figured that if they could do it, so could we. Though it\u2019s a popular route, no other parties were climbing it when we arrived at the start in the morning.</p>
 <p>With our party of three, two half-ropes, and extensive trad rack, we started the climb. The first few pitches ascended a relatively low-angle slab (around 40\xB0), which was climbed by smearing flat-footed against the rock using friction. My friends alternated leads, exchanging many pounds of gear at each belay station, while I was happy to be belayed up on top-rope.</p>
@@ -67900,7 +67993,7 @@ Earlier we had glossed over the detail of what we were going to do when we got t
 <p>With no gear beside approach shoes, a chalk bag, and headphones, this man was free-soloing the route, as insouciantly as someone out for an afternoon jog.</p>
 <p>\u201CGo ahead,\u201D we told the soloist, unsure of the protocol in this situation and whether or not to shout a heads-up to our leader.</p>
 <p>The soloist made his way past our leader without incident, his light-and-fast approach contrasting ever-so-conspicuously to our leader\u2019s jangling hardware store of gear.</p>
-<h3 id="${"an-alternative-super-bowl-sunday"}">An Alternative Super Bowl\xA0Sunday</h3>
+<h3 id="${"an-alternative-super-bowlsunday"}">An Alternative Super Bowl\xA0Sunday</h3>
 <p>On Super Bowl Sunday in February a few years ago, I went ice climbing with a friend, Franz we\u2019ll call him. He had been ice climbing lots and had become quite good at leading steeper ice. Our objective was to climb <a href="${"https://www.summitpost.org/a-bridge-too-far-iv-wi-4/277366"}" rel="${"nofollow"}">A Bridge Too Far</a>, a four-pitch ice climb in Kananaskis Country.</p>
 <p>The first pitch\u2014the crux\u2014usually goes at WI 4+, a ten-metre step of near-vertical ice.<sup id="${"fnref-4"}"><a href="${"#fn-4"}" class="${"footnote-ref"}">4</a></sup> As backcountry skiing has been my primary winter outdoor pursuit for a while now, my ice climbing <em>sucks</em>, and I was quite happy to have a stronger partner to rope-gun me up something that I wouldn\u2019t be able to lead.</p>
 <p>Franz, a built European with a slight gut, had become the strongest ice climber in my outdoor circle. We made fun of him for eating too much strudel\u2014though he regularly professed to not liking or eating it\u2014a joke no one remembers starting but that got progressively, er, sweeter, the more we beat it to death. \u201COne day he ate too much strudel and could no longer fit into his lederhosen,\u201D we teased.</p>
@@ -68110,7 +68203,7 @@ Your motivation is satisfied when you are able to gain complete command of a ski
 <li id="${"fn-10"}">Me? Perfection? That doesn\u2019t sound right\u2014no sir, not one bit!<a href="${"#fnref-10"}" class="${"footnote-backref"}">\u21A9</a></li>
 <li id="${"fn-11"}">The even-temperedness I have acquired in the outdoors would likely be <em>quite</em> useful in medicine.<a href="${"#fnref-11"}" class="${"footnote-backref"}">\u21A9</a></li></ol></div>`;
 });
-var __glob_5_1 = /* @__PURE__ */ Object.freeze({
+var __glob_6_1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _30_going_on_13,
@@ -68162,7 +68255,7 @@ var A_new_chapter = create_ssr_component(($$result, $$props, $$bindings, slots) 
 <p>One of the topics that I keep returning to in my writing is the notion that success does not necessarily equate to happiness (see <a href="${"/journal/faith#yearning"}">here</a> and <a href="${"/journal/30-going-on-13#skepticism-success-and-happiness"}">here</a>). A realist to a fault, I contend that becoming successful\u2014in my case, landing a good job in a desirable mountain town\u2014is no guarantee of lasting happiness. In the short term, Camp Revy has been great, and for the long term, living in Revy has illuminated many nuances between city and ski-town life that would otherwise have remained mysterious. This perspective alone is entirely irreplaceable, and I am ever so grateful for it.</p>
 <p>Moving to Revy has many parallels to the summer camps of my youth: being close to nature and outdoor fun, making lots of new friends, and\u2014given that I almost exclusively attended Bible camps as a kid\u2014the faith component is a strong analogue as well. Expectedly, there are upsides and downsides to living in a mountain town like Revelstoke, and the question necessarily becomes a matter of individual preference: do the pros exceed the cons of living here according to your specific priorities? And even if they do, it is important to keep in mind that the grass is not always greener on the other or unknown side. Overall, though, the grass is pretty green here\u2014which makes sense, given how much it rains.</p>`;
 });
-var __glob_5_2 = /* @__PURE__ */ Object.freeze({
+var __glob_6_2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": A_new_chapter,
@@ -68239,7 +68332,7 @@ var Adventures_in_low_end_pc_gaming = create_ssr_component(($$result, $$props, $
 <p>Projects like this are fun diversions that do not need to cost much money\u2014a great way to keep occupied until we can get outside again.</p>
 <p><strong>UPDATE May 5, 2020</strong>: I sold my GeForce GTX 670 for $50, bringing the total upgrade cost to an even $100.</p>`;
 });
-var __glob_5_3 = /* @__PURE__ */ Object.freeze({
+var __glob_6_3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Adventures_in_low_end_pc_gaming,
@@ -68265,7 +68358,7 @@ var Copyme = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <h2 id="${"heading-two"}">Heading Two</h2>
 <p>Use Heading Twos throughout the body. The Table of Contents will be generated when three or more Heading Twos are used.</p>`;
 });
-var __glob_5_4 = /* @__PURE__ */ Object.freeze({
+var __glob_6_4 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Copyme,
@@ -68692,7 +68785,7 @@ August 2017</p>
 <li><em>Who Moved the Stone?</em> by Frank Morison</li>
 <li><em>The Real Face of Atheism</em> by Ravi Zacharias</li></ul>`;
 });
-var __glob_5_5 = /* @__PURE__ */ Object.freeze({
+var __glob_6_5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Faith,
@@ -68731,13 +68824,13 @@ Who could hang a name on you? (I did, for the last 7.5 years)<br>
 When you change with every new day (usually by depreciating)<br>
 Still I\u2019m gonna miss you.</p>`;
 });
-var __glob_5_6 = /* @__PURE__ */ Object.freeze({
+var __glob_6_6 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Goodbye_ruby_subie,
   metadata: metadata$d
 });
-var css$2 = {
+var css$5 = {
   code: "figcaption.svelte-8kto20,figcaption a{color:var(--medium-grey)}figcaption.svelte-8kto20{font-size:0.9em;margin-top:var(--s-2);text-align:center}",
   map: '{"version":3,"file":"Caption.svelte","sources":["Caption.svelte"],"sourcesContent":["<script>\\n    export let text\\n<\/script>\\n\\n<figure>\\n    <slot />\\n    <figcaption>\\n        {@html text}\\n    </figcaption>\\n</figure>\\n\\n<style>\\n    figcaption,\\n    :global(figcaption a) {\\n        color: var(--medium-grey);\\n    }\\n    figcaption {\\n        font-size: 0.9em;\\n        margin-top: var(--s-2);\\n        text-align: center;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAYI,wBAAU,CACF,YAAY,AAAE,CAAC,AACnB,KAAK,CAAE,IAAI,aAAa,CAAC,AAC7B,CAAC,AACD,UAAU,cAAC,CAAC,AACR,SAAS,CAAE,KAAK,CAChB,UAAU,CAAE,IAAI,KAAK,CAAC,CACtB,UAAU,CAAE,MAAM,AACtB,CAAC"}'
 };
@@ -68745,7 +68838,7 @@ var Caption = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { text } = $$props;
   if ($$props.text === void 0 && $$bindings.text && text !== void 0)
     $$bindings.text(text);
-  $$result.css.add(css$2);
+  $$result.css.add(css$5);
   return `<figure>${slots.default ? slots.default({}) : ``}
     <figcaption class="${"svelte-8kto20"}"><!-- HTML_TAG_START -->${text}<!-- HTML_TAG_END --></figcaption>
 </figure>`;
@@ -68770,16 +68863,16 @@ var metadata$c = {
 var Http2_and_website_optimization = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<h2 id="${"table-of-contents"}">Table of Contents</h2>
 <ul><li><p><a href="${"#introduction"}">Introduction</a></p></li>
-<li><p><a href="${"#http-in-a-nutshell"}">HTTP in a\xA0nutshell</a></p></li>
-<li><p><a href="${"#evolution-of-the-protocol"}">Evolution of the\xA0protocol</a></p></li>
-<li><p><a href="${"#advantages-of-http2"}">Advantages of\xA0HTTP/2</a></p>
+<li><p><a href="${"#http-in-anutshell"}">HTTP in a\xA0nutshell</a></p></li>
+<li><p><a href="${"#evolution-of-theprotocol"}">Evolution of the\xA0protocol</a></p></li>
+<li><p><a href="${"#advantages-ofhttp2"}">Advantages of\xA0HTTP/2</a></p>
 <ul><li><a href="${"#binary"}">Binary</a></li>
 <li><a href="${"#request-and-response-multiplexing"}">Request and response multiplexing</a></li>
 <li><a href="${"#stream-prioritization"}">Stream prioritization</a></li>
 <li><a href="${"#http-header-compression"}">HTTP header compression</a></li>
 <li><a href="${"#server-push"}">Server push</a></li></ul></li>
 <li><p><a href="${"#http2-and-site-optimization"}">HTTP/2 and site optimization</a></p></li>
-<li><p><a href="${"#whats-next-http3"}">What\u2019s next:\xA0HTTP/3</a></p></li>
+<li><p><a href="${"#whats-nexthttp3"}">What\u2019s next:\xA0HTTP/3</a></p></li>
 <li><p><a href="${"#final-words"}">Final words</a></p></li>
 <li><p><a href="${"#references"}">References</a></p></li></ul>
 <h2 id="${"introduction"}">Introduction</h2>
@@ -68788,7 +68881,7 @@ var Http2_and_website_optimization = create_ssr_component(($$result, $$props, $$
 <p>Fast-forward a decade and the HTTP protocol has undergone a major revision to HTTP/2. HTTP/2 addressed several issues with HTTP/1.1 and aimed to enhance overall performance, simplicity, and robustness of the protocol. As for HTTP requests, concatenating files to minimize total HTTP requests <a href="${"https://yoast.com/performance-optimization-http2/"}" rel="${"nofollow"}">may no longer be</a> considered the best practice.</p>
 <p>This article will examine the history of the HTTP protocol to provide context for the updates in HTTP/2 and shed light on how these improvements may be leveraged to optimize page-loading times of websites.</p>
 <p>(While not the topic of this article, I still find that there is predominantly a lack of optimization among websites today, with auto-playing videos, gigantic images, annoying popovers, and mobile-draining JavaScript, to say nothing of invasive tracking scripts. HTTP/2 is intended to increase performance over HTTP/1.1, but any performance gains realized by this upgrade can quickly be negated by poor page design.)</p>
-<h2 id="${"http-in-a-nutshell"}">HTTP in a\xA0nutshell</h2>
+<h2 id="${"http-in-anutshell"}">HTTP in a\xA0nutshell</h2>
 <p>Hypertext Transfer Protocol (HTTP) is a fundamental component of how the internet operates. When you visit a website, say <a href="${"http://example.com/"}" rel="${"nofollow"}">http://example.com</a>, in your browser (Google Chrome, Safari, Microsoft Edge, Firefox, Opera, etc.), your browser sends an HTTP request that gets routed to the server hosting <a href="${"http://example.com/"}" rel="${"nofollow"}">example.com</a>. This HTTP request will look like the following (all of this happens behind the scenes to you as a user):</p>
 <pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">GET / HTTP/1.1
 Host: example.com
@@ -68823,10 +68916,10 @@ Content-Length: 606
 &lt;!-- ... html continues ... --&gt;</code>`}<!-- HTML_TAG_END --></pre>
 <p>From here, we see that an HTTP/1.1 response has been sent with the status code of 200 (OK). The HTML code that renders this web page in your browser is also sent. (See <a href="${"https://http.cat/"}" rel="${"nofollow"}">https://http.cat/</a> for a fun representation of the various HTTP status codes.) This is the basic premise of HTTP: a browser (or client) sends an HTTP request to a server, and the server responds in turn with an HTTP response.</p>
 <p>Diving a bit deeper, HTTP runs over a TCP/IP connection, a set of network transport protocols for machines to communicate with each other (in our case, your web browser and the server). This gets into networking, which is beyond the scope of this article, but the important point here is to appreciate that <em>how</em> HTTP interacts with TCP can dictate page-loading performance. For example, HTTP/1.1 brought the vital advancement over HTTP/1.0 of maintaining the client-host connection via a request-header \u2018keepalive\u2019 flag, wherein subsequent client requests could recycle an existing TCP connection to the server for improved network efficiency (notably, each request had to wait for any previous requests to finish). For a good primer on this, see <em>Chua Hock-Chuan\u2019s</em> <a href="${"https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html"}" rel="${"nofollow"}">HTTP (HyperText Transfer Protocol)</a>. Such an improvement was prompted by the drive for increased performance, a theme we see repeatedly throughout the history of the HTTP protocol.</p>
-<h2 id="${"evolution-of-the-protocol"}">Evolution of the\xA0protocol</h2>
+<h2 id="${"evolution-of-theprotocol"}">Evolution of the\xA0protocol</h2>
 <p>Following the early days of HTTP/0.9 and HTTP/1.0 in the early-to-mid 1990s, HTTP/1.1 became an official standard around 1999 and achieved widespread adoption. It included some important performance optimizations over its predecessors, such as the aforementioned \u2018keepalive\u2019 connections.</p>
 <p>After many years of global use, performance limits in HTTP/1.1 were being tested as both users and developers came to expect near-instantaneous response times for websites. In early 2012, the HTTPbis working group\u200A\u2014\u200Athe <a href="${"https://www.ietf.org/"}" rel="${"nofollow"}">Internet Engineering Task Force</a>\u2019s <a href="${"https://httpwg.org/"}" rel="${"nofollow"}">HTTP Working Group</a>, a consortium of various HTTP implementers, users, and experts\u200A\u2014\u200Aannounced the new HTTP/2 initiative. (For more detail, read <em>Ilya Grigorik\u2019s</em> <a href="${"https://hpbn.co/brief-history-of-http/"}" rel="${"nofollow"}">Brief History of HTTP</a>.) HTTP/2 provided many improvements over HTTP/1.1, which we will now explore.</p>
-<h2 id="${"advantages-of-http2"}">Advantages of\xA0HTTP/2</h2>
+<h2 id="${"advantages-ofhttp2"}">Advantages of\xA0HTTP/2</h2>
 <p>HTTP/2\u2019s main advantage over HTTP/1.1 is performance. Akamai made a <a href="${"https://http2.akamai.com/demo"}" rel="${"nofollow"}">clever demo</a> illustrating HTTP/2\u2019s <strong>up to 2x</strong> speed increase:</p>
 ${validate_component(Caption, "Caption").$$render($$result, {
     text: "Akamai demo: up to 2x speed increase in HTTP/2."
@@ -68861,7 +68954,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <li>Stop inlining assets. Inlining assets is the practice of embedding stylesheets and scripts directly into an HTML page to reduce total HTTP requests. Again, this issue has been largely resolved by HTTP/2 multiplexing.</li></ul>
 <p><a href="${"https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/edit#slide=id.p19"}" rel="${"nofollow"}">HTTP/2 is here, let\u2019s optimize!</a>, a slideshow by <em>Ilya Grigorik</em>, gives a great visual overview of these HTTP/2 optimization strategies.</p>
 <p>Certain optimization techniques intended for HTTP/1.1 are still considered good practice: minimize Domain Name System (DNS) lookups, use Content Delivery Networks (CDNs), compress assets during transfer, leverage browser caching, and minimize asset filesizes. <a href="${"https://blog.cloudflare.com/http-2-for-web-developers/"}" rel="${"nofollow"}">HTTP/2 For Web Developers</a>, by <em>Ryan Hodson,</em> goes into more detail on these techniques.</p>
-<h2 id="${"whats-next-http3"}">What\u2019s next:\xA0HTTP/3</h2>
+<h2 id="${"whats-nexthttp3"}">What\u2019s next:\xA0HTTP/3</h2>
 <p>HTTP/3, previously known as HTTP-over-QUIC, is the next major revision to the HTTP protocol and aims to further reduce client-server latency and page-load times. It accomplishes this by forgoing the familiar TCP network transport layer for the newer QUIC (Quick UDP Internet Connections) transport layer. QUIC is already being tested on certain websites such as <a href="${"https://www.youtube.com/"}" rel="${"nofollow"}">YouTube</a>. For more information on this upcoming standard, see <em>Tonino Jankov\u2019s</em> <a href="${"https://kinsta.com/blog/http3/"}" rel="${"nofollow"}">What Is HTTP/3\u200A\u2014\u200ALowdown on the Fast New UDP-Based Protocol</a>.</p>
 ${validate_component(Caption, "Caption").$$render($$result, {
     text: "YouTube network requests in Chrome Developer Tools. Note the \u201Chttp/2+quic/46\u201D protocol corresponding to\xA0HTTP/3."
@@ -68879,7 +68972,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <li><a href="${"http://engineering.khanacademy.org/posts/js-packaging-http2.htm"}" rel="${"nofollow"}">Forgo JS packaging? Not so fast</a>, <em>Craig Silverstein.</em></li>
 <li><a href="${"https://blog.newrelic.com/engineering/http2-best-practices-web-performance/"}" rel="${"nofollow"}">How HTTP/2 Is Changing Web Performance Best Practices</a>, <em>Clay Smith</em>.</li></ul>`;
 });
-var __glob_5_7 = /* @__PURE__ */ Object.freeze({
+var __glob_6_7 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Http2_and_website_optimization,
@@ -68893,9 +68986,9 @@ var metadata$b = {
   "category": "Outdoors",
   "readingTime": {
     "text": "19 min read",
-    "minutes": 18.295,
-    "time": 1097700,
-    "words": 3659
+    "minutes": 18.27,
+    "time": 1096200,
+    "words": 3654
   },
   "slug": "human-triggered-avalanches"
 };
@@ -68911,7 +69004,7 @@ In six years and over 150 days of backcountry skiing, I triggered my first avala
 <p>Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, like an inverted beetle. I distinctly remember trying to sense my velocity and if it was multiplying. Fortunately, I came to a stop, unburied, where the slope-angle relaxed a few meters down.</p>
 <p>Unharmed, I righted myself and regrouped with my partners. My boots had filled with snow between the plastic shell and inner liners, which I cleared while waiting for my heart rate to settle. At my high point in the gulley, the avalanche crown was perhaps two feet deep at worst, tapering as it extended horizontally a few meters in each direction. Wind effect in the gully had created at least one buried weak layer in the snowpack, which the outer wind slab had slid on once my boot-packing had compromised its structural integrity.</p>
 <p><img src="${"cirque_south_ridge.jpeg"}" alt="${"Looking down the summit ridge post-release. Note the chunks of snow to the left of the skier."}"><em>Looking down the summit ridge post-release. Note the chunks of snow to the left of the skier.</em></p>
-<p>With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue attempting our objective, which we completed without further incident. (<a href="${"https://russellmcwhae.ca/photos/Cirque-Peak-North-Couloir-February-2019"}" rel="${"nofollow"}">More photos from the day</a>.) There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn\u2019t strictly necessary as the North Couloir is relatively low-angle, though it makes descending the upper rocky section more palatable.</p>
+<p>With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue attempting our objective, which we completed without further incident. There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn\u2019t strictly necessary as the North Couloir is relatively low-angle, though it makes descending the upper rocky section more palatable.</p>
 <hr>
 <p>My hazard assessment had been fairly accurate. Had I much more momentum when the wind-pocket broke, I could have continued sliding beyond the low-angle concavity of the ridge and over the next roll. The low volume of snow\u2014no more than a <a href="${"https://www.avalanche.ca/tutorial/avalanche-formation/avalanche-size-and-impact"}" rel="${"nofollow"}">size one</a> (relatively harmless to people)\u2014had certainly been considered in our decision to boot up the gully (and not turn around). Wind slabs were the number-one problem in the <a href="${"https://avalanche.pc.gc.ca/bulletin-eng.aspx?r=1&d=2019-02-23"}" rel="${"nofollow"}">daily bulletin</a> and were thus on our radar.</p>
 <p>With the anticipated, benign avalanche, and a successful completion of our objective, as well as my long history of safe days in the backcountry, it is indeed tempting to think that I am quite proficient as risk management. There is a serious trap with this way of thinking, however.</p>
@@ -68971,7 +69064,7 @@ In six years and over 150 days of backcountry skiing, I triggered my first avala
 <p>Barry Blanchard nonchalant: <a href="${"https://gripped.com/profiles/barry-blanchards-awesome-alpine-album/"}" rel="${"nofollow"}">https://gripped.com/profiles/barry-blanchards-awesome-alpine-album/</a></p>
 <blockquote><p>\u201CSLAB! SLAB! SLAB!\u201D Steve bellowed in and ascending scale of volume. I looked up to see the small carpet of windslab glide from its 10 centimeter by 10 m crown. It chequer-boarded into one foot by one foot squares that vibrated into white dust as they accelerated. The avalanche whispered by 5 m to my left. \u201CIf you must kick off slabs Steve-O, better that they are small ones.\u201D I said.</p></blockquote>`;
 });
-var __glob_5_8 = /* @__PURE__ */ Object.freeze({
+var __glob_6_8 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Human_triggered_avalanches,
@@ -69038,7 +69131,7 @@ Ski guide skied enough powder for the rest of my life, start family, spent enoug
 <h2 id="${"fb-intro"}">Fb intro</h2>
 <p>Essay time. Here is my latest piece, \u201CLogical Conclusions\u201D: (link). This is another topic that is near and dear to my heart and has been floating around my head for the last number of months until the pen (so to speak) finally got put to paper. Enjoy!</p>`;
 });
-var __glob_5_9 = /* @__PURE__ */ Object.freeze({
+var __glob_6_9 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Logical_conclusions,
@@ -69082,7 +69175,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <p>Furthermore, in August 2019, Koodo changed automatic monthly top-ups to charge only the amount owed, not the full fixed-plan monthly cost of $15. As such, my August phone bill came to $7.88 thanks to the accumulation of the $1.50 credits of the automatic top-ups. Under eight dollars!</p>
 <p>As time goes on, my monthly phone bill will asymptotically approach $14.18/month (assuming no increases in the minimum base-plan price). There is zero reluctance on my part to pay such a nominal fee each billing period.</p>
 <p>So, how about data? Data is the most significant contributor to phone-plan costs. Thus, minimizing data usage is the key to a lower phone bill. Chances are, you likely use much more data than you need and are paying far too much for it.</p>
-<h2 id="${"but-i-need-lots-of-data"}">But I Need Lots of\xA0Data!</h2>
+<h2 id="${"but-i-need-lots-ofdata"}">But I Need Lots of\xA0Data!</h2>
 <p>No, you don\u2019t.</p>
 <p>In my experience, the most egregious offenders of mobile data use are music- and video-streaming apps, navigation apps (Google Maps, Apple Maps, etc.), social networking apps, and messaging apps (think iMessage attachments). Monitor your data usage on iOS in Settings &gt; Cellular and manually disable cellular data for apps likely to accidentally chew through it (my current list of data-blocked apps includes the App Store, Books, Instagram, Music, Podcasts, and Speedtest). App Store updates should undoubtedly be limited to WiFi. With a bit of planning, you can likely chop your data usage to a fraction of its current amount.</p>
 <p>First, and this should be obvious, take advantage of free WiFi. At home or school/work, you can likely get WiFi access. Prefer this over burning through your data. Dodgy WiFi? A VPN is probably cheaper than mobile data.</p>
@@ -69109,7 +69202,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <h2 id="${"references"}">References</h2>
 <ul><li>Postman, Neil. <em>Amusing Ourselves to Death: Public Discourse in the Age of Show Business</em>. New York, N.Y., U.S.A.: Penguin Books, 2006.</li></ul>`;
 });
-var __glob_5_10 = /* @__PURE__ */ Object.freeze({
+var __glob_6_10 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Minimize_cell_phone,
@@ -69172,7 +69265,7 @@ ${validate_component(ThemeSwitcher, "ThemeSwitcher").$$render($$result, {}, {}, 
 <h2 id="${"conclusion"}">Conclusion</h2>
 <p>This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I\u2019ll echo the consensus that seems to be developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its <a href="${"https://github.com/rmcwhae/russellmcwhae.ca"}" rel="${"nofollow"}">Github repository</a>.</p>`;
 });
-var __glob_5_11 = /* @__PURE__ */ Object.freeze({
+var __glob_6_11 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": New_website,
@@ -69201,16 +69294,16 @@ var Ruby_on_rails_in_2019 = create_ssr_component(($$result, $$props, $$bindings,
   return `<img${add_attribute("srcset", Logo, 0)} type="${"image/webp"}" alt="${"Ruby on Rails"}">
 <h2 id="${"table-of-contents"}">Table of Contents</h2>
 <ul><li><a href="${"#introduction"}">Introduction</a></li>
-<li><a href="${"#a-brief-history-of-ruby-on-rails"}">A brief history of Ruby on\xA0Rails</a></li>
-<li><a href="${"#the-rails-way"}">The Rails\xA0way</a></li>
-<li><a href="${"#rails-developers-in-2019"}">Rails developers in\xA02019</a></li>
+<li><a href="${"#a-brief-history-of-ruby-onrails"}">A brief history of Ruby on\xA0Rails</a></li>
+<li><a href="${"#the-railsway"}">The Rails\xA0way</a></li>
+<li><a href="${"#rails-developers-in2019"}">Rails developers in\xA02019</a></li>
 <li><a href="${"#final-words"}">Final words</a></li>
 <li><a href="${"#references"}">References</a></li></ul>
 <h2 id="${"introduction"}">Introduction</h2>
 <p>Back-end web developers have an abundant\u200A\u2014\u200Aperhaps overwhelming\u200A\u2014\u200Aselection of server-side frameworks to choose from in 2019: <a href="${"https://expressjs.com/"}" rel="${"nofollow"}">Express</a> on <a href="${"https://nodejs.org/en/"}" rel="${"nofollow"}">Node.js</a>; <a href="${"https://www.djangoproject.com/"}" rel="${"nofollow"}">Django</a> on <a href="${"https://www.python.org/"}" rel="${"nofollow"}">Python</a>; <a href="${"https://rubyonrails.org/"}" rel="${"nofollow"}">Ruby on Rails</a>; <a href="${"https://laravel.com/"}" rel="${"nofollow"}">Laravel</a>, <a href="${"https://codeigniter.com/"}" rel="${"nofollow"}">CodeIgniter</a>, or <a href="${"https://symfony.com/"}" rel="${"nofollow"}">Symfony</a> on <a href="${"https://www.php.net/"}" rel="${"nofollow"}">PHP</a>; and <a href="${"https://spring.io/"}" rel="${"nofollow"}">Spring</a> on <a href="${"https://www.java.com"}" rel="${"nofollow"}">Java</a>; among many more. Such server-side frameworks are intended to accelerate the creation of web applications, usually by providing helper libraries that minimize the coding required in development.</p>
 <p>Interestingly, Ruby on Rails developers <a href="${"https://insights.stackoverflow.com/survey/2019#top-paying-technologies"}" rel="${"nofollow"}">often rank</a> among the top earners of web developers, despite the relatively low overall popularity of Rails servers. Rails is open source\u200A\u2014\u200Aas is the much <a href="${"https://www.similartech.com/compare/php-vs-ruby-on-rails"}" rel="${"nofollow"}">more popular</a> PHP\u200A\u2014\u200Ayet prides itself on a <a href="${"https://rubyonrails.org/doctrine/"}" rel="${"nofollow"}">unique doctrine</a> that appears to attract fastidious developers.</p>
 <p>As a budding developer with some basic PHP and Node.js experience, I became intrigued by Ruby on Rails and wanted to do some research into this <em>gem</em> of a programming language. This article presents my findings on the history of Ruby on Rails, comments on its unique features, and discusses its relevance in 2019 and beyond, including in the job market.</p>
-<h2 id="${"a-brief-history-of-ruby-on-rails"}">A brief history of Ruby on\xA0Rails</h2>
+<h2 id="${"a-brief-history-of-ruby-onrails"}">A brief history of Ruby on\xA0Rails</h2>
 <p>Ruby on Rails was first developed in 2003 by Danish developer <a href="${"https://dhh.dk/"}" rel="${"nofollow"}">David Heinemeier Hansson</a>. He derived Rails from his work on the project management application <a href="${"https://basecamp.com/"}" rel="${"nofollow"}">Basecamp</a>. Rails was open-sourced in 2004, allowing additional developers to contribute to the project (remarkably, Hansson <a href="${"https://dhh.dk/#rails"}" rel="${"nofollow"}">continues</a> to lead development).</p>
 <p>Rails addressed many developer complaints with then-current versions of similar web programming languages (especially PHP), preferring elegant, minimally verbose code. A 2005 webcast by Hansson, \u201C<a href="${"https://www.youtube.com/watch?v=Gzj723LkRJY"}" rel="${"nofollow"}">How to build a blog engine in 15 minutes with Ruby on Rails</a>,\u201D famously demonstrated the minimal coding and effort required to get a basic blog running on Rails, enticing many developers away from competing server-side languages.</p>
 <p>Ruby on Rails reached one of its first big milestones with a <a href="${"https://weblog.rubyonrails.org/2005/12/13/rails-1-0-party-like-its-one-oh-oh/"}" rel="${"nofollow"}">1.0 release</a> in 2005. It gained further momentum in 2006 when Apple announced that Mac OS X Leopard <a href="${"https://weblog.rubyonrails.org/2006/8/7/ruby-on-rails-will-ship-with-os-x-10-5-leopard/"}" rel="${"nofollow"}">would ship</a> with it:</p>
@@ -69229,7 +69322,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
     default: () => `<img${add_attribute("srcset", Trends, 0)} type="${"image/webp"}" alt="${"Monthly popularity in Stack Overflow questions of select web-programming languages."}">`
   })}
 <p>As competing technologies gain popularity in the web-application space\u200A\u2014\u200ANode.js has experienced an especially meteoric rise to eminence\u200A\u2014\u200ARails is perhaps facing the same scenario that led to its inception: new languages can offer improved solutions (like cleaner code and less technical baggage) compared to existing, older languages. As Rails continues to age, it will have to tread the line between mature software (which has the advantages of stability, popularity, and familiarity) and legacy software (where support for older environments can stifle innovation and exacerbate cruft in its codebase).</p>
-<h2 id="${"the-rails-way"}">The Rails\xA0way</h2>
+<h2 id="${"the-railsway"}">The Rails\xA0way</h2>
 <p>As a developer, I found Ruby on Rails to have a near-perfect amount of server verbosity. For example, running a simple e-commerce site (from <a href="${"https://github.com/lighthouse-labs/jungle-rails"}" rel="${"nofollow"}">this repository</a>, part of the <a href="${"https://www.lighthouselabs.ca/"}" rel="${"nofollow"}">Lighthouse Labs</a> web development boot camp) results in a fantastically concise set of server console outputs, as demonstrated in the following two screenshots:</p>
 ${validate_component(Caption, "Caption").$$render($$result, { text: "Front-end view of Jungle\xA0Rails." }, {}, {
     default: () => `<img${add_attribute("srcset", JungleFrontEnd, 0)} type="${"image/webp"}" alt="${"Front-end view of Jungle\xA0Rails."}">`
@@ -69251,7 +69344,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <p>These are a few examples of Rails\u2019 strengths and weaknesses. While a more comprehensive comparison of Rails\u2019 technical differences to other web programming languages is beyond the scope of this article, appreciate that Rails excels in certain areas, yet trails in others. This is to say that Rails is <em>opinionated</em> and can be the best choice in certain\u200A\u2014\u200Abut not all\u200A\u2014\u200Asituations.</p>
 <p>In his article, \u201C<a href="${"https://naturaily.com/blog/who-gives-f-about-rails"}" rel="${"nofollow"}">Who gives a F*** about Rails in 2019?</a>\u201D Wojciech Mi\u015Bta recommends Rails for most regular web applications, such as e-commerce sites. He cautions against it for other use cases, however: simple sites where Rails would be overkill, massive sites where bleeding-edge performance is necessary (Twitter <a href="${"https://blog.twitter.com/engineering/en_us/a/2011/twitter-search-is-now-3x-faster.html"}" rel="${"nofollow"}">famously moved</a> from Rails to Java in 2011, resulting in 3x faster searching), and applications that integrate machine learning.</p>
 <p>One of Rails\u2019 main advantages is still the speed in which new web applications can be prototyped and developed\u200A\u2014\u200Aa spirit that has fortunately been maintained since Hansson\u2019s 2005 webcast, \u201C<a href="${"https://www.youtube.com/watch?v=Gzj723LkRJY"}" rel="${"nofollow"}">How to build a blog engine in 15 minutes with Ruby on Rails</a>.\u201D</p>
-<h2 id="${"rails-developers-in-2019"}">Rails developers in\xA02019</h2>
+<h2 id="${"rails-developers-in2019"}">Rails developers in\xA02019</h2>
 <p>The high salaries commanded by experienced Rails developers can perhaps be attributed to its adoption by certain monolith websites around the early 2010s (again, <a href="${"https://github.com/"}" rel="${"nofollow"}">Github</a>, <a href="${"https://shopify.com/"}" rel="${"nofollow"}">Shopify</a>, <a href="${"https://airbnb.com/"}" rel="${"nofollow"}">Airbnb</a>, <a href="${"https://squareup.com/"}" rel="${"nofollow"}">Square</a>, and <a href="${"https://www.kickstarter.com/"}" rel="${"nofollow"}">Kickstarter</a>, among others). Rails expertise is required to maintain these\u200A\u2014\u200Aand many other\u200A\u2014\u200Aexisting websites.</p>
 <p>Sampling the current job market (conducting a worldwide LinkedIn search for \u201Cnode.js developer,\u201D \u201CPHP developer,\u201D and \u201Crails developer\u201D) provides additional insight into this situation:</p>
 ${validate_component(Caption, "Caption").$$render($$result, {
@@ -69276,7 +69369,7 @@ ${validate_component(Caption, "Caption").$$render($$result, {
 <li>\u201C<a href="${"https://w3techs.com/technologies/history_overview/programming_language/ms/y"}" rel="${"nofollow"}">Historical yearly trends in the usage of server-side programming languages for websites</a>,\u201D W3Techs.</li>
 <li>\u201C<a href="${"https://en.wikipedia.org/wiki/Ruby_on_Rails"}" rel="${"nofollow"}">Ruby on Rails</a>,\u201D Wikipedia.</li></ul>`;
 });
-var __glob_5_12 = /* @__PURE__ */ Object.freeze({
+var __glob_6_12 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Ruby_on_rails_in_2019,
@@ -69287,7 +69380,7 @@ var metadata$6 = {
   "description": "Some backcountry skiing GoPro footage.",
   "author": "Russell McWhae",
   "date": "2017-02-11T00:00:00.000Z",
-  "draft": 0,
+  "draft": 1,
   "category": "Outdoors",
   "readingTime": {
     "text": "1 min read",
@@ -69304,7 +69397,7 @@ var Skiing = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <li>December 10, 2016: <a href="${"https://www.youtube.com/watch?v=JRc1m6UYrQM"}" rel="${"nofollow"}">Mount Jimmy Simpson Part 1</a> | <a href="${"https://www.youtube.com/watch?v=RbQJ2eqkd58"}" rel="${"nofollow"}">Part 2</a></li>
 <li>February 11, 2017: <a href="${"https://www.youtube.com/watch?v=3kpBHzbgQJg"}" rel="${"nofollow"}">Grizzly Shoulder, Rogers Pass</a>. Probably the best pow I have ever skied. Grizzly Shoulder is among the lowest-hanging fruit of backcountry ski terrain at Rogers Pass and as such it attracts its share of traffic and is tracked out for most of the winter. In this video, Grizzly Shoulder had been closed for three days due to a storm, and we were the second party to ski it upon re-opening.</li></ul>`;
 });
-var __glob_5_13 = /* @__PURE__ */ Object.freeze({
+var __glob_6_13 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Skiing,
@@ -69355,7 +69448,7 @@ var Snow_safety = create_ssr_component(($$result, $$props, $$bindings, slots) =>
 <p>Find the gaps in your knowledge, read up on them, practice new techniques and ideas in the field, then re-read what you studied and find other perspectives on these topics until they become familiar.</p>
 <p>I hope that this list is valuable to those anywhere along the ski-experience curve, from beginners to experts.</p>`;
 });
-var __glob_5_14 = /* @__PURE__ */ Object.freeze({
+var __glob_6_14 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Snow_safety,
@@ -69434,7 +69527,7 @@ ${validate_component(Caption, "Caption").$$render($$result, { text: "Display cab
 <p>The LG 27UD68-W is no longer available, though its price remained relatively constant over the 2+ years it was on sale\u2014about $550 CAD\u2014thus justifying my relatively early adoption (it\u2019s always regrettable when the price of new tech plummets immediately after you \u201Cinvest\u201D in it). The 27UD68-W has been superseded by the <a href="${"https://www.memoryexpress.com/Products/MX71916"}" rel="${"nofollow"}">27UK600-W</a>, with the only appreciable difference being that the newer model now has HDR 10 support. While the 27UK600-W lacks the crispness of 5K and high-gamut support (only sRGB vs. DCI-P3) of the LG UltraFine, it commands a modest price tag of only $500 CAD.</p>
 <p>I am still <em>very</em> happy using my 27UD68-W, and current 4K monitor equivalents like the 27UK600-W remain a budget-friendly way to get a high-DPI 27-inch display.</p>`;
 });
-var __glob_5_15 = /* @__PURE__ */ Object.freeze({
+var __glob_6_15 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": The_upgrade_to_4k,
@@ -69449,122 +69542,66 @@ var metadata$3 = {
   "category": "TODO",
   "readingTime": {
     "text": "1 min read",
-    "minutes": 0.37,
-    "time": 22200,
-    "words": 74
+    "minutes": 0.225,
+    "time": 13500,
+    "words": 45
   },
   "slug": "todo"
 };
 var Todo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<ul><li>Build <category>page for journal entries; journal hero images?</category></li>
-<li>Verify <code>photos/\\*</code> links in journal entries</li>
-<li>Update about with skills</li>
-<li>Book Reading list page (linked from about)</li>
-<li>Photos endpoint with dir listing, individual gallery view, name <code>img_DSC000-featured.jpg</code> as cover photo; lightbox; responsive images; refactor helpers</li>
-<li>Photos navigate by keypress</li>
-<li>Photo gallery breadcrumbs like on The Verge</li>
+  return `<h2 id="${"launch-checklist"}">Launch checklist</h2>
+<ul><li>Update \u201CThat New-Website Look\u201D</li>
 <li>Clean Adobe WebFonts once done</li>
 <li>SEO tags etc.</li>
 <li>Performance testing</li>
 <li>Publish date bug</li>
-<li>2016.russellmcwhae.ca, 2006.russellmcwhae.ca</li>
-<li>Submit for review?</li>
 <li>Projects page</li>
-<li>Debug color switcher in light mode\u2026</li>
-<li>Image caption border-bottom?</li>
-<li>Update repo readme</li>
-<li>Netlify adapter for deployment?</li>
-<li>Update \u201CThat New-Website Look\u201D</li></ul>`;
+<li>Debug color switcher (less WET code\u2026)</li>
+<li>Update repo readme</li></ul>
+<h2 id="${"later-ideas"}">Later Ideas</h2>
+<ul><li>Build <category>page for journal entries; journal hero images?</category></li>
+<li>Photos navigate by keypress</li>
+<li>Submit for review?</li>
+<li>2016.russellmcwhae.ca, 2006.russellmcwhae.ca</li>
+<li>Update about with skills</li>
+<li>Book Reading list page (linked from about)</li></ul>`;
 });
-var __glob_5_16 = /* @__PURE__ */ Object.freeze({
+var __glob_6_16 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Todo,
   metadata: metadata$3
 });
-var metadata$2 = {
-  "title": "Outdoor Videos",
-  "description": "Some of my favourite outdoor videos.",
-  "author": "Russell McWhae",
-  "date": "2019-02-27T00:00:00.000Z",
-  "draft": 0,
-  "category": "Outdoors",
-  "readingTime": {
-    "text": "1 min read",
-    "minutes": 0.68,
-    "time": 40800,
-    "words": 136
-  },
-  "slug": "videos"
-};
-var Videos = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<p>This is a collection of cool outdoor videos I have found over the years, updated occasionally.</p>
-<ul><li><a href="${"https://vimeo.com/266377015"}" rel="${"nofollow"}">DreamRide 3</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=1CR0QmCaMTs"}" rel="${"nofollow"}">Fabio Wibmer - Fabiolous Escape 2</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=bCeGBkURCDg"}" rel="${"nofollow"}">Sister Extreme</a> | <a href="${"https://www.youtube.com/watch?v=XRY7yeQ076c"}" rel="${"nofollow"}">Part 2</a> | <a href="${"https://www.youtube.com/watch?v=EJa3aNpDoqI"}" rel="${"nofollow"}">Part 3</a> | <a href="${"https://www.youtube.com/watch?v=JIS1bLnHQDQ"}" rel="${"nofollow"}">Part 4</a></li>
-<li><a href="${"https://vimeo.com/129270681"}" rel="${"nofollow"}">Our Theory of Human Motivation</a></li>
-<li><a href="${"https://vimeo.com/306300688"}" rel="${"nofollow"}">KINDRED</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=xCpowcXopKE"}" rel="${"nofollow"}">Will Gadd - MOVE</a></li>
-<li><a href="${"https://vimeo.com/32863936"}" rel="${"nofollow"}">JP Auclair Street Segment from All.I.Can.</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=tmaVb4iW1PI"}" rel="${"nofollow"}">Brett Bilon - Mt. Robson Kain Face July 14-15 2018 Solo Ascent</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=QUMHPnV8qz0"}" rel="${"nofollow"}">Houseman/Bullock - Slovak Direct, Denali</a></li>
-<li><a href="${"https://vimeo.com/72024058"}" rel="${"nofollow"}">Jeff Colvin, Reiner Thoni - Mount Robson Ski Mountaineering</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=w7Pye9f602s"}" rel="${"nofollow"}">A Dozen More Turns</a></li>
-<li><a href="${"https://rockandice.com/videos/climbing/searching-for-christmas-tree/"}" rel="${"nofollow"}">Searching for Christmas Tree (ice climbing in China)</a></li>
-<li><a href="${"https://vimeo.com/182007457"}" rel="${"nofollow"}">Iran: A Skier\u2019s Journey</a></li>
-<li><a href="${"http://www.laliste-film.com"}" rel="${"nofollow"}">La Liste</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=Dhfipv8LXRg"}" rel="${"nofollow"}">The Frenchy</a></li>
-<li><a href="${"https://www.climbing.com/videos/lunag-ri-david-lama-and-conrad-anker-walk-the-line/"}" rel="${"nofollow"}">Lunag Ri: David Lama and Conrad Anker Walk the Line</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=wy6sqxD_4ro"}" rel="${"nofollow"}">YETI Presents: Denali\u2019s Raven</a></li>
-<li><a href="${"https://youtu.be/WGZu5Lzgv1A"}" rel="${"nofollow"}">Risk\u2014the anatomy of chance and uncertainty: Grant Statham at TEDxCanmore</a></li>
-<li><a href="${"https://www.redbull.com/ca-en/beneath-the-ice"}" rel="${"nofollow"}">Beneath the Ice</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=yFXoRlEH--w"}" rel="${"nofollow"}">Aemmer Couloir</a></li>
-<li><a href="${"https://youtu.be/10uM6IU8S6U"}" rel="${"nofollow"}">Land Of Maybe</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=rFtiJifvOuo"}" rel="${"nofollow"}">Real Rock: An Urban Climbing Experience</a></li>
-<li><a href="${"https://www.redbull.com/int-en/tv/video/AP-1M1HYDRDN2111/the-rocky-mountains-traverse"}" rel="${"nofollow"}">The Rocky Mountains Traverse</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=-OBX25ix4eU"}" rel="${"nofollow"}">COLD</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=Y84ffAggTig"}" rel="${"nofollow"}">Distant Relatives - Sam Smoothy (New Zealand)</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=xWtQ8IJoKn0"}" rel="${"nofollow"}">Arc\u2019teryx - 35</a></li>
-<li><a href="${"https://vimeo.com/331791994"}" rel="${"nofollow"}">Can\u2019t Ski Vegas</a></li>
-<li><a href="${"https://www.youtube.com/watch?v=Hd5COZ655cQ"}" rel="${"nofollow"}">Children of the Columbia</a></li>
-<li><a href="${"https://youtu.be/QcOa5ca7oNs"}" rel="${"nofollow"}">Inclined</a></li></ul>
-<h2 id="${"my-videos"}">My Videos</h2>
-<p><a href="${"https://www.youtube.com/user/rmcwhae"}" rel="${"nofollow"}">rmcwhae on YouTube</a>. Also see <a href="${"/journal/skiing"}">Ski Videos</a>.</p>`;
-});
-var __glob_5_17 = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  "default": Videos,
-  metadata: metadata$2
-});
 var Date_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { date } = $$props;
   if ($$props.date === void 0 && $$bindings.date && date !== void 0)
     $$bindings.date(date);
-  return `<time>${escape2((0, import_date_fns.format)(new Date(date), "MMMM d, yyyy"))}</time>`;
+  return `<time>${escape((0, import_date_fns.format)(new Date(date), "MMMM d, yyyy"))}</time>`;
 });
-var css$1 = {
-  code: "h2.svelte-ug0rf0.svelte-ug0rf0{font-size:1.5rem;line-height:1.2em;margin:0}h2.svelte-ug0rf0 a.svelte-ug0rf0{text-decoration:none}.date.svelte-ug0rf0.svelte-ug0rf0{flex-basis:12rem;min-width:12rem}section.svelte-ug0rf0.svelte-ug0rf0:not(:first-of-type){padding-top:var(--s1);border-top:1px solid var(--light-grey)}section.svelte-ug0rf0.svelte-ug0rf0{margin-bottom:var(--s1);display:flex;align-items:baseline}p.svelte-ug0rf0.svelte-ug0rf0{margin:0}.archive.svelte-ug0rf0.svelte-ug0rf0{margin:0 auto}@media(max-width: 1023px){.archive.svelte-ug0rf0.svelte-ug0rf0{margin-top:var(--s2)}}@media(max-width: 767px){section.svelte-ug0rf0.svelte-ug0rf0{display:inherit}h2.svelte-ug0rf0.svelte-ug0rf0{font-size:1.25em}}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load() {\\n        const posts = Object.entries(\\n            import.meta.globEager('/content/journal/*.md')\\n        )\\n            .map(([, post]) => ({\\n                // frontmatter data\\n                ...post.metadata,\\n            }))\\n            .filter((post) => !post.draft)\\n            .sort((a, b) => (a.date < b.date ? 1 : -1))\\n\\n        return {\\n            props: {\\n                posts,\\n            },\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Date from '$lib/components/Date.svelte'\\n\\n    export let posts\\n<\/script>\\n\\n<!-- <p>\\n    Writing is my way of making sense of things, both by exploring subjects from\\n    many different angles, and by discussing the ideas of others who have\\n    wrestled with similar questions. I hope you\u2019ll join me for a glimpse into my\\n    head.\\n</p> -->\\n<div class=\\"archive\\">\\n    {#each posts as { slug, title, description, date, readingTime, category }}\\n        <section>\\n            <div class=\\"date sub\\">\\n                <Date {date} />\\n            </div>\\n            <div class=\\"title\\">\\n                <h2>\\n                    <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>\\n                </h2>\\n                {#if description}\\n                    <p>{description}</p>\\n                {/if}\\n                <div class=\\"sub\\">\\n                    <span>{category}</span>\\n                    &middot;\\n                    <span>{readingTime.text}</span>\\n                </div>\\n            </div>\\n        </section>\\n    {/each}\\n</div>\\n\\n<style>\\n    h2 {\\n        font-size: 1.5rem;\\n        line-height: 1.2em;\\n        margin: 0;\\n    }\\n    h2 a {\\n        text-decoration: none;\\n    }\\n    .date {\\n        flex-basis: 12rem;\\n        min-width: 12rem;\\n    }\\n    .title {\\n    }\\n    h2 a:hover {\\n        /* color: var(--blue); */\\n    }\\n    section:not(:first-of-type) {\\n        padding-top: var(--s1);\\n        border-top: 1px solid var(--light-grey);\\n    }\\n    section {\\n        margin-bottom: var(--s1);\\n        display: flex;\\n        align-items: baseline;\\n        /* padding-top: var(--s1); */\\n        /* border-top: 1px solid var(--light-grey); */\\n    }\\n    p {\\n        /* font-size: 1.2rem; */\\n        margin: 0;\\n    }\\n    .archive {\\n        /* max-width: 1200px; */\\n        margin: 0 auto;\\n        /* Define the element as a grid container */\\n        /* display: grid; */\\n        /* Auto-fit as many items on a row as possible without going under the min */\\n        /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */\\n        /* A little spacing between articles */\\n        /* grid-gap: var(--s2); */\\n    }\\n    @media (max-width: 1023px) {\\n        .archive {\\n            margin-top: var(--s2);\\n        }\\n    }\\n    @media (max-width: 767px) {\\n        section {\\n            display: inherit;\\n        }\\n        h2 {\\n            font-size: 1.25em;\\n        }\\n        /* section:first-of-type {\\n            padding-bottom: var(--s0);\\n        }\\n        section:not(:first-of-type) {\\n            padding: var(--s0) 0;\\n        } */\\n    }\\n</style>\\n"],"names":[],"mappings":"AAwDI,EAAE,4BAAC,CAAC,AACA,SAAS,CAAE,MAAM,CACjB,WAAW,CAAE,KAAK,CAClB,MAAM,CAAE,CAAC,AACb,CAAC,AACD,gBAAE,CAAC,CAAC,cAAC,CAAC,AACF,eAAe,CAAE,IAAI,AACzB,CAAC,AACD,KAAK,4BAAC,CAAC,AACH,UAAU,CAAE,KAAK,CACjB,SAAS,CAAE,KAAK,AACpB,CAAC,AAMD,mCAAO,KAAK,cAAc,CAAC,AAAC,CAAC,AACzB,WAAW,CAAE,IAAI,IAAI,CAAC,CACtB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,AAC3C,CAAC,AACD,OAAO,4BAAC,CAAC,AACL,aAAa,CAAE,IAAI,IAAI,CAAC,CACxB,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,QAAQ,AAGzB,CAAC,AACD,CAAC,4BAAC,CAAC,AAEC,MAAM,CAAE,CAAC,AACb,CAAC,AACD,QAAQ,4BAAC,CAAC,AAEN,MAAM,CAAE,CAAC,CAAC,IAAI,AAOlB,CAAC,AACD,MAAM,AAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACxB,QAAQ,4BAAC,CAAC,AACN,UAAU,CAAE,IAAI,IAAI,CAAC,AACzB,CAAC,AACL,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACvB,OAAO,4BAAC,CAAC,AACL,OAAO,CAAE,OAAO,AACpB,CAAC,AACD,EAAE,4BAAC,CAAC,AACA,SAAS,CAAE,MAAM,AACrB,CAAC,AAOL,CAAC"}`
+var css$4 = {
+  code: "h2.svelte-3l1h3k.svelte-3l1h3k{font-size:1.5rem;line-height:1.2em;margin:0}h2.svelte-3l1h3k a.svelte-3l1h3k{text-decoration:none}.date.svelte-3l1h3k.svelte-3l1h3k{flex-basis:12rem;min-width:12rem}section.svelte-3l1h3k.svelte-3l1h3k:not(:first-of-type){padding-top:var(--s1);border-top:1px solid var(--light-grey)}section.svelte-3l1h3k.svelte-3l1h3k{margin-bottom:var(--s1);display:flex;align-items:baseline}p.svelte-3l1h3k.svelte-3l1h3k{margin:0}.archive.svelte-3l1h3k.svelte-3l1h3k{margin:var(--s1) auto 0}@media(max-width: 1023px){.archive.svelte-3l1h3k.svelte-3l1h3k{margin-top:var(--s2)}}@media(max-width: 767px){section.svelte-3l1h3k.svelte-3l1h3k{display:inherit}h2.svelte-3l1h3k.svelte-3l1h3k{font-size:1.25em}}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load() {\\n        const posts = Object.entries(\\n            import.meta.globEager('/content/journal/*.md')\\n        )\\n            .map(([, post]) => ({\\n                // frontmatter data\\n                ...post.metadata,\\n            }))\\n            .filter((post) => !post.draft)\\n            .sort((a, b) => (a.date < b.date ? 1 : -1))\\n\\n        return {\\n            props: {\\n                posts,\\n            },\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Date from '$lib/components/Date.svelte'\\n    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'\\n\\n    const items = [{ text: 'Journal' }]\\n\\n    export let posts\\n<\/script>\\n\\n<!-- <p>\\n    Writing is my way of making sense of things, both by exploring subjects from\\n    many different angles, and by discussing the ideas of others who have\\n    wrestled with similar questions. I hope you\u2019ll join me for a glimpse into my\\n    head.\\n</p> -->\\n<Breadcrumbs {items} />\\n<div class=\\"archive\\">\\n    {#each posts as { slug, title, description, date, readingTime, category }}\\n        <section>\\n            <div class=\\"date sub\\">\\n                <Date {date} />\\n            </div>\\n            <div class=\\"title\\">\\n                <h2>\\n                    <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>\\n                </h2>\\n                {#if description}\\n                    <p>{description}</p>\\n                {/if}\\n                <div class=\\"sub\\">\\n                    <span>{category}</span>\\n                    &middot;\\n                    <span>{readingTime.text}</span>\\n                </div>\\n            </div>\\n        </section>\\n    {/each}\\n</div>\\n\\n<style>\\n    h2 {\\n        font-size: 1.5rem;\\n        line-height: 1.2em;\\n        margin: 0;\\n    }\\n    h2 a {\\n        text-decoration: none;\\n    }\\n    .date {\\n        flex-basis: 12rem;\\n        min-width: 12rem;\\n    }\\n    .title {\\n    }\\n    h2 a:hover {\\n        /* color: var(--blue); */\\n    }\\n    section:not(:first-of-type) {\\n        padding-top: var(--s1);\\n        border-top: 1px solid var(--light-grey);\\n    }\\n    section {\\n        margin-bottom: var(--s1);\\n        display: flex;\\n        align-items: baseline;\\n        /* padding-top: var(--s1); */\\n        /* border-top: 1px solid var(--light-grey); */\\n    }\\n    p {\\n        /* font-size: 1.2rem; */\\n        margin: 0;\\n    }\\n    .archive {\\n        /* max-width: 1200px; */\\n        margin: var(--s1) auto 0;\\n        /* Define the element as a grid container */\\n        /* display: grid; */\\n        /* Auto-fit as many items on a row as possible without going under the min */\\n        /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */\\n        /* A little spacing between articles */\\n        /* grid-gap: var(--s2); */\\n    }\\n    @media (max-width: 1023px) {\\n        .archive {\\n            margin-top: var(--s2);\\n        }\\n    }\\n    @media (max-width: 767px) {\\n        section {\\n            display: inherit;\\n        }\\n        h2 {\\n            font-size: 1.25em;\\n        }\\n        /* section:first-of-type {\\n            padding-bottom: var(--s0);\\n        }\\n        section:not(:first-of-type) {\\n            padding: var(--s0) 0;\\n        } */\\n    }\\n</style>\\n"],"names":[],"mappings":"AA4DI,EAAE,4BAAC,CAAC,AACA,SAAS,CAAE,MAAM,CACjB,WAAW,CAAE,KAAK,CAClB,MAAM,CAAE,CAAC,AACb,CAAC,AACD,gBAAE,CAAC,CAAC,cAAC,CAAC,AACF,eAAe,CAAE,IAAI,AACzB,CAAC,AACD,KAAK,4BAAC,CAAC,AACH,UAAU,CAAE,KAAK,CACjB,SAAS,CAAE,KAAK,AACpB,CAAC,AAMD,mCAAO,KAAK,cAAc,CAAC,AAAC,CAAC,AACzB,WAAW,CAAE,IAAI,IAAI,CAAC,CACtB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,AAC3C,CAAC,AACD,OAAO,4BAAC,CAAC,AACL,aAAa,CAAE,IAAI,IAAI,CAAC,CACxB,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,QAAQ,AAGzB,CAAC,AACD,CAAC,4BAAC,CAAC,AAEC,MAAM,CAAE,CAAC,AACb,CAAC,AACD,QAAQ,4BAAC,CAAC,AAEN,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,IAAI,CAAC,CAAC,AAO5B,CAAC,AACD,MAAM,AAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACxB,QAAQ,4BAAC,CAAC,AACN,UAAU,CAAE,IAAI,IAAI,CAAC,AACzB,CAAC,AACL,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACvB,OAAO,4BAAC,CAAC,AACL,OAAO,CAAE,OAAO,AACpB,CAAC,AACD,EAAE,4BAAC,CAAC,AACA,SAAS,CAAE,MAAM,AACrB,CAAC,AAOL,CAAC"}`
 };
 async function load$3() {
-  const posts = Object.entries({ "/content/journal/11-months-later.md": __glob_5_0, "/content/journal/30-going-on-13.md": __glob_5_1, "/content/journal/a-new-chapter.md": __glob_5_2, "/content/journal/adventures-in-low-end-pc-gaming.md": __glob_5_3, "/content/journal/copyme.md": __glob_5_4, "/content/journal/faith.md": __glob_5_5, "/content/journal/goodbye-ruby-subie.md": __glob_5_6, "/content/journal/http2-and-website-optimization.md": __glob_5_7, "/content/journal/human-triggered-avalanches.md": __glob_5_8, "/content/journal/logical-conclusions.md": __glob_5_9, "/content/journal/minimize-cell-phone.md": __glob_5_10, "/content/journal/new-website.md": __glob_5_11, "/content/journal/ruby-on-rails-in-2019.md": __glob_5_12, "/content/journal/skiing.md": __glob_5_13, "/content/journal/snow-safety.md": __glob_5_14, "/content/journal/the-upgrade-to-4k.md": __glob_5_15, "/content/journal/todo.md": __glob_5_16, "/content/journal/videos.md": __glob_5_17 }).map(([, post]) => ({
+  const posts = Object.entries({ "/content/journal/11-months-later.md": __glob_6_0, "/content/journal/30-going-on-13.md": __glob_6_1, "/content/journal/a-new-chapter.md": __glob_6_2, "/content/journal/adventures-in-low-end-pc-gaming.md": __glob_6_3, "/content/journal/copyme.md": __glob_6_4, "/content/journal/faith.md": __glob_6_5, "/content/journal/goodbye-ruby-subie.md": __glob_6_6, "/content/journal/http2-and-website-optimization.md": __glob_6_7, "/content/journal/human-triggered-avalanches.md": __glob_6_8, "/content/journal/logical-conclusions.md": __glob_6_9, "/content/journal/minimize-cell-phone.md": __glob_6_10, "/content/journal/new-website.md": __glob_6_11, "/content/journal/ruby-on-rails-in-2019.md": __glob_6_12, "/content/journal/skiing.md": __glob_6_13, "/content/journal/snow-safety.md": __glob_6_14, "/content/journal/the-upgrade-to-4k.md": __glob_6_15, "/content/journal/todo.md": __glob_6_16 }).map(([, post]) => ({
     ...post.metadata
   })).filter((post) => !post.draft).sort((a, b) => a.date < b.date ? 1 : -1);
   return { props: { posts } };
 }
 var Journal = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  const items = [{ text: "Journal" }];
   let { posts } = $$props;
   if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
     $$bindings.posts(posts);
-  $$result.css.add(css$1);
+  $$result.css.add(css$4);
   return `
-<div class="${"archive svelte-ug0rf0"}">${each(posts, ({ slug, title, description, date, readingTime, category }) => `<section class="${"svelte-ug0rf0"}"><div class="${"date sub svelte-ug0rf0"}">${validate_component(Date_1, "Date").$$render($$result, { date }, {}, {})}</div>
-            <div class="${"title svelte-ug0rf0"}"><h2 class="${"svelte-ug0rf0"}"><a sveltekit:prefetch${add_attribute("href", "/journal/" + slug, 0)} class="${"svelte-ug0rf0"}">${escape2(title)}</a></h2>
-                ${description ? `<p class="${"svelte-ug0rf0"}">${escape2(description)}</p>` : ``}
-                <div class="${"sub"}"><span>${escape2(category)}</span>
+${validate_component(Breadcrumbs, "Breadcrumbs").$$render($$result, { items }, {}, {})}
+<div class="${"archive svelte-3l1h3k"}">${each(posts, ({ slug, title, description, date, readingTime, category }) => `<section class="${"svelte-3l1h3k"}"><div class="${"date sub svelte-3l1h3k"}">${validate_component(Date_1, "Date").$$render($$result, { date }, {}, {})}</div>
+            <div class="${"title svelte-3l1h3k"}"><h2 class="${"svelte-3l1h3k"}"><a sveltekit:prefetch${add_attribute("href", "/journal/" + slug, 0)} class="${"svelte-3l1h3k"}">${escape(title)}</a></h2>
+                ${description ? `<p class="${"svelte-3l1h3k"}">${escape(description)}</p>` : ``}
+                <div class="${"sub"}"><span>${escape(category)}</span>
                     \xB7
-                    <span>${escape2(readingTime.text)}</span>
+                    <span>${escape(readingTime.text)}</span>
                 </div></div>
         </section>`)}
 </div>`;
@@ -69581,12 +69618,12 @@ var LeftChevron = create_ssr_component(($$result, $$props, $$bindings, slots) =>
     <path d="${"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"}"></path>`
   })}`;
 });
-var css = {
-  code: "h1.svelte-16nob6s.svelte-16nob6s{margin:var(--s-4) 0}nav.svelte-16nob6s.svelte-16nob6s{display:flex;justify-content:space-between;margin-top:var(--s4);flex-wrap:wrap;padding-top:var(--s0);border-top:1px solid var(--light-grey)}nav.svelte-16nob6s a.svelte-16nob6s{color:var(--high-contrast-color)}a.svelte-16nob6s.svelte-16nob6s{text-decoration:none;vertical-align:middle}a.svelte-16nob6s.svelte-16nob6s:first-child{margin-right:var(--s0)}p.svelte-16nob6s.svelte-16nob6s{margin:0;line-height:1.2em;padding-top:var(--s-2)}@media screen and (min-width: 1023px){p.svelte-16nob6s.svelte-16nob6s{font-size:1.2em}}.right.svelte-16nob6s.svelte-16nob6s{text-align:right;margin-left:auto}",
-  map: `{"version":3,"file":"[slug].svelte","sources":["[slug].svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load({ page }) {\\n        const posts = Object.entries(\\n            import.meta.globEager('/content/journal/*.md')\\n        )\\n            .map(([, post]) => ({\\n                // frontmatter data\\n                ...post.metadata,\\n                // the processed Svelte component from the markdown file\\n                component: post.default,\\n            }))\\n            .filter((post) => !post.draft)\\n            .sort((a, b) => (a.date < b.date ? 1 : -1))\\n\\n        const { slug } = page.params\\n        const index = posts.findIndex((post) => slug === post.slug)\\n\\n        if (index === -1) {\\n            return {\\n                status: 404,\\n                error: new Error('Page not found'),\\n            }\\n        }\\n\\n        const {\\n            title,\\n            date,\\n            readingTime,\\n            component,\\n            description,\\n            category,\\n        } = posts[index]\\n        const next = posts[index - 1]\\n        const previous = posts[index + 1]\\n\\n        return {\\n            props: {\\n                title,\\n                date,\\n                category,\\n                readingTime,\\n                next,\\n                description,\\n                previous,\\n                component,\\n            },\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Date from '$lib/components/Date.svelte'\\n    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'\\n    import RightChevron from '$lib/components/icons/RightChevron.svelte'\\n    import { preventLastTwoWordWrap } from '$lib/utils/string'\\n\\n    export let title\\n    export let date\\n    export let category\\n    export let description\\n    export let readingTime\\n    export let component\\n    export let next\\n    export let previous\\n<\/script>\\n\\n<article class=\\"restricted-width\\">\\n    <header>\\n        <div class=\\"sub\\">\\n            <Date {date} />\\n            &middot;\\n            <span>{category}</span>\\n            &middot;\\n            <span class=\\"nowrap\\">{readingTime.words} words</span>\\n            &middot;\\n            <span class=\\"nowrap\\">{readingTime.text}</span>\\n        </div>\\n        <h1>{@html preventLastTwoWordWrap(title)}</h1>\\n        {#if description}\\n            <p>{@html preventLastTwoWordWrap(description)}</p>\\n        {/if}\\n        <!-- <div class=\\"box\\" /> -->\\n    </header>\\n    <svelte:component this={component} />\\n    <nav>\\n        {#if previous}\\n            <a href={'/journal/' + previous.slug}>\\n                <LeftChevron />\\n                {previous.title}</a\\n            >\\n        {:else}\\n            <div />\\n        {/if}\\n        {#if next}\\n            <a href={'/journal/' + next.slug} class=\\"right\\"\\n                >{next.title}\\n                <RightChevron />\\n            </a>\\n        {/if}\\n    </nav>\\n</article>\\n\\n<style>\\n    h1 {\\n        margin: var(--s-4) 0;\\n        /* margin-bottom: var(--s-3); */\\n    }\\n    nav {\\n        /* font-weight: 600; */\\n        display: flex;\\n        justify-content: space-between;\\n        margin-top: var(--s4);\\n        /* margin-bottom: var(--s3); */\\n        flex-wrap: wrap;\\n        padding-top: var(--s0);\\n        border-top: 1px solid var(--light-grey);\\n    }\\n    nav a {\\n        color: var(--high-contrast-color);\\n    }\\n    a {\\n        text-decoration: none;\\n        vertical-align: middle;\\n    }\\n    a:first-child {\\n        margin-right: var(--s0);\\n    }\\n    p {\\n        margin: 0;\\n        line-height: 1.2em;\\n        padding-top: var(--s-2);\\n    }\\n    @media screen and (min-width: 1023px) {\\n        p {\\n            font-size: 1.2em;\\n        }\\n    }\\n    .right {\\n        text-align: right;\\n        margin-left: auto;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAuGI,EAAE,8BAAC,CAAC,AACA,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,AAExB,CAAC,AACD,GAAG,8BAAC,CAAC,AAED,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,UAAU,CAAE,IAAI,IAAI,CAAC,CAErB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,IAAI,CAAC,CACtB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,AAC3C,CAAC,AACD,kBAAG,CAAC,CAAC,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,qBAAqB,CAAC,AACrC,CAAC,AACD,CAAC,8BAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,cAAc,CAAE,MAAM,AAC1B,CAAC,AACD,+BAAC,YAAY,AAAC,CAAC,AACX,YAAY,CAAE,IAAI,IAAI,CAAC,AAC3B,CAAC,AACD,CAAC,8BAAC,CAAC,AACC,MAAM,CAAE,CAAC,CACT,WAAW,CAAE,KAAK,CAClB,WAAW,CAAE,IAAI,KAAK,CAAC,AAC3B,CAAC,AACD,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACnC,CAAC,8BAAC,CAAC,AACC,SAAS,CAAE,KAAK,AACpB,CAAC,AACL,CAAC,AACD,MAAM,8BAAC,CAAC,AACJ,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,IAAI,AACrB,CAAC"}`
+var css$3 = {
+  code: "article.svelte-1hip4c6.svelte-1hip4c6{margin-top:var(--s2)}h1.svelte-1hip4c6.svelte-1hip4c6{margin:var(--s-4) 0}nav.svelte-1hip4c6.svelte-1hip4c6{display:flex;justify-content:space-between;margin-top:var(--s4);flex-wrap:wrap;padding-top:var(--s0);border-top:1px solid var(--light-grey)}nav.svelte-1hip4c6 a.svelte-1hip4c6{color:var(--high-contrast-color)}a.svelte-1hip4c6.svelte-1hip4c6{text-decoration:none;vertical-align:middle}a.svelte-1hip4c6.svelte-1hip4c6:first-child{margin-right:var(--s0)}p.svelte-1hip4c6.svelte-1hip4c6{margin:0;line-height:1.2em;padding-top:var(--s-2)}@media screen and (min-width: 1023px){p.svelte-1hip4c6.svelte-1hip4c6{font-size:1.2em}}.right.svelte-1hip4c6.svelte-1hip4c6{text-align:right;margin-left:auto}",
+  map: `{"version":3,"file":"[slug].svelte","sources":["[slug].svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load({ page }) {\\n        const posts = Object.entries(\\n            import.meta.globEager('/content/journal/*.md')\\n        )\\n            .map(([, post]) => ({\\n                // frontmatter data\\n                ...post.metadata,\\n                // the processed Svelte component from the markdown file\\n                component: post.default,\\n            }))\\n            .filter((post) => !post.draft)\\n            .sort((a, b) => (a.date < b.date ? 1 : -1))\\n\\n        const { slug } = page.params\\n        const index = posts.findIndex((post) => slug === post.slug)\\n\\n        if (index === -1) {\\n            return {\\n                status: 404,\\n                error: new Error('Page not found'),\\n            }\\n        }\\n\\n        const {\\n            title,\\n            date,\\n            readingTime,\\n            component,\\n            description,\\n            category,\\n        } = posts[index]\\n        const next = posts[index - 1]\\n        const previous = posts[index + 1]\\n\\n        return {\\n            props: {\\n                title,\\n                date,\\n                category,\\n                readingTime,\\n                next,\\n                description,\\n                previous,\\n                component,\\n            },\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Date from '$lib/components/Date.svelte'\\n    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'\\n    import RightChevron from '$lib/components/icons/RightChevron.svelte'\\n    import { preventLastTwoWordWrap } from '$lib/utils/string'\\n    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'\\n\\n    export let title\\n    export let date\\n    export let category\\n    export let description\\n    export let readingTime\\n    export let component\\n    export let next\\n    export let previous\\n\\n    const items = [{ text: 'Journal', url: '/journal' }, { text: title }]\\n<\/script>\\n\\n<Breadcrumbs {items} />\\n\\n<article class=\\"restricted-width\\">\\n    <header>\\n        <div class=\\"sub\\">\\n            <Date {date} />\\n            &middot;\\n            <span>{category}</span>\\n            &middot;\\n            <span class=\\"nowrap\\">{readingTime.words} words</span>\\n            &middot;\\n            <span class=\\"nowrap\\">{readingTime.text}</span>\\n        </div>\\n        <h1>{@html preventLastTwoWordWrap(title)}</h1>\\n        {#if description}\\n            <p>{@html preventLastTwoWordWrap(description)}</p>\\n        {/if}\\n        <!-- <div class=\\"box\\" /> -->\\n    </header>\\n    <svelte:component this={component} />\\n    <nav>\\n        {#if previous}\\n            <a href={'/journal/' + previous.slug}>\\n                <LeftChevron />\\n                {previous.title}</a\\n            >\\n        {:else}\\n            <div />\\n        {/if}\\n        {#if next}\\n            <a href={'/journal/' + next.slug} class=\\"right\\"\\n                >{next.title}\\n                <RightChevron />\\n            </a>\\n        {/if}\\n    </nav>\\n</article>\\n\\n<style>\\n    article {\\n        margin-top: var(--s2);\\n    }\\n    h1 {\\n        margin: var(--s-4) 0;\\n        /* margin-bottom: var(--s-3); */\\n    }\\n    nav {\\n        /* font-weight: 600; */\\n        display: flex;\\n        justify-content: space-between;\\n        margin-top: var(--s4);\\n        /* margin-bottom: var(--s3); */\\n        flex-wrap: wrap;\\n        padding-top: var(--s0);\\n        border-top: 1px solid var(--light-grey);\\n    }\\n    nav a {\\n        color: var(--high-contrast-color);\\n    }\\n    a {\\n        text-decoration: none;\\n        vertical-align: middle;\\n    }\\n    a:first-child {\\n        margin-right: var(--s0);\\n    }\\n    p {\\n        margin: 0;\\n        line-height: 1.2em;\\n        padding-top: var(--s-2);\\n    }\\n    @media screen and (min-width: 1023px) {\\n        p {\\n            font-size: 1.2em;\\n        }\\n    }\\n    .right {\\n        text-align: right;\\n        margin-left: auto;\\n    }\\n</style>\\n"],"names":[],"mappings":"AA4GI,OAAO,8BAAC,CAAC,AACL,UAAU,CAAE,IAAI,IAAI,CAAC,AACzB,CAAC,AACD,EAAE,8BAAC,CAAC,AACA,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,AAExB,CAAC,AACD,GAAG,8BAAC,CAAC,AAED,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,UAAU,CAAE,IAAI,IAAI,CAAC,CAErB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,IAAI,CAAC,CACtB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,YAAY,CAAC,AAC3C,CAAC,AACD,kBAAG,CAAC,CAAC,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,qBAAqB,CAAC,AACrC,CAAC,AACD,CAAC,8BAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,cAAc,CAAE,MAAM,AAC1B,CAAC,AACD,+BAAC,YAAY,AAAC,CAAC,AACX,YAAY,CAAE,IAAI,IAAI,CAAC,AAC3B,CAAC,AACD,CAAC,8BAAC,CAAC,AACC,MAAM,CAAE,CAAC,CACT,WAAW,CAAE,KAAK,CAClB,WAAW,CAAE,IAAI,KAAK,CAAC,AAC3B,CAAC,AACD,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,MAAM,CAAC,AAAC,CAAC,AACnC,CAAC,8BAAC,CAAC,AACC,SAAS,CAAE,KAAK,AACpB,CAAC,AACL,CAAC,AACD,MAAM,8BAAC,CAAC,AACJ,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,IAAI,AACrB,CAAC"}`
 };
 async function load$2({ page: page2 }) {
-  const posts = Object.entries({ "/content/journal/11-months-later.md": __glob_5_0, "/content/journal/30-going-on-13.md": __glob_5_1, "/content/journal/a-new-chapter.md": __glob_5_2, "/content/journal/adventures-in-low-end-pc-gaming.md": __glob_5_3, "/content/journal/copyme.md": __glob_5_4, "/content/journal/faith.md": __glob_5_5, "/content/journal/goodbye-ruby-subie.md": __glob_5_6, "/content/journal/http2-and-website-optimization.md": __glob_5_7, "/content/journal/human-triggered-avalanches.md": __glob_5_8, "/content/journal/logical-conclusions.md": __glob_5_9, "/content/journal/minimize-cell-phone.md": __glob_5_10, "/content/journal/new-website.md": __glob_5_11, "/content/journal/ruby-on-rails-in-2019.md": __glob_5_12, "/content/journal/skiing.md": __glob_5_13, "/content/journal/snow-safety.md": __glob_5_14, "/content/journal/the-upgrade-to-4k.md": __glob_5_15, "/content/journal/todo.md": __glob_5_16, "/content/journal/videos.md": __glob_5_17 }).map(([, post]) => ({
+  const posts = Object.entries({ "/content/journal/11-months-later.md": __glob_6_0, "/content/journal/30-going-on-13.md": __glob_6_1, "/content/journal/a-new-chapter.md": __glob_6_2, "/content/journal/adventures-in-low-end-pc-gaming.md": __glob_6_3, "/content/journal/copyme.md": __glob_6_4, "/content/journal/faith.md": __glob_6_5, "/content/journal/goodbye-ruby-subie.md": __glob_6_6, "/content/journal/http2-and-website-optimization.md": __glob_6_7, "/content/journal/human-triggered-avalanches.md": __glob_6_8, "/content/journal/logical-conclusions.md": __glob_6_9, "/content/journal/minimize-cell-phone.md": __glob_6_10, "/content/journal/new-website.md": __glob_6_11, "/content/journal/ruby-on-rails-in-2019.md": __glob_6_12, "/content/journal/skiing.md": __glob_6_13, "/content/journal/snow-safety.md": __glob_6_14, "/content/journal/the-upgrade-to-4k.md": __glob_6_15, "/content/journal/todo.md": __glob_6_16 }).map(([, post]) => ({
     ...post.metadata,
     component: post.default
   })).filter((post) => !post.draft).sort((a, b) => a.date < b.date ? 1 : -1);
@@ -69623,6 +69660,7 @@ var U5Bslugu5D$1 = create_ssr_component(($$result, $$props, $$bindings, slots) =
   let { component } = $$props;
   let { next } = $$props;
   let { previous } = $$props;
+  const items = [{ text: "Journal", url: "/journal" }, { text: title }];
   if ($$props.title === void 0 && $$bindings.title && title !== void 0)
     $$bindings.title(title);
   if ($$props.date === void 0 && $$bindings.date && date !== void 0)
@@ -69639,21 +69677,23 @@ var U5Bslugu5D$1 = create_ssr_component(($$result, $$props, $$bindings, slots) =
     $$bindings.next(next);
   if ($$props.previous === void 0 && $$bindings.previous && previous !== void 0)
     $$bindings.previous(previous);
-  $$result.css.add(css);
-  return `<article class="${"restricted-width"}"><header><div class="${"sub"}">${validate_component(Date_1, "Date").$$render($$result, { date }, {}, {})}
+  $$result.css.add(css$3);
+  return `${validate_component(Breadcrumbs, "Breadcrumbs").$$render($$result, { items }, {}, {})}
+
+<article class="${"restricted-width svelte-1hip4c6"}"><header><div class="${"sub"}">${validate_component(Date_1, "Date").$$render($$result, { date }, {}, {})}
             \xB7
-            <span>${escape2(category)}</span>
+            <span>${escape(category)}</span>
             \xB7
-            <span class="${"nowrap"}">${escape2(readingTime.words)} words</span>
+            <span class="${"nowrap"}">${escape(readingTime.words)} words</span>
             \xB7
-            <span class="${"nowrap"}">${escape2(readingTime.text)}</span></div>
-        <h1 class="${"svelte-16nob6s"}"><!-- HTML_TAG_START -->${preventLastTwoWordWrap(title)}<!-- HTML_TAG_END --></h1>
-        ${description ? `<p class="${"svelte-16nob6s"}"><!-- HTML_TAG_START -->${preventLastTwoWordWrap(description)}<!-- HTML_TAG_END --></p>` : ``}
+            <span class="${"nowrap"}">${escape(readingTime.text)}</span></div>
+        <h1 class="${"svelte-1hip4c6"}"><!-- HTML_TAG_START -->${preventLastTwoWordWrap(title)}<!-- HTML_TAG_END --></h1>
+        ${description ? `<p class="${"svelte-1hip4c6"}"><!-- HTML_TAG_START -->${preventLastTwoWordWrap(description)}<!-- HTML_TAG_END --></p>` : ``}
         </header>
     ${validate_component(component || missing_component, "svelte:component").$$render($$result, {}, {}, {})}
-    <nav class="${"svelte-16nob6s"}">${previous ? `<a${add_attribute("href", "/journal/" + previous.slug, 0)} class="${"svelte-16nob6s"}">${validate_component(LeftChevron, "LeftChevron").$$render($$result, {}, {}, {})}
-                ${escape2(previous.title)}</a>` : `<div></div>`}
-        ${next ? `<a${add_attribute("href", "/journal/" + next.slug, 0)} class="${"right svelte-16nob6s"}">${escape2(next.title)}
+    <nav class="${"svelte-1hip4c6"}">${previous ? `<a${add_attribute("href", "/journal/" + previous.slug, 0)} class="${"svelte-1hip4c6"}">${validate_component(LeftChevron, "LeftChevron").$$render($$result, {}, {}, {})}
+                ${escape(previous.title)}</a>` : `<div></div>`}
+        ${next ? `<a${add_attribute("href", "/journal/" + next.slug, 0)} class="${"right svelte-1hip4c6"}">${escape(next.title)}
                 ${validate_component(RightChevron, "RightChevron").$$render($$result, {}, {}, {})}</a>` : ``}</nav>
 </article>`;
 });
@@ -69663,6 +69703,44 @@ var _slug_ = /* @__PURE__ */ Object.freeze({
   "default": U5Bslugu5D$1,
   load: load$2
 });
+var css$2 = {
+  code: "h2.svelte-1nbq2vk{margin:var(--s-4) 0 0}a.svelte-1nbq2vk{text-decoration:none}p.svelte-1nbq2vk{margin-top:0;margin-bottom:0}",
+  map: `{"version":3,"file":"Event.svelte","sources":["Event.svelte"],"sourcesContent":["<script>\\n    import Image from '$lib/components/Image.svelte'\\n\\n    export let eventName\\n    export let title\\n    export let date\\n    export let count\\n    export let featuredImage\\n\\n    const { name, filePath, width, height, thumbnail } = featuredImage\\n<\/script>\\n\\n<section>\\n    <a href={'/events/' + eventName}>\\n        <Image {name} {filePath} {width} {height} {thumbnail} lockedRatio />\\n        <h2>{title}</h2>\\n    </a>\\n    <p class=\\"sub\\">{date} &middot; {count} photos</p>\\n</section>\\n\\n<style>\\n    /* div {\\n        position: relative;\\n    } */\\n    h2 {\\n        margin: var(--s-4) 0 0;\\n    }\\n    a {\\n        text-decoration: none;\\n    }\\n    p {\\n        margin-top: 0;\\n        margin-bottom: 0;\\n    }\\n    section {\\n        /* margin-top: var(--s0); */\\n        /* padding-bottom: var(--s0); */\\n        /* border-bottom: 1px solid var(--light-grey); */\\n    }\\n</style>\\n"],"names":[],"mappings":"AAwBI,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,IAAI,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,AAC1B,CAAC,AACD,CAAC,eAAC,CAAC,AACC,eAAe,CAAE,IAAI,AACzB,CAAC,AACD,CAAC,eAAC,CAAC,AACC,UAAU,CAAE,CAAC,CACb,aAAa,CAAE,CAAC,AACpB,CAAC"}`
+};
+var Event = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { eventName } = $$props;
+  let { title } = $$props;
+  let { date } = $$props;
+  let { count } = $$props;
+  let { featuredImage } = $$props;
+  const { name, filePath, width, height, thumbnail } = featuredImage;
+  if ($$props.eventName === void 0 && $$bindings.eventName && eventName !== void 0)
+    $$bindings.eventName(eventName);
+  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+    $$bindings.title(title);
+  if ($$props.date === void 0 && $$bindings.date && date !== void 0)
+    $$bindings.date(date);
+  if ($$props.count === void 0 && $$bindings.count && count !== void 0)
+    $$bindings.count(count);
+  if ($$props.featuredImage === void 0 && $$bindings.featuredImage && featuredImage !== void 0)
+    $$bindings.featuredImage(featuredImage);
+  $$result.css.add(css$2);
+  return `<section class="${"svelte-1nbq2vk"}"><a${add_attribute("href", "/events/" + eventName, 0)} class="${"svelte-1nbq2vk"}">${validate_component(Image, "Image").$$render($$result, {
+    name,
+    filePath,
+    width,
+    height,
+    thumbnail,
+    lockedRatio: true
+  }, {}, {})}
+        <h2 class="${"svelte-1nbq2vk"}">${escape(title)}</h2></a>
+    <p class="${"sub svelte-1nbq2vk"}">${escape(date)} \xB7 ${escape(count)} photos</p>
+</section>`;
+});
+var css$1 = {
+  code: "div.svelte-n49wng{display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));grid-gap:var(--s2)}h1.svelte-n49wng{margin:var(--s0) 0}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load({ fetch }) {\\n        try {\\n            const events = await fetch('/events.json').then((r) => r.json())\\n            return { props: events }\\n        } catch (error) {\\n            console.error(error)\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Event from '$lib/components/Event.svelte'\\n    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'\\n\\n    const items = [\\n        { text: 'Portfolio', url: '/photography' },\\n        { text: 'Events' },\\n    ]\\n\\n    export let events\\n<\/script>\\n\\n<Breadcrumbs {items} />\\n\\n<h1>Events</h1>\\n\\n<div>\\n    {#each events as { name: eventName, featuredImage, date, count, title }}\\n        <Event {eventName} {featuredImage} {date} {count} {title} />\\n    {/each}\\n</div>\\n\\n<style>\\n    div {\\n        display: grid;\\n        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\\n        grid-gap: var(--s2);\\n    }\\n    h1 {\\n        margin: var(--s0) 0;\\n        /* TODO make me DRYer */\\n    }\\n</style>\\n"],"names":[],"mappings":"AAkCI,GAAG,cAAC,CAAC,AACD,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,OAAO,QAAQ,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAC3D,QAAQ,CAAE,IAAI,IAAI,CAAC,AACvB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,AAEvB,CAAC"}`
+};
 async function load$1({ fetch: fetch2 }) {
   try {
     const events = await fetch2("/events.json").then((r) => r.json());
@@ -69672,19 +69750,23 @@ async function load$1({ fetch: fetch2 }) {
   }
 }
 var Events = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  const items = [{ text: "Portfolio", url: "/photography" }, { text: "Events" }];
   let { events } = $$props;
   if ($$props.events === void 0 && $$bindings.events && events !== void 0)
     $$bindings.events(events);
-  return `<h1>Events</h1>
+  $$result.css.add(css$1);
+  return `${validate_component(Breadcrumbs, "Breadcrumbs").$$render($$result, { items }, {}, {})}
 
-<p><a href="${"/photography"}">Portfolio</a> / Events</p>
+<h1 class="${"svelte-n49wng"}">Events</h1>
 
-${each(events, ({ name, featuredImage, date, count, title }) => `<section><h2><a${add_attribute("href", "/events/" + name, 0)}>${escape2(title)}</a></h2>
-
-        <p class="${"sub"}">${escape2(date)} \xB7 ${escape2(count)} photos</p>
-
-        ${validate_component(Image, "Image").$$render($$result, { value: featuredImage }, {}, {})}
-    </section>`)}`;
+<div class="${"svelte-n49wng"}">${each(events, ({ name: eventName, featuredImage, date, count, title }) => `${validate_component(Event, "Event").$$render($$result, {
+    eventName,
+    featuredImage,
+    date,
+    count,
+    title
+  }, {}, {})}`)}
+</div>`;
 });
 var index$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -69692,6 +69774,10 @@ var index$1 = /* @__PURE__ */ Object.freeze({
   "default": Events,
   load: load$1
 });
+var css = {
+  code: "h1.svelte-5rvsck{margin:var(--s0) 0}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\">\\n    export async function load({ page, fetch }) {\\n        const slug = page.params.slug\\n        const event = await fetch(\`/events/\${slug}.json\`).then((r) => r.json())\\n        return {\\n            props: { event },\\n        }\\n    }\\n<\/script>\\n\\n<script>\\n    import Gallery from '$lib/components/Gallery.svelte'\\n    import Breadcrumbs from '$lib/components/Breadcrumbs.svelte'\\n\\n    export let event\\n\\n    const { images, count, date, title } = event\\n    const items = [\\n        { text: 'Portfolio', url: '/photography' },\\n        { text: 'Events', url: '/events' },\\n        { text: title },\\n    ]\\n<\/script>\\n\\n<Breadcrumbs {items} />\\n\\n<h1>{title}</h1>\\n<p class=\\"sub\\">{date} &middot; {count} photos</p>\\n\\n<Gallery {images} />\\n\\n<style>\\n    h1 {\\n        margin: var(--s0) 0;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAgCI,EAAE,cAAC,CAAC,AACA,MAAM,CAAE,IAAI,IAAI,CAAC,CAAC,CAAC,AACvB,CAAC"}`
+};
 async function load({ page: page2, fetch: fetch2 }) {
   const slug = page2.params.slug;
   const event = await fetch2(`/events/${slug}.json`).then((r) => r.json());
@@ -69700,23 +69786,79 @@ async function load({ page: page2, fetch: fetch2 }) {
 var U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { event } = $$props;
   const { images, count, date, title } = event;
+  const items = [
+    { text: "Portfolio", url: "/photography" },
+    { text: "Events", url: "/events" },
+    { text: title }
+  ];
   if ($$props.event === void 0 && $$bindings.event && event !== void 0)
     $$bindings.event(event);
-  return `<h1>${escape2(title)}</h1>
+  $$result.css.add(css);
+  return `${validate_component(Breadcrumbs, "Breadcrumbs").$$render($$result, { items }, {}, {})}
 
-<p><a href="${"/photography"}">Portfolio</a> /
-    <a href="${"/events"}">Events</a> /
-    ${escape2(title)}</p>
+<h1 class="${"svelte-5rvsck"}">${escape(title)}</h1>
+<p class="${"sub"}">${escape(date)} \xB7 ${escape(count)} photos</p>
 
-<p class="${"sub"}">${escape2(date)} \xB7 ${escape2(count)} photos</p>
-
-${each(images, (image) => `${validate_component(Image, "Image").$$render($$result, { value: image }, {}, {})}`)}`;
+${validate_component(Gallery_1, "Gallery").$$render($$result, { images }, {}, {})}`;
 });
 var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": U5Bslugu5D,
   load
+});
+var metadata$2 = {
+  "title": "Outdoor Videos",
+  "layout": "page",
+  "readingTime": {
+    "text": "1 min read",
+    "minutes": 0.66,
+    "time": 39600,
+    "words": 132
+  },
+  "slug": "videos"
+};
+var Videos = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(Page, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$2), {}, {
+    default: () => `<p>This is a collection of cool outdoor videos I have found over the years, updated occasionally.</p>
+<ul><li><a href="${"https://vimeo.com/266377015"}" rel="${"nofollow"}">DreamRide 3</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=1CR0QmCaMTs"}" rel="${"nofollow"}">Fabio Wibmer - Fabiolous Escape 2</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=bCeGBkURCDg"}" rel="${"nofollow"}">Sister Extreme</a> | <a href="${"https://www.youtube.com/watch?v=XRY7yeQ076c"}" rel="${"nofollow"}">Part 2</a> | <a href="${"https://www.youtube.com/watch?v=EJa3aNpDoqI"}" rel="${"nofollow"}">Part 3</a> | <a href="${"https://www.youtube.com/watch?v=JIS1bLnHQDQ"}" rel="${"nofollow"}">Part 4</a></li>
+<li><a href="${"https://vimeo.com/129270681"}" rel="${"nofollow"}">Our Theory of Human Motivation</a></li>
+<li><a href="${"https://vimeo.com/306300688"}" rel="${"nofollow"}">KINDRED</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=xCpowcXopKE"}" rel="${"nofollow"}">Will Gadd - MOVE</a></li>
+<li><a href="${"https://vimeo.com/32863936"}" rel="${"nofollow"}">JP Auclair Street Segment from All.I.Can.</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=tmaVb4iW1PI"}" rel="${"nofollow"}">Brett Bilon - Mt. Robson Kain Face July 14-15 2018 Solo Ascent</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=QUMHPnV8qz0"}" rel="${"nofollow"}">Houseman/Bullock - Slovak Direct, Denali</a></li>
+<li><a href="${"https://vimeo.com/72024058"}" rel="${"nofollow"}">Jeff Colvin, Reiner Thoni - Mount Robson Ski Mountaineering</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=w7Pye9f602s"}" rel="${"nofollow"}">A Dozen More Turns</a></li>
+<li><a href="${"https://rockandice.com/videos/climbing/searching-for-christmas-tree/"}" rel="${"nofollow"}">Searching for Christmas Tree (ice climbing in China)</a></li>
+<li><a href="${"https://vimeo.com/182007457"}" rel="${"nofollow"}">Iran: A Skier\u2019s Journey</a></li>
+<li><a href="${"http://www.laliste-film.com"}" rel="${"nofollow"}">La Liste</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=Dhfipv8LXRg"}" rel="${"nofollow"}">The Frenchy</a></li>
+<li><a href="${"https://www.climbing.com/videos/lunag-ri-david-lama-and-conrad-anker-walk-the-line/"}" rel="${"nofollow"}">Lunag Ri: David Lama and Conrad Anker Walk the Line</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=wy6sqxD_4ro"}" rel="${"nofollow"}">YETI Presents: Denali\u2019s Raven</a></li>
+<li><a href="${"https://youtu.be/WGZu5Lzgv1A"}" rel="${"nofollow"}">Risk\u2014the anatomy of chance and uncertainty: Grant Statham at TEDxCanmore</a></li>
+<li><a href="${"https://www.redbull.com/ca-en/beneath-the-ice"}" rel="${"nofollow"}">Beneath the Ice</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=yFXoRlEH--w"}" rel="${"nofollow"}">Aemmer Couloir</a></li>
+<li><a href="${"https://youtu.be/10uM6IU8S6U"}" rel="${"nofollow"}">Land Of Maybe</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=rFtiJifvOuo"}" rel="${"nofollow"}">Real Rock: An Urban Climbing Experience</a></li>
+<li><a href="${"https://www.redbull.com/int-en/tv/video/AP-1M1HYDRDN2111/the-rocky-mountains-traverse"}" rel="${"nofollow"}">The Rocky Mountains Traverse</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=-OBX25ix4eU"}" rel="${"nofollow"}">COLD</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=Y84ffAggTig"}" rel="${"nofollow"}">Distant Relatives - Sam Smoothy (New Zealand)</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=xWtQ8IJoKn0"}" rel="${"nofollow"}">Arc\u2019teryx - 35</a></li>
+<li><a href="${"https://vimeo.com/331791994"}" rel="${"nofollow"}">Can\u2019t Ski Vegas</a></li>
+<li><a href="${"https://www.youtube.com/watch?v=Hd5COZ655cQ"}" rel="${"nofollow"}">Children of the Columbia</a></li>
+<li><a href="${"https://youtu.be/QcOa5ca7oNs"}" rel="${"nofollow"}">Inclined</a></li></ul>
+<h2 id="${"my-videos"}">My Videos</h2>
+<p><a href="${"https://www.youtube.com/user/rmcwhae"}" rel="${"nofollow"}">rmcwhae on YouTube</a>.</p>`
+  })}`;
+});
+var videos = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Videos,
+  metadata: metadata$2
 });
 var PageNoHeader = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { title } = $$props;
@@ -69730,9 +69872,9 @@ var metadata$1 = {
   "layout": "pagenoheader",
   "readingTime": {
     "text": "2 min read",
-    "minutes": 1.385,
-    "time": 83100,
-    "words": 277
+    "minutes": 1.39,
+    "time": 83400,
+    "words": 278
   },
   "slug": "about"
 };
@@ -69748,7 +69890,8 @@ var About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <p>Wanting to further my coding skills, I took the <a href="${"https://www.lighthouselabs.ca"}" rel="${"nofollow"}">Lighthouse Labs</a> web development boot camp course from July to October 2019. I have now been working as a web developer, specializing in front-end work, out of Revelstoke, BC.</p>
 <p>View my <a href="${"/pdf/mcwhae_russell_resume.pdf"}" target="${"_blank"}">current r\xE9sum\xE9</a>, or check out my <a href="${"https://www.linkedin.com/in/rmcwhae/"}" rel="${"nofollow"}">LinkedIn profile</a>.</p>
 <h2 id="${"etc"}">Etc.</h2>
-<ul><li><a href="${"/uses"}">What I Use</a></li></ul>`
+<ul><li><a href="${"/uses"}">What I Use</a></li>
+<li><a href="${"/videos"}">Outdoor Videos</a></li></ul>`
   })}`;
 });
 var about = /* @__PURE__ */ Object.freeze({
@@ -69952,6 +70095,7 @@ function splitHeaders(headers) {
  * Copyright(c) 2015 Douglas Christopher Wilson
  * MIT Licensed
  */
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /**
  * @license
  * Lodash <https://lodash.com/>

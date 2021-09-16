@@ -11,9 +11,9 @@
         "format": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-netlify": "^1.0.0-next.29",
-        "@sveltejs/adapter-static": "^1.0.0-next.13",
-        "@sveltejs/kit": "^1.0.0-next.142",
+        "@sveltejs/adapter-netlify": "^1.0.0-next.31",
+        "@sveltejs/adapter-static": "^1.0.0-next.19",
+        "@sveltejs/kit": "^1.0.0-next.168",
         "date-fns": "^2.23.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
