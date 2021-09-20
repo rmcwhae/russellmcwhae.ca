@@ -1,5 +1,6 @@
 <script>
     import Image from '$lib/components/Image.svelte'
+    import * as StringUtils from '$lib/utils/string'
 
     export let eventName
     export let title
@@ -13,7 +14,7 @@
 <section>
     <a href={'/events/' + eventName}>
         <Image {name} {filePath} {width} {height} {thumbnail} lockedRatio />
-        <h2>{title}</h2>
+        <h2>{@html StringUtils.preventLastTwoWordWrap(title)}</h2>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>
 </section>
@@ -23,7 +24,9 @@
         position: relative;
     } */
     h2 {
-        margin: var(--s-4) 0 0;
+        margin: var(--s-1) 0 0;
+        font-weight: normal;
+        font-size: 1.2em;
     }
     a {
         text-decoration: none;
@@ -34,7 +37,7 @@
     }
     section {
         /* margin-top: var(--s0); */
-        /* padding-bottom: var(--s0); */
-        /* border-bottom: 1px solid var(--light-grey); */
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
     }
 </style>
