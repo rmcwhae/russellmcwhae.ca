@@ -1,18 +1,11 @@
 <script context="module">
     const PAGE_SIZE = 40
-    export async function load({ fetch, page: { query } }) {
-        // get page parameter from URL
-        const page = parseInt(query.get('page') ?? '1')
-
+    export async function load({ fetch }) {
         try {
             const events = await fetch('/events.json').then((r) => r.json())
             return {
                 props: {
-                    events: events.slice(
-                        (page - 1) * PAGE_SIZE,
-                        page * PAGE_SIZE
-                    ),
-                    page,
+                    events,
                 },
             }
         } catch (error) {
@@ -40,8 +33,7 @@
     {/each}
 </div>
 
-<Pagination {page} href="/events" pageSize={PAGE_SIZE} length={events.length} />
-
+<!-- <Pagination {page} href="/events" pageSize={PAGE_SIZE} length={events.length} /> -->
 <style>
     div {
         display: grid;
