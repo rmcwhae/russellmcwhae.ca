@@ -1,5 +1,4 @@
 <script context="module">
-    const PAGE_SIZE = 40
     export async function load({ fetch }) {
         try {
             const events = await fetch('/events.json').then((r) => r.json())
@@ -20,7 +19,20 @@
     import Pagination from '$lib/components/Pagination.svelte'
 
     export let events
-    export let page
+
+    const total = events.length
+    const per_page = 40
+
+    let current_page = 1
+
+    $: filteredEvents = events.slice(
+        (current_page - 1) * per_page,
+        current_page * per_page
+    )
+
+    function changePage(event) {
+        current_page = event.page
+    }
 </script>
 
 <Button href="/photography" text="Portfolio" left />
@@ -28,12 +40,20 @@
 <h1>Events</h1>
 
 <div>
-    {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
+    {#each filteredEvents as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
 
-<!-- <Pagination {page} href="/events" pageSize={PAGE_SIZE} length={events.length} /> -->
+{#if total > per_page}
+    <Pagination
+        {current_page}
+        {total}
+        {per_page}
+        on:change={(event) => changePage({ page: event.detail })}
+    />
+{/if}
+
 <style>
     div {
         display: grid;
