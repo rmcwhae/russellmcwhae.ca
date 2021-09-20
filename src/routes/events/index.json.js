@@ -35,7 +35,7 @@ export async function get() {
     })
 
     return {
-        body: JSON.stringify({ events: eventsWithImages }),
+        body: JSON.stringify(eventsWithImages),
     }
 }
 

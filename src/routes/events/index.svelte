@@ -1,8 +1,20 @@
 <script context="module">
-    export async function load({ fetch }) {
+    const PAGE_SIZE = 40
+    export async function load({ fetch, page: { query } }) {
+        // get page parameter from URL
+        const page = parseInt(query.get('page') ?? '1')
+
         try {
             const events = await fetch('/events.json').then((r) => r.json())
-            return { props: events }
+            return {
+                props: {
+                    events: events.slice(
+                        (page - 1) * PAGE_SIZE,
+                        page * PAGE_SIZE
+                    ),
+                    page,
+                },
+            }
         } catch (error) {
             console.error(error)
         }
@@ -12,8 +24,10 @@
 <script>
     import Event from '$lib/components/Event.svelte'
     import Button from '$lib/components/Button.svelte'
+    import Pagination from '$lib/components/Pagination.svelte'
 
     export let events
+    export let page
 </script>
 
 <Button href="/photography" text="Portfolio" left />
@@ -21,10 +35,12 @@
 <h1>Events</h1>
 
 <div>
-    {#each events as { name: eventName, featuredImage, date, count, title }}
+    {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
+
+<Pagination {page} href="/events" pageSize={PAGE_SIZE} length={events.length} />
 
 <style>
     div {
