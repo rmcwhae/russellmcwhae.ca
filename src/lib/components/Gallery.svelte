@@ -8,7 +8,7 @@
     export let images
 </script>
 
-<!-- <Gallery {images} {rowHeight} {gutter} imageComponent={Image} /> -->
-{#each images as { name, filePath, width, height, thumbnail }}
+<Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+<!-- {#each images as { name, filePath, width, height, thumbnail }}
     <Image {name} {filePath} {width} {height} {thumbnail} />
-{/each}
+{/each} -->
