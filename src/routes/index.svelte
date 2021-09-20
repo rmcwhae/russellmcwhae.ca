@@ -1,5 +1,5 @@
 <script>
-    import Collage from '$static/collage.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Collage from '/collage.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 </script>
 
