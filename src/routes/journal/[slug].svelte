@@ -54,6 +54,7 @@
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Button from '$lib/components/Button.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     export let title
     export let date
@@ -63,9 +64,9 @@
     export let component
     export let next
     export let previous
-
-    const items = [{ text: 'Journal', url: '/journal' }, { text: title }]
 </script>
+
+<SEO {title} />
 
 <article class="restricted-width">
     <Button left href="/journal" text="All entries" />

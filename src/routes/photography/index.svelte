@@ -10,6 +10,7 @@
 <script>
     import Gallery from '$lib/components/Gallery.svelte'
     import Button from '$lib/components/Button.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     export let images
 </script>
@@ -22,6 +23,8 @@
         <Button right href="/events" text="All events" />
     </p>
 </div>
+
+<SEO title="Photography" />
 
 <Gallery {images} />
 

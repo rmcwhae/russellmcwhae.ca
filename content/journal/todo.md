@@ -11,13 +11,12 @@ category: TODO
 
 -   Update "That New-Website Look"
 -   Clean Adobe WebFonts once done
--   SEO tags etc.
 -   Performance testing
 -   Publish date bug
--   Photos navigate by keypress
 -   Projects page
 -   Debug color switcher (less WET code…)
 -   Update repo readme
+-   Events grid with media queries and inline-block and percentage
 
 ## Later Ideas
 

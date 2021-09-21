@@ -11,11 +11,14 @@
 <script>
     import Gallery from '$lib/components/Gallery.svelte'
     import Button from '$lib/components/Button.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     export let event
 
     const { images, count, date, title } = event
 </script>
+
+<SEO {title} />
 
 <Button href="/events" text="Events" left />
 

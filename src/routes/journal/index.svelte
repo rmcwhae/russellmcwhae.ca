@@ -20,9 +20,12 @@
 
 <script>
     import Date from '$lib/components/Date.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     export let posts
 </script>
+
+<SEO title="Journal" />
 
 <!-- <p>
     Writing is my way of making sense of things, both by exploring subjects from

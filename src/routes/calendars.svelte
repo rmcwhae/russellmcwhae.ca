@@ -1,6 +1,6 @@
 <script>
     import Calendar from '$lib/components/Calendar.svelte'
-    import RightChevron from '$lib/components/icons/RightChevron.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     const calendars = [
         {
@@ -46,8 +46,9 @@
             filesize: 2,
         },
     ]
-    const [current, ...rest] = calendars
 </script>
+
+<SEO title="Calendars" />
 
 <!-- <main style={`background-image: url(/calendar-images/${current.year}.jpg)`}>
     <div class="shadow">
