@@ -17,6 +17,7 @@
     import Event from '$lib/components/Event.svelte'
     import Button from '$lib/components/Button.svelte'
     import Pagination from '$lib/components/Pagination.svelte'
+    import SEO from '$lib/components/SEO.svelte'
 
     export let events
 
@@ -34,6 +35,8 @@
         current_page = event.page
     }
 </script>
+
+<SEO title="Events" />
 
 <Button href="/photography" text="Portfolio" left />
 

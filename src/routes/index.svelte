@@ -1,7 +1,10 @@
 <script>
+    import SEO from '$lib/components/SEO.svelte'
     import Collage from '$static/collage.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 </script>
+
+<SEO />
 
 <div class="wrapper">
     <h1>Hi, I’m Russell.</h1>
