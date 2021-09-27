@@ -16,24 +16,9 @@
 <script>
     import Event from '$lib/components/Event.svelte'
     import Button from '$lib/components/Button.svelte'
-    import Pagination from '$lib/components/Pagination.svelte'
     import SEO from '$lib/components/SEO.svelte'
 
     export let events
-
-    const total = events.length
-    const per_page = 40
-
-    let current_page = 1
-
-    $: filteredEvents = events.slice(
-        (current_page - 1) * per_page,
-        current_page * per_page
-    )
-
-    function changePage(event) {
-        current_page = event.page
-    }
 </script>
 
 <SEO title="Events" />
@@ -43,19 +28,10 @@
 <h1>Events</h1>
 
 <div>
-    {#each filteredEvents as { name: eventName, featuredImage, date, count, title } (eventName)}
+    {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
-
-{#if total > per_page}
-    <Pagination
-        {current_page}
-        {total}
-        {per_page}
-        on:change={(event) => changePage({ page: event.detail })}
-    />
-{/if}
 
 <style>
     div {
