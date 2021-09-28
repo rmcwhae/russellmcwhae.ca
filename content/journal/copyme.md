@@ -7,7 +7,9 @@ draft: 1
 category: Stuff
 ---
 
-Content here. Heading 1 will appear above and in ToC. Change hidden to 0.
+Content here. Change hidden to 0. Specify ToC as below or delete.
+
+## Table of Contents
 
 ## Heading Two
 
