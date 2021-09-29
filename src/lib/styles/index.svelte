@@ -251,6 +251,14 @@
     h2 {
         font-size: 2rem;
     }
+    @media (max-width: 640px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
     @media (max-width: 1023px) {
         /* h1 {
             font-size: 1.5em;

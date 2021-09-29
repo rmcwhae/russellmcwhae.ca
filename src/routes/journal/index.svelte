@@ -40,4 +40,9 @@
 </div>
 
 <style>
+    .archive {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-gap: var(--s3);
+    }
 </style>

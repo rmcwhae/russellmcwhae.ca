@@ -34,8 +34,7 @@
         margin: 0;
     }
     section {
-        padding-bottom: var(--s1);
+        padding-bottom: var(--s3);
         border-bottom: 1px solid var(--light-grey);
-        margin-bottom: var(--s1);
     }
 </style>
