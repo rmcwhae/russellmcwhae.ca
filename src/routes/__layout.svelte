@@ -11,7 +11,7 @@
 <Loading />
 
 <Nav />
-<main>
+<main class="wrapper">
     <slot />
 </main>
 <footer><Footer /></footer>
@@ -23,16 +23,19 @@
         text-align: center;
         /* background: url(assiniboine.png) center bottom no-repeat; */
     }
-    main {
-        margin: var(--s2) auto;
-        max-width: 900px;
-        /* width: 100%; */
+    .wrapper {
+        margin: var(--s2) 0;
+        display: grid;
+        grid-template-columns:
+            1fr
+            min(var(--xl), 100%)
+            1fr;
     }
-    @media (max-width: 1023px) {
-        main {
-            margin: var(--s0);
-            padding: 0;
-            width: inherit;
-        }
+    :global(.wrapper > *) {
+        grid-column: 2;
+    }
+    :global(.full-bleed) {
+        width: 100%;
+        grid-column: 1 / 4;
     }
 </style>

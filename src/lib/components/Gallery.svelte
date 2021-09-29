@@ -8,7 +8,9 @@
     export let images
 </script>
 
-<Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+<div class="full-bleed">
+    <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+</div>
 <!-- {#each images as { name, filePath, width, height, thumbnail }}
     <Image {name} {filePath} {width} {height} {thumbnail} />
 {/each} -->

@@ -3,6 +3,11 @@
         --radius: 8px;
         --ratio: 1.5;
         --duration: 0.2s;
+        --sm: 640px;
+        --md: 768px;
+        --lg: 1024px;
+        --xl: 1280px;
+        --2xl: 1536px;
         --s-5: calc(var(--s-4) / var(--ratio));
         --s-4: calc(var(--s-3) / var(--ratio));
         --s-3: calc(var(--s-2) / var(--ratio));
@@ -21,7 +26,7 @@
         --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(100, 100, 100);
         --high-contrast-color: black;
-        --light-grey: #ccc;
+        --light-grey: rgb(226, 226, 226);
         --medium-grey: #888;
         --blue: rgb(48, 89, 202);
         --blue-light: rgb(175, 194, 240);
@@ -31,7 +36,7 @@
         --background-color-transparent: rgba(0, 0, 0, 0.8);
         --high-contrast-color: white;
         --text-color: rgb(172, 172, 172);
-        --light-grey: rgb(66, 66, 66);
+        --light-grey: rgb(56, 56, 56);
         --medium-grey: #999;
         --blue: rgb(175, 199, 255);
         --blue-light: rgb(56, 67, 102);
@@ -43,7 +48,7 @@
             --background-color-transparent: rgba(0, 0, 0, 0.8);
             --high-contrast-color: white;
             --text-color: rgb(172, 172, 172);
-            --light-grey: rgb(66, 66, 66);
+            --light-grey: rgb(56, 56, 56);
             --medium-grey: #999;
             --blue: rgb(175, 199, 255);
             --blue-light: rgb(56, 67, 102);
@@ -83,6 +88,15 @@
     }
     a.button:hover {
         border-color: var(--medium-grey);
+    }
+    .flex {
+        display: flex;
+    }
+    .items-center {
+        align-items: center;
+    }
+    .justify-between {
+        justify-content: space-between;
     }
     main a {
         text-decoration: underline;

@@ -23,24 +23,21 @@
 
 <SEO title="Events" />
 
-<Button href="/photography" text="Portfolio" left />
+<div class="flex items-center justify-between">
+    <h1>Events</h1>
+    <Button href="/photography" text="Portfolio" left />
+</div>
 
-<h1>Events</h1>
-
-<div>
+<div class="events">
     {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
 
 <style>
-    div {
+    .events {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         grid-gap: var(--s2);
-    }
-    h1 {
-        margin: var(--s0) 0;
-        /* TODO make me DRYer */
     }
 </style>

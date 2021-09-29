@@ -6,49 +6,43 @@
 
 <SEO />
 
-<div class="wrapper">
-    <h1>Hi, I’m Russell.</h1>
+<h1>Hi, I’m Russell.</h1>
 
-    <div class="grid">
-        <div class="box1">
-            <p>
-                I’m a front end–biased web developer with a background in
-                structural engineering and biomedical research who likes
-                spending time outside.
-                <span class="sub nowrap"
-                    ><a href="about">More About Me <RightChevron /></a></span
-                >
-            </p>
-        </div>
-        <div class="box2">
-            <a href="photography" class="big"
-                >view my <h3>Photos</h3></a
+<div class="grid">
+    <div class="box1">
+        <p>
+            I’m a front end–biased web developer with a background in structural
+            engineering and biomedical research who likes spending time outside.
+            <span class="sub nowrap"
+                ><a href="about">More About Me <RightChevron /></a></span
             >
-        </div>
-        <div class="box3">
-            <a href="calendars" class="big"
-                >preview my <h3>Calendars</h3></a
-            >
-        </div>
-        <div class="box4">
-            <a href="projects" class="big"
-                >check out my <h3>Projects</h3></a
-            >
-        </div>
-        <div class="box5">
-            <a href="journal" class="big"
-                >read my <h3>Journal</h3></a
-            >
-        </div>
+        </p>
     </div>
-
-    <img srcset={Collage} alt="Photo Collage" class="full-bleed" />
+    <div class="box2">
+        <a href="photography" class="big"
+            >view my <h3>Photos</h3></a
+        >
+    </div>
+    <div class="box3">
+        <a href="calendars" class="big"
+            >preview my <h3>Calendars</h3></a
+        >
+    </div>
+    <div class="box4">
+        <a href="projects" class="big"
+            >check out my <h3>Projects</h3></a
+        >
+    </div>
+    <div class="box5">
+        <a href="journal" class="big"
+            >read my <h3>Journal</h3></a
+        >
+    </div>
 </div>
 
+<img srcset={Collage} alt="Photo Collage" class="full-bleed" />
+
 <style>
-    .wrapper {
-        max-width: 1200px;
-    }
     .big {
         display: block;
     }

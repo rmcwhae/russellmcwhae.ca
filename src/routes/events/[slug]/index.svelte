@@ -20,15 +20,10 @@
 
 <SEO {title} />
 
-<Button href="/events" text="Events" left />
-
-<h1>{title}</h1>
+<div class="flex justify-between align-center">
+    <h1>{title}</h1>
+    <Button href="/events" text="Events" left />
+</div>
 <p class="sub">{date} &middot; {count} photos</p>
 
 <Gallery {images} />
-
-<style>
-    h1 {
-        margin: var(--s0) 0;
-    }
-</style>

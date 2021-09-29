@@ -28,6 +28,7 @@
     }
     a {
         display: inline-flex;
+        align-items: center;
     }
     .left {
         margin-right: var(--s-2);

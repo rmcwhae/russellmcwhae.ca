@@ -16,54 +16,55 @@
     }
 </script>
 
-<nav>
-    <div id="logo" class:active={mobileMenuOpen}>
-        <a href="/" on:click={hideMenu}><Logo /></a>
-    </div>
-    <div class="nav-menu" class:active={mobileMenuOpen}>
-        <ul>
-            <li>
-                <a
-                    sveltekit:prefetch
-                    href="/photography"
-                    on:click={hideMenu}
-                    aria-current={$page.path.includes('/photography') ||
-                    $page.path.includes('/events')
-                        ? 'page'
-                        : undefined}>Photography</a
-                >
-            </li>
-            <li>
-                <a
-                    sveltekit:prefetch
-                    href="/calendars"
-                    on:click={hideMenu}
-                    aria-current={$page.path === '/calendars'
-                        ? 'page'
-                        : undefined}>Calendars</a
-                >
-            </li>
-            <li>
-                <a
-                    sveltekit:prefetch
-                    on:click={hideMenu}
-                    href="/projects"
-                    aria-current={$page.path === '/projects'
-                        ? 'page'
-                        : undefined}>Projects</a
-                >
-            </li>
-            <li>
-                <a
-                    sveltekit:prefetch
-                    on:click={hideMenu}
-                    href="/journal"
-                    aria-current={$page.path.includes('/journal')
-                        ? 'page'
-                        : undefined}>Journal</a
-                >
-            </li>
-            <!-- <li>
+<header>
+    <nav>
+        <div id="logo" class:active={mobileMenuOpen}>
+            <a href="/" on:click={hideMenu}><Logo /></a>
+        </div>
+        <div class="nav-menu" class:active={mobileMenuOpen}>
+            <ul>
+                <li>
+                    <a
+                        sveltekit:prefetch
+                        href="/photography"
+                        on:click={hideMenu}
+                        aria-current={$page.path.includes('/photography') ||
+                        $page.path.includes('/events')
+                            ? 'page'
+                            : undefined}>Photography</a
+                    >
+                </li>
+                <li>
+                    <a
+                        sveltekit:prefetch
+                        href="/calendars"
+                        on:click={hideMenu}
+                        aria-current={$page.path === '/calendars'
+                            ? 'page'
+                            : undefined}>Calendars</a
+                    >
+                </li>
+                <li>
+                    <a
+                        sveltekit:prefetch
+                        on:click={hideMenu}
+                        href="/projects"
+                        aria-current={$page.path === '/projects'
+                            ? 'page'
+                            : undefined}>Projects</a
+                    >
+                </li>
+                <li>
+                    <a
+                        sveltekit:prefetch
+                        on:click={hideMenu}
+                        href="/journal"
+                        aria-current={$page.path.includes('/journal')
+                            ? 'page'
+                            : undefined}>Journal</a
+                    >
+                </li>
+                <!-- <li>
                 <a
                     sveltekit:prefetch
                     on:click={hideMenu}
@@ -72,18 +73,22 @@
                     >About</a
                 >
             </li> -->
-        </ul>
-    </div>
-    <ThemeSwitcher />
-    <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
-        <span class="icon-bar" />
-        <span class="icon-bar" />
-        <span class="icon-bar" />
-    </div>
-</nav>
-<div class="nav-overlay" class:active={mobileMenuOpen} />
+            </ul>
+        </div>
+        <ThemeSwitcher />
+        <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
+            <span class="icon-bar" />
+            <span class="icon-bar" />
+            <span class="icon-bar" />
+        </div>
+    </nav>
+    <div class="nav-overlay" class:active={mobileMenuOpen} />
+</header>
 
 <style>
+    header {
+        border-bottom: 1px solid var(--light-grey);
+    }
     nav {
         color: var(--high-contrast-color);
         font-size: 1rem;
@@ -91,10 +96,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--s-4) 0;
-        max-width: 900px;
+        padding: var(--s-1) 0;
+        max-width: var(--xl);
         margin: 0 auto;
-        border-bottom: 1px solid var(--light-grey);
     }
     ul {
         list-style: none;
