@@ -97,7 +97,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--s-1) 0;
         max-width: var(--xl);
         margin: 0 auto;
     }
@@ -115,7 +114,7 @@
     } */
     li a {
         text-decoration: none;
-        padding: var(--s-4) 0;
+        padding: var(--s-1) 0;
         display: block;
     }
     a {
@@ -125,7 +124,18 @@
         position: relative;
     }
     li a[aria-current] {
-        color: var(--text-color);
+        /* color: var(--text-color); */
+        position: relative;
+        display: inline-block;
+    }
+    li a[aria-current]::after {
+        position: absolute;
+        content: '';
+        width: calc(100%);
+        height: 2px;
+        background-color: var(--high-contrast-color);
+        display: block;
+        bottom: 0;
     }
     .nav-toggle {
         z-index: 2;
