@@ -45,4 +45,9 @@
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         grid-gap: var(--s3);
     }
+    @media (max-width: 640px) {
+        .archive {
+            grid-gap: var(--s0);
+        }
+    }
 </style>

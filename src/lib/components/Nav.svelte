@@ -88,6 +88,7 @@
 <style>
     header {
         border-bottom: 1px solid var(--light-grey);
+        padding: 0 var(--s2);
     }
     nav {
         color: var(--high-contrast-color);

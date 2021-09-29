@@ -26,6 +26,7 @@
 <style>
     h2 {
         margin: 0;
+        line-height: 1.2;
     }
     h2 a {
         text-decoration: none;
@@ -36,5 +37,13 @@
     section {
         padding-bottom: var(--s3);
         border-bottom: 1px solid var(--light-grey);
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+    }
+    @media (max-width: 640px) {
+        section {
+            padding-bottom: var(--s0);
+        }
     }
 </style>
