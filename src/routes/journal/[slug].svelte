@@ -139,11 +139,6 @@
         line-height: 1.2em;
         padding-top: var(--s-2);
     }
-    @media screen and (min-width: 1023px) {
-        p {
-            font-size: 1.2em;
-        }
-    }
     .right {
         text-align: right;
         margin-left: auto;

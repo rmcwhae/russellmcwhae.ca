@@ -114,7 +114,7 @@
     } */
     li a {
         text-decoration: none;
-        padding: var(--s-1) 0;
+        padding: var(--s0) 0;
         display: block;
     }
     a {

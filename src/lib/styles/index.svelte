@@ -67,7 +67,7 @@
         margin: 0;
         box-sizing: border-box;
         font-family: source-sans-3, azo-sans-web, sans-serif;
-        font-size: 1rem;
+        font-size: 1.125rem;
         line-height: 1.444444;
     }
     @media screen and (max-width: 1023px) {
@@ -97,9 +97,6 @@
     }
     .justify-between {
         justify-content: space-between;
-    }
-    p {
-        font-size: 1.125rem;
     }
     main a {
         text-decoration: underline;
@@ -146,6 +143,7 @@
         margin-right: calc(-1 * var(--s3)); */
     }
     article header {
+        text-align: center;
         /* padding-bottom: var(--s0); */
         /* border-bottom: 1px solid var(--light-grey); */
     }
@@ -188,6 +186,7 @@
     }
     .sub {
         font-weight: 600;
+        font-size: 1rem;
     }
     .nowrap {
         white-space: nowrap;
