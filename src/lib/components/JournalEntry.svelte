@@ -1,4 +1,5 @@
 <script>
+    import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Date from '$lib/components/Date.svelte'
 
     export let post
@@ -11,10 +12,12 @@
         <Date {date} />
     </div>
     <h2>
-        <a sveltekit:prefetch href={'/journal/' + slug}>{title}</a>
+        <a sveltekit:prefetch href={'/journal/' + slug}
+            >{@html preventLastTwoWordWrap(title)}</a
+        >
     </h2>
     {#if description}
-        <p>{description}</p>
+        <p>{@html preventLastTwoWordWrap(description)}</p>
     {/if}
     <div class="sub">
         <span>{category}</span>
