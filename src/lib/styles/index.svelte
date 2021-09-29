@@ -98,6 +98,9 @@
     .justify-between {
         justify-content: space-between;
     }
+    p {
+        font-size: 1.125rem;
+    }
     main a {
         text-decoration: underline;
         /* box-shadow: inset 0 0 0 0 var(--blue-light); */
@@ -185,8 +188,6 @@
     }
     .sub {
         font-weight: 600;
-        font-size: 1rem;
-        /* color: var(--medium-grey); */
     }
     .nowrap {
         white-space: nowrap;
@@ -247,19 +248,20 @@
         line-height: 1;
         margin: 0;
     }
+    h2 {
+        font-size: 2rem;
+    }
     @media (max-width: 1023px) {
-        h1 {
+        /* h1 {
             font-size: 1.5em;
-            /* text-align: center; */
         }
         h2 {
             font-size: 1.25em;
-            /* text-align: center; */
         }
         article header {
             text-align: center;
             margin-bottom: var(--s1);
-        }
+        } */
     }
     h3 {
         font-size: 1rem;
