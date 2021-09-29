@@ -9,54 +9,26 @@
 <Reset />
 <Styles />
 <Loading />
-<div>
-    <aside>
-        <Nav />
-    </aside>
-    <main>
-        <slot />
-    </main>
-</div>
+
+<Nav />
+<main>
+    <slot />
+</main>
 <footer><Footer /></footer>
 
 <style>
-    div {
-        display: flex;
-        height: 100%;
-    }
-    aside {
-        width: 26rem;
-        padding: var(--s2) var(--s2);
-        /* border-right: 1px solid var(--light-grey); */
-        /* margin-right: var(--s2); */
-        min-height: 100vh;
-    }
     footer {
-        position: fixed;
-        bottom: 0;
-        left: var(--s2);
         padding: var(--s0) 0;
+        /* height: 200px; */
+        text-align: center;
+        /* background: url(assiniboine.png) center bottom no-repeat; */
     }
     main {
-        margin: var(--s2) var(--s2) var(--s1) 0;
-        width: 100%;
+        margin: var(--s2) auto;
+        max-width: 900px;
+        /* width: 100%; */
     }
     @media (max-width: 1023px) {
-        div {
-            display: inherit;
-        }
-        aside {
-            border-right: none;
-            min-height: inherit;
-            width: inherit;
-            margin: var(--s-1) 0 var(--s0) var(--s0);
-            padding: 0;
-            /* padding: var(--s-1) 0 var(--s0) var(--s0); */
-        }
-        footer {
-            position: inherit;
-            padding: 0 var(--s0);
-        }
         main {
             margin: var(--s0);
             padding: 0;

@@ -59,7 +59,7 @@
 <style>
     h2 {
         font-size: 1.5rem;
-        line-height: 1.2em;
+        line-height: 1.2;
         margin: 0;
     }
     h2 a {

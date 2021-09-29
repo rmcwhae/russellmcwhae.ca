@@ -63,7 +63,7 @@
                         : undefined}>Journal</a
                 >
             </li>
-            <li>
+            <!-- <li>
                 <a
                     sveltekit:prefetch
                     on:click={hideMenu}
@@ -71,10 +71,10 @@
                     aria-current={$page.path === '/about' ? 'page' : undefined}
                     >About</a
                 >
-            </li>
+            </li> -->
         </ul>
-        <ThemeSwitcher />
     </div>
+    <ThemeSwitcher />
     <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
         <span class="icon-bar" />
         <span class="icon-bar" />
@@ -88,14 +88,22 @@
         color: var(--high-contrast-color);
         font-size: 1rem;
         z-index: 2;
-        position: fixed;
-        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--s-4) 0;
+        max-width: 900px;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--light-grey);
     }
     ul {
         list-style: none;
         padding-left: 0;
-        margin-top: var(--s4);
-        margin-bottom: var(--s4);
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        padding: 0 var(--s0);
     }
     /* li:not(:last-child) {
         margin-right: var(--s0);
@@ -111,19 +119,8 @@
     li {
         position: relative;
     }
-    [aria-current]::before {
-        content: '';
-        position: absolute;
-        top: var(--s-2);
-        bottom: var(--s-2);
-        left: calc(var(--s2) * -1);
-        width: 5px;
-        display: block;
-        background-color: var(--high-contrast-color);
-        /* font-weight: 700; */
-        /* text-decoration: underline; */
-        /* border-left: 5px solid var(--high-contrast-color); */
-        /* margin-left: -5px; */
+    li a[aria-current] {
+        color: var(--text-color);
     }
     .nav-toggle {
         z-index: 2;

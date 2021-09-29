@@ -66,11 +66,6 @@
         padding-bottom: var(--s-2);
         border-bottom: 1px solid var(--light-grey);
     }
-    p {
-        margin-top: 0;
-        font-size: 1.2em;
-        line-height: 1.4em;
-    }
     h3 {
         /* font-size: 1.2em; */
         margin-top: 0;

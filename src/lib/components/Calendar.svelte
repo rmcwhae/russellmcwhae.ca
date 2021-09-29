@@ -21,6 +21,9 @@
 </section>
 
 <style>
+    section {
+        border-radius: var(--radius);
+    }
     a {
         text-align: center;
         padding: var(--s5) 0;

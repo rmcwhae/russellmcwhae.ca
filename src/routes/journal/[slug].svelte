@@ -68,8 +68,8 @@
 
 <SEO {title} />
 
-<article class="restricted-width">
-    <Button left href="/journal" text="All entries" />
+<article>
+    <!-- <Button left href="/journal" text="All entries" /> -->
     <header>
         <div class="sub">
             <Date {date} />
@@ -84,9 +84,10 @@
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
-        <!-- <div class="box" /> -->
     </header>
-    <svelte:component this={component} />
+    <div class="restricted-width">
+        <svelte:component this={component} />
+    </div>
     <nav>
         {#if previous}
             <a href={'/journal/' + previous.slug}>

@@ -73,16 +73,14 @@
 
 <!-- <h2>Previous Calendars</h2> -->
 
-<div class="past mt-0">
+<h1>Calendars</h1>
+<p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
+
+<div class="past">
     {#each calendars as { filename, year, filesize }, index}
         <Calendar {filename} {year} {filesize} {index} />
     {/each}
 </div>
-
-<article>
-    <!-- <h1>Calendars</h1> -->
-    <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
-</article>
 
 <article class="restricted-width">
     <h2>About</h2>
