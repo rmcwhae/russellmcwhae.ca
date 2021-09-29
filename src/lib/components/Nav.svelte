@@ -87,17 +87,18 @@
 
 <style>
     header {
-        border-bottom: 1px solid var(--light-grey);
-        padding: 0 var(--s2);
+        /* border-bottom: 1px solid var(--light-grey); */
+        padding: var(--s1) var(--s2);
     }
     nav {
         color: var(--high-contrast-color);
+        font-weight: 600;
         font-size: 1rem;
         z-index: 2;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: var(--xl);
+        max-width: var(--lg);
         margin: 0 auto;
     }
     ul {
@@ -114,7 +115,7 @@
     } */
     li a {
         text-decoration: none;
-        padding: var(--s0) 0;
+        padding-bottom: var(--s-3);
         display: block;
     }
     a {

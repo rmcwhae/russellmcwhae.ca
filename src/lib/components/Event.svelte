@@ -38,6 +38,6 @@
     section {
         /* margin-top: var(--s0); */
         padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
+        /* border-bottom: 1px solid var(--light-grey); */
     }
 </style>

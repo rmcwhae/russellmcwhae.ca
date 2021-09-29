@@ -28,7 +28,7 @@
         display: grid;
         grid-template-columns:
             1fr
-            min(var(--xl), 100%)
+            min(var(--lg), 100%)
             1fr;
     }
     :global(.wrapper > *) {

@@ -73,18 +73,20 @@
     <header>
         <div class="sub">
             <Date {date} />
-            &middot;
+        </div>
+        <h1>{@html preventLastTwoWordWrap(title)}</h1>
+        {#if description}
+            <p>{@html preventLastTwoWordWrap(description)}</p>
+        {/if}
+        <div class="sub">
             <span>{category}</span>
             &middot;
             <span class="nowrap">{readingTime.words} words</span>
             &middot;
             <span class="nowrap">{readingTime.text}</span>
         </div>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
-        {/if}
     </header>
+
     <div class="restricted-width">
         <svelte:component this={component} />
     </div>
@@ -107,12 +109,17 @@
 </article>
 
 <style>
-    article {
-        margin-top: var(--s2);
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        padding-bottom: var(--s0);
+        margin-bottom: var(--s4);
+        border-bottom: 1px solid var(--light-grey);
     }
-    h1 {
-        margin: var(--s-4) 0;
-        /* margin-bottom: var(--s-3); */
+    h1,
+    p {
+        margin: 0;
     }
     nav {
         /* font-weight: 600; */
@@ -133,11 +140,6 @@
     }
     a:first-child {
         margin-right: var(--s0);
-    }
-    p {
-        margin: 0;
-        line-height: 1.2em;
-        padding-top: var(--s-2);
     }
     .right {
         text-align: right;

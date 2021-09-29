@@ -155,9 +155,9 @@
             margin-right: calc(-1 * var(--s0));
         }
     }
-    article header {
+    /* article header {
         margin-bottom: var(--s4);
-    }
+    } */
     article header,
     article nav,
     article img {
@@ -243,12 +243,16 @@
     }
     h1 {
         font-size: 3rem;
-        font-weight: 600;
         line-height: 1;
         margin: 0;
     }
+    h1,
     h2 {
-        font-size: 2rem;
+        font-family: 'ibm-plex-serif';
+        font-weight: normal;
+    }
+    h2 {
+        font-size: 1.75rem;
     }
     @media (max-width: 640px) {
         h1 {

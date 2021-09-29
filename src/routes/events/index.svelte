@@ -36,6 +36,7 @@
 
 <style>
     .events {
+        margin-top: var(--s1);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         grid-gap: var(--s2);

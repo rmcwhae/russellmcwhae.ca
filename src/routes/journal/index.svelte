@@ -27,12 +27,14 @@
 
 <SEO title="Journal" />
 
+<h1>Journal</h1>
 <!-- <p>
     Writing is my way of making sense of things, both by exploring subjects from
     many different angles, and by discussing the ideas of others who have
     wrestled with similar questions. I hope you’ll join me for a glimpse into my
     head.
 </p> -->
+
 <div class="archive">
     {#each posts as post}
         <JournalEntry {post} />
@@ -41,9 +43,10 @@
 
 <style>
     .archive {
+        margin-top: var(--s2);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-gap: var(--s3);
+        grid-gap: var(--s2);
     }
     @media (max-width: 640px) {
         .archive {
