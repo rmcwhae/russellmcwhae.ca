@@ -110,6 +110,9 @@
     main ul {
         padding-left: var(--s1);
     }
+    p {
+        margin-bottom: var(--s2);
+    }
     main a:hover {
         /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */
     }
