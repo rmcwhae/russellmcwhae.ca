@@ -36,7 +36,9 @@
 
 <div class="archive">
     {#each posts as post}
-        <JournalEntry {post} />
+        <div class="border-bottom">
+            <JournalEntry {post} />
+        </div>
     {/each}
 </div>
 

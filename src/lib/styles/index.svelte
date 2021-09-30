@@ -109,6 +109,9 @@
     main a:hover {
         /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */
     }
+    .border-bottom {
+        border-bottom: 1px solid var(--light-grey);
+    }
     *,
     *::before,
     *::after {

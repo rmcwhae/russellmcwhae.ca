@@ -91,9 +91,9 @@
     <div class="restricted-width">
         <svelte:component this={component} />
     </div>
-    <nav>
+    <nav class="flex justify-between">
         {#if previous}
-            <div class="left">
+            <div class="left border-bottom">
                 <div class="mb"><LeftChevron /></div>
                 <JournalEntry post={previous} />
             </div>
@@ -101,7 +101,7 @@
             <div />
         {/if}
         {#if next}
-            <div class="right">
+            <div class="right border-bottom">
                 <div class="mb"><RightChevron /></div>
                 <JournalEntry post={next} />
             </div>
@@ -123,16 +123,9 @@
         margin: 0;
     }
     nav {
-        display: flex;
-        justify-content: space-between;
         margin-top: var(--s4);
-        align-items: flex-end;
         flex-wrap: wrap;
-        padding-top: var(--s0);
-        gap: var(--s3);
-    }
-    nav > div {
-        width: calc(50% - var(--s3));
+        gap: var(--s4);
     }
     .left {
         margin-right: auto;

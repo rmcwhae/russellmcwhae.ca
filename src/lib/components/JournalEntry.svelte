@@ -39,7 +39,6 @@
     }
     section {
         padding-bottom: var(--s2);
-        border-bottom: 1px solid var(--light-grey);
         display: flex;
         flex-direction: column;
         gap: var(--s-3);
