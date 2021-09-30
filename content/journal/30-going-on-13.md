@@ -302,7 +302,7 @@ All I know is that when I get caught up thinking—perhaps _overthinking_ is mor
 
 If city life works for you, great. If you live in the city and seek more adventure, spending time outside is the best way I’ve found to satisfy that craving—just start slowly and deliberately expand your experience level, a topic I’ll address next. If you’re already an outdoorsy city dweller and entertain dreams of jumping off the corporate bandwagon, remember that the adventure lifestyle isn’t without its own challenges. Apply Mr. Money Mustache’s radical early retirement message and you may find yourself with more freedom sooner than expected. And if you’re a ski bum and want more money—well, there’s always the lottery.
 
-## Mistakes and Mentorship in the&nbsp;Mountains
+## Mistakes and Mentorship in the Mountains
 
 **3:30 AM, July 27, 2013**  
 After not sleeping a wink in the Goat Creek parking lot near Canmore, Alberta, we set off to attempt the Rundle traverse. We—a ragtag group of six newbie climbers—started hiking up the East End of Rundle (EEOR) off under a clear, dark ski. Our first mistake was our group size: six is double or triple the size you want for an objective like the Rundle traverse, a huge day covering the 11 individual summits of Mount Rundle between Canmore and Banff with a few pitches of technical climbing.
