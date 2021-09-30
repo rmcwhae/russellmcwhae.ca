@@ -27,7 +27,6 @@
 
 <SEO title="Journal" />
 
-<h1>Journal</h1>
 <!-- <p>
     Writing is my way of making sense of things, both by exploring subjects from
     many different angles, and by discussing the ideas of others who have

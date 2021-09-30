@@ -24,7 +24,7 @@
         /* background: url(assiniboine.png) center bottom no-repeat; */
     }
     .wrapper {
-        margin: var(--s2);
+        margin: 0 var(--s2) var(--s2);
         display: grid;
         grid-template-columns:
             1fr

@@ -31,7 +31,7 @@
                         aria-current={$page.path.includes('/photography') ||
                         $page.path.includes('/events')
                             ? 'page'
-                            : undefined}>Photography</a
+                            : undefined}>Photos</a
                     >
                 </li>
                 <li>

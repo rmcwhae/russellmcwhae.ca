@@ -68,7 +68,7 @@
         box-sizing: border-box;
         font-family: source-sans-3, azo-sans-web, sans-serif;
         font-size: 1.125rem;
-        line-height: 1.444444;
+        line-height: 1.5;
     }
     @media screen and (max-width: 1023px) {
         body {
@@ -81,10 +81,10 @@
     a.button {
         font-weight: 600;
         font-size: 1rem;
-        padding: var(--s-1) var(--s0);
+        padding: var(--s-1) var(--s1);
         text-decoration: none;
         border: 1px solid var(--light-grey);
-        border-radius: var(--radius);
+        border-radius: 50px;
     }
     a.button:hover {
         border-color: var(--medium-grey);
@@ -127,7 +127,7 @@
         margin-right: -50vw;
     }
     .restricted-width {
-        max-width: 630px;
+        max-width: 70ch;
         margin: 0 auto;
     }
     .footnote-backref {
@@ -186,7 +186,7 @@
     }
     .sub {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .nowrap {
         white-space: nowrap;
@@ -242,7 +242,7 @@
         color: var(--high-contrast-color);
     }
     h1 {
-        font-size: 3rem;
+        font-size: 3.052rem;
         line-height: 1;
         margin: 0;
     }
@@ -252,7 +252,12 @@
         font-weight: normal;
     }
     h2 {
-        font-size: 1.75rem;
+        font-size: 1.953rem;
+    }
+    h3 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
     @media (max-width: 640px) {
         h1 {
@@ -273,11 +278,6 @@
             text-align: center;
             margin-bottom: var(--s1);
         } */
-    }
-    h3 {
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
     }
     article > hr,
     div > hr {
