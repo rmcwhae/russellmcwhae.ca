@@ -13,7 +13,15 @@
 
 <section>
     <a href={'/events/' + eventName}>
-        <Image {name} {filePath} {width} {height} {thumbnail} lockedRatio />
+        <Image
+            {name}
+            {filePath}
+            {width}
+            {height}
+            {thumbnail}
+            lockedRatio
+            photoswipe={false}
+        />
         <h2>{@html StringUtils.preventLastTwoWordWrap(title)}</h2>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>

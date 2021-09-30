@@ -8,21 +8,43 @@
     export let height
     export let thumbnail
     export let lockedRatio = false
+    export let photoswipe = true // TODO invert me and fix
 
     const srcset = generateSrcSets(filePath)
 </script>
 
 <div class:lockedRatio>
-    <img
-        data-sizes="auto"
-        data-srcset={srcset}
-        src={thumbnail}
-        {sizes}
-        {width}
-        {height}
-        alt={name}
-        class="lazyload"
-    />
+    {#if photoswipe}
+        <a
+            href={thumbnail}
+            data-pswp-width={width}
+            data-pswp-height={height}
+            data-pswp-src={thumbnail}
+            data-pswp-srcset={srcset}
+        >
+            <img
+                data-sizes="auto"
+                data-srcset={srcset}
+                src={thumbnail}
+                {sizes}
+                {width}
+                {height}
+                alt={name}
+                class="lazyload"
+            />
+        </a>
+    {:else}
+        <img
+            data-sizes="auto"
+            data-srcset={srcset}
+            src={thumbnail}
+            {sizes}
+            {width}
+            {height}
+            alt={name}
+            class="lazyload"
+        />
+    {/if}
 </div>
 
 <style>

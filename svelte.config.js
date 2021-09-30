@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
-// import adapter from '@sveltejs/adapter-netlify'
+import { isoImport } from 'vite-plugin-iso-import'
 import pack from 'vite-imagetools'
 import preprocess from 'svelte-preprocess'
 // import imagePreprocessor from 'svimg'
@@ -45,7 +45,7 @@ const config = {
                     $root: path.resolve('.'),
                 },
             },
-            plugins: [imagetools()],
+            plugins: [imagetools(), isoImport()],
         },
     },
 }
