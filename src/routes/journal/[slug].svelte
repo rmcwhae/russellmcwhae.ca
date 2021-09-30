@@ -54,6 +54,7 @@
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Button from '$lib/components/Button.svelte'
+    import JournalEntry from '$lib/components/JournalEntry.svelte'
     import SEO from '$lib/components/SEO.svelte'
 
     export let title
@@ -92,18 +93,18 @@
     </div>
     <nav>
         {#if previous}
-            <a href={'/journal/' + previous.slug}>
-                <LeftChevron />
-                {previous.title}</a
-            >
+            <div class="left">
+                <div class="mb"><LeftChevron /></div>
+                <JournalEntry post={previous} />
+            </div>
         {:else}
             <div />
         {/if}
         {#if next}
-            <a href={'/journal/' + next.slug} class="right"
-                >{next.title}
-                <RightChevron />
-            </a>
+            <div class="right">
+                <div class="mb"><RightChevron /></div>
+                <JournalEntry post={next} />
+            </div>
         {/if}
     </nav>
 </article>
@@ -122,27 +123,26 @@
         margin: 0;
     }
     nav {
-        /* font-weight: 600; */
         display: flex;
         justify-content: space-between;
         margin-top: var(--s4);
-        /* margin-bottom: var(--s3); */
+        align-items: flex-end;
         flex-wrap: wrap;
         padding-top: var(--s0);
-        border-top: 1px solid var(--light-grey);
+        gap: var(--s3);
     }
-    nav a {
-        color: var(--high-contrast-color);
-    }
-    a {
-        text-decoration: none;
-        vertical-align: middle;
-    }
-    a:first-child {
-        margin-right: var(--s0);
+    /* nav > div {
+        flex-grow: 1;
+        flex-basis: 0;
+    } */
+    .left {
+        margin-right: auto;
     }
     .right {
         text-align: right;
         margin-left: auto;
+    }
+    .mb {
+        margin-bottom: var(--s-1);
     }
 </style>

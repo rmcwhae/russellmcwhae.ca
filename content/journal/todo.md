@@ -10,13 +10,13 @@ category: TODO
 ## Launch checklist
 
 -   Update "That New-Website Look"
+-   Mobile optimization
 -   Clean Adobe WebFonts once done
 -   Performance testing
 -   Publish date bug
 -   Projects page
 -   Debug color switcher (less WET code…)
 -   Update repo readme
--   Events grid with media queries and inline-block and percentage
 
 ## Later Ideas
 
