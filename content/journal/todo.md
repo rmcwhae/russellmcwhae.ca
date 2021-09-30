@@ -17,6 +17,7 @@ category: TODO
 -   Projects page
 -   Debug color switcher (less WET code…)
 -   Update repo readme
+-   SVG logo align to left
 
 ## Later Ideas
 

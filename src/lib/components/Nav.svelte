@@ -108,14 +108,12 @@
     }
     li {
         display: inline-block;
-        padding: 0 var(--s0);
     }
     /* li:not(:last-child) {
         margin-right: var(--s0);
     } */
     li a {
         text-decoration: none;
-        padding-bottom: var(--s-3);
         display: block;
     }
     a {
@@ -123,21 +121,18 @@
     }
     li {
         position: relative;
+        margin: 0 var(--s-4);
     }
-    li a[aria-current] {
-        /* color: var(--text-color); */
-        position: relative;
-        display: inline-block;
+    li a {
+        padding: var(--s-1) var(--s1);
+        border: 1px solid transparent;
     }
-    li a[aria-current]::after {
-        position: absolute;
-        content: '';
-        width: calc(100%);
-        height: 2px;
-        background-color: var(--high-contrast-color);
-        display: block;
-        bottom: 0;
+    li a[aria-current],
+    li a:hover {
+        border-color: var(--light-grey);
+        border-radius: 50px;
     }
+
     .nav-toggle {
         z-index: 2;
         display: none;

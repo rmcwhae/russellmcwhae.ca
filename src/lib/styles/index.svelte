@@ -26,7 +26,7 @@
         --background-color-transparent: rgba(255, 255, 255, 0.8);
         --text-color: rgb(100, 100, 100);
         --high-contrast-color: black;
-        --light-grey: rgb(226, 226, 226);
+        --light-grey: rgb(218, 218, 218);
         --medium-grey: #888;
         --blue: rgb(48, 89, 202);
         --blue-light: rgb(175, 194, 240);
@@ -97,6 +97,10 @@
     }
     .justify-between {
         justify-content: space-between;
+    }
+    .two-col {
+        columns: 2;
+        column-gap: var(--s2);
     }
     main a {
         text-decoration: underline;
@@ -258,9 +262,9 @@
         font-size: 1.953rem;
     }
     h3 {
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        font-size: 1.25rem;
+        /* text-transform: uppercase;
+        letter-spacing: 0.1em; */
     }
     @media (max-width: 640px) {
         h1 {
