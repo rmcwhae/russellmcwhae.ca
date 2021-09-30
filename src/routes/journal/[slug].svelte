@@ -131,10 +131,9 @@
         padding-top: var(--s0);
         gap: var(--s3);
     }
-    /* nav > div {
-        flex-grow: 1;
-        flex-basis: 0;
-    } */
+    nav > div {
+        width: calc(50% - var(--s3));
+    }
     .left {
         margin-right: auto;
     }
