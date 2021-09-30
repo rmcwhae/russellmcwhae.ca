@@ -255,13 +255,15 @@
         font-size: 3.052rem;
         line-height: 1;
         margin: 0;
+        font-weight: 300;
+        font-style: normal;
     }
     h1,
     h2 {
         font-family: 'ibm-plex-serif';
-        font-weight: normal;
     }
     h2 {
+        font-weight: normal;
         font-size: 1.953rem;
     }
     h3 {

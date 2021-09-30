@@ -24,6 +24,13 @@
     <h1>{title}</h1>
     <Button href="/events" text="Events" left />
 </div>
-<p class="sub">{date} &middot; {count} photos</p>
+<div class="sub">{date} &middot; {count} photos</div>
 
 <Gallery {images} />
+
+<style>
+    .sub {
+        margin-top: var(--s-1);
+        margin-bottom: var(--s1);
+    }
+</style>

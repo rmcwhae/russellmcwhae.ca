@@ -17,12 +17,15 @@
 
 <div class="flex items-center justify-between">
     <h1>Portfolio</h1>
-    <!-- <p>This is a showcase of my favourite photos.</p> -->
-    <p class="nowrap">
-        <Button right href="/events" text="All events" />
-    </p>
+    <Button right href="/events" text="All events" />
 </div>
 
 <SEO title="Photography" />
 
 <Gallery {images} />
+
+<style>
+    div {
+        margin-bottom: var(--s1);
+    }
+</style>
