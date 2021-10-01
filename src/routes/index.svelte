@@ -1,7 +1,28 @@
+<script context="module">
+    import { posts } from '$lib/services/posts'
+
+    export async function load({ fetch }) {
+        const images = await fetch(`/index.json`).then((r) => r.json())
+        const latestPosts = posts.slice(0, 4)
+
+        return {
+            props: {
+                images,
+                latestPosts,
+            },
+        }
+    }
+</script>
+
 <script>
     import SEO from '$lib/components/SEO.svelte'
-    import Collage from '$static/collage.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+    import Gallery from '$lib/components/Gallery.svelte'
     import Button from '$lib/components/Button.svelte'
+    import JournalEntrySet from '$lib/components/JournalEntrySet.svelte'
+    import ButtonSet from '$lib/components/ButtonSet.svelte'
+
+    export let images
+    export let latestPosts
 </script>
 
 <SEO />
@@ -42,13 +63,12 @@
 
 <h2>Photos</h2>
 
-<img srcset={Collage} alt="Photo Collage" class="full-bleed" />
-<!-- TODO make me into four tagged images -->
+<Gallery {images} />
 
-<div class="photo-icons">
+<ButtonSet>
     <Button href="photography" text="Portfolio" right />
     <Button href="events" text="Events" right />
-</div>
+</ButtonSet>
 
 <div class="restricted-width-mobile">
     <h2 id="about">About Me</h2>
@@ -114,14 +134,21 @@
     </div>
 </div>
 
+<h2 class="mt-5">Latest Journal Entries</h2>
+
+<JournalEntrySet posts={latestPosts} />
+
+<ButtonSet>
+    <Button href="journal" text="All entries" right />
+</ButtonSet>
+
+<h2>Etc.</h2>
+
+<!-- 
+-   [What I Use](/uses)
+-   [Outdoor Videos](/videos)
+> -->
 <style>
-    .photo-icons {
-        display: flex;
-        justify-content: center;
-        gap: var(--s0);
-        margin-top: var(--s2);
-        margin-bottom: var(--s5);
-    }
     .big {
         display: block;
         text-decoration: none;

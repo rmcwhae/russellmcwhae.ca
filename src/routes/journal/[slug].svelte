@@ -1,17 +1,7 @@
 <script context="module">
-    export async function load({ page }) {
-        const posts = Object.entries(
-            import.meta.globEager('/content/journal/*.md')
-        )
-            .map(([, post]) => ({
-                // frontmatter data
-                ...post.metadata,
-                // the processed Svelte component from the markdown file
-                component: post.default,
-            }))
-            .filter((post) => !post.draft)
-            .sort((a, b) => (a.date < b.date ? 1 : -1))
+    import { posts } from '$lib/services/posts'
 
+    export async function load({ page }) {
         const { slug } = page.params
         const index = posts.findIndex((post) => slug === post.slug)
 
@@ -53,7 +43,7 @@
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
-    import Button from '$lib/components/Button.svelte'
+    // import Button from '$lib/components/Button.svelte'
     import JournalEntry from '$lib/components/JournalEntry.svelte'
     import SEO from '$lib/components/SEO.svelte'
 

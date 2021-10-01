@@ -139,6 +139,9 @@
         max-width: 70ch;
         margin: 0 auto;
     }
+    .mt-5 {
+        margin-top: var(--s5);
+    }
     @media screen and (min-width: 1024px) {
         .two-col {
             columns: 2;
@@ -146,7 +149,7 @@
         }
         .restricted-width-mobile {
             max-width: inherit;
-            margin: inherit;
+            margin: 0;
         }
     }
     .footnote-backref {
@@ -310,13 +313,5 @@
         color: var(--light-grey);
         text-align: center;
         overflow: visible;
-    }
-    .mt-0 {
-        margin-top: calc(-1 * var(--s2));
-    }
-    @media screen and (max-width: 1023px) {
-        .mt-0 {
-            margin-top: 0;
-        }
     }
 </style>

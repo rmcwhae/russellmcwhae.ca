@@ -1,15 +1,7 @@
 <script context="module">
-    export async function load() {
-        const posts = Object.entries(
-            import.meta.globEager('/content/journal/*.md')
-        )
-            .map(([, post]) => ({
-                // frontmatter data
-                ...post.metadata,
-            }))
-            .filter((post) => !post.draft)
-            .sort((a, b) => (a.date < b.date ? 1 : -1))
+    import { posts } from '$lib/services/posts'
 
+    export async function load() {
         return {
             props: {
                 posts,
@@ -19,7 +11,7 @@
 </script>
 
 <script>
-    import JournalEntry from '$lib/components/JournalEntry.svelte'
+    import JournalEntrySet from '$lib/components/JournalEntrySet.svelte'
     import SEO from '$lib/components/SEO.svelte'
 
     export let posts
@@ -34,24 +26,4 @@
     head.
 </p> -->
 
-<div class="archive">
-    {#each posts as post}
-        <div class="border-bottom">
-            <JournalEntry {post} />
-        </div>
-    {/each}
-</div>
-
-<style>
-    .archive {
-        margin-top: var(--s2);
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-gap: var(--s2);
-    }
-    @media (max-width: 640px) {
-        .archive {
-            grid-gap: var(--s0);
-        }
-    }
-</style>
+<JournalEntrySet {posts} />
