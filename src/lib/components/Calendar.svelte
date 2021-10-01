@@ -15,21 +15,20 @@
         class="shadow"
         rel="noopener noreferrer nofollow"
     >
-        <h4>{year}</h4>
+        <h2>{year}</h2>
         <aside class="uppercase">{filesize} MB PDF</aside>
     </a>
 </section>
 
 <style>
-    section {
-        border-radius: var(--radius);
-    }
     a {
         text-align: center;
-        padding: var(--s5) 0;
         display: block;
-        margin-bottom: var(--s-1);
         text-decoration: none;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
     @media (min-width: 801px) {
         .current {
@@ -43,11 +42,13 @@
     section {
         background-size: cover;
         background-position: center center;
+        height: 40vh;
     }
-    h4 {
-        font-weight: 400;
+    .current {
+        height: 60vh;
+    }
+    h2 {
         margin: 0;
-        font-size: 2em;
         line-height: 1em;
     }
     aside {

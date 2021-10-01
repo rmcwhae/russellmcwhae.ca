@@ -51,10 +51,12 @@
     img {
         width: 100%;
         height: auto;
-        border-radius: var(--radius);
     }
     .lockedRatio {
         position: relative;
+    }
+    .lockedRatio img {
+        border-radius: var(--radius);
     }
 
     /* Create a pseudo element that uses padding-bottom to take up space */

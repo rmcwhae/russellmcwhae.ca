@@ -76,68 +76,50 @@
 <h1>Calendars</h1>
 <p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
 
-<div class="past">
+<div class="past full-bleed">
     {#each calendars as { filename, year, filesize }, index}
         <Calendar {filename} {year} {filesize} {index} />
     {/each}
 </div>
 
-<article class="restricted-width">
+<article class="restricted-width-mobile">
     <h2>About</h2>
-    <p>
-        Initially created as Christmas gifts for family and friends, these
-        calendars are an effort to do more with my photography. It’s hard to
-        stand out in the crowded, high-volume world of online photography, so
-        printing can be a way to make photography less ephemeral. Calendars
-        provide a high-density collection of photographs in an affordable
-        physical product.
-    </p>
-    <p>
-        I design the calendars in Adobe Indesign with the <a
-            href="http://calendarwizard.sourceforge.net"
-            target="_blank"
-            rel="noopener noreferrer nofollow">Calendar Wizard</a
-        >
-        plugin to create the basic table layout before heavy customization. There’s
-        a steep learning curve, but the result is highly original. I then send a
-        print-ready PDF to
-        <a
-            href="https://www.dhq.ca"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            >Digital Headquarters Imaging Centre</a
-        > for printing and binding.
-    </p>
+    <div class="two-col">
+        <p>
+            Initially created as Christmas gifts for family and friends, these
+            calendars are an effort to do more with my photography. It’s hard to
+            stand out in the crowded, high-volume world of online photography,
+            so printing can be a way to make photography less ephemeral.
+            Calendars provide a high-density collection of photographs in an
+            affordable physical product.
+        </p>
+        <p>
+            I design the calendars in Adobe Indesign with the <a
+                href="http://calendarwizard.sourceforge.net"
+                target="_blank"
+                rel="noopener noreferrer nofollow">Calendar Wizard</a
+            >
+            plugin to create the basic table layout before heavy customization. There’s
+            a steep learning curve, but the result is highly original. I then send
+            a print-ready PDF to
+            <a
+                href="https://www.dhq.ca"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                >Digital Headquarters Imaging Centre</a
+            > for printing and binding.
+        </p>
+    </div>
 </article>
 
 <style>
-    /* h1 {
-        padding-bottom: var(--s2);
-    } */
+    p {
+        margin-top: 0;
+    }
     .past {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: var(--s-2);
-    }
-    main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin-top: calc(-1 * var(--s2));
-        height: 100vh;
-        background-size: cover;
-        background-position: center center;
-    }
-    main a,
-    main a:hover {
-        box-shadow: none;
-    }
-    h4 {
-        font-weight: 400;
-        margin: 0;
-        font-size: 3em;
-        line-height: 1em;
     }
     article {
         margin: 0 auto var(--s2);
@@ -153,9 +135,6 @@
         padding: var(--s-2) var(--s-1);
     }
     @media (max-width: 800px) {
-        main {
-            margin-top: 0;
-        }
         .past {
             grid-template-columns: 1fr;
         }

@@ -43,9 +43,10 @@
 <h2>Photos</h2>
 
 <img srcset={Collage} alt="Photo Collage" class="full-bleed" />
+<!-- TODO make me into four tagged images -->
 
 <div class="photo-icons">
-    <Button href="photography" text="All photos" right />
+    <Button href="photography" text="Portfolio" right />
     <Button href="events" text="Events" right />
 </div>
 

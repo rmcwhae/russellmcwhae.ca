@@ -23,6 +23,6 @@
     export let images
 </script>
 
-<div id="gallery">
+<div id="gallery" class="full-bleed">
     <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
 </div>
