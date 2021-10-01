@@ -2,14 +2,14 @@
 title: That New-Website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
-date: 2021-08-23
+date: 2021-09-30
 draft: 0
 category: Tech
 ---
 
 <script>
-import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'
-  </script>
+  import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'
+</script>
 
 Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, especially relatively simple websites such as this one.
 
@@ -48,8 +48,6 @@ For spacing within the layout, I implemented Every Layout’s [Modular scale](ht
 
 Margins and padding can then be defined with values such as `var(--s0)` etc., which are perhaps less arbitrary than otherwise.
 
-As for typography, simplicity again prevails: all fonts are different weights of a single typeface.
-
 ## Development
 
 As mentioned, this website is built using SvelteKit. Under the hood, SvelteKit uses [Vite](https://vitejs.dev/) for bundling, which was fabulously quick and reliable.
@@ -66,17 +64,24 @@ The following packages were quite helpful in the development of this site:
 
 -   [mdsvex](https://mdsvex.pngwn.io/): for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
 -   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
+-   [Imagekit](https://imagekit.io/) for the responsive-image pipeline
+-   [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
+-   [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
 
 ### Deployment
 
-As this website is still hosted on a shared Namecheap account, I perform the static export locally and upload only the final bundle of files. To automate this, I created a local terminal alias that builds and then `rsync`s the files over `ssh` when I type `deploy`:
+This website is a perfect candidate for static export as the content changes relatively rarely (via SvelteKit’s [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)). For a hobby site such as this, the [Netlify](https://www.netlify.com/) free tier is more than adequate for the build pipeline and hosting.
+
+During development, I often deployed the code to my already-paid shared hosting account to minimize the number of build minutes consumed by Netlify (300 per month). To automate this, I created a local terminal alias that builds and then `rsync`s the files over `ssh` to the shared server when I type `deploy` (maybe this is useful to someone):
 
 ```
 alias deploy="cd <local-repo-directory> && npm run build && rsync -cvzhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
 ```
 
-I likely could get away with the free tier on Heroku or another cloud service such as Amazon S3; however, that would require putting all my images in the cloud and crunching them during the static export process. I have enough images that it might start testing the limits of the free tiers of such cloud services, so I’ve decided to do all the building locally instead. I am also the only one working on this website, so there isn’t a strong case for proper cloud deployments.
+Performance between the shared host and Netlify seemed fairly similar, though Netlify has a CDN and is probably a bit faster overall.
+
+If you want to get really fancy, use [adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify) to get dynamic server rendering via Netlify functions. One benefit of this approach would be getting the [events](/events) list to dynamically update when a new event gallery is uploaded in Imagekit. With the static export, a full rebuild is required every time a new event is added, requiring me to manually trigger a rebuild (via a custom webook mapped to a terminal alias). Given how rarely the content changes, dynamic server rendering is overkill for a site like this, but it’s nice to know that it’s wonderfully simple to implement.
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding the smoke here in Revelstoke, BC. I’ll echo the consensus that seems to be developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
+This was a fun project to keep occupied while avoiding summer smoke and shoulder season here in Revelstoke. I’ll echo the consensus that seems to be developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
