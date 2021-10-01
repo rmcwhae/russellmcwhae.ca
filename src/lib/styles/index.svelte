@@ -98,13 +98,10 @@
     .justify-between {
         justify-content: space-between;
     }
-    .two-col {
-        columns: 2;
-        column-gap: var(--s2);
-    }
+
     main a {
         text-decoration: underline;
-        /* box-shadow: inset 0 0 0 0 var(--blue-light); */
+        /* box-shadow: inset 0 0 0 0 var(--light-grey); */
         transition: var(--duration);
     }
     main ul {
@@ -114,7 +111,8 @@
         margin-bottom: var(--s2);
     }
     main a:hover {
-        /* box-shadow: inset 0 -5px 0 0 var(--blue-light); */
+        text-decoration: none;
+        /* box-shadow: inset 0 -4px 0 0 var(--light-grey); */
     }
     .border-bottom {
         border-bottom: 1px solid var(--light-grey);
@@ -136,9 +134,20 @@
         margin-left: -50vw;
         margin-right: -50vw;
     }
-    .restricted-width {
+    .restricted-width,
+    .restricted-width-mobile {
         max-width: 70ch;
         margin: 0 auto;
+    }
+    @media screen and (min-width: 1024px) {
+        .two-col {
+            columns: 2;
+            column-gap: var(--s2);
+        }
+        .restricted-width-mobile {
+            max-width: inherit;
+            margin: inherit;
+        }
     }
     .footnote-backref {
         margin-left: var(--s-2);
