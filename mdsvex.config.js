@@ -9,7 +9,6 @@ const config = {
 
     layout: {
         page: './src/lib/components/Page.svelte',
-        pagenoheader: './src/lib/components/PageNoHeader.svelte',
     },
 
     smartypants: {
