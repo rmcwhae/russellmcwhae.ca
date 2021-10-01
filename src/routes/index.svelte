@@ -23,6 +23,29 @@
 
     export let images
     export let latestPosts
+
+    const etCetera = [
+        {
+            href: 'uses',
+            title: 'What I use',
+            description: 'Tools used in my work.',
+        },
+        {
+            href: 'videos',
+            title: 'Outdoor Videos',
+            description: 'A list of my favourite outdoor videos.',
+        },
+        // {
+        //     slug: 'videos',
+        //     title: 'Skiing GoPro Footage',
+        //     description: 'Some backcountry skiing GoPro footage.',
+        // },
+        // {
+        //     slug: 'reading-list',
+        //     title: 'Reading List',
+        //     description: 'Books I have read.',
+        // },
+    ]
 </script>
 
 <SEO />
@@ -144,10 +167,8 @@
 
 <h2>Etc.</h2>
 
-<!-- 
--   [What I Use](/uses)
--   [Outdoor Videos](/videos)
-> -->
+<JournalEntrySet posts={etCetera} />
+
 <style>
     .big {
         display: block;

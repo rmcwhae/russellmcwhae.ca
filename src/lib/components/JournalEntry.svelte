@@ -4,26 +4,28 @@
 
     export let post
 
-    $: ({ slug, title, description, date, readingTime, category } = post)
+    $: ({ href, title, description, date, readingTime, category } = post)
 </script>
 
 <section>
-    <div class="sub">
-        <Date {date} />
-    </div>
+    {#if date}
+        <div class="sub">
+            <Date {date} />
+        </div>
+    {/if}
     <h2>
-        <a sveltekit:prefetch href={'/journal/' + slug}
-            >{@html preventLastTwoWordWrap(title)}</a
-        >
+        <a sveltekit:prefetch {href}>{@html preventLastTwoWordWrap(title)}</a>
     </h2>
     {#if description}
         <p>{@html preventLastTwoWordWrap(description)}</p>
     {/if}
-    <div class="sub">
-        <span>{category}</span>
-        &middot;
-        <span>{readingTime.text}</span>
-    </div>
+    {#if category && readingTime}
+        <div class="sub">
+            <span>{category}</span>
+            &middot;
+            <span>{readingTime.text}</span>
+        </div>
+    {/if}
 </section>
 
 <style>
