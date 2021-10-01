@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<h2>Photos</h2>
+<!-- <h2>Photos</h2> -->
 
 <Gallery {images} />
 
@@ -166,6 +166,8 @@
 </ButtonSet>
 
 <h2>Etc.</h2>
+
+<p>A few bits of random content that had nowhere else to go.</p>
 
 <JournalEntrySet posts={etCetera} />
 
