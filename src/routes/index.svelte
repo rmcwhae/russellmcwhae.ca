@@ -44,6 +44,11 @@
 
 <img srcset={Collage} alt="Photo Collage" class="full-bleed" />
 
+<div class="photo-icons">
+    <Button href="photography" text="All photos" right />
+    <Button href="events" text="Events" right />
+</div>
+
 <div class="restricted-width-mobile">
     <h2 id="about">About Me</h2>
 
@@ -109,6 +114,13 @@
 </div>
 
 <style>
+    .photo-icons {
+        display: flex;
+        justify-content: center;
+        gap: var(--s0);
+        margin-top: var(--s2);
+        margin-bottom: var(--s5);
+    }
     .big {
         display: block;
         text-decoration: none;
