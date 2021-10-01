@@ -13,8 +13,6 @@
 <script>
     import JournalEntrySet from '$lib/components/JournalEntrySet.svelte'
     import SEO from '$lib/components/SEO.svelte'
-
-    export let posts
 </script>
 
 <SEO title="Journal" />
