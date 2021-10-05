@@ -22,6 +22,7 @@ category: TODO
 -   <pre> margins
 -   Flexbox gallery (only css)
 -   Animate stuff
+-   Page anchors bug
 
 ## Later Ideas
 
