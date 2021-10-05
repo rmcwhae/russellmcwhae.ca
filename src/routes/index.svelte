@@ -64,7 +64,7 @@
     </div>
     <div class="box2 border-bottom">
         <a href="photography" class="big"
-            >view my <h4>Photos</h4></a
+            >see my <h4>Photos</h4></a
         >
     </div>
     <div class="box3 border-bottom">
