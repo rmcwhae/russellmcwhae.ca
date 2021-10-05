@@ -18,6 +18,10 @@ category: TODO
 -   Update repo readme
 -   SVG logo align to left
 -   Performance testing
+-   LQIP blur
+-   <pre> margins
+-   Flexbox gallery (only css)
+-   Animate stuff
 
 ## Later Ideas
 
