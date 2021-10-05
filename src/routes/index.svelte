@@ -64,22 +64,22 @@
     </div>
     <div class="box2 border-bottom">
         <a href="photography" class="big"
-            >view my <h2>Photos</h2></a
+            >view my <h4>Photos</h4></a
         >
     </div>
     <div class="box3 border-bottom">
         <a href="calendars" class="big"
-            >preview my <h2>Calendars</h2></a
+            >preview my <h4>Calendars</h4></a
         >
     </div>
     <div class="box4 border-bottom">
         <a href="projects" class="big"
-            >check out my <h2>Projects</h2></a
+            >check out my <h4>Projects</h4></a
         >
     </div>
     <div class="box5 border-bottom">
         <a href="journal" class="big"
-            >read my <h2>Journal</h2></a
+            >read my <h4>Journal</h4></a
         >
     </div>
 </div>
@@ -94,7 +94,7 @@
 </ButtonSet>
 
 <div class="restricted-width-mobile">
-    <h2 id="about">About Me</h2>
+    <h3 id="about">About Me</h3>
 
     <div class="two-col">
         <p>
@@ -157,7 +157,7 @@
     </div>
 </div>
 
-<h2 class="mt-5">Latest Journal Entries</h2>
+<h3 class="mt-5">Latest Journal Entries</h3>
 
 <JournalEntrySet posts={latestPosts} />
 
@@ -165,7 +165,7 @@
     <Button href="journal" text="All entries" right />
 </ButtonSet>
 
-<h2>Etc.</h2>
+<h3>Etc.</h3>
 
 <p>A few bits of random content that had nowhere else to go.</p>
 
@@ -189,7 +189,7 @@
     p {
         margin-top: 0;
     }
-    .grid h2 {
+    .grid h4 {
         text-transform: lowercase;
         margin-top: 0;
         line-height: 1em;

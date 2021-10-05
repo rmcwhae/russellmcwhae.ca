@@ -12,17 +12,18 @@ category: TODO
 -   Update "That New-Website Look"
 -   Mobile optimization
 -   Clean Adobe WebFonts once done
--   Performance testing
 -   Publish date bug
 -   Projects page
--   Debug color switcher (less WET code…)
+-   Debug color switcher (less WET code…) SCSS
 -   Update repo readme
 -   SVG logo align to left
+-   Performance testing
 
 ## Later Ideas
 
+-   ImageKit-Captions-in-string
 -   Build <category> page for journal entries; journal hero images?
--   Submit for review?
+-   Submit for review? Svelte I made this…
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Update about with skills
 -   Book Reading list page (linked from about)

@@ -271,7 +271,8 @@
         font-style: normal;
     }
     h1,
-    h2 {
+    h2,
+    h4 {
         font-family: 'ibm-plex-serif';
     }
     h2 {
@@ -279,9 +280,10 @@
         font-size: 1.953rem;
     }
     h3 {
+        font-size: 1.536rem;
+    }
+    h4 {
         font-size: 1.25rem;
-        /* text-transform: uppercase;
-        letter-spacing: 0.1em; */
     }
     @media (max-width: 640px) {
         h1 {

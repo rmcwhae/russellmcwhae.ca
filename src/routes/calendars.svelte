@@ -113,9 +113,6 @@
 </article>
 
 <style>
-    p {
-        margin-top: 0;
-    }
     .past {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

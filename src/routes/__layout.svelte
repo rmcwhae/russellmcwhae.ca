@@ -24,7 +24,7 @@
         /* background: url(assiniboine.png) center bottom no-repeat; */
     }
     .wrapper {
-        margin: 0 var(--s0) var(--s2);
+        margin: 0 0 var(--s2);
         display: grid;
         grid-template-columns:
             1fr
@@ -35,9 +35,13 @@
         grid-column: 2;
     }
     :global(.full-bleed) {
-        width: 100vw;
-        margin-left: calc(-1 * var(--s0));
-        margin-right: calc(-1 * var(--s0));
-        grid-column: 1 / 4;
+        /* See https://joshwcomeau.com/css/full-bleed/ */
+        /* width: 100%; */
+        /* grid-column: 1 / 4; */
+        /* constrain the width for very-large monitors */
+        /* max-width: 1500px; */
+        /* center the element */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
     }
 </style>
