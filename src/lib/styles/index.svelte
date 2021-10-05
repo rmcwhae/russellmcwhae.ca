@@ -20,6 +20,15 @@
         --s4: calc(var(--s3) * var(--ratio));
         --s5: calc(var(--s4) * var(--ratio));
     }
+    html {
+        scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion) {
+        html {
+            scroll-behavior: inherit;
+            --duration: 0;
+        }
+    }
     :root,
     html body[data-theme='light'] {
         --background-color: white;
