@@ -32,7 +32,7 @@
     }
     @media (min-width: 801px) {
         .current {
-            grid-column: span 2;
+            /* grid-column: span 2; */
         }
     }
     a,
@@ -45,7 +45,7 @@
         height: 40vh;
     }
     .current {
-        height: 60vh;
+        /* height: 60vh; */
     }
     h2 {
         margin: 0;

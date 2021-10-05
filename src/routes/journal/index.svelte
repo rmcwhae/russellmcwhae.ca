@@ -17,11 +17,4 @@
 
 <SEO title="Journal" />
 
-<!-- <p>
-    Writing is my way of making sense of things, both by exploring subjects from
-    many different angles, and by discussing the ideas of others who have
-    wrestled with similar questions. I hope you’ll join me for a glimpse into my
-    head.
-</p> -->
-
 <JournalEntrySet {posts} />

@@ -124,7 +124,7 @@
         </p>
         <p>
             Professionally, I have had a few different careers. In 2011, I
-            graduated from Civil Engineering at the University of Alberta and
+            graduated from civil engineering at the University of Alberta and
             worked as a structural engineer-in-training for just over three
             years. In early 2019, I earned an MSc. in biomedical engineering
             from the University of Calgary. My thesis, “<a
@@ -165,9 +165,9 @@
     <Button href="journal" text="All entries" right />
 </ButtonSet>
 
-<h3>Etc.</h3>
+<h3>Et cetera</h3>
 
-<p>A few bits of random content that had nowhere else to go.</p>
+<p>A few bits of content that had nowhere else to go.</p>
 
 <JournalEntrySet posts={etCetera} />
 
