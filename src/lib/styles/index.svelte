@@ -151,6 +151,9 @@
     .mt-5 {
         margin-top: var(--s5);
     }
+    .mt-0 {
+        margin-top: 0;
+    }
     @media screen and (min-width: 1024px) {
         .two-col {
             columns: 2;

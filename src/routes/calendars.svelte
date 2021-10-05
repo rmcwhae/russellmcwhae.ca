@@ -85,7 +85,7 @@
 <article class="restricted-width-mobile">
     <h2>About</h2>
     <div class="two-col">
-        <p>
+        <p class="mt-0">
             Initially created as Christmas gifts for family and friends, these
             calendars are an effort to do more with my photography. It’s hard to
             stand out in the crowded, high-volume world of online photography,
