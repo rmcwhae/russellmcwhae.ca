@@ -11,3 +11,7 @@ npm run dev
 ```
 
 Note: photos are not under source control as they would take too much space.
+
+## Deployment
+
+`npm run build` then take the output of `build` and serve it.
