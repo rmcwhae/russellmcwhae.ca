@@ -14,7 +14,7 @@
 </script>
 
 <script>
-    import Event from '$lib/components/Event.svelte'
+    import Event from '$lib/components/images/Event.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
