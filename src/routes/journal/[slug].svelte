@@ -39,7 +39,7 @@
 </script>
 
 <script>
-    import Date from '$lib/components/Date.svelte'
+    import Date from '$lib/components/misc/Date.svelte'
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'

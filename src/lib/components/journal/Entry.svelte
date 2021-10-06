@@ -1,6 +1,6 @@
 <script>
     import { preventLastTwoWordWrap } from '$lib/utils/string'
-    import Date from '$lib/components/Date.svelte'
+    import Date from '$lib/components/misc/Date.svelte'
 
     export let post
 
