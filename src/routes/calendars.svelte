@@ -74,7 +74,7 @@
 <!-- <h2>Previous Calendars</h2> -->
 
 <h1>Calendars</h1>
-<p>Check back in Fall 2021 for my upcoming 2022 calendar!</p>
+<p class="mt-1 mb-1">Check back in Fall 2021 for my upcoming 2022 calendar!</p>
 
 <div class="past full-bleed">
     {#each calendars as { filename, year, filesize }, index}
