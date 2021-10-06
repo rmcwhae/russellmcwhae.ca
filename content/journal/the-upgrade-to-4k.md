@@ -8,7 +8,7 @@ category: Tech
 ---
 
 <script>
-    import Caption from '$lib/components/Caption.svelte'
+    import Caption from '$lib/components/images/Caption.svelte'
     import ScreenAndKeyboard from '$static/journal-images/LG-screen-and-keyboard.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import OnScreenControl from '$static/journal-images/LG-OnScreen-Control.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import FourteenFortyP from '$static/journal-images/LG-1440p.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'

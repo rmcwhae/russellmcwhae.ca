@@ -5,7 +5,7 @@
     import 'photoswipe/dist/photoswipe.css'
 
     import Gallery from 'svelte-gallery'
-    import Image from '$lib/components/Image.svelte'
+    import Image from './Image.svelte'
 
     onMount(() => {
         const lightbox = new PhotoSwipeLightbox({

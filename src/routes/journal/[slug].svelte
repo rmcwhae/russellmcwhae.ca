@@ -45,7 +45,7 @@
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     // import Button from '$lib/components/Button.svelte'
     import JournalEntry from '$lib/components/JournalEntry.svelte'
-    import SEO from '$lib/components/SEO.svelte'
+    import SEO from '$lib/components/base/SEO.svelte'
 
     export let title
     export let date

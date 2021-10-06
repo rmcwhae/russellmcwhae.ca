@@ -7,13 +7,14 @@ category: Tech
 ---
 
 <script>
-    import Caption from '$lib/components/Caption.svelte'
+    import Caption from '$lib/components/images/Caption.svelte'
     import Akamai from '$static/journal-images/http2-akamai.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import Site from '$static/journal-images/http2-site.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import Devtools from '$static/journal-images/http2-devtools.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 
 ## Table of Contents
+
 ## Introduction
 
 Dabbling in web design in the late 2000s as mobile devices were just starting to enter the digital landscape, I developed an appreciation for website optimization. At the time, optimization generally meant shrinking and compressing images (especially with data-limited mobile plans), minimizing page and script file-sizes, and a frequent tip that came up — and [still comes up](https://blog.hubspot.com/marketing/reduce-http-requests) — was that _you should minimize the number of HTTP requests (network requests sent between your browser and a webserver) your page makes._ This meant serving ideally no more than one stylesheet, one JavaScript file (i.e., multiple files concatenated together), and one image sprite (see [CSS Sprites](https://css-tricks.com/css-sprites/)) with your web page to minimize its loading time.

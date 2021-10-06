@@ -8,7 +8,7 @@ category: Tech
 ---
 
 <script>
-  import Caption from '$lib/components/Caption.svelte'
+  import Caption from '$lib/components/images/Caption.svelte'
   import Koodo from '$static/journal-images/koodo-prepaid.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 

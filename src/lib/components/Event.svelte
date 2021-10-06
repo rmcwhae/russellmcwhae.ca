@@ -1,5 +1,5 @@
 <script>
-    import Image from '$lib/components/Image.svelte'
+    import Image from '$lib/components/images/Image.svelte'
     import * as StringUtils from '$lib/utils/string'
 
     export let eventName

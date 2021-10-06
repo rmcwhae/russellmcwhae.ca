@@ -1,6 +1,6 @@
 <script>
     import Calendar from '$lib/components/Calendar.svelte'
-    import SEO from '$lib/components/SEO.svelte'
+    import SEO from '$lib/components/base/SEO.svelte'
 
     const calendars = [
         {

@@ -1,7 +1,7 @@
 <script>
     import { page } from '$app/stores'
-    import Logo from '$lib/components/Logo.svelte'
-    import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'
+    import Logo from '$lib/components/icons/Logo.svelte'
+    import ThemeSwitcher from '$lib/components/base/ThemeSwitcher.svelte'
 
     let mobileMenuOpen = false
 

@@ -9,9 +9,9 @@
 </script>
 
 <script>
-    import Gallery from '$lib/components/Gallery.svelte'
+    import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/Button.svelte'
-    import SEO from '$lib/components/SEO.svelte'
+    import SEO from '$lib/components/base/SEO.svelte'
 
     export let event
 

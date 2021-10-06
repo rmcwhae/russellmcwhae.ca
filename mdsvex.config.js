@@ -8,7 +8,7 @@ const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
     layout: {
-        page: './src/lib/components/Page.svelte',
+        page: './src/lib/components/layout/Page.svelte',
     },
 
     smartypants: {

@@ -7,7 +7,7 @@ category: Tech
 ---
 
 <script>
-    import Caption from '$lib/components/Caption.svelte'
+    import Caption from '$lib/components/images/Caption.svelte'
     import Logo from '$static/journal-images/rails-1.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import Trends from '$static/journal-images/rails-2.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
     import JungleFrontEnd from '$static/journal-images/rails-3.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'

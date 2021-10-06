@@ -8,7 +8,7 @@ category: Tech
 ---
 
 <script>
-  import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte'
+  import ThemeSwitcher from '$lib/components/base/ThemeSwitcher.svelte'
 </script>
 
 Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, especially relatively simple websites such as this one.
