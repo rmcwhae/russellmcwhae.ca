@@ -14,7 +14,7 @@ category: TODO
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
--   Debug color switcher (less WET code…) SCSS
+-   Clean SCSS
 -   Update repo readme
 -   Performance testing
 -   LQIP?

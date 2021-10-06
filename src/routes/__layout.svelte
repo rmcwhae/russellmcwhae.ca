@@ -1,13 +1,10 @@
 <script>
+    import '../app.scss'
     import Nav from '$lib/components/base/Nav.svelte'
-    import Styles from '$lib/styles/index.svelte'
-    import Reset from '$lib/styles/reset.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
 </script>
 
-<Reset />
-<Styles />
 <Loading />
 
 <Nav />

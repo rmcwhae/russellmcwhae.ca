@@ -1,0 +1,36 @@
+@mixin light-theme {
+    --background-color: white;
+    --background-color-transparent: rgba(255, 255, 255, 0.8);
+    --text-color: rgb(100, 100, 100);
+    --high-contrast-color: black;
+    --light-grey: rgb(218, 218, 218);
+    --medium-grey: #888;
+    --blue: rgb(48, 89, 202);
+    --blue-light: rgb(175, 194, 240);
+}
+
+@mixin dark-theme {
+    --background-color: black;
+    --background-color-transparent: rgba(0, 0, 0, 0.8);
+    --high-contrast-color: white;
+    --text-color: rgb(172, 172, 172);
+    --light-grey: rgb(56, 56, 56);
+    --medium-grey: #999;
+    --blue: rgb(175, 199, 255);
+    --blue-light: rgb(56, 67, 102);
+}
+
+:root {
+    @include light-theme;
+    @media (prefers-color-scheme: dark) {
+        @include dark-theme;
+    }
+}
+
+html body[data-theme='dark'] {
+    @include dark-theme;
+}
+
+html body[data-theme='light'] {
+    @include light-theme;
+}
