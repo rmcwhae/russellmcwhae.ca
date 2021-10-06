@@ -42,7 +42,7 @@
     section {
         background-size: cover;
         background-position: center center;
-        height: 40vh;
+        height: 30vh;
     }
     .current {
         /* height: 60vh; */

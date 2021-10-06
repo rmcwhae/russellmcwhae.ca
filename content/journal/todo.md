@@ -18,17 +18,19 @@ category: TODO
 -   Update repo readme
 -   SVG logo align to left
 -   Performance testing
--   LQIP blur
+-   LQIP?
 -   <pre> margins
 -   Flexbox gallery (only css)
 -   Animate stuff
 -   Page anchors bug
+-   Reorganize folder structure
 
 ## Later Ideas
 
+-   Submit for review? Svelte I made this…
+-   Analytics?
 -   ImageKit-Captions-in-string
 -   Build <category> page for journal entries; journal hero images?
--   Submit for review? Svelte I made this…
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca
 -   Update about with skills
 -   Book Reading list page (linked from about)

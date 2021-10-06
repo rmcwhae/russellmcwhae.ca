@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<!-- <h2>Photos</h2> -->
+<h3>Photos</h3>
 
 <Gallery {images} />
 
