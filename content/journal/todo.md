@@ -13,6 +13,7 @@ category: TODO
 -   Mobile optimization
 -   Clean Adobe WebFonts once done
 -   Projects page
+-   Finish homepage
 -   Debug color switcher (less WET code…) SCSS
 -   Update repo readme
 -   Performance testing
