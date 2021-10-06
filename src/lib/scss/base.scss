@@ -1,20 +1,7 @@
-a {
-    color: var(--high-contrast-color);
-}
-a.button {
-    font-weight: 600;
-    font-size: 1rem;
-    padding: var(--s-1) var(--s1);
-    text-decoration: none;
-    border: 1px solid var(--light-grey);
-    border-radius: 50px;
-}
-a.button:hover {
-    border-color: var(--medium-grey);
-}
 .flex {
     display: flex;
 }
+
 .items-center {
     align-items: center;
 }
@@ -27,31 +14,36 @@ a.button:hover {
 .mt-5 {
     margin-top: var(--s5);
 }
+.mt-4 {
+    margin-top: var(--s4);
+}
+.mt-3 {
+    margin-top: var(--s3);
+}
+.mt-2 {
+    margin-top: var(--s2);
+}
+.mt-1 {
+    margin-top: var(--s1);
+}
 .mt-0 {
     margin-top: 0;
 }
-main a {
-    text-decoration: underline;
-    /* box-shadow: inset 0 0 0 0 var(--light-grey); */
-    transition: var(--duration);
+.mb-1 {
+    margin-top: var(--s1);
 }
-main ul {
-    padding-left: var(--s1);
-}
-p {
+.mb-2 {
     margin-bottom: var(--s2);
 }
-main a:hover {
-    text-decoration: none;
-    /* box-shadow: inset 0 -4px 0 0 var(--light-grey); */
+.mb-3 {
+    margin-bottom: var(--s3);
 }
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+.mb-4 {
+    margin-bottom: var(--s4);
 }
-
+.mb-5 {
+    margin-bottom: var(--s5);
+}
 .overflow-hidden {
     overflow: hidden;
 }
@@ -79,22 +71,14 @@ main a:hover {
         margin: 0;
     }
 }
-.footnote-backref {
-    margin-left: var(--s-2);
-}
-article img,
-.full-bleed {
+
+article img {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    /* width: calc(100% + 2 * var(--s3));
-  margin-left: calc(-1 * var(--s3));
-  margin-right: calc(-1 * var(--s3)); */
 }
 article header {
     text-align: center;
-    /* padding-bottom: var(--s0); */
-    /* border-bottom: 1px solid var(--light-grey); */
 }
 @media screen and (max-width: 600px) {
     article img,
@@ -104,142 +88,11 @@ article header {
         margin-right: calc(-1 * var(--s0));
     }
 }
-/* article header {
-  margin-bottom: var(--s4);
-} */
-article header,
-article nav,
-article img {
-    /* margin-left: calc(-1 * var(--s2));
-  margin-right: calc(-1 * var(--s2)); */
-}
-article h2 {
-    margin-top: var(--s4);
-}
-article h3 {
-    margin-top: var(--s3);
-}
+
 @media screen and (max-width: 1200px) {
     article header,
     article nav {
         margin-left: 0;
         margin-right: 0;
     }
-}
-.uppercase,
-article strong {
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 0.075em;
-    /* font-weight: 700; */
-}
-.sub {
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-.nowrap {
-    white-space: nowrap;
-}
-article > * + * {
-    margin-top: var(--s1);
-}
-@media (max-width: 1023px) {
-    article > * + * {
-        margin-top: var(--s0);
-    }
-    article {
-        margin: 0 auto;
-    }
-}
-article blockquote {
-    margin-left: 0;
-    padding-left: var(--s1);
-    margin-right: var(--s1);
-    border-left: 1px solid var(--light-grey);
-    font-size: 1.05rem;
-}
-article pre {
-    padding: var(--s-1) var(--s1);
-    /* background: rgba(127, 127, 127, 0.15); */
-    border: 1px solid var(--light-grey);
-    border-radius: var(--radius);
-}
-article li p {
-    margin: 0;
-}
-pre,
-code {
-    white-space: pre-wrap;
-    font-size: 0.8em;
-    word-break: break-word;
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    text-decoration: none;
-    color: var(--high-contrast-color);
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--high-contrast-color);
-}
-h1 {
-    font-size: 3.052rem;
-    line-height: 1;
-    margin: 0;
-    font-weight: 300;
-    font-style: normal;
-}
-h1,
-h2,
-h4 {
-    font-family: 'ibm-plex-serif';
-}
-h2 {
-    font-weight: normal;
-    font-size: 1.953rem;
-}
-h3 {
-    font-size: 1.536rem;
-}
-h4 {
-    font-size: 1.25rem;
-}
-@media (max-width: 640px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-    h2 {
-        font-size: 1.25rem;
-    }
-}
-@media (max-width: 1023px) {
-    /* h1 {
-      font-size: 1.5em;
-  }
-  h2 {
-      font-size: 1.25em;
-  }
-  article header {
-      text-align: center;
-      margin-bottom: var(--s1);
-  } */
-}
-article > hr,
-div > hr {
-    height: 1px;
-    /* margin: var(--s3) 0; */
-    padding: 0;
-    border: none;
-    border-top: 1px dashed var(--light-grey);
-    color: var(--light-grey);
-    text-align: center;
-    overflow: visible;
 }

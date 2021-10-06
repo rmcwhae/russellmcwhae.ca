@@ -1,0 +1,167 @@
+// Links
+
+a {
+    color: var(--high-contrast-color);
+}
+
+a.button {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: var(--s-1) var(--s1);
+    text-decoration: none;
+    border: 1px solid var(--light-grey);
+    border-radius: 50px;
+
+    &:hover {
+        border-color: var(--medium-grey);
+    }
+}
+
+main a {
+    text-decoration: underline;
+    /* box-shadow: inset 0 0 0 0 var(--light-grey); */
+    transition: var(--duration);
+
+    &:hover {
+        text-decoration: none;
+        /* box-shadow: inset 0 -4px 0 0 var(--light-grey); */
+    }
+}
+
+// Article styles
+
+article h2 {
+    margin-top: var(--s4);
+}
+
+article h3 {
+    margin-top: var(--s3);
+}
+
+article > .restricted-width > * + * {
+    margin-top: var(--s2);
+}
+
+@media (max-width: 1023px) {
+    article > * + * {
+        margin-top: var(--s0);
+    }
+
+    article {
+        margin: 0 auto;
+    }
+}
+
+article blockquote {
+    margin-left: 0;
+    padding-left: var(--s1);
+    margin-right: var(--s1);
+    border-left: 1px solid var(--light-grey);
+    font-size: 1.05rem;
+}
+
+article pre {
+    padding: var(--s-1) var(--s1);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--radius);
+}
+
+article li p {
+    margin: 0;
+}
+
+article > hr,
+div > hr {
+    height: 1px;
+    padding: 0;
+    border: none;
+    border-top: 1px dashed var(--light-grey);
+    color: var(--light-grey);
+    text-align: center;
+    overflow: visible;
+}
+
+// Headings
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none;
+    color: var(--high-contrast-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--high-contrast-color);
+}
+h1 {
+    font-size: 3.052rem;
+    line-height: 1;
+    margin: 0;
+    font-weight: 300;
+    font-style: normal;
+}
+h1,
+h2,
+h4 {
+    font-family: 'ibm-plex-serif';
+}
+h2 {
+    font-weight: normal;
+    font-size: 1.953rem;
+}
+h3 {
+    font-size: 1.536rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+// Other tags
+
+main ul {
+    padding-left: var(--s1);
+}
+
+pre,
+code {
+    white-space: pre-wrap;
+    font-size: 0.8em;
+    word-break: break-word;
+}
+
+// Other classes
+
+.uppercase,
+article strong {
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.075em;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.footnote-backref {
+    margin-left: var(--s-2);
+}
+
+.sub {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
