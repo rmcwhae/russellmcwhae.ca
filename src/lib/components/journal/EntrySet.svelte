@@ -1,5 +1,5 @@
 <script>
-    import JournalEntry from '$lib/components/JournalEntry.svelte'
+    import JournalEntry from './Entry.svelte'
 
     export let posts
 </script>

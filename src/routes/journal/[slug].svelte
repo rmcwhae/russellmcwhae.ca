@@ -44,7 +44,7 @@
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     // import Button from '$lib/components/Button.svelte'
-    import JournalEntry from '$lib/components/JournalEntry.svelte'
+    import JournalEntry from '$lib/components/journal/Entry.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
     export let title

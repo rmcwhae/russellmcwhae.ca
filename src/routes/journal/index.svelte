@@ -11,7 +11,7 @@
 </script>
 
 <script>
-    import JournalEntrySet from '$lib/components/JournalEntrySet.svelte'
+    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 </script>
 

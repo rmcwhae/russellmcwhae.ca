@@ -17,9 +17,9 @@
 <script>
     import SEO from '$lib/components/base/SEO.svelte'
     import Gallery from '$lib/components/images/Gallery.svelte'
-    import Button from '$lib/components/Button.svelte'
-    import JournalEntrySet from '$lib/components/JournalEntrySet.svelte'
-    import ButtonSet from '$lib/components/ButtonSet.svelte'
+    import Button from '$lib/components/buttons/Button.svelte'
+    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
 
     export let images
     export let latestPosts
