@@ -12,6 +12,7 @@ category: TODO
 -   Update "That New-Website Look"
 -   Mobile optimization
 -   Clean SCSS
+-   <sup> styles
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
