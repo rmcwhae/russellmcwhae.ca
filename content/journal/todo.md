@@ -12,7 +12,6 @@ category: TODO
 -   Update "That New-Website Look"
 -   Mobile optimization
 -   Clean Adobe WebFonts once done
--   Publish date bug
 -   Projects page
 -   Debug color switcher (less WET code…) SCSS
 -   Update repo readme

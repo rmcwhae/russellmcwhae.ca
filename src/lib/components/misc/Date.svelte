@@ -1,7 +1,7 @@
 <script>
-    import { format } from 'date-fns'
+    import dateformat from 'dateformat'
 
     export let date
 </script>
 
-<time>{format(new Date(date), 'MMMM d, yyyy')}</time>
+<time>{dateformat(date, 'UTC:mmmm d, yyyy')}</time>
