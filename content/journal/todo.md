@@ -19,7 +19,6 @@ category: TODO
 -   Performance testing
 -   LQIP?
 -   <pre> margins
--   Flexbox gallery (only css)
 -   Animate stuff
 -   Page anchors bug
 
