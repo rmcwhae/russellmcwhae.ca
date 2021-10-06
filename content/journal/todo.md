@@ -15,7 +15,6 @@ category: TODO
 -   Projects page
 -   Debug color switcher (less WET code…) SCSS
 -   Update repo readme
--   SVG logo align to left
 -   Performance testing
 -   LQIP?
 -   <pre> margins
