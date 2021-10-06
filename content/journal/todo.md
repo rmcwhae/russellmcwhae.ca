@@ -23,7 +23,6 @@ category: TODO
 -   Flexbox gallery (only css)
 -   Animate stuff
 -   Page anchors bug
--   Reorganize folder structure
 
 ## Later Ideas
 
