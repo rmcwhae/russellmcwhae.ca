@@ -11,14 +11,13 @@ category: TODO
 
 -   Update "That New-Website Look"
 -   Mobile optimization
+-   Clean SCSS
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
--   Clean SCSS
 -   Update repo readme
 -   Performance testing
 -   LQIP?
--   <pre> margins
 -   Animate stuff
 -   Page anchors bug
 

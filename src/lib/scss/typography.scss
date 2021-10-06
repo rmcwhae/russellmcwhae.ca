@@ -66,6 +66,10 @@ article pre {
     border-radius: var(--radius);
 }
 
+article ul {
+    list-style-type: disc;
+}
+
 article li p {
     margin: 0;
 }
@@ -139,8 +143,9 @@ main ul {
 
 pre,
 code {
+    font-family: monospace, monospace;
     white-space: pre-wrap;
-    font-size: 0.8em;
+    font-size: 1rem;
     word-break: break-word;
 }
 
