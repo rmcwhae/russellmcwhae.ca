@@ -130,8 +130,8 @@
     }
     li a[aria-current],
     li a:hover {
-        background: var(--light-grey);
-        /* border-color: var(--medium-grey); */
+        /* background: var(--light-grey); */
+        border-color: var(--medium-grey);
     }
 
     .nav-toggle {

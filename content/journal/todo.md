@@ -10,6 +10,7 @@ category: TODO
 ## Launch checklist
 
 -   Update "That New-Website Look"
+-   Optimize footer image, click to scroll to top?
 -   Mobile optimization
 -   Clean SCSS
 -   <sup> styles
