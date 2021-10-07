@@ -35,7 +35,7 @@
         margin: var(--s4) auto 0;
         max-width: var(--lg);
         color: var(--high-contrast-color);
-        font-size: 1rem;
+        font-size: 0.9rem;
         position: relative;
     }
     footer > div {
