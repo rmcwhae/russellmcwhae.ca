@@ -32,7 +32,7 @@
 <style>
     footer {
         padding-top: var(--s0);
-        margin: 0 auto;
+        margin: var(--s4) auto 0;
         max-width: var(--lg);
         color: var(--high-contrast-color);
         font-size: 1rem;
@@ -45,9 +45,9 @@
     footer:before {
         content: '';
         position: absolute;
-        left: 0;
+        left: calc(50% - 100px);
         top: 0;
-        width: 100%;
+        width: 200px;
         height: 100%;
         background: url('/assiniboine.png') center bottom no-repeat;
         background-size: auto 100%;
