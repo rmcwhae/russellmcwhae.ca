@@ -22,7 +22,7 @@
             lockedRatio
             photoswipe={false}
         />
-        <h2>{@html StringUtils.preventLastTwoWordWrap(title)}</h2>
+        <h3>{@html StringUtils.preventLastTwoWordWrap(title)}</h3>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>
 </section>
@@ -31,10 +31,11 @@
     /* div {
         position: relative;
     } */
-    h2 {
+    h3 {
         margin: var(--s-1) 0 0;
         font-weight: normal;
         font-size: 1.2em;
+        line-height: 1.2;
     }
     a {
         text-decoration: none;

@@ -121,16 +121,17 @@
     }
     li {
         position: relative;
-        margin: 0 var(--s-4);
+        margin: 0 var(--s-2);
     }
     li a {
         padding: var(--s-1) var(--s1);
-        border: 1px solid transparent;
+        border-radius: 50px;
+        border: 1px solid var(--light-grey);
     }
     li a[aria-current],
     li a:hover {
-        border-color: var(--light-grey);
-        border-radius: 50px;
+        background: var(--light-grey);
+        /* border-color: var(--medium-grey); */
     }
 
     .nav-toggle {

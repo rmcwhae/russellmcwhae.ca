@@ -63,7 +63,7 @@
     .lockedRatio::after {
         display: block;
         content: '';
-        padding-bottom: 66.67%;
+        aspect-ratio: 3 / 2;
     }
 
     /* Image is positioned absolutely relative to the parent element */

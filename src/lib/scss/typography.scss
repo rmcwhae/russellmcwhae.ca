@@ -3,7 +3,6 @@
 a {
     color: var(--high-contrast-color);
 }
-
 a.button {
     font-weight: 600;
     font-size: 1rem;
@@ -16,7 +15,6 @@ a.button {
         border-color: var(--medium-grey);
     }
 }
-
 main a {
     text-decoration: underline;
     /* box-shadow: inset 0 0 0 0 var(--light-grey); */
@@ -30,18 +28,15 @@ main a {
 
 // Article styles
 
+article > div > * + * {
+    margin-top: var(--s2);
+}
 article h2 {
     margin-top: var(--s4);
 }
-
 article h3 {
     margin-top: var(--s3);
 }
-
-article > .restricted-width > * + * {
-    margin-top: var(--s2);
-}
-
 @media (max-width: 1023px) {
     article > * + * {
         margin-top: var(--s0);
@@ -51,7 +46,6 @@ article > .restricted-width > * + * {
         margin: 0 auto;
     }
 }
-
 article blockquote {
     margin-left: 0;
     padding-left: var(--s1);
@@ -59,21 +53,17 @@ article blockquote {
     border-left: 1px solid var(--light-grey);
     font-size: 1.05rem;
 }
-
 article pre {
     padding: var(--s-1) var(--s1);
     border: 1px solid var(--light-grey);
     border-radius: var(--radius);
 }
-
 article ul {
     list-style-type: disc;
 }
-
 article li p {
     margin: 0;
 }
-
 article > hr,
 div > hr {
     height: 1px;
@@ -140,7 +130,6 @@ h4 {
 main ul {
     padding-left: var(--s1);
 }
-
 pre,
 code {
     font-family: monospace, monospace;
@@ -158,15 +147,12 @@ article strong {
     letter-spacing: 0.075em;
     font-weight: 600;
 }
-
 .nowrap {
     white-space: nowrap;
 }
-
 .footnote-backref {
     margin-left: var(--s-2);
 }
-
 .sub {
     font-weight: 600;
     font-size: 0.9rem;

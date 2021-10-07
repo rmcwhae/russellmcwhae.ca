@@ -13,9 +13,12 @@ category: TODO
 -   Mobile optimization
 -   Clean SCSS
 -   <sup> styles
+-   `< Events` links on an event gallery
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
+-   Photos pagination
+-   Journal next/prev links underline width
 -   Update repo readme
 -   Performance testing
 -   LQIP?
