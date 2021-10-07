@@ -83,7 +83,7 @@
     </div>
     <nav class="flex justify-between">
         {#if previous}
-            <div class="left border-bottom">
+            <div class="left">
                 <div class="mb"><LeftChevron /></div>
                 <JournalEntry post={previous} />
             </div>
@@ -91,7 +91,7 @@
             <div />
         {/if}
         {#if next}
-            <div class="right border-bottom">
+            <div class="right">
                 <div class="mb"><RightChevron /></div>
                 <JournalEntry post={next} />
             </div>

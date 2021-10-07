@@ -6,9 +6,7 @@
 
 <div class="journal-entry-set">
     {#each posts as post}
-        <div class="border-bottom">
-            <JournalEntry {post} />
-        </div>
+        <JournalEntry {post} />
     {/each}
 </div>
 

@@ -11,15 +11,9 @@
 <main class="wrapper">
     <slot />
 </main>
-<footer><Footer /></footer>
+<Footer />
 
 <style>
-    footer {
-        padding: var(--s0) 0;
-        /* height: 200px; */
-        text-align: center;
-        /* background: url(assiniboine.png) center bottom no-repeat; */
-    }
     .wrapper {
         margin: 0 0 var(--s2);
         display: grid;
