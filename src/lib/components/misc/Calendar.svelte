@@ -45,7 +45,7 @@
     section {
         background-size: cover;
         background-position: center center;
-        height: 50vh;
+        aspect-ratio: 11 / 8.5;
     }
     .current {
         /* height: 60vh; */

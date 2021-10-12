@@ -119,7 +119,7 @@
         display: block;
         padding: var(--s-1) var(--s1);
         border-radius: 50px;
-        border: 1px solid var(--light-grey);
+        border: 1px solid transparent;
     }
     li a[aria-current],
     li a:hover {
