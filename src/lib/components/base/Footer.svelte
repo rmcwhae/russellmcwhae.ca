@@ -13,7 +13,7 @@
 </script>
 
 <footer class="restricted-width">
-    <div class="up" on:click={topFunction} />
+    <div class="up" on:click={topFunction} title="Scroll to top" />
     <div class="wrapper flex justify-between align-center">
         <div>&copy; {year} Russell McWhae. Made in Canada, eh.</div>
         <div class="icons">
