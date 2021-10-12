@@ -76,7 +76,7 @@
 <h1>Calendars</h1>
 <p class="mt-1 mb-1">Check back in Fall 2021 for my upcoming 2022 calendar!</p>
 
-<div class="past">
+<div class="past full-bleed">
     {#each calendars as { filename, year, filesize }, index}
         <Calendar {filename} {year} {filesize} {index} />
     {/each}

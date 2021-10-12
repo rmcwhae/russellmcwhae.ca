@@ -27,12 +27,12 @@
     }
     :global(.full-bleed) {
         /* See https://joshwcomeau.com/css/full-bleed/ */
-        /* width: 100%; */
-        /* grid-column: 1 / 4; */
+        width: calc(100% - 2 * var(--s0));
+        grid-column: 1 / 4;
         /* constrain the width for very-large monitors */
-        /* max-width: 1500px; */
+        max-width: var(--xl);
         /* center the element */
-        /* margin-left: auto; */
-        /* margin-right: auto; */
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
