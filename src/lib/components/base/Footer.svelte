@@ -1,13 +1,20 @@
 <script>
+    import { browser } from '$app/env'
     import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte'
     import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte'
     import IoIosMail from 'svelte-icons/io/IoIosMail.svelte'
 
     const year = new Date().getFullYear()
+
+    function topFunction() {
+        document.body.scrollTop = 0 // For Safari
+        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
 </script>
 
 <footer class="restricted-width">
-    <div class="flex justify-between align-center">
+    <div class="up" on:click={topFunction} />
+    <div class="wrapper flex justify-between align-center">
         <div>&copy; {year} Russell McWhae. Made in Canada, eh.</div>
         <div class="icons">
             <!-- svelte-ignore a11y-invalid-attribute -->
@@ -38,12 +45,11 @@
         font-size: 0.9rem;
         position: relative;
     }
-    footer > div {
+    .wrapper {
         border-top: 1px solid var(--light-grey);
         padding: var(--s0) 0;
     }
-    footer:before {
-        content: '';
+    .up {
         position: absolute;
         left: calc(50% - 100px);
         top: 0;
@@ -51,6 +57,7 @@
         height: 100%;
         background: url('/assiniboine.png') center bottom no-repeat;
         background-size: auto 100%;
+        cursor: pointer;
     }
     a {
         color: var(--high-contrast-color);
