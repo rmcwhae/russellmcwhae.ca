@@ -12,7 +12,7 @@
     }
 </script>
 
-<footer class="restricted-width">
+<footer>
     <div class="up" on:click={topFunction} title="Scroll to top" />
     <div class="wrapper flex justify-between align-center">
         <div>&copy; {year} Russell McWhae. Made in Canada, eh.</div>
@@ -39,15 +39,14 @@
 <style>
     footer {
         padding-top: var(--s0);
-        margin: var(--s4) auto 0;
-        max-width: var(--lg);
+        margin-top: var(--s4);
         color: var(--high-contrast-color);
         font-size: 0.9rem;
         position: relative;
     }
     .wrapper {
         border-top: 1px solid var(--light-grey);
-        padding: var(--s0) 0;
+        padding: var(--s0) var(--s3);
     }
     .up {
         position: absolute;
