@@ -39,7 +39,7 @@
 <style>
     footer {
         padding-top: var(--s0);
-        margin-top: var(--s4);
+        margin-top: var(--s5);
         color: var(--high-contrast-color);
         font-size: 0.9rem;
         position: relative;
