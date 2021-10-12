@@ -10,7 +10,8 @@ category: TODO
 ## Launch checklist
 
 -   Update "That New-Website Look"
--   Optimize footer image, click to scroll to top?
+-   Optimize footer image
+-   Stick Footer to bottom
 -   Mobile optimization
 -   Clean SCSS
 -   <sup> styles
@@ -19,7 +20,6 @@ category: TODO
 -   Projects page
 -   Finish homepage
 -   Photos pagination
--   Journal next/prev links underline width
 -   Update repo readme
 -   Performance testing
 -   LQIP?

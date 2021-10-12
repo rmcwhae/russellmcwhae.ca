@@ -40,11 +40,11 @@
         margin: 0;
     }
     section {
-        padding-bottom: var(--s2);
+        padding-bottom: var(--s0);
         display: flex;
         flex-direction: column;
         gap: var(--s-3);
-        /* max-width: 50ch; */
+        max-width: 50ch;
     }
     @media (max-width: 640px) {
         section {

@@ -88,7 +88,7 @@
 <style>
     header {
         /* border-bottom: 1px solid var(--light-grey); */
-        padding: var(--s1) var(--s2);
+        padding: var(--s3);
     }
     nav {
         color: var(--high-contrast-color);
@@ -98,7 +98,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: var(--lg);
+        /* max-width: var(--lg); */
         margin: 0 auto;
     }
     ul {
@@ -106,24 +106,17 @@
         padding-left: 0;
         margin: 0;
     }
-    li {
-        display: inline-block;
-    }
-    /* li:not(:last-child) {
-        margin-right: var(--s0);
-    } */
-    li a {
-        text-decoration: none;
-        display: block;
-    }
     a {
         color: var(--high-contrast-color);
     }
     li {
+        display: inline-block;
         position: relative;
-        margin: 0 var(--s-2);
+        margin: 0 var(--s0);
     }
     li a {
+        text-decoration: none;
+        display: block;
         padding: var(--s-1) var(--s1);
         border-radius: 50px;
         border: 1px solid var(--light-grey);

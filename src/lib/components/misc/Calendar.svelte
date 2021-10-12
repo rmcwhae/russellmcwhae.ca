@@ -21,6 +21,9 @@
 </section>
 
 <style>
+    section {
+        border-radius: var(--radius);
+    }
     a {
         text-align: center;
         display: block;
@@ -42,7 +45,7 @@
     section {
         background-size: cover;
         background-position: center center;
-        height: 30vh;
+        height: 40vh;
     }
     .current {
         /* height: 60vh; */
