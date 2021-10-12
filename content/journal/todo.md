@@ -14,6 +14,8 @@ category: TODO
 -   Stick Footer to bottom
 -   Mobile optimization
 -   Clean SCSS
+-   2x grid component
+-   Vertical spacing in blockquotes
 -   <sup> styles
 -   `< Events` links on an event gallery
 -   Clean Adobe WebFonts once done
