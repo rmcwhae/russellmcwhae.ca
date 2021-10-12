@@ -23,6 +23,11 @@ function getClient() {
     return client
 }
 
-export function listFiles(options) {
-    return getClient().listFiles(options)
+export async function listFiles(options) {
+    const images = await getClient().listFiles(options)
+
+    return images.map((file) => ({
+        ...file,
+        photoswipe: true,
+    }))
 }

@@ -18,7 +18,7 @@
     })
 
     const rowHeight = 460
-    const gutter = 8
+    const gutter = 12
 
     export let images
 </script>

@@ -8,7 +8,7 @@
     export let height
     export let thumbnail
     export let lockedRatio = false
-    export let photoswipe = true // TODO invert me and fix
+    export let photoswipe = false
 
     const srcset = generateSrcSets(filePath)
 </script>
@@ -49,16 +49,13 @@
 
 <style>
     img {
+        border-radius: var(--radius);
         width: 100%;
         height: auto;
     }
     .lockedRatio {
         position: relative;
     }
-    .lockedRatio img {
-        border-radius: var(--radius);
-    }
-
     /* Create a pseudo element that uses padding-bottom to take up space */
     .lockedRatio::after {
         display: block;
