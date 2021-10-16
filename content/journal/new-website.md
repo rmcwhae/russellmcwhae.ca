@@ -2,7 +2,7 @@
 title: That New-Website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
-date: 2021-10-05
+date: 2021-10-12
 draft: 0
 category: Tech
 ---
@@ -19,7 +19,7 @@ This post is a quick look at how I designed and developed this latest incarnatio
 
 ## Design
 
-My goal in redesigning this website was to keep it as simple as possible. Except for images, everything is black and white. I found no good reason to incorporate colour into the design and thus left it out. This high-contrast, monochromatic colour scheme naturally symbolizes snow and rock in the mountains. In few other environments are things so often black and white.
+My goal in redesigning this website was to keep it as simple as possible. Except for images, everything is black and white. I found no good reason to incorporate colour into the design and thus left it out. This high-contrast, monochromatic colour scheme naturally symbolizes snow and rock in the mountains. In few other environments are things so often black and white. Most western Canadians should recognize the mountain that doubles as the “scroll to top” button in the footer (check the image filename if not).
 
 Depending on your device settings, you may be viewing this site in light or dark mode. This can be changed in the menu, or via this convenient button:
 

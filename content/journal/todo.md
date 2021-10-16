@@ -16,8 +16,10 @@ category: TODO
 -   Clean SCSS
 -   2x grid component
 -   Vertical spacing in blockquotes
--   <sup> styles
+-   `<em>` styles
+-   `<sup>` styles
 -   `< Events` links on an event gallery
+-   Try css color-mod()
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
