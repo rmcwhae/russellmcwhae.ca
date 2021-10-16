@@ -112,7 +112,7 @@
     li {
         display: inline-block;
         position: relative;
-        margin: 0 var(--s0);
+        margin: 0 var(--s-1);
     }
     li a {
         text-decoration: none;
