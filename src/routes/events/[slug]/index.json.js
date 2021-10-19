@@ -11,12 +11,12 @@ export async function get({ params }) {
 
     if (images) {
         return {
-            body: JSON.stringify({
+            body: {
                 count: images.length,
                 title,
                 date,
                 images,
-            }),
+            },
         }
     } else {
         return {
