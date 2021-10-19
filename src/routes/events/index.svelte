@@ -1,10 +1,14 @@
 <script context="module">
-    export async function load({ fetch }) {
+    export async function load({ page, fetch }) {
         try {
-            const events = await fetch('/events.json').then((r) => r.json())
+            const { events, pages } = await fetch(
+                `/events.json?${page.query}`
+            ).then((r) => r.json())
+
             return {
                 props: {
                     events,
+                    pages,
                 },
             }
         } catch (error) {
@@ -14,11 +18,16 @@
 </script>
 
 <script>
+    import { page } from '$app/stores'
     import Event from '$lib/components/images/Event.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+    import Pagination from '$lib/components/misc/Pagination.svelte'
 
     export let events
+    export let pages
+
+    $: currentPage = +$page.query.get('page') || 1
 </script>
 
 <SEO title="Events" />
@@ -33,3 +42,5 @@
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
+
+<Pagination {pages} {currentPage} href={(page) => `?page=${page}`} />

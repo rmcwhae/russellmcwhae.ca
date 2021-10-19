@@ -17,4 +17,3 @@ export async function get({ query }) {
         },
     }
 }
-// TODO make me less WET with events/[slug]…
