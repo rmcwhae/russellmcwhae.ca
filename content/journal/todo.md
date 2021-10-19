@@ -14,16 +14,13 @@ category: TODO
 -   Stick Footer to bottom
 -   Mobile optimization
 -   Clean SCSS
--   2x grid component
 -   Vertical spacing in blockquotes
 -   `<em>` styles
 -   `<sup>` styles
--   `< Events` links on an event gallery
 -   Try css color-mod()
 -   Clean Adobe WebFonts once done
 -   Projects page
 -   Finish homepage
--   Photos pagination
 -   Update repo readme
 -   Performance testing
 -   LQIP?
@@ -34,6 +31,7 @@ category: TODO
 
 -   Submit for review? Svelte I made this…
 -   Analytics?
+-   Netlify Large media 2500 transforms/month…
 -   ImageKit-Captions-in-string
 -   Build <category> page for journal entries; journal hero images?
 -   2016.russellmcwhae.ca, 2006.russellmcwhae.ca

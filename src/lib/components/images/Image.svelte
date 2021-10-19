@@ -16,6 +16,7 @@
 <div class:lockedRatio>
     {#if photoswipe}
         <a
+            class="no-shadow"
             href={thumbnail}
             data-pswp-width={width}
             data-pswp-height={height}
@@ -48,6 +49,9 @@
 </div>
 
 <style>
+    div {
+        line-height: 0;
+    }
     img {
         border-radius: var(--radius);
         width: 100%;

@@ -17,12 +17,14 @@
         lightbox.init()
     })
 
-    const rowHeight = 460
+    const rowHeight = 500
     const gutter = 12
 
     export let images
 </script>
 
 <div id="gallery" class="full-bleed">
-    <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+    {#key images[0]}
+        <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+    {/key}
 </div>
