@@ -10,7 +10,7 @@ a.button {
     padding: var(--s-1) var(--s1);
     text-decoration: none;
     border: 1px solid var(--light-grey);
-    border-radius: 50px;
+    border-radius: var(--circle-radius);
     box-shadow: none;
     color: var(--high-contrast-color);
 
@@ -28,6 +28,10 @@ main a {
         // text-decoration: none;
         box-shadow: inset 0 -6px 0 0 var(--light-grey);
     }
+}
+a.no-shadow,
+a.no-shadow:hover {
+    box-shadow: none;
 }
 
 // Article styles

@@ -28,17 +28,8 @@
     <Button href="/photography" text="Portfolio" left />
 </div>
 
-<div class="events">
+<div class="three-col-grid full-bleed">
     {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
-
-<style>
-    .events {
-        margin-top: var(--s1);
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        grid-gap: var(--s2);
-    }
-</style>

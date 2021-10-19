@@ -83,17 +83,17 @@
     </div>
     <nav class="flex justify-between">
         {#if previous}
-            <div class="left">
-                <div class="mb"><LeftChevron /></div>
+            <div class="flex gap justify-between items-center left">
+                <LeftChevron />
                 <JournalEntry post={previous} />
             </div>
         {:else}
             <div />
         {/if}
         {#if next}
-            <div class="right">
-                <div class="mb"><RightChevron /></div>
+            <div class="flex gap justify-between items-center right">
                 <JournalEntry post={next} />
+                <RightChevron />
             </div>
         {/if}
     </nav>
@@ -124,7 +124,7 @@
         text-align: right;
         margin-left: auto;
     }
-    .mb {
-        margin-bottom: var(--s-1);
+    .gap {
+        gap: var(--s0);
     }
 </style>

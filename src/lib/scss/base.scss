@@ -1,7 +1,6 @@
 .flex {
     display: flex;
 }
-
 .items-center {
     align-items: center;
 }
@@ -62,6 +61,16 @@
 .restricted-width-mobile {
     max-width: 70ch;
     margin: 0 auto;
+}
+.two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s1);
+}
+.three-col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s1);
 }
 
 @media screen and (min-width: 1024px) {
