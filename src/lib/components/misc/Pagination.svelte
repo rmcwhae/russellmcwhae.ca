@@ -1,29 +1,61 @@
 <script>
-    export let pages
+    import { createEventDispatcher } from 'svelte'
+    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
+    import RightChevron from '$lib/components/icons/RightChevron.svelte'
+
+    export let totalItems
+    export let pageSize
     export let currentPage
-    export let href
 
-    let range
+    const dispatch = createEventDispatcher()
 
-    $: {
-        range = []
-        for (let i = 1; i <= pages; ++i) {
-            range.push(i)
+    $: lastPage = Math.ceil(totalItems / pageSize)
+
+    function range(size, startAt = 0) {
+        return [...Array(size).keys()].map((i) => i + startAt)
+    }
+
+    function changePage(page) {
+        if (page !== currentPage) {
+            dispatch('setPage', { page })
         }
     }
+
+    $: console.log('currentPage', currentPage)
+    $: console.log('totalItems', totalItems)
 </script>
 
-{#if pages > 1}
-    <nav class="sub">
-        <ul>
-            {#each range as page}
-                <li class:active={page === currentPage}>
-                    <a class="no-shadow" href={href(page)}>{page}</a>
-                </li>
-            {/each}
-        </ul>
-    </nav>
-{/if}
+<nav>
+    <ul>
+        <li class={currentPage === 1 ? 'disabled' : ''}>
+            <a
+                href="javascript:void(0)"
+                on:click={() => changePage(currentPage - 1)}
+                class="no-shadow"
+            >
+                <span aria-hidden="true" class="chevron"><LeftChevron /></span>
+            </a>
+        </li>
+        {#each range(lastPage, 1) as page}
+            <li class={page === currentPage ? 'active' : ''}>
+                <a
+                    href="javascript:void(0)"
+                    on:click={() => changePage(page)}
+                    class="no-shadow">{page}</a
+                >
+            </li>
+        {/each}
+        <li class={currentPage === lastPage ? 'disabled' : ''}>
+            <a
+                href="javascript:void(0)"
+                on:click={() => changePage(currentPage + 1)}
+                class="no-shadow"
+            >
+                <span aria-hidden="true" class="chevron"><RightChevron /></span>
+            </a>
+        </li>
+    </ul>
+</nav>
 
 <style>
     nav {

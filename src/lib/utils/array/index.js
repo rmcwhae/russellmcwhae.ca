@@ -1,5 +1,5 @@
 // Via: https://stackoverflow.com/questions/42761068/paginate-javascript-array
-export function paginate(array, page_size, page_number) {
+export function paginate(array, pageSize, currentPage) {
     // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
-    return array.slice((page_number - 1) * page_size, page_number * page_size)
+    return array.slice((currentPage - 1) * pageSize, currentPage * pageSize)
 }

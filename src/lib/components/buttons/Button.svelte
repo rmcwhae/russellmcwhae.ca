@@ -23,9 +23,6 @@
 </a>
 
 <style>
-    .chevron {
-        font-size: 0.75em;
-    }
     a {
         display: inline-flex;
         align-items: center;
