@@ -15,8 +15,6 @@ category: TODO
 -   Mobile optimization
 -   Clean SCSS
 -   Vertical spacing in blockquotes
--   `<em>` styles
--   `<sup>` styles
 -   Try css color-mod()
 -   Clean Adobe WebFonts once done
 -   Projects page
