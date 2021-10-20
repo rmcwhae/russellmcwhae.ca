@@ -16,11 +16,9 @@
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-    import Pagination from '$lib/components/misc/Pagination.svelte'
+    // import Pagination from '$lib/components/misc/Pagination.svelte'
 
     export let images
-    export let pages
-    export let currentPage
 </script>
 
 <div class="flex items-center justify-between">
@@ -31,8 +29,8 @@
 <SEO title="Photography" />
 
 <Gallery {images} />
-<Pagination {pages} {currentPage} href={(page) => `/photography/${page}`} />
 
+<!-- <Pagination {pages} {currentPage} href={(page) => `/photography/${page}`} /> -->
 <style>
     div {
         margin-bottom: var(--s1);
