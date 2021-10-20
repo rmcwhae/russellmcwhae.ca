@@ -37,6 +37,7 @@
 <SEO title="Photography" />
 
 <Gallery images={paginatedImages} />
+
 <Pagination
     totalItems={images.length}
     {pageSize}
