@@ -3,6 +3,7 @@ import remarkfootnotes from 'remark-footnotes'
 import readingTime from 'remark-reading-time'
 import remarkToc from 'remark-toc'
 import remarkSlug from 'remark-slug'
+import rehypeExternalLinks from 'rehype-external-links'
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
@@ -22,7 +23,7 @@ const config = {
         remarkfootnotes,
         slug,
     ],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeExternalLinks],
 }
 
 export default config
