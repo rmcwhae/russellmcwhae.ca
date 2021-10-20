@@ -18,41 +18,41 @@
     function changePage(page) {
         if (page !== currentPage) {
             dispatch('setPage', { page })
+            topFunction()
         }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0 // For Safari
+        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
     }
 </script>
 
-<nav>
-    <ul>
-        <li class={currentPage === 1 ? 'disabled' : ''}>
-            <a
-                href="javascript:void(0)"
-                on:click={() => changePage(currentPage - 1)}
-                class="no-shadow"
-            >
-                <span aria-hidden="true" class="chevron"><LeftChevron /></span>
-            </a>
-        </li>
-        {#each range(lastPage, 1) as page}
-            <li class={page === currentPage ? 'active' : ''}>
-                <a
-                    href="javascript:void(0)"
-                    on:click={() => changePage(page)}
-                    class="no-shadow">{page}</a
+{#if totalItems > pageSize}
+    <nav>
+        <ul>
+            <li class={currentPage === 1 ? 'disabled' : ''}>
+                <span
+                    on:click={() => changePage(currentPage - 1)}
+                    aria-hidden="true"
+                    class=""><LeftChevron /></span
                 >
             </li>
-        {/each}
-        <li class={currentPage === lastPage ? 'disabled' : ''}>
-            <a
-                href="javascript:void(0)"
-                on:click={() => changePage(currentPage + 1)}
-                class="no-shadow"
-            >
-                <span aria-hidden="true" class="chevron"><RightChevron /></span>
-            </a>
-        </li>
-    </ul>
-</nav>
+            {#each range(lastPage, 1) as page}
+                <li class={page === currentPage ? 'active' : ''}>
+                    <span on:click={() => changePage(page)}>{page}</span>
+                </li>
+            {/each}
+            <li class={currentPage === lastPage ? 'disabled' : ''}>
+                <span
+                    aria-hidden="true"
+                    on:click={() => changePage(currentPage + 1)}
+                    class=""><RightChevron /></span
+                >
+            </li>
+        </ul>
+    </nav>
+{/if}
 
 <style>
     nav {
@@ -65,8 +65,9 @@
         padding-left: 0;
         list-style: none;
     }
-    nav li a {
+    nav li span {
         text-decoration: none;
+        cursor: pointer;
         position: relative;
         display: block;
         padding: var(--s-2) var(--s0);
@@ -74,22 +75,22 @@
         line-height: 1.25;
         border: 1px solid var(--medium-grey);
     }
-    nav ul li:first-child a {
+    nav ul li:first-child span {
         border-top-left-radius: var(--circle-radius);
         border-bottom-left-radius: var(--circle-radius);
         padding-left: var(--s1);
     }
-    nav ul li:last-child a {
+    nav ul li:last-child span {
         border-top-right-radius: var(--circle-radius);
         border-bottom-right-radius: var(--circle-radius);
         padding-right: var(--s1);
     }
-    nav li.active a {
+    nav li.active span {
         color: var(--background-color);
         background-color: var(--high-contrast-color);
         border-color: var(--high-contrast-color);
     }
-    nav li.disabled a {
+    nav li.disabled span {
         color: var(--light-grey);
         pointer-events: none;
         cursor: auto;

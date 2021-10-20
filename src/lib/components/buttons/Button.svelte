@@ -10,13 +10,13 @@
 
 <a {href} class="button">
     {#if left}
-        <span class="chevron left">
+        <span class="left">
             <LeftChevron />
         </span>
     {/if}
     <span>{text}</span>
     {#if right}
-        <span class="chevron right">
+        <span class="right">
             <RightChevron />
         </span>
     {/if}
