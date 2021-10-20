@@ -20,9 +20,6 @@
             dispatch('setPage', { page })
         }
     }
-
-    $: console.log('currentPage', currentPage)
-    $: console.log('totalItems', totalItems)
 </script>
 
 <nav>
