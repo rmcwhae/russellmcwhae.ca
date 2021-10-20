@@ -1,11 +1,7 @@
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import * as StringUtils from '$lib/utils/string'
-import { EVENTS_PER_PAGE } from '$lib/constants'
-import * as ArrayUtils from '$lib/utils/array'
 
-export async function get({ query }) {
-    const page = +query.get('page') || 1
-
+export async function get() {
     const events = await ImageKitNodeServices.listFiles({
         path: '/events/',
         type: 'folder',
@@ -39,14 +35,7 @@ export async function get({ query }) {
     })
 
     return {
-        body: {
-            events: ArrayUtils.paginate(
-                eventsWithImages,
-                EVENTS_PER_PAGE,
-                page
-            ),
-            pages: Math.ceil(eventsWithImages.length / EVENTS_PER_PAGE),
-        },
+        body: eventsWithImages,
     }
 }
 
