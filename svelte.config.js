@@ -39,6 +39,12 @@ const config = {
             ssr: {
                 noExternal: [],
             },
+            server: {
+                fs: {
+                    // Allow serving files from one level up to the project root
+                    allow: ['..'],
+                },
+            },
             resolve: {
                 alias: {
                     $static: path.resolve('static'),
