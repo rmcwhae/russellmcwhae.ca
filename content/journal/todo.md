@@ -24,6 +24,8 @@ category: TODO
 -   LQIP?
 -   Animate stuff
 -   Page anchors bug
+-   Update photo gallery with `n`pm i -D "github:dimsemenov/photoswipe#v5-beta"`
+-   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
 
 ## Later Ideas
 
