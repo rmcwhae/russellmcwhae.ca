@@ -54,9 +54,9 @@ As mentioned, this website is built using SvelteKit. Under the hood, SvelteKit u
 
 My journal entries are written in Markdown, so transferring these from the old PHP back-end involved simply pasting all the Markdown files into this project—data migration doesn’t get much simpler than that!
 
-### Browser Support
+### Images
 
-I haven’t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then it is time [to upgrade](https://bestvpn.org/outdatedbrowser/en).
+Photos are a big part of this website’s _raison d'être_, so I wanted to feature them extensively while also loading images as quickly as possible. On my previous website, image galleries relied too heavily on client-side JavaScript and were quite slow. The [Events](/events) page is now much more performant and engaging—kind of fun to look back on all the adventures I’ve had over the years. Photos are hosted on [Imagekit](https://imagekit.io/) and are also served via its responsive-image pipeline and CDN. Basically, by using their service (and staying within the free tier), image-loading performance is as good as possible, with minimal infrastructure for me to manage.
 
 ### Notable Packages
 
@@ -64,9 +64,12 @@ The following packages were quite helpful in the development of this site:
 
 -   [mdsvex](https://mdsvex.pngwn.io/): for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
 -   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
--   [Imagekit](https://imagekit.io/) for the responsive-image pipeline
 -   [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
 -   [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
+
+### Browser Support
+
+I haven’t bothered testing this website in Internet Explorer 11. If it looks like garbage in your browser, then try something [more modern](https://bestvpn.org/outdatedbrowser/en).
 
 ### Deployment
 
@@ -84,4 +87,4 @@ If you want to get really fancy, use [adapter-netlify](https://github.com/svelte
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding summer smoke and shoulder season here in Revelstoke. I’ll echo the consensus that seems to be developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
+This was a fun project to keep occupied while avoiding summer smoke and shoulder season here in Revelstoke. I’ll echo the consensus that seems to be, uh, developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
