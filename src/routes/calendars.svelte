@@ -4,6 +4,12 @@
 
     const calendars = [
         {
+            year: 2022,
+            filename: '2022calendar.pdf',
+            image: '.jpg',
+            filesize: 2,
+        },
+        {
             year: 2021,
             filename: '2021calendar.pdf',
             image: '.jpg',
@@ -73,8 +79,13 @@
 
 <!-- <h2>Previous Calendars</h2> -->
 
-<h1>Calendars</h1>
-<p class="mt-1 mb-1">Check back in Fall 2021 for my upcoming 2022 calendar!</p>
+<div class="full-bleed">
+    <h1>Calendars</h1>
+    <p class="mt-1 mb-1">
+        My 2022 Calendar has been designed and is currently being proofed. Check
+        back soon to order!
+    </p>
+</div>
 
 <div class="past full-bleed">
     {#each calendars as { filename, year, filesize }, index}
