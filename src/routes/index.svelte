@@ -51,7 +51,7 @@
 
 <SEO />
 
-<div class="two-col-grid border-bottom">
+<div class="two-col-grid border-bottom mt-3">
     <div>
         <h1>Hi, I’m Russell.</h1>
         <p class="big mt-2 mb-2">
@@ -93,7 +93,7 @@
     </div>
 </div>
 
-<h3>Photos</h3>
+<h2>Photos</h2>
 
 <Gallery {images} />
 
@@ -156,7 +156,7 @@
     </div>
 </div>
 
-<h3 class="mt-5 mb-3">Latest Journal Entries</h3>
+<h2 class="mt-5 mb-3">Latest Journal Entries</h2>
 
 <JournalEntrySet posts={latestPosts} />
 
@@ -164,7 +164,7 @@
     <Button href="journal" text="All entries" right />
 </ButtonSet>
 
-<h3>Et cetera</h3>
+<h2>Et cetera</h2>
 
 <p class="mb-3">A few bits of content that had nowhere else to go.</p>
 

@@ -13,9 +13,9 @@
             <Date {date} />
         </div>
     {/if}
-    <h2>
+    <h3>
         <a sveltekit:prefetch {href}>{@html preventLastTwoWordWrap(title)}</a>
-    </h2>
+    </h3>
     {#if description}
         <p>{@html preventLastTwoWordWrap(description)}</p>
     {/if}
@@ -29,11 +29,11 @@
 </section>
 
 <style>
-    h2 {
+    h3 {
         margin: 0;
         line-height: 1.2;
     }
-    h2 a {
+    h3 a {
         text-decoration: none;
     }
     p {
