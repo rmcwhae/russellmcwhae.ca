@@ -51,45 +51,48 @@
 
 <SEO />
 
-<div class="two-col-grid border-bottom mt-3">
-    <div>
-        <h1>Hi, I’m Russell.</h1>
-        <p class="big mt-2 mb-2">
-            I’m a front end–biased web developer with a background in structural
-            engineering and biomedical research who likes spending time outside.
-        </p>
-        <Button href="#about" text="About me" right />
+<div class="home">
+    <div class="two-col-grid border-bottom">
+        <div>
+            <h1>Hi, I’m Russell.</h1>
+            <p class="big mt-2 mb-2">
+                I’m a front end–biased web developer with a background in
+                structural engineering and biomedical research who likes
+                spending time outside.
+            </p>
+            <Button href="#about" text="About me" right />
+        </div>
+
+        <div>
+            <img
+                srcset={Portrait}
+                type="image/webp"
+                alt="Russell McWhae portrait"
+            />
+        </div>
     </div>
 
-    <div>
-        <img
-            srcset={Portrait}
-            type="image/webp"
-            alt="Russell McWhae portrait"
-        />
-    </div>
-</div>
-
-<div class="two-col-grid boxes">
-    <div>
-        <a href="photography"
-            >see my <h4>photos</h4></a
-        >
-    </div>
-    <div>
-        <a href="calendars"
-            >preview my <h4>calendars</h4></a
-        >
-    </div>
-    <div>
-        <a href="projects"
-            >check out my <h4>projects</h4></a
-        >
-    </div>
-    <div>
-        <a href="journal"
-            >read my <h4>journal</h4></a
-        >
+    <div class="two-col-grid boxes">
+        <div>
+            <a href="photography"
+                >see my <h4>photos</h4></a
+            >
+        </div>
+        <div>
+            <a href="calendars"
+                >preview my <h4>calendars</h4></a
+            >
+        </div>
+        <div>
+            <a href="projects"
+                >check out my <h4>projects</h4></a
+            >
+        </div>
+        <div>
+            <a href="journal"
+                >read my <h4>journal</h4></a
+            >
+        </div>
     </div>
 </div>
 
@@ -171,6 +174,12 @@
 <JournalEntrySet posts={etCetera} />
 
 <style>
+    .home {
+        min-height: 67vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
     .boxes {
         width: var(--xs);
         margin: var(--s3) auto;
