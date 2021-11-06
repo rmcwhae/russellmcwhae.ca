@@ -4,11 +4,15 @@
 
     export let href
     export let text
+    export let external = false
     export let left = false
     export let right = false
+
+    const rel = external ? 'noopener noreferrer nofollow' : ''
+    const target = external ? '_blank' : ''
 </script>
 
-<a {href} class="button">
+<a {href} class="button" {rel} {target}>
     {#if left}
         <span class="left">
             <LeftChevron />
