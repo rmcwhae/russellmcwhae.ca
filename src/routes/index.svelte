@@ -52,34 +52,35 @@
 
 <h1>Hi, I’m Russell.</h1>
 
-<div class="grid">
-    <div class="box1 border-bottom">
-        <p>
-            I’m a front end–biased web developer with a background in structural
-            engineering and biomedical research who likes spending time outside.
-        </p>
-        <div>
-            <Button href="#about" text="About me" right />
-        </div>
+<div class="flow">
+    <p>
+        I’m a front end–biased web developer with a background in structural
+        engineering and biomedical research who likes spending time outside.
+    </p>
+    <div>
+        <Button href="#about" text="About me" right />
     </div>
-    <div class="box2 border-bottom">
+</div>
+
+<div class="two-col-grid">
+    <div>
         <a href="photography" class="big"
-            >see my <h4>Photos</h4></a
+            >see my <h4>photos</h4></a
         >
     </div>
-    <div class="box3 border-bottom">
+    <div>
         <a href="calendars" class="big"
-            >preview my <h4>Calendars</h4></a
+            >preview my <h4>calendars</h4></a
         >
     </div>
-    <div class="box4 border-bottom">
+    <div>
         <a href="projects" class="big"
-            >check out my <h4>Projects</h4></a
+            >check out my <h4>projects</h4></a
         >
     </div>
-    <div class="box5 border-bottom">
+    <div>
         <a href="journal" class="big"
-            >read my <h4>Journal</h4></a
+            >read my <h4>journal</h4></a
         >
     </div>
 </div>
@@ -166,13 +167,6 @@
         display: block;
         text-decoration: none;
     }
-    .grid {
-        margin: var(--s2) 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-gap: var(--s2);
-    }
     .grid div {
         padding-bottom: var(--s-2);
     }
@@ -180,36 +174,6 @@
         text-transform: lowercase;
         margin-top: 0;
         line-height: 1em;
-    }
-    .box1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
-    .box2 {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .box3 {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .box4 {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .box5 {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 2;
-        grid-row-end: 3;
     }
     @media (max-width: 599px) {
         h1 {

@@ -35,14 +35,11 @@ a.no-shadow:hover {
 
 // Article styles
 
-// article > div > * + * {
-//     margin-top: var(--s2);
-// }
-h2 {
-    margin-top: var(--s4);
+article h2 {
+    margin-top: var(--s4) !important;
 }
-h3 {
-    margin-top: var(--s3);
+article h3 {
+    margin-top: var(--s3) !important;
 }
 @media (max-width: 1023px) {
     article {
@@ -76,6 +73,7 @@ div > hr {
     color: var(--light-grey);
     text-align: center;
     overflow: visible;
+    margin: var(--s3) 0;
 }
 
 // Headings

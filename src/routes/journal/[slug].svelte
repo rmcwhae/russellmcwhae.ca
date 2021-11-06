@@ -79,23 +79,23 @@
     <div class="restricted-width flow">
         <svelte:component this={component} />
     </div>
-    <nav class="flex justify-between">
-        {#if previous}
-            <div class="flex gap justify-between items-center left">
-                <LeftChevron />
-                <JournalEntry post={previous} />
-            </div>
-        {:else}
-            <div />
-        {/if}
-        {#if next}
-            <div class="flex gap justify-between items-center right">
-                <JournalEntry post={next} />
-                <RightChevron />
-            </div>
-        {/if}
-    </nav>
 </article>
+<nav class="flex justify-between">
+    {#if previous}
+        <div class="flex gap justify-between items-center left">
+            <LeftChevron />
+            <JournalEntry post={previous} />
+        </div>
+    {:else}
+        <div />
+    {/if}
+    {#if next}
+        <div class="flex gap justify-between items-center right">
+            <JournalEntry post={next} />
+            <RightChevron />
+        </div>
+    {/if}
+</nav>
 
 <style>
     header {

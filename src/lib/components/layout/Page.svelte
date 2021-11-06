@@ -10,7 +10,7 @@
     <header>
         <h1>{title}</h1>
     </header>
-    <div class="restricted-width">
+    <div class="restricted-width flow">
         <slot />
     </div>
 </article>

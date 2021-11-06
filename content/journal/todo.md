@@ -10,8 +10,8 @@ category: TODO
 ## Launch checklist
 
 -   Update "That New-Website Look"
--   Stick Footer to bottom
 -   Mobile optimization
+-   Return smooth scrolling
 -   Try css color-mod()
 -   Clean Adobe WebFonts once done
 -   Projects page
