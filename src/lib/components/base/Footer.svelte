@@ -14,8 +14,11 @@
 
 <footer>
     <div class="up" on:click={topFunction} title="Scroll to top" />
-    <div class="wrapper flex justify-between align-center">
-        <div>&copy; {year} Russell McWhae. Made in Canada, eh.</div>
+    <div class="wrapper">
+        <div class="mb-s0">
+            &copy; {year} Russell McWhae.
+            <span class="nowrap">Made in Canada, eh.</span>
+        </div>
         <div class="icons">
             <!-- svelte-ignore a11y-invalid-attribute -->
             <a
@@ -47,6 +50,9 @@
     .wrapper {
         border-top: 1px solid var(--light-grey);
         padding: var(--s0) var(--s3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .up {
         position: absolute;
@@ -70,12 +76,17 @@
         display: inline;
     }
     @media (max-width: 1023px) {
-        .icons {
-            text-align: center;
-            margin: var(--s0) 0 var(--s2);
+        .wrapper {
+            display: block;
+            padding: var(--s0) 33% var(--s0) var(--s0);
         }
-        .icons a:not(:last-of-type) {
-            margin-right: var(--s0);
+        .up {
+            width: 33%;
+            right: var(--s0);
+            left: inherit;
+            top: inherit;
+            bottom: 0;
+            background-size: 100px 56.75px;
         }
     }
 </style>
