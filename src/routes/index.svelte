@@ -100,10 +100,12 @@
 
 <Gallery {images} />
 
-<ButtonSet>
-    <Button href="photography" text="Portfolio" right />
-    <Button href="events" text="Events" right />
-</ButtonSet>
+<div class="mt-3 mb-5">
+    <ButtonSet>
+        <Button href="photography" text="Portfolio" right />
+        <Button href="events" text="Events" right />
+    </ButtonSet>
+</div>
 
 <div class="restricted-width-mobile">
     <h3 id="about">About Me</h3>
@@ -163,9 +165,11 @@
 
 <JournalEntrySet posts={latestPosts} />
 
-<ButtonSet>
-    <Button href="journal" text="All entries" right />
-</ButtonSet>
+<div class="mt-3 mb-5">
+    <ButtonSet>
+        <Button href="journal" text="All entries" right />
+    </ButtonSet>
+</div>
 
 <h2>Et cetera</h2>
 
