@@ -17,7 +17,6 @@ category: TODO
 -   Finish homepage
 -   Update repo readme
 -   Performance testing
--   LQIP?
 -   Animate stuff
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
@@ -30,6 +29,7 @@ It only took five years, but I finally got around to rebuilding my personal webs
 
 -   Submit for review? Svelte I made this…
 -   Analytics?
+-   LQIPs?
 -   Smooth scrolling and sticky footer
 -   Netlify Large media 2500 transforms/month…
 -   ImageKit-Captions-in-string

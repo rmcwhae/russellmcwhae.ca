@@ -20,6 +20,7 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
+    import Portrait from '$static/cutout.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 
     export let images
     export let latestPosts
@@ -50,36 +51,43 @@
 
 <SEO />
 
-<h1>Hi, I’m Russell.</h1>
-
-<div class="flow">
-    <p>
-        I’m a front end–biased web developer with a background in structural
-        engineering and biomedical research who likes spending time outside.
-    </p>
+<div class="two-col-grid border-bottom">
     <div>
+        <h1>Hi, I’m Russell.</h1>
+        <p class="big mt-2 mb-2">
+            I’m a front end–biased web developer with a background in structural
+            engineering and biomedical research who likes spending time outside.
+        </p>
         <Button href="#about" text="About me" right />
+    </div>
+
+    <div>
+        <img
+            srcset={Portrait}
+            type="image/webp"
+            alt="Russell McWhae portrait"
+        />
     </div>
 </div>
 
-<div class="two-col-grid">
+<div class="two-col-grid boxes">
     <div>
-        <a href="photography" class="big"
+        <a href="photography"
             >see my <h4>photos</h4></a
         >
     </div>
     <div>
-        <a href="calendars" class="big"
+        <a href="calendars"
             >preview my <h4>calendars</h4></a
         >
     </div>
     <div>
-        <a href="projects" class="big"
+        <a href="projects"
             >check out my <h4>projects</h4></a
         >
     </div>
     <div>
-        <a href="journal" class="big"
+        <a href="journal"
             >read my <h4>journal</h4></a
         >
     </div>
@@ -163,57 +171,15 @@
 <JournalEntrySet posts={etCetera} />
 
 <style>
-    .big {
+    .boxes {
+        width: var(--xs);
+        margin: var(--s3) auto;
+    }
+    .boxes a {
         display: block;
-        text-decoration: none;
     }
-    .grid div {
-        padding-bottom: var(--s-2);
-    }
-    .grid h4 {
-        text-transform: lowercase;
-        margin-top: 0;
-        line-height: 1em;
-    }
-    @media (max-width: 599px) {
-        h1 {
-            text-align: center;
-        }
-
-        .grid {
-            grid-gap: var(--s1);
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: minmax(40px, 1fr);
-        }
-        .box1 {
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-        .box2 {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .box3 {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .box4 {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 3;
-            grid-row-end: 4;
-        }
-        .box5 {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 3;
-            grid-row-end: 4;
-        }
+    .big {
+        font-size: 1.563rem;
+        line-height: 1.2;
     }
 </style>
