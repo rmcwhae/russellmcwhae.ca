@@ -36,12 +36,16 @@
 
 <SEO title="Projects" />
 
-<div class="full-bleed">
-    {#each projects as { title, description, href, repoHref, src, stack }}
-        <Project {title} {description} {href} {repoHref} {src} {stack} />
+<div class="flow">
+    {#each projects as { title, description, href, repoHref, src, stack }, index}
+        <Project
+            {title}
+            {description}
+            {href}
+            {repoHref}
+            {src}
+            {stack}
+            {index}
+        />
     {/each}
 </div>
-
-<style>
-    /* your styles go here */
-</style>
