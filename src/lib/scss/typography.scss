@@ -73,7 +73,7 @@ div > hr {
     color: var(--light-grey);
     text-align: center;
     overflow: visible;
-    margin: var(--s3) 0;
+    margin: var(--s3) 0 !important;
 }
 
 // Headings

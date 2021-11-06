@@ -11,7 +11,6 @@ category: TODO
 
 -   Update "That New-Website Look"
 -   Mobile optimization
--   Return smooth scrolling
 -   Try css color-mod()
 -   Clean Adobe WebFonts once done
 -   Projects page
@@ -31,6 +30,7 @@ It only took five years, but I finally got around to rebuilding my personal webs
 
 -   Submit for review? Svelte I made this…
 -   Analytics?
+-   Smooth scrolling and sticky footer
 -   Netlify Large media 2500 transforms/month…
 -   ImageKit-Captions-in-string
 -   Build <category> page for journal entries; journal hero images?
