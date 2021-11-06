@@ -1,15 +1,17 @@
 :root {
     --radius: 8px;
     --circle-radius: 50px;
-    --ratio: 1.5;
+
     --duration: 0.2s;
     --flow-space: var(--s1);
-    // TODO make me DRYer with breakpoints.scss…
+
     --sm: 640px;
     --md: 768px;
     --lg: 1024px;
     --xl: 1280px;
     --2xl: 1536px;
+
+    --ratio: 1.5;
     --s-5: calc(var(--s-4) / var(--ratio));
     --s-4: calc(var(--s-3) / var(--ratio));
     --s-3: calc(var(--s-2) / var(--ratio));
