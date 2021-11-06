@@ -35,37 +35,33 @@ a.no-shadow:hover {
 
 // Article styles
 
-article > div > * + * {
-    margin-top: var(--s2);
-}
-article h2 {
+// article > div > * + * {
+//     margin-top: var(--s2);
+// }
+h2 {
     margin-top: var(--s4);
 }
-article h3 {
+h3 {
     margin-top: var(--s3);
 }
 @media (max-width: 1023px) {
-    article > * + * {
-        margin-top: var(--s0);
-    }
-
     article {
         margin: 0 auto;
     }
 }
-article blockquote {
+blockquote {
     margin-left: 0;
     padding-left: var(--s1);
     margin-right: var(--s1);
     border-left: 1px solid var(--light-grey);
     font-size: 1.05rem;
 }
-article pre {
+pre {
     padding: var(--s-1) var(--s1);
     border: 1px solid var(--light-grey);
     border-radius: var(--radius);
 }
-article ul {
+ul {
     list-style-type: disc;
 }
 article li p {
@@ -100,6 +96,7 @@ h4,
 h5,
 h6 {
     color: var(--high-contrast-color);
+    margin-bottom: var(--s0);
 }
 h1 {
     font-size: 3.052rem;

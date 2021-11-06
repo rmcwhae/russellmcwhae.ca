@@ -4,21 +4,20 @@
     export let posts
 </script>
 
-<div class="journal-entry-set">
+<div>
     {#each posts as post}
         <JournalEntry {post} />
     {/each}
 </div>
 
 <style>
-    .journal-entry-set {
-        margin-top: var(--s2);
+    div {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-gap: var(--s2);
     }
     @media (max-width: 640px) {
-        .journal-entry-set {
+        div {
             grid-gap: var(--s0);
         }
     }

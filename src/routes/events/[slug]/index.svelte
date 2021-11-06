@@ -29,12 +29,13 @@
 
 <SEO {title} />
 
-<div class="flex items-center justify-between">
-    <h1>{title}</h1>
-    <Button href="/events" text="Events" left />
+<div class="full-bleed">
+    <div class="flex items-center justify-between">
+        <h1>{title}</h1>
+        <Button href="/events" text="Events" left />
+    </div>
+    <div class="sub">{date} &middot; {count} photos</div>
 </div>
-
-<div class="sub">{date} &middot; {count} photos</div>
 
 <Gallery images={paginatedImages} />
 

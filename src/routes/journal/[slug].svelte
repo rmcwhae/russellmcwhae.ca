@@ -76,7 +76,7 @@
         </div>
     </header>
 
-    <div class="restricted-width">
+    <div class="restricted-width flow">
         <svelte:component this={component} />
     </div>
     <nav class="flex justify-between">

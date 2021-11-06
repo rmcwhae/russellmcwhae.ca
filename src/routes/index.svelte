@@ -144,20 +144,10 @@
             now been working as a web developer, specializing in front-end work,
             out of Revelstoke, BC.
         </p>
-        <p>
-            View my <a href="/pdf/mcwhae_russell_resume.pdf" target="_blank"
-                >current résumé</a
-            >, or check out my
-            <a
-                href="https://www.linkedin.com/in/rmcwhae/"
-                rel="nofollow"
-                target="_blank">LinkedIn profile</a
-            >.
-        </p>
     </div>
 </div>
 
-<h3 class="mt-5">Latest Journal Entries</h3>
+<h3 class="mt-5 mb-3">Latest Journal Entries</h3>
 
 <JournalEntrySet posts={latestPosts} />
 
@@ -167,7 +157,7 @@
 
 <h3>Et cetera</h3>
 
-<p>A few bits of content that had nowhere else to go.</p>
+<p class="mb-3">A few bits of content that had nowhere else to go.</p>
 
 <JournalEntrySet posts={etCetera} />
 
