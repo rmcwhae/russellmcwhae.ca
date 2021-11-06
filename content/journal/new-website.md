@@ -87,4 +87,4 @@ If you want to get really fancy, use [adapter-netlify](https://github.com/svelte
 
 ## Conclusion
 
-This was a fun project to keep occupied while avoiding summer smoke and shoulder season here in Revelstoke. I’ll echo the consensus that seems to be, uh, developing around SvelteKit (pun intended, as usual): that it offers a terrific developer experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).
+This was a fun project to keep occupied while avoiding summer smoke and shoulder season here in Revelstoke. I’ll echo the consensus that seems to be, uh, developing around SvelteKit (pun intended, as usual): that it offers a terrific experience building modern, speedy websites with minimal configuring. Lastly, feel free to take a look under the hood of this website at its [Github repository](https://github.com/rmcwhae/russellmcwhae.ca).

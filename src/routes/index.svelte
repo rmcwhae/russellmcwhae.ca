@@ -96,7 +96,7 @@
 <div class="restricted-width-mobile">
     <h3 id="about">About Me</h3>
 
-    <div class="two-col">
+    <div class="two-col flow">
         <p>
             Growing up in Calgary, Alberta, Canada I spent time mountain biking,
             hiking and downhill skiing in the Canadian Rocky Mountains. My
@@ -185,9 +185,6 @@
     }
     .grid div {
         padding-bottom: var(--s-2);
-    }
-    p {
-        margin-top: 0;
     }
     .grid h4 {
         text-transform: lowercase;
