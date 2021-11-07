@@ -56,7 +56,7 @@ My journal entries are written in Markdown, so transferring these from the old P
 
 ### Images
 
-Photos are a big part of this website’s _raison d'être_, so I wanted to feature them extensively while also loading images as quickly as possible. On my previous website, image galleries relied too heavily on client-side JavaScript and were quite slow. The [Events](/events) page is now much more performant and engaging—kind of fun to look back on all the adventures I’ve had over the years. Photos are hosted on [Imagekit](https://imagekit.io/) and are also served via its responsive-image pipeline and CDN. Basically, by using their service (and staying within the free tier), image-loading performance is as good as possible, with minimal infrastructure for me to manage.
+Photos are a big part of this website’s _raison d'être_, so I wanted to feature them extensively while also loading images as quickly as possible. On my previous website, image galleries relied too heavily on client-side JavaScript and were quite slow. The [Events](/events) page is now much more performant and engaging—kind of fun to look back on all the adventures I’ve had over the years. Photos are hosted on [ImageKit](https://imagekit.io/) and are also served via its responsive-image pipeline and CDN. By using their service (and staying within the free tier), image-loading performance is as good as possible, with minimal infrastructure for me to manage.
 
 ### Notable Packages
 
