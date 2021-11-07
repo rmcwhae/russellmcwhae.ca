@@ -76,7 +76,7 @@
         </div>
     </header>
 
-    <div class="single-col flow">
+    <div class="char-limit flow margin-0-auto">
         <svelte:component this={component} />
     </div>
 </article>

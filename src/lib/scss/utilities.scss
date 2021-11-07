@@ -86,3 +86,11 @@ blockquote > * + * {
     font-size: 1.563rem;
     line-height: 1.2;
 }
+
+.char-limit {
+    max-width: 70ch;
+}
+
+.margin-0-auto {
+    margin: 0 auto;
+}

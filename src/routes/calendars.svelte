@@ -81,7 +81,7 @@
 
 <div class="full-bleed">
     <h1>Calendars</h1>
-    <p class="mt-1 mb-1">
+    <p class="mt-1 mb-1 big char-limit">
         My 2022 Calendar has been designed and is currently being proofed. Check
         back soon to order!
     </p>
