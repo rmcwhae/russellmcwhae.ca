@@ -1,6 +1,7 @@
 <script>
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
+    import { preventLastTwoWordWrap } from '$lib/utils/string'
 
     export let project
     export let reverse
@@ -12,7 +13,7 @@
     <slot />
     <div class="details">
         <h2>{title}</h2>
-        <p class="big">{description}</p>
+        <p class="big">{@html preventLastTwoWordWrap(description)}</p>
         <div class="sub mb-2">{stack.join(' · ')}</div>
 
         <ButtonSet>
