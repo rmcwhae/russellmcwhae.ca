@@ -173,10 +173,6 @@
         opacity: 0;
         visibility: hidden;
     }
-    .nav-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
 
     /* ICON BARS ANIMATION */
 
@@ -230,6 +226,10 @@
         }
         .nav-menu.active {
             height: auto;
+        }
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
         .nav-menu li {
             display: inline-flex;
