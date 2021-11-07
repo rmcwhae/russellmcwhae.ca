@@ -29,7 +29,7 @@
 
 <SEO {title} />
 
-<div class="full-bleed">
+<div class="full-bleed mb-2">
     <div class="flex items-center justify-between">
         <h1>{title}</h1>
         <Button href="/events" text="Events" left />

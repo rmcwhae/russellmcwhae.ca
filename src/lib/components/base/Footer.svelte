@@ -17,7 +17,7 @@
     <div class="wrapper">
         <div class="mb-s0">
             &copy; {year} Russell McWhae.
-            <span class="nowrap">Made in Canada, eh.</span>
+            <span class="nowrap">Made in Canada.</span>
         </div>
         <div class="icons">
             <!-- svelte-ignore a11y-invalid-attribute -->

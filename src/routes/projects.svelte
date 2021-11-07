@@ -32,6 +32,8 @@
 
 <SEO title="Projects" />
 
+<h1 class="mb-3">Dev Projects</h1>
+
 <div class="flow">
     <Project project={projects[0]}>
         <Image src="/projects/avysavvy.jpg" alt={projects[0].title} />

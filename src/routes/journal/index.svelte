@@ -17,4 +17,6 @@
 
 <SEO title="Journal" />
 
+<h1 class="mb-2">All Entries</h1>
+
 <JournalEntrySet {posts} />

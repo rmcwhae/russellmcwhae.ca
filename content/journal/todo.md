@@ -10,6 +10,7 @@ category: TODO
 ## Launch checklist
 
 -   Mobile optimization and testing
+-   Mobile font sizes…
 -   Clean Adobe WebFonts once done
 -   Update "That New-Website Look"
 -   Update repo readme

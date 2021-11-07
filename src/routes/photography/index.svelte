@@ -29,7 +29,7 @@
     $: paginatedImages = paginate(images, pageSize, currentPage)
 </script>
 
-<div class="full-bleed flex items-center justify-between">
+<div class="full-bleed flex items-center justify-between mb-2">
     <h1>Portfolio</h1>
     <Button right href="/events" text="All events" />
 </div>
@@ -46,9 +46,3 @@
         currentPage = e.detail.page
     }}
 />
-
-<style>
-    div {
-        margin-bottom: var(--s1);
-    }
-</style>
