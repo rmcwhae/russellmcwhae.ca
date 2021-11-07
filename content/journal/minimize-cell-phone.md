@@ -8,8 +8,8 @@ category: Tech
 ---
 
 <script>
+  import Image from 'svimg'
   import Caption from '$lib/components/images/Caption.svelte'
-  import Koodo from '$static/journal-images/koodo-prepaid.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 </script>
 
 Canada [often ranks](https://nationalpost.com/news/canada/why-canadian-cell-phone-bills-are-among-the-most-expensive-on-the-planet) among the most expensive countries for wireless phone plans. Our current mobility-provider landscape consists of the Big Three national companies — Telus, Rogers, and Bell — dominating most ([97%](https://www.whistleout.ca/CellPhones/Guides/canada-phone-plan-pricing)) of the market, with a few smaller providers piggybacking off the network infrastructure of these larger companies. In a few provinces (Saskatchewan, Manitoba, and Québec), competitive provincial carriers drive down mobile-plan costs from the national carriers.
@@ -37,7 +37,7 @@ Enabling automatic top-ups on your credit card (which is a good idea anyway so t
 Three years later, my average monthly phone bill is $22.43. The following table shows the breakdown, including when minute and data booster add-ons were purchased:
 
 <Caption text="Koodo prepaid plan cost over 37 months. Yes, I made a spreadsheet. All amounts $CAD.">
-  <img srcset={Koodo} type="image/webp" alt="Koodo prepaid plan cost over 37 months. Yes, I made a spreadsheet. All amounts $CAD."/>
+<Image src="/journal-images/koodo-prepaid.png" alt="Koodo prepaid plan cost over 37 months. Yes, I made a spreadsheet. All amounts $CAD." />
 </Caption>
 
 In May 2019, Koodo updated prepaid base plans to include 250 MB of data/month. Given my ability to spread 1 GB of data over five months (~200 MB/month), this effectively eliminated my need to purchase data booster add-ons ever again.

@@ -29,7 +29,6 @@ It only took five years, but I finally got around to rebuilding my personal webs
 -   Submit for review? Svelte I made this…
 -   Analytics?
 -   Try css color-mod()
--   LQIPs?
 -   Smooth scrolling and sticky footer
 -   Netlify Large media 2500 transforms/month…
 -   ImageKit-Captions-in-string

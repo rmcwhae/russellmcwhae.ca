@@ -2,12 +2,11 @@ import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
 import { isoImport } from 'vite-plugin-iso-import'
-import pack from 'vite-imagetools'
 import preprocess from 'svelte-preprocess'
-// import imagePreprocessor from 'svimg'
+import imagePreprocessor from 'svimg'
 import path from 'path'
 
-const { imagetools } = pack
+// const { imagetools } = pack
 
 /** @type {import('@sveltejs/kit').Config} */
 
@@ -15,12 +14,12 @@ const config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
     preprocess: [
         mdsvex(mdsvexConfig),
-        // imagePreprocessor({
-        //     inputDir: 'static',
-        //     outputDir: 'static/g',
-        //     webp: true,
-        //     avif: true,
-        // }),
+        imagePreprocessor({
+            inputDir: 'static',
+            outputDir: 'static/g',
+            webp: true,
+            avif: true,
+        }),
         preprocess(),
     ],
     kit: {
@@ -51,7 +50,7 @@ const config = {
                     $root: path.resolve('.'),
                 },
             },
-            plugins: [imagetools(), isoImport()],
+            plugins: [isoImport()],
         },
     },
 }

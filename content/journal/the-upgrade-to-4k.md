@@ -8,14 +8,11 @@ category: Tech
 ---
 
 <script>
-    import Caption from '$lib/components/images/Caption.svelte'
-    import ScreenAndKeyboard from '$static/journal-images/LG-screen-and-keyboard.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
-    import OnScreenControl from '$static/journal-images/LG-OnScreen-Control.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
-    import FourteenFortyP from '$static/journal-images/LG-1440p.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
-    import Interference from '$static/journal-images/LG-interference.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
+  import Image from 'svimg'
+  import Caption from '$lib/components/images/Caption.svelte'
 </script>
 
-<img srcset={ScreenAndKeyboard} type="image/webp" alt="LG 27UD68-W"/>
+<Image src="/journal-images/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W"  />
 
 ## Table of Contents
 
@@ -36,7 +33,7 @@ Reviews on this LG monitor were somewhat scarce, save for some customer reviews 
 The on-screen display (OSD) is managed by a single joystick on the bottom of the panel with five possible inputs: four cardinal directions and a click. It is good fun to use, though the joystick itself blinks while the monitor is sleeping (brightly enough for light to bleed into nearby vent holes), which cannot be disabled in the OSD. If this monitor is used in a bedroom, some electrical tape may be necessary to dim the blinking. LG makes a macOS app called OnScreen Control that allows you to change various settings without going through the OSD.
 
 <Caption text="OnScreen Control">
-  <img srcset={OnScreenControl} type="image/webp" alt="OnScreen Control"/>
+<Image src="/journal-images/LG-OnScreen-Control.png" alt="OnScreen Control" />
 </Caption>
 
 ## Performance
@@ -46,7 +43,7 @@ Ever since Apple rewrote the entire macOS GUI to work on Retina displays startin
 Running the 4K display in the default “Looks like 1920 x 1080” mode really isn’t ideal since text and interface elements are huge, and the additional screen real estate of 1440p is missing. I have been running the LG in 1440p mode along with the MacBook Pro’s native display at its default resolution (2880 x 1800 in “Looks like 1440 x 900” mode) for almost two months now, and the setup doesn’t seem to run all that slower or hotter compared to a non-4K 1440p monitor for _most_ tasks.
 
 <Caption text="1440p mode">
-  <img srcset={FourteenFortyP} type="image/webp" alt="1440p mode"/>
+<Image src="/journal-images/LG-1440p.png" alt="1440p mode" />
 </Caption>
 
 Playing 4K YouTube videos seems to be much more optimized in Safari than in Chrome: fullscreen 4K video playback in Chrome causes an audible fan-speed spike to 5000 RPM or more, whereas 4K playback in Safari is quieter with a max fan speed of around 3600 RPM. (**UPDATE August 3, 2018**: Google has [changed the codec](https://9to5mac.com/2017/01/12/youtube%E2%80%A4com-no-longer-supports-4k-video-playback-in-safari/) of 4K YouTube videos, and 4K YouTube playback is no longer supported in Safari. Back to noisy Chrome for 4K YouTube viewing, _sigh_.)
@@ -76,7 +73,7 @@ Though this doesn’t directly relate to the LG review, here are some findings o
 I tried everything: disconnecting and reconnecting the mouse, re-pairing the mouse, resetting the NVRAM, resetting the SMC, and not running the laptop in clamshell mode. Restarting my computer would sometimes give up to a few hours of reliable Bluetooth connection, but the issues always returned. It turns out that the source of all this trouble was the monitor cable. When I first got the LG, I carelessly tucked the mini-DP-to-DP cable underneath the laptop that sits raised on my custom laptop stand. Moving the cable a few inches lower to the underneath of the desk eliminated the interference completely.
 
 <Caption text="Display cable interference">
-  <img srcset={Interference} type="image/webp" alt="Display cable interference"/>
+<Image src="/journal-images/LG-interference.jpg" alt="Display cable interference" />
 </Caption>
 
 ## 4K Gaming

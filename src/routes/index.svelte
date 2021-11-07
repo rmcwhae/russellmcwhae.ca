@@ -15,12 +15,12 @@
 </script>
 
 <script>
+    import Image from 'svimg'
     import SEO from '$lib/components/base/SEO.svelte'
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
-    import Portrait from '$static/cutout.png?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 
     export let images
     export let latestPosts
@@ -64,11 +64,7 @@
         </div>
 
         <div>
-            <img
-                srcset={Portrait}
-                type="image/webp"
-                alt="Russell McWhae portrait"
-            />
+            <Image src="/russell.png" alt="Russell portrait" />
         </div>
     </div>
 
