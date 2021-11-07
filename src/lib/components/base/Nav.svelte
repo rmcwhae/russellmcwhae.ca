@@ -151,13 +151,13 @@
         transition-duration: var(--duration);
     }
     .icon-bar:nth-child(1) {
-        top: 20px;
+        top: 24px;
     }
     .icon-bar:nth-child(2) {
-        top: 27px;
+        top: 31px;
     }
     .icon-bar:nth-child(3) {
-        top: 34px;
+        top: 38px;
     }
     .nav-overlay {
         position: absolute;
@@ -177,7 +177,7 @@
     /* ICON BARS ANIMATION */
 
     .nav-toggle.active .icon-bar:nth-child(1) {
-        top: 24px;
+        top: 32px;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -186,7 +186,7 @@
         width: 0;
     }
     .nav-toggle.active .icon-bar:nth-child(3) {
-        top: 24px;
+        top: 32px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
