@@ -93,7 +93,7 @@
     {/each}
 </div>
 
-<article class="restricted-width-mobile">
+<article class="restricted-width">
     <h2>About</h2>
     <div class="two-col flow">
         <p>

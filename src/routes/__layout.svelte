@@ -13,26 +13,30 @@
 </main>
 <Footer />
 
-<style>
+<style type="scss">
+    @import '../lib/scss/breakpoints.scss';
+
     .wrapper {
-        margin: 0 0 var(--s2);
-        display: grid;
-        grid-template-columns:
-            1fr
-            min(var(--lg), 100%)
-            1fr;
+        margin: 0 var(--s0) var(--s2);
+        // display: grid;
+        // grid-template-columns:
+        //     1fr
+        //     min($breakpoint-tablet-landscape-min, 100%)
+        //     1fr;
     }
-    :global(.wrapper > *) {
-        grid-column: 2;
-    }
-    :global(.full-bleed) {
-        /* See https://joshwcomeau.com/css/full-bleed/ */
-        width: calc(100% - 2 * var(--s0));
-        grid-column: 1 / 4;
-        /* constrain the width for very-large monitors */
-        max-width: var(--xl);
-        /* center the element */
-        margin-left: auto;
-        margin-right: auto;
+    // :global(.wrapper > *) {
+    //     grid-column: 2;
+    // }
+    @include for-tablet-landscape-up {
+        :global(.full-bleed) {
+            /* See https://joshwcomeau.com/css/full-bleed/ */
+            // width: calc(100% - 2 * var(--s0));
+            // grid-column: 1 / 4;
+            // /* constrain the width for very-large monitors */
+            max-width: $breakpoint-xl;
+            // /* center the element */
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 </style>

@@ -103,7 +103,7 @@
     </ButtonSet>
 </div>
 
-<div class="restricted-width-mobile">
+<div class="restricted-width">
     <h2 id="about">About Me</h2>
 
     <div class="two-col flow">
@@ -155,25 +155,26 @@
             out of Revelstoke, BC.
         </p>
     </div>
+
+    <h2 class="mt-5 mb-3">Latest Journal Entries</h2>
+
+    <JournalEntrySet posts={latestPosts} />
+
+    <div class="mt-3 mb-5">
+        <ButtonSet>
+            <Button href="journal" text="All entries" right />
+        </ButtonSet>
+    </div>
+
+    <h2>Et cetera</h2>
+
+    <p class="mb-3">A few bits of content that had nowhere else to go.</p>
+
+    <JournalEntrySet posts={etCetera} />
 </div>
 
-<h2 class="mt-5 mb-3">Latest Journal Entries</h2>
-
-<JournalEntrySet posts={latestPosts} />
-
-<div class="mt-3 mb-5">
-    <ButtonSet>
-        <Button href="journal" text="All entries" right />
-    </ButtonSet>
-</div>
-
-<h2>Et cetera</h2>
-
-<p class="mb-3">A few bits of content that had nowhere else to go.</p>
-
-<JournalEntrySet posts={etCetera} />
-
-<style>
+<style type="scss">
+    @import '../lib/scss/breakpoints.scss';
     .home {
         min-height: 67vh;
         display: flex;
@@ -181,7 +182,7 @@
         justify-content: space-around;
     }
     .boxes {
-        width: var(--xs);
+        width: $breakpoint-xs;
         margin: var(--s3) auto;
     }
     .boxes a {
