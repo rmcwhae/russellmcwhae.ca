@@ -2,19 +2,14 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
 
-    export let title
-    export let description
-    export let href
-    export let repoHref
-    export let src
-    export let stack
-    export let index
+    export let project
+    export let reverse
 
-    const reverse = index % 2 === 0
+    const { title, description, stack, href, repoHref } = project
 </script>
 
 <div class="two-col-grid" class:reverse>
-    <img srcset={src} type="image/webp" alt={title} />
+    <slot />
     <div class="details">
         <h2>{title}</h2>
         <p>{description}</p>
@@ -30,16 +25,15 @@
 </div>
 
 <style>
-    img {
-        border-radius: var(--radius);
-        width: 100%;
-        height: auto;
+    h2 {
+        margin-bottom: 0;
     }
     .details {
         display: flex;
         height: 100%;
         flex-direction: column;
         justify-content: center;
+        gap: var(--s-2);
     }
     .reverse > *:first-child {
         grid-column: 2;

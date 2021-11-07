@@ -78,6 +78,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--s1);
 }
+picture img {
+    border-radius: var(--radius);
+}
 
 @media screen and (min-width: 1024px) {
     .two-col {
@@ -98,6 +101,7 @@ article img {
 article header {
     text-align: center;
 }
+
 @media screen and (max-width: 600px) {
     article img,
     .full-bleed {

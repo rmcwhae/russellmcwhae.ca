@@ -1,9 +1,7 @@
 <script>
+    import Image from 'svimg'
     import Project from '$lib/components/misc/Project.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-    import AvySavvy from '$static/projects/avysavvy.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
-    import DunnLegalServices from '$static/projects/dunnlegalservices.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
-    import PirateBattleship from '$static/projects/piratebattleship.jpg?w=300;500;700;900;1200;1600;2000;3000&format=webp&srcset'
 
     const projects = [
         {
@@ -12,7 +10,6 @@
             description:
                 'This is one of the first projects I contributed to at Avalanche Canada, an online tutorial that introduces avalanche risk management to recreational backcountry users.',
             stack: ['Svelte', 'Sapper'],
-            src: AvySavvy,
         },
         {
             title: 'Dunn Legal Services',
@@ -20,32 +17,29 @@
                 'An online presence for a Calgary wills and estates lawyer.',
             href: 'https://dunnlegalservices.com',
             stack: ['Svelte', 'Sapper'],
-            src: DunnLegalServices,
         },
         {
             title: 'Pirate Battleship',
             description:
-                'My final project from the Lighthouse Labs web development boot camp: a Battleship clone.',
+                'My final project from the Lighthouse Labs web development boot camp.',
             href: 'https://battleship-lhl.herokuapp.com/',
             repoHref: 'https://github.com/rmcwhae/battleship',
-            stack: ['React', 'Phaser'],
-            src: PirateBattleship,
+            stack: ['React', 'Phaser', 'Node'],
         },
     ]
+    // HACK It would be better to use an each-block below, but `svimg` needs to see an actual <Image> tag during preprocessing to properly detect images to generate thumbnails for.
 </script>
 
 <SEO title="Projects" />
 
 <div class="flow">
-    {#each projects as { title, description, href, repoHref, src, stack }, index}
-        <Project
-            {title}
-            {description}
-            {href}
-            {repoHref}
-            {src}
-            {stack}
-            {index}
-        />
-    {/each}
+    <Project project={projects[0]}>
+        <Image src="/projects/avysavvy.jpg" alt={projects[0].title} />
+    </Project>
+    <Project project={projects[1]} reverse>
+        <Image src="/projects/dunnlegalservices.jpg" alt={projects[1].title} />
+    </Project>
+    <Project project={projects[2]}>
+        <Image src="/projects/piratebattleship.jpg" alt={projects[2].title} />
+    </Project>
 </div>

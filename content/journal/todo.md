@@ -11,8 +11,6 @@ category: TODO
 
 -   Mobile optimization
 -   Clean Adobe WebFonts once done
--   Projects page
--   Finish homepage
 -   Update "That New-Website Look"
 -   Update repo readme
 -   Performance testing
