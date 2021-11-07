@@ -17,10 +17,10 @@
 </script>
 
 <header>
+    <div id="logo" class:active={mobileMenuOpen}>
+        <a href="/" on:click={hideMenu}><Logo /></a>
+    </div>
     <nav>
-        <div id="logo" class:active={mobileMenuOpen}>
-            <a href="/" on:click={hideMenu}><Logo /></a>
-        </div>
         <div class="nav-menu" class:active={mobileMenuOpen}>
             <ul>
                 <li>
@@ -64,31 +64,23 @@
                             : undefined}>Journal</a
                     >
                 </li>
-                <!-- <li>
-                <a
-                    sveltekit:prefetch
-                    on:click={hideMenu}
-                    href="/about"
-                    aria-current={$page.path === '/about' ? 'page' : undefined}
-                    >About</a
-                >
-            </li> -->
+                <li><ThemeSwitcher /></li>
             </ul>
         </div>
-        <ThemeSwitcher />
-        <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
-            <span class="icon-bar" />
-            <span class="icon-bar" />
-            <span class="icon-bar" />
-        </div>
     </nav>
+    <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
+        <span class="icon-bar" />
+        <span class="icon-bar" />
+        <span class="icon-bar" />
+    </div>
     <div class="nav-overlay" class:active={mobileMenuOpen} />
 </header>
 
-<style>
+<style type="scss">
+    @import '../../scss/breakpoints.scss';
+
     header {
-        /* border-bottom: 1px solid var(--light-grey); */
-        padding: var(--s3);
+        padding: var(--s2) var(--s3) var(--s5);
     }
     nav {
         color: var(--high-contrast-color);
@@ -98,7 +90,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* max-width: var(--lg); */
         margin: 0 auto;
     }
     ul {
@@ -123,7 +114,6 @@
     }
     li a[aria-current],
     li a:hover {
-        /* background: var(--light-grey); */
         border-color: var(--medium-grey);
     }
 
@@ -191,13 +181,16 @@
         -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
-    @media screen and (max-width: 1023px) {
+    @include for-tablet-landscape-down {
+        header {
+            padding: var(--s0) var(--s0) var(--s1);
+        }
         nav {
             position: inherit;
         }
         ul {
-            margin-top: 0;
-            margin-bottom: var(--s0);
+            display: flex;
+            flex-direction: column;
         }
         #logo {
             position: relative;
@@ -206,6 +199,7 @@
         .nav-menu {
             position: absolute;
             left: 0;
+            top: var(--s3);
             width: 100%;
             height: 0;
             padding: 0;
@@ -216,12 +210,12 @@
             height: auto;
         }
         .nav-menu li {
-            width: 100%;
-            margin-bottom: 0;
+            display: inline-flex;
+            align-self: center;
+            padding: var(--s-1) 0;
         }
         .nav-menu li a {
-            width: 100%;
-            padding: var(--s-1) 0;
+            // width: 100%;
             text-align: center;
         }
         .nav-toggle {
