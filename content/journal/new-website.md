@@ -62,10 +62,11 @@ Photos are a big part of this website’s _raison d'être_, so I wanted to featu
 
 The following packages were quite helpful in the development of this site:
 
--   [mdsvex](https://mdsvex.pngwn.io/): for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
+-   [mdsvex](https://mdsvex.pngwn.io/) for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
 -   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
 -   [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
 -   [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
+-   [svimg](https://github.com/xiphux/svimg) for optimizing all non-ImageKit images (such as embedded images in journal entries)
 
 ### Browser Support
 
@@ -75,7 +76,7 @@ I haven’t bothered testing this website in Internet Explorer 11. If it looks l
 
 This website is a perfect candidate for static export as the content changes relatively rarely (via SvelteKit’s [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)). For a hobby site such as this, the [Netlify](https://www.netlify.com/) free tier is more than adequate for the build pipeline and hosting.
 
-During development, I often deployed the code to my already-paid shared hosting account to minimize the number of build minutes consumed by Netlify (300 per month). To automate this, I created a local terminal alias that builds and then `rsync`s the files over `ssh` to the shared server when I type `deploy` (maybe this is useful to someone):
+During development, I often deployed the code to my already-paid-for shared hosting account to minimize the number of build minutes consumed by Netlify (max 300 per month). To automate this, I created a local terminal alias that builds and then `rsync`s the files over `ssh` to the shared server when I type `deploy` (maybe this is useful to someone):
 
 ```
 alias deploy="cd <local-repo-directory> && npm run build && rsync -cvzhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
@@ -83,7 +84,7 @@ alias deploy="cd <local-repo-directory> && npm run build && rsync -cvzhe \"ssh -
 
 Performance between the shared host and Netlify seemed fairly similar, though Netlify has a CDN and is probably a bit faster overall.
 
-If you want to get really fancy, use [adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify) to get dynamic server rendering via Netlify functions. One benefit of this approach would be getting the [events](/events) list to dynamically update when a new event gallery is uploaded in Imagekit. With the static export, a full rebuild is required every time a new event is added, requiring me to manually trigger a rebuild (via a custom webook mapped to a terminal alias). Given how rarely the content changes, dynamic server rendering is overkill for a site like this, but it’s nice to know that it’s wonderfully simple to implement.
+If you want to get really fancy, use [adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify) to get dynamic server rendering via Netlify functions. One benefit of this approach would be getting the [events](/events) list to dynamically update when a new event gallery is uploaded in ImageKit. With the static export, a full rebuild is required every time a new event is added, requiring me to manually trigger a rebuild (via a custom webook mapped to a terminal alias). Given how rarely the content changes, dynamic server rendering is overkill for a site like this, but it’s nice to see how wonderfully simple it would be to implement.
 
 ## Conclusion
 
