@@ -64,8 +64,10 @@
                             : undefined}>Journal</a
                     >
                 </li>
-                <li><ThemeSwitcher /></li>
             </ul>
+            <div id="switcher">
+                <ThemeSwitcher />
+            </div>
         </div>
     </nav>
     <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
@@ -81,16 +83,28 @@
 
     header {
         padding: var(--s2) var(--s3) var(--s5);
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+    }
+    #logo {
+        position: absolute;
     }
     nav {
         color: var(--high-contrast-color);
         font-weight: 600;
         font-size: 1rem;
         z-index: 2;
+    }
+    .nav-menu {
         display: flex;
-        justify-content: space-between;
+        // flex-direction: row;
         align-items: center;
-        margin: 0 auto;
+        justify-content: center;
+    }
+    #switcher {
+        position: absolute;
+        right: var(--s3);
     }
     ul {
         list-style: none;
@@ -132,7 +146,7 @@
         right: var(--s0);
         display: block;
         width: 26px;
-        height: 2px;
+        height: 1px;
         background-color: var(--high-contrast-color);
         transition-duration: var(--duration);
     }
@@ -181,6 +195,7 @@
         -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
+
     @include for-tablet-landscape-down {
         header {
             padding: var(--s0) var(--s0) var(--s1);
@@ -205,6 +220,13 @@
             padding: 0;
             overflow: hidden;
             z-index: 2;
+            display: inherit;
+        }
+        #switcher {
+            margin-top: var(--s2);
+            position: initial;
+            display: flex;
+            justify-content: center;
         }
         .nav-menu.active {
             height: auto;
