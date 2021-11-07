@@ -33,9 +33,6 @@
         margin: 0;
         line-height: 1.2;
     }
-    h3 a {
-        text-decoration: none;
-    }
     p {
         margin: 0;
     }
