@@ -9,7 +9,7 @@
             href: 'https://avysavvy.ca',
             description:
                 'This is one of the first projects I contributed to at Avalanche Canada, an online tutorial that introduces avalanche risk management to recreational backcountry users.',
-            stack: ['Svelte', 'Sapper'],
+            stack: ['Svelte', 'Sapper', 'Sanity'],
         },
         {
             title: 'Dunn Legal Services',
