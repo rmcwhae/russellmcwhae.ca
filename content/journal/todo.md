@@ -13,8 +13,6 @@ category: TODO
 -   Clean Adobe WebFonts once done
 -   Update "That New-Website Look"
 -   Update repo readme
--   Performance testing
--   Animate stuff?
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
 
@@ -26,6 +24,7 @@ It only took five years, but I finally got around to rebuilding my personal webs
 
 -   Submit for review? Svelte I made this…
 -   Analytics?
+-   Animate stuff?
 -   Try css color-mod()
 -   Smooth scrolling and sticky footer
 -   Netlify Large media 2500 transforms/month…
