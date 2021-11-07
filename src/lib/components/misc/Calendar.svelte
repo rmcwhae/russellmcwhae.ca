@@ -40,7 +40,7 @@
     }
     a,
     a:hover {
-        box-shadow: none;
+        text-decoration: none;
     }
     section {
         background-size: cover;
