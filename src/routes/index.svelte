@@ -104,7 +104,7 @@
 </div>
 
 <div class="restricted-width-mobile">
-    <h3 id="about">About Me</h3>
+    <h2 id="about">About Me</h2>
 
     <div class="two-col flow">
         <p>
