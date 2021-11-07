@@ -38,5 +38,8 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .wrapper {
+            margin: 0 var(--s3) var(--s2);
+        }
     }
 </style>

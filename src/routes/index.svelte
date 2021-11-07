@@ -188,8 +188,4 @@
     .boxes a {
         display: block;
     }
-    .big {
-        font-size: 1.563rem;
-        line-height: 1.2;
-    }
 </style>

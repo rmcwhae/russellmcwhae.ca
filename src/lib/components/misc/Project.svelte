@@ -12,7 +12,7 @@
     <slot />
     <div class="details">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p class="big">{description}</p>
         <div class="sub mb-2">{stack.join(' · ')}</div>
 
         <ButtonSet>

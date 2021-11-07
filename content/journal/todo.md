@@ -9,7 +9,8 @@ category: TODO
 
 ## Launch checklist
 
--   Mobile optimization
+-   Mobile optimization and testing
+-   Calendars > About > wrong margins
 -   Clean Adobe WebFonts once done
 -   Update "That New-Website Look"
 -   Update repo readme
