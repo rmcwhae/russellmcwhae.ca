@@ -39,7 +39,9 @@
             margin-right: auto;
         }
         .wrapper {
-            margin: 0 var(--s3) var(--s2);
+            padding: 0 var(--s3);
+            margin: 0 auto;
+            max-width: $breakpoint-tablet-landscape-max;
         }
     }
 </style>
