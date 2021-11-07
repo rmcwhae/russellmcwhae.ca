@@ -66,7 +66,7 @@ The following packages were quite helpful in the development of this site:
 -   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
 -   [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
 -   [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
--   [svimg](https://github.com/xiphux/svimg) for optimizing all non-ImageKit images (such as embedded images in journal entries)
+-   [svimg](https://github.com/xiphux/svimg) for optimizing all non-ImageKit images (such as images embedded in journal entries)
 
 ### Browser Support
 
