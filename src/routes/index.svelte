@@ -58,7 +58,7 @@
             <p class="big mt-2 mb-2">
                 I’m a front end–biased web developer with a background in
                 structural engineering and biomedical research who likes
-                spending time outside.
+                spending <span class="nowrap">time outside.</span>
             </p>
             <Button href="#about" text="About me" right />
         </div>
