@@ -11,7 +11,7 @@
 
 <div class="two-col-grid" class:reverse>
     <slot />
-    <div class="details">
+    <div class="details mb-2">
         <h2>{title}</h2>
         <p class="big">{@html preventLastTwoWordWrap(description)}</p>
         <div class="sub mb-2">{stack.join(' · ')}</div>
