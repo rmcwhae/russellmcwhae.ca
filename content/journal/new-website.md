@@ -2,7 +2,7 @@
 title: That New-Website Look
 description: Rebuilding this website using SvelteKit.
 author: Russell McWhae
-date: 2021-10-12
+date: 2021-11-09
 draft: 0
 category: Tech
 ---
