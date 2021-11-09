@@ -192,7 +192,7 @@
         transform: rotate(-45deg);
     }
 
-    @include for-tablet-landscape-down {
+    @include for-tablet-portrait-down {
         header {
             padding: var(--s0) var(--s0) var(--s1);
         }
