@@ -104,7 +104,11 @@
     }
     #switcher {
         position: absolute;
-        right: var(--s3);
+        right: var(--s0);
+
+        @include for-desktop-up {
+            right: var(--s3);
+        }
     }
     ul {
         list-style: none;
