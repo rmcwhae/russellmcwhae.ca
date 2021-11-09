@@ -55,7 +55,7 @@
     <div class="two-col-grid border-bottom">
         <div>
             <h1>Hi, I’m Russell.</h1>
-            <p class="big mt-2 mb-2">
+            <p class="big mt-2 mb-2 char-limit">
                 I’m a front end–biased web developer with a background in
                 structural engineering and biomedical research who likes
                 spending <span class="nowrap">time outside.</span>
@@ -63,7 +63,7 @@
             <Button href="#about" text="About me" right />
         </div>
 
-        <div>
+        <div class="portrait">
             <Image src="/russell.png" alt="Russell portrait" />
         </div>
     </div>
@@ -177,6 +177,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .portrait {
+        max-width: $breakpoint-tablet-portrait-min;
+        margin-left: auto;
     }
     .boxes {
         width: $breakpoint-xs;
