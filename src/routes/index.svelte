@@ -92,7 +92,9 @@
     </div>
 </div>
 
-<h2 class="full-bleed">Photos</h2>
+<h2>Photos</h2>
+
+<p class="mb-3">Here are a few of my all-time favourites.</p>
 
 <Gallery {images} />
 
