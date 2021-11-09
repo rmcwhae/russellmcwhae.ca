@@ -185,13 +185,13 @@
         grid-template-columns: repeat(2, 1fr);
         gap: var(--s1);
 
-        @include for-phone-only {
+        @include for-tablet-portrait-down {
             grid-template-columns: 1fr;
         }
     }
     .portrait {
         margin-top: auto;
-        @include for-phone-only {
+        @include for-tablet-portrait-down {
             width: 50vw;
             margin-top: -60px;
             margin-left: auto;

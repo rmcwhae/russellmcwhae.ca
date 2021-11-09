@@ -27,7 +27,7 @@
     :global(.wrapper > *) {
         grid-column: 2;
     }
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
         :global(.full-bleed) {
             /* See https://joshwcomeau.com/css/full-bleed/ */
             width: calc(100% - 2 * var(--s0));

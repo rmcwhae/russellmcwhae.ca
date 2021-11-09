@@ -10,9 +10,6 @@ category: TODO
 ## Launch checklist
 
 -   Mobile optimization and testing
--   Mobile font sizes…
--   Clean Adobe WebFonts once done
--   Update "That New-Website Look"
 -   Update repo readme
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
