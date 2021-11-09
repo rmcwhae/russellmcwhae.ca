@@ -37,7 +37,7 @@
     <Button href="/photography" text="Portfolio" left />
 </div>
 
-<div class="three-col-grid full-bleed">
+<div class="two-col-grid full-bleed">
     {#each paginatedEvents as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}

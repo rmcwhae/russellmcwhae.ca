@@ -19,6 +19,11 @@ picture img {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--s1);
 }
+@include for-phone-only {
+    .two-col-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .three-col-grid {
     display: grid;

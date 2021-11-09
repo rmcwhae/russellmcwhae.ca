@@ -1,57 +1,7 @@
 <script>
+    import Image from 'svimg'
     import Calendar from '$lib/components/misc/Calendar.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-
-    const calendars = [
-        {
-            year: 2022,
-            filename: '2022calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-        {
-            year: 2021,
-            filename: '2021calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-        {
-            year: 2020,
-            filename: '2020calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-        {
-            year: 2019,
-            filename: '2019calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-        {
-            year: 2018,
-            filename: '2018calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-        {
-            year: 2017,
-            filename: '2017calendar.pdf',
-            image: '.jpg',
-            filesize: 1,
-        },
-        {
-            year: 2016,
-            filename: '2016calendar.pdf',
-            image: '.jpg',
-            filesize: 7,
-        },
-        {
-            year: 2015,
-            filename: '2015calendar.pdf',
-            image: '.jpg',
-            filesize: 2,
-        },
-    ]
 </script>
 
 <SEO title="Calendars" />
@@ -87,10 +37,31 @@
     </p>
 </div>
 
-<div class="past full-bleed">
-    {#each calendars as { filename, year, filesize }, index}
-        <Calendar {filename} {year} {filesize} {index} />
-    {/each}
+<div class="two-col-grid full-bleed">
+    <Calendar year="2022" filename="2022calendar.pdf">
+        <Image src="/calendar-images/2022.jpg" />
+    </Calendar>
+    <Calendar year="2021" filename="2021calendar.pdf">
+        <Image src="/calendar-images/2021.jpg" />
+    </Calendar>
+    <Calendar year="2020" filename="2020calendar.pdf">
+        <Image src="/calendar-images/2020.jpg" />
+    </Calendar>
+    <Calendar year="2019" filename="2019calendar.pdf">
+        <Image src="/calendar-images/2019.jpg" />
+    </Calendar>
+    <Calendar year="2018" filename="2018calendar.pdf">
+        <Image src="/calendar-images/2018.jpg" />
+    </Calendar>
+    <Calendar year="2017" filename="2017calendar.pdf">
+        <Image src="/calendar-images/2017.jpg" />
+    </Calendar>
+    <Calendar year="2016" filename="2016calendar.pdf">
+        <Image src="/calendar-images/2016.jpg" />
+    </Calendar>
+    <Calendar year="2015" filename="2015calendar.pdf">
+        <Image src="/calendar-images/2015.jpg" />
+    </Calendar>
 </div>
 
 <article class="restricted-width">
@@ -124,11 +95,6 @@
 </article>
 
 <style>
-    .past {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: var(--s0);
-    }
     article {
         margin: 0 auto var(--s2);
     }
@@ -141,10 +107,5 @@
     :global(.knockout) {
         border: 1px solid white;
         padding: var(--s-2) var(--s-1);
-    }
-    @media (max-width: 800px) {
-        .past {
-            grid-template-columns: 1fr;
-        }
     }
 </style>
