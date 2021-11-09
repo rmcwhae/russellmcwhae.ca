@@ -52,8 +52,8 @@
 <SEO />
 
 <div class="home">
-    <div class="two-col-grid border-bottom">
-        <div>
+    <div class="hero border-bottom">
+        <div class="mb-s0">
             <h1>Hi, I’m Russell.</h1>
             <p class="big mt-2 mb-2 char-limit">
                 I’m a front end–biased web developer with a background in
@@ -180,9 +180,22 @@
         flex-direction: column;
         justify-content: space-around;
     }
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--s1);
+
+        @include for-phone-only {
+            grid-template-columns: 1fr;
+        }
+    }
     .portrait {
-        max-width: $breakpoint-tablet-portrait-min;
-        margin-left: auto;
+        margin-top: auto;
+        @include for-phone-only {
+            width: 50vw;
+            margin-top: -60px;
+            margin-left: auto;
+        }
     }
     .boxes {
         width: $breakpoint-xs;

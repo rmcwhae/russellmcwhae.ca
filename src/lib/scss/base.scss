@@ -18,9 +18,8 @@ picture img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--s1);
-}
-@include for-tablet-portrait-down {
-    .two-col-grid {
+
+    @include for-tablet-portrait-down {
         grid-template-columns: 1fr;
     }
 }
