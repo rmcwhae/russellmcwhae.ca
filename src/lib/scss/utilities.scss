@@ -1,3 +1,4 @@
+@import './breakpoints.scss';
 // Do one job and do it well (https://cube.fyi/utility.html)
 
 .flow > * + *,
@@ -80,11 +81,6 @@ blockquote > * + * {
 
 .overflow-hidden {
     overflow: hidden;
-}
-
-.big {
-    font-size: 1.563rem;
-    line-height: 1.2;
 }
 
 .char-limit {

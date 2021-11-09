@@ -18,20 +18,20 @@
 
     .wrapper {
         margin: 0 var(--s0) var(--s2);
-        // display: grid;
-        // grid-template-columns:
-        //     1fr
-        //     min($breakpoint-tablet-landscape-min, 100%)
-        //     1fr;
+        display: grid;
+        grid-template-columns:
+            1fr
+            min($breakpoint-tablet-landscape-min, 100%)
+            1fr;
     }
-    // :global(.wrapper > *) {
-    //     grid-column: 2;
-    // }
+    :global(.wrapper > *) {
+        grid-column: 2;
+    }
     @include for-tablet-landscape-up {
         :global(.full-bleed) {
             /* See https://joshwcomeau.com/css/full-bleed/ */
-            // width: calc(100% - 2 * var(--s0));
-            // grid-column: 1 / 4;
+            width: calc(100% - 2 * var(--s0)); // TODO fix me
+            grid-column: 1 / 4;
             // /* constrain the width for very-large monitors */
             max-width: $breakpoint-xl;
             // /* center the element */
@@ -41,7 +41,7 @@
         .wrapper {
             padding: 0 var(--s3);
             margin: 0 auto;
-            max-width: $breakpoint-tablet-landscape-max;
+            // max-width: $breakpoint-tablet-landscape-max;
         }
     }
 </style>

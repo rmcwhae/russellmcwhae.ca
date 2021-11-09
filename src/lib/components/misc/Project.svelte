@@ -25,7 +25,9 @@
     </div>
 </div>
 
-<style>
+<style type="scss">
+    @import '../../scss/breakpoints.scss';
+
     h2 {
         margin-bottom: 0;
     }
@@ -43,5 +45,15 @@
     .reverse > *:last-child {
         grid-column: 1;
         grid-row: 1;
+    }
+    @include for-phone-only {
+        .reverse > *:first-child {
+            grid-column: inherit;
+            grid-row: inherit;
+        }
+        .reverse > *:last-child {
+            grid-column: inherit;
+            grid-row: inherit;
+        }
     }
 </style>
