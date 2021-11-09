@@ -19,7 +19,7 @@ picture img {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--s1);
 }
-@include for-phone-only {
+@include for-tablet-portrait-down {
     .two-col-grid {
         grid-template-columns: 1fr;
     }
@@ -29,6 +29,14 @@ picture img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--s1);
+
+    @include for-tablet-landscape-down {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-phone-only {
+        grid-template-columns: 1fr;
+    }
 }
 
 picture img {
@@ -40,7 +48,7 @@ picture img {
     margin: 0 auto;
 }
 
-@include for-tablet-landscape-up {
+@include for-tablet-portrait-up {
     .two-col {
         columns: 2;
         column-gap: var(--s2);

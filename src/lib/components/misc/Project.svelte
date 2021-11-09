@@ -46,7 +46,7 @@
         grid-column: 1;
         grid-row: 1;
     }
-    @include for-phone-only {
+    @include for-tablet-portrait-down {
         .reverse > *:first-child {
             grid-column: inherit;
             grid-row: inherit;

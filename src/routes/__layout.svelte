@@ -30,7 +30,7 @@
     @include for-tablet-landscape-up {
         :global(.full-bleed) {
             /* See https://joshwcomeau.com/css/full-bleed/ */
-            width: calc(100% - 2 * var(--s0)); // TODO fix me
+            width: calc(100% - 2 * var(--s0));
             grid-column: 1 / 4;
             // /* constrain the width for very-large monitors */
             max-width: $breakpoint-xl;

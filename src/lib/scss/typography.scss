@@ -99,17 +99,21 @@ h6 {
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
 }
-h1 {
-    font-size: 3.052rem;
-    line-height: 1;
-    margin: var(--s-1) 0;
-}
 h1,
 h2,
 h4 {
-    font-family: 'ibm-plex-serif';
-    font-weight: 300;
     font-style: normal;
+    font-family: 'ibm-plex-serif';
+}
+h1 {
+    font-size: 3.052rem;
+    line-height: 1;
+    font-weight: 300;
+    margin: var(--s-1) 0;
+}
+h2,
+h4 {
+    font-weight: 400;
 }
 h2 {
     font-size: 1.953rem;
@@ -122,27 +126,26 @@ h4 {
     font-size: 1.25rem;
 }
 .big {
-    // font-size: 1.563rem;
     line-height: 1.2;
+    @include for-desktop-up {
+        font-size: 1.563rem;
+    }
 }
-@mixin for-phone-only {
-    // Via https://type-scale.com (Minor Second scale for mobile; Major Third otherwise)
+@include for-phone-only {
+    // Via https://type-scale.com (Major Second scale for mobile; Major Third otherwise)
     h1 {
-        font-size: 1.383rem;
+        font-size: 1.802rem;
+        font-weight: 400;
     }
     h2 {
-        font-size: 1.296rem;
+        font-size: 1.602rem;
     }
     h3 {
-        font-size: 1.215rem;
+        font-size: 1.424rem;
     }
     h4 {
-        font-size: 1.138rem;
+        font-size: 1.266rem;
     }
-    // .big {
-    //     font-size: 1.215rem;
-    //     color: red;
-    // }
 }
 
 // Other tags
