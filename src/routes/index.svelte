@@ -139,7 +139,7 @@
         2019, I earned an MSc. in biomedical engineering from the University of
         Calgary. My thesis, “<a
             href="https://prism.ucalgary.ca/handle/1880/109915"
-            rel="nofollow"
+            rel="noopener noreferrer nofollow"
             target="_blank"
             >Intercellular Gap Junction Communication in the Bovine Annulus
             Fibrosus</a
@@ -149,7 +149,7 @@
         Wanting to further my coding skills, I took the <a
             href="https://www.lighthouselabs.ca"
             target="_blank"
-            rel="nofollow">Lighthouse Labs</a
+            rel="noopener noreferrer nofollow">Lighthouse Labs</a
         > web development boot camp course from July to October 2019. I have now
         been working as a web developer, specializing in front-end work, out of Revelstoke,
         BC.
