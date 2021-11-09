@@ -29,6 +29,10 @@
             margin: 0 auto;
             padding: var(--s0);
         }
+        @include for-desktop-up {
+            margin-left: var(--s2);
+            margin-right: var(--s2);
+        }
     }
     :global(.wrapper > *) {
         grid-column: 2;

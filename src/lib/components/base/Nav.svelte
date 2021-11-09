@@ -82,8 +82,7 @@
     @import '../../scss/breakpoints.scss';
 
     header {
-        padding: var(--s1) var(--s0) var(--s3);
-
+        padding: var(--s0) var(--s0) var(--s3);
         @include for-desktop-up {
             padding: var(--s2) var(--s3) var(--s5);
         }
