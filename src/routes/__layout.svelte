@@ -23,6 +23,12 @@
             1fr
             min($breakpoint-tablet-landscape-min, 100%)
             1fr;
+
+        @include for-tablet-portrait-down {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--s0);
+        }
     }
     :global(.wrapper > *) {
         grid-column: 2;
@@ -37,11 +43,6 @@
             // /* center the element */
             margin-left: auto;
             margin-right: auto;
-        }
-        .wrapper {
-            padding: 0 var(--s3);
-            margin: 0 auto;
-            // max-width: $breakpoint-tablet-landscape-max;
         }
     }
 </style>

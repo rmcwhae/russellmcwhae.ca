@@ -131,7 +131,7 @@ h4 {
         font-size: 1.563rem;
     }
 }
-@include for-phone-only {
+@include for-tablet-portrait-down {
     // Via https://type-scale.com (Major Second scale for mobile; Major Third otherwise)
     h1 {
         font-size: 1.802rem;
