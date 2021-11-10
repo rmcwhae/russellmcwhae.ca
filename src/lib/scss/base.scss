@@ -16,11 +16,11 @@ picture img {
 
 .two-col-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--s1);
 
-    @include for-tablet-portrait-down {
-        grid-template-columns: 1fr;
+    @include for-tablet-landscape-up {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

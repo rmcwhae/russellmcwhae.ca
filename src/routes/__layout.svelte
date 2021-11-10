@@ -23,13 +23,12 @@
             1fr
             min($breakpoint-tablet-landscape-min, 100%)
             1fr;
-
-        @include for-tablet-portrait-down {
-            max-width: 600px;
+        @include for-tablet-portrait-up {
+            max-width: 75vw;
             margin: 0 auto;
-            padding: var(--s0);
         }
         @include for-desktop-up {
+            max-width: inherit;
             margin-left: var(--s2);
             margin-right: var(--s2);
         }

@@ -7,12 +7,12 @@
 
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
-        window.document.body.classList.toggle('overflow-hidden')
+        window.document.body.classList.toggle('no-scroll-mobile')
     }
 
     function hideMenu() {
         mobileMenuOpen = false
-        window.document.body.classList.remove('overflow-hidden')
+        window.document.body.classList.remove('no-scroll-mobile')
     }
 </script>
 
@@ -82,38 +82,31 @@
     @import '../../scss/breakpoints.scss';
 
     header {
-        padding: var(--s0) var(--s0) var(--s3);
-        @include for-desktop-up {
-            padding: var(--s2) var(--s3) var(--s5);
-        }
+        padding: var(--s0) var(--s0) var(--s1);
     }
-    #logo {
-        position: absolute;
-    }
+
     nav {
         color: var(--high-contrast-color);
         font-weight: 600;
         font-size: 1rem;
         z-index: 2;
     }
-    .nav-menu {
-        display: flex;
-        // flex-direction: row;
-        align-items: center;
-        justify-content: center;
+    :global(#logo svg) {
+        height: 25px !important; /* TODO be less lazy than using !important */
     }
-    #switcher {
-        position: absolute;
-        right: var(--s0);
-
-        @include for-desktop-up {
-            right: var(--s3);
-        }
+    #logo {
+        z-index: 3;
+        // position: relative;
+    }
+    #logo a {
+        display: block;
     }
     ul {
         list-style: none;
         padding-left: 0;
         margin: 0;
+        display: flex;
+        flex-direction: column;
     }
     a {
         color: var(--high-contrast-color);
@@ -134,10 +127,40 @@
     li a:hover {
         border-color: var(--medium-grey);
     }
+    :global(.no-scroll-mobile) {
+        overflow: hidden;
+    }
+    .nav-menu {
+        position: absolute;
+        left: 0;
+        top: var(--s3);
+        width: 100%;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 2;
+    }
+    .nav-menu.active {
+        height: auto;
+    }
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-menu li {
+        display: inline-flex;
+        align-self: center;
+        padding: var(--s-1) 0;
+    }
+    .nav-menu li a {
+        text-align: center;
+    }
+    #switcher {
+        margin-top: var(--s2);
+    }
 
     .nav-toggle {
         z-index: 2;
-        display: none;
         position: absolute;
         top: 0;
         right: 0;
@@ -169,6 +192,7 @@
         right: 0;
         bottom: 0;
         left: 0;
+        height: 100vh;
         background-color: var(--background-color);
         background-color: var(--background-color-transparent);
         backdrop-filter: blur(6px);
@@ -196,59 +220,49 @@
         transform: rotate(-45deg);
     }
 
-    @include for-tablet-portrait-down {
-        header {
-            padding: var(--s0) var(--s0) var(--s1);
+    @include for-tablet-landscape-up {
+        :global(.no-scroll-mobile) {
+            overflow: inherit;
         }
-        nav {
-            position: inherit;
+        header {
+            padding: var(--s2) var(--s3) var(--s5);
+        }
+        #logo {
+            position: absolute;
+            top: calc(var(--s3) + 8px);
+        }
+        :global(#logo svg) {
+            height: 50px !important; /* TODO be less lazy than using !important */
+        }
+        .nav-toggle,
+        .nav-overlay {
+            display: none;
+        }
+        .nav-menu {
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #switcher {
+            position: absolute;
+            right: var(--s3);
+            top: 25px;
+            margin-top: 0;
         }
         ul {
             display: flex;
-            flex-direction: column;
-        }
-        #logo {
-            position: relative;
-            z-index: 2;
+            flex-direction: row;
         }
         .nav-menu {
             position: absolute;
             left: 0;
             top: var(--s3);
             width: 100%;
-            height: 0;
+            height: auto;
             padding: 0;
             overflow: hidden;
             z-index: 2;
-            display: inherit;
-        }
-        #switcher {
-            margin-top: var(--s2);
-            position: initial;
-            display: flex;
-            justify-content: center;
-        }
-        .nav-menu.active {
-            height: auto;
-        }
-        .nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .nav-menu li {
-            display: inline-flex;
-            align-self: center;
-            padding: var(--s-1) 0;
-        }
-        .nav-menu li a {
-            // width: 100%;
-            text-align: center;
-        }
-        .nav-toggle {
-            display: block;
-        }
-        :global(#logo svg) {
-            height: 25px !important; /* TODO be less lazy than using !important */
         }
     }
 </style>
