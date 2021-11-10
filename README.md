@@ -6,13 +6,28 @@ This is my portfolio, deployed to https://russellmcwhae.ca, featuring a fully re
 
 ## Developing
 
-Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start the development server:
+To display images, you will need an [ImageKit](https://imagekit.io) account and to put your credentials in a `.env` file at the project root as in the `.env.template` file. [Portfolio](https://russellmcwhae.ca/photography) and [Event](https://russellmcwhae.ca/events) images are stored on ImageKit’s media library, with a folder structure as follows:
+
+-   portfolio
+    -   1st image
+    -   2nd image
+    -   etc.
+-   events
+    -   1st-Event-Name_Month-YEAR
+        -   1st image
+        -   2nd image
+        -   etc.
+    -   2nd-Event-Name_Month-YEAR
+        -   1st image
+        -   2nd image
+        -   etc.
+    -   etc.
+
+Next, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start the development server:
 
 ```bash
 npm run dev
 ```
-
-Note: photos are not under source control as they would take too much space.
 
 ## Deployment
 
