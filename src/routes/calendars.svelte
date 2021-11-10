@@ -38,28 +38,28 @@
 </div>
 
 <div class="two-col-grid full-bleed">
-    <Calendar year="2022" filename="2022calendar.pdf">
+    <Calendar filename="2022calendar.pdf">
         <Image src="/calendar-images/2022.jpg" />
     </Calendar>
-    <Calendar year="2021" filename="2021calendar.pdf">
+    <Calendar filename="2021calendar.pdf">
         <Image src="/calendar-images/2021.jpg" />
     </Calendar>
-    <Calendar year="2020" filename="2020calendar.pdf">
+    <Calendar filename="2020calendar.pdf">
         <Image src="/calendar-images/2020.jpg" />
     </Calendar>
-    <Calendar year="2019" filename="2019calendar.pdf">
+    <Calendar filename="2019calendar.pdf">
         <Image src="/calendar-images/2019.jpg" />
     </Calendar>
-    <Calendar year="2018" filename="2018calendar.pdf">
+    <Calendar filename="2018calendar.pdf">
         <Image src="/calendar-images/2018.jpg" />
     </Calendar>
-    <Calendar year="2017" filename="2017calendar.pdf">
+    <Calendar filename="2017calendar.pdf">
         <Image src="/calendar-images/2017.jpg" />
     </Calendar>
-    <Calendar year="2016" filename="2016calendar.pdf">
+    <Calendar filename="2016calendar.pdf">
         <Image src="/calendar-images/2016.jpg" />
     </Calendar>
-    <Calendar year="2015" filename="2015calendar.pdf">
+    <Calendar filename="2015calendar.pdf">
         <Image src="/calendar-images/2015.jpg" />
     </Calendar>
 </div>
