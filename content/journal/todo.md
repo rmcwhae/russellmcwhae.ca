@@ -9,13 +9,14 @@ category: TODO
 
 ## Launch checklist
 
--   Update repo readme
+-   Update repo readme with screenshots
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
+-   Cancel
 
 ## Launch blurb
 
-It only took five years and over 500 (!) git commits, but I finally got around to rebuilding my personal website: https://russellmcwhae.ca. Naturally, the code quality has improved tremendously—and so has the performance: the new version is faaaaast (see how quickly stuff loads when clicking around). While it features a fully responsive design that will work on smaller devices, the best experience is on something larger like a tablet or computer. Photos (https://russellmcwhae.ca/photography) are oh-so-gorgeous on such larger screens. For the geeks, here is a more in-depth writeup on the redesign: https://russellmcwhae.ca/journal/new-website. Go check it out!
+Five years and over 550 code commits later (!), I finally got around to relaunching my personal website: https://russellmcwhae.ca. The code quality has improved tremendously—and so has the performance: the new version is faaaaast (see how quickly stuff loads when clicking around). While it features a fully responsive design that will work on smaller devices, the best experience is on something larger like a tablet or computer. Photos (https://russellmcwhae.ca/photography) are oh-so-gorgeous on such larger screens. For the geeks, here is a more in-depth writeup on the redevelopment: https://russellmcwhae.ca/journal/new-website. Go check it out, and let me know if anything is broken. And if this wasn’t enough, I’ve also snuck in a preview of my 2022 calendar. This shoulder season has been surprisingly productive!
 
 ## Later Ideas
 
