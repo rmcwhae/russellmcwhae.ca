@@ -11,7 +11,7 @@ category: TODO
 
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
--   Cancel shared hosting auto-renew
+-   Cancel shared hosting
 
 ## Launch blurb
 
