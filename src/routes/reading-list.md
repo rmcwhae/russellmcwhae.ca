@@ -21,6 +21,9 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Oryx and Crake_ by Margaret Atwood
 -   _The Master and Margarita_ by Mikhail Bulgakov
 -   _A Life in Medicine_ by William Osler
+-   _Alone on the Wall_ by Alex Honnold
+-   _438 Days: An Extraordinary True Story of Survival at Sea_ by Jonathan Franklin
+-   _All the Light we Cannot See_ by Anthony Doerr
 
 ## 2021
 
@@ -31,6 +34,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Carrie_ by Stephen King
 -   _The Stand: The Complete & Uncut Edition_ by Stephen King
 -   _50 Percent of Mountaineering is Uphill_ by Susanna Pfisterer
+-   _The Pilgrim’s Progress_ by John Bunyan
 -   _McTeague_ by Frank Norris
 -   _On Writing: A Memoir of the Craft_ by Stephen King
 -   _The Body: A Guide for Occupants_ by Bill Bryson
@@ -39,6 +43,10 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 -   _Anna Karenin_ by Leo Tolstoy, translated by Rosemary Edmonds
 -   _Reminiscences of a Stock Operator_ by Edwin Lefèvre
+-   _At Home in Nature_ by Rob Wood
+-   _This Is Depression: A Comprehensive, Compassionate Guide for Anyone Who Wants to Understand Depression_ by Diane McIntosh
+-   _The Question of God: C.S. Lewis and Sigmund Freud Debate God, Love, Sex, and the Meaning of Life_ by Armand Nicholi
+-   _Famous Last Words_ by Timothy Findley
 
 ## 2019
 
@@ -47,20 +55,14 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2018
 
--   _Sh\*t My Dad Says_ by Justin Halpern
--   _I Suck at Girls_ by Justin Halpern
--   _I Hope They Serve Beer in Hell_ by Tucker Max
--   _Hilarity Ensues_ by Tucker Max
 -   _Ready Player One_ by Ernest Cline
 -   _Crazy Rich Asians_ by Kevin Kwan
--   _One Day as a Tiger: Alex Macintyre and the Birth of Light and Fast Alpinism_ by John Porter
+-   _China Rich Girlfriend_ by Kevin Kwan
+-   _Rich People Problems_ by Kevin Kwan
 -   _The Bold and Cold: A History of 25 Classic Climbs in the Canadian Rockies_ by Brandon Pullan
--   _The Calling: A Life Rocked by Mountains_ by Barry Blanchard
 -   _Art of Freedom: The Life and Climbs of Voytek Kurtyka_ by Bernadette McDonald
 -   _Autonomy, Mastery and Purpose in the Avalanche Patch_ by Bruce Kay
 -   _Mountains in My Heart: A Passion for Climbing_ by Gerlinde Kaltenbrunner
--   _No Shortcuts to the Top: Climbing the World’s 14 Highest Peaks_ by Ed Viesturs
--   _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
 -   _A Purpose Ridden_ by Ryan Correy
 -   _Modern Romance_ by Aziz Ansari
 -   _How to Win Friends and Influence People_ by Dale Carnegie
@@ -70,7 +72,6 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2017
 
--   _When Breath Becomes Air_ by Paul Kalanithi
 -   _The Reason for God: Belief in an Age of Skepticism_ by Timothy Keller
 -   _Mere Christianity_ by C.S. Lewis
 -   _The Case for a Creator_ by Lee Strobel
@@ -79,7 +80,34 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _What’s So Amazing About Grace?_ by Philip Yancey
 -   _Who Moved the Stone?_ by Frank Morison
 -   _The Real Face of Atheism_ by Ravi Zacharias
+-   _The Problem of God_ by Mark Clark
 -   _Orthodoxy_ by Gilbert Keith Chesterton
+
+## 2016
+
+-   _I Hope They Serve Beer in Hell_ by Tucker Max
+-   _Sloppy Seconds_ by Tucker Max
+-   _Hilarity Ensues_ by Tucker Max
+-   _When Breath Becomes Air_ by Paul Kalanithi
+
+## 2014
+
+-   _The Calling: A Life Rocked by Mountains_ by Barry Blanchard
+-   _One Day as a Tiger: Alex Macintyre and the Birth of Light and Fast Alpinism_ by John Porter
+-   _K2: Life and Death on the World's Most Dangerous Mountain_ by Ed Viesturs
+-   _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
+-   _The Great Gatsby_ by F. Scott Fitzgerald
+
+## 2013
+
+-   _Doctor Sleep_ by Stephen King
+-   _The Will to Climb: Obsession and Commitment and the Quest to Climb Annapurna--the World’s Deadliest Peak_ by Ed Viesturs
+
+## 2012
+
+-   _No Shortcuts to the Top: Climbing the World’s 14 Highest Peaks_ by Ed Viesturs
+-   _Sh\*t My Dad Says_ by Justin Halpern
+-   _I Suck at Girls_ by Justin Halpern
 
 ## Earlier
 
@@ -89,3 +117,4 @@ Exact timing on when I read these is fuzzy, but I do remember these titles being
 -   _Dune_ by Frank Herbert
 -   _Ender’s Game_ by Orson Scott Card
 -   _Nineteen Eighty-Four_ by George Orwell
+-   _Birdsong_ by Sebastian Faulks
