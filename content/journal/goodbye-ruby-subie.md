@@ -7,6 +7,12 @@ draft: 0
 category: Reflection
 ---
 
+<script>
+  import Image from 'svimg'
+</script>
+
+<Image src="/journal-images/ruby.jpg" alt="Ruby, my 2006 Subaru Legacy GT" />
+
 _You are driving on a two-lane highway winding its way through the foothills. Ahead, an unsuspecting tourist barely manages the speed limit as you catch up to them. A straightaway opens. You double downshift to third, dump the clutch, and floor the accelerator. The engine screams, boost builds, the turbo kicks in, and you’re already in the passing lane. You are sucked back into your seat as you row through fourth and fifth and change back into your lane. The tourist with rental plates vanishes from your rearview mirror as the next corner begins._
 
 ---
