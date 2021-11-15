@@ -166,7 +166,7 @@
     </ButtonSet>
 </div>
 
-<h2>Et cetera</h2>
+<h2>Et Cetera</h2>
 
 <p class="mb-3">A few bits of content that had nowhere else to go.</p>
 
