@@ -27,6 +27,11 @@
 
     const etCetera = [
         {
+            href: 'reading-list',
+            title: 'Reading List',
+            description: 'Books I have read.',
+        },
+        {
             href: 'uses',
             title: 'What I use',
             description: 'Tools used in my work.',
@@ -36,16 +41,11 @@
             title: 'Outdoor Videos',
             description: 'A list of my favourite outdoor videos.',
         },
-        // {
-        //     slug: 'videos',
-        //     title: 'Skiing GoPro Footage',
-        //     description: 'Some backcountry skiing GoPro footage.',
-        // },
-        // {
-        //     slug: 'reading-list',
-        //     title: 'Reading List',
-        //     description: 'Books I have read.',
-        // },
+        {
+            href: 'ski-footage',
+            title: 'Skiing GoPro Footage',
+            description: 'Some backcountry skiing GoPro footage.',
+        },
     ]
 </script>
 
