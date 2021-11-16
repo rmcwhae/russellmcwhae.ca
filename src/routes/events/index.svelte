@@ -27,7 +27,7 @@
 
     let currentPage = 1
 
-    $: paginatedEvents = paginate(events, pageSize, currentPage)
+    // $: paginatedEvents = paginate(events, pageSize, currentPage)
 </script>
 
 <SEO title="Events" />
@@ -38,7 +38,7 @@
 </div>
 
 <div class="three-col-grid full-bleed">
-    {#each paginatedEvents as { name: eventName, featuredImage, date, count, title } (eventName)}
+    {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}
 </div>
