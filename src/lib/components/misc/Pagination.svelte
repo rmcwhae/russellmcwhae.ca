@@ -32,22 +32,22 @@
     <nav>
         <ul>
             <li class={currentPage === 1 ? 'disabled' : ''}>
-                <span
+                <a
                     on:click={() => changePage(currentPage - 1)}
                     aria-hidden="true"
-                    class=""><LeftChevron /></span
+                    class=""><LeftChevron /></a
                 >
             </li>
             {#each range(lastPage, 1) as page}
                 <li class={page === currentPage ? 'active' : ''}>
-                    <span on:click={() => changePage(page)}>{page}</span>
+                    <a on:click={() => changePage(page)}>{page}</a>
                 </li>
             {/each}
             <li class={currentPage === lastPage ? 'disabled' : ''}>
-                <span
+                <a
                     aria-hidden="true"
                     on:click={() => changePage(currentPage + 1)}
-                    class=""><RightChevron /></span
+                    class=""><RightChevron /></a
                 >
             </li>
         </ul>
@@ -65,7 +65,7 @@
         padding-left: 0;
         list-style: none;
     }
-    nav li span {
+    nav li a {
         text-decoration: none;
         cursor: pointer;
         position: relative;
@@ -75,22 +75,22 @@
         line-height: 1.25;
         border: 1px solid var(--medium-grey);
     }
-    nav ul li:first-child span {
+    nav ul li:first-child a {
         border-top-left-radius: var(--circle-radius);
         border-bottom-left-radius: var(--circle-radius);
         padding-left: var(--s1);
     }
-    nav ul li:last-child span {
+    nav ul li:last-child a {
         border-top-right-radius: var(--circle-radius);
         border-bottom-right-radius: var(--circle-radius);
         padding-right: var(--s1);
     }
-    nav li.active span {
+    nav li.active a {
         color: var(--background-color);
         background-color: var(--high-contrast-color);
         border-color: var(--high-contrast-color);
     }
-    nav li.disabled span {
+    nav li.disabled a {
         color: var(--light-grey);
         pointer-events: none;
         cursor: auto;
