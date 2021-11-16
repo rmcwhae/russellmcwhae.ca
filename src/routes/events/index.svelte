@@ -43,11 +43,11 @@
     {/each}
 </div>
 
-<Pagination
+<!-- <Pagination
     totalItems={events.length}
     {pageSize}
     {currentPage}
     on:setPage={(e) => {
         currentPage = e.detail.page
     }}
-/>
+/> -->
