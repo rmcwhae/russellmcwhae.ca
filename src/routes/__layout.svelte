@@ -47,5 +47,9 @@
             margin-left: auto;
             margin-right: auto;
         }
+        :global(.wide) {
+            margin-left: calc(-1 * var(--s5));
+            margin-right: calc(-1 * var(--s5));
+        }
     }
 </style>
