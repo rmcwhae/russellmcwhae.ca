@@ -23,4 +23,3 @@ category: TODO
 -   Build <category> page for journal entries; journal hero images?
 -   2016.russellmcwhae.ca
 -   Update about with skills
--   Link to Reading List
