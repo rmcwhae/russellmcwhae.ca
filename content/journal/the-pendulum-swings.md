@@ -2,14 +2,14 @@
 title: The Pendulum Swings
 description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
-date: 2021-05-10
+date: 2021-11-15
 draft: 1
 category: Reflection
 ---
 
 In my final year of high-school English, we studied _Nineteen Eighty-Four_. One of the many quotations that stuck with me is about deprivation: “War is a way of shattering to pieces, or pouring into the stratosphere, or sinking into the depths of the sea, materials which might otherwise be used to make the masses too comfortable, and hence, in the long run, too intelligent.” Such destitution, coupled with the chilling notion of thoughtcrime—“Thoughtcrime does not entail death: thoughtcrime IS death.”—illustrate Orwell’s predominant fear: that oppression would lead to our collective downfall. This notion likely reflected the devastation of World War II, after which the book was written.
 
-No discussion on the cultural impact of _Nineteen Eighty-Four_ would be complete without mention of Apple’s famous Super Bowl ad, ending with the immortal tagline: “On January 24th, Apple Computer will introduce Macintosh. And you’ll see why 1984 won’t be like “1984.” ” Postwar optimism and opulence fueled the departure from Orwell’s dystopian vision. Instead of being hoarded for the war effort, materials could now be used for comfort. This alternate view, of having more material comfort, especially in the form of life-improving personal technology, may not have become the ultimate reality either, however.
+No discussion on the cultural impact of _Nineteen Eighty-Four_ would be complete without mention of Apple’s famous 1984 Super Bowl ad, ending with the immortal tagline: “On January 24th, Apple Computer will introduce Macintosh. And you’ll see why 1984 won’t be like “1984.” ” Postwar optimism and opulence fueled the departure from Orwell’s dystopian vision. Instead of being hoarded for the war effort, materials could now be used for comfort. This alternate view, of having more material comfort, especially in the form of life-improving personal technology, may not have become the ultimate reality either, however.
 
 In the forward to his 2006 book, _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_, Neil Postman argues that what we should caution ourselves against is more Huxleyan in nature:
 

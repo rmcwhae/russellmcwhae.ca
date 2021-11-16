@@ -12,11 +12,12 @@ category: TODO
 -   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
 -   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
 -   Cancel shared hosting
+-   Pagination 500 error only on production…
 
 ## Later Ideas
 
+-   Animate logo
 -   Analytics?
--   Animate stuff?
 -   Try css color-mod()
 -   Smooth scrolling and sticky footer
 -   ImageKit-Captions-in-string
