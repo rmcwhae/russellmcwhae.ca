@@ -29,7 +29,7 @@
         {
             href: 'reading-list',
             title: 'Reading List',
-            description: 'Books I have read.',
+            description: 'Books I have read and want to read.',
         },
         {
             href: 'uses',
