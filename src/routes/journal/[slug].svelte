@@ -76,9 +76,9 @@
         </div>
     </header>
 
-    <div class="char-limit flow margin-0-auto">
+    <main class="char-limit flow margin-0-auto">
         <svelte:component this={component} />
-    </div>
+    </main>
 </article>
 <nav class="flex justify-between">
     {#if previous}
