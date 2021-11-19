@@ -52,6 +52,9 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 -   _South_ by Ernest Shackleton
 -   _Educated_ by Tara Westover
+-   _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_ by Neil Postman
+-   _Beyond the Mountain_ by Steve House
+-   _Echoes: One Climber’s Hard Road to Freedom_ by Nick Bullock
 
 ## 2018
 
@@ -66,9 +69,9 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _A Purpose Ridden_ by Ryan Correy
 -   _Modern Romance_ by Aziz Ansari
 -   _How to Win Friends and Influence People_ by Dale Carnegie
--   _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
--   _Being Mortal_ by Atul Gawande
--   _The Checklist Manifesto_ by Atul Gawande
+-   _Radical_ by David Platt
+-   _The 10 Best Decisions a Man Can Make: The Adventure of living in God’s Plan_ by Bill Farrel
+-   _Soul Surviver: How my Faith Survived the Church_ by Philip Yancey
 
 ## 2017
 
@@ -89,6 +92,13 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Sloppy Seconds_ by Tucker Max
 -   _Hilarity Ensues_ by Tucker Max
 -   _When Breath Becomes Air_ by Paul Kalanithi
+-   _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
+-   _Being Mortal_ by Atul Gawande
+-   _The Checklist Manifesto_ by Atul Gawande
+
+## 2015
+
+-   _Summit Fever. The Story of an Armchair Climber on the 1984 Mustagh Tower Expedition_ by Andrrew Greig
 
 ## 2014
 
@@ -97,6 +107,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _K2: Life and Death on the World's Most Dangerous Mountain_ by Ed Viesturs
 -   _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
 -   _The Great Gatsby_ by F. Scott Fitzgerald
+-   _One Day as a Tiger: Alex MacIntyre and the Birth of Light and Fast Alpinism_ by John Porter
 
 ## 2013
 
