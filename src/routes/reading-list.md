@@ -107,7 +107,6 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _K2: Life and Death on the World's Most Dangerous Mountain_ by Ed Viesturs
 -   _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
 -   _The Great Gatsby_ by F. Scott Fitzgerald
--   _One Day as a Tiger: Alex MacIntyre and the Birth of Light and Fast Alpinism_ by John Porter
 
 ## 2013
 
