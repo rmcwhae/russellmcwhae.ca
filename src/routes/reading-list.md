@@ -98,7 +98,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2015
 
--   _Summit Fever. The Story of an Armchair Climber on the 1984 Mustagh Tower Expedition_ by Andrrew Greig
+-   _Summit Fever. The Story of an Armchair Climber on the 1984 Mustagh Tower Expedition_ by Andrew Greig
 
 ## 2014
 
