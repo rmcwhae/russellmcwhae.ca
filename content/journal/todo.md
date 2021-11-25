@@ -9,18 +9,17 @@ category: TODO
 
 ## Launch checklist
 
--   Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`
--   Update svelte with `npm i -D @sveltejs/kit@next` and `npm i -D @sveltejs/adapter-static@next`
+-   `npm run update`: Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`, SvelteKit with `npm i -D @sveltejs/kit@next`, and the static adapter `npm i -D @sveltejs/adapter-static@next`
 -   Cancel shared hosting
--   Pagination 500 error only on production…
+-   Events pagination 500 error only on production…
 
 ## Later Ideas
 
 -   Animate logo
--   Analytics?
+-   Analytics
+-   Setup automated testing
+-   ImageKit captions-in-string
 -   Try css color-mod()
--   Smooth scrolling and sticky footer
--   ImageKit-Captions-in-string
--   Build <category> page for journal entries; journal hero images?
--   2016.russellmcwhae.ca
--   Update about with skills
+-   Build `<category>` page for journal entries; journal hero images?
+-   2016.russellmcwhae.ca; ~~2006.russellmcwhae.ca~~
+-   Skills chart

@@ -9,28 +9,27 @@ body {
     overflow-x: hidden;
     color: var(--text-color);
     background: var(--background-color);
-    /* background: var(--background-color) url('./static/test.png') no-repeat;
-  background-position: bottom center;
-  background-size: 16rem auto; */
     transition: all ease var(--duration);
     margin: 0;
-    box-sizing: border-box;
     font-family: source-sans-3, azo-sans-web, sans-serif;
     font-size: 1.125rem;
     line-height: 1.5;
 
-    height: 100%;
-    min-height: 100vh;
-    /* safari viewport bug fix */
-    min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column; // And main gets flex: 1;
 
+    height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    min-height: 100vh;
+
+    /* Mobile Safari fix via: https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
+    min-height: -webkit-fill-available;
 }
 
 html {
     scroll-behavior: smooth;
     width: 100%;
+    height: -webkit-fill-available;
 }
 
 @media (prefers-reduced-motion) {

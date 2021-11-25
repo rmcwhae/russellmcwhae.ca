@@ -17,6 +17,7 @@
     @import '../lib/scss/breakpoints.scss';
 
     .wrapper {
+        flex: 1;
         margin: 0 var(--s0) var(--s2);
         display: grid;
         grid-template-columns:
