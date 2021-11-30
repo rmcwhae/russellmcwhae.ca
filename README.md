@@ -23,6 +23,8 @@ To display images, you will need an [ImageKit](https://imagekit.io) account and 
         -   etc.
     -   etc.
 
+For homepage images, add a “featured” tag to four ImageKit images in `/portfolio`.
+
 Next, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start the development server:
 
 ```bash
