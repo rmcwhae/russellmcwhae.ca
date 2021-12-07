@@ -1,5 +1,4 @@
 <script>
-    import { browser } from '$app/env'
     import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte'
     import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte'
     import IoIosMail from 'svelte-icons/io/IoIosMail.svelte'
