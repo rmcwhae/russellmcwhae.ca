@@ -10,7 +10,6 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 ## The To-Read List
 
 -   _Ridgerunner_ by Gil Adamson
--   _The Runaway Jury_ by John Grisham
 -   _Where the Clouds Can Go_ by Conrad Kain
 -   _The Lean Startup_ by Eric Ries
 -   _Bugaboo Dreams_ by Topher Donahue
@@ -18,6 +17,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _It_ by Stephen King
 -   _Oryx and Crake_ by Margaret Atwood
 -   _The Master and Margarita_ by Mikhail Bulgakov
+-   _Klara and the Sun_ by Kazuo Ishiguro
 -   _A Life in Medicine_ by William Osler
 -   _Alone on the Wall_ by Alex Honnold
 -   _438 Days: An Extraordinary True Story of Survival at Sea_ by Jonathan Franklin
@@ -27,6 +27,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2021
 
+-   _The Runaway Jury_ by John Grisham
 -   _Uncanny Valley_ by Anna Wiener
 -   _The Firm_ by John Grisham
 -   _The Mosquito Coast_ by Paul Theroux
@@ -51,6 +52,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 ## 2019
 
 -   _South_ by Ernest Shackleton
+-   _Little Fires Everywhere_ by Celeste Ng
 -   _Educated_ by Tara Westover
 -   _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_ by Neil Postman
 -   _Beyond the Mountain_ by Steve House
