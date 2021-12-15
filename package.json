@@ -7,6 +7,7 @@
         "build": "rm -rf build && mkdir build && svelte-kit build",
         "update": "npm i -D \"github:dimsemenov/photoswipe#v5-beta\" && npm i -D @sveltejs/kit@next && npm i -D @sveltejs/adapter-static@next",
         "preview": "svelte-kit preview --port 4000",
+        "kill": "rm -rf node_modules",
         "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
