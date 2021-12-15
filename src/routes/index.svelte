@@ -70,22 +70,22 @@
 
     <div class="boxes">
         <div>
-            <a href="photography"
+            <a href="photography" sveltekit:prefetch
                 >see my <h4>photos</h4></a
             >
         </div>
         <div>
-            <a href="calendars"
+            <a href="calendars" sveltekit:prefetch
                 >preview my <h4>calendars</h4></a
             >
         </div>
         <div>
-            <a href="projects"
+            <a href="projects" sveltekit:prefetch
                 >check out my <h4>projects</h4></a
             >
         </div>
         <div>
-            <a href="journal"
+            <a href="journal" sveltekit:prefetch
                 >read my <h4>journal</h4></a
             >
         </div>

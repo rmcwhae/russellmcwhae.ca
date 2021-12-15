@@ -12,7 +12,7 @@
 </script>
 
 <section>
-    <a href={'/events/' + eventName}>
+    <a href={'/events/' + eventName} sveltekit:prefetch>
         <Image
             {name}
             {filePath}
