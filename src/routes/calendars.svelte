@@ -8,8 +8,11 @@
 
 <div class="full-bleed mb-2">
     <h1>Calendars</h1>
-    <p class="mt-1 mb-1 big char-limit">My 2022 Calendar is now shipping!</p>
-    <Calendar filename="2022calendar.pdf" purchase>
+    <p class="mt-1 mb-1 big char-limit">
+        Limited quantities of 2022 Calendars remain. Contact me if you are still
+        interested.
+    </p>
+    <Calendar filename="2022calendar.pdf">
         <Image src="/calendar-images/2022.jpg" />
     </Calendar>
 </div>
