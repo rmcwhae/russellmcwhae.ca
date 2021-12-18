@@ -2,8 +2,8 @@
 title: The Pendulum Swings
 description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
-date: 2021-11-15
-draft: 1
+date: 2021-12-17
+draft: 0
 category: Reflection
 ---
 
@@ -25,9 +25,9 @@ It can be a pretty dark time of year as we progress into winter. On these cold, 
 
 While a grad student, I subscribed to Apple Music. Included in this discounted membership ($5/month) was access to Apple TV+, which would otherwise have been a combined $15/month subscription (music and TV+). Ever one to take advantage of freebies, I watched a number of Apple TV+ shows through to completion: Ted Lasso, Servant, See, Mythic Quest, Defending Jacob, The Morning Show, and even Dickinson (still a bit surprised this one got a second season). For the most part, they were decent, entertaining shows. (Some are starting to [argue](https://daringfireball.net/linked/2021/04/19/apple-tv-plus-quality) that the limited selection but high quality of shows make Apple TV+ more of an HBO than a Netflix, which seems like a good strategy: quality over quantity, but this isn’t a TV-review piece).
 
-Eventually, my student membership expired, and my monthly music subscription returned to $10/month, excluding Apple TV+. I figured I’d give Apple TV+ a break for a few months before re-subscribing—likely as part of an Apple One bundle—in order to wait for the release of subsequent seasons for many of the aforementioned shows. (My iCloud storage, which would be increased tenfold in an Apple One bundle, backs up my iPhone XR and Apple Watch. It has been hovering right around 4.3 out of the measly 5 GB of storage in the free tier for _years_ now. Whenever it fills up, I delete old photos. Just try and make me pay for more space. Also, see how this same parsimonious logic applies to my minimal [cell-phone bill](journal/minimize-cell-phone).)
+Eventually, my student membership expired, and my monthly music subscription returned to $10/month, excluding Apple TV+. I figured I’d give Apple TV+ a break for a few months before re-subscribing—likely as part of an Apple One bundle—in order to wait for the release of subsequent seasons for many of the aforementioned shows. (My iCloud storage, which would be increased tenfold in an Apple One bundle, backs up my iPhone XR and Apple Watch. It has been hovering right around 4.3 out of the measly 5 GB of storage in the free tier for _years_ now. Whenever it fills up, I delete old photos. Just try and make me pay for more space. Also, see how this same parsimonious logic applies to my minimal [cell-phone bill](/journal/minimize-cell-phone).)
 
-Only that as a month turned into two, then into three, and now enough that I lost count, I never renewed my Apple TV+ subscription.
+Only that as a month turned into two, then two into three, and so on until I lost count, I never renewed my Apple TV+ subscription.
 
 Perhaps initially there was some kind of withdrawal—_This new release looks promising_—however, as time goes on, I don’t feel that I am missing out. This isn’t a complaint against Apple TV+ in particular (again, well-produced shows) but more so a caution against the addictively distracting nature of entertainment.
 
@@ -61,7 +61,7 @@ This is precisely the magic of literature: it can transport you into another tim
 
 ---
 
-Your attention is your most valuable resource. There are only so many things in a given day you can distribute it across. Fight for it; guard it. When you need some downtime, try to turn off your screen and pick up a book. As high-school English teacher once remarked, “English is the stuff of life.”
+Your attention is your most valuable resource. There are only so many things in a given day you can distribute it across. Fight for it; guard it. When you need some downtime, try to turn off your screen and pick up a book. As high-school English teacher once remarked, “English is, after all, the stuff of life.”
 
 ## Ideas
 
