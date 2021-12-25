@@ -2,7 +2,7 @@
 title: The Pendulum Swings
 description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
-date: 2021-12-27
+date: 2021-12-26
 draft: 0
 category: Reflection
 ---
@@ -71,7 +71,7 @@ _Anna Karenin_ opened a window into 19th-century Imperial Russian society. [One 
 
 Naturally, _Anna Karenin_ is a complicated book and cannot be reduced to a simple phrase such as “it had a happy ending.” For some characters, the ending was tragic, while for others it was more affirming. I for one, liked the ending for Levin, the co-protagonist, the character that Tolstoy most identified with. (I won‘t spoil the ending here. It is up to you to read _Anna Karenin_, or be lazy and go to Sparknotes.) The book has rightfully deserved masterpiece status, and while it may not be the final word on marital problems, it is perhaps the paramount psychological novel.
 
-This is precisely the magic of literature: it can transport you into another time, place, or even world. It can bring that context to life with more detail and saturation than any obscenely expensive television and sound system ever could—and yes, this still applies even to superlative shows like _The Sopranos_.
+This is precisely the magic of literature: it can transport you into another time, place, or even world. It can bring that context to life with more detail and saturation than any obscenely expensive television and sound system ever could—and yes, this still applies even to superlative shows like _The Sopranos_. Despite the requisite effort of having to focus and invest time reading novel as long as _Anna Karenin_, the payoff was inarguably much greater than having spent an equivalent amount of time in front of a screen.
 
 The more you read, the more you’ll understand inter-textural allusions. In _On Writing_, Stephen King describes how he almost abandoned _The Stand_ at “more than five hundred pages” (the very next book I read after _On Writing_):
 
