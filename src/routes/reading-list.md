@@ -20,6 +20,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Klara and the Sun_ by Kazuo Ishiguro
 -   _A Life in Medicine_ by William Osler
 -   _Alone on the Wall_ by Alex Honnold
+-   _The Seven Story Mountain_ by Thomas Merton
 -   _438 Days: An Extraordinary True Story of Survival at Sea_ by Jonathan Franklin
 -   _All the Light we Cannot See_ by Anthony Doerr
 -   _The Body Keeps The Score: Brain, Mind, And Body In The Healing Of Trauma_ by Bessel van der Kolk
