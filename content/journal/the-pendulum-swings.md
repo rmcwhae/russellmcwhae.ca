@@ -3,7 +3,7 @@ title: The Pendulum Swings
 description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
 date: 2021-12-27
-draft: 1
+draft: 0
 category: Reflection
 ---
 
@@ -31,7 +31,7 @@ Perhaps initially there was some kind of withdrawal—_This new release looks pr
 
 I am certainly guilty of vegetating. In previous years, I watched all seasons of _Breaking Bad_, _The Office (US)_, and most seasons of _House_, _The Big Bang Theory_, _Travelers_, and _Homeland_, among others I have forgotten. Perhaps this is below average—I have never seen any episodes of most of the series listed on [Rolling Stone’s 100 Greatest TV Shows of All Time](https://www.imdb.com/list/ls066095353/), let alone all seasons of more than a few shows. While I may fall below the average [three-to-four hours daily](https://www.statista.com/statistics/186833/average-television-use-per-person-in-the-us-since-2002/) of television viewing, I log more than enough screen time across my phone and computer each day.
 
-Though most of the shows I watched were well done, involving terrific storytelling, others were not. I remember clipping a comic from my local newspaper in high school in which a man comically dressed as a crook opens the top of a box TV-set being watched by a couple. As the litterer surreptitiously empties his garbage—fish bones and all—into the TV, the husband remarks to his wife, “Looks like Hollywood has just rolled out its fall programs.”
+Though most of the shows I watched were well done, involving terrific storytelling, others were not. I remember clipping a comic from my local newspaper in high school (around the same time I read _Nineteen Eighty-Four_) in which a man comically dressed as a crook opens the top of a box TV-set being watched by a couple. As the litterer surreptitiously empties his garbage—fish bones and all—into the TV, the husband remarks to his wife, “Looks like Hollywood has just rolled out its fall programs.”
 
 Recently, I purged some of my YouTube subscriptions, where the creators’ content no longer resonated with me. There can be a cynical, crass nature to a lot of pop culture these days, either directly, as in the case of certain very popular TV cartoons, or more insidiously. For an example of the latter, see the excellent video essay, [The Adorkable Misogyny of The Big Bang Theory](https://www.youtube.com/watch?v=X3-hOigoxHs). We in software call this “garbage in, garbage out.” If you routinely expose yourself to bunk TV shows, how long before they will rub off in your own ideas and vernacular?
 
@@ -51,31 +51,38 @@ The rise of the Age of Television, Postman asserts, has in many ways caused our 
 
 > When a population becomes distracted by trivia, when cultural life is redefined as a perpetual round of entertainments, when serious public conversation becomes a form of baby-talk, when, in short, a people become an audience, and their public business a vaudeville act, then a nation finds itself at risk; culture-death is a clear possibility. (155–56)
 
+With the explosion of the internet, distraction by electronic devices is more pervasive than ever before. Apps, games, and websites are designed to maximize user engagement at all costs (I now work in tech—I would know). Many apps such as Facebook, Instagram, and YouTube transitioned away from serving content in a chronological order to instead serving it with black-box algorithms. In the cases of Facebook and Instagram, algorithmically served posts were still not receiving enough attention that “Stories” were added, shorter photo or video posts designed to be viewed in rapid succession (apologies to everyone whose stories I have ignored all this time). Surely I am not the first to wonder if this has all gotten a bit preposterous? When will user engagement ever be adequately and finally maximized? Curiously, Instagram has been [rumored](https://www.theverge.com/2021/12/8/22824609/instagram-chronological-feed-adam-mosseri) to be bringing back the chronological news feed. This, after previously hiding like counts, another negative result of the previous switch to algorithmically sorted content.
+
+Perhaps it is time for the pendulum that is our collective attention span, instead of relentlessly careening toward absolute zero, to instead swing in the other direction.
+
 ---
 
-Now that we’ve examined some of the pitfalls of collectively and personally over-indulging in television, let’s look at another way of distracting ourselves that can be more constructive. As most of you probably know, I am a huge reader. One of the most recent updates to my website is my [reading list](/reading-list), my now-public book-tracking list. As an aspiring writer, I try to read almost every day. While falling short of the “four to six hours a day, every day,” recommended by Stephen King in his memoir, _On Writing: A Memoir of the Craft_, I try to dedicate at least an hour to reading on free nights.
+As most of you probably know, I am a huge reader. One of the most recent updates to my website is my [reading list](/reading-list), my now-public book-tracking list. As an aspiring writer, I try to read almost every day. While falling short of the “four to six hours a day, every day,” recommended by Stephen King in his memoir, _On Writing: A Memoir of the Craft_, I try to dedicate at least an hour to reading on free nights.
 
-Next comes the question of what to read. I have found my attention span for reading to imitate a muscle: the more you use it, the stronger it gets, and vice versa with neglecting it. In my last long-winded reflection, [30 Going on 13](/journal/30-going-on-13#too-long-read-anyway), I recommended finding some trashy reading as a means to reinvigorate your desire to read if it has been a while since you last picked up a book. Eventually, you’ll be able to work your way up to much longer works.
+I have found my attention span for reading to imitate a muscle: the more you use it, the stronger it gets, and vice versa with neglecting it. In my last long-winded reflection, [30 Going on 13](/journal/30-going-on-13#too-long-read-anyway), I recommended finding some trashy reading as a means to reinvigorate your desire to read if it has been a while since you last picked up a book. Eventually, you’ll be able to work your way up to much longer works.
 
 In one such work, _Soul Survivor_ by Philip Yancey, Yancey interviews Dr. Robert Coles, a physician and instructor of literature in medical, business, and law schools. When asked about his devotion to literature, Coles explains:
 
 > A man like Tolstoy knew more psychology than the whole twentieth-century social science scene will ever know. All this stuff about the stages of dying coming out now—why not just go back and read _The Death of Ivan Ilyich_? It said everything. And who has added any wisdom to the field of marital problems since _Anna Karenina_? And Dickens, oh my, what Dickens knew about human nature! (113)
 
-Intrigued by this statement—and never one to accept opinions without my own investigation—I took it upon myself to read _Anna Karenin_ in its entirety. (Not all translators agree on Russian naming customs: the terminal “a” of “Karenina” was dropped in my softcover version, translated by Rosemary Edmonds). It took many months to get through all 864 pages, though it never felt like a grind. _Anna Karenin_ opened a window into 19th-century Imperial Russian society. The large set of characters, both main and secondary, came to life in a wholly believable way, offering a look into people navigating Russian high society. I always find it interesting how a book written in the past can show culturally popular ideas in their respective time periods that seem preposterous to us now, such as table-turning. TODO expand on me
+Intrigued by this statement—and never one to accept opinions without my own investigation—I took it upon myself to read _Anna Karenin_ in its entirety. (Not all translators agree on Russian naming customs: the terminal “a” of “Karenina” was dropped in my softcover version, translated by Rosemary Edmonds). It took many months to get through all 864 pages, though it never felt like a grind.
 
-World come to life: healing waters, table turning, Russian high society, satire…
+_Anna Karenin_ opened a window into 19th-century Imperial Russian society. [One reviewer](https://www.theglobeandmail.com/arts/film/film-reviews/anna-karenina-the-taming-of-tolstoys-masterpiece/article5795288/) called it “a stage show, a claustrophobic and closed society of prescribed, rigid roles.” The large set of characters, both main and secondary, came to life in a wholly believable way, working through personal affairs such as infidelity, forgiveness, agnosticism, family life, and the _ennui_ of those privileged enough not to work. I always find it fascinating how a book written in the past can show culturally popular ideas in their respective time periods that seem quaint or preposterous to us now, like table-turning and healing waters.
 
-This is precisely the magic of literature: it can transport you into another time, place, or even world, and bring that world to life with a level of detail that is orders of magnitude greater than anything television ever has or could (yes, this applies even to superlative shows like _The Sopranos_).
+Naturally, _Anna Karenin_ is a complicated book and cannot be reduced to a simple phrase such as “it had a happy ending.” For some characters, the ending was tragic, while for others it was more affirming. I for one, liked the ending for Levin, the co-protagonist, the character that Tolstoy most identified with. (I won‘t spoil the ending here. It is up to you to read _Anna Karenin_, or be lazy and go to Sparknotes.) The book has rightfully deserved masterpiece status, and while it may not be the final word on marital problems, it is perhaps the paramount psychological novel.
+
+This is precisely the magic of literature: it can transport you into another time, place, or even world. It can bring that context to life with more detail and saturation than any obscenely expensive television and sound system ever could—and yes, this still applies even to superlative shows like _The Sopranos_.
+
+The more you read, the more you’ll understand inter-textural allusions. In _On Writing_, Stephen King describes how he almost abandoned _The Stand_ at “more than five hundred pages” (the very next book I read after _On Writing_):
+
+> I liked my story. I liked my characters. And still there came a point when couldn’t write any longer because I didn’t know what to write. Like Pilgrim in John Bunyan’s epic, I had come to a place where the straight way was lost. I wasn’t the first writer to discover this awful place, and I’m a long way from being the last; this is the land of writer’s block.
+
+Interestingly enough, my church was doing a book study of _The Pilgrim’s Progress_, Bunyan’s Christian allegorical work written in 1678, at the very same time. Such a cool reading moment!
 
 ---
 
-Your attention is your most valuable resource. There are only so many things in a given day you can distribute it across. Fight for it; guard it. When you need some downtime, try to turn off your screen and pick up a book. If you must watch television, be choosy in terms of what you watch.
+One day during our study of _Nineteen Eighty-Four_ in high school English, our teacher handed back graded essays to the class that we’d written earlier in the week. Everyone received theirs back, except for me. I had most certainly attended class earlier that week and had indeed written an essay, cranking out something I thought was OK in the 90-minute period. Just as I was starting to wonder what happened to my essay, the teacher said that there was one essay he’d like to read aloud to the class. My friend sitting next to me picked up on what was happening and muttered “neeeeeeeeeeeeeerd” under his breath. The teacher then proceeded to read my final _Nineteen Eighty-Four_ essay, <a href="/pdf/1984-Final-Essay.pdf" target="_blank">Self-preservation or Self-condemnation?</a>, to the class. The essay received full marks.
 
-As a high-school English teacher once remarked, “English is, after all, the stuff of life.”
+Your attention span is one of your most valuable resources. There are only so many things in a given day you can distribute it across. Fight for it, and guard it against the tractor-beam pull of distraction. When you need some downtime, try to prefer the written word over the television—and if you must watch television, be very choosy in terms of what you watch.
 
-## Ideas
-
--   _neeeeerd_
--   Anna Karenin over multiple months. People sometimes prefer TV shows for the character development that happens more so than in movies. Books take it to the next level yet.
--   Stephen King one book references another
--   Integrate titular pendulum
+The written word is here to stay, and engaging with it can bring meaning and context to our humanity beyond mere escapism. More than one of my high-school English teachers instilled a love for reading and writing in me. One of them—not the same one I studied _Nineteen Eighty-Four_ with—remarked that, “English is, after all, the stuff of life.”
