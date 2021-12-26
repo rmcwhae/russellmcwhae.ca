@@ -13,7 +13,7 @@ No discussion on the cultural impact of _Nineteen Eighty-Four_ would be complete
 
 A realignment of our collective psyche away from suffering and oppression toward relief and pleasure was certainly welcome—but what was to be the ultimate destination of this new direction?
 
-In the forward to his 2006 book, _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_, Neil Postman argues that what we should caution ourselves against such a Huxleyan reality:
+In the forward to his 2006 book, _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_, Neil Postman argues that we should caution ourselves against such a Huxleyan reality:
 
 > What Orwell feared were those who would ban books. What Huxley feared was that there would be no reason to ban a book, for there would be no one who wanted to read one. Orwell feared those who would deprive us of information. Huxley feared those who would give us so much that we would be reduced to passivity and egoism. Orwell feared that the truth would be concealed from us. Huxley feared the truth would be drowned in a sea of irrelevance. Orwell feared we would become a captive culture. Huxley feared we would become a trivial culture, preoccupied with some equivalent of the feelies, the orgy porgy, and the centrifugal bumblepuppy. As Huxley remarked in _Brave New World Revisited_, the civil libertarians and rationalists who are ever on the alert to oppose tyranny “failed to take into account man’s almost infinite appetite for distractions.” In _1984_, Huxley added, people are controlled by inflicting pain. In _Brave New World_, they are controlled by inflicting pleasure. In short, Orwell feared that what we hate will ruin us. Huxley feared that what we love will ruin us.
 >
