@@ -94,6 +94,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _I Hope They Serve Beer in Hell_ by Tucker Max
 -   _Sloppy Seconds_ by Tucker Max
 -   _Hilarity Ensues_ by Tucker Max
+-   _Flash Boys: A Wall Street Revolt_ by Michael Lewis
 -   _When Breath Becomes Air_ by Paul Kalanithi
 -   _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
 -   _Being Mortal_ by Atul Gawande
