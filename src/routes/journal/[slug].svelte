@@ -56,7 +56,7 @@
     export let previous
 </script>
 
-<SEO {title} />
+<SEO title={'Journal » ' + title} {description} />
 
 <article>
     <header>
