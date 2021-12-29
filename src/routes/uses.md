@@ -3,6 +3,10 @@ title: What I Use
 layout: page
 ---
 
+## Table of Contents
+
+## Intro
+
 These are the tools I use in my professional and creative workflows. Inspired by [uses.tech](https://uses.tech) via the [Syntax](https://syntax.fm/) podcast.
 
 ## Software
@@ -13,7 +17,7 @@ macOS all the way!
 
 -   [VS Code](https://code.visualstudio.com/) with the fabulous [JetBrains Mono](https://www.jetbrains.com/lp/mono/) typeface.
 -   Previously, I used [Coda 2](https://panic.com/coda/) for quite a few years.
--   [Spaceship ZSH](https://denysdovhan.com/spaceship-prompt/).
+-   [Spaceship ZSH](https://spaceship-prompt.sh/).
 -   Locally installed Apache, PHP, and MariaDB. See the [excellent tutorial](https://getgrav.org/blog/macos-catalina-apache-multiple-php-versions) on the Grav blog for setup instructions. Thanks to the use of [Homebrew](https://brew.sh/), this setup no longer breaks during major macOS upgrades (where files like `httpd.conf` and `php.ini` were frequently overwritten, requiring a trip into Time Machine). [Docker](https://www.docker.com/) has effectively make this setup obsolete; however, I’ve maintained this local AMP stack since 2007 across two MacBook Pros and countless OS upgrades, and it’s fun to pretend to be a sysadmin.
 
 ### Desktop Apps
@@ -37,12 +41,14 @@ macOS all the way!
 -   Before that, a 15-inch mid-2007 MacBook Pro (Intel Core 2 Duo T7500, 4 GB 667MHz DDR2 RAM, NVIDIA GeForce 8600M GT 128 MB, aftermarket OCZ 120 GB SSD). The GPU in this laptop failed, requiring a logic-board replacement.
 -   [27-inch LG 27UD68-W 4K Display](/journal/the-upgrade-to-4k)
 -   [Ducky One 2 SF](https://www.duckychannel.com.tw/en/Ducky-One2-SF) RGB White mechanical keyboard with Cherry MX Brown switches. Being relatively new to mechanical keyboards, they really are game-changers.
--   Magic Trackpad 2
--   Desktop Windows PC: Intel Core i5-3570K overclocked to 4 GHz, 16 GB RAM, 500 GB SSD, 1 TB hardware RAID 1 array, ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB. I built this in 2012 with the intention of upgrading parts as needed—only a strong need to upgrade has yet to present itself. Let’s see how long this old hardware will last before it gets converted into a Linux box. Used for browser testing and storage. I backup photos from my laptop to my PC’s ~~RAID 1~~ RAID 5 (4 x 1 TB drives) array via `rsync`:
+-   Magic Trackpad 2 and Magic Mouse 2
+-   Desktop Windows PC: Intel Core i5-3570K overclocked to 4.2 GHz, 16 GB RAM, 500 GB SSD, 3 TB hardware RAID 5 array (4 x 1 TB drives), ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB (upgraded in April 2020). I built this in 2012 with the intention of upgrading parts as needed—only a strong need to upgrade has yet to present itself. Let’s see how long this old hardware will last before it gets converted into a Linux box. Used for browser testing and storage. I backup photos from my laptop to my PC’s RAID array via `rsync`:
 
 ```
 alias photobackup="rsync -avzP --exclude '.DS_Store' --delete --backup --backup-dir=\"//Volumes/PhotosfromrMBP/backups/backup_$(date +\%Y-\%m-\%d_\%H-\%M)\" ~/Pictures/ //Volumes/PhotosfromrMBP/"
 ```
+
+-   A Logitech G5 laser mouse (circa [2007](https://www.anandtech.com/show/2286)) for my PC. Still going strong!
 
 ## Camera Gear
 
