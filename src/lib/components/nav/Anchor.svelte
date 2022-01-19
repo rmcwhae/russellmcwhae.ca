@@ -1,13 +1,21 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
     import { page } from '$app/stores'
 
     export let href
     export let title
+
+    const dispatch = createEventDispatcher()
+
+    function handleClick() {
+        dispatch('close')
+    }
 </script>
 
 <a
     sveltekit:prefetch
     {href}
+    on:click={handleClick}
     aria-current={$page.url.pathname === href ? 'page' : undefined}>{title}</a
 >
 

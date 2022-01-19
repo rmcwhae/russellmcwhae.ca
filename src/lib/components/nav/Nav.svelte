@@ -27,28 +27,28 @@
                     <Anchor
                         title="Photos"
                         href="/photography"
-                        on:click={hideMenu}
+                        on:close={hideMenu}
                     />
                 </li>
                 <li>
                     <Anchor
                         title="Calendars"
                         href="/calendars"
-                        on:click={hideMenu}
+                        on:close={hideMenu}
                     />
                 </li>
                 <li>
                     <Anchor
                         title="Projects"
                         href="/projects"
-                        on:click={hideMenu}
+                        on:close={hideMenu}
                     />
                 </li>
                 <li>
                     <Anchor
                         title="Journal"
                         href="/journal"
-                        on:click={hideMenu}
+                        on:close={hideMenu}
                     />
                 </li>
             </ul>
