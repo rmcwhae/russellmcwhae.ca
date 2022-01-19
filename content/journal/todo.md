@@ -10,7 +10,7 @@ category: TODO
 ## Launch checklist
 
 -   `npm run update`: Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`, SvelteKit with `npm i -D @sveltejs/kit@next`, and the static adapter `npm i -D @sveltejs/adapter-static@next`
--   ImageKit captions
+-   Populate ImageKit captions
 -   Events pagination 500 error only on production…
 
 ## Later Ideas

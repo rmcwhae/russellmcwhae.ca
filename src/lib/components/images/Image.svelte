@@ -2,15 +2,16 @@
     import { generateSrcSets, sizes } from '$lib/utils/images'
     import 'lazysizes'
 
-    export let name
     export let filePath
     export let width
     export let height
     export let thumbnail
+    export let customMetadata
     export let lockedRatio = false
     export let photoswipe = false
 
     const srcset = generateSrcSets(filePath)
+    const { caption } = customMetadata || {}
 </script>
 
 <div class:lockedRatio>
@@ -30,7 +31,7 @@
                 {sizes}
                 {width}
                 {height}
-                alt={name}
+                alt={caption}
                 class="lazyload"
             />
         </a>
@@ -42,7 +43,7 @@
             {sizes}
             {width}
             {height}
-            alt={name}
+            alt={caption}
             class="lazyload"
         />
     {/if}
