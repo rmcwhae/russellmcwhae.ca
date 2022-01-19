@@ -1,10 +1,6 @@
 // Layout and a few other items
 @import './breakpoints.scss';
 
-picture img {
-    border-radius: var(--radius);
-}
-
 .full-width {
     width: 100vw;
     position: relative;
@@ -36,10 +32,6 @@ picture img {
     @include for-phone-only {
         grid-template-columns: 1fr;
     }
-}
-
-picture img {
-    border-radius: var(--radius);
 }
 
 .restricted-width {
@@ -74,4 +66,8 @@ article header {
         margin-left: 0;
         margin-right: 0;
     }
+}
+
+picture img {
+    border-radius: var(--radius);
 }
