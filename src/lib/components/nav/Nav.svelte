@@ -1,7 +1,7 @@
 <script>
-    import { page } from '$app/stores'
     import Logo from '$lib/components/icons/Logo.svelte'
-    import ThemeSwitcher from '$lib/components/base/ThemeSwitcher.svelte'
+    import Anchor from './Anchor.svelte'
+    import ThemeSwitcher from './ThemeSwitcher.svelte'
 
     let mobileMenuOpen = false
 
@@ -24,45 +24,32 @@
         <div class="nav-menu" class:active={mobileMenuOpen}>
             <ul>
                 <li>
-                    <a
-                        sveltekit:prefetch
+                    <Anchor
+                        title="Photos"
                         href="/photography"
                         on:click={hideMenu}
-                        aria-current={$page.path.includes('/photography') ||
-                        $page.path.includes('/events')
-                            ? 'page'
-                            : undefined}>Photos</a
-                    >
+                    />
                 </li>
                 <li>
-                    <a
-                        sveltekit:prefetch
+                    <Anchor
+                        title="Calendars"
                         href="/calendars"
                         on:click={hideMenu}
-                        aria-current={$page.path === '/calendars'
-                            ? 'page'
-                            : undefined}>Calendars</a
-                    >
+                    />
                 </li>
                 <li>
-                    <a
-                        sveltekit:prefetch
-                        on:click={hideMenu}
+                    <Anchor
+                        title="Projects"
                         href="/projects"
-                        aria-current={$page.path === '/projects'
-                            ? 'page'
-                            : undefined}>Projects</a
-                    >
+                        on:click={hideMenu}
+                    />
                 </li>
                 <li>
-                    <a
-                        sveltekit:prefetch
-                        on:click={hideMenu}
+                    <Anchor
+                        title="Journal"
                         href="/journal"
-                        aria-current={$page.path.includes('/journal')
-                            ? 'page'
-                            : undefined}>Journal</a
-                    >
+                        on:click={hideMenu}
+                    />
                 </li>
             </ul>
             <div id="switcher">
@@ -115,17 +102,6 @@
         display: inline-block;
         position: relative;
         margin: 0 var(--s-1);
-    }
-    li a {
-        text-decoration: none;
-        display: block;
-        padding: var(--s-1) var(--s1);
-        border-radius: 50px;
-        border: 1px solid transparent;
-    }
-    li a[aria-current],
-    li a:hover {
-        border-color: var(--medium-grey);
     }
     :global(.no-scroll-mobile) {
         overflow: hidden;

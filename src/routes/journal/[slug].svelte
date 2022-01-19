@@ -1,8 +1,8 @@
 <script context="module">
     import { posts } from '$lib/services/posts'
 
-    export async function load({ page }) {
-        const { slug } = page.params
+    export async function load({ params }) {
+        const { slug } = params
         const index = posts.findIndex((post) => slug === post.slug)
 
         if (index === -1) {

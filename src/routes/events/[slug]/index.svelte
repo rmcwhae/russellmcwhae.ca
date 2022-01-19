@@ -1,6 +1,6 @@
 <script context="module">
-    export async function load({ page, fetch }) {
-        const slug = page.params.slug
+    export async function load({ params, fetch }) {
+        const { slug } = params
         const event = await fetch(`/events/${slug}.json`).then((r) => r.json())
         return {
             props: { event },

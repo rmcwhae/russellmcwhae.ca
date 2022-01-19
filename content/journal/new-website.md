@@ -9,7 +9,7 @@ category: Tech
 
 <script>
   import Image from 'svimg'
-  import ThemeSwitcher from '$lib/components/base/ThemeSwitcher.svelte'
+  import ThemeSwitcher from '$lib/components/nav/ThemeSwitcher.svelte'
   import Caption from '$lib/components/images/Caption.svelte'
 </script>
 

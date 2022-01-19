@@ -1,35 +1,31 @@
 <script>
     import { onMount } from 'svelte'
-    import { theme as userTheme } from '$lib/stores/theme'
+    import { theme as mode } from '$lib/stores/theme'
 
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
     import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
 
     onMount(() => {
-        if (!$userTheme) {
-            userTheme.set(
-                window.matchMedia('(prefers-color-scheme: dark)').matches
-                    ? 'dark'
-                    : 'light'
-            )
+        if (!$mode) {
+            $mode = window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
         } else {
-            userTheme.set($userTheme) // to trigger side effect
+            $mode = $mode // to trigger side effect
         }
     })
 
-    $: nextTheme = $userTheme === 'dark' ? 'light' : 'dark'
+    $: nextMode = $mode === 'dark' ? 'light' : 'dark'
 
     function changeTheme() {
-        userTheme.set(nextTheme)
+        $mode = nextMode
     }
 </script>
 
 <div>
     <!-- svelte-ignore a11y-label-has-associated-control -->
     <label class="toggle-wrapper">
-        <div
-            class={nextTheme === 'dark' ? 'toggle disabled' : 'toggle enabled'}
-        >
+        <div class={nextMode === 'dark' ? 'toggle disabled' : 'toggle enabled'}>
             <div class="icons">
                 <IoMdSunny />
                 <IoIosMoon />
@@ -91,7 +87,6 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        /* margin: 0 5px; */
     }
 
     :global(.toggle .icons svg) {
