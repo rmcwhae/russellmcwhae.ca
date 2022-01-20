@@ -11,6 +11,8 @@ category: TODO
 
 -   `npm run update`: Update photo gallery with `npm i -D "github:dimsemenov/photoswipe#v5-beta"`, SvelteKit with `npm i -D @sveltejs/kit@next`, and the static adapter `npm i -D @sveltejs/adapter-static@next`
 -   Populate ImageKit captions
+-   Glitch homepage two-column
+-   Gallery too narrow at certain widths
 -   Events pagination 500 error only on production…
 
 ## Later Ideas
