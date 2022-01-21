@@ -26,6 +26,10 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _The Body Keeps The Score: Brain, Mind, And Body In The Healing Of Trauma_ by Bessel van der Kolk
 -   _For the Love of Men: From Toxic to a More Mindful Masculinity_ by Liz Plank
 
+## 2022
+
+-   _Brave New World_ by Aldous Huxley
+
 ## 2021
 
 -   _The Runaway Jury_ by John Grisham
