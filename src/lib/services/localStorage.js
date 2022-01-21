@@ -1,16 +1,34 @@
 export function create(key) {
-    return {
-        get() {
-            if (localStorageEnabled) {
-                return localStorage.getItem(key)
-            }
-        },
-        set(value) {
-            if (localStorageEnabled) {
-                localStorage.setItem(key, value)
-            }
-        },
+    try {
+        // Trying a test key
+        const testKey = '99999'
+        localStorage.setItem(testKey, testKey)
+        localStorage.removeItem(testKey)
+
+        return {
+            get(defaultValue) {
+                const value = localStorage.getItem(key)
+
+                try {
+                    return value ? JSON.parse(value) : defaultValue
+                } catch {
+                    return value || defaultValue
+                }
+            },
+            set(value) {
+                localStorage.setItem(key, JSON.stringify(value))
+            },
+        }
+    } catch {
+        return {
+            get: identity,
+            set: noop,
+        }
     }
 }
 
-const localStorageEnabled = typeof localStorage !== 'undefined' && localStorage
+function identity(arg) {
+    return arg
+}
+
+function noop() {}
