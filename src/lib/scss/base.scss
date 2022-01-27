@@ -40,10 +40,6 @@
 }
 
 @include for-tablet-landscape-up {
-    .two-col {
-        columns: 2;
-        column-gap: var(--s2);
-    }
     .restricted-width {
         max-width: inherit;
         margin: 0;
