@@ -1,6 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
-import adapter from '@sveltejs/adapter-static'
+// import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-vercel'
 import { isoImport } from 'vite-plugin-iso-import'
 import preprocess from 'svelte-preprocess'
 import imagePreprocessor from 'svimg'
@@ -30,9 +31,9 @@ const config = {
             enabled: true,
         },
         adapter: adapter({
-            pages: 'build',
-            assets: 'build',
-            fallback: null,
+            // pages: 'build',
+            // assets: 'build',
+            // fallback: null,
         }),
         vite: {
             ssr: {

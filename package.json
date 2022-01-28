@@ -39,7 +39,8 @@
         "svelte-preprocess": "^4.7.4",
         "svimg": "^1.1.0",
         "vite-imagetools": "^3.6.8",
-        "vite-plugin-iso-import": "^0.1.2"
+        "vite-plugin-iso-import": "^0.1.2",
+        "@sveltejs/adapter-vercel": "next"
     },
     "type": "module",
     "dependencies": {
