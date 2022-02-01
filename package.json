@@ -13,7 +13,8 @@
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^1.0.0-next.26",
-        "@sveltejs/kit": "^1.0.0-next.247",
+        "@sveltejs/adapter-vercel": "^1.0.0-next.40",
+        "@sveltejs/kit": "^1.0.0-next.252",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-svelte3": "^3.2.0",
@@ -39,11 +40,10 @@
         "svelte-preprocess": "^4.7.4",
         "svimg": "^1.1.0",
         "vite-imagetools": "^3.6.8",
-        "vite-plugin-iso-import": "^0.1.2",
-        "@sveltejs/adapter-vercel": "next"
+        "vite-plugin-iso-import": "^0.1.2"
     },
     "type": "module",
     "dependencies": {
-        "dateformat": "^5.0.1"
+        "dateformat": "^5.0.2"
     }
 }
