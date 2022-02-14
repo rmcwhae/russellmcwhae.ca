@@ -10,7 +10,6 @@ category: TODO
 ## Launch checklist
 
 -   Populate ImageKit captions
--   Gallery too narrow at certain widths
 -   Events pagination 500 error only on production…
 
 ## Later Ideas
