@@ -14,7 +14,8 @@ category: TODO
 
 ## Later Ideas
 
--   Animate logo
+-   Try https://atroposjs.com/
+-   ~~Animate logo~~
 -   Analytics
 -   Setup automated testing
 -   Try css color-mod()
