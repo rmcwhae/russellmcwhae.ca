@@ -5,16 +5,16 @@
     "scripts": {
         "dev": "svelte-kit dev --port 4000 --host",
         "build": "rm -rf build && mkdir build && svelte-kit build",
-        "update": "npm i -D \"github:dimsemenov/photoswipe#v5-beta\" && npm i -D @sveltejs/kit@next && npm i -D @sveltejs/adapter-static@next",
+        "update": "npm i -D \"github:dimsemenov/photoswipe#v5-beta\" && npm i -D @sveltejs/kit@next && npm i -D @sveltejs/adapter-vercel@next",
         "preview": "svelte-kit preview --port 4000",
         "kill": "rm -rf node_modules",
         "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-static": "^1.0.0-next.26",
-        "@sveltejs/adapter-vercel": "^1.0.0-next.40",
-        "@sveltejs/kit": "^1.0.0-next.252",
+        "@sveltejs/adapter-static": "^1.0.0-next.28",
+        "@sveltejs/adapter-vercel": "^1.0.0-next.44",
+        "@sveltejs/kit": "^1.0.0-next.284",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-svelte3": "^3.2.0",
