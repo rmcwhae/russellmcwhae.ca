@@ -15,6 +15,7 @@ category: TODO
 ## Later Ideas
 
 -   Try https://atroposjs.com/
+-   Instead of next/prev articles, try grouping by category
 -   ~~Animate logo~~
 -   Analytics
 -   Setup automated testing
