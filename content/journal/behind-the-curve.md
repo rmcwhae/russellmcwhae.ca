@@ -13,7 +13,7 @@ This past Christmas, I added a WiFi card for around $40. This WiFi card also ena
 
 (Despite my [latest warning](/journal/the-pendulum-swings) about “the tractor-beam pull of electronic distraction,” I will occasionaly play video games, preferably those of a finite length. After beating _THPS 1 + 2_ this January, I haven’t really touched it since.)
 
-The point of this anecdote is that it can be quite fun to tinker with old hardware. It’s one thing to throw top dollar at the latest and greatest computer components to be on the bleeding edge of performance, but, as we’ll see in this piece, older items—be they PCs, or otherwise—can be just as much fun as more modern stuff, at a fraction of the cost.
+The point of this anecdote is that it can be quite fun to tinker with old hardware. It’s one thing to throw top dollar at the latest and greatest computer components to be on the bleeding edge of performance, but, as we’ll see in this piece, older items—PCs and otherwise—can be just as much fun as more modern stuff, at a fraction of the cost.
 
 ---
 
@@ -40,6 +40,8 @@ Among other industries, photography is one where Gear Acquisition Syndrome (GAS)
 -   Things that we love can enslave us. Stuff cutting edge a few years ago. Thrill of new gadgets is fleeting. Get the same thrill without sticker shock or buyer’s remorse.
 -   Unused mtn bike collecting dust, or the well loved old bike.
 -   Old mtn bike dropper post $125
+-   New $60 000 truck gets way better mileage than an older one. But does this really save money—or the environment?
 -   You can export videos in half the time as before—really worth the high price tag
 -   Not too far behind: old cars (too old and expensive unless you are handy), sweet spot of age and mileage
 -   Calvin and Hobbes: chewing magazine
+-   Simplify: ski pass or bike-park pass: requires getting pass, burlier bike/skis, more maintenance, more complexity. The things we own end up owning us. (Fight Club: different context but same message)
