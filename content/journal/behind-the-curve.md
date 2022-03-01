@@ -35,15 +35,13 @@ If you are upgrading from an existing computer, chances are you can measure the 
 
 But what are these improvements, really? Say, for example, that you could now export your videos or photos in half as much time as before (not an actual benchmark). For most users, this likely equates to a few minutes per day of time saved. All that money for what is, principally, a slightly faster experience than before. A few minutes less a few times a week of waiting for your computer to crunch some numbers. Is upgrading the to newest tech really as great as marketing departments would have us believe?
 
-With expensive toys comes additional worry. Worry about items breaking or getting stolen. Worry about expensive maintenance bills for the toys. Worry about getting adequate insurance coverage for said toys. While acquiring many of my toys, I bought many accessories and tools, thus requiring additional storage and mental effort to organize. As Tyler Durden said in _Fight Club_, “the things you own end up owning you.” While toys can indeed be fun, the possibility nonetheless exists for the things we love to go so far as to enslave us.
-
-Having nice things ANXIETY…?
+With expensive toys comes additional worry. Worry about items breaking or getting stolen. Worry about expensive maintenance bills for the toys. Worry about getting adequate insurance coverage for said toys. While acquiring many of my toys, I bought many accessories and tools, thus requiring additional storage and mental effort to organize. As Tyler Durden said in _Fight Club_, “the things you own end up owning you.” While toys can indeed be fun, the possibility nonetheless exists for the things we love to cause us anxiety or even go so far as to enslave us.
 
 There is something to be said for keeping things simple.
 
 ---
 
-Per this piece’s intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far more easier on the wallet. Let’s look at how this notion of being behind the upgrade curve, rather than at its bleeding edge, applies to some of the other toys I have mentioned. In essence, you can find creative new ways to take advantage of older hardware, resulting in the thrill of something different but without the sticker shock of new tech.
+Per this piece’s intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. Let’s look at how this notion of being behind the upgrade curve, rather than at its bleeding edge, applies to some of the other toys I have mentioned. In essence, you can find creative new ways to take advantage of older items, resulting in the thrill of something different but without the sticker shock of the brand-new.
 
 Continuing with computers, old hardware need not be junked as it ages beyond five or more years. Minor upgrades such as the aforementioned WiFi/Bluetooth adapter can extend the functionality or performance of old hardware in interesting new ways. I recently happened upon some old 1 TB 3.5-inch desktop hard drives. I replaced my ailing RAID 1 array (two 1 TB drives mirrored for redundancy, where one of the drives had been giving SMART errors for years and could fail at any minute) with a four-drive RAID 5 array (3 TB of usable space, with one drive for redundancy). For the non-geeks, just understand that my storage capacity tripled for zero dollars.
 
