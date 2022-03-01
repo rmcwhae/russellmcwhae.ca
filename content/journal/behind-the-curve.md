@@ -62,6 +62,8 @@ Perhaps there is a limit as to how far behind the upgrade curve one can go for t
 
 Despite living a less-than-five-minute commute to a world-class ski hill, I opted not to pay for a season’s pass this winter. Part of this decision was my notorious cheapness—but another part was my desire for simplicity. Regularly skiing at the ski hill means more wear and tear on your skis. I have run a quiver-of-one setup for downhill/touring skis for years now, and to get serious about riding the resort would mean ideally getting another pair of skis with alpine bindings dedicated for resort use rather than abusing my lightweight touring skis. But more skis equals more bases to wax and edges to sharpen and space required for storage. Apply this same logic to nordic skiing, biking (see the “n + 1” rule), climbing, etc., and suddenly your garage is a gear shop.
 
+Freedom comes not in always getting what you want, but in being OK with what you have.
+
 ## Ideas
 
 -   Not more and owning the latest and greatest, but less.
