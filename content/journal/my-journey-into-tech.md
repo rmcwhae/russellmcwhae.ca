@@ -12,9 +12,26 @@ Around the time I turned 30, software development had entered onto my radar as a
 
 First, tech is ubiquitous. It has touched almost every industry.
 
+Coding boot camps are all the rage these days, so I took one. This is a Western Canadian perspective on coding boot camp.
+
+## Boot camp
+
+-   Process: do homework and as much prep work as possible. Cannot overstate this.
+-   UCalgary MEng (MSc. and MEng!)
+
+## Job Hunt
+
+-   Work on your own projects (hackathons…)
+-   Open source
+-   Communicate about tech (writing)
+
+## Staying Current
+
+## Tech Culture
+
+-   Anna Wiener Uncanny Valley. Writing quotation Paul Theroux: the goal is above all to make you see. HBO Silicon Valley…but TV inferior.
+
 ## Ideas
 
--   Career change, previous reflection about wanting to try tech.
--   Anna Wiener Uncanny Valley. Writing quotation Paul Theroux: the goal is above all to make you see. HBO Silicon Valley…but TV inferior.
 -   Different job markets than engg. More frequent job switching. Tech touches every industry.
 -   Web dev: creating vs data science: analysis
