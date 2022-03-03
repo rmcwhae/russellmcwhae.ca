@@ -18,6 +18,7 @@ Coding boot camps are all the rage these days, so I took one. This is a Western 
 
 -   Process: do homework and as much prep work as possible. Cannot overstate this.
 -   UCalgary MEng (MSc. and MEng!)
+-   Web dev: creating vs data science: analysis
 
 ## Job Hunt
 
@@ -34,4 +35,3 @@ Coding boot camps are all the rage these days, so I took one. This is a Western 
 ## Ideas
 
 -   Different job markets than engg. More frequent job switching. Tech touches every industry.
--   Web dev: creating vs data science: analysis
