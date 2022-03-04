@@ -16,7 +16,8 @@
     sveltekit:prefetch
     {href}
     on:click={handleClick}
-    aria-current={$page.url.pathname === href ? 'page' : undefined}>{title}</a
+    aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
+    >{title}</a
 >
 
 <style>
