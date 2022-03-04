@@ -1,6 +1,6 @@
 ---
 title: Behind the Curve
-description: An alternative approach to owning the latest and greatest gear.
+description: An alternative approach to owning the latest and greatest gadgets.
 author: Russell McWhae
 date: 2022-03-01
 draft: 1
@@ -37,11 +37,13 @@ But what are these improvements, really? Say, for example, that you could now ex
 
 You see, the price to performance curve is far from linear. At a certain point, modest gains in performance require proportionately exorbitant gains in price.
 
-With expensive toys can come additional worry. Worry about items breaking or getting stolen. Worry about expensive maintenance bills. Worry about getting adequate insurance coverage. While acquiring many of my toys, I bought many accessories and tools, thus requiring additional storage and mental effort to organize. As Tyler Durden said in _Fight Club_, “the things you own end up owning you.” While toys can indeed be fun, they are not without pitfalls. The possibility exists for the things we love to cause us anxiety or even go so far as to enslave us.
+This applies to many other toys as well. Despite living a less-than-five-minute commute to a world-class ski hill, I opted not to pay for a season’s pass this winter. Part of this decision was my notorious cheapness—but another part was my desire for simplicity. Regularly skiing at the ski hill means more wear and tear on your skis. I have run a quiver-of-one setup for downhill/touring skis for years now, and to get serious about riding the resort would mean ideally getting another pair of skis with alpine bindings dedicated for resort use rather than abusing my lightweight touring skis. But more skis equals more bases to wax and edges to sharpen and space required for storage. Apply this same logic to nordic skiing, biking (see the “n + 1” rule), climbing, etc., and suddenly your garage is a gear shop.
+
+With expensive toys can come additional worry. Worry about items breaking or getting stolen. Worry about expensive maintenance bills. Worry about getting adequate insurance coverage. While acquiring many of my toys, I bought many accessories and tools, thus requiring additional storage and mental effort to organize. As Tyler Durden said in _Fight Club_, “the things you own end up owning you.” While toys can indeed be fun, owning them is not without pitfalls. The possibility exists for the things we love to cause us anxiety or even go so far as to enslave us. Perhaps actual freedom comes not in always getting what you want—such as the latest and shiniest toys—but in being happy with less.
 
 ---
 
-Per this piece’s intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. In the second half of this piece, let’s look at how this notion of being behind the upgrade curve, rather than at its bleeding edge, applies to some of the other toys I have mentioned. This is about finding creative new ways to take advantage of older items, resulting in the thrill of something different but without the sticker shock of the brand-new.
+Per this piece’s intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. In the second half of this piece, let’s look at how this notion of being behind the upgrade curve, rather than at its bleeding edge, applies to some of the other toys I have mentioned. The idea here is to find creative new ways to take advantage of older items, resulting in the thrill of something different but without the sticker shock of the brand-new.
 
 Continuing with computers, old hardware need not be junked as it ages beyond five or more years. Minor upgrades such as the aforementioned WiFi/Bluetooth adapter can extend the functionality or performance of old hardware in interesting new ways. I recently happened upon some old 1 TB 3.5-inch desktop hard drives. I replaced my ailing RAID 1 array (two 1 TB drives mirrored for redundancy, where one of the drives had been giving SMART errors for years and could fail at any minute) with a four-drive RAID 5 array (3 TB of usable space, with one drive for redundancy). For the non-geeks, just understand that my storage capacity tripled for zero dollars.
 
@@ -49,31 +51,24 @@ The recently released Windows 11 will not run on my ancient PC. This leaves me t
 
 In a slightly less geeky example of tech, I bought an older used iPad about a year ago (iPad Air 2, launched in 2014). It is now too slow to run any intensive apps or games, but it isn’t too slow for reading ebooks. No Apple Pencil, no Smart Keyboards—no problem, only a dedicated device for reading. (It also doubles as a website-testing device as there is no equivalent for actually seeing a website you are developing on physical, not simulated, hardware.)
 
-Among other industries, photography is one where Gear Acquisition Syndrome (GAS) rears its head. It’s the same scenario as computers: expensive gear that quickly becomes replaced by newer and better offerings. I haven’t purchased camera gear in years but have been getting arguably some of my best photos recently.
+Among other industries, photography is one where Gear Acquisition Syndrome (GAS) rears its head. It’s the same scenario as computers: enticing, expensive gear that quickly becomes replaced by newer and better offerings. I haven’t purchased camera gear in years but have been getting arguably some of my best photos recently. With my older Sony NEX-6 body, I converted it to shoot infrared. This required disassembling the camera and removing the band-pass filter mounted over the sensor (a full-spectrum conversion). Then, for the price of a lens-mounted IR-pass filter ($50), I could shoot the invisible spectrum. (See [Forgetmenot and Sandy Ann
+](/events/Forgetmenot-and-Sandy-Ann_June-2020) for some examples of IR photographs.) A terrific project, including an imaginative new way of thinking about photography (some IR shots work best at high noon on bright, sunny days, which can otherwise be boring in the visible spectrum), all with a very modest gear investment.
 
-With my older Sony NEX-6 body, I converted it to shoot infrared. This required disassembling the camera and removing the band-pass filter mounted over the sensor (a full-spectrum conversion). Then, for the price of a lens-mounted IR-pass filter ($50), I could shoot the invisible spectrum. (See [Forgetmenot and Sandy Ann
-](/events/Forgetmenot-and-Sandy-Ann_June-2020) for some examples of IR photographs.) A terrific project, with an imaginative new way of thinking about photography, all with a very modest gear investment.
+Bikes have also become prohibitively expensive of late. While I did upgrade to a late-model Norco Optic C2 last spring, my previous mountain bike, a Santa Cruz Tallboy LT, lasted nine years. Having maintained it quite well, I was able to sell it to offset the cost of upgrading to the Norco. The Tallboy did not come with a dropper post, so I ordered an [externally routed, cable-actuated post](https://www.chainreactioncycles.com/brand-x-ascend-ii-dropper-seatpost/rp-prod159176) in 2019 for around $150. While not as performant (less travel) than a fancier, more expensive hydraulic dropper post (often over $300), it does not require expensive servicing ($75 to $125 per service). Most of the performance, at a fraction of the cost.
 
-Bikes have also become notoriously expensive of late. While I did upgrade to a late-model Norco Optic C2 last spring, my previous mountain bike, a Santa Cruz Tallboy LT, lasted nine years. Having maintained it quite well, I was able to sell it to offset the cost of upgrading to the Norco. The Tallboy did not come with a dropper post, so I ordered an [externally routed, cable-actuated post](https://www.chainreactioncycles.com/brand-x-ascend-ii-dropper-seatpost/rp-prod159176) in 2019 for around $150. While not as performant (less travel) than a fancier, more expensive hydraulic dropper post (often over $300), it does not require expensive servicing ($75 to $125 per service). Most of the performance, at a fraction of the cost.
-
-Perhaps there is a limit as to how far behind the upgrade curve one can go for the economics to work.
+Perhaps there is a limit as to how far behind the upgrade curve one can go for the economics to work. Cars that are too old and require constant maintenance may not be worth the effort to run unless you are mechanically inclined.
 
 ---
 
-Despite living a less-than-five-minute commute to a world-class ski hill, I opted not to pay for a season’s pass this winter. Part of this decision was my notorious cheapness—but another part was my desire for simplicity. Regularly skiing at the ski hill means more wear and tear on your skis. I have run a quiver-of-one setup for downhill/touring skis for years now, and to get serious about riding the resort would mean ideally getting another pair of skis with alpine bindings dedicated for resort use rather than abusing my lightweight touring skis. But more skis equals more bases to wax and edges to sharpen and space required for storage. Apply this same logic to nordic skiing, biking (see the “n + 1” rule), climbing, etc., and suddenly your garage is a gear shop.
-
-Freedom comes not in always getting what you want, but in being OK with what you have.
+Something liberating
 
 ## Ideas
 
--   Not more and owning the latest and greatest, but less.
 -   Less house insurance, less worry/anxiety
 -   Marie Kondo: get rid of items that don’t spark joy (listened to on my move to Revy, fitting)
 -   Roadkill ripping on Lamborghini vs home built hot rod
 -   A Canticle For Leibowitz materially great but lacked spiritual values
--   Find new ways to enjoy old technology:
 -   Unused mtn bike collecting dust, or the well loved old bike.
 -   New $60 000 truck gets way better mileage than an older one. But does this really save money—or the environment?
 -   Not too far behind: old cars (too old and expensive unless you are handy), sweet spot of age and mileage
 -   Calvin and Hobbes: chewing magazine
--   Simplify: ski pass or bike-park pass: requires getting pass, burlier bike/skis, more maintenance, more complexity. The things we own end up owning us. (Fight Club: different context but same message)
