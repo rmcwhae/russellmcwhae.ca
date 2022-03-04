@@ -19,8 +19,8 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
-    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
+    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
     export let images
     export let latestPosts
@@ -167,7 +167,7 @@
 
 <div class="mt-3 mb-5">
     <ButtonSet>
-        <Button href="journal" text="All entries" right />
+        <Button href="/journal" text="All entries" right />
     </ButtonSet>
 </div>
 

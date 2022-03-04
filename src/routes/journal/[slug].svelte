@@ -20,8 +20,10 @@
             description,
             category,
         } = posts[index]
-        const next = posts[index - 1]
-        const previous = posts[index + 1]
+        const relatedPosts = posts
+            .filter((post) => post.title !== title)
+            .filter((post) => post.category === category)
+            .slice(0, 4)
 
         return {
             props: {
@@ -29,9 +31,8 @@
                 date,
                 category,
                 readingTime,
-                next,
                 description,
-                previous,
+                relatedPosts,
                 component,
             },
         }
@@ -40,10 +41,10 @@
 
 <script>
     import Date from '$lib/components/misc/Date.svelte'
-    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
-    import RightChevron from '$lib/components/icons/RightChevron.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
-    import JournalEntry from '$lib/components/journal/Entry.svelte'
+    import Button from '$lib/components/buttons/Button.svelte'
+    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
+    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
     export let title
@@ -52,8 +53,7 @@
     export let description
     export let readingTime
     export let component
-    export let next
-    export let previous
+    export let relatedPosts
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -80,22 +80,15 @@
         <svelte:component this={component} />
     </main>
 </article>
-<nav class="flex justify-between">
-    {#if previous}
-        <div class="flex gap justify-between items-center left">
-            <LeftChevron />
-            <JournalEntry post={previous} />
-        </div>
-    {:else}
-        <div />
-    {/if}
-    {#if next}
-        <div class="flex gap justify-between items-center right">
-            <JournalEntry post={next} />
-            <RightChevron />
-        </div>
-    {/if}
-</nav>
+
+<h2 class="mt-5 mb-3">Related Entries</h2>
+<JournalEntrySet posts={relatedPosts} />
+
+<div class="mt-3">
+    <ButtonSet>
+        <Button href="/journal" text="All entries" right />
+    </ButtonSet>
+</div>
 
 <style>
     header {

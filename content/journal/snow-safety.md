@@ -3,7 +3,7 @@ title: Snow Safety
 description: A list of hand-picked resources on avalanche risk management.
 author: Russell McWhae
 date: 2019-03-05
-draft: 0
+draft: 1
 category: Outdoors
 ---
 
