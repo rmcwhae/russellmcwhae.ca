@@ -2,7 +2,7 @@
 title: Behind the Curve
 description: An alternative approach to owning the latest and greatest gadgets.
 author: Russell McWhae
-date: 2022-03-01
+date: 2022-03-04
 draft: 1
 category: Reflection
 ---
@@ -31,13 +31,13 @@ Had I waited another year or two, until the M1 or M1 Pro/Max were released, the 
 
 Technology is always advancing—that’s a given—but what is the best approach to staying current? We convince ourselves that we “need” a new computer, that its high price tag is justified by the performance gains in our professional workflows. The thrill of new hardware is as fleeting as the sunset, however: great one moment, gone the next.
 
-If you are upgrading from an existing computer, chances are you can measure the relative performance increase of the newer hardware. Reviewers and online pundits were quick to put the M1 MacBook Pros through their paces, in a flurry of benchmarks and tests, all extolling its breathtaking improvements.
+If you are upgrading from an existing computer, chances are you can measure the relative performance increase of the newer hardware. Reviewers and online pundits were quick to put the M1 MacBook Pros through their paces, in a flurry of benchmarks and tests, all extolling their breathtaking improvements.
 
 But what are these improvements, really?
 
-Say, for example, that you could now export your videos or photos in half as much time as before (not an actual benchmark). For most users, this likely equates to a few minutes per day of time saved. All that money for what is, principally, a slightly faster experience than before. A few minutes, a few times a week, of time saved waiting for your computer to crunch numbers. Or longer battery life. Or quieter fan noise. Or any other subjective or objective performance metric that is qualifiedly or quantifiably stronger than before.
+Say, for example, that you could now export your videos or photos in half as much time as before (not an actual benchmark). For most users, this likely equates to a few minutes per day of time saved. All that money—for a slightly faster experience than before. A few minutes, a few times a week, of time saved while your computer crunches numbers. Or longer battery life. Or quieter fan noise. Or any other subjective or objective performance metric that is qualifiedly or quantifiably stronger than before.
 
-The price-to-performance curve is far from linear. At a certain point, modest gains in performance require exorbitant gains in price. Nowhere else along the price-to-performance curve is this more true than at the cutting edge, which, naturally, receives the most attention in promotion and discussion.
+The price-to-performance curve is far from linear. After a certain point, modest gains in performance require exorbitant gains in price. Nowhere else along the price-to-performance curve is this more true than at the cutting edge, which, naturally, receives the most attention in promotion and discussion.
 
 While expensive, high-performing toys can indeed be fun, owning them is not without pitfalls. With expensive toys can come additional worry. Worry about items breaking or getting stolen. Worry about expensive maintenance bills. Worry about getting adequate insurance coverage. While acquiring many of my toys, I bought many accessories and tools, thus requiring additional storage and mental effort to organize. As Tyler Durden said in _Fight Club_, “the things you own end up owning you.”
 
@@ -47,7 +47,7 @@ Perhaps the most utility from material goods comes not in always getting what yo
 
 Per the intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. In the second half of this piece, let’s look at how this notion of being behind on the price-to-performance curve applies to other toys. The idea here is to find creative new ways to use older items, resulting in the thrill of something different but without the sticker shock of the brand-new.
 
-Continuing with computers, old hardware need not be junked as it ages beyond seven or more years. Minor upgrades such as my aforementioned WiFi/Bluetooth adapter can extend the functionality of old hardware in interesting new ways. I recently happened upon a few old 1 TB 3.5-inch desktop hard drives. I replaced my ailing RAID 1 array (two 1 TB drives mirrored for redundancy, where one of the drives had been giving SMART errors for years) with a four-drive RAID 5 array (3 TB of usable space). For the non-geeks, understand that my storage capacity tripled for zero dollars.
+Continuing with computers, old hardware need not be junked as it ages beyond seven or more years. Minor upgrades such as my aforementioned WiFi/Bluetooth adapter can extend the functionality of old hardware in interesting new ways. I recently happened upon a few old 1 TB 3.5-inch desktop hard drives. I replaced my ailing RAID 1 array (two 1 TB drives mirrored for redundancy, where one of the drives had been giving SMART errors for years) with a four-drive RAID 5 array (3 TB of usable space). For the non-geeks, my storage capacity tripled for zero dollars.
 
 The recently released Windows 11 will not run on my aged PC. This leaves me two options: keep running Windows 10, or switch to a Linux distribution. Almost all Linux distros have very modest hardware requirements. If you’re looking for a new purpose for an ancient Windows laptop or desktop, try installing Linux on it and seeing how the operating system flies.
 
@@ -68,6 +68,6 @@ This notion of being behind the price-to-performance curve gets more complicated
 
 Despite living a less-than-five-minute commute to a world-class ski hill, I opted not to pay for a season’s pass this winter. Part of this decision was my notorious cheapness—but another part was my desire for simplicity. Regularly skiing at the ski hill means more wear and tear on your skis. I have run a quiver-of-one setup for downhill/touring skis for years now, and to get serious about resort riding would mean getting another pair of skis with alpine bindings rather than thrashing my lightweight touring skis. But more skis equals more bases to wax, more edges to sharpen, and more storage space required. Apply this same logic to nordic skiing, biking, climbing, and other outdoor hobbies, and suddenly your garage is a gear shop.
 
-I am as susceptible to gear marketing as anyone. With the utility I get from outdoor pursuits, it can be tempting to upgrade and tinker with equipment. If a hobby or passion brings you joy, shouldn’t your aim be to maximize that? However, unchecked expansion of one’s gear collection can lead to drawbacks like clutter and anxiety.
+I am as susceptible to gear marketing as anyone. With the utility I get from my toys, it can be tempting to upgrade and tinker. If a hobby brings you joy, shouldn’t your aim be to maximize that by purchasing the best possible equipment? However, unchecked expansion of one’s gear collection can lead to drawbacks like clutter and anxiety.
 
 There is something liberating about not having too many high-performing, expensive, depreciating assets like the toys I have mentioned. I am proposing here that at certain sweet spots, lower down on the price-to-performance curve, cheaper or older items can nonetheless offer tremendous utility. With some creativity, these items can often be revitalized or modified to perform in new or unanticipated ways.
