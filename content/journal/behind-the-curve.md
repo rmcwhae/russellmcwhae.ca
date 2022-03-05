@@ -27,7 +27,7 @@ Sadly, this will not be the case with my 2019 MacBook Pro. With the architecture
 
 Upon the announcement of the M1 chip, online pundits reached a fever pitch over its improvements: ridiculous efficiency, thermals, and performance, resulting in laptops with longer battery life and reduced fan noise. If you follow hardware, you know the M1’s advantages, but if not, understand that it’s the kind of advancement that happens once in twenty years. While I’ll admit to finding this quite exciting, it does make me feel like a sucker for spending as much money as I did on my Intel-based MacBook Pro.
 
-Had I waited another year or two, until the M1 or M1 Pro/Max were released, the timing of my upgrade could have worked much more favourably. A M1-based MacBook Pro would have a much higher likelihood of lasting seven years. Something newer and faster is always around the corner, however. Even today’s highest-end M1 Max will eventually become a vintage joke.
+Had I waited another year or two, until the M1 or M1 Pro/Max were released, the timing of my upgrade could have worked much more favourably. An M1-based MacBook Pro would have a much higher likelihood of lasting seven years. Something newer and faster is always around the corner, however. Even today’s highest-end M1 Max will eventually become a vintage joke.
 
 Technology is always advancing—that’s a given—but what is the best approach to staying current? We convince ourselves that we “need” a new computer, that its high price tag is justified by the performance gains in our professional workflows. The thrill of new hardware is as fleeting as the sunset, however: great one moment, gone the next.
 
@@ -45,7 +45,7 @@ Perhaps the most utility from material goods comes not in always getting what yo
 
 ---
 
-Per the intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. In the second half of this piece, let’s look at how this notion of being behind on the price-to-performance curve applies to other toys. The idea here is to find creative new ways to use older items, resulting in the thrill of something different but without the sticker shock of the brand-new.
+Per the intro—and in contrast to my experience with Macs—my PC hardware-upgrade approach has been far easier on the wallet. In the second half of this piece, let’s look at how this notion of being behind on the price-to-performance curve applies to other toys. The idea here is to find creative new ways to use older items, resulting in the thrill of something different but without the sticker shock of the brand new.
 
 Continuing with computers, old hardware need not be junked as it ages beyond seven or more years. Minor upgrades such as my aforementioned WiFi/Bluetooth adapter can extend the functionality of old hardware in interesting new ways. I recently happened upon a few old 1 TB 3.5-inch desktop hard drives. I replaced my ailing RAID 1 array (two 1 TB drives mirrored for redundancy, where one of the drives had been giving SMART errors for years) with a four-drive RAID 5 array (3 TB of usable space). For the non-geeks, my storage capacity tripled for zero dollars.
 
