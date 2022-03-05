@@ -3,7 +3,7 @@ title: Behind the Curve
 description: An alternative approach to owning the latest and greatest gadgets.
 author: Russell McWhae
 date: 2022-03-04
-draft: 1
+draft: 0
 category: Reflection
 ---
 
