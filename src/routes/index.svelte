@@ -191,6 +191,9 @@
         gap: var(--s1);
 
         @include for-tablet-portrait-down {
+            grid-template-columns: 2fr 1fr;
+        }
+        @include for-phone-only {
             grid-template-columns: 1fr;
         }
     }
@@ -198,8 +201,10 @@
         margin-top: auto;
         @include for-tablet-portrait-down {
             width: 50vw;
-            margin-top: -60px;
+        }
+        @include for-phone-only {
             margin-left: auto;
+            margin-top: -100px;
         }
     }
     .boxes {
