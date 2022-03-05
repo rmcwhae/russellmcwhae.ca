@@ -71,3 +71,5 @@ Despite living a less-than-five-minute commute to a world-class ski hill, I opte
 I am as susceptible to gear marketing as anyone. With the utility I get from my toys, it can be tempting to upgrade and tinker. If a hobby brings you joy, shouldn’t your aim be to maximize that by purchasing the best possible equipment? However, unchecked expansion of one’s gear collection can lead to drawbacks like clutter and anxiety.
 
 There is something liberating about not having too many high-performing, expensive, depreciating assets like the toys I have mentioned. I am proposing here that at certain sweet spots, lower down on the price-to-performance curve, cheaper or older items can nonetheless offer tremendous utility. With some creativity, these items can often be revitalized or modified to perform in new or unanticipated ways.
+
+Try installing Linux on an old PC, get a cheap project bike, or challenge yourself to get creative with your existing camera gear. Tinkering in ways like this can quell the urge to drop top dollar on seductively advertised new gear—gear that the ephemeral delight of acquisition will soon fade from.
