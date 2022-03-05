@@ -15,7 +15,7 @@
     grid-template-columns: 1fr;
     gap: var(--s1);
 
-    @include for-tablet-landscape-up {
+    @include for-tablet-portrait-up {
         grid-template-columns: repeat(2, 1fr);
     }
 }
