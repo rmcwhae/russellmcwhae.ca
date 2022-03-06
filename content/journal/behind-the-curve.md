@@ -29,7 +29,7 @@ Upon the announcement of the M1 chip, online pundits reached a fever pitch over 
 
 Had I waited another year or two, until the M1 or M1 Pro/Max were released, the timing of my upgrade could have worked much more favourably. An M1-based MacBook Pro would have a much higher likelihood of lasting seven years. Something newer and faster is always around the corner, however. Even today’s highest-end M1 Max will eventually become a vintage joke.
 
-Technology is always advancing—that’s a given—but what is the best approach to staying current? We convince ourselves that we “need” a new computer, that its high price tag is justified by the performance gains in our professional workflows. The thrill of new hardware is as fleeting as the sunset, however
+Technology is always advancing—that’s a given—but what is the best approach to staying current? We convince ourselves that we “need” a new computer, that its high price tag is justified by the performance gains in our professional workflows. The thrill of new hardware is as fleeting as the sunset, however.
 
 If you are upgrading from an existing computer, chances are you can measure the relative performance increase of the newer hardware. Reviewers and online pundits were quick to put the M1 MacBook Pros through their paces, in a flurry of benchmarks and tests, all extolling their breathtaking improvements.
 
