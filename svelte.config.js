@@ -27,6 +27,7 @@ const config = {
         amp: false,
         prerender: {
             crawl: true,
+            default: true,
             enabled: true,
         },
         adapter: adapter({
