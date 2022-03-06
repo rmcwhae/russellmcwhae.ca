@@ -31,7 +31,7 @@ Had I waited another year or two, until the M1 or M1 Pro/Max were released, the 
 
 Technology is always advancing—that’s a given—but what is the best approach to staying current? We convince ourselves that we “need” a new computer, that its high price tag is justified by the performance gains in our professional workflows. The thrill of new hardware is as fleeting as the sunset, however.
 
-If you are upgrading from an existing computer, chances are you can measure the relative performance increase of the newer hardware. Reviewers and online pundits were quick to put the M1 MacBook Pros through their paces, in a flurry of benchmarks and tests, all extolling their breathtaking improvements.
+Reviewers and online pundits were quick to put the M1 MacBook Pros through their paces, in a flurry of benchmarks and tests. In almost perfect unison, reviewers extolled the breathtaking improvements of these laptops relative to previous-generation MacBook Pros.
 
 But what are these improvements, really?
 
