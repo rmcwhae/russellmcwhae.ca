@@ -2,13 +2,17 @@
 title: My Journey into Tech
 description: An update on my latest career path.
 author: Russell McWhae
-date: 2022-03-01
+date: 2022-03-05
 draft: 1
 category: Reflection
 ---
 
-Around the time I turned 30, software development had entered onto my radar as a career path. I had been studying and working in engineering and science for around twelve years (undergrad, grad school, and industry work) and was ready for a change. Now that I have been working as a developer for over two years—and realized my dream of moving to a mountain town—here is a reflection on my experience in tech. (For more details on my non-linear career path and how I ultimately decided on working in tech, see [How to Find Out What to Do With Your Life
-](/journal/30-going-on-13#how-to-find-out-what-to-do-with-your-life).)
+Around the time I turned 30, software development had entered onto my radar as a career path. I had been studying and working in engineering and science for around twelve years (undergrad, grad school, and industry work) and was ready for a change. Now that I have been working as a developer for over two years—and in so doing realized my dream of moving to a ski town—here is a reflection on my experience in tech so far. Naturally, it’s long winded.
+
+First, a recap of how I got into tech.
+
+For more details on my non-linear career path and how I ultimately decided on working in tech, see [How to Find Out What to Do With Your Life
+](/journal/30-going-on-13#how-to-find-out-what-to-do-with-your-life).
 
 First, tech is ubiquitous. It has touched almost every industry.
 
@@ -27,6 +31,9 @@ Coding boot camps are all the rage these days, so I took one. This is a Western 
 -   Communicate about tech (writing)
 
 ## Staying Current
+
+-   Online learning: organized vs project based
+-   Newsletters and podcasts (Swizec Teller, Syntax.fm)
 
 ## Tech Culture
 
