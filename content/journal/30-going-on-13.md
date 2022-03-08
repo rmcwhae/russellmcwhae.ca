@@ -878,6 +878,48 @@ Friend 3: Sometimes when you’re bored, you just need to go and Tinker a little
 
 ---
 
+Friend: I need to sharpen these crampons.
+
+Me: You make a good point.
+
+Friend: Dull crampons aren’t my first pick.
+
+Me: That’s one to file for later.
+
+---
+
+Friend 1: When I become a dad, every one of my jokes will be a dad joke.
+
+Friend 2: Yes, it’s becoming quite a-parent. You really shouldn’t take your jokes any father.
+
+---
+
+Friend, examining an AirBNB’s spice collection: “Non-salt” salt? It says that it’s made of potassium chloride. Isn’t that still technically a salt?
+
+Me: I think it’s assault when you hit someone.
+
+---
+
+Friend: Did you hear about the climber who fell and lost the left half of his body?
+
+Me: Let me guess—he was all right?
+
+Friend: There wasn’t much left. He’s a bit one-sided now.
+
+---
+
+Friend 1, referring to a black leather bill-fold: Whose wallet is this? It’s a dude wallet, but none of the guys have claimed it. It’s certainly not [Friend 2, the only girl on the trip]’s.
+
+Friend 2, girl: Oh, there’s my wallet!
+
+---
+
+Friend, digging through his top-loading backpack: We’re starting with our climbing skins on, like basically every ski tour ever. Naturally, my skins are at the bottom of my backpack, and I’ve got to take everything out to get them.
+
+Me: I guess you should have thought more than skin deep.
+
+---
+
 Like I said, nothing but classy, intelligent conversation.
 
 ## How to Find Out What to Do With Your Life
