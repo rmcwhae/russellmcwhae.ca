@@ -783,15 +783,15 @@ Friend, in a detailed planning email for our Victoria, Lefroy, and Huber attempt
 > …
 >
 > Personal Food
-
--   4 - Lunches
--   1 - Trail mix and/or nuts
--   1 - Granola bars
--   1 - Candy or Cliff Shots
--   1 - Pepperoni/Cheese Slices (protein)
--   1 - Flask o’ Something
--   Tea & Coffee
--   Don’t bring Bitch sauce! We are climbing Mt. Victoria this time not hiking to Aster Lake.
+>
+> -   4 - Lunches
+> -   1 - Trail mix and/or nuts
+> -   1 - Granola bars
+> -   1 - Candy or Cliff Shots
+> -   1 - Pepperoni/Cheese Slices (protein)
+> -   1 - Flask o’ Something
+> -   Tea & Coffee
+> -   Don’t bring Bitch sauce! We are climbing Mt. Victoria this time not hiking to Aster Lake.
 
 (We had previously bailed on a Joffre attempt due to rain and ended up not leaving our base camp at Aster Lake, despite our friend’s claim that it was “bluebird.” Thereafter stormy days were referred to as bluebird.)
 
