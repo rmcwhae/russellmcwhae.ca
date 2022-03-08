@@ -468,7 +468,7 @@ These short stories had nowhere else to go, so they are included here to highlig
 
 ### Get Off My Lawn
 
-The first time I skied Mount Field], my trail-breaking shift ended up being the final push to the summit. Mount Field is an easy one-day ski for those with a solid year or so of backcountry-skiing experience. My party of four had leapfrogged with a group of split-boarders on the ascent, all of us working together to create an uptrack all the way up the mountain. Cutting a fresh uptrack—called breaking trail—is hard work for the leader as his or her skis sink into the snow with each step, while followers can shuffle along with relative ease. Taking turns breaking trail ensures that no one person gets too exhausted compared to other group members (assuming similar fitness levels).
+The first time I skied [Mount Field](/events/Mount-Field_January-2014), my trail-breaking shift ended up being the final push to the summit. Mount Field is an easy one-day ski for those with a solid year or so of backcountry-skiing experience. My party of four had leapfrogged with a group of split-boarders on the ascent, all of us working together to create an uptrack all the way up the mountain. Cutting a fresh uptrack—called breaking trail—is hard work for the leader as his or her skis sink into the snow with each step, while followers can shuffle along with relative ease. Taking turns breaking trail ensures that no one person gets too exhausted compared to other group members (assuming similar fitness levels).
 
 There is an art to creating good uptracks: they are not too steep and make effective use of terrain while managing avalanche hazard. At this time in my backcountry-skiing career, I was still figuring things out. Nonetheless, we had chosen our objective in accordance with the [daily avalanche bulletin](http://avalanche.ca/) and gotten an early start.
 
@@ -640,7 +640,7 @@ Out of the tent emerged a high-school-aged boy, who had some serious product in 
 
 She stepped to the side as the group of hikers, my friends and I, and numerous other onlookers watched the young man self-consciously walk toward his car. His plans for a quiet getaway with his date had been derailed by the masses of hikers arriving in the parking lot—and now he had to deal with the embarrassment of his car blocking traffic.
 
-Firing up the engine, he absolutely _gunned_ it in a last-ditch effort to save face in front of his girl as he pulled forward the two metres into his original parking spot.
+Firing up the engine, he roared it in a last-ditch effort to save face in front of his girl as he pulled forward the two metres into his original parking spot.
 
 He made sure to pull the hand brake this time.
 
