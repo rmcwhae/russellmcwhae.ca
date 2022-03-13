@@ -28,6 +28,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _Brave New World Revisited_ by Aldous Huxley
 -   _Brave New World_ by Aldous Huxley
 
 ## 2021
