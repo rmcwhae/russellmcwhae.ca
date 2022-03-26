@@ -1,11 +1,11 @@
 <script>
-    import { generateSrcSets, sizes } from '$lib/utils/images'
     import 'lazysizes'
+    import { generateSrcSets, sizes } from '$lib/utils/images'
 
     export let filePath
     export let width
     export let height
-    export let thumbnail
+    export let lqip // low quality image placeholder
     export let customMetadata
     export let lockedRatio = false
     export let photoswipe = false
@@ -18,16 +18,16 @@
     {#if photoswipe}
         <a
             class="no-shadow"
-            href={thumbnail}
+            href={lqip}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={thumbnail}
+            data-pswp-src={lqip}
             data-pswp-srcset={srcset}
         >
             <img
                 data-sizes="auto"
                 data-srcset={srcset}
-                src={thumbnail}
+                src={lqip}
                 {sizes}
                 {width}
                 {height}
@@ -39,7 +39,7 @@
         <img
             data-sizes="auto"
             data-srcset={srcset}
-            src={thumbnail}
+            src={lqip}
             {sizes}
             {width}
             {height}

@@ -8,7 +8,7 @@
     export let count
     export let featuredImage
 
-    const { name, filePath, width, height, thumbnail } = featuredImage
+    const { name, filePath, width, height, lqip } = featuredImage
 </script>
 
 <section>
@@ -18,7 +18,7 @@
             {filePath}
             {width}
             {height}
-            {thumbnail}
+            {lqip}
             lockedRatio
             photoswipe={false}
         />

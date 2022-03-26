@@ -1,4 +1,5 @@
 import ImageKit from 'imagekit'
+import * as ImageUtils from '$lib/utils/images'
 import {
     IMAGEKIT_PUBLIC_KEY,
     IMAGEKIT_PRIVATE_KEY,
@@ -26,8 +27,17 @@ function getClient() {
 export async function listFiles(options) {
     const images = await getClient().listFiles(options)
 
-    return images.map((file) => ({
-        ...file,
-        photoswipe: true,
-    }))
+    return images.map((file) => {
+        const lqip = ImageUtils.buildURL(file.filePath, {
+            width: 300,
+            quality: 50,
+            blur: 30,
+        })
+
+        return {
+            ...file,
+            photoswipe: true,
+            lqip,
+        }
+    })
 }
