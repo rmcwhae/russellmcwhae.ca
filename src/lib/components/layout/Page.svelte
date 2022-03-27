@@ -19,7 +19,7 @@
     /* TODO make me DRYer with routes/journal/[slug].svelte */
     header {
         padding-bottom: var(--s0);
-        margin-bottom: var(--s4);
-        border-bottom: 1px solid var(--light-grey);
+        margin-bottom: var(--s2);
+        /* border-bottom: 1px solid var(--light-grey); */
     }
 </style>

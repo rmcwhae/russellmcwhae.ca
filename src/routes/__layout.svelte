@@ -7,18 +7,18 @@
 
 <Loading />
 
-<Nav />
 <main class="wrapper">
+    <Nav />
     <slot />
+    <Footer />
 </main>
-<Footer />
 
 <style type="scss">
     @import '../lib/scss/breakpoints.scss';
 
     .wrapper {
         flex: 1;
-        margin: 0 var(--s0) var(--s2);
+        margin: 0 var(--s0);
         display: grid;
         grid-template-columns:
             1fr

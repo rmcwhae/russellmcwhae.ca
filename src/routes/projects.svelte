@@ -33,7 +33,7 @@
 <SEO title="Projects" />
 
 <div class="full-bleed">
-    <h1 class="mb-3">Dev Projects</h1>
+    <h1 class="mb-3">Projects</h1>
 
     <div class="flow">
         <Project project={projects[0]}>
