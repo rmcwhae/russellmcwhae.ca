@@ -84,6 +84,12 @@
     }
     :global(#logo svg) {
         height: 25px !important; /* TODO be less lazy than using !important */
+        @include for-tablet-portrait-up {
+            height: 35px !important;
+        }
+        @include for-tablet-landscape-up {
+            height: 45px !important;
+        }
     }
     #logo {
         z-index: 3;
@@ -206,12 +212,6 @@
         }
         :global(.no-scroll-mobile) {
             overflow: inherit;
-        }
-        header {
-            // padding: var(--s2) var(--s3) var(--s5);
-        }
-        :global(#logo svg) {
-            height: 45px !important; /* TODO be less lazy than using !important */
         }
         .nav-toggle,
         .nav-overlay {
