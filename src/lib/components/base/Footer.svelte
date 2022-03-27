@@ -11,10 +11,10 @@
     }
 </script>
 
-<footer>
+<footer class="full-bleed">
     <div class="up" on:click={topFunction} title="Scroll to top" />
     <div class="wrapper">
-        <div class="mb-s0">
+        <div class="text">
             &copy; {year} Russell McWhae.
             <span class="nowrap">Made in Canada.</span>
         </div>
@@ -41,14 +41,17 @@
 <style>
     footer {
         padding-top: var(--s0);
-        margin-top: var(--s5);
+        margin-top: var(--s4);
         color: var(--high-contrast-color);
         font-size: 0.9rem;
         position: relative;
     }
+    .text {
+        margin-bottom: var(--s0);
+    }
     .wrapper {
-        border-top: 1px solid var(--light-grey);
-        padding: var(--s0) var(--s3);
+        /* border-top: 1px solid var(--light-grey); */
+        padding: var(--s0) 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -77,7 +80,10 @@
     @media (max-width: 1023px) {
         .wrapper {
             display: block;
-            padding: var(--s0) 33% var(--s0) var(--s0);
+            padding: var(--s0) 33% var(--s0) 0;
+        }
+        .text {
+            margin-bottom: var(--s-1);
         }
         .up {
             width: 33%;
@@ -86,6 +92,7 @@
             top: inherit;
             bottom: 0;
             background-size: 100px 56.75px;
+            background-position: right bottom;
         }
     }
 </style>

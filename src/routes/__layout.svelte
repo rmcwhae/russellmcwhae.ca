@@ -10,8 +10,8 @@
 <main class="wrapper">
     <Nav />
     <slot />
+    <Footer />
 </main>
-<Footer />
 
 <style type="scss">
     @import '../lib/scss/breakpoints.scss';
