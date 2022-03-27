@@ -98,21 +98,11 @@ h6 {
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
 }
-h1,
-h2,
-h4 {
-    font-style: normal;
-    font-family: 'ibm-plex-serif';
-}
 h1 {
     font-size: 3.052rem;
     line-height: 1;
-    font-weight: 300;
+    // font-weight: 300;
     margin: var(--s-1) 0;
-}
-h2,
-h4 {
-    font-weight: 400;
 }
 h2 {
     font-size: 1.953rem;

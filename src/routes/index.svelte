@@ -216,5 +216,6 @@
     }
     .boxes a {
         display: block;
+        font-weight: inherit;
     }
 </style>

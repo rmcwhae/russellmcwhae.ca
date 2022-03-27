@@ -7,8 +7,8 @@
 
 <Loading />
 
-<Nav />
 <main class="wrapper">
+    <Nav />
     <slot />
 </main>
 <Footer />

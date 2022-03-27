@@ -16,7 +16,7 @@
     }
 </script>
 
-<header>
+<header class="full-bleed">
     <div id="logo" class:active={mobileMenuOpen}>
         <a href="/" on:click={hideMenu}><Logo /></a>
     </div>
@@ -51,12 +51,15 @@
                         on:close={hideMenu}
                     />
                 </li>
+                <li id="mobile-switcher">
+                    <ThemeSwitcher />
+                </li>
             </ul>
-            <div id="switcher">
-                <ThemeSwitcher />
-            </div>
         </div>
     </nav>
+    <div id="desktop-switcher">
+        <ThemeSwitcher />
+    </div>
     <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
         <span class="icon-bar" />
         <span class="icon-bar" />
@@ -67,23 +70,23 @@
 
 <style type="scss">
     @import '../../scss/breakpoints.scss';
-
     header {
-        padding: var(--s0) var(--s0) var(--s1);
+        display: flex;
+        justify-content: space-between;
+        margin-top: var(--s1);
+        margin-bottom: var(--s2);
+        align-items: center;
     }
-
     nav {
         color: var(--high-contrast-color);
         font-weight: 600;
         font-size: 1rem;
-        z-index: 2;
     }
     :global(#logo svg) {
         height: 25px !important; /* TODO be less lazy than using !important */
     }
     #logo {
         z-index: 3;
-        // position: relative;
     }
     #logo a {
         display: block;
@@ -109,7 +112,7 @@
     .nav-menu {
         position: absolute;
         left: 0;
-        top: var(--s3);
+        top: 0;
         width: 100%;
         height: 0;
         padding: 0;
@@ -131,10 +134,6 @@
     .nav-menu li a {
         text-align: center;
     }
-    #switcher {
-        margin-top: var(--s2);
-    }
-
     .nav-toggle {
         z-index: 2;
         position: absolute;
@@ -179,7 +178,6 @@
     }
 
     /* ICON BARS ANIMATION */
-
     .nav-toggle.active .icon-bar:nth-child(1) {
         top: 32px;
         -webkit-transform: rotate(45deg);
@@ -195,50 +193,40 @@
         -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
+    #desktop-switcher {
+        display: none;
+    }
 
     @include for-tablet-landscape-up {
+        #desktop-switcher {
+            display: inherit;
+        }
+        #mobile-switcher {
+            display: none;
+        }
         :global(.no-scroll-mobile) {
             overflow: inherit;
         }
         header {
-            padding: var(--s2) var(--s3) var(--s5);
-        }
-        #logo {
-            position: absolute;
-            top: calc(var(--s3) + 8px);
+            // padding: var(--s2) var(--s3) var(--s5);
         }
         :global(#logo svg) {
-            height: 50px !important; /* TODO be less lazy than using !important */
+            height: 45px !important; /* TODO be less lazy than using !important */
         }
         .nav-toggle,
         .nav-overlay {
             display: none;
         }
         .nav-menu {
+            position: inherit;
             height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        #switcher {
-            position: absolute;
-            right: var(--s3);
-            top: 25px;
-            margin-top: 0;
-        }
         ul {
             display: flex;
             flex-direction: row;
-        }
-        .nav-menu {
-            position: absolute;
-            left: 0;
-            top: var(--s3);
-            width: 100%;
-            height: auto;
-            padding: 0;
-            overflow: hidden;
-            z-index: 2;
         }
     }
 </style>

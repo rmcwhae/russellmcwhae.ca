@@ -32,7 +32,7 @@
 
 <SEO title="Events" />
 
-<div class="flex items-center justify-between full-bleed mb-2">
+<div class="flex items-center justify-between full-bleed mb-s0">
     <h1>Events</h1>
     <Button href="/photography" text="Portfolio" left />
 </div>
