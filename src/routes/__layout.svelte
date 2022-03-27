@@ -18,7 +18,7 @@
 
     .wrapper {
         flex: 1;
-        margin: 0 var(--s0) var(--s2);
+        margin: 0 var(--s0);
         display: grid;
         grid-template-columns:
             1fr

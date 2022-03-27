@@ -112,7 +112,7 @@
     .nav-menu {
         position: absolute;
         left: 0;
-        top: 0;
+        top: var(--s3);
         width: 100%;
         height: 0;
         padding: 0;
@@ -137,7 +137,7 @@
     .nav-toggle {
         z-index: 2;
         position: absolute;
-        top: 0;
+        top: 7px;
         right: 0;
         width: 50px;
         height: 50px;
