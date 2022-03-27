@@ -96,8 +96,8 @@
         flex-direction: column;
         gap: var(--s-1);
         padding-bottom: var(--s0);
-        margin-bottom: var(--s4);
-        border-bottom: 1px solid var(--light-grey);
+        margin-bottom: var(--s2);
+        /* border-bottom: 1px solid var(--light-grey); */
     }
     h1,
     p {

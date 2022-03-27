@@ -17,7 +17,7 @@
 
 <SEO title="Journal" />
 
-<h1 class="mb-2">Journal</h1>
+<h1 class="mb-s0">Journal</h1>
 
 <p class="mb-2 big">
     Welcome to my online journal. This is a collection of sporadically

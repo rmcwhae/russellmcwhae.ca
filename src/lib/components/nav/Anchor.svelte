@@ -32,5 +32,6 @@
     a[aria-current],
     a:hover {
         border-color: var(--medium-grey);
+        text-decoration: none;
     }
 </style>
