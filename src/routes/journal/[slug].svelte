@@ -1,4 +1,5 @@
 <script context="module">
+    import { mode } from '$app/env'
     import { posts } from '$lib/services/posts'
 
     export async function load({ params }) {
@@ -25,11 +26,23 @@
             .filter((post) => post.category === category)
             .slice(0, 4)
 
+        let views = 0
+
+        try {
+            const json = await fetch(
+                '/api/register-hit?slug=' + slug + '&mode=' + mode
+            ).then((r) => r.json())
+            views = json.hits
+        } catch (error) {
+            console.error(error)
+        }
+
         return {
             props: {
                 title,
                 date,
                 category,
+                views,
                 readingTime,
                 description,
                 relatedPosts,
@@ -49,6 +62,7 @@
 
     export let title
     export let date
+    export let views
     export let category
     export let description
     export let readingTime
@@ -73,6 +87,8 @@
             <span class="nowrap">{readingTime.words} words</span>
             &middot;
             <span class="nowrap">{readingTime.text}</span>
+            &middot;
+            <span class="nowrap">{views} views</span>
         </div>
     </header>
 

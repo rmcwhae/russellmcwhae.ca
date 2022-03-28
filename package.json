@@ -44,6 +44,7 @@
     },
     "type": "module",
     "dependencies": {
-        "dateformat": "^5.0.2"
+        "dateformat": "^5.0.2",
+        "faunadb": "^4.5.2"
     }
 }
