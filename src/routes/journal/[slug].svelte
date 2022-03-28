@@ -2,7 +2,7 @@
     import { mode } from '$app/env'
     import { posts } from '$lib/services/posts'
 
-    export async function load({ params }) {
+    export async function load({ url, params, fetch }) {
         const { slug } = params
         const index = posts.findIndex((post) => slug === post.slug)
 
@@ -30,7 +30,7 @@
 
         try {
             const json = await fetch(
-                '/api/register-hit?slug=' + slug + '&mode=' + mode
+                url.origin + '/api/register-hit?slug=' + slug + '&mode=' + mode
             ).then((r) => r.json())
             views = json.hits
         } catch (error) {
