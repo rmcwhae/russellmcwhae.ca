@@ -70,6 +70,8 @@
     export let readingTime
     export let component
     export let relatedPosts
+
+    const viewText = views === 1 ? 'view' : 'views'
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -91,7 +93,7 @@
             <span class="nowrap">{readingTime.text}</span>
             {#if views}
                 &middot;
-                <span class="nowrap">{views} views</span>
+                <span class="nowrap">{views} {viewText}</span>
             {/if}
         </div>
     </header>
