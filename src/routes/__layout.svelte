@@ -24,6 +24,8 @@
             1fr
             min($breakpoint-tablet-landscape-min, 100%)
             1fr;
+        grid-template-rows: auto 1fr auto;
+
         @include for-tablet-landscape-up {
             margin-left: var(--s3);
             margin-right: var(--s3);
