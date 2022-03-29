@@ -1,6 +1,8 @@
 <script context="module">
     import { posts } from '$lib/services/posts'
 
+    export const prerender = false // Necessary for the hit counter
+
     export async function load({ params, fetch }) {
         const { slug } = params
         const index = posts.findIndex((post) => slug === post.slug)
