@@ -1,8 +1,7 @@
 <script context="module">
-    import { mode } from '$app/env'
     import { posts } from '$lib/services/posts'
 
-    export async function load({ url, params, fetch }) {
+    export async function load({ params, fetch }) {
         const { slug } = params
         const index = posts.findIndex((post) => slug === post.slug)
 
@@ -26,16 +25,24 @@
             .filter((post) => post.category === category)
             .slice(0, 4)
 
-        const json = await fetch(`/journal/${slug}.json?mode=${mode}`)
+        let views = null
 
-        const { hits } = await json.json()
+        try {
+            const json = await fetch(`/journal/${slug}.json`).then((response) =>
+                response.json()
+            )
+            const { hits } = json
+            views = hits
+        } catch (error) {
+            console.log('error')
+        }
 
         return {
             props: {
                 title,
                 date,
                 category,
-                views: hits,
+                views,
                 readingTime,
                 description,
                 relatedPosts,
@@ -80,8 +87,10 @@
             <span class="nowrap">{readingTime.words} words</span>
             &middot;
             <span class="nowrap">{readingTime.text}</span>
-            &middot;
-            <span class="nowrap">{views} views</span>
+            {#if views}
+                &middot;
+                <span class="nowrap">{views} views</span>
+            {/if}
         </div>
     </header>
 

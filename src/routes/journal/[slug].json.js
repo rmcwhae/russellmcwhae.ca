@@ -33,7 +33,7 @@ export async function get({ params }) {
         q.Get(q.Match(q.Index('hits_by_slug'), slug))
     )
 
-    if (mode === 'production') {
+    if (mode !== 'development') {
         await client.query(
             q.Update(document.ref, {
                 data: {
