@@ -26,23 +26,16 @@
             .filter((post) => post.category === category)
             .slice(0, 4)
 
-        let views = 0
+        const json = await fetch(`/journal/${slug}.json?mode=${mode}`)
 
-        try {
-            const json = await fetch(
-                url.origin + '/api/register-hit?slug=' + slug + '&mode=' + mode
-            ).then((r) => r.json())
-            views = json.hits
-        } catch (error) {
-            console.error(error)
-        }
+        const { hits } = await json.json()
 
         return {
             props: {
                 title,
                 date,
                 category,
-                views,
+                views: hits,
                 readingTime,
                 description,
                 relatedPosts,

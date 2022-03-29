@@ -1,16 +1,18 @@
 import faunadb from 'faunadb'
+import { FAUNA_SECRET_KEY } from '$root/env'
+import { mode } from '$app/env'
 
-export default async function handler(req, res) {
-    const { slug, mode } = req.query
+export async function get({ params }) {
+    const { slug } = params
     const q = faunadb.query
     const client = new faunadb.Client({
-        secret: process.env.FAUNA_SECRET_KEY,
+        secret: FAUNA_SECRET_KEY,
     })
 
     if (!slug) {
-        return res.status(400).json({
-            message: 'Article slug not provided',
-        })
+        return {
+            status: 404,
+        }
     }
 
     // Check and see if the doc exists.
@@ -39,9 +41,12 @@ export default async function handler(req, res) {
                 },
             })
         )
+        document.data.hits += 1
     }
 
-    return res.status(200).json({
-        hits: document.data.hits,
-    })
+    return {
+        body: {
+            hits: document.data.hits,
+        },
+    }
 }
