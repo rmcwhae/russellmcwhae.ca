@@ -15,6 +15,7 @@
 <a
     sveltekit:prefetch
     {href}
+    class="hover-underline-animation"
     on:click={handleClick}
     aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}</a
@@ -22,16 +23,15 @@
 
 <style>
     a {
-        color: var(--high-contrast-color);
+        font-size: 1.2em;
         text-decoration: none;
+        color: var(--text-color);
         display: block;
-        padding: var(--s-1) var(--s1);
-        border-radius: 50px;
-        border: 1px solid transparent;
+        margin: var(--s-1) var(--s0);
     }
     a[aria-current],
     a:hover {
-        border-color: var(--medium-grey);
+        color: var(--high-contrast-color);
         text-decoration: none;
     }
 </style>
