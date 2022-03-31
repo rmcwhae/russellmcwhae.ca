@@ -4,7 +4,7 @@
     "description": "Russell McWhae’s portfolio",
     "scripts": {
         "dev": "svelte-kit dev --port 4000 --host",
-        "build": "rm -rf build && mkdir build && svelte-kit build",
+        "build": "rm -rf .vercel_build_output && svelte-kit build",
         "update": "npm i -D @sveltejs/kit@next && npm i -D @sveltejs/adapter-vercel@next",
         "preview": "svelte-kit preview --port 4000",
         "kill": "rm -rf node_modules",
@@ -44,6 +44,7 @@
     },
     "type": "module",
     "dependencies": {
-        "dateformat": "^5.0.2"
+        "dateformat": "^5.0.2",
+        "faunadb": "^4.5.2"
     }
 }

@@ -15,6 +15,8 @@
     export let message
 </script>
 
-<h1>{title + ' Error'}</h1>
+<section>
+    <h1>{title + ' Error'}</h1>
 
-<p>{message}</p>
+    <p>{message}</p>
+</section>

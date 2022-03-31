@@ -1,7 +1,9 @@
 <script context="module">
     import { posts } from '$lib/services/posts'
 
-    export async function load({ params }) {
+    export const prerender = false // Necessary for the hit counter
+
+    export async function load({ params, fetch }) {
         const { slug } = params
         const index = posts.findIndex((post) => slug === post.slug)
 
@@ -25,11 +27,24 @@
             .filter((post) => post.category === category)
             .slice(0, 4)
 
+        let views = null
+
+        try {
+            const json = await fetch(`/journal/${slug}.json`).then((response) =>
+                response.json()
+            )
+            const { hits } = json
+            views = hits
+        } catch (error) {
+            console.log('error')
+        }
+
         return {
             props: {
                 title,
                 date,
                 category,
+                views,
                 readingTime,
                 description,
                 relatedPosts,
@@ -49,11 +64,14 @@
 
     export let title
     export let date
+    export let views
     export let category
     export let description
     export let readingTime
     export let component
     export let relatedPosts
+
+    const viewText = views === 1 ? 'view' : 'views'
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -73,6 +91,10 @@
             <span class="nowrap">{readingTime.words} words</span>
             &middot;
             <span class="nowrap">{readingTime.text}</span>
+            {#if views}
+                &middot;
+                <span class="nowrap">{views} {viewText}</span>
+            {/if}
         </div>
     </header>
 

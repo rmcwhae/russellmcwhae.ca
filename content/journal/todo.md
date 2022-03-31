@@ -7,17 +7,12 @@ draft: 1
 category: TODO
 ---
 
-## Launch checklist
-
--   Populate ImageKit captions
--   Events pagination 500 error only on production…
-
 ## Later Ideas
 
+-   Populate ImageKit captions¬
+-   Events pagination 500 error only on production…
 -   Try https://atroposjs.com/
--   Instead of next/prev articles, try grouping by category
 -   ~~Animate logo~~
--   Analytics
 -   Setup automated testing
 -   Try css color-mod()
 -   Build `<category>` page for journal entries; journal hero images?
