@@ -128,15 +128,15 @@ The tech industry has been through many periods. After the dot-com bubble of the
 
 On its way to ubiquity, certain trends emerged in tech: the cult of the leader (and reality-distortion fields), nerd culture, patriarchy, and financial excess, among others. HBO’s show _Silicon Valley_ satirizes many of these ideas and is worth a few laughs. In season one, episode four, tech investor Peter Gregory’s mispronunciation of rapper Flo Rida’s name (I won’t spoil it if you haven’t seen it yet) while thanking him in front of a boozy foundation party is utterly fantastic.
 
-Readers of my website will know, however, of my preference for the written word over the TV screen. As such, my book recommendation on this topic is _Uncanny Valley: A Memoir_ by Anna Wiener, the autobiography of an English graduate who worked in non-developer roles at a few Silicon Valley companies. The book is written in an unstructured format, with many short, untitled anecdotes providing insight into Silicon Valley culture, mentioning companies with thinly veiled descriptions such as “the social network everyone hates,” and the “open-source company.” Here are a few memorable passages:
+Readers of my website will know, however, of my preference for the written word over the TV screen. As such, my book recommendation on this topic is _Uncanny Valley: A Memoir_ by Anna Wiener, the autobiography of a liberal arts graduate who worked in non-developer roles at a few Silicon Valley companies. The book is written in an unstructured format, with many short, untitled anecdotes providing insight into Silicon Valley culture, mentioning companies with thinly veiled descriptions such as “the social network everyone hates,” and the “open-source company.” Here are a few memorable passages:
 
 > As [the CTO and I] walked back to the office, I told him about my friends in New York, and how they didn’t seem to understand the appeal of working in technology. In the elevator, we joked about building an app that might interest them, one that would algorithmically suggest pairings of cocktail recipes and literature, according to a given book’s mood, era, and themes. I returned to my desk and didn’t think about it again—until the following afternoon, when the CTO messaged me in the company chat room and told me he had built it.
 
-***
+---
 
 > San Francisco had tipped into a full-blown housing crisis. Whenever the media reported that a new tech company had filed an S-1 with the SEC, people started comparing notes on tenants’ rights. Buy a house before the next IPO, my coworkers joked. It wasn’t a joke because it was funny; it was a joke because the overnight-wealthy were bidding 60 percent over asking on million-dollar starter homes, and paying in cash.
 
-***
+---
 
 > At a Male Allies Plenary Panel, a group of women engineers circulated hundreds of handmade bingo boards among attendees. Inside each square was a different indictment: Mentions his mother. Says “That would never happen in my company.” Wearables. Asserts another male executive’s heart is in the right place. Says feminist activism scares women away from tech. At the center of the board was a square that just said Pipeline. I had heard the pipeline argument, that there simply weren’t enough women and underrepresented minorities in STEM fields to fill open roles. Having been privy to the hiring process, I found it incredibly suspect.
 >
