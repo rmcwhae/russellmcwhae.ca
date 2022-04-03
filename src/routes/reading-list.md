@@ -29,6 +29,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _The Death of Ivan Ilyich_ by Leo Tolstoy
 -   _One Green Bottle_ by Elizabeth Coxhead
 -   _Brave New World Revisited_ by Aldous Huxley
 -   _Brave New World_ by Aldous Huxley
@@ -106,6 +107,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
 -   _Being Mortal_ by Atul Gawande
 -   _The Checklist Manifesto_ by Atul Gawande
+-   _One Day in the Life of Ivan Denisovich_ by Aleksandr Solzhenitsyn
 
 ## 2015
 
