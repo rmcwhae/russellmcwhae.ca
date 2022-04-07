@@ -1,17 +1,14 @@
 <script>
     import { onMount } from 'svelte'
-    import 'photoswipe/dist/photoswipe.css'
-
+    import PhotoSwipeLightbox from 'photoswipe/lightbox?client'
+    import PhotoSwipe from 'photoswipe?client'
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
+    import 'photoswipe/dist/photoswipe.css'
 
     onMount(async () => {
-        const PhotoSwipeLightbox = await import(
-            'photoswipe/dist/photoswipe-lightbox.esm.js'
-        )
-        const PhotoSwipe = await import('photoswipe/dist/photoswipe.esm.js')
-        const lightbox = new PhotoSwipeLightbox.default({
-            pswpModule: PhotoSwipe.default,
+        const lightbox = new PhotoSwipeLightbox({
+            pswpModule: PhotoSwipe,
             gallery: '#gallery',
             children: 'a',
             zoomSVG: '',
