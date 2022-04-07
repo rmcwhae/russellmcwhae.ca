@@ -32,6 +32,7 @@
     <nav>
         <ul>
             <li class={currentPage === 1 ? 'disabled' : ''}>
+                <!-- svelte-ignore a11y-missing-attribute -->
                 <a
                     on:click={() => changePage(currentPage - 1)}
                     aria-hidden="true"
@@ -40,10 +41,12 @@
             </li>
             {#each range(lastPage, 1) as page}
                 <li class={page === currentPage ? 'active' : ''}>
+                    <!-- svelte-ignore a11y-missing-attribute -->
                     <a on:click={() => changePage(page)}>{page}</a>
                 </li>
             {/each}
             <li class={currentPage === lastPage ? 'disabled' : ''}>
+                <!-- svelte-ignore a11y-missing-attribute -->
                 <a
                     aria-hidden="true"
                     on:click={() => changePage(currentPage + 1)}
