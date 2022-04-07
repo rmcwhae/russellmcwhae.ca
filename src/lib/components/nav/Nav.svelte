@@ -137,9 +137,6 @@
         align-self: center;
         padding: var(--s-1) 0;
     }
-    .nav-menu li a {
-        text-align: center;
-    }
     .nav-toggle {
         z-index: 2;
         position: absolute;
