@@ -119,25 +119,9 @@
         gap: var(--s-1);
         padding-bottom: var(--s0);
         margin-bottom: var(--s2);
-        /* border-bottom: 1px solid var(--light-grey); */
     }
     h1,
     p {
         margin: 0;
-    }
-    nav {
-        margin-top: var(--s4);
-        flex-wrap: wrap;
-        gap: var(--s4);
-    }
-    .left {
-        margin-right: auto;
-    }
-    .right {
-        text-align: right;
-        margin-left: auto;
-    }
-    .gap {
-        gap: var(--s0);
     }
 </style>
