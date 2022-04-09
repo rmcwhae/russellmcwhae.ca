@@ -43,7 +43,7 @@ In the Sopranos episode “[D-Girl](<https://en.wikipedia.org/wiki/D-Girl_(The_S
 
 I have a running theory that the quality of a given TV show is inversely proportional to the number of episodes before the cast starts sleeping with each other. If there isn’t enough going on that the writers need to resort to the usual Hollywood tropes within a few episodes, perhaps the show’s premise wasn’t all that strong to begin with.
 
-Another show I would recommend is _Freaks and Geeks_, which unfortunately—or perhaps _fortunately_, given this piece’s thesis of watching less TV—lasted only a single season. It follows siblings Lindsay and Sam Weir as they navigate high school in suburban Detroit in the 80’s. Without getting into any more detail, understand that this was a show that I would pay money to watch again (well, a few bucks, anyway). It’s also one of very few shows in recent memory to give a reasonable treatment of Christianity in pop culture (perhaps I am biased here).
+Another show I would recommend is _Freaks and Geeks_, which unfortunately—or perhaps _fortunately_, given this piece’s thesis of watching less TV—lasted only a single season. It follows siblings Lindsay and Sam Weir as they navigate high school in suburban Detroit in the 80’s. Without getting into any more detail, understand that this was a show that I would pay money to watch again (a few bucks, anyway). It’s also one of very few shows in recent memory to give a reasonable treatment of Christianity in pop culture (perhaps I am biased here).
 
 Postman describes his book _Amusing Ourselves to Death_ as “an inquiry into and a lamentation about the most significant American cultural fact of the second half of the twentieth century: the decline of the Age of Typography and the ascendency of the Age of Television” (8). He warns us that:
 
@@ -81,7 +81,7 @@ The more you read, the more you’ll understand inter-textural allusions. In _On
 
 > I liked my story. I liked my characters. And still there came a point when couldn’t write any longer because I didn’t know what to write. Like Pilgrim in John Bunyan’s epic, I had come to a place where the straight way was lost. I wasn’t the first writer to discover this awful place, and I’m a long way from being the last; this is the land of writer’s block.
 
-Interestingly enough, my church was doing a book study of _The Pilgrim’s Progress_, Bunyan’s Christian allegorical work written in 1678, at the very same time. Such a cool reading moment!
+Interestingly enough, my church was doing a book study of _The Pilgrim’s Progress_, Bunyan’s Christian allegorical work written in 1678, at the very same time.
 
 How often have terrific novels fallen flat after being adapted for the screen? A common lament for books-turned-movies is that “the book was better than the movie.” Recently, Apple TV+ started promoting _The Mosquito Coast_, a TV series inspired by the 1981 Paul Theroux novel of the same name. Though my Apple TV+ subscription had long since lapsed, I could preview the first episode for free (it would have to have been _really_ good for me to consider resubscribing to Apple TV+). Prior to this, I read an e-book version of the 1981 novel in order to understand the original story before comparing it to its TV adaptation.
 
