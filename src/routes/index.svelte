@@ -53,7 +53,7 @@
 
 <div class="home restricted-width">
     <div class="hero border-bottom">
-        <div class="mb-s0">
+        <div class="mb-2">
             <h1>Hi, I’m Russell.</h1>
             <p class="big mt-2 mb-2 char-limit">
                 I’m a front-end-biased web developer with a background in
