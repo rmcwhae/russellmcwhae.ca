@@ -22,7 +22,7 @@
         width: 100%;
         max-width: $breakpoint-xl;
 
-        @include for-tablet-landscape-up {
+        @include for-tablet-portrait-up {
             padding: 0 var(--s2);
         }
     }
