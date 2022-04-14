@@ -222,5 +222,9 @@
     .boxes a {
         display: block;
         font-weight: inherit;
+        font-style: italic;
+    }
+    .boxes a h4 {
+        font-style: normal;
     }
 </style>

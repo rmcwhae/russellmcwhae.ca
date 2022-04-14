@@ -12,14 +12,14 @@ a {
     padding: var(--s-1) var(--s1);
     text-decoration: none;
     border: 1px solid var(--light-grey);
-    border-bottom: 3px solid var(--light-grey);
     border-radius: var(--circle-radius);
     box-shadow: none;
     color: var(--high-contrast-color);
+    position: relative;
 
     &:hover {
-        border-color: var(--medium-grey);
         box-shadow: none;
+        color: var(--text-color);
         text-decoration: none;
     }
 }
