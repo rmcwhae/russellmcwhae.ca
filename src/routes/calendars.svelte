@@ -6,7 +6,7 @@
 
 <SEO title="Calendars" />
 
-<div class="full-bleed mb-2">
+<div class="mb-2">
     <h1>Calendars</h1>
     <p class="mt-1 mb-1 big char-limit">
         2022 Calendars are now sold out. Thanks to everyone who ordered them!
@@ -16,31 +16,29 @@
     </Calendar>
 </div>
 
-<div class="full-bleed">
-    <h2>Previous Calendars</h2>
-    <div class="two-col-grid">
-        <Calendar filename="2021calendar.pdf">
-            <Image src="/calendar-images/2021.jpg" />
-        </Calendar>
-        <Calendar filename="2020calendar.pdf">
-            <Image src="/calendar-images/2020.jpg" />
-        </Calendar>
-        <Calendar filename="2019calendar.pdf">
-            <Image src="/calendar-images/2019.jpg" />
-        </Calendar>
-        <Calendar filename="2018calendar.pdf">
-            <Image src="/calendar-images/2018.jpg" />
-        </Calendar>
-        <Calendar filename="2017calendar.pdf">
-            <Image src="/calendar-images/2017.jpg" />
-        </Calendar>
-        <Calendar filename="2016calendar.pdf">
-            <Image src="/calendar-images/2016.jpg" />
-        </Calendar>
-        <Calendar filename="2015calendar.pdf">
-            <Image src="/calendar-images/2015.jpg" />
-        </Calendar>
-    </div>
+<h2>Previous Calendars</h2>
+<div class="two-col-grid">
+    <Calendar filename="2021calendar.pdf">
+        <Image src="/calendar-images/2021.jpg" />
+    </Calendar>
+    <Calendar filename="2020calendar.pdf">
+        <Image src="/calendar-images/2020.jpg" />
+    </Calendar>
+    <Calendar filename="2019calendar.pdf">
+        <Image src="/calendar-images/2019.jpg" />
+    </Calendar>
+    <Calendar filename="2018calendar.pdf">
+        <Image src="/calendar-images/2018.jpg" />
+    </Calendar>
+    <Calendar filename="2017calendar.pdf">
+        <Image src="/calendar-images/2017.jpg" />
+    </Calendar>
+    <Calendar filename="2016calendar.pdf">
+        <Image src="/calendar-images/2016.jpg" />
+    </Calendar>
+    <Calendar filename="2015calendar.pdf">
+        <Image src="/calendar-images/2015.jpg" />
+    </Calendar>
 </div>
 
 <article class="restricted-width">

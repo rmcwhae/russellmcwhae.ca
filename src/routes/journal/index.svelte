@@ -17,12 +17,14 @@
 
 <SEO title="Journal" />
 
-<h1 class="mb-s0">Journal</h1>
+<div class="restricted-width">
+    <h1 class="mb-s0">Journal</h1>
 
-<p class="mb-2 big">
-    Welcome to my online journal. This is a collection of sporadically
-    published, generally long-winded thoughts on topics that are important to
-    me. I hope you’ll join me for a glimpse into my head.
-</p>
+    <p class="mb-2 big">
+        Welcome to my online journal. This is a collection of sporadically
+        published, generally long-winded thoughts on topics that are important
+        to me. I hope you’ll join me for a glimpse into my head.
+    </p>
 
-<JournalEntrySet {posts} />
+    <JournalEntrySet {posts} />
+</div>

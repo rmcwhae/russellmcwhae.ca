@@ -23,12 +23,12 @@
 
 <SEO title="Events" />
 
-<div class="flex items-center justify-between full-bleed mb-s0">
+<div class="flex items-center justify-between mb-s0">
     <h1>Events</h1>
     <Button href="/photography" text="Portfolio" left />
 </div>
 
-<div class="three-col-grid full-bleed">
+<div class="three-col-grid">
     {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}

@@ -103,13 +103,15 @@
     </main>
 </article>
 
-<h2 class="mt-5 mb-3">Related Entries</h2>
-<JournalEntrySet posts={relatedPosts} />
+<div class="restricted-width">
+    <h2 class="mt-5 mb-3">Related Entries</h2>
+    <JournalEntrySet posts={relatedPosts} />
 
-<div class="mt-3">
-    <ButtonSet>
-        <Button href="/journal" text="All entries" right />
-    </ButtonSet>
+    <div class="mt-3">
+        <ButtonSet>
+            <Button href="/journal" text="All entries" right />
+        </ButtonSet>
+    </div>
 </div>
 
 <style>

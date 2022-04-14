@@ -32,24 +32,16 @@
 
 <SEO title="Projects" />
 
-<div class="full-bleed">
-    <h1 class="mb-3">Projects</h1>
+<h1 class="mb-3">Projects</h1>
 
-    <div class="flow">
-        <Project project={projects[0]}>
-            <Image src="/projects/avysavvy.jpg" alt={projects[0].title} />
-        </Project>
-        <Project project={projects[1]} reverse>
-            <Image
-                src="/projects/dunnlegalservices.jpg"
-                alt={projects[1].title}
-            />
-        </Project>
-        <Project project={projects[2]}>
-            <Image
-                src="/projects/piratebattleship.jpg"
-                alt={projects[2].title}
-            />
-        </Project>
-    </div>
+<div class="flow">
+    <Project project={projects[0]}>
+        <Image src="/projects/avysavvy.jpg" alt={projects[0].title} />
+    </Project>
+    <Project project={projects[1]} reverse>
+        <Image src="/projects/dunnlegalservices.jpg" alt={projects[1].title} />
+    </Project>
+    <Project project={projects[2]}>
+        <Image src="/projects/piratebattleship.jpg" alt={projects[2].title} />
+    </Project>
 </div>

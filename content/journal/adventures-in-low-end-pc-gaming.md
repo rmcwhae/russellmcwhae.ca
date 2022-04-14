@@ -11,7 +11,7 @@ category: Tech
   import Image from 'svimg'
 </script>
 
-<Image src="/journal-images/arma3nv.jpg" alt="Arma III screenshot" class="wide" />
+<Image src="/journal-images/arma3nv.jpg" alt="Arma III screenshot" />
 
 **3:56 AM, July 24, 2035**  
 _Inland Malden, a fictional Mediterranean Island_

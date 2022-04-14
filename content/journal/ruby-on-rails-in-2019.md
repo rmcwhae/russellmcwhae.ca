@@ -11,7 +11,7 @@ category: Tech
     import Caption from '$lib/components/images/Caption.svelte'
 </script>
 
-<Image src="/journal-images/rails-1.jpg" alt="Ruby on Rails" class="wide" />
+<Image src="/journal-images/rails-1.jpg" alt="Ruby on Rails" />
 
 ## Table of Contents
 

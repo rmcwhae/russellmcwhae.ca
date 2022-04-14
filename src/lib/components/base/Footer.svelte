@@ -11,7 +11,7 @@
     }
 </script>
 
-<footer class="full-bleed">
+<footer>
     <div class="up" on:click={topFunction} title="Scroll to top" />
     <div class="wrapper">
         <div class="text">

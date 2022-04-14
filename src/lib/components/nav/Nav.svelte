@@ -16,7 +16,7 @@
     }
 </script>
 
-<header class="full-bleed">
+<header>
     <div id="logo" class:active={mobileMenuOpen}>
         <a href="/" on:click={hideMenu}><Logo /></a>
     </div>

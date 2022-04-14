@@ -52,7 +52,7 @@
     export let images
 </script>
 
-<div id="gallery" class="full-bleed">
+<div id="gallery">
     {#key images[0]}
         <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
     {/key}

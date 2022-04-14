@@ -12,7 +12,7 @@ category: Tech
   import Caption from '$lib/components/images/Caption.svelte'
 </script>
 
-<Image src="/journal-images/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W" class="wide" />
+<Image src="/journal-images/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W" />
 
 ## Table of Contents
 
