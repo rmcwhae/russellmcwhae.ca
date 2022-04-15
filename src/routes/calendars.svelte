@@ -11,13 +11,13 @@
     <p class="mt-1 mb-1 big char-limit">
         2022 Calendars are now sold out. Thanks to everyone who ordered them!
     </p>
-    <Calendar filename="2022calendar.pdf">
-        <Image src="/calendar-images/2022.jpg" />
-    </Calendar>
 </div>
 
 <h2>Previous Calendars</h2>
 <div class="two-col-grid">
+    <Calendar filename="2022calendar.pdf">
+        <Image src="/calendar-images/2022.jpg" />
+    </Calendar>
     <Calendar filename="2021calendar.pdf">
         <Image src="/calendar-images/2021.jpg" />
     </Calendar>
