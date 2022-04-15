@@ -225,6 +225,7 @@
         gap: var(--s0);
     }
     .boxes a {
+        // Via: https://codepen.io/dev_loop/pen/mdeopLN
         display: block;
         font-weight: inherit;
         font-style: italic;
