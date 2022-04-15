@@ -307,7 +307,7 @@
 
     .boxes a h4 {
         font-style: normal;
-        margin-bottom: var(--s-5);
+        margin-bottom: 0;
     }
     .boxes a:hover {
         text-decoration: none;
