@@ -17,17 +17,25 @@
     @import '../lib/scss/breakpoints.scss';
 
     .wrapper {
-        margin: 0 auto;
-        padding: 0 var(--s0);
-        width: 100%;
-        max-width: $breakpoint-xl;
+        margin: 0 var(--s0);
+        display: grid;
+        grid-template-columns:
+            1fr
+            min($breakpoint-xl, 100%)
+            1fr;
+        min-height: 100%;
+        grid-template-rows: auto 1fr auto;
 
         @include for-tablet-portrait-up {
-            padding: 0 var(--s2);
+            margin: 0 var(--s1);
         }
+    }
+    :global(.wrapper > *) {
+        grid-column: 2;
     }
     :global(.restricted-width) {
         max-width: $breakpoint-tablet-landscape-min;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>

@@ -92,7 +92,7 @@
         }
     }
     #logo {
-        z-index: 3;
+        z-index: 13;
     }
     #logo a {
         display: block;
@@ -123,7 +123,7 @@
         height: 0;
         padding: 0;
         overflow: hidden;
-        z-index: 2;
+        z-index: 12;
     }
     .nav-menu.active {
         height: auto;
@@ -138,7 +138,7 @@
         padding: var(--s-1) 0;
     }
     .nav-toggle {
-        z-index: 2;
+        z-index: 12;
         position: absolute;
         top: 7px;
         right: 0;
@@ -148,7 +148,7 @@
     }
     span.icon-bar {
         position: absolute;
-        right: var(--s0);
+        right: var(--s1);
         display: block;
         width: 26px;
         height: 1px;
@@ -175,7 +175,7 @@
         background-color: var(--background-color-transparent);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
-        z-index: 1;
+        z-index: 11;
         opacity: 0;
         visibility: hidden;
     }
