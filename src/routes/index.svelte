@@ -238,12 +238,12 @@
     }
     .boxes a {
         text-decoration: none;
+        font-weight: 400;
         display: block;
         padding: var(--s-1) var(--s3) var(--s-3) 0;
     }
 
     .boxes a h4 {
-        font-style: normal;
         margin-bottom: 0;
     }
     .boxes a:hover {
