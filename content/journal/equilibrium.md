@@ -131,23 +131,23 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 
 Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.” (If you are anyone who has spent time outside, this novel is a must read.)
 
-Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families, who have had it both ways. (Perhaps it is easier now than in 1950’s England.) Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time and eventually raised three kids. Stories like this resonated quite strongly with me in my early and mid twenties.
+Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families, who have therefore had it both ways. (Perhaps it is easier now than in 1950’s England.) Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time while eventually raising three kids. Stories like this resonated quite strongly with me in my early and mid twenties.
 
-Success stories are more the exception than the rule in the outdoors, however. Many dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
+Success stories are more the exception than the norm in the outdoors, however. Many dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
 
 > I graduated from college, by the skin of my teeth, in December, 1975. I spend the next eight years employed as an itinerant carpenter and commercial fisherman in Colorado, Seattle, and Alaska, living in studio apartments with cinder-block walls, driving a hundred-dollar car, working just enough to make rent and fund the next climbing trip. Eventually it began to wear thin. I found myself lying awake nights reliving all the close scrapes I’d had on the heights. Sawing joists in the rain at some muddy construction site, my thoughts would increasingly turn to college classmates who were raising families, investing in real estate, buying lawn furniture, assiduously amassing wealth. (xii)
 
 Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing.
 
-I’ve largely glossed over a major factor that can instantly flip outdoor ambition on its head: accidents. A life-changing injury, or losing a loved one to an avalanche, can instantly upend motivation. I hope all my discussion of changing ski motivation from a perspective of good health does not come across as insensitive here.
+I’ve largely glossed over a major factor that can instantly flip outdoor drive on its head: accidents. A life-changing injury, or losing a loved one to an avalanche, can instantly upend ambition. I hope all my discussion of changing ski motivation from a perspective of good health does not come across as insensitive here.
 
 ---
 
-To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade, while also building a career.
+To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
 
-Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, things seem to have reached a state of equilibrium: my desire to spend time outside has met with opposition from other pursuits. Perhaps all this windy philosophizing arrives at no more hackneyed a conclusion than “everything in moderation.”
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with stronger pull from other pursuits. Perhaps all this windy philosophizing arrives at no more hackneyed a conclusion than “everything in moderation.”
 
-The thing with chemical reactions is that if you combine the right reactants, you can produce valuable white powder.
+The thing with chemical reactions, though, is that if you combine the right reactants, you can produce valuable white powder.
 
 ## Ideas
 
