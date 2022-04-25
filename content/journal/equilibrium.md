@@ -27,7 +27,7 @@ Upon starting my first full-time engineering job post graduation, I rediscovered
 
 In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with a ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
 
-We climbed together that summer, teaching ourselves the basics of sport and trad climbing, attempting a few different mountaineering objectives (including a doomed attempt of the Runde Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
+We climbed together that summer, teaching ourselves the basics of sport and trad climbing, attempting a few different mountaineering objectives (including a doomed attempt of the Rundle Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
 
 Having long since mastered downhill and nordic skiing, backcountry skiing was the logical next step in my winter outdoor pursuits. Over the course of next number of seasons, I took courses, went on guided trips, and built up my gear, fitness, and experience. Young, fit, and keen, I set off to find adventure in the mountains. Starting with day trips in benign terrain, I gradually worked my way up to ski-mountaineering and multi-day, tent-based ski traverses, where covering a lot of horizontal ground efficiently, as in nordic skiing, is paramount. I dreamed to ski bigger and better objectives, and to see just how far I could take it.
 
@@ -61,7 +61,7 @@ I stowed my skis on my pack and began post-holing into waist-deep snow, punching
 
 My hazard assessment had been that if the snow in the gully slid, it would likely have a small volume, and I’d go for a short ride down the centre of the broad ridge—hardly a terrain trap. The ridge had a low-enough angle (we’d been switchbacking up it on skins until that point) that I was not concerned about rocketing down it if the snow failed. (Or worse—tomahawking.)
 
-Nearing the middle of my boot-pack, the wind pocket inside the gully released (maybe a size 0.5). All around me, the formerly stiff snow unzippered into large chunks, like a taught guitar string snapping.
+Nearing the middle of my boot-pack, the wind pocket inside the gully released (maybe a size 0.5). All around me, the formerly stiff snow unzipped into large chunks, like a taught guitar string snapping.
 
 Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, like an inverted beetle. I distinctly remember trying to sense my velocity and if it was exponentially increasing. Thankfully, I came to a stop, unburied, where the slope-angle relaxed a few meters down.
 
@@ -85,19 +85,23 @@ But why the drop in ski ambition?
 
 Let’s briefly return to my pre-touring days of pumping iron and eating chicken breasts. In high school chemistry we studied the concept of equilibrium. When chemical reactants are mixed, they react to form different products. As chemical reactions are reversible, this is not a one-way process. In a given reaction, there will thus be a rate of forward reaction (reactants generating products) and a rate of reverse reaction (products generating reactants). When these rates are equal, the system is said to be in dynamic equilibrium, where the concentrations of reactants and products appear not to change in time.
 
-As an introduction to this concept, we performed an experiment using graduated cylinders, drinking straws, and water. One cylinder started with 50 ml of water (A), and the other was empty (B; both had identical volumes). Then, placing a drinking straw in each cylinder down to the bottom, we sealed the tops of each straw with our fingers to capture the water (air in the case of cylinder B), then emptied each straw into the opposite cylinder that it came from. After one round, about 5 ml of water transferred from cylinder A to B, with none in the other direction. In round two, an amount less than 5 ml came out of cylinder A’s 45 ml, and a minute amount came from the 5 ml now in cylinder B. After enough rounds, the transfer between A and B equalizes, and continued transfer of water between both cylinders does not affect the volume in either. The liquid transfer serves as an anology for chemical reaction rate: highly variable in the beginning, with greather forward bias, that eventually reaches dynamic equilibrium in time.
+As an introduction to this concept, we performed an experiment using graduated cylinders, drinking straws, and water. One cylinder started with 50 ml of water (A), and the other was empty (B; both had identical volumes). Then, placing a drinking straw in each cylinder down to the bottom, we sealed the tops of each straw with our fingers to capture the water (air in the case of cylinder B), then emptied each straw into the opposite cylinder that it came from. After one round, about 5 ml of water transferred from cylinder A to B, with none in the other direction. In round two, an amount less than 5 ml came out of cylinder A’s 45 ml, and a minute amount came from the 5 ml now in cylinder B. After enough rounds, the transfer between A and B equalizes, and continued transfer of water between both cylinders does not affect the volume in either. The liquid transfer serves as an analogy for chemical reaction rate: highly variable in the beginning, with greater forward bias, that eventually reaches dynamic equilibrium in time.
 
-This concept of dyamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing some such objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I even like skiing so much that I changed careers to work in the ski industry (not in the front line, like guiding, though).
+This concept of dynamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing some such objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I changed careers to work in the ski industry (not in the front line, like guiding, though).
 
-And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of years past. I can still go and bang out 2000-meter days and have great fun in so doing, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the flow of pursuing a passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
+And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
 
-Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
+Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life? And what might such other aspirations be?
 
 For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, it has become my reality.
 
-It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer. In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. In a long-since-forgotten ski movie, a woman commented that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
 
-But can there be more to life than outdoor pursuits? And need other life ambitions be mutually exclusive with outdoor passions? I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. (If you are anyone who has spent time outside, this novel is a must read.) In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class segregation of 1950s Britain. Another character, Johhny Hollinger, the trash-talking second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
+I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+
+In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families.
+
+But can there be more to life than outdoor pursuits? And is the question not how long to pursue such passions but instead how to balance them with other goals in life? (And is all this windy philosophizing to come to no more hackneyed a conclusion than “everything in moderation?”) I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. (If you are anyone who has spent time outside, this novel is a must read.) In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class segregation of 1950s Britain. Another character, Johhny Hollinger, the trash-talking second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
 
 Cathy and Johnny rope up and climb a multi-pitch route together. (This was before the time of removable protection such as nuts and cams—the term piton does not appear once in the book—so climbing in 1950s England was apparently rope-soloing. To think that climbers today are nervous to lead on _bolted_ routes.) After successfully finishing a hard climb together, they relax in the sun, and debate the pull between climbing and other priorities in life:
 
@@ -129,23 +133,22 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 
 Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.”
 
-Now that I am in my thirties
-
-I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing.
 
 Ski ambition can change in an instant: a life-changing injury, or a loved one lost to an accident.
 
 ---
 
+In a long-since-forgotten ski movie, a woman commented that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+
+TODO
+
 Throw in the right reactants, and your product might just be a white powder.
 
 ## Ideas
 
--   Leave rat in a jar for a month. Ambition to ski balances with other pressures of life.
--   But what other pressures really? One Green Bottle shrivelled mountain bachelor and not having it both ways quotations.
+-   Leave rat in a jar for a month.
 -   An imbalance of priorities.
--   Conclusion no more original than “everything in moderation”? Is there more to life than the outdoors? But what does that look like?
 -   Quotation about a weekend simply dull Summit Fever
--   Typical backcountry skier: male, 27
 
 Essay time. This one is for anyone who has spent years chasing a dream but isn’t sure where exactly it will take them. Enjoy!
