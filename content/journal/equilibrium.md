@@ -89,11 +89,51 @@ As an introduction to this concept, we performed an experiment using graduated c
 
 This concept of dyamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing some such objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I even like skiing so much that I changed careers to work in the ski industry (not in the front line, like guiding, though).
 
-And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of years past. I can still go and bang out 2000-meter days and have great fun while doing so, but the thrill isn’t quite the same as in earlier years. Is this just a temporary ebb in the flow of pursuing a passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
+And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of years past. I can still go and bang out 2000-meter days and have great fun in so doing, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the flow of pursuing a passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
 
 Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-For perhaps the first time in my life, I have found professional work that I enjoy, do well at, and make good money at. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, it has become my reality. I’ve now met a few guides who have largely abandoned recreational ski touring. Another remarked that he had “skied more than enough powder for the rest of [his] life.”
+For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, it has become my reality.
+
+It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer. In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. In a long-since-forgotten ski movie, a woman commented that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+
+But can there be more to life than outdoor pursuits? And need other life ambitions be mutually exclusive with outdoor passions? I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. (If you are anyone who has spent time outside, this novel is a must read.) In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class segregation of 1950s Britain. Another character, Johhny Hollinger, the trash-talking second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
+
+Cathy and Johnny rope up and climb a multi-pitch route together. (This was before the time of removable protection such as nuts and cams—the term piton does not appear once in the book—so climbing in 1950s England was apparently rope-soloing. To think that climbers today are nervous to lead on _bolted_ routes.) After successfully finishing a hard climb together, they relax in the sun, and debate the pull between climbing and other priorities in life:
+
+> “If it could be like this always!” she murmured, half asleep.
+>
+> “Well,” Johnny murmured back, “why not?”
+>
+> She smiled into the heat-haze banked over the Portmadoc sands. “Well—there’s other things in life, I suppose, besides climbing.”
+>
+> “There needn’t be. Of course, if you must tie yourself up and add more brats to the quantities already crawling about that’s your look-out.”
+>
+> “But Johnny!” She sat up, now quite awake. “Is coming up here all you care about? Aren’t you interested in your job, or—or falling in love, or anything?”
+>
+> “Job, no. Love, yes, by all means, as long as there aren’t any boring consequences.” He opened his lazy eyes at last and gave her his impudent monkey look; … She said coldly, with Puritan disapproval:
+>
+> “That's cheating.”
+>
+> “Oh well, yes, if you like,” agreed Johnny, preparing to go to sleep again.
+>
+> … Who was she to read Johnny a lecture? Yet it seemed such a pity, somehow. She saw him forty years hence, a little shrivelled nut, a mountain bachelor, with nothing to show for all the skill and courage, all the grace and beauty that had been his. She said slowly:
+>
+> “I wonder would you think the same if you’d been born the eldest son? The one that’s got to be the next earl?”
+>
+> Johnny looked amused. “Oh, quite possibly. I can’t imagine anything making a worthy character out of me. But I must admit that brother Ludovic runs around simply dripping public spirit and noblesse oblige.”
+>
+> “Well,” said Cathy with sudden magnificence, “in my family I’m the eldest.”
+>
+> Johnny found this funnier still. “Have it your own way, sweetheart,” he said with utmost amiability. “But I’ve noticed that for a lot of people, and particularly women, that means trying to have it both ways. In which case, don’t say I didn’t warn you. I’ve thought the matter out, and I know that the life of pleasure is a full-time job.”
+
+Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.”
+
+Now that I am in my thirties
+
+I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+
+Ski ambition can change in an instant: a life-changing injury, or a loved one lost to an accident.
 
 ---
 
@@ -103,7 +143,6 @@ Throw in the right reactants, and your product might just be a white powder.
 
 -   Leave rat in a jar for a month. Ambition to ski balances with other pressures of life.
 -   But what other pressures really? One Green Bottle shrivelled mountain bachelor and not having it both ways quotations.
--   Long-since forgotten ski movie, one skier says “in a world where a lot of things are soul crushing, skiing is something that has a lot of soul”.
 -   An imbalance of priorities.
 -   Conclusion no more original than “everything in moderation”? Is there more to life than the outdoors? But what does that look like?
 -   Quotation about a weekend simply dull Summit Fever
