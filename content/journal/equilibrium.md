@@ -145,7 +145,7 @@ I’ve largely glossed over a major factor that can instantly flip outdoor drive
 
 To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
 
-Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with stronger pull from other pursuits. Perhaps all this windy philosophizing arrives at no more hackneyed a conclusion than “everything in moderation.”
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than “everything in moderation.”
 
 The thing with chemical reactions, though, is that if you combine the right reactants, you can produce valuable white powder.
 
