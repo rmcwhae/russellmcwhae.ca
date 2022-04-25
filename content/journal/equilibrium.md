@@ -9,7 +9,7 @@ category: Reflection
 
 As soon as I could walk I was on skis. Somewhere on a VHS cassette—remember those?—there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up in Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were destined to spend our childhood winters cross-country skiing.
 
-Through our local nordic ski club, we learned to ski: classic first, then skate a few years later. I still remember my first ski race at age eight or nine, a short lap around the Canmore Nordic Centre: I cried almost the entire time and finished last. I guess the nerves were too much for me to handle then. (And perhaps still are. I never quite understood the purpose of seeing who can make it around the hamster-wheel the quickest.)
+Through our local nordic ski club, we learned to ski: classic technique first, then skate a few years later. I still remember my first ski race at age eight or nine, a short lap around the Canmore Nordic Centre: I cried almost the entire time and finished last. I guess the nerves were too much for me to handle then. (And perhaps still are. I never quite understood the purpose of seeing who can make it around the hamster-wheel the quickest.)
 
 Still, I stuck with nordic-ski racing for many years. In solo races, I rarely finished faster than the middle of the pack, though podium finishes were occasionally realized in relays when buoyed up by faster teammates.
 
@@ -23,7 +23,7 @@ My intermittent telemark/downhill skiing continued in high school. I caught the 
 
 In undergrad, I skied only a handful of times each winter, usually in early May after having finished the winter semester and moving back to Calgary for the summer. I dabbled in indoor climbing during university as well.
 
-Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. (I cannot recommend studying engineering if you value your evenings and weekends.) With disposable income and time, I became inspired to explore the mountains and binged mountain literature, movies, and culture. At one point, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all 14 8,000 metre peaks without supplemental oxygen.
+Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. (I cannot recommend studying engineering if you value your evenings and weekends.) With disposable income and time, I became inspired to explore the mountains and binged mountain literature, movies, and culture. At one point, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all fourteen 8,000 metre peaks without supplemental oxygen.
 
 In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with a ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
 
@@ -87,21 +87,21 @@ Let’s briefly return to my pre-touring days of pumping iron and eating chicken
 
 As an introduction to this concept, we performed an experiment using graduated cylinders, drinking straws, and water. One cylinder started with 50 ml of water (A), and the other was empty (B; both had identical volumes). Then, placing a drinking straw in each cylinder down to the bottom, we sealed the tops of each straw with our fingers to capture the water (air in the case of cylinder B), then emptied each straw into the opposite cylinder that it came from. After one round, about 5 ml of water transferred from cylinder A to B, with none in the other direction. In round two, an amount less than 5 ml came out of cylinder A’s 45 ml, and a minute amount came from the 5 ml now in cylinder B. After enough rounds, the transfer between A and B equalizes, and continued transfer of water between both cylinders does not affect the volume in either. The liquid transfer serves as an analogy for chemical reaction rate: highly variable in the beginning, with greater forward bias, that eventually reaches dynamic equilibrium in time.
 
-This concept of dynamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing some such objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I changed careers to work in the ski industry (not in the front line, like guiding, though).
+This concept of dynamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing bigger and better objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I ultimately changed careers to work in the ski industry (not in the front line, like guiding, though).
 
 And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a high-risk outdoor passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
 
 Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still *plenty* of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.”
+First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.”
 
-But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality.
+But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
 
-Can there be more to life than outdoor pursuits? Perhaps the question not how long to pursue such passions but instead how to balance them with other goals in life. There are successful skiers and climbers who have raised families as well. (And is all this windy philosophizing to come to no more hackneyed a conclusion than “everything in moderation?”) To explore such questions, let’s now turn to my favourite source of philosophical inspiration: literature.
+Can there thus be more to life than outdoor pursuits? Perhaps the question is not how long to pursue such passions but instead how to balance them with other goals in life. To explore such questions, let’s now turn to my favourite source of philosophical inspiration: literature.
 
-I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class separation of 1950s Britain. Another character, Johhny Hollinger, the second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
+I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and even romance, while navigating the class separation of 1950’s Britain. Another character, Johhny Hollinger, the second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
 
-Cathy and Johnny rope up and climb a multi-pitch route together. (This was before the time of removable protection such as nuts and cams—the term piton does not appear once in the book—so climbing in 1950s England was apparently rope-soloing. To think that climbers today are nervous to lead on _bolted_ routes.) After successfully finishing a hard climb together, they relax in the sun, and debate the pull between climbing and other priorities in life:
+Cathy and Johnny rope up and climb a multi-pitch route together. (This was before the time of removable protection such as nuts and cams—the term piton does not appear once in the book—so climbing in 1950’s England was apparently rope-soloing. To think that climbers today are nervous to lead on _bolted_ routes.) After successfully finishing a hard climb together, they relax in the sun, and debate the pull between climbing and other priorities in life:
 
 > “If it could be like this always!” she murmured, half asleep.
 >
@@ -129,31 +129,34 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 >
 > Johnny found this funnier still. “Have it your own way, sweetheart,” he said with utmost amiability. “But I’ve noticed that for a lot of people, and particularly women, that means trying to have it both ways. In which case, don’t say I didn’t warn you. I’ve thought the matter out, and I know that the life of pleasure is a full-time job.”
 
-Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.” See the tension here: both characters advocate conflicting ideas, suggesting that there isn’t necessarily a final word with either. (If you are anyone who has spent time outside, this novel is a must read.)
+Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.” (If you are anyone who has spent time outside, this novel is a must read.)
+
+Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families, who have had it both ways. (Perhaps it is easier now than in 1950’s England.) Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time and eventually raised three kids. Stories like this resonated quite strongly with me in my early and mid twenties.
+
+Success stories are more the exception than the rule in the outdoors, however. Many dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
+
+> I graduated from college, by the skin of my teeth, in December, 1975. I spend the next eight years employed as an itinerant carpenter and commercial fisherman in Colorado, Seattle, and Alaska, living in studio apartments with cinder-block walls, driving a hundred-dollar car, working just enough to make rent and fund the next climbing trip. Eventually it began to wear thin. I found myself lying awake nights reliving all the close scrapes I’d had on the heights. Sawing joists in the rain at some muddy construction site, my thoughts would increasingly turn to college classmates who were raising families, investing in real estate, buying lawn furniture, assiduously amassing wealth. (xii)
 
 Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing.
 
-Ski ambition can change in an instant: a life-changing injury, or a loved one lost to an accident.
+I’ve largely glossed over a major factor that can instantly flip outdoor ambition on its head: accidents. A life-changing injury, or losing a loved one to an avalanche, can instantly upend motivation. I hope all my discussion of changing ski motivation from a perspective of good health does not come across as insensitive here.
 
 ---
 
-In a long-since-forgotten ski movie, a woman commented that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade, while also building a career.
 
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, things seem to have reached a state of equilibrium: my desire to spend time outside has met with opposition from other pursuits. Perhaps all this windy philosophizing arrives at no more hackneyed a conclusion than “everything in moderation.”
 
-TODO
-
-Throw in the right reactants, and your product might just be a white powder.
+The thing with chemical reactions is that if you combine the right reactants, you can produce valuable white powder.
 
 ## Ideas
 
 -   Leave rat in a jar for a month.
--   An imbalance of priorities.
+-   An imbalance of priorities in your life
 -   Quotation about a weekend simply dull Summit Fever
 
-- It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
+-   It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
 
-- I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
-
- Now, I live in a town rampant with many who have a similar Peter Pan syndrome.
+Now, I live in a town rampant with many who have a similar Peter Pan syndrome.
 
 Essay time. This one is for anyone who has spent years chasing a dream but wasn’t sure where exactly where it would take them. Enjoy!
