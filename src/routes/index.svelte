@@ -238,6 +238,7 @@
     }
     .boxes a {
         text-decoration: none;
+        display: block;
         padding: var(--s-1) var(--s3) var(--s-3) 0;
     }
 
