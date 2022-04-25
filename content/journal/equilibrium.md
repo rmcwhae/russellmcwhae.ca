@@ -2,7 +2,7 @@
 title: Equilibrium
 description: How long should we pursue our dreams and passions?
 author: Russell McWhae
-date: 2022-04-24
+date: 2022-04-25
 draft: 0
 category: Reflection
 ---
@@ -46,6 +46,9 @@ A few years later, some friends and I undertook a self-guided traverse of the Wa
 
 **9:00 AM, April 29, 2017**  
 In terrible weather, three others and I set out on the Spearhead traverse.
+
+Lost skin, falling off wind lip
+
 TODO
 
 ---
@@ -75,11 +78,13 @@ We finished the day without further incident. In over 250 ski days now, this is 
 
 TODO: bailing BBB
 
+Heli skiing cancel because of air conditions, rarely snowpack conditions.
+
 ---
 
 I never thought it would happen to me, but alas it has: since moving to a ski town, I have skied less than before. At the time of this writing, I have had only 24 days of touring this season. I was too cheap to pay for an annual resort pass—despite the high-volume of white powder delivered—and only skied a single local’s day (Revy local’s ski for $20, with proceeds going to the food bank; _this_ promotion I can get behind). To non-skiers, 24 probably sounds like an impressive number; however, some of my best seasons had over 50.
 
-Don’t get me wrong—I still had a great ski season. I finally skied the Tupper traverse at Rogers, which was every bit as good as I imagined it would be. There were many delightful turns to be had in local touring areas such as Begbie shoulder and the MacPherson fingers as lower elevation snow coverage this winter greatly exceeded that of the previous. Last year, we had to shovel our driveway maybe five times; this year, dozens, with relentless heavy, wet snow. Now I understand why people own snowblowers here: they aren’t lazy but rather interested in not ruining their bodies with exertion. I also don’t think I’ve sustained a cheesy grin as long as in re-learning to skate ski this winter (my Christmas present to myself was a set of skate ski gear).
+Don’t get me wrong—I still had a great ski season. I finally skied the Tupper traverse at Rogers, which was every bit as good as I imagined it would be. There were many delightful turns to be had in local touring areas such as Begbie shoulder and the MacPherson fingers as lower elevation snow coverage this winter greatly exceeded that of the previous. Last year, we had to shovel our driveway maybe five times; this year, dozens, with relentless heavy, wet snow. Now I understand why people own snowblowers here: they aren’t lazy but rather interested in preventing heart attacks. I also don’t think I’ve sustained a cheesy grin as long as in re-learning to skate ski this winter (my Christmas present to myself was a set of skate ski gear).
 
 But why the drop in ski ambition?
 
