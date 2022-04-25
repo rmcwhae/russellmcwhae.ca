@@ -89,19 +89,17 @@ As an introduction to this concept, we performed an experiment using graduated c
 
 This concept of dynamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing some such objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I changed careers to work in the ski industry (not in the front line, like guiding, though).
 
-And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
+And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a high-risk outdoor passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
 
-Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life? And what might such other aspirations be?
+Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, it has become my reality.
+First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still *plenty* of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.”
 
-It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
+But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality.
 
-I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+Can there be more to life than outdoor pursuits? Perhaps the question not how long to pursue such passions but instead how to balance them with other goals in life. There are successful skiers and climbers who have raised families as well. (And is all this windy philosophizing to come to no more hackneyed a conclusion than “everything in moderation?”) To explore such questions, let’s now turn to my favourite source of philosophical inspiration: literature.
 
-In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families.
-
-But can there be more to life than outdoor pursuits? And is the question not how long to pursue such passions but instead how to balance them with other goals in life? (And is all this windy philosophizing to come to no more hackneyed a conclusion than “everything in moderation?”) I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. (If you are anyone who has spent time outside, this novel is a must read.) In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class segregation of 1950s Britain. Another character, Johhny Hollinger, the trash-talking second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
+I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and romance, while navigating the class separation of 1950s Britain. Another character, Johhny Hollinger, the second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
 
 Cathy and Johnny rope up and climb a multi-pitch route together. (This was before the time of removable protection such as nuts and cams—the term piton does not appear once in the book—so climbing in 1950s England was apparently rope-soloing. To think that climbers today are nervous to lead on _bolted_ routes.) After successfully finishing a hard climb together, they relax in the sun, and debate the pull between climbing and other priorities in life:
 
@@ -131,7 +129,7 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 >
 > Johnny found this funnier still. “Have it your own way, sweetheart,” he said with utmost amiability. “But I’ve noticed that for a lot of people, and particularly women, that means trying to have it both ways. In which case, don’t say I didn’t warn you. I’ve thought the matter out, and I know that the life of pleasure is a full-time job.”
 
-Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.”
+Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.” See the tension here: both characters advocate conflicting ideas, suggesting that there isn’t necessarily a final word with either. (If you are anyone who has spent time outside, this novel is a must read.)
 
 Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing.
 
@@ -140,6 +138,7 @@ Ski ambition can change in an instant: a life-changing injury, or a loved one lo
 ---
 
 In a long-since-forgotten ski movie, a woman commented that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+
 
 TODO
 
@@ -151,4 +150,10 @@ Throw in the right reactants, and your product might just be a white powder.
 -   An imbalance of priorities.
 -   Quotation about a weekend simply dull Summit Fever
 
-Essay time. This one is for anyone who has spent years chasing a dream but isn’t sure where exactly it will take them. Enjoy!
+- It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
+
+- I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+
+ Now, I live in a town rampant with many who have a similar Peter Pan syndrome.
+
+Essay time. This one is for anyone who has spent years chasing a dream but wasn’t sure where exactly where it would take them. Enjoy!
