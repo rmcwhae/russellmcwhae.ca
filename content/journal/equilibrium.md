@@ -100,7 +100,7 @@ Is it possible that my ski ambition has reached a state of equilibrium with the 
 
 First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.”
 
-But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides, some now starting families, who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
 
 Can there thus be more to life than outdoor pursuits? Perhaps the question is not how long to pursue such passions but instead how to balance them with other goals in life. To explore such a question, let’s now turn to my favourite source of philosophical inspiration: literature.
 
@@ -150,9 +150,9 @@ I’ve largely glossed over a major factor that can instantly flip outdoor drive
 
 To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
 
-Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than finding balance between different priorities in life, than having everything in moderation.
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
 
-My high school chemistry teacher remarked that a (slightly gruesome) real-world example of chemical equilibrium would be to put a rat in an airtight jar for a month. Breathing, digesting, and contracting muscles are all transient biochemical processes that work against steady-state equilibrium as they all continually change in time. When such processes reach a point of no longer varying in time we will have thus reached the ultimate form of equilibrium—death. TODO
+My high school chemistry teacher remarked that a (slightly gruesome) real-world example of chemical equilibrium would be to put a rat in an airtight jar for a month. Breathing, digesting, and contracting muscles are all transient biochemical processes that work against steady-state equilibrium. When such processes reach a point of no longer varying in time we will have thus reached the ultimate form of equilibrium, the final biochemical state. TODO
 
 ## Ideas
 
