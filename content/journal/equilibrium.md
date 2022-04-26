@@ -33,7 +33,7 @@ Having long since mastered downhill and nordic skiing, backcountry skiing was th
 
 Young, fit, and keen, I set off to find adventure in the mountains. Starting with day trips in benign terrain, I gradually worked my way up to ski-mountaineering and multi-day, tent-based ski traverses, where covering a lot of horizontal ground efficiently, as in nordic skiing, is paramount. I dreamed to ski bigger and better objectives, and to see just how far I could take it.
 
-It has been said that a typical backcountry skier is a 27-year-old male (I think that came from a Tony Daffern book on avalanche safety). I’d go even further to say that they are also likely an engineer, given how many of my peer group matched this description. I certainly fit the mould.
+It has been said that a typical backcountry skier is a 27-year-old male (I think that came from a Tony Daffern book on avalanche safety). I’d go even further to say that they are also likely an engineer, given how many of my peer group matched this description. I certainly fit the mold.
 
 The mountains were calling, and so I went.
 
@@ -69,11 +69,11 @@ Thankfully, I came to a stop about five feet lower down, with a soft enough land
 
 That was enough excitement for day one, so we set up camp for the night.
 
-Subsequent days brought improving weather. Near the apex of the giant horseshoe that is the route, the main path stays high along the Iago ridge-line. We still did not have ideal visibility for this option, as broken clouds hovered around most of the adjacent peaks, with some sun poking through. The clouds seemed to be thinning, so solar input was becoming slightly concerning. Along with the other party of six, we dropped down into the valley via the MacBeth (hooray for literature!) glacier, for a lower-risk route variation.
+Subsequent days brought improving weather. Near the apex of the giant horseshoe that is the route, the main path stays high along the Iago ridge-line. We still did not have ideal visibility for this option, as broken clouds hovered around most of the adjacent peaks, with some sun poking through. The clouds seemed to be thinning, so solar input was becoming slightly concerning. Along with the other party of six, we dropped down into the valley via the MacBeth (hooray for literature) glacier, for a lower-risk route variation.
 
 Nearby, a large enough avalanche had recently run, and it seemed curious to me just how far it had run while staying relatively slender—many hundred metres long, but only 20 or so metres across—as it had snaked its way down the mountain.
 
-Lower down, we skied parallel to the old debris for a bit, with the surrounding peaks still obscured by variable cloud cover. An avalanche somewhere up high then released—likely due to solar input—which we could not get eyes on. Talk about a hair-raiser! We raced down into the trees and never did see the avalanche.
+Lower down, we skied parallel to the old debris for a bit, with the surrounding peaks still obscured by variable cloud cover. An avalanche somewhere up high then released—likely due to solar input—which we could not get eyes on. Talk about a hair-raiser. We raced down into the trees and never did see the avalanche.
 
 We then followed a route by Adit creek and made it to Russet Lake hut, grateful not to have to sleep in a tent in a storm again.
 
