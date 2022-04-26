@@ -29,7 +29,9 @@ In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intr
 
 We climbed together that summer, teaching ourselves the basics of sport and trad climbing, attempting a few different mountaineering objectives (including a doomed attempt of the Rundle Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
 
-Having long since mastered downhill and nordic skiing, backcountry skiing was the logical next step in my winter outdoor pursuits. Over the course of next number of seasons, I took courses, went on guided trips, and built up my gear, fitness, and experience. Young, fit, and keen, I set off to find adventure in the mountains. Starting with day trips in benign terrain, I gradually worked my way up to ski-mountaineering and multi-day, tent-based ski traverses, where covering a lot of horizontal ground efficiently, as in nordic skiing, is paramount. I dreamed to ski bigger and better objectives, and to see just how far I could take it.
+Having long since mastered downhill and nordic skiing, backcountry skiing was the logical next step in my winter outdoor pursuits. Over the course of next number of seasons, I took courses, went on guided trips, and built up my gear, fitness, and experience.
+
+Young, fit, and keen, I set off to find adventure in the mountains. Starting with day trips in benign terrain, I gradually worked my way up to ski-mountaineering and multi-day, tent-based ski traverses, where covering a lot of horizontal ground efficiently, as in nordic skiing, is paramount. I dreamed to ski bigger and better objectives, and to see just how far I could take it.
 
 It has been said that a typical backcountry skier is a 27-year-old male (I think that came from a Tony Daffern book on avalanche safety). I’d go even further to say that they are also likely an engineer, given how many of my peer group matched this description. I certainly fit the mould.
 
