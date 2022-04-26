@@ -31,6 +31,8 @@ We climbed together that summer, teaching ourselves the basics of sport and trad
 
 Having long since mastered downhill and nordic skiing, backcountry skiing was the logical next step in my winter outdoor pursuits. Over the course of next number of seasons, I took courses, went on guided trips, and built up my gear, fitness, and experience. Young, fit, and keen, I set off to find adventure in the mountains. Starting with day trips in benign terrain, I gradually worked my way up to ski-mountaineering and multi-day, tent-based ski traverses, where covering a lot of horizontal ground efficiently, as in nordic skiing, is paramount. I dreamed to ski bigger and better objectives, and to see just how far I could take it.
 
+It has been said that a typical backcountry skier is a 27-year-old male (I think that came from a Tony Daffern book on avalanche safety). I’d go even further to say that they are also likely an engineer, given how many of my peer group matched this description. I certainly fit the mould.
+
 The mountains were calling, and so I went.
 
 ---
@@ -45,11 +47,35 @@ A few years later, some friends and I undertook a self-guided traverse of the Wa
 ---
 
 **9:00 AM, April 29, 2017**  
-In terrible weather, three others and I set out on the Spearhead traverse.
+In terrible weather, three ski partners and I set out on the [Spearhead traverse](/events/Spearhead_May-2017). The route starts at the top of Blackcomb ski resort then loops clockwise around to Whistler. It typically takes two to four days, so we brought food for four days given that a break in the weather was still a few days out. You have to purchase a one-time lift ticket to get up Blackcomb, and they had us open our packs to see our avalanche safety gear before selling us these tickets. I’m sure more than enough people have gotten into trouble on the Spearhead over the years.
 
-Lost skin, falling off wind lip
+Topping out on the Glacier Express quad chair, the final Showcase T-bar takes you to the entrance of the Blackcomb glacier, the start of the traverse. Only that today, given the storm, the T-bar was not running. We skinned up by the T-bar, a nice handrail, and entered the ping-pong ball that is an alpine glacier in a whiteout. It was windy too, but at least the spring snowfall rate wasn’t that of a typical midwinter low-pressure system hammering the coast (and causing spicy avalanche conditions).
 
-TODO
+After crossing the Blackcomb glacier, the route goes up and over a col by Blackcomb Peak. If I am remembering correctly, this is the first downhill pitch steep enough to warrant skin-removal and transitioning into downhill mode. Cols can often form wind funnels as they are low and form the path of least resistance for wind to flow through. Given the high winds at this col, we made a hasty transition and skied down the slope, probably less than 200 metres, but it’s hard to say in a storm.
+
+Regrouping at a flatter spot lower down, we re-attached our climbing skins to our skis—only we were one skin short. Somebody had lost a skin in the abbreviated transition at the col. Not one to lose my cool—this is the kind of gear mishap that ends traverses—two of us retraced our descent line back up to the col in an almost certainly vain effort to recover the missing skin. It had probably blown to Pemberton by now.
+
+And then—there it was!
+
+Normally, when taking a break in high winds, you try to find a relatively sheltered spot. Apparently, we had done exactly that, as the skin was lying on the snow in what was evidently a localized low-flow zone. We were back in the game. Collecting the skin, we returned to the other half of the group.
+
+Further along the route, I took a turn breaking trail across rolling terrain—unroped, given the deep coverage of snow on the glacier. It was slow going in the whiteout. There are tricks to crossing glaciers in whiteout conditions, like tying a knot in a length of cordelette then tossing the knot out in front of you to see the next few metres. This is quite tedious, however, and I usually get antsy when distance on bigger trips is not getting covered quickly enough.
+
+Suddenly, the ground disappeared beneath my feet.
+
+Thankfully, I came to a stop about five feet lower down, with a soft enough landing. Looking up from my crater, I could see the shadow of a giant wind lip that I had skied straight off of. If there was a desirable location along this lip to have skied directly off, I had somehow managed to nail it, for my not-quite-vertical, five-foot drop became overhanging, multiple-metre drops in both lateral directions. Eeek. A party of six we connected with a few days later—naturally with at least one engineer in his late twenties—mentioned that the exact same thing had happened to them at the wind lip.
+
+That was enough excitement for day one, so we set up camp for the night.
+
+Subsequent days brought improving weather. Near the apex of the giant horseshoe that is the route, the main path stays high along the Iago ridge-line. We still did not have ideal visibility for this option, as broken clouds hovered around most of the adjacent peaks, with some sun poking through. The clouds seemed to be thinning, so solar input was becoming slightly concerning. Along with the other party of six, we dropped down into the valley via the MacBeth (hooray for literature!) glacier, for a lower-risk route variation.
+
+Nearby, a large enough avalanche had recently run, and it seemed curious to me just how far it had run while staying relatively slender—many hundred metres long, but only 20 or so metres across—as it had snaked its way down the mountain.
+
+Lower down, we skied parallel to the old debris for a bit, with the surrounding peaks still obscured by variable cloud cover. An avalanche somewhere up high then released—likely due to solar input—which we could not get eyes on. Talk about a hair-raiser! We raced down into the trees and never did see the avalanche.
+
+We then followed a route by Adit creek and made it to Russet Lake hut, grateful not to have to sleep in a tent in a storm again.
+
+The next morning, day four, dawned bluebird, and we finished the trip.
 
 ---
 
@@ -98,7 +124,7 @@ And yet, with hundreds of ski days across many years, now living in one of Canad
 
 Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.”
+First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.” (Also, if you liked the outdoor adventures described here, check out that essay for more of the same.)
 
 But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides, some now starting families, who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
 
@@ -159,7 +185,6 @@ My high school chemistry teacher remarked that a (slightly gruesome) real-world 
 ## Ideas
 
 -   Quotation about a weekend simply dull Summit Fever
--   It has been said that a typical backcountry skier is a 27-year-old male (forgot where I read that). I’d go even further to say that they are also likely an engineer.
 -   Now, I live in a town rampant with many who have a similar Peter Pan syndrome.
 
 Essay time. This one is for anyone who has spent years chasing a dream but wasn’t sure where exactly it would take them. Hope you enjoy it!
