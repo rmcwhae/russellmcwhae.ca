@@ -141,3 +141,10 @@ Exact timing on when I read these is fuzzy, but I do remember these titles being
 -   _Ender’s Game_ by Orson Scott Card
 -   _Nineteen Eighty-Four_ by George Orwell
 -   _Birdsong_ by Sebastian Faulks
+-   _Absolute Friends_ by John le Carré
+-   _The Guns of Navarone_ by Alistair MacLean
+-   _Z for Zachariah_ by Robert C. O’Brien
+-   _Dragonsbane_ by Barbara Hambly
+-   _The Hunt for Red October_ by Tom Clancy
+-   _Rite of Passage_ by Alexei Panshin
+-   _Fallen Angels_ by Walter Dean Myers

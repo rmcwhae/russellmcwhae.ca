@@ -75,7 +75,7 @@
                 class="hover-underline-animation"
                 sveltekit:prefetch
                 ><span
-                    >see my <h4>photos</h4></span
+                    >see my <h3>photos</h3></span
                 ></a
             >
         </div>
@@ -85,7 +85,7 @@
                 sveltekit:prefetch
                 class="hover-underline-animation"
                 ><span
-                    >preview my <h4>calendars</h4></span
+                    >preview my <h3>calendars</h3></span
                 ></a
             >
         </div>
@@ -95,7 +95,7 @@
                 sveltekit:prefetch
                 class="hover-underline-animation"
                 ><span
-                    >check out my <h4>projects</h4></span
+                    >check out my <h3>projects</h3></span
                 ></a
             >
         </div>
@@ -105,7 +105,7 @@
                 sveltekit:prefetch
                 class="hover-underline-animation"
                 ><span
-                    >read my <h4>journal</h4></span
+                    >read my <h3>journal</h3></span
                 ></a
             >
         </div>
@@ -243,8 +243,9 @@
         padding: var(--s-1) var(--s3) var(--s-3) 0;
     }
 
-    .boxes a h4 {
+    .boxes a h3 {
         margin-bottom: 0;
+        line-height: 1.1;
     }
     .boxes a:hover {
         text-decoration: none;
