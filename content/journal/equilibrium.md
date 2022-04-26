@@ -80,7 +80,7 @@ The next morning, day four, dawned bluebird, and we finished the trip.
 ---
 
 **12:00 PM, February 23, 2019**  
-In six years and over 150 days of backcountry skiing, I triggered my first minor avalanche.
+In six years and over 150 days of backcountry skiing, I triggered my first avalanche.
 
 Two friends and I were ascending the broad, south-facing summit ridge of Cirque Peak. Our intention was to ski [Cirque North Couloir](/events/Cirque-Peak-North-Couloir_February-2019) (note the chunks of avalanche debris behind the skier in the first photo), a classic Rockies ski-descent that is frequently attempted in ski-guide exams.
 
@@ -162,7 +162,7 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 
 Johnny goes on to warn Cathy when she is faced with a potential suitor to “Have your bit of fun with him, … and marry him in the end if you must. Only get your serious climbing done first, and try to remember what I told you—you can’t have it both ways.” What is the answer here then, to get outdoor pursuits out of your system before turning into a “shrivelled nut, a mountain bachelor?”
 
-(If you are anyone who has spent time outside, *One Green Bottle* is a must read. As a brief follow up to my recent [lament about](/journal/the-pendulum-swings) the decline of reading, this novel brought relatable characters to life in a journey back in time to the 1950 Wales climbing scene. At one point, Cathy’s little sister asks about one of her suitors: “Is that your new boy?” Norma asked. “No oil-painting, is he?”)
+(If you are anyone who has spent time outside, _One Green Bottle_ is a must read. As a brief follow up to my recent [lament about](/journal/the-pendulum-swings) the decline of reading, this novel brought relatable characters to life in a journey back in time to the 1950 Wales climbing scene. At one point, Cathy’s little sister asks about one of her suitors: “Is that your new boy?” Norma asked. “No oil-painting, is he?”)
 
 Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families. (Perhaps it is easier in some ways now than in 1950’s England.) Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time. He eventually raised three kids with his wife. Stories like this resonated quite strongly with me in my mid–twenties.
 
