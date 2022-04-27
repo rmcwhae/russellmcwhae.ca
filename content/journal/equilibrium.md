@@ -149,7 +149,7 @@ In my twenties, I was largely unconcerned by what I considered at the time to be
 
 But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my engineering career, skiing was always the escape from urban working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides, some now starting families, who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
 
-Is it that there can be more to life than outdoor pursuits? Perhaps the question is not how long to pursue such passions but instead how to balance them with everything else. To explore this idea, let’s now turn to my favourite source of philosophical inspiration: literature.
+Is there more to life than outdoor pursuits? Perhaps the question is not how long to pursue such passions but instead how to balance them with everything else. To explore this idea, let’s now turn to my favourite source of philosophical inspiration: literature.
 
 I recently read the 1951 climbing novel _One Green Bottle_ by Elizabeth Coxhead. In it, protagonist Cathy Canning, a girl from the Liverpool slums, discovers climbing and its associated world of adventure, peril, and even romance, while navigating the class separation of 1950’s Britain. Another character, Johnny Hollinger, the second son of an earl, who makes no pretence of his own dubious morality, is one of the stronger climbers Cathy meets.
 
