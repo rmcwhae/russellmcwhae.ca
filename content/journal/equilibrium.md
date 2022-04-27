@@ -129,7 +129,7 @@ I told myself that I wasn’t going to check my phone (the lodge had Wi-Fi), but
 
 Breakfast consisted of halfheartedly discussing options to continue, but, deep down, I knew the traverse was over. Not wanting to overstay our welcome, we opted to bail via a ride down the forestry access road.
 
-We satellite-messaged the group a day ahead of us, who had managed to get to a cabin further along the route, and told them to help themselves to our food cache stashed there. They waited it out for a few days but had to take a valley-bottom route variation (the Beaver valley) all the way out, bypassing most of the interesting alpine terrain, including the notorious rappel onto the Deville glacier. A later text described it as “heartbreaking.”
+We satellite-messaged the group a day ahead of us, who had managed to get to a cabin further along the route, and told them to help themselves to our food cache stashed there. They waited it out for a few days but had to take a valley-bottom route variation (the Beaver valley) all the way out, bypassing most of the interesting alpine terrain, including the rappel onto the Deville glacier. A later message described it as “heartbreaking.”
 
 ---
 
