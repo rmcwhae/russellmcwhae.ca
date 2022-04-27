@@ -185,7 +185,7 @@ Johnny goes on to warn Cathy when she is faced with a potential suitor to “Hav
 
 If you are anyone who has spent time outside, _One Green Bottle_ is a must read. As a brief follow up to my recent [lament about](/journal/the-pendulum-swings) the decline of reading, this novel could be a good starting point if you need to reinvigorate your desire to read. It brought believable characters to life in a journey back in time to the 1950 Wales climbing scene. I found the dialect wonderfully amusing; for example, Cathy’s pesky little sister judges the appearance of one of her potential suitors: “ ‘Is that your new boy?’ Norma asked. ‘No oil-painting, is he?’ ”
 
-Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families. Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time. He eventually raised three kids with his wife. Stories like this resonated quite strongly with me in my mid–twenties, still far from any risk of becoming a “shrivelled nut, a mountain bachelor.”
+Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families. Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time. He eventually raised three kids with his wife. Stories like this resonated quite strongly with me in my mid–twenties.
 
 Success stories are more the exception than the norm in the outdoors, however. Many dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
 
@@ -203,4 +203,6 @@ Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed oth
 
 My high school chemistry teacher remarked that a real-world example of chemical equilibrium would be to seal a rat in a jar for a month. Breathing, metabolizing, and contracting muscles are all transient biochemical processes that work against dynamic equilibrium. When such processes reach a point of no longer changing in time we have thus reached the final biochemical state, the ultimate equilibrium.
 
-As I trend toward such equilibrium, there are on occasion days when I wonder if all the adventuring was really worth it, or was more of a selfish indulgence. If nothing else, it certainly wasn’t boring. 
+As I trend toward such equilibrium, there are on occasion days when I question if all the adventuring was worth it. Is it but a selfish indulgence, heading inevitably toward becoming a “shrivelled nut, a mountain bachelor?”
+
+If nothing else, it certainly wasn’t boring. 
