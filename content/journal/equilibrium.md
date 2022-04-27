@@ -2,7 +2,7 @@
 title: Equilibrium
 description: How long should we pursue our dreams and passions?
 author: Russell McWhae
-date: 2022-04-26
+date: 2022-04-27
 draft: 0
 category: Reflection
 ---
