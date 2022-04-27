@@ -125,7 +125,7 @@ This was the final week of heli-skiing. The following morning, the guides did a 
 
 The guides had been spooked by easy snowpack test failures and fracture propagations. It would still not be safe to travel in avalanche terrain as the snowpack was saturated with moisture, with wet-slab avalanches waiting for triggers. They said that they wouldn’t want to drop us off anywhere other than flat terrain.
 
-I told myself that I wasn’t going to check my phone (the lodge had Wi-Fi), but I finally did to let my family know where I was. Scrolling through a news feed, I read the unfortunate news of the death of skier Dave Treadway in a crevasse fall, as well as the deaths of high-end alpinists Hansjörg Auer, David Lama and Jess Roskelley, in an avalanche on Howse Peak.
+I told myself that I wasn’t going to check my phone—the lodge had Wi-Fi—but I finally did to let my family know where I was. Scrolling through a news feed, I read the unfortunate news of the death of skier Dave Treadway in a crevasse fall, as well as the deaths of high-end alpinists Hansjörg Auer, David Lama and Jess Roskelley, in an avalanche on Howse Peak.
 
 Breakfast consisted of halfheartedly discussing options to continue, but, deep down, I knew the traverse was over. Not wanting to overstay our welcome, we opted to bail via a ride down the forestry access road.
 
