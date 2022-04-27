@@ -7,17 +7,17 @@ draft: 0
 category: Reflection
 ---
 
-As soon as I could walk I was on skis. Somewhere on a VHS cassette there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up in Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were to spend our childhood winters cross-country skiing.
+As soon as I could walk I was on skis. Somewhere on a VHS cassette there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up on Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were to spend our childhood winters cross-country skiing.
 
 Through our local nordic ski club, we learned to ski: classic technique first, then skate a few years later. I still remember my first ski race at age eight or nine, a short lap around the Canmore Nordic Centre: I cried almost the entire time and finished last. The nerves were too much for me to handle then. And perhaps still are. I never quite understood the purpose of seeing who can make it around the hamster-wheel the quickest.
 
 Still, I stuck with nordic-ski racing for many years. In solo races, I rarely finished faster than the middle of the pack, though podium finishes were occasionally realized in relays when buoyed up by faster teammates.
 
-In grade five, I experienced my first-ever downhill ski day at Nakiska ski resort. My brother and I were able to skip a few levels of basic lessons thanks to our nordic-skiing backgrounds. At the time, clever marketers offered a promotion to students in grade five: three free ski days at most ski resorts in western Canada. It occurs to me now that drug-dealers employ similar tactics: get 'em hooked for free, then jack up the prices. If you think about it, the outcome is similar in both scenarios: you may well find yourself up to your eyeballs in white powder! (I couldn’t _not_ make this joke.) My first ever pair of alpine skis were actually telemark skis, with leather boots and three-pin bindings, purchased after the success of the downhill-ski experiment. At the end of that first day of taking chairlifts to go uphill, I asked, “What, exactly, _is_ the exercise value in downhill skiing?”
+In grade five, I experienced my first-ever downhill ski day at Nakiska ski resort. My brother and I were able to skip a few levels of basic lessons thanks to our nordic-skiing backgrounds. At the time, clever marketers offered a promotion to students in grade five: three free ski days at most ski resorts in western Canada. It occurs to me now that drug-dealers employ similar tactics: get 'em hooked for free, then jack up the prices. If you think about it, the outcome is similar: you may well find yourself up to your eyeballs in white powder! (I couldn’t _not_ make this joke.) My first ever pair of alpine skis were actually telemark skis, with leather boots and three-pin bindings, purchased after the success of the downhill-ski experiment. At the end of that first day of taking chairlifts to go uphill, I asked, “What, exactly, is the exercise value in downhill skiing?”
 
-Come junior high school, my interests took to video games, and my middling racing career took a backseat to electronic entertainment. (At least insofar as was permitted by my parents: maximum one hour of computer time per day, usually stretched in the presence of unsuspecting babysitters). One fall with a particular lack of motivation on my part about the upcoming ski season, new skis to match my rapidly growing adolescent body were not invested in.
+Come junior high school, my interests took to video games, and my middling racing career took a backseat to electronic entertainment. At least insofar as was permitted by my parents: maximum one hour of computer time per day, usually stretched in the presence of unsuspecting babysitters. One fall with a particular lack of motivation on my part about the upcoming ski season, new skis to fit my rapidly growing adolescent body were not invested in.
 
-Junior high was a relatively sedentary period of my life. I still telemarked occasionally to maintain some semblance of an active lifestyle, despite my earlier skepticism of its exercise value.
+Junior high was a relatively sedentary period in my life. I still telemarked occasionally to maintain some semblance of an active lifestyle, despite my earlier skepticism of its exercise value.
 
 My intermittent telemark/downhill skiing continued in high school. I caught the gym bug and managed to bulk up to 186 pounds (my current lean-and-mean build is around 165). I hate to think what the grocery bill for a gym-rat teenager would now be.
 
@@ -29,9 +29,9 @@ My study of science continued in university, where I took engineering. In underg
 
 Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. With both disposable time and income, I caught the mountain bug hard. I binged mountain literature, movies, and culture. Once, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all fourteen 8,000 metre peaks without supplemental oxygen.
 
-In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with a ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
+In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with an ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
 
-We climbed together that summer, teaching ourselves the basics of sport and trad climbing, attempting a few different mountaineering objectives (including a doomed attempt of the Rundle Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
+We climbed together that summer, teaching ourselves the basics of sport and trad climbing and attempted a few different mountaineering objectives (including a doomed attempt of the Rundle Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
 
 Having long since mastered downhill and nordic skiing, backcountry skiing was the logical next step in my winter outdoor pursuits. Over the course of next number of seasons, I took courses, went on guided trips, and built up my gear, fitness, and experience.
 
@@ -44,9 +44,9 @@ The mountains were calling, and so I went.
 ---
 
 **1:21 PM, March 21, 2014**  
-On a guided trip to [Mistaya Lodge](/events/Mistaya_March-2014), we toured up to a col that overlooked the northern part of the Wapta Icefield. Mistaya, way up the Blaeberry valley and accessed by helicopter from Golden, is actually fairly close to Bow Hut, where I’d just done my mountaineering course. I took a photo of the vista, where a guide said you could see Peyto Hut. Not knowing exactly where to look—a metal-hut needle in an expansive snow-covered alpine haystack—I gave up searching and stashed my camera.
+On a guided trip to [Mistaya Lodge](/events/Mistaya_March-2014), we toured up to a col that overlooked the northern part of the Wapta Icefield. Mistaya, way up the Blaeberry valley and accessed by helicopter from Golden, is actually fairly close to Bow Hut, where I’d just done the mountaineering course. I took a photo of the vista, where a guide said you could see Peyto Hut. Not knowing exactly where to look—a metal-hut needle in an expansive snow-covered alpine haystack—I gave up searching and stashed my camera.
 
-At the end of the ski week, the guides presented us with two options for the final day: to ski up and over the same col, then traverse across a glacier to exit via Peyto Lake to a waiting shuttle, or to ski a final day near the lodge then fly out back to Golden. I opted for the second choice but was nonetheless intrigued by the idea of traversing glaciers on skis in winter—still beyond my skill set but perhaps something that could one day come into range.
+At the end of the ski week, the guides presented us with two options for the final day: to ski up and over the same col, then traverse across a glacier to exit via Peyto Lake to a waiting shuttle, or to ski a final day near the lodge then fly out back to Golden. I opted for the second choice but was nonetheless intrigued by the idea of traversing glaciers on skis in winter—still beyond my skill set but gradually coming into range.
 
 A few years later, some friends and I undertook a self-guided traverse of the Wapta icefield and stayed at Peyto hut on the first night. After that trip, I revisited my Mistaya photos and—now knowing exactly where to look—found Peyto hut in my photo, a small dark dot, easily mistaken for a rock outcropping.
 
@@ -90,36 +90,36 @@ In six years and over 150 days of backcountry skiing, I triggered my first avala
 
 Two friends and I were ascending the broad, south-facing summit ridge of Cirque Peak. Our intention was to ski [Cirque North Couloir](/events/Cirque-Peak-North-Couloir_February-2019) (note the chunks of avalanche debris behind the skier in the first photo), a classic Rockies ski-descent that is frequently attempted in ski-guide exams.
 
-Above tree line, the main ascent route gradually starts up the summit ridge. Low on this ridge, we encountered a restriction in our route: the ridge got narrower and steeper with a short gully ascending between two rock bands on either side. Too steep to skin, it would require a boot-pack. The alternative route of traversing out onto the looker’s-right face—a large, exposed alpine slope—was far less appealing.
+Above tree line, the main ascent route gradually starts up the summit ridge. Low on this ridge, we encountered a restriction in our route: the ridge got narrower and steeper with a short gully ascending between two rock bands on either side. Too steep to skin, it would require a boot-pack. The alternative of traversing out onto the looker’s-right face—a large, exposed alpine slope—was far less appealing.
 
 I stowed my skis on my pack and began post-holing into waist-deep snow, punching through the wind-hammered crust endemic to so much of Rockies alpine terrain.
 
-My hazard assessment had been that if the snow in the gully slid, it would likely have a small volume, and I’d go for a short ride down the centre of the broad ridge—hardly a terrain trap. The ridge had a low-enough angle (we’d been switchbacking up it on skins until that point) that I was not concerned about rocketing down it if the snow failed. Or worse—tomahawking.
+My hazard assessment had been that if the snow in the gully slid, it would likely have a small volume, and I’d go for a short ride down the centre of the broad ridge, hardly a terrain trap. The ridge had a low-enough angle (we’d been switchbacking up it on skins until that point) that I was not concerned about rocketing down it if the snow failed. Or worse—tomahawking.
 
-Nearing the middle of my boot-pack, the wind pocket inside the gully released—maybe a size 0.5. All around me, the snow unzipped into large chunks, like a taught guitar string snapping and fraying like a ripped tendon.
+Nearing the middle of my boot-pack, the wind pocket inside the gully released—maybe a size 0.5. All around me, the snow unzipped into large chunks, like a tendon snapping and fraying.
 
-Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, like an inverted beetle. I distinctly remember trying to sense my velocity and if it was exponentially increasing. Thankfully, I came to a stop, unburied, where the slope-angle relaxed a few meters down. Gravity and friction in equilibrium.
+Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, an inverted beetle. I distinctly remember trying to sense my velocity and if it was exponentially increasing. Thankfully, I came to a stop, unburied, where the slope-angle relaxed a few meters down. Gravity and friction in equilibrium.
 
-Unharmed, I righted myself and regrouped with my partners. My boots had filled with snow between the plastic shell and inner liners, which I cleared while waiting for my heart rate to settle. At my high point in the gulley, the avalanche crown was perhaps two feet deep at worst, tapering as it extended horizontally a few meters in each direction. Wind effect in the gully had created at least one buried weak layer in the snowpack, which the outer wind slab had slid on once my boot-packing had compromised its structural integrity.
+Unharmed, I righted myself and regrouped with my partners. My boots had filled with snow between the plastic shell and inner liners, which I cleared while waiting for my heart rate to settle. At my high point in the gulley, the avalanche crown was no more than two feet deep. Wind effect in the gully had created at least one buried weak layer in the snowpack, which the outer wind slab had slid on once my boot-packing compromised its structural integrity.
 
-With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue attempting our objective. There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn’t strictly necessary as the North Couloir is relatively low angle, though it makes descending the upper rocky section more palatable.
+With the majority of snow flushed out of the no-longer-suspect gully, we opted to continue with our objective. There is a bolted rappel near the summit which we used to rappel on two 40 m half-ropes. The rappel isn’t strictly necessary as the North Couloir is relatively low angle, though it makes descending the upper rocky section more palatable.
 
-We finished the day without further incident. In over 250 ski days now, this is the only avalanche involvement I have ever directly experienced—fortunately a harmless one.
+We finished the day without further incident. In over 250 ski days now, this is the only direct avalanche involvement I have ever experienced—fortunately a harmless one.
 
 ---
 
 **9:00 AM, April 18, 2019**  
 Conditions were not looking good. It was day three of our attempt on Bugaboos to Rogers, a classic ski traverse that usually takes eight to ten days.
 
-The first two days had gone well enough. The only mishap on day one had been having to backtrack uphill a bit after a potential shortcut down a convexity on a glacier proved too heavily crevassed for safe travel. Camp that night had been a beautiful spot further across this glacier.
+The first two days had gone well enough. The only mishap on day one had been having to backtrack uphill a bit after a potential shortcut down a convexity on a glacier proved too heavily crevassed for safe travel. Camp that night had been a beautiful spot further along this glacier.
 
-Day two’s blunder had been to leave food stashed in our cook shelter at a camp below tree-line, rather than hung from a tree. Overnight, an enterprising rodent had challenged itself to see how many surfaces of our cook shelter he could evenly distribute granola across. He also cut the bottom out of a plastic bowl, of which only the outer cylinder remained.
+Day two’s blunder had been to leave food stashed in our cook shelter at a camp below tree-line, rather than hung from a tree. Overnight, an enterprising rodent had challenged himself to see how many surfaces of our cook shelter he could evenly distribute granola across. He also chewed out the bottom of a plastic bowl, of which only the outer cylinder remained.
 
 Leading up to the trip, I’d had two potential groups to join. The way that it worked out, I started with a group one day behind the other. We had seen some of their tracks and the remnants of one of their camps in our first two days.
 
 Thanks to long-term forecasts and satellite-communication devices, the decline in conditions was not unexpected. A warm, moist low-pressure system was rolling in, with the freezing level ascending to well over 3000 metres, higher than all nearby peaks. This was to persist for a few days, during which travel in avalanche terrain would be sketchy, as rainfall events can quickly destabilize spring snowpacks.
 
-Radioing in to a nearby heli-ski lodge where a team member had previously worked, we were surprised to receive an offer to spend the next night there to wait out the storm. This was certainly preferable to sitting in a tent in the rain, so we accepted. Further along the traverse route, there are permanent structures that would be well suited for waiting out storms; however, we were at least two days away from the closest one. We were picked up near our granola-explosion camp. Dinner consisted of steak and lobster, a delightful upgrade over the original plan of dehydrated cardboard.
+Radioing in to a nearby heli-ski lodge where a team member had worked, we were surprised to receive an offer to spend the  night there to wait out the storm. This was certainly preferable to sitting in a tent in the rain, so we accepted. Further along the traverse route, there are permanent structures that would be well suited for waiting out storms; however, we were at least two days away from the closest one. We were picked up near our granola-explosion camp. Dinner consisted of steak and lobster, a delightful upgrade over the original plan of dehydrated cardboard.
 
 This was the final week of heli-skiing. The following morning, the guides did a test flight and were less than excited about conditions upon returning. So unexcited in fact that they cancelled the heli-skiing program for the day, despite air conditions being favourable enough for flying. It is my understanding that air conditions are usually the crux in heli-skiing, not avalanche conditions. With the freedom to fly anywhere in their tenures, heli-ski operations can usually find slopes to ski, even in periods of elevated avalanche hazard. Turbulent air or lack of visibility are more likely reasons for grounded choppers.
 
@@ -143,7 +143,7 @@ With hundreds of ski days across many years, now living in one of Canada’s bes
 
 Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and winter camping, to then undertaking and successfully completing bigger and better objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I eventually changed careers to work in the ski industry (not in the front line, like guiding, though).
+In my early days of ski touring, there was a strong forward bias in my ski goals. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and winter camping, to then undertaking and successfully completing bigger and better objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I eventually changed careers to work in the ski industry (not in the front line, like guiding, though).
 
 In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.” (Also, if you liked the outdoor adventures described here, check out that essay for more of the same.)
 
@@ -187,7 +187,7 @@ If you are anyone who has spent time outside, _One Green Bottle_ is a must read.
 
 Back in the realm of non-fiction, however, there are examples of successful skiers and climbers who have also raised families. Take Ed Viesturs, for example: he is one of few Americans to climb all fourteen 8,000 metre peaks without oxygen. He earned a doctorate in veterinary medicine before abandoning his vet career—and taking a massive pay cut—to pursue climbing full time. He eventually raised three kids with his wife. Stories like this resonated quite strongly with me in my mid–twenties.
 
-Success stories are more the exception than the norm in the outdoors, however. Many dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
+Success stories are more the exception than the norm in the outdoors, however. Most dirtbags eventually come to a reckoning, tiring of financial uncertainty, as Jon Krakauer reflects in the introduction to his 1992 book _Eiger Dreams: Ventures Among Men and Mountains_:
 
 > I graduated from college, by the skin of my teeth, in December, 1975. I spend the next eight years employed as an itinerant carpenter and commercial fisherman in Colorado, Seattle, and Alaska, living in studio apartments with cinder-block walls, driving a hundred-dollar car, working just enough to make rent and fund the next climbing trip. Eventually it began to wear thin. I found myself lying awake nights reliving all the close scrapes I’d had on the heights. Sawing joists in the rain at some muddy construction site, my thoughts would increasingly turn to college classmates who were raising families, investing in real estate, buying lawn furniture, assiduously amassing wealth. (xii)
 
@@ -197,12 +197,12 @@ I’ve largely glossed over a major factor that can instantly flip outdoor drive
 
 ---
 
-To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by such words for the better part of a decade.
+To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
 
-Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a relative state of equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas of my life. Lately, however, things seem to have plateaued, to have reached a relative state of equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
 
 My high school chemistry teacher remarked that a real-world example of chemical equilibrium would be to seal a rat in a jar for a month. Breathing, metabolizing, and contracting muscles are all transient biochemical processes that work against dynamic equilibrium. When such processes reach a point of no longer changing in time we have thus reached the final biochemical state, the ultimate equilibrium.
 
-As I trend toward such equilibrium, there are on occasion days when I question if all the adventuring was worth it. Was it but a selfish indulgence, heading inevitably down a path of becoming a “shrivelled nut, a mountain bachelor?” Or, more positively, could it have been a season of life, one pursuit among many simply getting its “time for every activity under heaven”?
+As I trend toward such equilibrium, there are on occasion days when I question if all the adventuring was worth it. Was it but a selfish indulgence, heading down a path of becoming a “shrivelled nut, a mountain bachelor?” Or, more positively, could it have been a season of life, one pursuit among many simply getting its “time for every activity under heaven”?
 
 If nothing else, it certainly wasn’t boring. 
