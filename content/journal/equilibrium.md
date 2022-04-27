@@ -2,14 +2,14 @@
 title: Equilibrium
 description: How long should we pursue our dreams and passions?
 author: Russell McWhae
-date: 2022-04-25
+date: 2022-04-26
 draft: 0
 category: Reflection
 ---
 
-As soon as I could walk I was on skis. Somewhere on a VHS cassette—remember those?—there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up in Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were to spend our childhood winters cross-country skiing.
+As soon as I could walk I was on skis. Somewhere on a VHS cassette there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up in Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were to spend our childhood winters cross-country skiing.
 
-Through our local nordic ski club, we learned to ski: classic technique first, then skate a few years later. I still remember my first ski race at age eight or nine, a short lap around the Canmore Nordic Centre: I cried almost the entire time and finished last. I guess the nerves were too much for me to handle then. (And perhaps still are. I never quite understood the purpose of seeing who can make it around the hamster-wheel the quickest.)
+Through our local nordic ski club, we learned to ski: classic technique first, then skate a few years later. I still remember my first ski race at age eight or nine, a short lap around the Canmore Nordic Centre: I cried almost the entire time and finished last. The nerves were too much for me to handle then. And perhaps still are. I never quite understood the purpose of seeing who can make it around the hamster-wheel the quickest.
 
 Still, I stuck with nordic-ski racing for many years. In solo races, I rarely finished faster than the middle of the pack, though podium finishes were occasionally realized in relays when buoyed up by faster teammates.
 
@@ -21,9 +21,13 @@ Junior high was a relatively sedentary period of my life. I still telemarked occ
 
 My intermittent telemark/downhill skiing continued in high school. I caught the gym bug and managed to bulk up to 186 pounds (my current lean-and-mean build is around 165). I hate to think what the grocery bill for a gym-rat teenager would now be.
 
-In undergrad, I skied only a handful of times each winter, usually in early May after having finished the winter semester and moving back to Calgary for the summer. I dabbled in indoor climbing during university as well.
+In those carefree, pre-ski-touring days of pumping iron and eating chicken breasts, I studied the concept of equilibrium in Grade 12 chemistry. When chemical reactants are mixed, they react to form different products. As chemical reactions are reversible, this is not a one-way process. In a given reaction, there will thus be a rate of forward reaction (reactants generating products) and a rate of reverse reaction (products generating reactants). When these rates are equal, the system is said to be in dynamic equilibrium, where the concentrations of reactants and products appear not to change in time.
 
-Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. (I cannot recommend studying engineering if you value your evenings and weekends.) With disposable income and time, I became inspired to explore the mountains and binged mountain literature, movies, and culture. At one point, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all fourteen 8,000 metre peaks without supplemental oxygen.
+As an introduction to this concept, we performed an experiment using graduated cylinders, drinking straws, and water. One cylinder started with 50 ml of water (A), and the other was empty (B; both had identical volumes). Then, placing a drinking straw in each cylinder down to the bottom, we sealed the tops of each straw with our fingers to capture the water (air in the case of cylinder B), then emptied each straw into the opposite cylinder that it came from. After one round, about 5 ml of water transferred from cylinder A to B, with none in the other direction. In round two, an amount less than 5 ml came out of cylinder A’s 45 ml, and a minute amount came from the 5 ml now in cylinder B. After enough rounds, the transfer between A and B equalizes, and continued transfer of water between both cylinders does not affect the volume in either. The liquid transfer serves as an analogy for chemical reaction rate: highly variable in the beginning, with greater forward bias, that eventually reaches dynamic equilibrium in time.
+
+My study of science continued in university, where I took engineering. In undergrad, I skied only a handful of times each winter, usually in early May after having finished the winter semester and moving back to Calgary for the summer. I dabbled in indoor climbing during university as well.
+
+Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. With both disposable income and time, I became inspired to explore the mountains and binged mountain literature, movies, and culture. Once, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all fourteen 8,000 metre peaks without supplemental oxygen.
 
 In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with a ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
 
@@ -49,25 +53,25 @@ A few years later, some friends and I undertook a self-guided traverse of the Wa
 ---
 
 **9:00 AM, April 29, 2017**  
-In terrible weather, three ski partners and I set out on the [Spearhead traverse](/events/Spearhead_May-2017). The route starts at the top of Blackcomb ski resort then loops clockwise around to Whistler. It typically takes two to four days, so we brought food for four days given that a break in the weather was still a few days out. You have to purchase a one-time lift ticket to get up Blackcomb, and they had us open our packs to see our avalanche safety gear before selling us these tickets. I’m sure more than enough people have gotten into trouble on the Spearhead over the years.
+In terrible weather, three ski partners and I set out on the [Spearhead traverse](/events/Spearhead_May-2017). The route starts at the top of Blackcomb ski resort then loops clockwise around to Whistler. It typically takes two to four days, so we brought food for four days given that a break in the weather was still a few days out. You have to purchase a one-time lift ticket to get up Blackcomb, and guest services had us open our packs to see our avalanche safety gear before selling us these tickets. I’m sure more than enough people have gotten into trouble on the Spearhead over the years.
 
-Topping out on the Glacier Express quad chair, the final Showcase T-bar takes you to the entrance of the Blackcomb glacier, the start of the traverse. Only that today, given the storm, the T-bar was not running. We skinned up by the T-bar, a nice handrail, and entered the ping-pong ball that is an alpine glacier in a whiteout. It was windy too, but at least the spring snowfall rate wasn’t that of a typical midwinter low-pressure system hammering the coast (and causing spicy avalanche conditions).
+Topping out on the Glacier Express quad chair, the final Showcase T-bar takes you to the entrance of the Blackcomb glacier, the start of the traverse. Only that today, given the storm, the T-bar was not running. Unfazed by this, we skinned up by the T-bar, a nice handrail, and entered the ping-pong ball that is an alpine glacier in a whiteout. It was windy too, but at least the spring snowfall rate wasn’t that of a typical midwinter low-pressure system hammering the coast (and causing elevated avalanche danger).
 
-After crossing the Blackcomb glacier, the route goes up and over a col by Blackcomb Peak. If I am remembering correctly, this is the first downhill pitch steep enough to warrant skin-removal and transitioning into downhill mode. Cols can often form wind funnels as they are low and form the path of least resistance for wind to flow through. Given the high winds at this col, we made a hasty transition and skied down the slope, probably less than 200 metres, but it’s hard to say in a storm.
+After crossing the Blackcomb glacier, the route goes up and over a col by Blackcomb Peak. If I am remembering correctly, this is the first downhill pitch steep enough to warrant skin-removal and transitioning into downhill mode. Cols can often form wind funnels as they are low and form the path of least resistance for wind to flow through. Given the high winds at this col, we made a hasty transition and skied down the slope, probably less than 200 metres.
 
 Regrouping at a flatter spot lower down, we re-attached our climbing skins to our skis—only we were one skin short. Somebody had lost a skin in the abbreviated transition at the col. Not one to lose my cool—this is the kind of gear mishap that ends traverses—two of us retraced our descent line back up to the col in an almost certainly vain effort to recover the missing skin. It had probably blown to Pemberton by now.
 
-And then—there it was!
+And then—there it was.
 
-Normally, when taking a break in high winds, you try to find a relatively sheltered spot. Apparently, we had done exactly that, as the skin was lying on the snow in what was evidently a localized low-flow zone. We were back in the game. Collecting the skin, we returned to the other half of the group.
+Normally, when taking a break in high winds, you try to find a relatively sheltered spot. Apparently, we had done exactly that, as the skin was lying on the snow in what was evidently a localized low-flow zone. We were back in the game—with both kinds of skin. Collecting the skin, we returned to the other half of the group.
 
 Further along the route, I took a turn breaking trail across rolling terrain—unroped, given the deep coverage of snow on the glacier. It was slow going in the whiteout. There are tricks to crossing glaciers in whiteout conditions, like tying a knot in a length of cordelette then tossing the knot out in front of you to see the next few metres. This is quite tedious, however, and I usually get antsy when distance on bigger trips is not getting covered quickly enough.
 
 Suddenly, the ground disappeared beneath my feet.
 
-Thankfully, I came to a stop about five feet lower down, with a soft enough landing. Looking up from my crater, I could see the shadow of a giant wind lip that I had skied straight off of. If there was a desirable location along this lip to have skied directly off, I had somehow managed to nail it, for my not-quite-vertical, five-foot drop became overhanging, multiple-metre drops in both lateral directions. Eeek. A party of six we connected with a few days later—naturally with at least one engineer in his late twenties—mentioned that the exact same thing had happened to them at the wind lip.
+Thankfully, I came to a stop about five feet lower down, with a soft enough landing. Looking up from my crater, I could see the shadow of a giant wind lip that I had skied straight off of. If there was a desirable location along this lip to have skied directly off, I had somehow managed to nail it, for my not-quite-vertical, five-foot drop became overhanging, multiple-metre drops in both lateral directions. That was a close one. A party of six we connected with a few days later—naturally with at least one engineer in his late twenties—mentioned that the exact same thing had happened to them at the wind lip.
 
-That was enough excitement for day one, so we set up camp for the night.
+That was enough excitement for one day, so we set up camp for the night.
 
 Subsequent days brought improving weather. Near the apex of the giant horseshoe that is the route, the main path stays high along the Iago ridge-line. We still did not have ideal visibility for this option, as broken clouds hovered around most of the adjacent peaks, with some sun poking through. The clouds seemed to be thinning, so solar input was becoming slightly concerning. Along with the other party of six, we dropped down into the valley via the MacBeth (hooray for literature) glacier, for a lower-risk route variation.
 
@@ -90,11 +94,11 @@ Above tree line, the main ascent route gradually starts up the summit ridge. Low
 
 I stowed my skis on my pack and began post-holing into waist-deep snow, punching through the wind-hammered crust endemic to so much of Rockies alpine terrain.
 
-My hazard assessment had been that if the snow in the gully slid, it would likely have a small volume, and I’d go for a short ride down the centre of the broad ridge—hardly a terrain trap. The ridge had a low-enough angle (we’d been switchbacking up it on skins until that point) that I was not concerned about rocketing down it if the snow failed. (Or worse—tomahawking.)
+My hazard assessment had been that if the snow in the gully slid, it would likely have a small volume, and I’d go for a short ride down the centre of the broad ridge—hardly a terrain trap. The ridge had a low-enough angle (we’d been switchbacking up it on skins until that point) that I was not concerned about rocketing down it if the snow failed. Or worse—tomahawking.
 
-Nearing the middle of my boot-pack, the wind pocket inside the gully released (maybe a size 0.5). All around me, the formerly stiff snow unzipped into large chunks, like a taught guitar string snapping.
+Nearing the middle of my boot-pack, the wind pocket inside the gully released—maybe a size 0.5. All around me, the snow unzipped into large chunks, like a taught guitar string snapping and fraying like a ripped tendon.
 
-Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, like an inverted beetle. I distinctly remember trying to sense my velocity and if it was exponentially increasing. Thankfully, I came to a stop, unburied, where the slope-angle relaxed a few meters down.
+Flipped over backwards, I was now sliding on my back, backpack and skis below me, head-first down the gully, like an inverted beetle. I distinctly remember trying to sense my velocity and if it was exponentially increasing. Thankfully, I came to a stop, unburied, where the slope-angle relaxed a few meters down. Gravity and friction in equilibrium.
 
 Unharmed, I righted myself and regrouped with my partners. My boots had filled with snow between the plastic shell and inner liners, which I cleared while waiting for my heart rate to settle. At my high point in the gulley, the avalanche crown was perhaps two feet deep at worst, tapering as it extended horizontally a few meters in each direction. Wind effect in the gully had created at least one buried weak layer in the snowpack, which the outer wind slab had slid on once my boot-packing had compromised its structural integrity.
 
@@ -104,31 +108,46 @@ We finished the day without further incident. In over 250 ski days now, this is 
 
 ---
 
-TODO: bailing BBB
+**9:00 AM, April 18, 2019**  
+Conditions were not looking good. It was day three of our attempt on Bugaboos to Rogers, a classic ski traverse that usually takes eight to ten days.
 
-Heli skiing cancel because of air conditions, rarely snowpack conditions.
+The first two days had gone well enough. The only mishap on day one had been having to backtrack uphill a bit after a potential shortcut down a convexity on a glacier proved too heavily crevassed for safe travel. Camp that night had been a beautiful spot up high on a glacier.
+
+Day two’s blunder had been to leave food stashed in our cook shelter at a camp below tree-line, rather than hung from a tree. Overnight, an enterprising rodent had decided to see how many surfaces of our cook shelter he could evenly distribute granola across. He also cut the bottom out of a plastic bowl, of which only the outer cylinder remained.
+
+Leading up to the trip, I’d had two potential groups to join. The way that it worked out, I started with a group one day behind the other. We had seen some of their tracks and the remnants of one of their camps in our first two days.
+
+Thanks to long-term forecasts and satellite-communication devices, the decline in conditions was not unexpected. A warm, moist low-pressure system was rolling in, with the freezing level ascending to well over 3000 metres, higher than all nearby peaks, with heavy precipitation. This was to persist for a few days, during which travel in avalanche terrain would be sketchy, as intense rainfall events can quickly destabilize spring snowpacks.
+
+Radioing in to a nearby heli-ski lodge where a team member had previously worked, we were surprised to receive an offer to spend the next night there to wait out the storm. This was certainly preferable to sitting in a tent in the rain, so we accepted. Further along the traverse route, there are permanent structures that would be well suited for waiting out storms; however, we were at least two days away from the closest one. We were picked up near our granola-explosion camp. Dinner consisted of steak and lobster, a delightful upgrade over the original plan of dehydrated cardboard.
+
+This was the final week of heli-skiing. The following morning, the guides did a test flight and were less than excited with conditions upon returning. So unexcited in fact that they cancelled the heli-skiing program for the day, despite air conditions being favourable enough for flying. It is my understanding that air conditions are usually the crux in heli-skiing, not avalanche conditions. With the freedom to fly anywhere in their tenures, heli-ski operations can usually find slopes to ski, even in periods of elevated avalanche hazard. Turbulent air or lack of visibility are more likely reasons for grounded choppers.
+
+The guides had been spooked by easy snowpack test failures and fracture propagations. It would still not be safe to travel in avalanche terrain as the snowpack was saturated with moisture, with wet-slab avalanches waiting for triggers. They said that they wouldn’t want to drop us off anywhere other than flat terrain.
+
+I told myself that I wasn’t going to check my phone (the lodge had Wi-Fi), but I finally did to let my family know where I was. Scrolling through a news feed, I read the unfortunate news of the death of skier Dave Treadway in a crevasse fall, as well as the deaths of high-end alpinists Hansjörg Auer, David Lama and Jess Roskelley, in an avalanche on Howse Peak.
+
+Breakfast consisted of halfheartedly discussing options to continue, but, deep down, I knew the traverse was over. Not wanting to overstay our welcome, we opted to bail via a ride down the forestry access road.
+
+We satellite-messaged the group a day ahead of us, who had managed to get to a cabin further along the route, and told them to help themselves to our food cache stashed there. They waited it out for a few days but had to take a valley-bottom route variation (the Beaver valley) all the way out, bypassing most of the interesting alpine terrain, including the notorious rappel onto the Deville glacier. A later text described it as “heartbreaking.”
 
 ---
 
-I never thought it would happen to me, but alas it has: since moving to a ski town, I have skied less than before. At the time of this writing, I have had only 24 days of touring this season. I was too cheap to pay for an annual resort pass—despite the high-volume of white powder delivered—and only skied a single local’s day (Revy local’s ski for $20, with proceeds going to the food bank; _this_ promotion I can get behind). To non-skiers, 24 probably sounds like an impressive number; however, some of my best seasons had over 50.
+I never thought it would happen to me, but alas it has: since moving to a ski town, I have skied less than before. At the time of this writing, I have had only 24 days of touring this season. I was too cheap to pay for an annual resort pass—despite the high-volume of white powder delivered—and only skied a single local’s day (Revelstoke local’s ski for $20, with proceeds going to the food bank; _this_ promotion I can get behind). To non-skiers, 24 probably sounds like an impressive number; however, some of my best seasons had over 50.
 
 Don’t get me wrong—I still had a great ski season. I finally skied the Tupper traverse at Rogers, which was every bit as good as I imagined it would be. There were many delightful turns to be had in local touring areas such as Begbie shoulder and the MacPherson fingers as lower elevation snow coverage this winter greatly exceeded that of the previous. Last year, we had to shovel our driveway maybe five times; this year, dozens, with relentless heavy, wet snow. Now I understand why people own snowblowers here: they aren’t lazy but rather interested in preventing heart attacks. I also don’t think I’ve sustained a cheesy grin as long as in re-learning to skate ski this winter (my Christmas present to myself).
 
 But why the drop in ski ambition?
 
-Let’s return to my pre-touring days of pumping iron and eating chicken breasts. In high school chemistry we studied the concept of equilibrium. When chemical reactants are mixed, they react to form different products. As chemical reactions are reversible, this is not a one-way process. In a given reaction, there will thus be a rate of forward reaction (reactants generating products) and a rate of reverse reaction (products generating reactants). When these rates are equal, the system is said to be in dynamic equilibrium, where the concentrations of reactants and products appear not to change in time.
-
-As an introduction to this concept, we performed an experiment using graduated cylinders, drinking straws, and water. One cylinder started with 50 ml of water (A), and the other was empty (B; both had identical volumes). Then, placing a drinking straw in each cylinder down to the bottom, we sealed the tops of each straw with our fingers to capture the water (air in the case of cylinder B), then emptied each straw into the opposite cylinder that it came from. After one round, about 5 ml of water transferred from cylinder A to B, with none in the other direction. In round two, an amount less than 5 ml came out of cylinder A’s 45 ml, and a minute amount came from the 5 ml now in cylinder B. After enough rounds, the transfer between A and B equalizes, and continued transfer of water between both cylinders does not affect the volume in either. The liquid transfer serves as an analogy for chemical reaction rate: highly variable in the beginning, with greater forward bias, that eventually reaches dynamic equilibrium in time.
-
-This concept of dynamic equilibrium can in turn apply to outdoor pursuits. In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing bigger and better objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I ultimately changed careers to work in the ski industry (not in the front line, like guiding, though).
-
-And yet, with hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a high-risk outdoor passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
+With hundreds of ski days across many years, now living in one of Canada’s best ski towns, I haven’t been able to sustain the volume of skiing of previous years. I can still go and bang out 2000-meter days and have great fun in doing so, but the thrill somehow isn’t quite the same as in earlier years. Is this just a temporary ebb in the long flow of pursuing a high-risk outdoor passion—perhaps spurred by changing careers and cities during a global pandemic—or could it be something more?
 
 Is it possible that my ski ambition has reached a state of equilibrium with the other aspirations of my life?
 
-First, what exactly are such other aspirations? In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.” (Also, if you liked the outdoor adventures described here, check out that essay for more of the same.)
+In my early days of ski touring, there was a strong forward bias in my ski aspirations. This was an exciting time, from first learning what was possible, like skiing _up_ mountains and multi-day glacier traverses, to then undertaking and successfully completing bigger and better objectives. Like the early stages of a chemical reaction, things were changing rapidly: my experience grew, my network of ski partners blossomed, and I explored many wild places far beyond the reach of the non-outdoor-inclined. I liked skiing so much that I even changed careers to work in the ski industry (not in the front line, like guiding, though).
 
-But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my twenties, skiing was always the _escape_ from my working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides, some now starting families, who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
+In my twenties, I was largely unconcerned by what I considered at the time to be uninteresting adult pursuits: careers, mortgages, and starting families. There was still _plenty_ of time to worry about those later. Turning 30, I [described myself as a](/journal/30-going-on-13) “now-thirty-year-old man-child who has found exactly nothing better to do with his life than to play outside.” (Also, if you liked the outdoor adventures described here, check out that essay for more of the same.)
+
+But now it is later. For perhaps the first time in my life, I have found professional work that I enjoy, am good at, and is lucrative. It’s a trifecta that eluded me for many years. In my engineering career, skiing was always the escape from urban working reality, and now, in a way, has become my reality. Could this be a case of too much of a good thing? I’ve now met a few ski guides, some now starting families, who have largely abandoned recreational ski touring. One remarked that he had “skied more than enough powder for the rest of [his] life.”
 
 Can there thus be more to life than outdoor pursuits? Perhaps the question is not how long to pursue such passions but instead how to balance them with other goals in life. To explore such a question, let’s now turn to my favourite source of philosophical inspiration: literature.
 
@@ -172,7 +191,7 @@ Success stories are more the exception than the norm in the outdoors, however. M
 
 > I graduated from college, by the skin of my teeth, in December, 1975. I spend the next eight years employed as an itinerant carpenter and commercial fisherman in Colorado, Seattle, and Alaska, living in studio apartments with cinder-block walls, driving a hundred-dollar car, working just enough to make rent and fund the next climbing trip. Eventually it began to wear thin. I found myself lying awake nights reliving all the close scrapes I’d had on the heights. Sawing joists in the rain at some muddy construction site, my thoughts would increasingly turn to college classmates who were raising families, investing in real estate, buying lawn furniture, assiduously amassing wealth. (xii)
 
-Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing.
+Now that I am in my thirties, concerns like careers, mortgages, and starting a family are much less abstract than a decade ago. While I seem to finally have my career figured out, I’ve made little progress with the other two. Mortgages, at least, have been on my mind lately more so than skiing. If only some kind of equilibrium would come to the housing market now.
 
 I’ve largely glossed over a major factor that can instantly flip outdoor drive on its head: accidents. A life-changing injury, or losing a loved one to an avalanche, can instantly upend ambition. I have been fortunate to remain relatively unscathed in my outdoor adventures thus far, and knew (not all that well) two people who died in the mountains. I hope all my discussion of changing ski motivation from a perspective of good health does not come across as insensitive here.
 
@@ -180,9 +199,11 @@ I’ve largely glossed over a major factor that can instantly flip outdoor drive
 
 To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
 
-Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a state of dynamic equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
+Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a relative state of equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
 
-My high school chemistry teacher remarked that a (slightly gruesome) real-world example of chemical equilibrium would be to put a rat in an airtight jar for a month. Breathing, digesting, and contracting muscles are all transient biochemical processes that work against steady-state equilibrium. When such processes reach a point of no longer varying in time we will have thus reached the ultimate form of equilibrium, the final biochemical state. TODO
+My high school chemistry teacher remarked that a (slightly gruesome) real-world example of chemical equilibrium would be to put a rat in an airtight jar for a month. Breathing, digesting, and contracting muscles are all transient biochemical processes that work against steady-state equilibrium. When such processes reach a point of no longer changing in time we will have thus reached the final biochemical state, the ultimate equilibrium.
+
+In a way, life is a struggle against equilibrium.
 
 ## Ideas
 
