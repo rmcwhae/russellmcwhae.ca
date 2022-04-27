@@ -203,6 +203,6 @@ Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed oth
 
 My high school chemistry teacher remarked that a real-world example of chemical equilibrium would be to seal a rat in a jar for a month. Breathing, metabolizing, and contracting muscles are all transient biochemical processes that work against dynamic equilibrium. When such processes reach a point of no longer changing in time we have thus reached the final biochemical state, the ultimate equilibrium.
 
-As I trend toward such equilibrium, there are on occasion days when I question if all the adventuring was worth it. Is it but a selfish indulgence, heading inevitably toward becoming a “shrivelled nut, a mountain bachelor?”
+As I trend toward such equilibrium, there are on occasion days when I question if all the adventuring was worth it. Was it but a selfish indulgence, heading inevitably down a path of becoming a “shrivelled nut, a mountain bachelor?” Or, more positively, could it have been a season of life, one pursuit among many simply getting its “time for every activity under heaven”?
 
 If nothing else, it certainly wasn’t boring. 
