@@ -197,7 +197,7 @@ I’ve largely glossed over a major factor that can instantly flip outdoor drive
 
 ---
 
-To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by these words for the better part of a decade.
+To quote a long-since-forgotten ski movie, a skier reflected that “In a world where a lot of things are soul crushing, skiing is something that has a lot of soul.” I lived by such words for the better part of a decade.
 
 Five years ago, a heavy forward bias in my ski ambition perhaps overshadowed other areas in my life. Lately, however, things seem to have plateaued, to have reached a relative state of equilibrium: my desire to spend time outside has met with increasing pulls from other pursuits. Perhaps all this windy philosophizing is to arrive at no more hackneyed a conclusion than to find balance between different priorities in life, than to have everything in moderation.
 
