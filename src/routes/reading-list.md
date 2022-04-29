@@ -148,3 +148,4 @@ Exact timing on when I read these is fuzzy, but I do remember these titles being
 -   _The Hunt for Red October_ by Tom Clancy
 -   _Rite of Passage_ by Alexei Panshin
 -   _Fallen Angels_ by Walter Dean Myers
+-   _Deathwatch_ by Robb White
