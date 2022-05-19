@@ -114,3 +114,30 @@ blockquote > * + * {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+.toc li {
+    margin-top: var(--s-3);
+}
+.toc h4 {
+    // border-top: 1px solid var(--light-grey);
+    // padding-top: var(--s-2);
+}
+.toc a {
+    color: var(--text-color);
+    font-weight: inherit;
+}
+.toc-level-3 {
+    margin-left: var(--s1);
+    font-size: 0.9em;
+}
+.toc .active a,
+.toc a:hover {
+    color: var(--high-contrast-color);
+    text-decoration: none;
+}

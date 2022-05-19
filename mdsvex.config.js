@@ -1,9 +1,8 @@
-import path from 'path'
 import remarkfootnotes from 'remark-footnotes'
 import readingTime from 'remark-reading-time'
-import remarkToc from 'remark-toc'
 import remarkSlug from 'remark-slug'
 import rehypeExternalLinks from 'rehype-external-links'
+import { slug, buildToc } from './src/lib/utils/markdown.js'
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
@@ -16,26 +15,8 @@ const config = {
         dashes: 'oldschool',
     },
 
-    remarkPlugins: [
-        remarkToc,
-        remarkSlug,
-        readingTime(),
-        remarkfootnotes,
-        slug,
-    ],
+    remarkPlugins: [remarkSlug, readingTime(), remarkfootnotes, slug, buildToc],
     rehypePlugins: [rehypeExternalLinks],
 }
 
 export default config
-
-function slug() {
-    return (_, file) => {
-        const parsed = path.parse(file.filename)
-        const slug = parsed.base.replace('.md', '')
-
-        file.data.fm = {
-            ...file.data.fm,
-            slug,
-        }
-    }
-}

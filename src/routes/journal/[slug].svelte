@@ -21,6 +21,7 @@
             component,
             description,
             category,
+            tableOfContents,
         } = posts[index]
         const relatedPosts = posts
             .filter((post) => post.title !== title)
@@ -49,6 +50,7 @@
                 description,
                 relatedPosts,
                 component,
+                tableOfContents,
             },
         }
     }
@@ -56,6 +58,7 @@
 
 <script>
     import Date from '$lib/components/misc/Date.svelte'
+    import { onMount } from 'svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Button from '$lib/components/buttons/Button.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
@@ -70,38 +73,73 @@
     export let readingTime
     export let component
     export let relatedPosts
+    export let tableOfContents
+
+    onMount(() => {
+        window.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute('id')
+                    if (entry.intersectionRatio > 0) {
+                        document
+                            .querySelector(`.toc li a[href="#${id}"]`)
+                            .parentElement.classList.add('active')
+                    } else {
+                        document
+                            .querySelector(`.toc li a[href="#${id}"]`)
+                            .parentElement.classList.remove('active')
+                    }
+                })
+            })
+
+            // Track all headings that have an `id` applied
+            document.querySelectorAll('h2[id]').forEach((heading) => {
+                console.log('heading', heading)
+                observer.observe(heading)
+            })
+            document.querySelectorAll('h3[id]').forEach((section) => {
+                observer.observe(section)
+            })
+        })
+    })
 
     const viewText = views === 1 ? 'view' : 'views'
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
 
-<article>
-    <header>
-        <div class="sub">
-            <Date {date} />
-        </div>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
+<header>
+    <div class="sub">
+        <Date {date} />
+    </div>
+    <h1>{@html preventLastTwoWordWrap(title)}</h1>
+    {#if description}
+        <p>{@html preventLastTwoWordWrap(description)}</p>
+    {/if}
+    <div class="sub">
+        <span>{category}</span>
+        &middot;
+        <span class="nowrap">{readingTime.words} words</span>
+        &middot;
+        <span class="nowrap">{readingTime.text}</span>
+        {#if views}
+            &middot;
+            <span class="nowrap">{views} {viewText}</span>
         {/if}
-        <div class="sub">
-            <span>{category}</span>
-            &middot;
-            <span class="nowrap">{readingTime.words} words</span>
-            &middot;
-            <span class="nowrap">{readingTime.text}</span>
-            {#if views}
-                &middot;
-                <span class="nowrap">{views} {viewText}</span>
-            {/if}
-        </div>
-    </header>
+    </div>
+</header>
 
-    <main class="char-limit flow margin-0-auto">
+<div class="wrapper" class:offset={tableOfContents}>
+    {#if tableOfContents}
+        <aside class="toc">
+            {@html tableOfContents}
+        </aside>
+    {/if}
+
+    <article class="char-limit flow">
         <svelte:component this={component} />
-    </main>
-</article>
+    </article>
+</div>
 
 <div class="restricted-width">
     <h2 class="mt-5 mb-3">Related Entries</h2>
@@ -118,12 +156,32 @@
     header {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: var(--s-1);
         padding-bottom: var(--s0);
         margin-bottom: var(--s2);
+        /* border-bottom: 1px solid var(--light-grey); */
     }
     h1,
     p {
         margin: 0;
+    }
+    aside {
+        position: sticky;
+        top: 330px;
+        max-height: calc(100vh - 330px);
+        overflow: auto;
+        flex: 0 100000 250px;
+    }
+    article {
+        margin: 0 auto;
+    }
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .offset {
+        padding-right: 250px;
     }
 </style>

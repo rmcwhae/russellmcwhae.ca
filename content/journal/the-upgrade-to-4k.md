@@ -14,8 +14,6 @@ category: Tech
 
 <Image src="/journal-images/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W" />
 
-## Table of Contents
-
 ## Introduction
 
 My very first smartphone was the iPhone 4, which I purchased in September 2010. I had held out from owning previous generations of the iPhone as the original iPhone was never officially available in Canada, and the iPhones 3G and 3GS were largely iterative, under-the-hood improvements over their respective predecessors. The iPhone 4 introduced a breakthrough new technology previously unseen in any Apple product: the Retina display, a display with twice as many pixels in each linear direction (640 x 960 vs. 320 x 480) on the same-size 3.5-inch screen as before. This quadrupled the total number of pixels within the same physical area, resulting in far sharper text and graphics. Individual pixels could not be seen by the naked eye.
