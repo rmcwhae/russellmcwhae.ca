@@ -58,7 +58,8 @@
 
 <script>
     import Date from '$lib/components/misc/Date.svelte'
-    import { onMount } from 'svelte'
+    import { onMount, onDestroy } from 'svelte'
+    import { browser } from '$app/env'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Button from '$lib/components/buttons/Button.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
@@ -75,12 +76,16 @@
     export let relatedPosts
     export let tableOfContents
 
+    const viewText = views === 1 ? 'view' : 'views'
+
+    let observer
+
     onMount(() => {
-        window.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+        if (browser) {
+            function handleIntersect(entries, observer) {
                 entries.forEach((entry) => {
                     const id = entry.target.getAttribute('id')
-                    if (entry.intersectionRatio > 0) {
+                    if (entry.isIntersecting) {
                         document
                             .querySelector(`.toc li a[href="#${id}"]`)
                             .parentElement.classList.add('active')
@@ -90,20 +95,23 @@
                             .parentElement.classList.remove('active')
                     }
                 })
-            })
+            }
+            const options = { threshold: 1, rootMargin: '100% 0% -100%' }
+            observer = new IntersectionObserver(handleIntersect, options)
 
-            // Track all headings that have an `id` applied
-            document.querySelectorAll('h2[id]').forEach((heading) => {
-                console.log('heading', heading)
+            const headings = document.querySelectorAll('h2[id], h3[id]')
+
+            headings.forEach((heading) => {
                 observer.observe(heading)
             })
-            document.querySelectorAll('h3[id]').forEach((section) => {
-                observer.observe(section)
-            })
-        })
+        }
     })
 
-    const viewText = views === 1 ? 'view' : 'views'
+    onDestroy(() => {
+        if (observer) {
+            observer.disconnect()
+        }
+    })
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
