@@ -18,7 +18,9 @@ export function buildToc() {
     return (tree, file) => {
         const headingNodes = []
         visit(tree, 'heading', (node) => {
-            if (node.data.id !== 'table-of-contents') headingNodes.push(node)
+            if (node.data.id !== 'table-of-contents') {
+                headingNodes.push(node)
+            }
         })
 
         if (headingNodes.length > 0) {
