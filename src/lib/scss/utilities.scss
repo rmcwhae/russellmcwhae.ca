@@ -120,13 +120,10 @@ blockquote > * + * {
     margin: 0;
     padding: 0;
     font-size: 1rem;
+    line-height: 1.2;
 }
 .toc li {
-    margin-top: var(--s-3);
-}
-.toc h4 {
-    // border-top: 1px solid var(--light-grey);
-    // padding-top: var(--s-2);
+    margin-top: var(--s-1);
 }
 .toc a {
     color: var(--text-color);
@@ -139,5 +136,8 @@ blockquote > * + * {
 .toc .active a,
 .toc a:hover {
     color: var(--high-contrast-color);
-    text-decoration: none;
+    text-decoration: underline;
+}
+.toc .active a {
+    font-weight: 600;
 }

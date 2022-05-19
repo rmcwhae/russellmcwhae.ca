@@ -84,20 +84,25 @@
         if (browser) {
             function handleIntersect(entries, observer) {
                 entries.forEach((entry) => {
+                    const currentY = entry.boundingClientRect.y
+                    const wrappingElement = document.querySelector('.content')
+
                     const id = entry.target.getAttribute('id')
+
                     if (entry.isIntersecting) {
+                        document
+                            .querySelectorAll(`.toc li`)
+                            .forEach((element) => {
+                                element.classList.remove('active')
+                            })
                         document
                             .querySelector(`.toc li a[href="#${id}"]`)
                             .parentElement.classList.add('active')
-                    } else {
-                        document
-                            .querySelector(`.toc li a[href="#${id}"]`)
-                            .parentElement.classList.remove('active')
                     }
                 })
             }
-            const options = { threshold: 1, rootMargin: '100% 0% -100%' }
-            observer = new IntersectionObserver(handleIntersect, options)
+            // const options = { threshold: 1, rootMargin: '100% 0% -100%' }
+            observer = new IntersectionObserver(handleIntersect)
 
             const headings = document.querySelectorAll('h2[id], h3[id]')
 
@@ -176,8 +181,8 @@
     }
     aside {
         position: sticky;
-        top: 330px;
-        max-height: calc(100vh - 330px);
+        top: 347px;
+        max-height: calc(100vh - 347px);
         overflow: auto;
         flex: 0 100000 250px;
     }
