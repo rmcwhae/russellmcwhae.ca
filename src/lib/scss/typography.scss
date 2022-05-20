@@ -40,6 +40,10 @@ a.no-shadow:hover {
 
 // Article styles
 
+article h2:not(:first-child) {
+    margin-top: var(--s4) !important;
+}
+
 article h3 {
     margin-top: var(--s3) !important;
 }
