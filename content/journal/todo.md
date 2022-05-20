@@ -14,7 +14,6 @@ category: TODO
 -   Try https://atroposjs.com/
 -   Setup automated testing via Cypress
 -   Separate Table of Contents into separate column for journal entries: mobile collapse, uninstall old plugin, svelte package updates, test Windows
--   Backstop: add readySelector
 -   Inline heading link # sign on hover
 -   Try css color-mod()
 -   Build `<category>` page for journal entries; journal hero images?
