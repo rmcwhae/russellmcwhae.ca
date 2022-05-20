@@ -33,7 +33,7 @@ export function buildToc() {
 }
 
 function generateToc(headingNodes) {
-    let html = '<h4>Table of Contents</h4>\n<ul>\n'
+    let html = '<ul>\n'
     html += headingNodes
         .map((node) => {
             return `<li class="toc-level-${node.depth}"><a href="#${node.data.id}">${node.children[0].value}</a></li>`
