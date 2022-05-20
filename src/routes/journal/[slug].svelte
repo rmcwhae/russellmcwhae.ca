@@ -84,9 +84,6 @@
         if (browser) {
             function handleIntersect(entries, observer) {
                 entries.forEach((entry) => {
-                    const currentY = entry.boundingClientRect.y
-                    const wrappingElement = document.querySelector('.content')
-
                     const id = entry.target.getAttribute('id')
 
                     if (entry.isIntersecting) {
@@ -181,8 +178,8 @@
     }
     aside {
         position: sticky;
-        top: 347px;
-        max-height: calc(100vh - 347px);
+        top: var(--s0);
+        max-height: calc(100vh - var(--s0));
         overflow: auto;
         flex: 0 100000 250px;
     }
