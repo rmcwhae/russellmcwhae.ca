@@ -141,7 +141,7 @@
 
 <div class="wrapper" class:offset={tableOfContents}>
     {#if tableOfContents}
-        <aside class="toc">
+        <aside class="toc char-limit">
             {@html tableOfContents}
         </aside>
     {/if}
@@ -162,7 +162,9 @@
     </div>
 </div>
 
-<style>
+<style type="scss">
+    @import '../../lib/scss/breakpoints.scss';
+
     header {
         display: flex;
         flex-direction: column;
@@ -175,21 +177,29 @@
         margin: 0;
     }
     aside {
-        position: sticky;
-        top: var(--s0);
-        max-height: calc(100vh - var(--s0));
-        overflow: auto;
-        flex: 0 100000 250px;
+        margin: 0 auto var(--s2);
     }
     article {
         margin: 0 auto;
     }
-    .wrapper {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-    .offset {
-        padding-right: 250px;
+
+    @include for-desktop-up {
+        .wrapper {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        aside {
+            margin: inherit;
+            position: sticky;
+            top: var(--s0);
+            max-height: calc(100vh - var(--s0));
+            overflow: auto;
+            flex: 0 100000 250px;
+        }
+        .offset {
+            padding-right: 250px;
+        }
     }
 </style>
