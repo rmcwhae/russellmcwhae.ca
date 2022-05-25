@@ -24,7 +24,6 @@ const config = {
         preprocess(),
     ],
     kit: {
-        amp: false,
         prerender: {
             crawl: true,
             default: true,
