@@ -51,13 +51,16 @@
                         on:close={hideMenu}
                     />
                 </li>
-                <li id="mobile-switcher">
+                <li
+                    id="mobile-switcher"
+                    data-test="mobile-colour-scheme-switcher"
+                >
                     <ThemeSwitcher />
                 </li>
             </ul>
         </div>
     </nav>
-    <div id="desktop-switcher">
+    <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
         <ThemeSwitcher />
     </div>
     <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
