@@ -1,0 +1,26 @@
+name: Run Cypress Tests
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+jobs:
+    cypress-run:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Install modules
+              run: npm ci
+            - name: Cypress
+              uses: cypress-io/github-action@v2
+              with:
+                  browser: chrome
+                  headless: true
+                  start: npm run dev
+                  wait-on: http://localhost:4000
+              env:
+                  VITE_FAUNA_SECRET_KEY: ${{ secrets.VITE_FAUNA_SECRET_KEY }}
+                  VITE_IMAGEKIT_PRIVATE_KEY: ${{ secrets.VITE_IMAGEKIT_PRIVATE_KEY }}
+                  VITE_IMAGEKIT_PUBLIC_KEY: ${{ secrets.VITE_IMAGEKIT_PUBLIC_KEY }}
+                  VITE_IMAGEKIT_URL_ENDPOINT: ${{ secrets.VITE_IMAGEKIT_URL_ENDPOINT }}
