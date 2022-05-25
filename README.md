@@ -37,4 +37,6 @@ npm run dev
 
 ## Testing
 
-Populate `cypress.env.json` then `npm run dev` and `npx cypress open` to run tests.
+End-to-end testing is done with Cypress.
+
+While running `npm run dev`, run `npx cypress open` to run tests.
