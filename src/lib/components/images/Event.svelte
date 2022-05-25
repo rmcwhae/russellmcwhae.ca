@@ -22,7 +22,7 @@
             lockedRatio
             photoswipe={false}
         />
-        <h3>{@html StringUtils.preventLastTwoWordWrap(title)}</h3>
+        <h3>{title}</h3>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>
 </section>

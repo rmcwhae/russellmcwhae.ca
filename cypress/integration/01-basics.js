@@ -9,6 +9,11 @@ describe('Navigation', function () {
         cy.contains('Portfolio')
     })
 
+    it('visits the events page', function () {
+        cy.visit('/events')
+        cy.contains('Events')
+    })
+
     it('visits the calendars page', function () {
         cy.visit('/calendars')
         cy.contains('Calendars')
