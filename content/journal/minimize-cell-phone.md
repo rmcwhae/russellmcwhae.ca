@@ -12,6 +12,8 @@ category: Tech
   import Caption from '$lib/components/images/Caption.svelte'
 </script>
 
+## Introduction
+
 Canada [often ranks](https://nationalpost.com/news/canada/why-canadian-cell-phone-bills-are-among-the-most-expensive-on-the-planet) among the most expensive countries for wireless phone plans. Our current mobility-provider landscape consists of the Big Three national companies — Telus, Rogers, and Bell — dominating most ([97%](https://www.whistleout.ca/CellPhones/Guides/canada-phone-plan-pricing)) of the market, with a few smaller providers piggybacking off the network infrastructure of these larger companies. In a few provinces (Saskatchewan, Manitoba, and Québec), competitive provincial carriers drive down mobile-plan costs from the national carriers.
 
 The overall rhetoric from the Big Three is that serving a small population dispersed across a large geographic area is expensive. A [2017 study](https://www.cbc.ca/news/business/wireless-prices-cell-phone-plan-canada-1.4652550), however, found that similarly-low-population-density Australia enjoyed phone plans over $37/month (all amounts CAD) cheaper than in Canada. Smaller providers (Freedom and Wind in Alberta) have attempted to offer competitively priced plans; however, my experience with these smaller providers is that coverage (reception) is usually limited to large urban centres and may not be as reliable in rural areas. (This is perhaps only a problem if, like me, you spend a lot of time outside the city ).

@@ -7,8 +7,6 @@ draft: 0
 category: Tech
 ---
 
-## Table of Contents
-
 ## Introduction
 
 Around the time I turned 30, software development had entered onto my radar as a career path. I had been studying and working in civil engineering and biomedical research for around twelve years (undergrad, grad school, and industry work) and was ready for a change. Now that I have been working as a web developer for over two years—and in doing so realized my long-standing dream of moving to a ski town—here is a reflection on my experience in tech thus far.

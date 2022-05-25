@@ -21,6 +21,7 @@
             component,
             description,
             category,
+            tableOfContents,
         } = posts[index]
         const relatedPosts = posts
             .filter((post) => post.title !== title)
@@ -49,6 +50,7 @@
                 description,
                 relatedPosts,
                 component,
+                tableOfContents,
             },
         }
     }
@@ -56,6 +58,8 @@
 
 <script>
     import Date from '$lib/components/misc/Date.svelte'
+    import { onMount, onDestroy } from 'svelte'
+    import { browser } from '$app/env'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Button from '$lib/components/buttons/Button.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
@@ -70,38 +74,82 @@
     export let readingTime
     export let component
     export let relatedPosts
+    export let tableOfContents
 
     const viewText = views === 1 ? 'view' : 'views'
+
+    let observer
+
+    onMount(() => {
+        if (browser) {
+            function handleIntersect(entries, observer) {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute('id')
+
+                    if (entry.isIntersecting) {
+                        document
+                            .querySelectorAll(`.toc li`)
+                            .forEach((element) => {
+                                element.classList.remove('active')
+                            })
+                        document
+                            .querySelector(`.toc li a[href="#${id}"]`)
+                            .parentElement.classList.add('active')
+                    }
+                })
+            }
+            // const options = { threshold: 1, rootMargin: '100% 0% -100%' }
+            observer = new IntersectionObserver(handleIntersect)
+
+            const headings = document.querySelectorAll('h2[id], h3[id]')
+
+            headings.forEach((heading) => {
+                observer.observe(heading)
+            })
+        }
+    })
+
+    onDestroy(() => {
+        if (observer) {
+            observer.disconnect()
+        }
+    })
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
 
-<article>
-    <header>
-        <div class="sub">
-            <Date {date} />
-        </div>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
+<header>
+    <div class="sub">
+        <Date {date} />
+    </div>
+    <h1>{@html preventLastTwoWordWrap(title)}</h1>
+    {#if description}
+        <p>{@html preventLastTwoWordWrap(description)}</p>
+    {/if}
+    <div class="sub">
+        <span>{category}</span>
+        &middot;
+        <span class="nowrap">{readingTime.words} words</span>
+        &middot;
+        <span class="nowrap">{readingTime.text}</span>
+        {#if views}
+            &middot;
+            <span class="nowrap">{views} {viewText}</span>
         {/if}
-        <div class="sub">
-            <span>{category}</span>
-            &middot;
-            <span class="nowrap">{readingTime.words} words</span>
-            &middot;
-            <span class="nowrap">{readingTime.text}</span>
-            {#if views}
-                &middot;
-                <span class="nowrap">{views} {viewText}</span>
-            {/if}
-        </div>
-    </header>
+    </div>
+</header>
 
-    <main class="char-limit flow margin-0-auto">
+<div class="wrapper" class:offset={tableOfContents}>
+    {#if tableOfContents}
+        <aside class="toc char-limit">
+            {@html tableOfContents}
+        </aside>
+    {/if}
+
+    <article class="char-limit flow">
         <svelte:component this={component} />
-    </main>
-</article>
+    </article>
+</div>
 
 <div class="restricted-width">
     <h2 class="mt-5 mb-3">Related Entries</h2>
@@ -114,16 +162,44 @@
     </div>
 </div>
 
-<style>
+<style type="scss">
+    @import '../../lib/scss/breakpoints.scss';
+
     header {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: var(--s-1);
-        padding-bottom: var(--s0);
         margin-bottom: var(--s2);
     }
     h1,
     p {
         margin: 0;
+    }
+    aside {
+        margin: 0 auto var(--s2);
+    }
+    article {
+        margin: 0 auto;
+    }
+
+    @include for-desktop-up {
+        .wrapper {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        aside {
+            margin: inherit;
+            position: sticky;
+            top: var(--s0);
+            max-height: calc(100vh - var(--s0));
+            overflow: auto;
+            flex: 0 100000 250px;
+        }
+        .offset {
+            padding-right: 250px;
+        }
     }
 </style>
