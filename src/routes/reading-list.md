@@ -29,6 +29,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon_ by Kim Zetter
 -   _The Death of Ivan Ilyich_ by Leo Tolstoy
 -   _One Green Bottle_ by Elizabeth Coxhead
 -   _Brave New World Revisited_ by Aldous Huxley
