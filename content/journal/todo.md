@@ -9,12 +9,10 @@ category: TODO
 
 ## Later Ideas
 
--   Populate ImageKit captions¬
+-   Populate ImageKit captions
 -   Events pagination 500 error only on production…
 -   Try https://atroposjs.com/
--   Setup automated testing via Cypress
--   Separate Table of Contents into separate column for journal entries: test Windows
--   Inline heading link # sign on hover
+-   Separate Table of Contents: test Windows, tweak who/when is active
 -   Try css color-mod()
 -   Build `<category>` page for journal entries; journal hero images?
 -   2016.russellmcwhae.ca; ~~2006.russellmcwhae.ca~~

@@ -1,8 +1,9 @@
 import remarkfootnotes from 'remark-footnotes'
 import readingTime from 'remark-reading-time'
-import remarkSlug from 'remark-slug'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
-import { slug, buildToc } from './src/lib/utils/markdown.js'
+import { frontMatterSlug } from './src/lib/utils/markdown.js'
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
@@ -15,8 +16,17 @@ const config = {
         dashes: 'oldschool',
     },
 
-    remarkPlugins: [remarkSlug, readingTime(), remarkfootnotes, slug, buildToc],
-    rehypePlugins: [rehypeExternalLinks],
+    remarkPlugins: [readingTime(), remarkfootnotes, frontMatterSlug],
+    rehypePlugins: [
+        rehypeSlug,
+        [
+            rehypeAutolinkHeadings,
+            {
+                behavior: 'wrap',
+            },
+        ],
+        rehypeExternalLinks,
+    ],
 }
 
 export default config
