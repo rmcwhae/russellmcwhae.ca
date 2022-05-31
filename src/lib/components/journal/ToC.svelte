@@ -94,7 +94,7 @@
             top: var(--s0);
             left: var(--s0);
             float: left;
-            max-height: calc(100vh - var(--s0)); // TODO Fix me…
+            max-height: calc(100vh - var(--s0));
             overflow: auto;
         }
     }
