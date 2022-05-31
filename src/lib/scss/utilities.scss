@@ -117,7 +117,7 @@ blockquote > * + * {
 
 .toc ul {
     list-style: none;
-    margin: 0 0 var(--s0);
+    margin: 0 0 var(--s1);
     padding-left: 0;
     font-size: 1rem;
     line-height: 1.2;
@@ -135,10 +135,10 @@ blockquote > * + * {
     padding-right: var(--s-1);
     display: inline-block;
 }
-.toc-level-3 {
+.toc-level-1 {
     font-size: 0.9em;
 }
-.toc-level-3 a {
+.toc-level-1 a {
     padding-left: var(--s1);
 }
 .toc .active a,
