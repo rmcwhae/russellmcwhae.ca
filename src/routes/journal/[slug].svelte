@@ -61,7 +61,7 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-    import ToC from '$lib/components/Journal/ToC.svelte'
+    import ToC from '$lib/components/journal/ToC.svelte'
 
     export let title
     export let date
