@@ -14,6 +14,7 @@ category: TODO
 -   Try https://atroposjs.com/
 -   Separate Table of Contents: test Windows, tweak who/when is active
 -   Try css color-mod()
+-   Test counter increment
 -   Build `<category>` page for journal entries; journal hero images?
 -   2016.russellmcwhae.ca; ~~2006.russellmcwhae.ca~~
 -   Skills chart
