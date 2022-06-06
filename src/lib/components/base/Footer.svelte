@@ -30,7 +30,7 @@
                 target="_blank"><IoLogoGithub /></a
             >
             <a
-                href="https://www.linkedin.com/notifications/"
+                href="https://www.linkedin.com/in/rmcwhae/"
                 rel="noopener noreferrer nofollow"
                 target="_blank"><IoLogoLinkedin /></a
             >
