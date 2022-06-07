@@ -10,7 +10,7 @@ const visit = (darkAppearance) =>
     })
 
 describe('Colour Scheme', function () {
-    it.only('loads the homepage in light mode', function () {
+    it('loads the homepage in light mode', function () {
         visit(false)
 
         cy.get('body').should('have.attr', 'data-theme', 'light')
