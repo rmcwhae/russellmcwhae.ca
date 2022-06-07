@@ -65,7 +65,7 @@
 </script>
 
 {#if headings.length}
-    <aside class="toc char-limit">
+    <aside class="toc char-limit" data-test="toc">
         <ul>
             {#each headings as heading}
                 <li
