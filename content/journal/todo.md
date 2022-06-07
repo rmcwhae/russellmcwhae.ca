@@ -9,12 +9,12 @@ category: TODO
 
 ## Later Ideas
 
--   Populate ImageKit captions¬
+-   Populate ImageKit captions
 -   Events pagination 500 error only on production…
 -   Try https://atroposjs.com/
--   ~~Animate logo~~
--   Setup automated testing
+-   Separate Table of Contents: test Windows, tweak who/when is active
 -   Try css color-mod()
+-   Test counter increment
 -   Build `<category>` page for journal entries; journal hero images?
 -   2016.russellmcwhae.ca; ~~2006.russellmcwhae.ca~~
 -   Skills chart

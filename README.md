@@ -33,8 +33,10 @@ npm run dev
 
 ## Deployment
 
-`npm run build` then take the output of `build` and serve it.
+`npm run build` then `npm run preview`.
 
 ## Testing
 
-Populate `cypress.env.json` then `npm run dev` and `npx cypress open` to run tests.
+End-to-end testing is done with Cypress.
+
+While running `npm run dev`, run `npx cypress open` or `npx cypress run` to run tests.

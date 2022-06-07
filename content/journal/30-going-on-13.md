@@ -7,8 +7,6 @@ draft: 0
 category: Reflection
 ---
 
-## Table of Contents
-
 ## Introduction
 
 **7:30 PM, July 27, 2013**  
@@ -420,7 +418,7 @@ There is no room for ego in the mountains; however, this is more readily preache
 
 Mentorship is thus mandatory in outdoor pursuits. There are no substitutes for a long apprenticeship in the outdoors, in which you slowly and deliberately build up your experience, fitness, gear, and level of acceptable risk. It takes years to do this stuff properly.
 
-## So You Want to Backcountry&nbsp;Ski?
+## So You Want to Backcountry Ski?
 
 You might have seen my photos or videos of skiing up and down mountains and across glaciers and want to do likewise.[^2] Perhaps you yearn to escape the crowds, expense, and often icy conditions of resort downhill skiing and instead slay backcountry powder. A common lament I hear is “I’m a strong enough downhill skier (or snowboarder) and want to get into backcountry skiing but don’t have anyone to go with.” Now that you’ve met me, you’ve got your in…right?
 

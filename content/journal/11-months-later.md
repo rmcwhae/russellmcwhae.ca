@@ -7,6 +7,8 @@ draft: 0
 category: Reflection
 ---
 
+## Introduction
+
 **6:45 PM, April 3, 2021**  
 It’s magic hour and I’m in the middle of Upper Arrow Lake, taking the ferry from Galena Bay to Shelter Bay, on my way back to Revelstoke. I had spent the day mountain biking at Mount Abriel, which had gone on longer than expected due to the unusually mild weather (shorts and a t-shirt) and high stoke, necessitating a quick, out-of-the-way detour into nearby Nakusp to refuel with take-out pizza.
 

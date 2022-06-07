@@ -9,8 +9,6 @@ category: Stuff
 
 Content here. Change hidden to 0. Specify ToC as below or delete.
 
-## Table of Contents
-
 ## Heading Two
 
-Use Heading Twos throughout the body. The Table of Contents will be generated when three or more Heading Twos are used.
+Use Heading Twos throughout the body. The Table of Contents will be generated automatically.

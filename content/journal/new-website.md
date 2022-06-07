@@ -13,6 +13,8 @@ category: Tech
   import Caption from '$lib/components/images/Caption.svelte'
 </script>
 
+## Introduction
+
 Though still in beta, [SvelteKit](https://kit.svelte.dev/) is a very promising front-end framework. Its support for Markdown preprocessing, static website building, and its ability to compile into native JavaScript (with no external libraries to download) make it an ideal tool for a variety of web projects, especially relatively simple websites such as this one.
 
 The previous version of this website, built in summer 2016, used a PHP back-end with jQuery for basic front-end interactivity. At the time, I described it as “a random patchwork of scripts cobbled together that somehow hasn’t exploded yet.” Five years later, I now make my livelihood as a software developer, so better code quality was certainly an objective of this rebuild.

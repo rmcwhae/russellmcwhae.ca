@@ -61,6 +61,7 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+    import ToC from '$lib/components/journal/ToC.svelte'
 
     export let title
     export let date
@@ -76,32 +77,35 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<article>
-    <header>
-        <div class="sub">
-            <Date {date} />
-        </div>
-        <h1>{@html preventLastTwoWordWrap(title)}</h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
+<header>
+    <div class="sub">
+        <Date {date} />
+    </div>
+    <h1>{@html preventLastTwoWordWrap(title)}</h1>
+    {#if description}
+        <p>{@html preventLastTwoWordWrap(description)}</p>
+    {/if}
+    <div class="sub">
+        <span>{category}</span>
+        &middot;
+        <span class="nowrap">{readingTime.words} words</span>
+        &middot;
+        <span class="nowrap">{readingTime.text}</span>
+        {#if views}
+            &middot;
+            <span class="nowrap" data-test="article-views"
+                >{views} {viewText}</span
+            >
         {/if}
-        <div class="sub">
-            <span>{category}</span>
-            &middot;
-            <span class="nowrap">{readingTime.words} words</span>
-            &middot;
-            <span class="nowrap">{readingTime.text}</span>
-            {#if views}
-                &middot;
-                <span class="nowrap">{views} {viewText}</span>
-            {/if}
-        </div>
-    </header>
+    </div>
+</header>
 
-    <main class="char-limit flow margin-0-auto">
+<div class="wrapper">
+    <ToC allowedHeadings={['h2', 'h3']} />
+    <article class="char-limit flow">
         <svelte:component this={component} />
-    </main>
-</article>
+    </article>
+</div>
 
 <div class="restricted-width">
     <h2 class="mt-5 mb-3">Related Entries</h2>
@@ -118,12 +122,15 @@
     header {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: var(--s-1);
-        padding-bottom: var(--s0);
         margin-bottom: var(--s2);
     }
     h1,
     p {
         margin: 0;
+    }
+    article {
+        margin: 0 auto;
     }
 </style>
