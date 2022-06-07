@@ -1,18 +1,16 @@
 <script>
-    // Via: https://github.com/mattjennings/mattjennings.io/blob/master/src/lib/components/ToC.svelte
-    import { onMount } from 'svelte'
+    import { onMount, onDestroy } from 'svelte'
     import { page } from '$app/stores'
     import { browser } from '$app/env'
 
     export let allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     export let activeHeading = null
 
-    let scrollY
     let headings = []
+    let observer
 
     function updateHeadings() {
         const nodes = [
-            // Exclude h1 as those should be reserved for the post title
             ...document.querySelectorAll(
                 `article :where(${allowedHeadings.join(', ')})`
             ),
@@ -26,45 +24,46 @@
             node,
         }))
 
-        // set first heading as active if null on page load
-        if (activeHeading === null) {
-            activeHeading = headings[0]
-        }
+        observer = new IntersectionObserver(handleIntersect)
+
+        // Track all headings that have an `id` applied
+        nodes.forEach((heading) => {
+            observer.observe(heading)
+        })
     }
 
     onMount(() => {
         updateHeadings()
-        setActiveHeading()
+    })
+
+    onDestroy(() => {
+        if (observer) {
+            observer.disconnect()
+        }
     })
 
     if (browser) {
         page.subscribe(() => {
             updateHeadings()
-            setActiveHeading()
         })
     }
 
-    function setActiveHeading() {
-        scrollY = window.scrollY
+    function handleIntersect(entries) {
+        entries.forEach((entry) => {
+            const id = entry.target.getAttribute('id')
 
-        const visibleIndex =
-            headings.findIndex(
-                (heading) =>
-                    heading.node.offsetTop + heading.node.clientHeight > scrollY
-            ) - 1
-
-        activeHeading = headings[visibleIndex]
-
-        const pageHeight = document.body.scrollHeight
-        const scrollProgress = (scrollY + window.innerHeight) / pageHeight
-        if (scrollProgress > 0.99) {
-            // TODO add footer height…
-            activeHeading = headings[headings.length - 1]
-        }
+            if (entry.isIntersecting) {
+                document.querySelectorAll(`.toc li`).forEach((element) => {
+                    element.classList.remove('active')
+                })
+                document
+                    .querySelector(`.toc li a[href="#${id}"]`)
+                    .parentElement.classList.add('active')
+            }
+        })
     }
 </script>
 
-<svelte:window on:scroll={setActiveHeading} />
 {#if headings.length}
     <aside class="toc char-limit">
         <ul>
