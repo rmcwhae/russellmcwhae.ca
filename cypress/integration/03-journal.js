@@ -11,9 +11,4 @@ describe('Journal', function () {
         cy.get('[data-test="toc"]').should('exist')
         cy.get('[data-test="toc"] > ul').children().should('have.length', 6)
     })
-
-    it('displays a table of contents with six items', () => {
-        cy.get('[data-test="toc"]').should('exist')
-        cy.get('[data-test="toc"] > ul').children().should('have.length', 6)
-    })
 })
