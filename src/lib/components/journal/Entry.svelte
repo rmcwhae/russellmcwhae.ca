@@ -40,8 +40,8 @@
         display: flex;
         flex-direction: column;
         gap: var(--s-3);
-        padding-bottom: var(--s1);
-        border-bottom: 1px solid var(--light-grey);
+        padding-bottom: var(--s0);
+        /* border-bottom: 1px solid var(--light-grey); */
     }
     @media (max-width: 640px) {
         section {
