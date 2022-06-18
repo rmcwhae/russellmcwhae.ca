@@ -29,6 +29,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _What God Has to Say about Our Bodies: How the Gospel Is Good News for Our Physical Selves_ by Sam Allberry
 -   _Countdown to Zero Day: Stuxnet and the Launch of the World’s First Digital Weapon_ by Kim Zetter
 -   _The Death of Ivan Ilyich_ by Leo Tolstoy
 -   _One Green Bottle_ by Elizabeth Coxhead
