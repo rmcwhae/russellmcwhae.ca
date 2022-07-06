@@ -3,17 +3,17 @@
     "version": "0.0.1",
     "description": "Russell McWhae’s portfolio",
     "scripts": {
-        "dev": "svelte-kit dev --port 4000 --host",
-        "build": "rm -rf .vercel_build_output && svelte-kit build",
+        "dev": "vite dev --port 4000 --host",
+        "build": "rm -rf .vercel_build_output && vite build",
         "update": "npm i -D @sveltejs/kit@next && npm i -D @sveltejs/adapter-vercel@next",
-        "preview": "svelte-kit preview --port 4000",
+        "preview": "vite preview --port 4000",
         "kill": "rm -rf node_modules",
         "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-vercel": "^1.0.0-next.58",
-        "@sveltejs/kit": "^1.0.0-next.350",
+        "@sveltejs/adapter-vercel": "^1.0.0-next.59",
+        "@sveltejs/kit": "^1.0.0-next.360",
         "cypress": "^9.7.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
@@ -38,6 +38,7 @@
         "svelte-icons": "^2.1.0",
         "svelte-preprocess": "^4.7.4",
         "svimg": "^1.1.1",
+        "vite": "^2.9.13",
         "vite-plugin-iso-import": "^0.1.2"
     },
     "type": "module",
