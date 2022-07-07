@@ -19,6 +19,11 @@ const config = {
             $root: path.resolve('.'),
         },
     },
+    define: {
+        'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(
+            process.env.VERCEL_ANALYTICS_ID
+        ),
+    },
     plugins: [sveltekit(), isoImport()],
 }
 
