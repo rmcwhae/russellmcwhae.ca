@@ -12,8 +12,8 @@
         "format": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-vercel": "^1.0.0-next.60",
-        "@sveltejs/kit": "^1.0.0-next.370",
+        "@sveltejs/adapter-vercel": "^1.0.0-next.62",
+        "@sveltejs/kit": "^1.0.0-next.373",
         "cypress": "^9.7.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
@@ -37,7 +37,7 @@
         "svelte-icons": "^2.1.0",
         "svelte-preprocess": "^4.7.4",
         "svimg": "^1.1.1",
-        "vite": "^2.9.13",
+        "vite": "^3.0.0",
         "vite-plugin-iso-import": "^0.1.2"
     },
     "type": "module",
