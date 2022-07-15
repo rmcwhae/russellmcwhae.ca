@@ -1,7 +1,7 @@
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import * as StringUtils from '$lib/utils/string'
 
-export async function get() {
+export async function GET() {
     const events = await ImageKitNodeServices.listFiles({
         path: '/events/',
         type: 'folder',

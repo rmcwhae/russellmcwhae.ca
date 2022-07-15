@@ -2,7 +2,7 @@ import faunadb from 'faunadb'
 import { FAUNA_SECRET_KEY } from '$root/env'
 import { mode } from '$app/env'
 
-export async function get({ params }) {
+export async function GET({ params }) {
     const { slug } = params
     const q = faunadb.query
     const client = new faunadb.Client({

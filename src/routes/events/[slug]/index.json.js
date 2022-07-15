@@ -1,7 +1,7 @@
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '../index.json'
 
-export async function get({ params }) {
+export async function GET({ params }) {
     const images = await ImageKitNodeServices.listFiles({
         path: '/events/' + params.slug,
         sort: 'ASC_NAME',
