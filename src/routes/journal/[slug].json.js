@@ -1,6 +1,6 @@
 import faunadb from 'faunadb'
 import { FAUNA_SECRET_KEY } from '$root/env'
-import { mode } from '$app/env'
+import { dev } from '$app/env'
 
 export async function GET({ params }) {
     const { slug } = params
@@ -33,7 +33,7 @@ export async function GET({ params }) {
         q.Get(q.Match(q.Index('hits_by_slug'), slug))
     )
 
-    if (mode !== 'development') {
+    if (!dev) {
         await client.query(
             q.Update(document.ref, {
                 data: {
