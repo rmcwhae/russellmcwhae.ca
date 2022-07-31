@@ -18,7 +18,7 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [ ] Climb Mount Begbie
 -   [ ] Climb Sir Donald
 -   [ ] Climb in the Valhallas
--   [ ] Bike Martha Creek
+-   [x] Bike Martha Creek
 -   [ ] Practice wheelies, switchback endos, and scandie flicks
 -   [ ] Bike Sol Mountain
 -   [ ] Bike Retallack
