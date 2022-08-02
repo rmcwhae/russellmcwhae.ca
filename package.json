@@ -12,8 +12,8 @@
         "format": "prettier --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-vercel": "^1.0.0-next.65",
-        "@sveltejs/kit": "^1.0.0-next.394",
+        "@sveltejs/adapter-vercel": "^1.0.0-next.66",
+        "@sveltejs/kit": "^1.0.0-next.401",
         "cypress": "^9.7.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
