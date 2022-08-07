@@ -9,7 +9,6 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## The To-Read List
 
--   _Ridgerunner_ by Gil Adamson
 -   _Where the Clouds Can Go_ by Conrad Kain
 -   _The Lean Startup_ by Eric Ries
 -   _Bugaboo Dreams_ by Topher Donahue
@@ -29,6 +28,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _Ridgerunner_ by Gil Adamson
 -   _What God Has to Say about Our Bodies: How the Gospel Is Good News for Our Physical Selves_ by Sam Allberry
 -   _Countdown to Zero Day: Stuxnet and the Launch of the World’s First Digital Weapon_ by Kim Zetter
 -   _The Death of Ivan Ilyich_ by Leo Tolstoy
