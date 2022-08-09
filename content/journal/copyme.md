@@ -7,7 +7,7 @@ draft: 1
 category: Stuff
 ---
 
-Content here. Change hidden to 0. Specify ToC as below or delete.
+Content here. Change draft to 0. ToC will appear automatically.
 
 ## Heading Two
 
