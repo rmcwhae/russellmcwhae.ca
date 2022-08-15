@@ -28,6 +28,4 @@ describe('Navigation', function () {
         cy.visit('/journal')
         cy.contains('Journal')
     })
-
-    // Other tests to write: lightbox, single journal article
 })
