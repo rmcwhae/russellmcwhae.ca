@@ -25,3 +25,4 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [ ] Bike Beowulf
 -   [ ] Camp at Echo Lake
 -   [ ] Backpack to Jade Lake
+-   [ ] Three Island Lake, Thor Creek
