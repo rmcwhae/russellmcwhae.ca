@@ -22,7 +22,7 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [ ] Practice wheelies, switchback endos, and scandie flicks
 -   [ ] Bike Sol Mountain
 -   [ ] Bike Retallack
--   [ ] Bike Beowulf
--   [ ] Camp at Echo Lake
+-   [x] Bike Beowulf
+-   [x] Echo Lake
 -   [ ] Backpack to Jade Lake
 -   [ ] Three Island Lake, Thor Creek
