@@ -1,6 +1,9 @@
 <script>
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+
+    export let data
+    $: posts = data.posts
 </script>
 
 <SEO title="Journal" />
