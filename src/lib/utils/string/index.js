@@ -14,3 +14,10 @@ export function preventLastTwoWordWrap(string) {
         ' <span class="nowrap">' + words.slice(-2).join(' ') + '</span>'
     return firstWords + lastTwoWords
 }
+
+export function parseTitleAndDate(slug) {
+    return {
+        title: createTitle(slug),
+        date: extractDate(slug),
+    }
+}
