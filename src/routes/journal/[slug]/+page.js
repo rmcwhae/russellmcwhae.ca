@@ -27,7 +27,7 @@ export async function load({ params, fetch }) {
     let views = null
 
     try {
-        const json = await fetch(`/journal/${slug}.json`).then((response) =>
+        const json = await fetch(`/api/journal/${slug}`).then((response) =>
             response.json()
         )
         const { hits } = json
