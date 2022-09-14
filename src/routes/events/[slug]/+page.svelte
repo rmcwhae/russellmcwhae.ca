@@ -8,9 +8,11 @@
 
     export let data
 
-    $: event = data.event
+    $: images = data.event.images
+    $: count = data.event.count
+    $: date = data.event.date
+    $: title = data.event.title
 
-    const { images, count, date, title } = event
     const pageSize = IMAGES_PER_PAGE
 
     let currentPage = 1
