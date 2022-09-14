@@ -19,11 +19,6 @@ const config = {
         preprocess(),
     ],
     kit: {
-        prerender: {
-            crawl: true,
-            default: true,
-            enabled: true,
-        },
         adapter: adapter(),
     },
 }
