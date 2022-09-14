@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
-import { parseTitleAndDate } from '/utils/string'
+import { parseTitleAndDate } from '$lib/utils/string'
 
 export async function GET() {
     const events = await ImageKitNodeServices.listFiles({

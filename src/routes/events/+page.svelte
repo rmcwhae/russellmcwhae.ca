@@ -4,7 +4,8 @@
     import SEO from '$lib/components/base/SEO.svelte'
 
     export let data
-    const { events } = data
+
+    $: events = data.events
 </script>
 
 <SEO title="Events" />

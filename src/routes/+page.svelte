@@ -7,7 +7,9 @@
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
     export let data
-    const { images, latestPosts } = data // TODO: fix fetch for latestPosts
+
+    $: images = data.images
+    $: latestPosts = data.latestPosts
 
     const etCetera = [
         {

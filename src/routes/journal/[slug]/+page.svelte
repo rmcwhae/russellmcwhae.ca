@@ -9,16 +9,15 @@
 
     export let data
 
-    const {
-        title,
-        date,
-        views,
-        category,
-        description,
-        readingTime,
-        component,
-        relatedPosts,
-    } = data
+    $: title = data.title
+    $: date = data.date
+    $: views = data.views
+    $: category = data.category
+    $: description = data.description
+    $: readingTime = data.readingTime
+    $: component = data.component
+    $: relatedPosts = data.relatedPosts
+
     const viewText = views === 1 ? 'view' : 'views'
 </script>
 

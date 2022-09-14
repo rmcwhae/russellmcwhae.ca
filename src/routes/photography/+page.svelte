@@ -7,7 +7,8 @@
     import { IMAGES_PER_PAGE } from '$lib/constants'
 
     export let data
-    const { images } = data
+
+    $: images = data.images
 
     const pageSize = IMAGES_PER_PAGE
 

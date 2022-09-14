@@ -8,7 +8,8 @@
 
     export let data
 
-    const { event } = data
+    $: event = data.event
+
     const { images, count, date, title } = event
     const pageSize = IMAGES_PER_PAGE
 
