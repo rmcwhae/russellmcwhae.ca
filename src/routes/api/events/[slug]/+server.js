@@ -1,4 +1,4 @@
-import { json } from '@sveltejs/kit'
+import { json, error } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
 
@@ -10,7 +10,7 @@ export async function GET({ params }) {
 
     const { title, date } = parseTitleAndDate(params.slug)
 
-    if (images) {
+    if (images.length > 0) {
         return json({
             count: images.length,
             title,
@@ -18,6 +18,6 @@ export async function GET({ params }) {
             images,
         })
     } else {
-        return new Response(undefined, { status: 404 })
+        throw error(404, 'Not found')
     }
 }
