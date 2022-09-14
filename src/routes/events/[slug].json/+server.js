@@ -1,3 +1,4 @@
+import { json as json$1 } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '../index.json'
 
@@ -10,17 +11,13 @@ export async function GET({ params }) {
     const { title, date } = parseTitleAndDate(params.slug)
 
     if (images) {
-        return {
-            body: {
-                count: images.length,
-                title,
-                date,
-                images,
-            },
-        }
+        return json$1({
+            count: images.length,
+            title,
+            date,
+            images,
+        })
     } else {
-        return {
-            status: 404,
-        }
+        return new Response(undefined, { status: 404 })
     }
 }

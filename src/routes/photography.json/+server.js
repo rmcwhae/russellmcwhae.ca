@@ -1,3 +1,5 @@
+import { json } from '@sveltejs/kit'
+
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 
 export async function GET() {
@@ -6,9 +8,7 @@ export async function GET() {
         sort: 'DESC_NAME',
     })
 
-    return {
-        body: {
-            images,
-        },
-    }
+    return json({
+        images,
+    })
 }

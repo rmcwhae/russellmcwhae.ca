@@ -1,59 +1,3 @@
-<script context="module">
-    import { posts } from '$lib/services/posts'
-
-    export const prerender = false // Necessary for the hit counter
-
-    export async function load({ params, fetch }) {
-        const { slug } = params
-        const index = posts.findIndex((post) => slug === post.slug)
-
-        if (index === -1) {
-            return {
-                status: 404,
-                error: new Error('Page not found'),
-            }
-        }
-
-        const {
-            title,
-            date,
-            readingTime,
-            component,
-            description,
-            category,
-        } = posts[index]
-        const relatedPosts = posts
-            .filter((post) => post.title !== title)
-            .filter((post) => post.category === category)
-            .slice(0, 4)
-
-        let views = null
-
-        try {
-            const json = await fetch(`/journal/${slug}.json`).then((response) =>
-                response.json()
-            )
-            const { hits } = json
-            views = hits
-        } catch (error) {
-            console.log('error')
-        }
-
-        return {
-            props: {
-                title,
-                date,
-                category,
-                views,
-                readingTime,
-                description,
-                relatedPosts,
-                component,
-            },
-        }
-    }
-</script>
-
 <script>
     import Date from '$lib/components/misc/Date.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
@@ -63,15 +7,18 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
 
-    export let title
-    export let date
-    export let views
-    export let category
-    export let description
-    export let readingTime
-    export let component
-    export let relatedPosts
+    export let data
 
+    const {
+        title,
+        date,
+        views,
+        category,
+        description,
+        readingTime,
+        component,
+        relatedPosts,
+    } = data
     const viewText = views === 1 ? 'view' : 'views'
 </script>
 

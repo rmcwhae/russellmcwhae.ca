@@ -4,7 +4,7 @@
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
     import { webVitals } from '$lib/vitals'
-    import { browser } from '$app/env'
+    import { browser } from '$app/environment'
     import { page } from '$app/stores'
 
     let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID

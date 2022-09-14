@@ -1,6 +1,7 @@
+import { json } from '@sveltejs/kit'
 import faunadb from 'faunadb'
 import { FAUNA_SECRET_KEY } from '$root/env'
-import { dev } from '$app/env'
+import { dev } from '$app/environment'
 
 export async function GET({ params }) {
     const { slug } = params
@@ -10,9 +11,7 @@ export async function GET({ params }) {
     })
 
     if (!slug) {
-        return {
-            status: 404,
-        }
+        return new Response(undefined, { status: 404 })
     }
 
     // Check and see if the doc exists.
@@ -44,9 +43,7 @@ export async function GET({ params }) {
         document.data.hits += 1
     }
 
-    return {
-        body: {
-            hits: document.data.hits,
-        },
-    }
+    return json({
+        hits: document.data.hits,
+    })
 }

@@ -1,3 +1,4 @@
+import { json } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 
 export async function GET() {
@@ -6,7 +7,5 @@ export async function GET() {
         searchQuery: 'tags IN ["homepage"]',
     })
 
-    return {
-        body: homepageImages,
-    }
+    return json(homepageImages)
 }

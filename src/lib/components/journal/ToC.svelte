@@ -1,7 +1,7 @@
 <script>
     import { onMount, onDestroy } from 'svelte'
     import { page } from '$app/stores'
-    import { browser } from '$app/env'
+    import { browser } from '$app/environment'
 
     export let allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     export let activeHeading = null

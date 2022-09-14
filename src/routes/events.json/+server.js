@@ -1,3 +1,4 @@
+import { json } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import * as StringUtils from '$lib/utils/string'
 
@@ -34,9 +35,7 @@ export async function GET() {
         }
     })
 
-    return {
-        body: eventsWithImages,
-    }
+    return json(eventsWithImages)
 }
 
 function getImagesForEvent(name) {

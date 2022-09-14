@@ -1,19 +1,3 @@
-<script context="module">
-    import { posts } from '$lib/services/posts'
-
-    export async function load({ fetch }) {
-        const images = await fetch(`/data`).then((r) => r.json())
-        const latestPosts = posts.slice(0, 4)
-
-        return {
-            props: {
-                images,
-                latestPosts,
-            },
-        }
-    }
-</script>
-
 <script>
     import Image from 'svimg'
     import SEO from '$lib/components/base/SEO.svelte'
@@ -22,8 +6,8 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
-    export let images
-    export let latestPosts
+    export let data
+    const { images, latestPosts } = data // TODO: fix fetch for latestPosts
 
     const etCetera = [
         {
