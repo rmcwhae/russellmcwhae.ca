@@ -1,13 +1,3 @@
-<script context="module">
-    export async function load({ params, fetch }) {
-        const { slug } = params
-        const event = await fetch(`/events/${slug}.json`).then((r) => r.json())
-        return {
-            props: { event },
-        }
-    }
-</script>
-
 <script>
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
@@ -16,9 +6,12 @@
     import { paginate } from '$lib/utils/array'
     import { IMAGES_PER_PAGE } from '$lib/constants'
 
-    export let event
+    export let data
 
-    const { images, count, date, title } = event
+    $: images = data.event.images
+    $: count = data.event.count
+    $: date = data.event.date
+    $: title = data.event.title
 
     const pageSize = IMAGES_PER_PAGE
 

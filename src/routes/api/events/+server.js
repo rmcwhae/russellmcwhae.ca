@@ -1,5 +1,6 @@
+import { json } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
-import * as StringUtils from '$lib/utils/string'
+import { parseTitleAndDate } from '$lib/utils/string'
 
 export async function GET() {
     const events = await ImageKitNodeServices.listFiles({
@@ -34,9 +35,7 @@ export async function GET() {
         }
     })
 
-    return {
-        body: eventsWithImages,
-    }
+    return json(eventsWithImages)
 }
 
 function getImagesForEvent(name) {
@@ -51,11 +50,4 @@ function getFeaturedImage(images) {
         images.find((image) => image.tags && image.tags.includes('featured')) ||
         images[0]
     )
-}
-
-export function parseTitleAndDate(slug) {
-    return {
-        title: StringUtils.createTitle(slug),
-        date: StringUtils.extractDate(slug),
-    }
 }

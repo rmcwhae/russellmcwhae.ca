@@ -1,17 +1,3 @@
-<script context="module">
-    export async function load({ fetch }) {
-        const { images } = await fetch('/photography.json').then((r) =>
-            r.json()
-        )
-
-        return {
-            props: {
-                images,
-            },
-        }
-    }
-</script>
-
 <script>
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
@@ -20,7 +6,9 @@
     import { paginate } from '$lib/utils/array'
     import { IMAGES_PER_PAGE } from '$lib/constants'
 
-    export let images
+    export let data
+
+    $: images = data.images
 
     const pageSize = IMAGES_PER_PAGE
 

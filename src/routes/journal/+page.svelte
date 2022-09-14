@@ -1,18 +1,9 @@
-<script context="module">
-    import { posts } from '$lib/services/posts'
-
-    export async function load() {
-        return {
-            props: {
-                posts,
-            },
-        }
-    }
-</script>
-
 <script>
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+
+    export let data
+    $: posts = data.posts
 </script>
 
 <SEO title="Journal" />

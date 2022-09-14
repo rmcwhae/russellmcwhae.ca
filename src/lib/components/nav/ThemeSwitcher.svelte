@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte'
-    import { browser } from '$app/env'
+    import { browser } from '$app/environment'
     import { mode } from '$lib/stores/theme'
 
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
