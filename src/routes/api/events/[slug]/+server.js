@@ -2,8 +2,6 @@ import { json, error } from '@sveltejs/kit'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
 
-export const prerender = true
-
 export async function GET({ params }) {
     const images = await ImageKitNodeServices.listFiles({
         path: '/events/' + params.slug,
