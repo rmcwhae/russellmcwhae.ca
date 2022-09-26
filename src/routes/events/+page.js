@@ -1,5 +1,3 @@
-export const prerender = true
-
 export async function load({ fetch }) {
     try {
         const events = await fetch('/api/events').then((r) => r.json())

@@ -7,6 +7,8 @@
     import { browser } from '$app/environment'
     import { page } from '$app/stores'
 
+    export const prerender = true
+
     let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
 
     $: if (browser && analyticsId) {
