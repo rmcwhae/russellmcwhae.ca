@@ -28,6 +28,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2022
 
+-   _The Secret Agent_ by Joseph Conrad
 -   _Ridgerunner_ by Gil Adamson
 -   _What God Has to Say about Our Bodies: How the Gospel Is Good News for Our Physical Selves_ by Sam Allberry
 -   _Countdown to Zero Day: Stuxnet and the Launch of the World’s First Digital Weapon_ by Kim Zetter
