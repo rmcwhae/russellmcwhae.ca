@@ -71,6 +71,7 @@
         align-items: center;
         gap: var(--s-1);
         margin-bottom: var(--s2);
+        text-align: center;
     }
     h1,
     p {
