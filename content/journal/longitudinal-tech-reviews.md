@@ -17,7 +17,7 @@ Fall is a busy time for tech companies. Starting in October—“Techtober”—
 
 Too often, I find, the discussion around cutting-edge gadgets focuses on the stats and numbers of said devices and how they outshine their predecessors. It’s easy to lose sight of the bigger picture, that, within reason, gadgets are meant to delight us and provide quality-of-life improvements such as connecting us with others, improving our health, entertaining us, or offering creative tools.
 
-Such benefits become clearer over time. Instead of this tunnel vision on tech’s latest offerings, where anything older than a year seems laughably ancient, I would like to instead examine how certain gadgets provide utility—or not—over a much longer time period.
+Such benefits become clearer over time. Instead of this tunnel vision on tech’s latest offerings, where anything older than a year seems laughably ancient, I would like to examine how certain gadgets provide utility—or not—over a much longer time period.
 
 In healthcare, longitudinal studies can be performed on patient populations over many years, even decades. In order to be considered truly effective, a given treatment must withstand the test of time. Certain treatments, for example, lobotomies, and arthritis-painkiller drug Vioxx, were actually discovered to be devastatingly harmful in the long run despite initial promise, demonstrating the issue with short-sighted thinking in cost-benefit analysis.
 
