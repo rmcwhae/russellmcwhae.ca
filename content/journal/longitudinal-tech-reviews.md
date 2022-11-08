@@ -7,7 +7,7 @@ draft: 0
 category: Tech
 ---
 
-Marketers have long known that it is not the steak you sell but the sizzle. The appeal of a given product comes not from some inherent property of the product itself but rather in anticipating the experiences that you could have with the product. I am as subject to marketing as anyone, which is evidenced by the quantity of toys I own or have previously owned: cars, cameras and tech gear, and outdoor gear.defe
+Marketers have long known that it is not the steak you sell but the sizzle. The appeal of a given product comes not from some inherent property of the product itself but rather in anticipating the experiences that you could have with the product. I am as subject to marketing as anyone, which is evidenced by the quantity of toys I own or have previously owned: cars, cameras and tech gear, and outdoor gear.
 
 Think back to the first time you acquired a product in a given category: your first car, your first computer, your first smartphone. Those first purchases were quite exciting, presenting new opportunities that were previously impossible, like the ability to drive anywhere according to your own schedule, not having to share a computer with your siblings, or having email in your pocket. With an increase in age and means, you have likely upgraded such category-opener products with newer, more capable versions: a more modern car, a faster computer, a better smartphone.
 
