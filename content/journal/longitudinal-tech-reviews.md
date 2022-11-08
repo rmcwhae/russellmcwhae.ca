@@ -7,7 +7,7 @@ draft: 0
 category: Tech
 ---
 
-Marketers have long known that it is not the steak you sell but the sizzle. The appeal of a given product is not some inherent property of the product itself but rather the experiences that you could have with owning or consuming the product—perhaps even the _anticipation_ of said experiences. I am as subject to such marketing as anyone, which is evidenced by the quantity of toys I own or have previously owned: cars, cameras and tech gear, and outdoor gear.
+Marketers have long known that it is not the steak you sell but the sizzle. The appeal of a given product comes not from some inherent property of the product itself but rather in anticipating the experiences that you could have with the product. I am as subject to marketing as anyone, which is evidenced by the quantity of toys I own or have previously owned: cars, cameras and tech gear, and outdoor gear.defe
 
 Think back to the first time you acquired a product in a given category: your first car, your first computer, your first smartphone. Those first purchases were quite exciting, presenting new opportunities that were previously impossible, like the ability to drive anywhere according to your own schedule, not having to share a computer with your siblings, or having email in your pocket. With an increase in age and means, you have likely upgraded such category-opener products with newer, more capable versions: a more modern car, a faster computer, a better smartphone.
 
@@ -45,7 +45,7 @@ Expectedly, subsequent generations of AirPods have been unveiled, and, also expe
 
 Alternatively, I could use my $20 wired earbuds for years to come and no longer worry about battery issues (assuming we don’t lose the Lightning port on iPhones). Given that I technically didn’t even pay for my AirPods, I think you already know which option I’ve chosen.
 
-## iPads
+## iPad
 
 I abstained from iPad ownership for many years. My reasoning was simple: between an iPhone and a MacBook Pro, a tablet provided almost no additional functionality but came with the additional overhead of needing charging and software updates. Too many devices can lead to tech overload, so I was a very late adopter when it came to tablets.
 
@@ -55,7 +55,7 @@ Despite the iPad lineup’s ever-increasing capability—now certain models ship
 
 iPads can be fun gadgets, but the longitudinal benefits are dubious enough that I likely won’t purchase another.
 
-## Smartwatches
+## Apple Watch
 
 In the early, uncertain stages of the COVID pandemic (April 2020), I bought my first Apple Watch (Series 5, no cellular, $504 refurbished). Given the impending travel ban, I figured that it was time to double down on local activities and make a proper attempt at running. I’ve always been quite active but could never get excited about running in the face of more fun alternatives like biking and ski touring. Bribing myself with a new gadget would hopefully provide incentive to lace up and hit the pavement (I lived in Calgary at the time).
 
@@ -91,7 +91,7 @@ In a related piece, [Behind the Curve](/journal/behind-the-curve), I proposed th
 
 Despite their high price, quality lenses will last many years. Buy a basic digital camera with a 35 mm or 50 mm prime lens, and, with practice, you’ll get better results than any smartphone.
 
-## Smartphones
+## iPhone
 
 As longitudinal tech goes, the smartphone has become indispensable to our lives, and I cannot think of anyone without one. The long-term value proposition of smartphones is sound (my pun for the article), so the question becomes seeing how few dollars you can spend on smartphone ownership.
 
@@ -99,11 +99,11 @@ My strategy has been to pair a used or refurbished phone with a pre-paid plan, w
 
 I have owned three generations of iPhones: the iPhone 4 (bought in 2010), the iPhone 6 (bought in 2014), and the iPhone XR (bought in 2019). I seem to have reached a fairly stable five-year upgrade cycle, with the only real incentive to buy a newer phone being dropped iOS software support on old hardware. Given my photographic equipment, I’d never upgrade on account of camera improvements. About the only feature I could see myself wanting in a new iPhone would be [Emergency SOS via satellite](https://support.apple.com/en-ca/HT213426), given how much time I spend outside. Meanwhile, I will continue with my iPhone XR for another few years.
 
-## Laptops
+## MacBook Pro
 
 As I work in tech, my laptop is my workhorse. I am particular about my computers and thus have always provided my own no-compromises, high-end MacBook Pro rather than using company machines. I have always paid a pretty penny for such high-spec machines, but the longitudinal benefit is correspondingly sizable: on my laptop, I build websites, edit photos, and write these essays. A MacBook Pro has always been my preferred tool for such tasks. I could likely have accomplished such results with cheaper computers; however, I am vulnerable to slick marketing. As superficial as it sounds, when you’re psyched about your computer, you do better work on it, like spending time on creative pursuits rather than battling Windows quirks.
 
-I bought my first MacBook Pro in 2007 (15-inch, dual-core Intel Core 2 Duo, $2000, defective GPU replaced under warranty in), my second in 2013 (15-inch, quad-core Intel Core i7, $2603, swollen battery replaced in 2020 for $272), and my third in 2020 (16-inch, eight-core Intel Core i9, $3650 refurbished). I was able to sell the first two MacBook Pros for about a third of their original values after seven years—try doing that with a seven-year-old Windows laptop.
+I bought my first MacBook Pro in 2007 (15-inch, dual-core Intel Core 2 Duo, $2000, defective GPU replaced under warranty), my second in 2013 (15-inch, quad-core Intel Core i7, $2603, swollen battery replaced in 2020 for $272), and my third in 2020 (16-inch, eight-core Intel Core i9, $3650 refurbished). I was able to sell the first two MacBook Pros for about a third of their original values after seven years—try doing that with a seven-year-old Windows laptop.
 
 My one complaint about MacBook Pro ownership is poor timing on my part with the transition to Apple silicon. Had I held out one more generation, I could have purchased a fully loaded M1 MacBook Pro, which would far outlive my last-gen Intel machine. The silver lining here is that, given how powerful Apple Silicon is, I could likely get away with a lower-spec machine once I do switch to Apple Silicon. No longer would I need a money-is-no-object device to complete my personal and professional tasks—save those for the video editors.
 
@@ -113,7 +113,7 @@ Notably absent from this list of common household gadgets is a television: this 
 
 External monitor offerings haven’t substantially improved in the last six years either: Apple’s 5K and 6K external displays are $1999 and $6299, respectively. Decent 4K monitors (make sure to get an IPS panel) can be found for $350 now, giving you most of the performance at an 80–95% discount (350/1999 or 350/6299) compared to Apple’s egregiously overpriced offerings. Oh, and if you want a stand for your $6k 6K display, that will be an extra $1299. Apple rightfully deserves the flak they got for this folly.
 
-I am now going to break my rule of discussing only time-worn gadgets to mention a promising recent acquisition. A few months ago, I purchased a smart light-bulb at $29 for my bedroom. This Nanoleaf Essentials bulb can display almost any colour of the visible spectrum at any brightness, while being controlled by either the light switch (on or off), or any Apple device (i.e. the bulb can be wirelessly turned off while the power switch is still on).
+I am now going to break my rule of discussing only time-worn gadgets to mention a promising recent acquisition. A few months ago, I purchased a smart light-bulb at $29 for my bedroom. This Nanoleaf Essentials bulb can display almost any colour of the visible spectrum at any brightness, while being controlled by either the light switch (on or off), or any Apple device (i.e. the bulb can be turned off wirelessly while the power switch is still on).
 
 Despite alluring marketing photos of impeccable, purple-lighted kitchens, the actual benefits of such a smart bulb are more subtle. You can have a bright white light during the day, then dim to a warm, yellow, incandescent-like temperature for reading at night. You can even turn off the light without leaving your bed. Furthermore, you can schedule the light to automatically turn on in the morning—a terrific way to ease into dark fall and winter days. While more advanced HomeKit automation requires a dedicated base station like an Apple TV or HomePod, I bypassed this by making an iPhone Shortcut to turn the light on every morning. If this smart-bulb can outlast a pair of AirPods, we will have another longitudinal tech success. A delightful gadget at a delightful price. (Also, be warned about over-concentrating smart-bulbs. Dozens in close proximity as at a restaurant may cause interference with WiFi/Bluetooth.)
 
