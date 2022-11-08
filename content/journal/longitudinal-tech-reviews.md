@@ -93,11 +93,11 @@ Despite their high price, quality lenses will last many years. Buy a basic digit
 
 ## Smartphones
 
-As longitudinal tech goes, the smartphone has become indispensable to our lives, and I cannot think of anyone without one. As the long-term value proposition of smartphones is sound (my pun for the article), the question then becomes seeing how few dollars you can spend on smartphone ownership.
+As longitudinal tech goes, the smartphone has become indispensable to our lives, and I cannot think of anyone without one. The long-term value proposition of smartphones is sound (my pun for the article), so the question becomes seeing how few dollars you can spend on smartphone ownership.
 
 My strategy has been to pair a used or refurbished phone with a pre-paid plan, which has averaged $20.85/month for over six years now (see [How to Minimize Your Phone Bill](/journal/minimize-cell-phone)), excluding device costs. Much as I have tried, there probably aren’t any drastically cheaper options.
 
-I have owned three generations of iPhones: the iPhone 4, the iPhone 6, and the iPhone XR. Given my photographic equipment, I’d never upgrade on account of camera improvements. About the only feature I could see myself wanting in a new iPhone would be [Emergency SOS via satellite](https://support.apple.com/en-ca/HT213426), given how much time I spend outside.
+I have owned three generations of iPhones: the iPhone 4 (bought in 2010), the iPhone 6 (bought in 2014), and the iPhone XR (bought in 2019). I seem to have reached a fairly stable five-year upgrade cycle, with the only real incentive to buy a newer phone being dropped iOS software support on old hardware. Given my photographic equipment, I’d never upgrade on account of camera improvements. About the only feature I could see myself wanting in a new iPhone would be [Emergency SOS via satellite](https://support.apple.com/en-ca/HT213426), given how much time I spend outside. Meanwhile, I will continue with my iPhone XR for another few years.
 
 ## Laptops
 
