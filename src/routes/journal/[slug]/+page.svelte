@@ -6,6 +6,7 @@
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
+    import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
 
     export let data
 
@@ -32,7 +33,7 @@
         <p>{@html preventLastTwoWordWrap(description)}</p>
     {/if}
     <div class="sub">
-        <span>{category}</span>
+        <CategoryLink {category} />
         &middot;
         <span class="nowrap">{readingTime.words} words</span>
         &middot;

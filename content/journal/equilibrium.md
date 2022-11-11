@@ -4,7 +4,7 @@ description: How long should we pursue our dreams and passions?
 author: Russell McWhae
 date: 2022-04-27
 draft: 0
-category: Reflection
+category: Outdoor
 ---
 
 As soon as I could walk I was on skis. Somewhere on a VHS cassette there is footage of me as a toddler shuffling around my childhood home on mini skis. Despite growing up on Canada’s frigid prairies, hockey was not in the cards. Too _mainstream_, according to my parents. My two brothers and I were to spend our childhood winters cross-country skiing.

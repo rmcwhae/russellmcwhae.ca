@@ -1,6 +1,7 @@
 <script>
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Date from '$lib/components/misc/Date.svelte'
+    import CategoryLink from './CategoryLink.svelte'
 
     export let post
 
@@ -21,7 +22,7 @@
     {/if}
     {#if category && readingTime}
         <div class="sub">
-            <span>{category}</span>
+            <CategoryLink {category} />
             &middot;
             <span>{readingTime.text}</span>
         </div>
