@@ -4,7 +4,7 @@ description: Mountain-town life has finally happened.
 author: Russell McWhae
 date: 2020-11-15
 draft: 0
-category: Reflection
+category: Outdoor
 ---
 
 ## Introduction

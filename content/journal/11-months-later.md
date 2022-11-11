@@ -4,7 +4,7 @@ description: Finding my stride in Revy.
 author: Russell McWhae
 date: 2021-06-10
 draft: 0
-category: Reflection
+category: Outdoor
 ---
 
 ## Introduction
