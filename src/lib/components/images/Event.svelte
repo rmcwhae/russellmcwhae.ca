@@ -32,7 +32,7 @@
         position: relative;
     } */
     h3 {
-        margin: var(--s-2) 0;
+        margin: var(--s-2) 0 0;
         line-height: 1.2;
     }
     a {
