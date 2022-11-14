@@ -4,6 +4,7 @@ export const prerender = true
 
 export async function load() {
     return {
-        posts,
+        latestPost: posts[0],
+        posts: posts.slice(1, posts.length),
     }
 }
