@@ -15,8 +15,8 @@
 
     <p class="mb-2">
         Welcome to my online journal, a collection of infrequently published,
-        long-winded thoughts on topics that are important to me. I hope you’ll
-        join me for a glimpse into my head.
+        usually long-winded thoughts on topics that are important to me. I hope
+        you’ll join me for a glimpse into my head.
     </p>
     <div class="mb-s0 featured">
         <JournalEntry post={latestPost} featured />
