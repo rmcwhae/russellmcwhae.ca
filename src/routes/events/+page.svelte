@@ -15,7 +15,7 @@
     <Button href="/photography" text="Portfolio" left />
 </div>
 
-<div class="three-col-grid">
+<div class="events-grid">
     {#each events as { name: eventName, featuredImage, date, count, title } (eventName)}
         <Event {eventName} {featuredImage} {date} {count} {title} />
     {/each}

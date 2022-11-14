@@ -22,7 +22,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _Alone on the Wall_ by Alex Honnold
 -   _The Seven Story Mountain_ by Thomas Merton
 -   _438 Days: An Extraordinary True Story of Survival at Sea_ by Jonathan Franklin
--   _All the Light we Cannot See_ by Anthony Doerr
+-   _All the Light We Cannot See_ by Anthony Doerr
 -   _The Body Keeps The Score: Brain, Mind, And Body In The Healing Of Trauma_ by Bessel van der Kolk
 -   _For the Love of Men: From Toxic to a More Mindful Masculinity_ by Liz Plank
 -   _The Ascent of Rum Doodle_ by W. E. Bowman
