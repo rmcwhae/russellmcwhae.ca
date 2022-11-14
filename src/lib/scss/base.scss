@@ -34,6 +34,31 @@
     }
 }
 
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: var(--s0);
+
+    @include for-tablet-landscape-down {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-phone-only {
+        grid-template-columns: 1fr;
+    }
+}
+
+@include for-tablet-landscape-up {
+    .events-grid > section {
+        grid-column: span 3; // Two columns
+    }
+    .events-grid section:nth-child(5n),
+    .events-grid section:nth-child(5n-1),
+    .events-grid section:nth-child(5n-2) {
+        grid-column: span 2; // Three columns
+    }
+}
+
 .restricted-width {
     max-width: 70ch;
     margin: 0 auto;
