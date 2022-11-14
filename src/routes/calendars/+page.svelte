@@ -17,7 +17,7 @@
 </div>
 
 <h2>Previous Calendars</h2>
-<div class="two-col-grid">
+<div class="three-col-grid">
     <Calendar filename="2022calendar.pdf">
         <Image src="/calendar-images/2022.jpg" />
     </Calendar>
