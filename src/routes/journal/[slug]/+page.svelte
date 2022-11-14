@@ -71,8 +71,10 @@
         flex-direction: column;
         align-items: center;
         gap: var(--s-1);
-        margin-bottom: var(--s2);
+        margin-bottom: var(--s1);
         text-align: center;
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
     }
     h1,
     p {
