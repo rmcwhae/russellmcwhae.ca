@@ -22,7 +22,7 @@
             lockedRatio
             photoswipe={false}
         />
-        <h3>{title}</h3>
+        <h4>{title}</h4>
     </a>
     <p class="sub">{date} &middot; {count} photos</p>
 </section>
@@ -31,7 +31,7 @@
     /* div {
         position: relative;
     } */
-    h3 {
+    h4 {
         margin: var(--s-2) 0 0;
         line-height: 1.2;
     }
