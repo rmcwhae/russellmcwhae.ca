@@ -18,7 +18,10 @@
     class="hover-underline-animation"
     on:click={handleClick}
     aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
-    >{title}</a
+    >{title}
+    {#if href === '/calendars'}
+        <span class="notification" />
+    {/if}</a
 >
 
 <style>
@@ -33,5 +36,15 @@
     a:hover {
         color: var(--high-contrast-color);
         text-decoration: none;
+    }
+    .notification {
+        border-radius: 50%;
+        content: '';
+        display: inline-flex;
+        margin-bottom: 9px;
+        flex-shrink: 0;
+        height: 7px;
+        width: 7px;
+        background: red;
     }
 </style>
