@@ -8,7 +8,7 @@
     target="_top"
 >
     <input type="hidden" name="cmd" value="_s-xclick" />
-    <input type="hidden" name="hosted_button_id" value="5WSSFQSZC9534" />
+    <input type="hidden" name="hosted_button_id" value="HQKP3FLVYQKTQ" />
     <button class="button" type="submit"
         >Purchase <span class="right">
             <RightChevron />
@@ -32,7 +32,7 @@
         cursor: pointer;
     }
     button:hover {
-        border-color: var(--high-contrast-color);
+        /* border-color: var(--high-contrast-color); */
     }
     .right {
         margin-left: var(--s-2);
