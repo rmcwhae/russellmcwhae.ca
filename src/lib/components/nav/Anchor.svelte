@@ -19,10 +19,10 @@
     on:click={handleClick}
     aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
-    {#if href === '/calendars'}
+    <!-- {#if href === '/calendars'}
         <span class="notification" />
-    {/if}</a
->
+    {/if}</a -->
+</a>
 
 <style>
     a {
