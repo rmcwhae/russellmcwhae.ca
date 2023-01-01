@@ -31,7 +31,7 @@ I had an outstanding mountain biking season. Revelstoke, like many small mountai
 
 Owing to the geography of living at the bottom of a valley with 2000-plus-meter relief to nearby mountain summits, the trend for trails in Revelstoke is to be anything but flat. Gradual uphills on switchbacking forestry roads are often followed by direct, steep descents.
 
-Having never owned kneepads before, I finally bought a set this summer. They are considered essential for the bike park and gravity trails where a fall could hurt. Fortunately, I had no memorable wipeouts this season, but safety gear like kneepads can prevent or minimize nasty injuries, especially when it comes to riding technical features like rock slabs.
+Having never owned kneepads before, I finally bought a set this summer. They are essential for the bike park and gravity trails where a fall could hurt. Fortunately, I had no memorable wipeouts this season, but safety gear like kneepads can prevent or minimize nasty injuries, especially when it comes to riding technical features like rock slabs.
 
 On longer, steeper rock slabs, you cannot stop in the middle due to lack of traction, only manage your speed and steer. While this sounds intimidatingly committing, it becomes manageable with practice. I have gotten much more comfortable riding such features, learning to control my speed and maintain balance.
 
@@ -63,7 +63,7 @@ I’m now over three years into my dev career, which is about as far as I got in
 
 A minor win this year came in starting to learn touch typing. Despite having always been a computer guy, I never learned how to type without looking at the keyboard, using a janky mix of hunt-and-peck combined with incorrect muscle memory. It turns out that you’re _not_ supposed to type “T” with your left middle finger.
 
-Seeing small improvements in skill over time has been a theme from this year, in areas such as mountain biking, trail running, and touch typing. This is one of the takeaways of this piece: a half hour of practice every couple of days can dramatically multiply a skill. The book to read on this topic is _Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones_ by James Clear.
+Seeing improvements in skill over time has been a theme from this year, in areas such as mountain biking, trail running, and touch typing. This is one of the takeaways of this piece: a half hour of practice every couple of days can dramatically multiply a skill. The book to read on this topic is _Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones_ by James Clear.
 
 I don’t often make New Year’s resolutions as I believe they are nonsense for two reasons: the first is that they usually don’t last, and the second is that if you need to start better habits, don’t arbitrarily wait until the start of a new year. Start immediately, start small, and incrementally make progress toward your goals.
 
