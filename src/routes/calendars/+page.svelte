@@ -9,7 +9,7 @@
 <div class="mb-2">
     <h1>Calendars</h1>
     <p class="mt-1 mb-1 big char-limit">
-        Limited quantities of 2023 Calendars remaining—contact me to order one.
+        2023 calendars are sold out—check back next year.
     </p>
     <Calendar filename="2023calendar.pdf">
         <Image src="/calendar-images/2023.jpg" />
