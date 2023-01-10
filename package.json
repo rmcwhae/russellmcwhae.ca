@@ -13,7 +13,7 @@
     },
     "devDependencies": {
         "@sveltejs/adapter-vercel": "^1.0.1",
-        "@sveltejs/kit": "^1.0.7",
+        "@sveltejs/kit": "^1.0.11",
         "cypress": "^9.7.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
