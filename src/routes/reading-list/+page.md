@@ -27,7 +27,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 -   _For the Love of Men: From Toxic to a More Mindful Masculinity_ by Liz Plank
 -   _The Ascent of Rum Doodle_ by W. E. Bowman
 
-# 2023
+## 2023
 
 -   _Human Traces_ by Sebastian Faulks
 
