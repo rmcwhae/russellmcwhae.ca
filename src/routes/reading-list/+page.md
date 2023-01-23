@@ -29,6 +29,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2023
 
+-   _The Metamorphosis_ by Franz Kafka
 -   _Human Traces_ by Sebastian Faulks
 
 ## 2022
