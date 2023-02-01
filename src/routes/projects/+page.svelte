@@ -5,6 +5,13 @@
 
     const projects = [
         {
+            title: 'AvCan Mobile App',
+            href: 'https://app.avalanche.ca',
+            description:
+                'The current iteration of the Avalanche Canada Mobile App: a Progressive Web App (PWA) with offline support.',
+            stack: ['PWA', 'Next.js'],
+        },
+        {
             title: 'Avy Savvy',
             href: 'https://avysavvy.ca',
             description:
@@ -36,12 +43,15 @@
 
 <div class="flow">
     <Project project={projects[0]}>
-        <Image src="/projects/avysavvy.jpg" alt={projects[0].title} />
+        <Image src="/projects/avcanpwa.jpg" alt={projects[0].title} />
     </Project>
     <Project project={projects[1]} reverse>
-        <Image src="/projects/dunnlegalservices.jpg" alt={projects[1].title} />
+        <Image src="/projects/avysavvy.jpg" alt={projects[1].title} />
     </Project>
     <Project project={projects[2]}>
-        <Image src="/projects/piratebattleship.jpg" alt={projects[2].title} />
+        <Image src="/projects/dunnlegalservices.jpg" alt={projects[2].title} />
+    </Project>
+    <Project project={projects[3]} reverse>
+        <Image src="/projects/piratebattleship.jpg" alt={projects[3].title} />
     </Project>
 </div>
