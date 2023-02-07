@@ -14,7 +14,7 @@
     "devDependencies": {
         "@sveltejs/adapter-vercel": "^2.0.1",
         "@sveltejs/kit": "^1.5.0",
-        "cypress": "^9.7.0",
+        "cypress": "^12.5.1",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-svelte3": "^3.2.0",
