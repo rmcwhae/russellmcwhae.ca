@@ -29,7 +29,6 @@
             title: 'Pirate Battleship',
             description:
                 'My final project from the Lighthouse Labs web development boot camp.',
-            href: 'https://battleship-lhl.herokuapp.com/',
             repoHref: 'https://github.com/rmcwhae/battleship',
             stack: ['React', 'Phaser', 'Node'],
         },

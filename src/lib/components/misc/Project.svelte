@@ -17,7 +17,9 @@
         <div class="sub mb-2">{stack.join(' · ')}</div>
 
         <ButtonSet>
-            <Button {href} text="Visit site" right external />
+            {#if href}
+                <Button {href} text="Visit site" right external />
+            {/if}
             {#if repoHref}
                 <Button href={repoHref} text="View repo" right external />
             {/if}
