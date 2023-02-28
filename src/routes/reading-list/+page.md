@@ -7,25 +7,6 @@ Reading is how I feed my soul. I saw a comment somewhere that a small bookstore 
 
 Here is a non-exhaustive list of the books I have read, in reverse chronological order. Mostly, this is for me to keep track of things, but if I didn’t enjoy or complete a book, it won’t be here, so you could perhaps use this as a source of inspiration if you’re in need of something new to read. Books featured here are a combination of physical books and e-books, which I read on an older iPad that also doubles as a website-testing device.
 
-## The To-Read List
-
--   _Where the Clouds Can Go_ by Conrad Kain
--   _The Lean Startup_ by Eric Ries
--   _Bugaboo Dreams_ by Topher Donahue
--   _The Emperor of All Maladies_ by Siddhartha Mukherjee
--   _It_ by Stephen King
--   _Oryx and Crake_ by Margaret Atwood
--   _The Master and Margarita_ by Mikhail Bulgakov
--   _Klara and the Sun_ by Kazuo Ishiguro
--   _A Life in Medicine_ by William Osler
--   _Alone on the Wall_ by Alex Honnold
--   _The Seven Story Mountain_ by Thomas Merton
--   _438 Days: An Extraordinary True Story of Survival at Sea_ by Jonathan Franklin
--   _All the Light We Cannot See_ by Anthony Doerr
--   _The Body Keeps The Score: Brain, Mind, And Body In The Healing Of Trauma_ by Bessel van der Kolk
--   _For the Love of Men: From Toxic to a More Mindful Masculinity_ by Liz Plank
--   _The Ascent of Rum Doodle_ by W. E. Bowman
-
 ## 2023
 
 -   _Native Air_ by Jonathan Howland
