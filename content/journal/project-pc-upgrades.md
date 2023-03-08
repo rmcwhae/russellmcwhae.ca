@@ -2,7 +2,7 @@
 title: Project PC Upgrades
 description: In tech, a lot happens in ten years.
 author: Russell McWhae
-date: 2023-03-07
+date: 2023-03-08
 draft: 0
 category: Tech
 ---
