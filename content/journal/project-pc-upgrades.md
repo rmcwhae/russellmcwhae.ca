@@ -60,6 +60,6 @@ When it comes to gaming, my favorite games involve either simulation (Arma III) 
 
 Expenses on this build came to $564.28 for the CPU, RAM, motherboard, and SSD; $425 for the GPU; and $324.97 for the case (taxes and shipping included). Subtract $505 in credit-card points, $200 for selling the old tower, and the total out-of-pocket cost was $609.25 (about $447 USD). Not bad as full price for these specs would be closer to $1800.
 
-Given my moderate requirements for computing power, I’m thrilled with how this project turned out. It’s faster, quieter, and smaller, than my old project PC, a delightful outcome to a rare nine-generation gadget upgrade.
+Given my moderate requirements for computing power, I’m thrilled with how this project turned out. It’s faster, quieter, and smaller than my old project PC, a delightful outcome to a rare nine-generation gadget upgrade.
 
 Here’s to another ten years of economical computing.
