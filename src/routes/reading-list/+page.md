@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2023
 
+-   _Where the Clouds Can Go_ by Conrad Kain
 -   _Native Air_ by Jonathan Howland
 -   _The Metamorphosis_ by Franz Kafka
 -   _Human Traces_ by Sebastian Faulks
