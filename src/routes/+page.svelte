@@ -15,22 +15,22 @@
         {
             href: 'reading-list',
             title: 'Reading List',
-            description: 'Books I have read or want to read.',
+            description: 'Books I have read',
         },
         {
             href: 'uses',
             title: 'What I use',
-            description: 'Tools used in my work.',
+            description: 'Tools used in my work',
         },
         {
             href: 'videos',
             title: 'Outdoor Videos',
-            description: 'A list of my favourite outdoor videos.',
+            description: 'A list of my favourite outdoor videos',
         },
         {
             href: 'ski-footage',
             title: 'Skiing GoPro Footage',
-            description: 'Some backcountry skiing GoPro footage.',
+            description: 'Some backcountry skiing GoPro footage',
         },
     ]
 </script>
