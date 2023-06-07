@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2023
 
+-   _Barbarian Days: A Surfing Life_ by William Finnegan
 -   _Where the Clouds Can Go_ by Conrad Kain
 -   _Native Air_ by Jonathan Howland
 -   _The Metamorphosis_ by Franz Kafka
