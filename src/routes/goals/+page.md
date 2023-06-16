@@ -10,7 +10,7 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [ ] Read lots
 -   [ ] Write a short story
 -   [ ] Write a novella
--   [ ] Understand the basics of machine learning
+-   [x] Understand the basics of machine learning
 -   [ ] Develop day-trading strategies
 
 ## Summer Outdoor Goals
