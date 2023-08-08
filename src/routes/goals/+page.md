@@ -15,7 +15,7 @@ This is a list of various personal goals, documented on this unlisted page to pr
 
 ## Summer Outdoor Goals
 
--   [ ] Climb Mount Begbie
+-   [x] Climb Mount Begbie
 -   [ ] Climb Sir Donald
 -   [ ] Climb in the Valhallas
 -   [x] Bike Martha Creek
