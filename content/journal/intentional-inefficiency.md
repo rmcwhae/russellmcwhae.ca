@@ -17,7 +17,7 @@ As a software developer, I write software that aims to improve efficiency. Certa
 
 The larger tech industry has relentlessly promoted efficiency and automation in so many areas of our lives: for example, remember the days before online banking, when you had to go into a branch, talk to a teller, and get your account booklet updated for a simple transaction like transferring money? It sounds laughably inefficient now, but don’t forget that the online banking we all take for granted is but a blip in the many-century history of the banking industry.
 
-I remember in undergrad when I got an iPhone and had push email in my pocket for the first time. Instead of needing to fetch my laptop out of my computer, connect to WiFi, then open my mail client, I could pull out my phone and instantly see all my new emails. Instead of going to check your emails, your emails came to you.
+I remember in undergrad when I got an iPhone and had push email in my pocket for the first time. Instead of needing to fetch my laptop out of my backpack, connect to WiFi, then open my mail client, I could pull out my phone and instantly see all my new emails. Instead of going to check your emails, your emails came to you.
 
 The tech industry’s laser focus on maximizing efficiency has only gotten more unfaltering since then. Notifications can now come to our watches, media can be streamed in Ultra High Definition anywhere in the world (via satellite connectivity), and meetings can happen virtually across continents.
 
@@ -33,7 +33,7 @@ Consider smartphone photography. Current smartphones have two or three lenses, r
 
 (In one egregious example of over-processing, certain Samsung phones would detect night scenes with the moon and digitally substitute in a higher-resolution version of the moon. Small sensors don’t perform well in low light due to the limited amount of light they can capture—you cannot overcome physics—so the electronically injected moons would have come from a larger camera.)
 
-The efficiency continues after you take an image. After saving a given image, it is then uploaded to your cloud account and made available across all your devices. You can quite easily take thousands of photos, all of them seamlessly synced across all your devices. Photos are then a few taps away from being posted to social media platforms. The entire process is as painless as it is expedient.
+The efficiency continues after taking your photo. Images are automatically uploaded to your cloud account and made available across all your devices. You can quite easily take thousands of photos, all of them seamlessly synced to the cloud. Photos are then a few taps away from being posted to social media platforms. The entire process is as painless as it is expedient.
 
 While the photography snob in me is quick to disdain how easy it has become to mindlessly take and share such _snapshots_, I do think that something has been lost from the days before the smartphone democratized photography.
 
@@ -53,9 +53,9 @@ If you want better photos, being deliberate about each step in your process—in
 
 Speaking of reading books, these are my next example of intentional inefficiency. I have long lamented the decline of reading—see [The Pendulum Swings](/journal/the-pendulum-swings)—so I will only go into the detail required for a short example here.
 
-Reading certainly qualifies as an example of intentional inefficiency: what better way is there to slow down and engage with a story than by picking up a paperback and working through it over a few weeks? Try a chapter before bed—not only a welcome break from the screen but also a good way to unwind after a day.
+Reading unambiguously qualifies as an example of intentional inefficiency: what better way is there to slow down and engage with a story than by picking up a paperback and working through it over a few weeks? Try a chapter before bed—not only a welcome break from the screen but also a good way to unwind after a day.
 
-As far as consuming books, audiobooks have gained popularity lately. I tried listening to a few audiobooks, but the dealbreaker for me was how hard it is to capture quotations from the books. As an aspiring writer, I collect quotations from all the books I read in picture form: screenshots from ebooks, phone pictures from print books (now _there’s_ a use for smartphone photography).
+As far as consuming books, audiobooks have gained popularity lately. I tried listening to a few audiobooks, but the dealbreaker for me was how hard it is to capture quotations from the books. As an aspiring writer, I collect quotations from all the books I read in picture form: screenshots from ebooks, phone pictures from print books (now _there’s_ a use for smartphone photography). Audiobooks didn’t quite work for my use case, but maybe they can for you.
 
 If a given book has been given the TV or movie treatment, you can already guess which medium I’m going to promote. Details are what bring stories to life, and too many of them are lost when adapting written works to the screen. Engage with the story in an intentionally inefficient way—and see how much more you get out of it.
 
