@@ -6,13 +6,12 @@
     export let data
     $: posts = data.posts
     $: latestPost = data.latestPost
+    $: totalWordCount = data.totalWordCount
 </script>
 
 <SEO title="Journal" />
 
 <div class="restricted-width">
-    <!-- <h1 class="mb-s0">Journal</h1> -->
-
     <p class="mb-2">
         Welcome to my online journal, a collection of infrequently published,
         usually long-winded thoughts on topics that are important to me. I hope
@@ -23,12 +22,15 @@
     </div>
 
     <JournalEntrySet {posts} />
+
+    <p class="count sub mt-2">Total written words: {totalWordCount}</p>
 </div>
 
 <style>
     .featured {
-        /* text-align: center; */
         border-top: 1px solid var(--light-grey);
-        /* padding-top: var(--s0); */
+    }
+    .count {
+        text-align: center;
     }
 </style>
