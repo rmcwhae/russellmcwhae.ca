@@ -9,20 +9,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 18
+              uses: actions/checkout
             - name: Install modules
               run: npm ci
             - name: Cypress
-              uses: cypress-io/github-action@v5
+              uses: cypress-io/github-action
               with:
                   browser: chrome
                   headless: true
                   build: npm run build
                   start: npm run preview
                   wait-on: http://localhost:4000
+                  wait-on-timeout: 60
               env:
                   VITE_FAUNA_SECRET_KEY: ${{ secrets.VITE_FAUNA_SECRET_KEY }}
                   VITE_IMAGEKIT_PRIVATE_KEY: ${{ secrets.VITE_IMAGEKIT_PRIVATE_KEY }}
