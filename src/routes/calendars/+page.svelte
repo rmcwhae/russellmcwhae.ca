@@ -9,11 +9,11 @@
 <div class="mb-2">
     <h1>Calendars</h1>
     <p class="mt-1 mb-1 big char-limit">
-        2024 calendars are coming soon!
+        2024 calendars are coming soon! If you’d like one, contact me.
     </p>
-    <!-- <Calendar filename="2023calendar.pdf">
-        <Image src="/calendar-images/2023.jpg" />
-    </Calendar> -->
+    <Calendar filename="2024calendar.pdf">
+        <Image src="/calendar-images/2024.jpg" />
+    </Calendar>
 </div>
 
 <h2>Previous Calendars</h2>
