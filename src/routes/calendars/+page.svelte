@@ -9,15 +9,18 @@
 <div class="mb-2">
     <h1>Calendars</h1>
     <p class="mt-1 mb-1 big char-limit">
-        2023 calendars are sold out—check back next year.
+        2024 calendars are coming soon!
     </p>
-    <Calendar filename="2023calendar.pdf">
+    <!-- <Calendar filename="2023calendar.pdf">
         <Image src="/calendar-images/2023.jpg" />
-    </Calendar>
+    </Calendar> -->
 </div>
 
 <h2>Previous Calendars</h2>
 <div class="three-col-grid">
+    <Calendar filename="2023calendar.pdf">
+        <Image src="/calendar-images/2023.jpg" />
+    </Calendar>
     <Calendar filename="2022calendar.pdf">
         <Image src="/calendar-images/2022.jpg" />
     </Calendar>
