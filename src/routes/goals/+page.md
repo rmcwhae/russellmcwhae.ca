@@ -26,3 +26,4 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [x] Echo Lake
 -   [ ] Backpack to Jade Lake
 -   [ ] Three Island Lake, Thor Creek
+-   [ ] Ride Silvercup Ridge, Trout Lake
