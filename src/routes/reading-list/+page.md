@@ -7,6 +7,10 @@ Reading is how I feed my soul. I saw a comment somewhere that a small bookstore 
 
 Here is a non-exhaustive list of the books I have read, in reverse chronological order. Mostly, this is for me to keep track of things, but if I didn’t enjoy or complete a book, it won’t be here, so you could perhaps use this as a source of inspiration if you’re in need of something new to read. Books featured here are a combination of physical books and e-books, which I read on an iPad.
 
+## 2024
+
+-   _Ministries of Mercy: The Call of the Jericho Road_ by Timothy Keller
+
 ## 2023
 
 -   _It_ by Stephen King
