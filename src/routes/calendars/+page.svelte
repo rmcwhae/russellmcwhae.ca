@@ -8,9 +8,9 @@
 
 <div class="mb-2">
     <h1>Calendars</h1>
-    <p class="mt-1 mb-1 big char-limit">
-        2024 calendars are coming soon! If you’d like one, contact me.
-    </p>
+    <!-- <p class="mt-1 mb-1 big char-limit">
+        2024 calendars are now sold out.
+    </p> -->
     <Calendar filename="2024calendar.pdf">
         <Image src="/calendar-images/2024.jpg" />
     </Calendar>
