@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _Outlive: The Science & Art of Longevity_ by Peter Attia, MD
 -   _Ministries of Mercy: The Call of the Jericho Road_ by Timothy Keller
 
 ## 2023
