@@ -11,7 +11,7 @@ layout: micro
 
 ### New favorite workout
 
-My daily workouts have long consisted of a mix of cardio and strength training. I’ve always taken advantage of free gym memberships when they have been available, though I have not had such an option since leaving the city over four years ago.
+My daily workouts have long consisted of a mix of cardio and strength training. I’ve always taken advantage of free gym memberships when they have been available, though I have had no such option since leaving the city over four years ago.
 
 Lately, I’ve been inclined toward free/cheap workouts that can be done with minimal commuting or equipment. Why pay for a gym membership, when you can do an effective upper-body workout with a pull-up bar, a yoga mat, and a few dumbbells, all without leaving your house? A lot of my biking—mountain and road/gravel—can be done without needing to drive anywhere (yes, I am spoiled to live where I do). Nordic skiing is only a fifteen drive away too (terrific cardio, but it requires maintaining equipment and commuting).
 
@@ -19,7 +19,7 @@ A [recent book](/reading-list), _Outlive: The Science & Art of Longevity_, by Pe
 
 Given my slender dimensions, I get major hip chafing when hauling around a big backpack on multi-day trips. I pre-emptively tape my iliac crests before such undertakings, though the first few days are usually uncomfortable when backpack weights start exceeding 45 pounds.
 
-Maybe the real solution here is more functional training. Throw some weights into my 75 liter backpack and _ruck_ around my neighborhood a few days a week.
+Maybe the real solution here is more functional training. Throw some weights into my 75 liter backpack and _ruck_ around my neighborhood a few days a week. On a [recent ski traverse](/events/Siffleur-Traverse_January-2024), I felt the best carrying a heavy backpack I have in years.
 
 Simple, time-effective, free, brilliant. 👌
 
