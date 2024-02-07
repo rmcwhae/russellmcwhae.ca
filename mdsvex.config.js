@@ -10,6 +10,7 @@ const config = {
 
     layout: {
         page: './src/lib/components/layout/Page.svelte',
+        micro: './src/lib/components/layout/Micro.svelte',
     },
 
     smartypants: {

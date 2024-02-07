@@ -47,6 +47,10 @@ article h2:not(:first-child) {
 article h3 {
     margin-top: var(--s3) !important;
 }
+.micro h3 {
+    margin-top: var(--s-5) !important;
+    margin-bottom: 0 !important;
+}
 @media (max-width: 1023px) {
     article {
         margin: 0 auto;
