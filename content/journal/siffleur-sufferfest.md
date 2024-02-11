@@ -7,7 +7,7 @@ draft: 0
 category: Outdoor
 ---
 
-[Three seasons ago](/journal/11-months-later#ski-days-33-and-34), I attempted the Siffleur Traverse with a friend. We bailed on the second day due to horribly slow travel conditions: bare ground, breakable crust, overgrown trails. It isn’t a common traverse, just something my friend and I schemed up one day.
+[Three seasons ago](/journal/11-months-later#ski-days-33-and-34), I attempted the Siffleur Traverse with a friend. We bailed on the second day due to horribly slow travel conditions: bare ground, breakable crust, overgrown trails. It isn’t a popular traverse, just something my friend and I schemed up one day.
 
 As is often the case with outdoor sufferfests, time has a way of blurring the bad memories while sharpening the good—classic “Type II” fun. It had now been long enough for us to forget the misery of our last attempt, so, this January, the same friend and I—and another one too—decided to make a second attempt of the traverse.
 
@@ -19,13 +19,13 @@ Was this attempt to be a confirmation of ongoing ski prowess, or, on some level,
 
 I’ve often wondered in the outdoors about the degree to which success or failure on an objective depends on conditions versus preparation. If conditions are appropriate, a lack of fitness or experience, or gear issues, can be limiting factors. Conversely, top fitness and dialled gear cannot overcome impossible conditions. In 2021, conditions shut us down. Now, in 2024, success seemed less contingent on conditions than it would be on capability.
 
-The traverse starts at the Kootenay Plains trailhead (confusingly in Banff National Park _not_ Kootenay National Park) east of the Saskatchewan River. It follows a largely valley-bottom route south to Lake Louise, about 85 km. It is not a common traverse as it has relatively few hills. This means a few things: few ski turns, with similarly minor avalanche risk, making it appropriate as a mid-winter mission. Think of it more as a “winter backpacking” objective. We were hoping for more snow coverage than the last time in mid-April and would take the tradeoff of less daylight hours.
+The traverse starts at the Kootenay Plains trailhead (confusingly in Banff National Park _not_ Kootenay National Park) east of the Saskatchewan River crossing. It follows a largely valley-bottom route south to Lake Louise over about 85 km. It is not a common traverse as it is relatively flat. This means few ski turns—thus minor avalanche risk, making it appropriate as a mid-winter mission. Think of it more as a “winter backpacking” objective. We were hoping for more snow coverage than the last time in mid-April and would take the tradeoff of less daylight hours.
 
 Our plan was to winter camp for three nights, which would bring us to Skoki Lodge on day four. I needed to get back to work on day five, so my initial plan was to skip the final night at Skoki and complete the final 10 km ski out before driving back to Revy at the end of day four.
 
 As we all come from different cities (Calgary, Vancouver, Revelstoke), it made sense to spend a night at a hotel in Lake Louise organizing group gear. Creature comforts like this have gotten easier to indulge in over the years, compared to a younger version of me that would have insisted on dirtbag camping at the trailhead (and balked at the $82 for one third of a hotel room).
 
-After the deep freeze of mid-January 2024, a warm weather window opened (and has not closed by the time of this writing). We left Lake Louise around five in the morning on day one to stash cars at Lake Louise ski hill then headed north to Kootenay Plains. We started in the dark, a trend that would continue over the next four days.
+After the deep freeze of mid-January 2024, a warm weather window opened. We left Lake Louise around five in the morning on day one to stash cars at Lake Louise Ski Resort then headed north to Kootenay Plains. We started in the dark, a trend that would continue over the next four days.
 
 The route starts by following a hiking trail in the forest that turns into a straight cutline. Travel was quick enough at the beginning, but, the farther into the wilderness we got, the more overgrown the trail became. In some places, fallen trees blocked the trail for tens of metres, making progress infuriatingly slow.
 
@@ -35,7 +35,7 @@ A 4:30 AM wakeup started day two. In winter camping, I usually budget about two 
 
 Three hours into day two got us to our intended camping spot for day one, around 9:30 AM. Behind schedule, but at least travel conditions were slightly better than in 2021, with enough snow coverage that clambering over and under deadfall with a big backpack wasn’t complete anguish.
 
-A lot of the day involved bushwhacking, which was maddeningly slow. Navigating off-trail in a forest, even with a GPS route to follow, required going for a few steps in one direction, diverting around an impassable cluster of trees, getting a new bearing, and correcting course. One kilometre as the crow flies was much more than that in practice: if we’d tracked our actual route with GPS, it would have zigzagged like a stumbling drunk.
+A lot of the day involved bushwhacking, which was maddeningly slow. Navigating off-trail in a forest, even with a GPS route to follow, required going for a few steps in one direction, diverting around an impassable cluster of trees, getting a new bearing, and correcting course. One kilometre as the crow flies was much more than that in practice: if we’d tracked our actual route, it would have zigzagged like a stumbling drunk.
 
 Other times we found the trail, a delightfully efficient thoroughfare. Removing the route-finding made for less mental taxation. Travel gradually improved: less deadfall and more open meadows, though crossing such open spots almost inevitably meant losing the summer trail. Another seven hours on the go (ten total for the day) brought us to a camping spot in a valley-bottom meadow. Bedtime was 7 PM again; we were too exhausted for much socializing beyond finishing some bagged wine with dinner.
 
@@ -43,7 +43,7 @@ Day three started in the dark as usual. My fuel ran out cooking breakfast, so we
 
 Early this morning, we saw a wildlife camera along the trail. I would love to see the look on the face of whoever sifts through its images next summer, seeing three headlamped skiers passing by in the dead of winter. _Look at this here, a pack of three homo sufferans_.
 
-Our route for the day took us over Pipestone Pass, where we finally got above treeline. Leading up to the pass, a supportive crust made for the easiest travel conditions of the trip . At the top of Pipestone Pass, a large Parks sign warned “TRAVEL NOT RECOMMENDED” along our intended route. Perhaps this was more relevant for summer travel, though the lack of defined trail again made for exasperatingly slow progress. I made maybe three ski turns descending Pipestone Pass before skinning up to descend a 10-degree downhill slope (with six inches or more of ski penetration).
+Our route for the day took us over Pipestone Pass, where we finally got above treeline. Leading up to the pass, a supportive crust made for the easiest travel conditions of the trip. At the top of Pipestone Pass, a large Parks sign warned “TRAVEL NOT RECOMMENDED” along our intended route. Perhaps this was more relevant for summer travel, though the lack of defined trail again made for exasperatingly slow progress. I made maybe three ski turns descending Pipestone Pass before skinning up to descend a 10-degree downhill slope (with six inches or more of ski penetration).
 
 After more downhill bushwhacking, I opted to drop down into a frozen creek and follow it as it descended. The topo map showed well-spaced contour bands in this area, so the likelihood of getting stuck above a waterfall seemed low enough to justify the easier travelling along the frozen creek.
 
@@ -59,7 +59,7 @@ Day four started the earliest yet. Having streamlined our morning routine, we to
 
 The forest opened into a series of broad meadows. Navigation was easy, but progress was slow due to the deep trail breaking. Our moving pace did not get much above 2 km/h. We passed the turnoff for the Drummond Glacier, which is a slightly more popular ski traverse in the area—one with more than three downhill turns too.
 
-Around midday, we approached the turn off from the Pipestone River to Little Pipestone Creek, which would take us to Skoki. The trail curved southwest to the Little Pipestone warden cabin before heading back east up the Little Pipestone Creek. We decided to try a more direct route by cutting this corner and bushwhacking for about 600 metres.
+Around midday, we approached the turn off from the Pipestone River to Little Pipestone Creek, which would take us to Skoki. The trail curved southwest to the Little Pipestone warden cabin before heading back east up the Little Pipestone Creek. We decided to try a more direct route by cutting this corner and bushwhacking.
 
 After the waterfall incident, we were zero for one on shortcuts. _Fool me once…_ However, this shortcut worked flawlessly. A punchy but brief climb got us up out of the river valley and onto a flat plateau, where we soon found the summer trail. In places where the trail disappeared, the straight edge of an occasional chainsaw-cut fallen tree indicated that we were on track.
 
@@ -125,6 +125,8 @@ Amid the mountain of data collected, an unmistakable message arose: “Good rela
 
 Waldinger encourages us to lean into our relationships and ends his talk with a quote from Mark Twain: “There isn’t time, so brief is life, for bickerings, apologies, heartburnings, callings to account. There is only time for loving, and but an instant, so to speak, for that.”
 
+Relationships, therefore, are what we really need to pursue.
+
 ---
 
 In years past, achieving success on an outdoor objective like a summit or a traverse—especially after repeated attempts or less than facile conditions—lead to a feeling of accomplishment. Having a goal and working single-mindedly toward it over decades should understandably be a cause for celebration.
@@ -133,8 +135,8 @@ And yet, glory is fleeting. I have found success in my outdoor pursuits—and el
 
 My point here isn’t to suggest that such pursuits are not worthwhile, but rather that glory and attainment need not be the ultimate goals of such undertakings. Relationships are, as we’ve seen here, what really matters.
 
-In all my years of skiing in avalanche terrain, I have always skied with partners. Companion rescue—having some to dig you out if you get buried in an avalanche—won’t do you much good if you have no companions. In a way then, what I’ve spent so many years striving for and chasing was right in front of me the whole time: sharing experiences with others.
+In all my years of skiing in avalanche terrain, I have always skied with partners. Companion rescue—having some to dig you out if you get buried in an avalanche—won’t do you much good if you have no companions. In a way then, what I’ve spent so many years striving for was right in front of me the whole time: sharing experiences with others.
 
 If there is anything I feel called to pursue more these days instead of the outdoors, it is to be more relational, to continue developing meaningful friendships, both in the context of the outdoors and beyond.
 
-Thanks for reading this trip-report-turned-philosophy-piece. See you in the hills—or maybe even just the coffee shop.
+Thanks for reading this trip-report-turned-philosophy-piece. See you in the hills—or maybe just the coffee shop.
