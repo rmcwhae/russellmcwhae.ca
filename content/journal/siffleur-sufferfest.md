@@ -77,6 +77,8 @@ I messaged work to say I’d be late getting in the following day (Thursday). Af
 
 After three years, we finally completed the Siffleur Traverse.
 
+(Here are [some photos](/events/Siffleur-Traverse_January-2024) from the trip, with some rare shots of yours truly.)
+
 ---
 
 Similar to how our route took its share of detours, I’m now going to take a new direction with this piece. In the introduction, I alluded to wanting to explore other directions in life besides skiing, which is what we’ll discuss now.
@@ -125,10 +127,14 @@ Waldinger encourages us to lean into our relationships and ends his talk with a 
 
 ---
 
-In years past, achieving success on an outdoor objective like a summit or a traverse—especially after repeated attempts or less than facile conditions—lead to a feeling of accomplishment. Having a goal and working single-mindedly toward it over years or decades should understandably be a cause for celebration.
+In years past, achieving success on an outdoor objective like a summit or a traverse—especially after repeated attempts or less than facile conditions—lead to a feeling of accomplishment. Having a goal and working single-mindedly toward it over decades should understandably be a cause for celebration.
 
-And yet, glory is fleeting. I have found varying degrees of success in my pursuits—the outdoors, photography, my professional career—but triumphs in these spaces too often feel only like “a chasing after the wind.”
+And yet, glory is fleeting. I have found success in my outdoor pursuits—and elsewhere in my life like my professional career—but triumphs in these spaces can too often feel like little more than “a chasing after the wind.”
 
 My point here isn’t to suggest that such pursuits are not worthwhile, but rather that glory and attainment need not be the ultimate goals of such undertakings. Relationships are, as we’ve seen here, what really matters.
 
+In all my years of skiing in avalanche terrain, I have always skied with partners. Companion rescue—having some to dig you out if you get buried in an avalanche—won’t do you much good if you have no companions. In a way then, what I’ve spent so many years striving for and chasing was right in front of me the whole time: sharing experiences with others.
+
 If there is anything I feel called to pursue more these days instead of the outdoors, it is to be more relational, to continue developing meaningful friendships, both in the context of the outdoors and beyond.
+
+Thanks for reading this trip-report-turned-philosophy-piece. See you in the hills—or maybe even just the coffee shop.
