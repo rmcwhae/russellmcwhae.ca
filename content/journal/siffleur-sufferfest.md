@@ -140,3 +140,5 @@ In all my years of skiing in avalanche terrain, I have always skied with partner
 If there is anything I feel called to pursue more these days instead of the outdoors, it is to be more relational, to continue developing meaningful friendships, both in the context of the outdoors and beyond.
 
 Thanks for reading this trip-report-turned-philosophy-piece. See you in the hills—or maybe just the coffee shop.
+
+**UPDATE**: An early reader commented that in _Into the Wild_ Cristopher McCandless came to a similar conclusion when he wrote his final words, “Happiness is only real when shared.” This is precisely the same thesis I’m making here. Thanks for sending that in!
