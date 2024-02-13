@@ -7,6 +7,36 @@ layout: micro
   import MicroHeader from '$lib/components/misc/MicroHeader.svelte'
 </script>
 
+<MicroHeader date="2024-02-13" />
+
+### Some recent reading
+
+I was going to start this post with a quip about how the lackluster winter means more time for reading, but—who am I kidding?—I’d still be reading lots anyway.
+
+Here are three articles that have resonated with me lately:
+
+#### 1. Everybody Worships
+
+David Foster Wallace, in a [2005 college commencement address](https://mbird.com/literature/more-david-foster-wallace-quotes/): “In the day-to-day trenches of adult life, there is actually no such thing as atheism. There is no such thing as not worshipping. Everybody worships. The only choice we get is what to worship.” Then he talks about true freedom:
+
+> But of course there are all different kinds of freedom, and the kind that is most precious you will not hear much talked about in the great outside world of winning and achieving and displaying. The really important kind of freedom involves attention, and awareness, and discipline, and effort, and being able truly to care about other people and to sacrifice for them, over and over, in myriad petty little unsexy ways, every day. That is real freedom.
+
+#### 2. E Unibus Pluram: Television and U.S. Fiction
+
+David Foster Wallace’s longer 1993 essay, [E Unibus Pluram: Television and U.S. Fiction](https://jsomers.net/DFW_TV.pdf), examines television from before the streaming era. With the invention of the microchip, television was about to change from a “one-active-many-passive” broadcast model of content distribution to something new. Wallace discusses what this change will mean, repudiating a more optimistic take by media futurologist George Gilder who published the 1990 book, _Life after Television: The Coming Transformation of Media and American Life_. Given what I think of television—see [The Pendulum Swings](/journal/the-pendulum-swings)—I quite enjoyed Wallace’s repudiation of Gilder’s hopefulness:
+
+> In sum, then, [Gilder] offers a really attractive way of looking at viewer passivity and TV’s institutionalization of irony, narcissism, nihilism, stasis. It’s not our fault! It’s outmoded technology’s fault! … Once all experience is finally reduced to marketable image, once the receiving user of user-friendly receivers can choose freely, Americanly, from an Americanly infinite variety of moving images hardly distinguishable from real-life images, and can then choose further just how he wishes to store, enhance, edit, recombine, and present those images to himself, in the privacy of his very own home and skull, TV’s ironic, totalitarian grip on the American psychic cajones will be broken! (187)
+
+And:
+
+> It’s tough to see how Gilder's soteriological vision of having more “control” over the arrangement of high-quality fantasy-bits is going to ease either the dependency that is part of my relation to TV or the impotent irony I must use to pretend I’m not dependent. … Make no mistake. We are dependent on image-technology; and the better the tech, the harder we’re hooked. (189)
+
+In the age of streaming, ultra-high definition, and virtual reality, this rings as true now as it did thirty years ago.
+
+#### 3. Nightbirde’s blog
+
+First, watch [this clip](https://www.youtube.com/watch?v=CZJvBfoHDk0) from America’s Got Talent. Then, read [her blog](https://www.nightbirde.co/blog)—all of it. Simultaneously the most heartbreaking but also uplifting response to terminal cancer. Wow.
+
 <MicroHeader date="2024-02-07" />
 
 ### New favorite workout
