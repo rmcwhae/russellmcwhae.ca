@@ -24,6 +24,7 @@ macOS all the way!
 -   [TablePlus](https://tableplus.com/) for database visualization. After trying many such apps over the years, this is by far my favourite.
 -   [Adobe Creative Cloud](https://www.adobe.com/ca/creativecloud.html) Photography plan, including Lightroom Classic for photo management
 -   [Starry Landscape Stacker](https://sites.google.com/site/starrylandscapestacker/home) for photo astro-stacking
+-   [Typora](https://typora.io/), a delightfully minimal Markdown editor
 
 ### macOS Utilities
 
