@@ -7,6 +7,16 @@ layout: micro
   import MicroHeader from '$lib/components/misc/MicroHeader.svelte'
 </script>
 
+<MicroHeader date="2024-02-28" />
+
+### Another thought on television
+
+I recently read John Mark Comer’s terrific _The Ruthless Elimination of Hurry_. Much of the book resonated with me, but I found his take on television particularly illuminating:
+
+> If you fill your mind with fornication and wildly unrealistic portrayals of beauty, or romance and sex, or violence and the quest for revenge, or cynical secular sarcasm that we call “humor,” or a parade of opulent wealth, or simple banality, what shape do you think that will give to your soul?
+
+“Cynical secular sarcasm”—what an incisive way to describe so much of our current pop culture.
+
 <MicroHeader date="2024-02-13" />
 
 ### Some recent reading
