@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _One Hundred Years of Solitude_ by Gabriel García Márquez
 -   _The Ruthless Elimination of Hurry: How to Stay Emotionally Healthy and Spiritually Alive in the Chaos of the Modern World_ by John Mark Comer
 -   _I Don’t Want to Talk About It: Overcoming the Secret Legacy of Male Depression_ by Terrence Real
 -   _Outlive: The Science & Art of Longevity_ by Peter Attia, MD
