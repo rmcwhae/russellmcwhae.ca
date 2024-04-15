@@ -27,3 +27,5 @@ This is a list of various personal goals, documented on this unlisted page to pr
 -   [ ] Backpack to Jade Lake
 -   [ ] Three Island Lake, Thor Creek
 -   [ ] Ride Silvercup Ridge, Trout Lake
+-   [ ] Gravel bike: Watshan Lake route
+-   [ ] Gravel bike: Shelter Bay to Arrow ferry
