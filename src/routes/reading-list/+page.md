@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _Everybody, Always: Becoming Love in a World Full of Setbacks and Difficult People_ by Bob Goff
 -   _The Essex Serpent_ by Sarah Perry
 -   _One Hundred Years of Solitude_ by Gabriel García Márquez
 -   _The Ruthless Elimination of Hurry: How to Stay Emotionally Healthy and Spiritually Alive in the Chaos of the Modern World_ by John Mark Comer
