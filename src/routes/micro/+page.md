@@ -7,6 +7,28 @@ layout: micro
   import MicroHeader from '$lib/components/misc/MicroHeader.svelte'
 </script>
 
+<MicroHeader date="2024-04-19" />
+
+### New morning routine
+
+As someone who can work remotely, it is easy to fall into a “routine” of waking up late then hopping on my computer, with no longer of a commute than walking down the steps to my basement. Appealing as this may sound, especially on dark winter mornings, it is actually a trap.
+
+I’ve eschewed coffee for most of my life (I’m living proof that it is possible to survive two engineering degrees without it), so, on such mornings, grogginess can set in after an hour or two. Is there another solution?
+
+When I lived in the city, commuting to my various schools or workplaces took anywhere from a 20-minute walk to a 40-minute bike ride. Similar to how I’ve refrained from coffee, I avoided commuting by car unless absolutely necessary.
+
+Something happened on those commutes that I either did not realize or took for granted at the time: starting the day outside in sunlight.
+
+Neuroscientist Andrew Huberman [explains](https://www.youtube.com/watch?v=PNdeh57_OHA) how the “morning signal of getting bright light in your eyes is absolutely vital,” affecting mood, appetite, hormones, and immune-system function. He recommends getting outside for five to ten minutes at the start of each and every morning. This practice tells the hypothalamus to signal bodily systems into coherent action. Without such a strong signal, systems fall out of synchronicity, leading to drowsiness or other minor issues.
+
+At northern latitudes, where our winter mornings start in the dark, Huberman says to turn on as many bright lights as possible for five to twenty minutes.
+
+Let's also pair this with John Mark Comer’s recommendation from _The Ruthless Elimination of Hurry_ to put your phone to bed at least an hour before you go to bed—ideally, airplane mode “in a drawer in the kitchen.” Don’t check it again until after your morning light.
+
+In a week of trying this, I’ve found improved concentration and alertness throughout the day, no caffeine required. I suppose morning dog walkers have known this all along.
+
+Start your day off right!
+
 <MicroHeader date="2024-02-28" />
 
 ### Another thought on television
