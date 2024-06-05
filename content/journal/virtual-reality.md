@@ -73,7 +73,7 @@ Connecting wirelessly works best with WiFi 6-capable hardware, either the [D-Lin
 
 ---
 
-The first generation of a new gadget usually goes through a phase of determining its _raison d’être_. The Apple Watch, launched with uncertainty about what it was actually useful for, has largely become a fitness tracker. I think VR is still trying to figure this out for itself. The metaverse has tanked, and [The Verge](https://www.theverge.com/24054862/apple-vision-pro-review-vr-ar-headset-features-price) couldn’t get past the loneliness of Apple Vision Pro if it were to be used as a primary computer, though I have found it to be a fun gaming/simulation enhancer.
+The first generation of a new gadget usually goes through a phase of determining its _raison d’être_. The Apple Watch, launched with uncertainty about what it was actually useful for, has largely become a fitness tracker. I think VR is still trying to figure this out. The metaverse has tanked, and [The Verge](https://www.theverge.com/24054862/apple-vision-pro-review-vr-ar-headset-features-price) couldn’t get past the loneliness of Apple Vision Pro. I have found little use for VR beyond a gaming and simulation enhancer.
 
 In this age of digital distraction, I must include my usual exhortation about building healthy boundaries around technology. When an innovative new technology like VR comes along, it can be tempting to fall into the trap of over-engaging with it, as I did with _Half-Life 2_ in my youth. (And I’ve said nothing thus far about all the time spent playing violent video games, which are perhaps not the best thing to celebrate.)
 
