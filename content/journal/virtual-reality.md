@@ -21,7 +21,7 @@ At one point in the game, you enter a zombie-infested, former-mining town called
 
 As a teenager with little impulse control, I spent many, many hours playing and re-playing _Half-Life 2_, including its related multi-player mod _Counter-Strike: Source_. I just _could not_ get enough of it. To this day, I can recall nearly the entire plots of both _Half-Life_ games.
 
-Eventually I moved on the other things, but _Half-Life 2_ remained with me as the kind of technological advancement that did not happen every year—more like a one-in-five-or-more-year leap forward, which seemed a lot to a fifteen year old.
+Eventually I moved on to other things, but _Half-Life 2_ remained with me as the kind of technological advancement that did not happen every year—more like a one-in-five-or-more-year leap forward, which seemed a lot to a fifteen year old.
 
 ---
 
