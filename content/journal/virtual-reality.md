@@ -71,6 +71,8 @@ In years past, you needed to buy an overpriced official Oculus USB-C cable to co
 
 Connecting wirelessly works best with WiFi 6-capable hardware, either the [D-Link VR Air Bridge](https://www.dlink.com/ca/en/products/dwa-f18-vr-air-bridge), a WiFi 6 router, or hot spotting directly to your PC (if it has a wireless card). Steam link also requires that your desktop computer have a hardwired ethernet cable. I don’t yet have any WiFi 6 hardware, but connecting my headset directly to my PC’s WiFi 5 hotspot resulted in usable wireless performance, if occasionally laggy and prone to disconnection.
 
+Wireless battery life for the Quest 2 is about two hours. I don’t see why I’d want more than that. If your headset runs out of power, take a break and go outside.
+
 ---
 
 The first generation of a new gadget usually goes through a phase of determining its _raison d’être_. The Apple Watch, launched with uncertainty about what it was actually useful for, has largely become a fitness tracker. I think VR is still trying to figure this out. The metaverse has tanked, and [The Verge](https://www.theverge.com/24054862/apple-vision-pro-review-vr-ar-headset-features-price) couldn’t get past the loneliness of Apple Vision Pro. I have found little use for VR beyond a gaming and simulation enhancer, marvelous as it may be for that.
