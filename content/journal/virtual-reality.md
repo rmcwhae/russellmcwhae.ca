@@ -41,7 +41,7 @@ The next question is what to actually _do_ in VR. Meta made some starter apps to
 
 To me, the big appeal of the Quest headset is its ability to be tethered to a PC. This allows the headset to piggyback off of the PCs more capable hardware and stream games into the headset. (Such a feature is notably absent on the Apple Vision Pro.) This streaming can happen over a cable, or wirelessly (more on this later).
 
-Given the intro to this piece, the 2020 VR-exclusive title _Half-Life: Alyx_ is high on my list of things to try in VR. Also given how it is currently not on sale—it can occasionally be found for 66% off its retail price of $77.99 CAD—I have yet to try it. I suspect it will be discounted during the upcoming Steam Summer Sale. Nothing like spending hundreds or thousands of dollars on a gaming PC only to balk at sub-$100 software costs.
+Given the intro to this piece, the 2020 VR-exclusive title _Half-Life: Alyx_—a long overdue entry in the _Half-Life_ franchise—is high on my list of things to try in VR. Also given how it is currently not on sale—it can occasionally be found for 66% off its retail price of $77.99 CAD—I have yet to try it. I suspect it will be discounted during the upcoming Steam Summer Sale. Nothing like spending hundreds or thousands of dollars on a gaming PC only to balk at sub-$100 software costs.
 
 Two games I already own have do have VR compatibility: _Star Wars: Squadrons_ and _Microsoft Flight Simulator_.
 
@@ -57,7 +57,7 @@ A _Dune_ expansion for _Flight Simulator_ allows you to pilot an ornithopter aro
 
 The ornithopter is also available as an aircraft when playing in the virtual Earth. It’s far easier to pilot than regular helicopters—again, I skipped virtual flight school—so I set up a test flight with an ornithopter out of Revelstoke airport (YRV). I took off and flew over Mount Begbie and across the Monashees into the Okanagan, looping around Penticton then heading back toward Revy. I then followed Lower Arrow Lake all the way to West Kootenay Regional Airport (YCG) in Castlegar. (I got quite a kick out of the AI air-traffic controller deadpanning instructions as my “ornithopter” entered his airspace.) This is techno-geeking at its absolute finest.
 
-I have not been so stunned by a software title in quite a few years. The detail that went into _Flight Simulator_—it even pipes in Bing satellite imagery of the Earth when you get high enough into the air for enhanced realism—is mind-boggling. As I now work in software development, I have a slightly more nuanced appreciation for the amount of work that would have gone into _Flight Simulator_. It is orders of magnitude more complex than anything I have worked on. Well done, Microsoft.
+I have not been so stunned by a software title in quite a few years. The detail that went into _Flight Simulator_—it even pipes in Bing satellite imagery of the Earth for enhanced realism—is mind-boggling. As I now work in software development, I have a slightly more nuanced appreciation for the amount of work that would have gone into _Flight Simulator_. It is orders of magnitude more complex than anything I have worked on. Well done, Microsoft.
 
 The largest complaint about _Flight Simulator_ is that there is not enough to do. After the initial excitement wears off, flying non-combat aircraft can become somewhat repetitive. An upcoming _Flight Simulator 2024_ should address this grievance, with tasks like search-and-rescue missions.
 
