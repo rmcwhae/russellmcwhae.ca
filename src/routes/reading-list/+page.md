@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _The Golden Spruce: A True Story of Myth, Madness, And Greed_ by John Vaillant
 -   _Scattered Minds: The Origins and Healing of Attention Deficit Disorder_ by Gabor Maté
 -   _Everybody, Always: Becoming Love in a World Full of Setbacks and Difficult People_ by Bob Goff
 -   _The Essex Serpent_ by Sarah Perry
