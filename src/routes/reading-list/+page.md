@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _My Dark Vanessa_ by Kate Elizabeth Russell
 -   _Undistracted: Capture Your Purpose. Rediscover Your Joy._ by Bob Goff
 -   _The Golden Spruce: A True Story of Myth, Madness, And Greed_ by John Vaillant
 -   _Scattered Minds: The Origins and Healing of Attention Deficit Disorder_ by Gabor Maté
