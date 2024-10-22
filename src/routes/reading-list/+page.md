@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _The Subtle Art of Not Giving a F\*ck: A Counterintuitive Approach to Living a Good Life_ by Mark Manson
 -   _The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God_ by Timothy Keller
 -   _The Year of Living Biblically: One Man’s Humble Quest to follow the Bible as Literally as Possible_ by A.J. Jacobs
 -   _Love Does: Discover a Secretly Incredible Life in an Ordinary World_ by Bob Goff
