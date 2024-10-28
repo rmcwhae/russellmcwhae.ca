@@ -8,16 +8,21 @@
 
 <div class="mb-2">
     <h1>Calendars</h1>
-    <!-- <p class="mt-1 mb-1 big char-limit">
-        2024 calendars are now sold out.
-    </p> -->
-    <Calendar filename="2024calendar.pdf">
-        <Image src="/calendar-images/2024.jpg" />
-    </Calendar>
+    <!-- <p class="mt-1 mb-1 big char-limit"> -->
+    <p class="mt-1 mb-1">
+        I’m afraid I have not created a 2025 Calendar. After a ten-year run,
+        including last year’s “greatest hits” calendar, it felt like an
+        appropriate time to take a break from making these. They are a lot of
+        work and have never been profitable—a labour of love, as they say. If my
+        inspiration returns, I may again make these some time.
+    </p>
 </div>
 
 <h2>Previous Calendars</h2>
 <div class="three-col-grid">
+    <Calendar filename="2024calendar.pdf">
+        <Image src="/calendar-images/2024.jpg" />
+    </Calendar>
     <Calendar filename="2023calendar.pdf">
         <Image src="/calendar-images/2023.jpg" />
     </Calendar>
