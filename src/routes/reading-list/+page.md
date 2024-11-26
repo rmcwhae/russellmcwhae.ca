@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2024
 
+-   _All the Light We Cannot See_ by Anthony Doerr
 -   _An Unquiet Mind_ by Kay Redfield Jamison
 -   _The Subtle Art of Not Giving a F\*ck: A Counterintuitive Approach to Living a Good Life_ by Mark Manson
 -   _The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God_ by Timothy Keller
