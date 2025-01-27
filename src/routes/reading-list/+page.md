@@ -7,6 +7,10 @@ Reading is how I feed my soul. I saw a comment somewhere that a small bookstore 
 
 Here is a non-exhaustive list of the books I have read, in reverse chronological order. Mostly, this is for me to keep track of things, but if I didn’t enjoy or complete a book, it won’t be here, so you could perhaps use this as a source of inspiration if you’re in need of something new to read. Books featured here are a combination of physical books and e-books, which I read on an iPad.
 
+## 2025
+
+-   _Eight Dates: Essential Conversations for a Lifetime of Love_ by John Gottman, PhD and Julie Schwartz Gottman, PhD, Doug Abrams and Rachel Carlton Abrams, MD
+
 ## 2024
 
 -   _All the Light We Cannot See_ by Anthony Doerr
