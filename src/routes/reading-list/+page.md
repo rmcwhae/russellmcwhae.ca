@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+-   _Dream Big: Know What You Want, Why You Want It, and What You’re Going to Do About It_ by Bob Goff
 -   _Eight Dates: Essential Conversations for a Lifetime of Love_ by John Gottman, PhD and Julie Schwartz Gottman, PhD, Doug Abrams and Rachel Carlton Abrams, MD
 
 ## 2024
