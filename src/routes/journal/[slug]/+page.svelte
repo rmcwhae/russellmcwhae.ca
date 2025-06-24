@@ -12,14 +12,12 @@
 
     $: title = data.title
     $: date = data.date
-    $: views = data.views
     $: category = data.category
     $: description = data.description
     $: readingTime = data.readingTime
     $: component = data.component
     $: relatedPosts = data.relatedPosts
 
-    const viewText = views === 1 ? 'view' : 'views'
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -38,12 +36,6 @@
         <span class="nowrap">{readingTime.words} words</span>
         &middot;
         <span class="nowrap">{readingTime.text}</span>
-        {#if views}
-            &middot;
-            <span class="nowrap" data-test="article-views"
-                >{views} {viewText}</span
-            >
-        {/if}
     </div>
 </header>
 

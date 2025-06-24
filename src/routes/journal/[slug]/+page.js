@@ -24,23 +24,10 @@ export async function load({ params, fetch }) {
         .filter((post) => post.category === category)
         .slice(0, 4)
 
-    let views = null
-
-    try {
-        const json = await fetch(`/api/journal/${slug}`).then((response) =>
-            response.json()
-        )
-        const { hits } = json
-        views = hits
-    } catch (error) {
-        console.log('error')
-    }
-
     return {
         title,
         date,
         category,
-        views,
         readingTime,
         description,
         relatedPosts,

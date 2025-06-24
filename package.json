@@ -44,7 +44,6 @@
     "dependencies": {
         "@vercel/analytics": "^0.1.10",
         "dateformat": "^5.0.3",
-        "faunadb": "^4.5.2",
         "web-vitals": "^2.1.4"
     }
 }
