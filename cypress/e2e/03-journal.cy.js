@@ -11,16 +11,4 @@ describe('Journal', function () {
         cy.get('[data-test="toc"]').should('exist')
         cy.get('[data-test="toc"] > ul').children().should('have.length', 6)
     })
-
-    it('increments the view count by one', () => {
-        cy.get('[data-test="article-views"]').as('viewsText')
-        cy.get('@viewsText').then(($viewsText) => {
-            const initialViewCountText = $viewsText.text()
-            cy.reload()
-            cy.get('@viewsText').then(($viewsText) => {
-                const reloadViewCountText = $viewsText.text()
-                expect(initialViewCountText).not.to.eq(reloadViewCountText)
-            })
-        })
-    })
 })

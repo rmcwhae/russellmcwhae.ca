@@ -22,7 +22,6 @@ jobs:
                   wait-on: http://localhost:4000
                   wait-on-timeout: 60
               env:
-                  VITE_FAUNA_SECRET_KEY: ${{ secrets.VITE_FAUNA_SECRET_KEY }}
                   VITE_IMAGEKIT_PRIVATE_KEY: ${{ secrets.VITE_IMAGEKIT_PRIVATE_KEY }}
                   VITE_IMAGEKIT_PUBLIC_KEY: ${{ secrets.VITE_IMAGEKIT_PUBLIC_KEY }}
                   VITE_IMAGEKIT_URL_ENDPOINT: ${{ secrets.VITE_IMAGEKIT_URL_ENDPOINT }}
