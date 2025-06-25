@@ -162,9 +162,8 @@
                     href="https://www.lighthouselabs.ca"
                     target="_blank"
                     rel="noopener noreferrer nofollow">Lighthouse Labs</a
-                > web development boot camp course from July to October 2019. I have
-                now been working as a web developer, specializing in front-end work,
-                out of Revelstoke, BC.
+                > web development boot camp course from July to October 2019. I now
+                work as a web developer, specializing in front-end work.
             </p>
         </div>
     </div>
