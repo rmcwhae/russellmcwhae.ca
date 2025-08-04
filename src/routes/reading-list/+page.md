@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+-   _Where the Crawdads Sing_ by Delia Owens
 -   _Extreme Ownership: How U.S. Navy SEALs Lead and Win_ by Jocko Willink and Leif Babin (audiobook)
 -   _12 Rules for Life: An Antidote to Chaos_ by Jordan B. Peterson (audiobook)
 -   _God on Mute: Engaging the Silence of Unanswered Prayer_ by Pete Greig (audiobook)
