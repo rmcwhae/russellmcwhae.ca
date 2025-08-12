@@ -2,9 +2,6 @@
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-    import Pagination from '$lib/components/misc/Pagination.svelte'
-    import { paginate } from '$lib/utils/array'
-    import { IMAGES_PER_PAGE } from '$lib/constants'
 
     export let data
 
@@ -12,12 +9,6 @@
     $: count = data.event.count
     $: date = data.event.date
     $: title = data.event.title
-
-    const pageSize = IMAGES_PER_PAGE
-
-    let currentPage = 1
-
-    $: paginatedImages = paginate(images, pageSize, currentPage)
 </script>
 
 <SEO {title} />
@@ -28,16 +19,7 @@
 </div>
 <div class="sub mb-s0">{date} &middot; {count} photos</div>
 
-<Gallery images={paginatedImages} />
-
-<Pagination
-    totalItems={images.length}
-    {pageSize}
-    {currentPage}
-    on:setPage={(e) => {
-        currentPage = e.detail.page
-    }}
-/>
+<Gallery {images} />
 
 <style>
     .sub {
