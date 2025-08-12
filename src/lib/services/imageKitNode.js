@@ -25,19 +25,47 @@ function getClient() {
 }
 
 export async function listFiles(options) {
-    const images = await getClient().listFiles(options)
-
-    return images.map((file) => {
-        const lqip = ImageUtils.buildURL(file.filePath, {
-            width: 300,
-            quality: 50,
-            blur: 30,
+    try {
+        // Add timeout to prevent hanging requests
+        const timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
         })
 
-        return {
-            ...file,
-            photoswipe: true,
-            lqip,
+        const listPromise = getClient().listFiles(options)
+
+        const images = await Promise.race([listPromise, timeoutPromise])
+
+        if (!Array.isArray(images)) {
+            console.error('ImageKit returned non-array response:', images)
+            return []
         }
-    })
+
+        return images.map((file) => {
+            try {
+                const lqip = ImageUtils.buildURL(file.filePath, {
+                    width: 300,
+                    quality: 50,
+                    blur: 30,
+                })
+
+                return {
+                    ...file,
+                    photoswipe: true,
+                    lqip,
+                }
+            } catch (error) {
+                console.error('Error processing file:', file, error)
+                // Return a fallback object to prevent crashes
+                return {
+                    ...file,
+                    photoswipe: true,
+                    lqip: file.url || '',
+                }
+            }
+        })
+    } catch (error) {
+        console.error('Error in listFiles:', error)
+        // Return empty array instead of throwing to prevent server crashes
+        return []
+    }
 }
