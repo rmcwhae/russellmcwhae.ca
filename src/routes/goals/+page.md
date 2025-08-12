@@ -7,25 +7,25 @@ This is a list of various personal goals, documented on this unlisted page to pr
 
 ## Free-time Goals
 
--   [ ] Read lots
--   [ ] Write a short story
--   [ ] Write a novella
--   [x] Understand the basics of machine learning
--   [ ] Develop day-trading strategies
+- [ ] Read lots
+- [ ] Write a short story
+- [ ] Write a novella
+- [x] Understand the basics of machine learning
+- [ ] Develop day-trading strategies
 
 ## Summer Outdoor Goals
 
--   [x] Climb Mount Begbie
--   [ ] Climb Sir Donald
--   [ ] Climb in the Valhallas
--   [x] Bike Martha Creek
--   [ ] Practice wheelies, switchback endos, and scandie flicks
--   [ ] Bike Sol Mountain
--   [ ] Bike Retallack
--   [x] Bike Beowulf
--   [x] Echo Lake
--   [ ] Backpack to Jade Lake
--   [ ] Three Island Lake, Thor Creek
--   [ ] Ride Silvercup Ridge, Trout Lake
--   [ ] Gravel bike: Watshan Lake route
--   [ ] Gravel bike: Shelter Bay to Arrow ferry
+- [x] Climb Mount Begbie
+- [ ] Climb Sir Donald
+- [ ] Climb in the Valhallas
+- [x] Bike Martha Creek
+- [ ] Practice wheelies, switchback endos, and scandie flicks
+- [ ] Bike Sol Mountain
+- [ ] Bike Retallack
+- [x] Bike Beowulf
+- [x] Echo Lake
+- [ ] Backpack to Jade Lake
+- [ ] Three Island Lake, Thor Creek
+- [ ] Ride Silvercup Ridge, Trout Lake
+- [ ] Gravel bike: Watshan Lake route
+- [ ] Gravel bike: Shelter Bay to Arrow ferry

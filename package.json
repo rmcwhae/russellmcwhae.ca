@@ -8,7 +8,6 @@
     "scripts": {
         "dev": "vite dev --port 4000 --host",
         "build": "rm -rf .vercel_build_output && vite build",
-        "update": "npm i -D @sveltejs/kit @sveltejs/adapter-vercel",
         "preview": "vite preview --port 4000",
         "kill": "rm -rf node_modules",
         "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",

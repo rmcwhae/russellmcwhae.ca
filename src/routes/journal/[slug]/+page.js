@@ -11,14 +11,8 @@ export async function load({ params, fetch }) {
         throw error(404, 'Page not found')
     }
 
-    const {
-        title,
-        date,
-        readingTime,
-        component,
-        description,
-        category,
-    } = posts[index]
+    const { title, date, readingTime, component, description, category } =
+        posts[index]
     const relatedPosts = posts
         .filter((post) => post.title !== title)
         .filter((post) => post.category === category)

@@ -64,12 +64,12 @@ Third, in what is the single most effective way of curtailing your data consumpt
 
 Here are a few more ideas you can try to minimize your data consumption and phone use:
 
--   Disable push email notifications on your phone. Try it for a week, dealing with emails on your computer instead.
--   For apps with a high volume of notifications, [enable](https://support.apple.com/en-ca/HT201925) “Deliver Quietly: These notifications appear in the Notification Center, but don’t show up on the Lock screen, play sounds, or show a banner or badge icon.” This way, each incoming notification won’t steal your attention and disrupt you from your current task.
--   Start map navigation somewhere with WiFi. Most of your route should then be cached, minimizing over-the-air data use en route.
--   If you have a device running iOS13, enable [Low Data Mode](https://support.apple.com/en-ca/HT210596). If your device does not support iOS13 (like my now-ancient iPhone 6), disable Background App Refresh (Settings > General > Background App Refresh).
--   Videos look crappy on small screens (phones and tablets), so add videos you find mobile browsing to either Safari’s Read Later list or YouTube’s Watch Later playlist. Then watch the videos later on a proper computer.
--   Limit social media use to WiFi. You do not need to be mindlessly scrolling through news feeds while outside your home. I deleted Facebook (except Messenger) from my phone years ago, never got into Twitter, and check Instagram maybe three or four times a month (only over WiFi). Instead, try to be more present with your current company and the environment surrounding you. It stands out when you can carry a conversation instead of whipping out your phone every two minutes.
+- Disable push email notifications on your phone. Try it for a week, dealing with emails on your computer instead.
+- For apps with a high volume of notifications, [enable](https://support.apple.com/en-ca/HT201925) “Deliver Quietly: These notifications appear in the Notification Center, but don’t show up on the Lock screen, play sounds, or show a banner or badge icon.” This way, each incoming notification won’t steal your attention and disrupt you from your current task.
+- Start map navigation somewhere with WiFi. Most of your route should then be cached, minimizing over-the-air data use en route.
+- If you have a device running iOS13, enable [Low Data Mode](https://support.apple.com/en-ca/HT210596). If your device does not support iOS13 (like my now-ancient iPhone 6), disable Background App Refresh (Settings > General > Background App Refresh).
+- Videos look crappy on small screens (phones and tablets), so add videos you find mobile browsing to either Safari’s Read Later list or YouTube’s Watch Later playlist. Then watch the videos later on a proper computer.
+- Limit social media use to WiFi. You do not need to be mindlessly scrolling through news feeds while outside your home. I deleted Facebook (except Messenger) from my phone years ago, never got into Twitter, and check Instagram maybe three or four times a month (only over WiFi). Instead, try to be more present with your current company and the environment surrounding you. It stands out when you can carry a conversation instead of whipping out your phone every two minutes.
 
 That we use our phones and other electronic devices too much is assuredly a prevalent issue in our society today, one worthy of an equally lengthy essay or even a book. Let’s take a brief (I promise) step back from phones and examine the bigger picture: technology, while a wonderful tool, can have harmful effects when incorrectly used. Its ability to distract is quite unparalleled.
 
@@ -95,4 +95,4 @@ An effective way to minimize your cell-phone bill in Canada (and anywhere, reall
 
 ## References
 
--   Postman, Neil. _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_. New York, N.Y., U.S.A.: Penguin Books, 2006.
+- Postman, Neil. _Amusing Ourselves to Death: Public Discourse in the Age of Show Business_. New York, N.Y., U.S.A.: Penguin Books, 2006.
