@@ -10,11 +10,11 @@
     <h1>Calendars</h1>
     <!-- <p class="mt-1 mb-1 big char-limit"> -->
     <p class="mt-1 mb-1">
-        I’m afraid I have not created a 2025 Calendar. After a ten-year run,
-        including last year’s “greatest hits” calendar, it felt like an
-        appropriate time to take a break from making these. They are a lot of
-        work and have never been profitable—a labour of love, as they say. If my
-        inspiration returns, I may again make these some time.
+        I’m afraid I no longer creating calendars. After a ten-year run,
+        including 2024’s “greatest hits” calendar, it felt like an appropriate
+        time to take a break from making these. They are a lot of work and have
+        never been profitable—a labour of love, as they say. If my inspiration
+        returns, I may again make them.
     </p>
 </div>
 
