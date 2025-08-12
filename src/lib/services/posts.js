@@ -1,4 +1,5 @@
-import readingTime from 'reading-time'
+// Import only the browser-safe implementation to avoid Node stream/util
+import readingTime from 'reading-time/lib/reading-time.js'
 
 // Eagerly import compiled markdown modules and their raw source text
 const postModules = import.meta.glob('/content/journal/*.md', { eager: true })

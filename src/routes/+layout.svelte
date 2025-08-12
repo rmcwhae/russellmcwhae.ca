@@ -8,9 +8,11 @@
     import Loading from '$lib/components/base/Loading.svelte'
     import '../app.scss'
 
-    inject({ mode: dev ? 'development' : 'production' })
+    const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
 
-    let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
+    if (browser && import.meta.env.VERCEL && analyticsId) {
+        inject({ mode: dev ? 'development' : 'production' })
+    }
 
     $: if (browser && analyticsId) {
         webVitals({
