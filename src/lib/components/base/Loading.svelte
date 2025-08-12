@@ -31,7 +31,7 @@
 </script>
 
 {#if $navigating}
-    <div class="loading" style="width: {width}%" />
+    <div class="loading" style="width: {width}%"></div>
 {/if}
 
 <style>

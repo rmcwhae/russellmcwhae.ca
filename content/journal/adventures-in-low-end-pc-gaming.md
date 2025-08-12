@@ -8,7 +8,7 @@ category: Tech
 ---
 
 <script>
-  import Image from 'svimg'
+  import Image from 'svimg/Image.svelte'
 </script>
 
 <Image src="/journal-images/arma3nv.jpg" alt="Arma III screenshot" />

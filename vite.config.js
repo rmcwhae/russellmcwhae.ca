@@ -1,6 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import path from 'path'
-import { isoImport } from 'vite-plugin-iso-import'
+// Removed deprecated vite-plugin-iso-import; use SvelteKit's client guards instead
 
 /** @type {import('vite').UserConfig} */
 const config = {
@@ -24,7 +24,7 @@ const config = {
             process.env.VERCEL_ANALYTICS_ID
         ),
     },
-    plugins: [sveltekit(), isoImport()],
+    plugins: [sveltekit()],
 }
 
 export default config

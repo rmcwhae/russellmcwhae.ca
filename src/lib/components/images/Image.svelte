@@ -1,5 +1,5 @@
 <script>
-    import 'lazysizes'
+    // Use native lazy loading; remove lazysizes dependency
     import { generateSrcSets, sizes } from '$lib/utils/images'
 
     export let filePath
@@ -25,26 +25,24 @@
             data-pswp-srcset={srcset}
         >
             <img
-                data-sizes="auto"
-                data-srcset={srcset}
+                loading="lazy"
+                sizes={sizes}
+                srcset={srcset}
                 src={lqip}
-                {sizes}
                 {width}
                 {height}
                 alt={caption}
-                class="lazyload"
             />
         </a>
     {:else}
         <img
-            data-sizes="auto"
-            data-srcset={srcset}
+            loading="lazy"
+            sizes={sizes}
+            srcset={srcset}
             src={lqip}
-            {sizes}
             {width}
             {height}
             alt={caption}
-            class="lazyload"
         />
     {/if}
 </div>

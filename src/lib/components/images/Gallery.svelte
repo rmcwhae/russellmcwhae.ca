@@ -1,7 +1,8 @@
 <script>
     import { onMount } from 'svelte'
-    import PhotoSwipeLightbox from 'photoswipe/lightbox?client'
-    import PhotoSwipe from 'photoswipe?client'
+    // PhotoSwipe must only load on the client
+    import PhotoSwipeLightbox from 'photoswipe/lightbox'
+    import PhotoSwipe from 'photoswipe'
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
     import 'photoswipe/dist/photoswipe.css'

@@ -1,13 +1,26 @@
-export const posts = Object.entries(
-    import.meta.globEager('/content/journal/*.md')
-)
-    .map(([, post]) => {
+import readingTime from 'reading-time'
+
+// Eagerly import compiled markdown modules and their raw source text
+const postModules = import.meta.glob('/content/journal/*.md', { eager: true })
+const postSources = import.meta.glob('/content/journal/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+})
+
+export const posts = Object.entries(postModules)
+    .map(([path, postModule]) => {
+        const rawSource = /** @type {string} */ (postSources[path] || '')
+        const computedReadingTime = readingTime(rawSource)
+
         return {
             // frontmatter data
-            ...post.metadata,
-            href: '/journal/' + post.metadata.slug,
+            ...postModule.metadata,
+            href: '/journal/' + postModule.metadata.slug,
+            // include computed reading stats
+            readingTime: computedReadingTime,
             // the processed Svelte component from the markdown file
-            component: post.default,
+            component: postModule.default,
         }
     })
     .filter((post) => !post.draft)

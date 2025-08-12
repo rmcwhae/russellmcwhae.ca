@@ -1,23 +1,25 @@
 import remarkGfm from 'remark-gfm'
-import readingTime from 'remark-reading-time'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import { frontMatterSlug } from './src/lib/utils/markdown.js'
+import path from 'path'
+
+const layoutRoot = path.resolve('src/lib/components/layout')
 
 const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
     layout: {
-        page: './src/lib/components/layout/Page.svelte',
-        micro: './src/lib/components/layout/Micro.svelte',
+        page: path.join(layoutRoot, 'Page.svelte'),
+        micro: path.join(layoutRoot, 'Micro.svelte'),
     },
 
     smartypants: {
         dashes: 'oldschool',
     },
 
-    remarkPlugins: [readingTime(), remarkGfm, frontMatterSlug],
+    remarkPlugins: [remarkGfm, frontMatterSlug],
     rehypePlugins: [
         rehypeSlug,
         [

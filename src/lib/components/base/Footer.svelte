@@ -12,7 +12,15 @@
 </script>
 
 <footer>
-    <div class="up" on:click={topFunction} title="Scroll to top" />
+    <div
+        class="up"
+        role="button"
+        tabindex="0"
+        aria-label="Scroll to top"
+        on:click={topFunction}
+        on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && topFunction()}
+        title="Scroll to top"
+    ></div>
     <div class="wrapper">
         <div class="text">
             &copy; {year} Russell McWhae.

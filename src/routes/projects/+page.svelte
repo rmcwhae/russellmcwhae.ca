@@ -1,5 +1,5 @@
 <script>
-    import Image from 'svimg'
+    import Image from 'svimg/Image.svelte'
     import Project from '$lib/components/misc/Project.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
