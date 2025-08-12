@@ -1,4 +1,4 @@
-import remarkfootnotes from 'remark-footnotes'
+import remarkGfm from 'remark-gfm'
 import readingTime from 'remark-reading-time'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -17,7 +17,7 @@ const config = {
         dashes: 'oldschool',
     },
 
-    remarkPlugins: [readingTime(), remarkfootnotes, frontMatterSlug],
+    remarkPlugins: [readingTime(), remarkGfm, frontMatterSlug],
     rehypePlugins: [
         rehypeSlug,
         [
