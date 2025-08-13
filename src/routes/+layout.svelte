@@ -37,7 +37,7 @@
 </main>
 
 <style type="scss">
-    @use '../lib/scss/breakpoints.scss' as *;
+    @import '../lib/scss/breakpoints.scss';
 
     .wrapper {
         margin: 0 var(--s0);

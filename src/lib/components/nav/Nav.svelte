@@ -83,7 +83,7 @@
 </header>
 
 <style type="scss">
-    @use '../../scss/breakpoints.scss' as *;
+    @import '../../scss/breakpoints.scss';
     header {
         display: flex;
         justify-content: space-between;

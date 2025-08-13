@@ -33,7 +33,7 @@
 </section>
 
 <style type="scss">
-    @use '../../scss/breakpoints.scss' as *;
+    @import '../../scss/breakpoints.scss';
 
     h3 {
         margin: 0;
