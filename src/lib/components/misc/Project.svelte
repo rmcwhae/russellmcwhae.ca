@@ -28,7 +28,7 @@
 </div>
 
 <style type="scss">
-    @import '../../scss/breakpoints.scss';
+    @use '../../scss/breakpoints.scss' as *;
 
     h2 {
         margin-bottom: 0;

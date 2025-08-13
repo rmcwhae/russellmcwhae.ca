@@ -186,7 +186,7 @@
 </div>
 
 <style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+    @use '../lib/scss/breakpoints.scss' as *;
     .home {
         margin-top: var(--s1);
         display: flex;

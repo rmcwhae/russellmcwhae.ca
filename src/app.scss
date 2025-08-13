@@ -1,9 +1,9 @@
-@import './lib/scss/reset.scss';
-@import './lib/scss/themes.scss';
-@import './lib/scss/variables.scss';
-@import './lib/scss/base.scss';
-@import './lib/scss/typography.scss';
-@import './lib/scss/utilities.scss';
+@use './lib/scss/reset.scss' as *;
+@use './lib/scss/themes.scss' as *;
+@use './lib/scss/variables.scss' as *;
+@use './lib/scss/base.scss' as *;
+@use './lib/scss/typography.scss' as *;
+@use './lib/scss/utilities.scss' as *;
 
 body {
     overflow-x: hidden;

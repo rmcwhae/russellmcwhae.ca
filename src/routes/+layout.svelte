@@ -1,7 +1,7 @@
 <script>
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
-    import { env as publicEnv } from '$env/dynamic/public'
+    import { onMount } from 'svelte'
     import { page } from '$app/stores'
     import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
@@ -9,13 +9,15 @@
     import Loading from '$lib/components/base/Loading.svelte'
     import '../app.scss'
 
-    const analyticsId = browser
-        ? publicEnv.PUBLIC_VERCEL_ANALYTICS_ID || import.meta.env.VERCEL_ANALYTICS_ID
-        : undefined
+    let analyticsId
 
-    if (browser && import.meta.env.VERCEL && analyticsId) {
-        inject({ mode: dev ? 'development' : 'production' })
-    }
+    onMount(async () => {
+        const { env } = await import('$env/dynamic/public')
+        analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
+        if (import.meta.env.VERCEL && analyticsId) {
+            inject({ mode: dev ? 'development' : 'production' })
+        }
+    })
 
     $: if (browser && analyticsId) {
         webVitals({
@@ -35,7 +37,7 @@
 </main>
 
 <style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+    @use '../lib/scss/breakpoints.scss' as *;
 
     .wrapper {
         margin: 0 var(--s0);
