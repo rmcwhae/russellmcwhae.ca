@@ -28,7 +28,10 @@ const config = {
                 behavior: 'wrap',
             },
         ],
-        rehypeExternalLinks,
+        [
+            rehypeExternalLinks,
+            { target: '_blank', rel: ['noopener', 'noreferrer'] },
+        ],
     ],
 }
 

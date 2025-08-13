@@ -1,6 +1,7 @@
 <script>
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
+    import { env as publicEnv } from '$env/dynamic/public'
     import { page } from '$app/stores'
     import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
@@ -8,7 +9,9 @@
     import Loading from '$lib/components/base/Loading.svelte'
     import '../app.scss'
 
-    const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
+    const analyticsId = browser
+        ? publicEnv.PUBLIC_VERCEL_ANALYTICS_ID || import.meta.env.VERCEL_ANALYTICS_ID
+        : undefined
 
     if (browser && import.meta.env.VERCEL && analyticsId) {
         inject({ mode: dev ? 'development' : 'production' })

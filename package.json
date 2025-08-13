@@ -10,8 +10,8 @@
         "build": "rm -rf .vercel_build_output && vite build",
         "preview": "vite preview --port 4000",
         "kill": "rm -rf node_modules",
-        "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-        "format": "prettier --write --plugin-search-dir=. ."
+        "lint": "prettier --check . && eslint .",
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "@sveltejs/adapter-vercel": "^5.8.2",

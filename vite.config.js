@@ -7,23 +7,7 @@ const config = {
     ssr: {
         noExternal: [],
     },
-    server: {
-        fs: {
-            // Allow serving files from one level up to the project root
-            allow: ['..'],
-        },
-    },
-    resolve: {
-        alias: {
-            $static: path.resolve('static'),
-            $root: path.resolve('.'),
-        },
-    },
-    define: {
-        'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(
-            process.env.VERCEL_ANALYTICS_ID
-        ),
-    },
+    // Prefer SvelteKit's kit.alias in svelte.config.js rather than Vite alias.
     plugins: [sveltekit()],
 }
 

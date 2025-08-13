@@ -26,8 +26,8 @@
         >
             <img
                 loading="lazy"
-                sizes={sizes}
-                srcset={srcset}
+                {sizes}
+                {srcset}
                 src={lqip}
                 {width}
                 {height}
@@ -37,8 +37,8 @@
     {:else}
         <img
             loading="lazy"
-            sizes={sizes}
-            srcset={srcset}
+            {sizes}
+            {srcset}
             src={lqip}
             {width}
             {height}
