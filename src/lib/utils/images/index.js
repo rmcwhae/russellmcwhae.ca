@@ -1,4 +1,4 @@
-import { IMAGEKIT_URL_ENDPOINT } from '$root/env'
+import { IMAGEKIT_URL_ENDPOINT } from '../../../../env.js'
 import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]

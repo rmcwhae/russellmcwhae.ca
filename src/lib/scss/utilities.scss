@@ -1,4 +1,4 @@
-@import './breakpoints.scss';
+@use './breakpoints.scss' as *;
 // Do one job and do it well (https://cube.fyi/utility.html)
 
 .flow > * + *,
