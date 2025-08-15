@@ -1,4 +1,4 @@
-import { IMAGEKIT_URL_ENDPOINT } from '$root/env'
+import { IMAGEKIT_URL_ENDPOINT } from '../../../../env.js'
 import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
@@ -15,17 +15,15 @@ export function buildURL(path, options) {
 export function generateSrcSets(image) {
     function generate(breakpoint) {
         const src = buildURL(image, { width: breakpoint })
-
         return `${src} ${breakpoint}w`
     }
-
-    return BREAKPOINTS.map(generate)
+    return BREAKPOINTS.map(generate).join(', ')
 }
 
-const sizes = BREAKPOINTS.slice(0, -1).map(
+const sizesArray = BREAKPOINTS.slice(0, -1).map(
     (breakpoint) => `(max-width: ${breakpoint}px) ${breakpoint}px`
 )
-
-sizes.push(`${MAX_BREAKPOINT}px`)
+sizesArray.push(`${MAX_BREAKPOINT}px`)
+const sizes = sizesArray.join(', ')
 
 export { sizes }

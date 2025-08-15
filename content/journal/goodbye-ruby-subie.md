@@ -8,7 +8,7 @@ category: Reflection
 ---
 
 <script>
-  import Image from 'svimg'
+  import Image from 'svimg/Image.svelte'
 </script>
 
 <Image src="/journal-images/ruby.jpg" alt="Ruby, my 2006 Subaru Legacy GT" />

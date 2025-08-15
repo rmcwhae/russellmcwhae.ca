@@ -1,5 +1,5 @@
 <script>
-    import Image from 'svimg'
+    import Image from 'svimg/Image.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
@@ -59,7 +59,7 @@
             <a
                 href="photography"
                 class="hover-underline-animation"
-                sveltekit:prefetch
+                data-sveltekit-prefetch
                 ><span
                     >see my <h3>photos</h3></span
                 ></a
@@ -68,7 +68,7 @@
         <div>
             <a
                 href="calendars"
-                sveltekit:prefetch
+                data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
                     >preview my <h3>calendars</h3></span
@@ -78,7 +78,7 @@
         <div>
             <a
                 href="projects"
-                sveltekit:prefetch
+                data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
                     >check out my <h3>projects</h3></span
@@ -88,7 +88,7 @@
         <div>
             <a
                 href="journal"
-                sveltekit:prefetch
+                data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
                     >read my <h3>journal</h3></span

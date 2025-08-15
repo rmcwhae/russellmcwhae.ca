@@ -66,12 +66,20 @@
     <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
         <ThemeSwitcher />
     </div>
-    <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
-        <span class="icon-bar" />
-        <span class="icon-bar" />
-        <span class="icon-bar" />
+    <div
+        class="nav-toggle"
+        role="button"
+        tabindex="0"
+        aria-pressed={mobileMenuOpen}
+        on:click={toggle}
+        on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
+        class:active={mobileMenuOpen}
+    >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
     </div>
-    <div class="nav-overlay" class:active={mobileMenuOpen} />
+    <div class="nav-overlay" class:active={mobileMenuOpen}></div>
 </header>
 
 <style type="scss">

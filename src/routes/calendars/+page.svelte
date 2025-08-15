@@ -1,5 +1,5 @@
 <script>
-    import Image from 'svimg'
+    import Image from 'svimg/Image.svelte'
     import Calendar from '$lib/components/misc/Calendar.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 </script>

@@ -4,7 +4,7 @@ import {
     IMAGEKIT_PUBLIC_KEY,
     IMAGEKIT_PRIVATE_KEY,
     IMAGEKIT_URL_ENDPOINT,
-} from '$root/env'
+} from '../../../env.js'
 
 const CONFIG_OPTIONS = {
     urlEndpoint: IMAGEKIT_URL_ENDPOINT,

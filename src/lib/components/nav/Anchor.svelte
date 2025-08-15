@@ -13,14 +13,14 @@
 </script>
 
 <a
-    sveltekit:prefetch
+    data-sveltekit-prefetch
     {href}
     class="hover-underline-animation"
     on:click={handleClick}
     aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
     <!-- {#if href === '/calendars'}
-        <span class="notification" />
+        <span class="notification"></span>
     {/if}</a -->
 </a>
 

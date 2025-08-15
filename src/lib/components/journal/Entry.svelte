@@ -16,7 +16,9 @@
         </div>
     {/if}
     <h3>
-        <a sveltekit:prefetch {href}>{@html preventLastTwoWordWrap(title)}</a>
+        <a data-sveltekit-prefetch {href}
+            >{@html preventLastTwoWordWrap(title)}</a
+        >
     </h3>
     {#if description}
         <p class:big={featured}>{@html preventLastTwoWordWrap(description)}</p>

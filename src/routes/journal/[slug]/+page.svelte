@@ -17,7 +17,6 @@
     $: readingTime = data.readingTime
     $: component = data.component
     $: relatedPosts = data.relatedPosts
-
 </script>
 
 <SEO title={'Journal » ' + title} {description} />

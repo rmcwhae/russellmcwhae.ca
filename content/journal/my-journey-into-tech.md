@@ -107,10 +107,10 @@ Web development is always changing. The websites that I built back in late 2000s
 
 While normally quite aggressive about unsubscribing from email newsletters, here are four that I have found quite useful:
 
--   [JavaScript Weekly](https://javascriptweekly.com/)
--   [React Status](https://react.statuscode.com/)
--   [Swizec Teller](https://swizec.com/)
--   [Design Hacks](https://learnui.design/newsletter.html)
+- [JavaScript Weekly](https://javascriptweekly.com/)
+- [React Status](https://react.statuscode.com/)
+- [Swizec Teller](https://swizec.com/)
+- [Design Hacks](https://learnui.design/newsletter.html)
 
 It may initially seem counter-intuitive, but I have found podcasts to be surprisingly effective at reinforcing technical concepts. Learning to code directly from a podcast would likely be challenging, but listening to a podcast on a topic you’ve already been exposed to can strengthen it. I regularly tune in to [Syntax.fm](https://syntax.fm/) and [Machine Learning Guide](https://ocdevel.com/mlg). Podcasts are also a great way of keeping a pulse on the larger tech industry too (for example, the [Syntax episode on Wordle](https://syntax.fm/show/430/creator-of-wordle-josh-wardle)).
 

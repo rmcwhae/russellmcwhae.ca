@@ -73,7 +73,9 @@
         position: absolute;
         z-index: 2;
         transform: translate(0);
-        transition: transform var(--transition), background var(--transition);
+        transition:
+            transform var(--transition),
+            background var(--transition);
     }
 
     .toggle.enabled::before {
