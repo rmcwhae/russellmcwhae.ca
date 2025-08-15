@@ -3,42 +3,85 @@ import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
 
 export async function GET() {
-    const events = await ImageKitNodeServices.listFiles({
-        path: '/events/',
-        type: 'folder',
-    })
-
-    const sortedEvents = events
-        .map((event) => {
-            const { name } = event
-            const { title, date } = parseTitleAndDate(name)
-            return {
-                ...event,
-                title,
-                date,
-            }
-        })
-        .sort((a, b) => {
-            return new Date(b.date) - new Date(a.date)
+    try {
+        const events = await ImageKitNodeServices.listFiles({
+            path: '/events/',
+            type: 'folder',
         })
 
-    const promises = sortedEvents.map((event) => getImagesForEvent(event.name))
-
-    const allImages = await Promise.all(promises)
-
-    const eventsWithImages = sortedEvents.map((event, index) => {
-        const images = allImages[index]
-        return {
-            ...event,
-            count: images.length,
-            featuredImage: getFeaturedImage(images),
+        if (!Array.isArray(events)) {
+            console.error(
+                'Non-array response from ImageKit for events:',
+                events
+            )
+            return json([])
         }
-    })
 
-    return json(eventsWithImages)
+        const sortedEvents = events
+            .filter((event) => event && event.name) // Filter out invalid events
+            .map((event) => {
+                try {
+                    const { name } = event
+                    const { title, date } = parseTitleAndDate(name)
+                    return {
+                        ...event,
+                        title,
+                        date,
+                    }
+                } catch (error) {
+                    console.error('Error processing event:', event, error)
+                    return {
+                        ...event,
+                        title: 'Untitled Event',
+                        date: 'Unknown Date',
+                    }
+                }
+            })
+            .sort((a, b) => {
+                try {
+                    return new Date(b.date) - new Date(a.date)
+                } catch (error) {
+                    console.error('Error sorting events:', error)
+                    return 0
+                }
+            })
+
+        // Process images for each event with error handling
+        const eventsWithImages = []
+        for (const event of sortedEvents) {
+            try {
+                const images = await getImagesForEvent(event.name)
+                eventsWithImages.push({
+                    ...event,
+                    count: Array.isArray(images) ? images.length : 0,
+                    featuredImage: getFeaturedImage(images),
+                })
+            } catch (error) {
+                console.error(
+                    'Error processing images for event:',
+                    event.name,
+                    error
+                )
+                eventsWithImages.push({
+                    ...event,
+                    count: 0,
+                    featuredImage: null,
+                })
+            }
+        }
+
+        return json(eventsWithImages)
+    } catch (error) {
+        console.error('Error in events API:', error)
+        return json([])
+    }
 }
 
 function getImagesForEvent(name) {
+    if (!name) {
+        return Promise.resolve([])
+    }
+
     return ImageKitNodeServices.listFiles({
         path: '/events/' + name,
         sort: 'ASC_NAME',
@@ -46,8 +89,18 @@ function getImagesForEvent(name) {
 }
 
 function getFeaturedImage(images) {
-    return (
-        images.find((image) => image.tags && image.tags.includes('featured')) ||
-        images[0]
-    )
+    if (!Array.isArray(images) || images.length === 0) {
+        return null
+    }
+
+    try {
+        return (
+            images.find(
+                (image) => image.tags && image.tags.includes('featured')
+            ) || images[0]
+        )
+    } catch (error) {
+        console.error('Error getting featured image:', error)
+        return images[0] || null
+    }
 }
