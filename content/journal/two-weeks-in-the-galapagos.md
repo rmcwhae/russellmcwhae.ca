@@ -39,7 +39,7 @@ These traffic lights formed a three-way intersection, but our road was a very un
 
 We then boarded the final flight to the Galápagos. Note that you need a document known as a Transit Control Card to enter the Galápagos. They cost $20 and must be done online or at Quito airport. You also need to pay $200 per person upon landing in the Galápagos, payable in cash.
 
-Note that almost all vendors prefer cash. We didn’t make a single payment with a credit card while on the islands. Bring _lots_ of cash[^1]. We severely underestimated the amount of cash we would need and had to make eight additional withdrawals.
+Note that almost all vendors prefer cash. We didn’t make a single payment with a credit card while on the islands. Bring _lots_ of cash. We severely underestimated the amount of cash we would need and had to make eight additional withdrawals[^1].
 
 [^1]: All three islands have ATMs, including Isabela (which didn’t a few years ago according to Lonely Planet), though you often hit a $200 per transaction withdrawal limit (one exception is the yellow ATM in Puerto Ayora, which would give up to $350). I got hit with foreign transaction fees from both the local bank ($4.60 USD) _and_ my home bank ($5 CAD), not to mention the high USD-CAD exchange rate.
 
