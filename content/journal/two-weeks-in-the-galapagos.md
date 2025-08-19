@@ -35,7 +35,7 @@ I don’t recall paying much for a deposit when booking the hotel, but they only
 
 Getting back to the airport meant taking another taxi. This time, to get onto the main paved road from our side street, the driver proceeded toward an intersection with traffic lights.
 
-These traffic lights formed a three-way intersection, but our road was a very unofficial fourth direction. Not only did it lack a traffic light, it also dropped a few vertical metres down a severely rutted embankment. The driver expertly maneuvered the compact car down something only 4x4s should attempt (no scraping!), smoothly dropped down the square curb, then darted across the intersection when a window in the traffic presented itself. His English was limited, as was our Spanish, but he his grin made it clear this was routine.
+These traffic lights formed a three-way intersection, but our road was a very unofficial fourth direction. Not only did it lack a traffic light, it also dropped a few vertical metres down a severely rutted embankment. The driver expertly maneuvered the compact car down something only 4x4s should attempt (no scraping!), smoothly dropped down the square curb, then darted across the intersection when a window in the traffic presented itself. His English was limited, as was our Spanish, but his grin made it clear this was routine.
 
 We then boarded the final flight to the Galápagos. Note that you need a document known as a Transit Control Card to enter the Galápagos. They cost $20 and must be done online or at Quito airport. You also need to pay $200 per person upon landing in the Galápagos, payable in cash.
 
