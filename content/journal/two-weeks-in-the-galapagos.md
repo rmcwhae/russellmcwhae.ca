@@ -203,7 +203,7 @@ After flying over the main harbour, we landed at the airport on Isla San Cristó
 
 The following day, we walked to the Interpretation Center north of town. It contains the aforementioned poster about Darwin as well as other historical and cultural details about the Galápagos.
 
-There is a network of trails that start from the Interpretation Center. These provide access to some free hiking and snorkelling. We hiked up a hill with views of the area. In the bay on the far side of the hill, snorkelers and sea lions swam around together. We were without snorkelling gear, but we made plans to return a few days later with rental gear. On the way back, we also booked surf lessons for the following morning.
+There is a network of trails that start from the Interpretation Center. These provide access to some free hiking and snorkelling. We hiked up a hill with views of the area. In the bay on the far side of the hill, snorkelers and sea lions swam around together. We were without snorkelling equipment, but we made plans to return a few days later with rental gear. On the way back, we also booked surf lessons for the following morning.
 
 At 6:30 AM the next day, I got a call on my local Ecuador number. It was the surf shop: lessons were canceled due to an incoming tsunami!
 
