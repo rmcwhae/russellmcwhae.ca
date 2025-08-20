@@ -135,7 +135,7 @@ While it may seem appealing to move to a paradisiacal small town in an exotic lo
 
 I took a surf lesson the following day. My instructor, known as “Exotico,” spoke little English, but I learned better arm positioning—now I look like less of a _kook_ (surfer slang for a rookie).
 
-The last time I surfed in warm water was in Gold Coast, Australia, in 2011 (my first time ever surfing). Since then, I’ve surfed at Tofino most winters. Even with a thick wet suit, I usually get cold hands and feet in the frigid water. Warm-water surfing is a splendid change, requiring only a rashguard or thin wetsuit.
+The last time I surfed in warm water was in Gold Coast, Australia, in 2011 (my first time ever surfing). Since then, I’ve surfed at Tofino most winters. Even with a thick wetsuit, I usually get cold hands and feet in the frigid water. Warm-water surfing is a splendid change, requiring only a rashguard or thin wetsuit.
 
 The next day, we hiked up a volcano, Sierra Negra. Biased from decades of hiking the mountains of Western Canada, I wasn’t sure what to expect when our guide informed us that the hike was 16 kilometres long. If there was any significant elevation to be gained, this would be a full-day affair, and how do they screen tourists for adequate fitness for such an undertaking? It turns out that the hike is mostly flat—you gain all the elevation on the drive to the parking lot—but the round-trip time of four hours suggested a distance of less than 16 kilometres.
 
@@ -209,7 +209,7 @@ At 6:30 AM the next day, I got a call on my local Ecuador number. It was the sur
 
 The 8.8-magnitude earthquake—one of the largest ever recorded—in Russia’s Kamchatka Peninsula could impact tropical areas across the world, scheduled to arrive in the Galápagos in a few hours. The surf shop seemed a bit surprised that the hotel hadn’t mentioned anything yet.
 
-As waves grow in height closer to shore, all boats in the main harbour were moved to deeper waters (but still visible from town). Puerto Baquerizo Moreno slopes uphill gently from the waterfront, so the first block was closed to traffic, though buildings further inland remained un-evacuated.
+As waves grow in height closer to shore, all boats in the main harbour were moved to deeper waters (but still visible from town). Puerto Baquerizo Moreno slopes uphill gently from the waterfront, so the first block was closed to traffic, though buildings further inland remained unevacuated.
 
 The tsunami was expected between 9 and 10 AM. We ascended to the roof of the four-story hotel with a number of others and waited.
 
@@ -223,7 +223,7 @@ Our surf lesson was rescheduled to 2:30 PM. We took a taxi across the island to 
 
 The next day was our last full day in San Cristóbal. We returned to Muelle Tijeretas, the snorkelling area accessed via the Interpretation Centre. I bought a waterproof phone case in order to take underwater pictures. A small pier along the rocky shore provides access to the water. Two sea lions napped on this platform and emitted their signature cough/bark/vomit sound when you got too close. While the underwater photos turned out blurry, it was amusing to fiddle with a wholly new form of photography.
 
-The following day we caught the 7:00 AM ferry back to Santa Cruz. We took a water taxi from the main pier to Las Grietas, a nearby area only accessible by boat. Las Grietas is a large chasm in the volcanic rock—up to six metres wide—that serves as a brackish swimming pool. It requires a guide, though it sounds like this was a recent change due to its increasing popularity. There is also a sandy beach nearby (Playa Los Alemanes), the closest such beach to Puerto Ayora.
+The following day we caught the 7:00 AM ferry back to Santa Cruz. We took a water taxi from the main pier to Las Grietas, a nearby area only accessible by boat. Las Grietas is a large chasm in the volcanic rock—up to six metres wide—that forms a brackish swimming pool. It requires a guide, though it sounds like this was a recent change due to its increasing popularity. There is also a sandy beach nearby (Playa Los Alemanes), the closest such beach to Puerto Ayora.
 
 That night we stayed in a hotel in Bella Vista, a small town five kilometres from Puerto Ayora. It was a large, three-story building, but we were one of only two parties staying at the hotel. The owner seemed thrilled to have visitors and took our picture before leaving.
 
