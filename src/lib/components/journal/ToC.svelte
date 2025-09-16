@@ -1,5 +1,4 @@
 <script>
-    import { page } from '$app/stores'
     import { browser } from '$app/environment'
 
     /**
@@ -9,7 +8,10 @@
      */
 
     /** @type {Props} */
-    let { allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], activeHeading = null } = $props();
+    let {
+        allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        activeHeading = null,
+    } = $props()
 
     let headings = $state([])
     let observer
@@ -38,19 +40,20 @@
     }
 
     $effect(() => {
-        updateHeadings()
-        
-        return () => {
-            if (observer) {
-                observer.disconnect()
+        if (browser) {
+            updateHeadings()
+
+            return () => {
+                if (observer) {
+                    observer.disconnect()
+                }
             }
         }
     })
 
     $effect(() => {
         if (browser) {
-            // Access $page to make this reactive to page changes
-            $page
+            // Access page to make this reactive to page changes
             updateHeadings()
         }
     })

@@ -1,7 +1,7 @@
 <script>
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
     import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
@@ -13,7 +13,7 @@
      */
 
     /** @type {Props} */
-    let { children } = $props();
+    let { children } = $props()
 
     let analyticsId = $state()
 
@@ -27,15 +27,14 @@
 
     $effect(() => {
         if (browser && analyticsId) {
-            // Access $page to make this reactive to page changes
-            const pageData = $page
+            // Access page to make this reactive to page changes
             webVitals({
-                path: pageData.url.pathname,
-                params: pageData.params,
+                path: page.url.pathname,
+                params: page.params,
                 analyticsId,
             })
         }
-    });
+    })
 </script>
 
 <Loading />

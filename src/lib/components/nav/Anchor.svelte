@@ -13,7 +13,7 @@
     {href}
     class="hover-underline-animation"
     onclick={handleClick}
-    aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
+    aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
     <!-- {#if href === '/calendars'}
         <span class="notification"></span>
