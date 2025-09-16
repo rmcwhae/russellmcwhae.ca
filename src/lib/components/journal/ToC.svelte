@@ -1,5 +1,4 @@
 <script>
-    import { onMount, onDestroy } from 'svelte'
     import { page } from '$app/stores'
     import { browser } from '$app/environment'
 
@@ -38,21 +37,23 @@
         })
     }
 
-    onMount(() => {
+    $effect(() => {
         updateHeadings()
-    })
-
-    onDestroy(() => {
-        if (observer) {
-            observer.disconnect()
+        
+        return () => {
+            if (observer) {
+                observer.disconnect()
+            }
         }
     })
 
-    if (browser) {
-        page.subscribe(() => {
+    $effect(() => {
+        if (browser) {
+            // Access $page to make this reactive to page changes
+            $page
             updateHeadings()
-        })
-    }
+        }
+    })
 
     function handleIntersect(entries) {
         entries.forEach((entry) => {

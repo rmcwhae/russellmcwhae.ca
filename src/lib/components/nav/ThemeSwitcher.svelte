@@ -1,14 +1,11 @@
 <script>
-    import { run } from 'svelte/legacy';
-
-    import { onMount } from 'svelte'
     import { browser } from '$app/environment'
     import { mode } from '$lib/stores/theme'
 
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
     import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
 
-    onMount(() => {
+    $effect(() => {
         if (!$mode) {
             $mode = window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? 'dark'
@@ -17,7 +14,7 @@
     })
 
     let nextMode = $derived($mode === 'dark' ? 'light' : 'dark')
-    run(() => {
+    $effect(() => {
         if (browser) {
             window.document.body.setAttribute('data-theme', $mode)
         }

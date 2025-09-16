@@ -1,12 +1,6 @@
 <script>
-    import { run } from 'svelte/legacy';
-
     // Thanks to https://github.com/elianiva/elianiva.my.id
-    import { onMount, onDestroy } from 'svelte'
     import { navigating } from '$app/stores'
-
-    onMount(() => startProgress())
-    onDestroy(() => resetProgress())
 
     const resetProgress = () => {
         clearInterval(counter)
@@ -28,10 +22,18 @@
     let width = $state(0)
     let speed = 10
 
-    run(() => {
+    $effect(() => {
+        startProgress()
+        
+        return () => {
+            resetProgress()
+        }
+    });
+
+    $effect(() => {
         if (!$navigating) resetProgress()
     });
-    run(() => {
+    $effect(() => {
         if ($navigating) startProgress()
     });
 </script>

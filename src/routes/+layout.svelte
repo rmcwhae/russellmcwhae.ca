@@ -1,9 +1,6 @@
 <script>
-    import { run } from 'svelte/legacy';
-
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
-    import { onMount } from 'svelte'
     import { page } from '$app/stores'
     import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
@@ -20,7 +17,7 @@
 
     let analyticsId = $state()
 
-    onMount(async () => {
+    $effect(async () => {
         const { env } = await import('$env/dynamic/public')
         analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
         if (import.meta.env.VERCEL && analyticsId) {
@@ -28,7 +25,7 @@
         }
     })
 
-    run(() => {
+    $effect(() => {
         if (browser && analyticsId) {
             webVitals({
                 path: $page.url.pathname,

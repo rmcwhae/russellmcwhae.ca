@@ -1,13 +1,10 @@
 <script>
-    import { createEventDispatcher } from 'svelte'
     import { page } from '$app/stores'
 
-    let { href, title } = $props();
-
-    const dispatch = createEventDispatcher()
+    let { href, title, onClose } = $props();
 
     function handleClick() {
-        dispatch('close')
+        onClose?.()
     }
 </script>
 

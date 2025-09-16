@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from 'svelte'
     // PhotoSwipe must only load on the client
     import PhotoSwipeLightbox from 'photoswipe/lightbox'
     import PhotoSwipe from 'photoswipe'
@@ -7,7 +6,7 @@
     import Image from './Image.svelte'
     import 'photoswipe/dist/photoswipe.css'
 
-    onMount(async () => {
+    $effect(async () => {
         const lightbox = new PhotoSwipeLightbox({
             pswpModule: PhotoSwipe,
             gallery: '#gallery',
@@ -45,6 +44,10 @@
         })
 
         lightbox.init()
+        
+        return () => {
+            lightbox.destroy()
+        }
     })
 
     const rowHeight = 500

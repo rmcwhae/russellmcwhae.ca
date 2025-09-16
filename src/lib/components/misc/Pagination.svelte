@@ -1,11 +1,8 @@
 <script>
-    import { createEventDispatcher } from 'svelte'
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
-    let { totalItems, pageSize, currentPage } = $props();
-
-    const dispatch = createEventDispatcher()
+    let { totalItems, pageSize, currentPage, onSetPage } = $props();
 
     let lastPage = $derived(Math.ceil(totalItems / pageSize))
 
@@ -15,7 +12,7 @@
 
     function changePage(page) {
         if (page !== currentPage) {
-            dispatch('setPage', { page })
+            onSetPage?.(page)
             topFunction()
         }
     }
