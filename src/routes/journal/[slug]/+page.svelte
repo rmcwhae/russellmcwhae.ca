@@ -8,15 +8,17 @@
     import ToC from '$lib/components/journal/ToC.svelte'
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
 
-    export let data
+    let { data } = $props();
 
-    $: title = data.title
-    $: date = data.date
-    $: category = data.category
-    $: description = data.description
-    $: readingTime = data.readingTime
-    $: component = data.component
-    $: relatedPosts = data.relatedPosts
+    let title = $derived(data.title)
+    let date = $derived(data.date)
+    let category = $derived(data.category)
+    let description = $derived(data.description)
+    let readingTime = $derived(data.readingTime)
+    let component = $derived(data.component)
+    let relatedPosts = $derived(data.relatedPosts)
+
+    const SvelteComponent = $derived(component);
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -41,7 +43,7 @@
 <div class="wrapper">
     <ToC allowedHeadings={['h2', 'h3']} />
     <article class="char-limit flow">
-        <svelte:component this={component} />
+        <SvelteComponent />
     </article>
 </div>
 

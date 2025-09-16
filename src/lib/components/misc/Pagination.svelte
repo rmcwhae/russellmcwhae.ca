@@ -3,13 +3,11 @@
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
-    export let totalItems
-    export let pageSize
-    export let currentPage
+    let { totalItems, pageSize, currentPage } = $props();
 
     const dispatch = createEventDispatcher()
 
-    $: lastPage = Math.ceil(totalItems / pageSize)
+    let lastPage = $derived(Math.ceil(totalItems / pageSize))
 
     function range(size, startAt = 0) {
         return [...Array(size).keys()].map((i) => i + startAt)
@@ -32,24 +30,24 @@
     <nav>
         <ul>
             <li class={currentPage === 1 ? 'disabled' : ''}>
-                <!-- svelte-ignore a11y-missing-attribute -->
+                <!-- svelte-ignore a11y_missing_attribute -->
                 <a
-                    on:click={() => changePage(currentPage - 1)}
+                    onclick={() => changePage(currentPage - 1)}
                     aria-hidden="true"
                     class=""><LeftChevron /></a
                 >
             </li>
             {#each range(lastPage, 1) as page}
                 <li class={page === currentPage ? 'active' : ''}>
-                    <!-- svelte-ignore a11y-missing-attribute -->
-                    <a on:click={() => changePage(page)}>{page}</a>
+                    <!-- svelte-ignore a11y_missing_attribute -->
+                    <a onclick={() => changePage(page)}>{page}</a>
                 </li>
             {/each}
             <li class={currentPage === lastPage ? 'disabled' : ''}>
-                <!-- svelte-ignore a11y-missing-attribute -->
+                <!-- svelte-ignore a11y_missing_attribute -->
                 <a
                     aria-hidden="true"
-                    on:click={() => changePage(currentPage + 1)}
+                    onclick={() => changePage(currentPage + 1)}
                     class=""><RightChevron /></a
                 >
             </li>

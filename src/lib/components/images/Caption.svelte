@@ -1,9 +1,9 @@
 <script>
-    export let text
+    let { text, children } = $props();
 </script>
 
 <figure>
-    <slot />
+    {@render children?.()}
     <figcaption>
         {@html text}
     </figcaption>

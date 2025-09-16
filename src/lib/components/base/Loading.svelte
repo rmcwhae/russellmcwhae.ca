@@ -1,4 +1,6 @@
 <script>
+    import { run } from 'svelte/legacy';
+
     // Thanks to https://github.com/elianiva/elianiva.my.id
     import { onMount, onDestroy } from 'svelte'
     import { navigating } from '$app/stores'
@@ -23,11 +25,15 @@
     }
 
     let counter
-    let width = 0
+    let width = $state(0)
     let speed = 10
 
-    $: if (!$navigating) resetProgress()
-    $: if ($navigating) startProgress()
+    run(() => {
+        if (!$navigating) resetProgress()
+    });
+    run(() => {
+        if ($navigating) startProgress()
+    });
 </script>
 
 {#if $navigating}

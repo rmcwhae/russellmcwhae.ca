@@ -3,9 +3,9 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let data
+    let { data } = $props();
 
-    $: images = data.images
+    let images = $derived(data.images)
 </script>
 
 <div class="flex items-center justify-between mb-s0">

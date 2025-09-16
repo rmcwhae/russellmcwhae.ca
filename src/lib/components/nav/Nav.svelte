@@ -3,7 +3,7 @@
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 
-    let mobileMenuOpen = false
+    let mobileMenuOpen = $state(false)
 
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
@@ -18,7 +18,7 @@
 
 <header>
     <div id="logo" class:active={mobileMenuOpen}>
-        <a href="/" on:click={hideMenu}><Logo /></a>
+        <a href="/" onclick={hideMenu}><Logo /></a>
     </div>
     <nav>
         <div class="nav-menu" class:active={mobileMenuOpen}>
@@ -71,8 +71,8 @@
         role="button"
         tabindex="0"
         aria-pressed={mobileMenuOpen}
-        on:click={toggle}
-        on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
+        onclick={toggle}
+        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
         class:active={mobileMenuOpen}
     >
         <span class="icon-bar"></span>

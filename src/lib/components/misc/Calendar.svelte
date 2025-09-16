@@ -3,14 +3,21 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import PurchaseCalendar from '$lib/components/misc/PurchaseCalendar.svelte'
 
-    export let filename
-    export let purchase = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} filename
+     * @property {boolean} [purchase]
+     * @property {import('svelte').Snippet} [children]
+     */
+
+    /** @type {Props} */
+    let { filename, purchase = false, children } = $props();
 
     const href = '/pdf/' + filename
 </script>
 
 <section>
-    <a {href} target="_blank" rel="noopener noreferrer nofollow"><slot /></a>
+    <a {href} target="_blank" rel="noopener noreferrer nofollow">{@render children?.()}</a>
     <div class="mb-2">
         {#if purchase}
             <ButtonSet>

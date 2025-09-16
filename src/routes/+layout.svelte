@@ -1,4 +1,6 @@
 <script>
+    import { run } from 'svelte/legacy';
+
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
     import { onMount } from 'svelte'
@@ -8,8 +10,15 @@
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
     import '../app.scss'
+    /**
+     * @typedef {Object} Props
+     * @property {import('svelte').Snippet} [children]
+     */
 
-    let analyticsId
+    /** @type {Props} */
+    let { children } = $props();
+
+    let analyticsId = $state()
 
     onMount(async () => {
         const { env } = await import('$env/dynamic/public')
@@ -19,20 +28,22 @@
         }
     })
 
-    $: if (browser && analyticsId) {
-        webVitals({
-            path: $page.url.pathname,
-            params: $page.params,
-            analyticsId,
-        })
-    }
+    run(() => {
+        if (browser && analyticsId) {
+            webVitals({
+                path: $page.url.pathname,
+                params: $page.params,
+                analyticsId,
+            })
+        }
+    });
 </script>
 
 <Loading />
 
 <main class="wrapper">
     <Nav />
-    <slot />
+    {@render children?.()}
     <Footer />
 </main>
 

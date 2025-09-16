@@ -1,4 +1,6 @@
 <script>
+    import { run } from 'svelte/legacy';
+
     import { onMount } from 'svelte'
     import { browser } from '$app/environment'
     import { mode } from '$lib/stores/theme'
@@ -14,12 +16,12 @@
         }
     })
 
-    $: nextMode = $mode === 'dark' ? 'light' : 'dark'
-    $: {
+    let nextMode = $derived($mode === 'dark' ? 'light' : 'dark')
+    run(() => {
         if (browser) {
             window.document.body.setAttribute('data-theme', $mode)
         }
-    }
+    });
 
     function changeTheme() {
         $mode = nextMode
@@ -27,7 +29,7 @@
 </script>
 
 <div>
-    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <!-- svelte-ignore a11y_label_has_associated_control -->
     <label class="toggle-wrapper">
         <div class={nextMode === 'dark' ? 'toggle disabled' : 'toggle enabled'}>
             <div class="icons">
@@ -38,7 +40,7 @@
                 id="toggle"
                 name="toggle"
                 type="checkbox"
-                on:click={changeTheme}
+                onclick={changeTheme}
             />
         </div>
     </label>

@@ -2,11 +2,13 @@
     import Image from './Image.svelte'
     import * as StringUtils from '$lib/utils/string'
 
-    export let eventName
-    export let title
-    export let date
-    export let count
-    export let featuredImage
+    let {
+        eventName,
+        title,
+        date,
+        count,
+        featuredImage
+    } = $props();
 
     const { name, filePath, width, height, lqip } = featuredImage
 </script>

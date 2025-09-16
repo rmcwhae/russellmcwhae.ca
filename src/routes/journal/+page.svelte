@@ -3,10 +3,10 @@
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let data
-    $: posts = data.posts
-    $: latestPost = data.latestPost
-    $: totalWordCount = data.totalWordCount
+    let { data } = $props();
+    let posts = $derived(data.posts)
+    let latestPost = $derived(data.latestPost)
+    let totalWordCount = $derived(data.totalWordCount)
 </script>
 
 <SEO title="Journal" />

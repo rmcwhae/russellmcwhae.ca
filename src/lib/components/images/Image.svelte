@@ -2,13 +2,27 @@
     // Use native lazy loading; remove lazysizes dependency
     import { generateSrcSets, sizes } from '$lib/utils/images'
 
-    export let filePath
-    export let width
-    export let height
-    export let lqip // low quality image placeholder
-    export let customMetadata
-    export let lockedRatio = false
-    export let photoswipe = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} filePath
+     * @property {any} width
+     * @property {any} height
+     * @property {any} lqip - low quality image placeholder
+     * @property {any} customMetadata
+     * @property {boolean} [lockedRatio]
+     * @property {boolean} [photoswipe]
+     */
+
+    /** @type {Props} */
+    let {
+        filePath,
+        width,
+        height,
+        lqip,
+        customMetadata,
+        lockedRatio = false,
+        photoswipe = false
+    } = $props();
 
     const srcset = generateSrcSets(filePath)
     const { caption } = customMetadata || {}

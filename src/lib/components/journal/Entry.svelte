@@ -3,10 +3,16 @@
     import Date from '$lib/components/misc/Date.svelte'
     import CategoryLink from './CategoryLink.svelte'
 
-    export let post
-    export let featured = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} post
+     * @property {boolean} [featured]
+     */
 
-    $: ({ href, title, description, date, readingTime, category } = post)
+    /** @type {Props} */
+    let { post, featured = false } = $props();
+
+    let { href, title, description, date, readingTime, category } = $derived(post)
 </script>
 
 <section class:featured>

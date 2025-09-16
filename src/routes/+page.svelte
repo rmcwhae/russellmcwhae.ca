@@ -6,10 +6,10 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
-    export let data
+    let { data } = $props();
 
-    $: images = data.images
-    $: latestPosts = data.latestPosts
+    let images = $derived(data.images)
+    let latestPosts = $derived(data.latestPosts)
 
     const etCetera = [
         {

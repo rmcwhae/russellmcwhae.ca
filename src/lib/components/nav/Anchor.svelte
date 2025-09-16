@@ -2,8 +2,7 @@
     import { createEventDispatcher } from 'svelte'
     import { page } from '$app/stores'
 
-    export let href
-    export let title
+    let { href, title } = $props();
 
     const dispatch = createEventDispatcher()
 
@@ -16,7 +15,7 @@
     data-sveltekit-prefetch
     {href}
     class="hover-underline-animation"
-    on:click={handleClick}
+    onclick={handleClick}
     aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
     <!-- {#if href === '/calendars'}

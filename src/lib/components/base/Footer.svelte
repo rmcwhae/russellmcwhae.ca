@@ -17,8 +17,8 @@
         role="button"
         tabindex="0"
         aria-label="Scroll to top"
-        on:click={topFunction}
-        on:keydown={(e) =>
+        onclick={topFunction}
+        onkeydown={(e) =>
             (e.key === 'Enter' || e.key === ' ') && topFunction()}
         title="Scroll to top"
     ></div>
@@ -28,7 +28,7 @@
             <span class="nowrap">Made in Canada.</span>
         </div>
         <div class="icons">
-            <!-- svelte-ignore a11y-invalid-attribute -->
+            <!-- svelte-ignore a11y_invalid_attribute -->
             <a
                 href="javascript:window.location.href=atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')"
                 rel="noopener noreferrer nofollow"><IoIosMail /></a

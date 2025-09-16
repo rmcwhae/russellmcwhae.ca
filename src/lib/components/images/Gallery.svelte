@@ -50,7 +50,7 @@
     const rowHeight = 500
     const gutter = 12
 
-    export let images
+    let { images } = $props();
 </script>
 
 <div id="gallery">
