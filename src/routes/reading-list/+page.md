@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+- _Try Softer: A Fresh Approach to Move Us out of Anxiety, Stress, and Survival Mode—and into a Life of Connection and Joy_ by Aundi Kolber
 - _How to Win Over Depression_ by Tim LaHaye
 - _Where the Crawdads Sing_ by Delia Owens
 - _Extreme Ownership: How U.S. Navy SEALs Lead and Win_ by Jocko Willink and Leif Babin (audiobook)
