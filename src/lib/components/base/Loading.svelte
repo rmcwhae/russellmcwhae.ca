@@ -1,6 +1,6 @@
 <script>
     // Thanks to https://github.com/elianiva/elianiva.my.id
-    import { navigating } from '$app/stores'
+    import { beforeNavigate, afterNavigate } from '$app/navigation'
 
     const resetProgress = () => {
         clearInterval(counter)
@@ -21,24 +21,20 @@
     let counter
     let width = $state(0)
     let speed = 10
+    let isNavigating = $state(false)
 
-    $effect(() => {
+    beforeNavigate(() => {
+        isNavigating = true
         startProgress()
-        
-        return () => {
-            resetProgress()
-        }
-    });
+    })
 
-    $effect(() => {
-        if (!$navigating) resetProgress()
-    });
-    $effect(() => {
-        if ($navigating) startProgress()
-    });
+    afterNavigate(() => {
+        isNavigating = false
+        resetProgress()
+    })
 </script>
 
-{#if $navigating}
+{#if isNavigating}
     <div class="loading" style="width: {width}%"></div>
 {/if}
 
