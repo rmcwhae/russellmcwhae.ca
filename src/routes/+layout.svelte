@@ -27,9 +27,11 @@
 
     $effect(() => {
         if (browser && analyticsId) {
+            // Access $page to make this reactive to page changes
+            const pageData = $page
             webVitals({
-                path: $page.url.pathname,
-                params: $page.params,
+                path: pageData.url.pathname,
+                params: pageData.params,
                 analyticsId,
             })
         }
