@@ -82,8 +82,8 @@
     <div class="nav-overlay" class:active={mobileMenuOpen}></div>
 </header>
 
-<style type="scss">
-    @import '../../scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
     header {
         display: flex;
         justify-content: space-between;

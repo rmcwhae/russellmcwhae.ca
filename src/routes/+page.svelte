@@ -186,8 +186,8 @@
     <JournalEntrySet posts={etCetera} />
 </div>
 
-<style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../lib/scss/breakpoints' as *;
     .home {
         margin-top: var(--s1);
         display: flex;

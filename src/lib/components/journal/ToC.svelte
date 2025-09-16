@@ -79,8 +79,8 @@
     </aside>
 {/if}
 
-<style type="scss">
-    @import '../../../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
 
     aside {
         max-width: 70ch;

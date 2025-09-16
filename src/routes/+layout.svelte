@@ -36,8 +36,8 @@
     <Footer />
 </main>
 
-<style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../lib/scss/breakpoints' as *;
 
     .wrapper {
         margin: 0 var(--s0);
