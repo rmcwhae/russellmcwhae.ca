@@ -1,7 +1,7 @@
 <script>
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
 
-    let { href, title, onClose } = $props();
+    let { href, title, onClose } = $props()
 
     function handleClick() {
         onClose?.()
