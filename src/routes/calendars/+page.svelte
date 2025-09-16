@@ -96,8 +96,8 @@
         border: 1px solid white;
         padding: var(--s-2) var(--s-1);
     }
-    p span {
+    /* p span {
         text-decoration: underline;
         text-decoration-color: red;
-    }
+    } */
 </style>

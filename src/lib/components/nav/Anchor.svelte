@@ -37,7 +37,7 @@
         color: var(--high-contrast-color);
         text-decoration: none;
     }
-    .notification {
+    /* .notification {
         border-radius: 50%;
         content: '';
         display: inline-flex;
@@ -46,5 +46,5 @@
         height: 7px;
         width: 7px;
         background: red;
-    }
+    } */
 </style>
