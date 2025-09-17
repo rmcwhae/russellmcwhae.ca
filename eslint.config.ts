@@ -1,6 +1,6 @@
 import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
-import type { Linter } from 'eslint'
+import tseslint from 'typescript-eslint'
 
 export default [
     {
@@ -13,6 +13,7 @@ export default [
         ],
     },
     js.configs.recommended,
+    ...tseslint.configs.recommended,
     ...svelte.configs['flat/recommended'],
     {
         // Global language options (apply to JS and Svelte)
@@ -50,6 +51,7 @@ export default [
             'svelte/no-at-html-tags': 'warn',
             'svelte/require-each-key': 'warn',
             'svelte/no-unused-svelte-ignore': 'warn',
+            'svelte/no-navigation-without-resolve': 'warn',
             // Prefer warnings for unused variables to avoid blocking builds
             'no-unused-vars': 'warn',
         },

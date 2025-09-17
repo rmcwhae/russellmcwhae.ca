@@ -9,7 +9,8 @@ interface ImageOptions {
     height?: number
     quality?: number
     format?: string
-    [key: string]: any
+    blur?: number
+    [key: string]: string | number | undefined
 }
 
 export function buildURL(path: string, options: ImageOptions): string {

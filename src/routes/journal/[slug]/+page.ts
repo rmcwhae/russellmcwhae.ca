@@ -4,7 +4,7 @@ import type { PageLoad } from './$types'
 
 export const prerender = false // Necessary for the hit counter
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ params }) => {
     const { slug } = params
     const index = posts.findIndex((post) => slug === post.slug)
 

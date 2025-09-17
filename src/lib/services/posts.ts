@@ -7,7 +7,7 @@ interface PostMetadata {
     title: string
     date: string
     draft?: boolean
-    [key: string]: any
+    [key: string]: string | number | boolean | undefined
 }
 
 interface PostModule {

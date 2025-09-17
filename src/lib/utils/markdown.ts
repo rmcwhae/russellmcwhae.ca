@@ -1,7 +1,7 @@
 import path from 'path'
 
 interface FileData {
-    fm: Record<string, any>
+    fm: Record<string, string | number | boolean | undefined>
 }
 
 interface File {
@@ -10,7 +10,7 @@ interface File {
 }
 
 export function frontMatterSlug() {
-    return (_: any, file: File) => {
+    return (_: unknown, file: File) => {
         const parsed = path.parse(file.filename)
         const slug = parsed.base.replace('.md', '')
 

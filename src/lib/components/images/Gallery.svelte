@@ -21,7 +21,7 @@
                 isButton: false,
                 appendTo: 'root',
                 html: 'Caption text',
-                onInit: (el, pswp) => {
+                onInit: (el) => {
                     lightbox.pswp.on('change', () => {
                         const currSlideElement =
                             lightbox.pswp.currSlide.data.element

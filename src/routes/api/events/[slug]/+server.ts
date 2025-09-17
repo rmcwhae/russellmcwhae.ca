@@ -33,7 +33,7 @@ export const GET: RequestHandler = async ({ params }) => {
         } else {
             throw error(404, 'No images found for this event')
         }
-    } catch (err: any) {
+    } catch (err: unknown) {
         // If it's already a SvelteKit error, re-throw it
         if (err.status) {
             throw err

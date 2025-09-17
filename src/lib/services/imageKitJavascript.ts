@@ -20,8 +20,12 @@ function getClient(): ImageKit {
 interface UrlOptions {
     path: string
     urlEndpoint: string
-    transformation?: any[]
-    [key: string]: any
+    transformation?: Record<string, string | number>[]
+    [key: string]:
+        | string
+        | number
+        | Record<string, string | number>[]
+        | undefined
 }
 
 export function url(options: UrlOptions): string {

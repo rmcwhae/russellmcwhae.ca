@@ -27,7 +27,7 @@ function getClient(): ImageKit {
 interface ImageKitFile {
     filePath: string
     url?: string
-    [key: string]: any
+    [key: string]: string | number | boolean | undefined
 }
 
 interface ProcessedFile extends ImageKitFile {
@@ -36,7 +36,7 @@ interface ProcessedFile extends ImageKitFile {
 }
 
 interface ListFilesOptions {
-    [key: string]: any
+    [key: string]: string | number | boolean | undefined
 }
 
 export async function listFiles(

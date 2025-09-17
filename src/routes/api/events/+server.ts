@@ -8,8 +8,24 @@ interface EventWithImages {
     title: string
     date: string
     count: number
-    featuredImage: any
-    [key: string]: any
+    featuredImage: {
+        name: string
+        filePath: string
+        width: number
+        height: number
+        lqip: string
+    }
+    [key: string]:
+        | string
+        | number
+        | {
+              name: string
+              filePath: string
+              width: number
+              height: number
+              lqip: string
+          }
+        | undefined
 }
 
 export const GET: RequestHandler = async () => {
@@ -89,7 +105,13 @@ export const GET: RequestHandler = async () => {
     }
 }
 
-function getImagesForEvent(name: string): Promise<any[]> {
+function getImagesForEvent(name: string): Promise<
+    Array<{
+        filePath: string
+        url?: string
+        [key: string]: string | number | boolean | undefined
+    }>
+> {
     if (!name) {
         return Promise.resolve([])
     }
@@ -100,7 +122,19 @@ function getImagesForEvent(name: string): Promise<any[]> {
     })
 }
 
-function getFeaturedImage(images: any[]): any {
+function getFeaturedImage(
+    images: Array<{
+        filePath: string
+        url?: string
+        [key: string]: string | number | boolean | undefined
+    }>
+): {
+    name: string
+    filePath: string
+    width: number
+    height: number
+    lqip: string
+} | null {
     if (!Array.isArray(images) || images.length === 0) {
         return null
     }

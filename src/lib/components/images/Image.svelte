@@ -37,6 +37,7 @@
             data-pswp-height={height}
             data-pswp-src={lqip}
             data-pswp-srcset={srcset}
+            data-sveltekit-preload-data="off"
         >
             <img
                 loading="lazy"

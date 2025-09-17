@@ -28,7 +28,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
         }
 
         return { event }
-    } catch (err: any) {
+    } catch (err: unknown) {
         // If it's already a SvelteKit error, re-throw it
         if (err.status) {
             throw err

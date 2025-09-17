@@ -3,7 +3,7 @@ import { onCLS, onFCP, onLCP, onTTFB, type Metric } from 'web-vitals'
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals'
 
 interface AnalyticsOptions {
-    params: Record<string, any>
+    params: Record<string, string>
     path: string
     analyticsId: string
     debug: boolean
@@ -13,7 +13,9 @@ function getConnectionSpeed(): string {
     return 'connection' in navigator &&
         navigator['connection'] &&
         'effectiveType' in navigator['connection']
-        ? (navigator['connection'] as any)['effectiveType']
+        ? (navigator['connection'] as { effectiveType: string })[
+              'effectiveType'
+          ]
         : ''
 }
 

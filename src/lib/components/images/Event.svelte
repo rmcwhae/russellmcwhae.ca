@@ -1,6 +1,5 @@
 <script>
     import Image from './Image.svelte'
-    import * as StringUtils from '$lib/utils/string'
 
     let { eventName, title, date, count, featuredImage } = $props()
 
@@ -8,7 +7,7 @@
 </script>
 
 <section>
-    <a href={'/events/' + eventName} data-sveltekit-prefetch>
+    <a href={`/events/${eventName}`} data-sveltekit-prefetch>
         <Image
             {name}
             {filePath}

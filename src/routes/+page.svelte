@@ -58,7 +58,7 @@
     <div class="boxes">
         <div>
             <a
-                href="photography"
+                href="/photography"
                 class="hover-underline-animation"
                 data-sveltekit-prefetch
                 ><span
@@ -68,7 +68,7 @@
         </div>
         <div>
             <a
-                href="calendars"
+                href="/calendars"
                 data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
@@ -78,7 +78,7 @@
         </div>
         <div>
             <a
-                href="projects"
+                href="/projects"
                 data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
@@ -88,7 +88,7 @@
         </div>
         <div>
             <a
-                href="journal"
+                href="/journal"
                 data-sveltekit-prefetch
                 class="hover-underline-animation"
                 ><span
