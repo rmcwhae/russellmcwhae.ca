@@ -7,7 +7,7 @@
      */
 
     /** @type {Props} */
-    let { height = '0.75em' } = $props();
+    let { height = '0.75em' } = $props()
 </script>
 
 <Icon viewBox="0 0 105 167" {height}>

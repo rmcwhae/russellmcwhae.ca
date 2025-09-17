@@ -3,7 +3,7 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
 
-    let { data } = $props();
+    let { data } = $props()
 
     let posts = $derived(data.posts)
     let category = $derived(data.category)

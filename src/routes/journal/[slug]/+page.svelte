@@ -8,7 +8,7 @@
     import ToC from '$lib/components/journal/ToC.svelte'
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
 
-    let { data } = $props();
+    let { data } = $props()
 
     let title = $derived(data.title)
     let date = $derived(data.date)
@@ -18,7 +18,7 @@
     let component = $derived(data.component)
     let relatedPosts = $derived(data.relatedPosts)
 
-    const SvelteComponent = $derived(component);
+    const SvelteComponent = $derived(component)
 </script>
 
 <SEO title={'Journal » ' + title} {description} />

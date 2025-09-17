@@ -1,8 +1,9 @@
 import { json, error } from '@sveltejs/kit'
+import type { RequestHandler } from './$types'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
 
-export async function GET({ params }) {
+export const GET: RequestHandler = async ({ params }) => {
     try {
         // Validate slug parameter
         if (!params.slug || typeof params.slug !== 'string') {
@@ -32,7 +33,7 @@ export async function GET({ params }) {
         } else {
             throw error(404, 'No images found for this event')
         }
-    } catch (err) {
+    } catch (err: any) {
         // If it's already a SvelteKit error, re-throw it
         if (err.status) {
             throw err

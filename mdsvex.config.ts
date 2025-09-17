@@ -2,12 +2,13 @@ import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
-import { frontMatterSlug } from './src/lib/utils/markdown.js'
+import { frontMatterSlug } from './src/lib/utils/markdown.ts'
 import path from 'path'
+import type { MdsvexConfig } from 'mdsvex'
 
 const layoutRoot = path.resolve('src/lib/components/layout')
 
-const config = {
+const config: MdsvexConfig = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
     layout: {

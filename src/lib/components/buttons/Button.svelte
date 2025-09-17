@@ -12,13 +12,7 @@
      */
 
     /** @type {Props} */
-    let {
-        href,
-        text,
-        external = false,
-        left = false,
-        right = false
-    } = $props();
+    let { href, text, external = false, left = false, right = false } = $props()
 
     const rel = external ? 'noopener noreferrer nofollow' : ''
     const target = external ? '_blank' : ''

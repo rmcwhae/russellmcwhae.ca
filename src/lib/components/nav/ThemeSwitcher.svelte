@@ -18,7 +18,7 @@
         if (browser) {
             window.document.body.setAttribute('data-theme', $mode)
         }
-    });
+    })
 
     function changeTheme() {
         $mode = nextMode

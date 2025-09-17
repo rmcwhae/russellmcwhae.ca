@@ -1,7 +1,7 @@
 <script>
     import dateformat from 'dateformat'
 
-    let { date } = $props();
+    let { date } = $props()
 </script>
 
 <div class="sub">

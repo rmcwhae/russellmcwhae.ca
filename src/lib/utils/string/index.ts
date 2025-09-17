@@ -1,4 +1,4 @@
-export function createTitle(filename) {
+export function createTitle(filename: string | null | undefined): string {
     if (!filename || typeof filename !== 'string') {
         return 'Untitled'
     }
@@ -12,7 +12,7 @@ export function createTitle(filename) {
     return filename.replace(/-/g, ' ')
 }
 
-export function extractDate(filename) {
+export function extractDate(filename: string | null | undefined): string {
     if (!filename || typeof filename !== 'string') {
         return 'Unknown Date'
     }
@@ -25,9 +25,11 @@ export function extractDate(filename) {
     return filename.substring(underscoreIndex + 1).replace('-', ' ')
 }
 
-export function preventLastTwoWordWrap(string) {
+export function preventLastTwoWordWrap(
+    string: string | null | undefined
+): string {
     if (!string || typeof string !== 'string') {
-        return string
+        return string || ''
     }
 
     const words = string.split(' ')
@@ -41,7 +43,14 @@ export function preventLastTwoWordWrap(string) {
     return firstWords + lastTwoWords
 }
 
-export function parseTitleAndDate(slug) {
+interface TitleAndDate {
+    title: string
+    date: string
+}
+
+export function parseTitleAndDate(
+    slug: string | null | undefined
+): TitleAndDate {
     if (!slug || typeof slug !== 'string') {
         return {
             title: 'Untitled',

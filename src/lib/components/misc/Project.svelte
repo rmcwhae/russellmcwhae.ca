@@ -3,7 +3,7 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
 
-    let { project, reverse, children } = $props();
+    let { project, reverse, children } = $props()
 
     const { title, description, stack, href, repoHref } = project
 </script>

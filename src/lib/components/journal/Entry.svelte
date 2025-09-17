@@ -10,9 +10,10 @@
      */
 
     /** @type {Props} */
-    let { post, featured = false } = $props();
+    let { post, featured = false } = $props()
 
-    let { href, title, description, date, readingTime, category } = $derived(post)
+    let { href, title, description, date, readingTime, category } =
+        $derived(post)
 </script>
 
 <section class:featured>

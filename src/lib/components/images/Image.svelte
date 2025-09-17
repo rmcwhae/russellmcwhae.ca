@@ -21,8 +21,8 @@
         lqip,
         customMetadata,
         lockedRatio = false,
-        photoswipe = false
-    } = $props();
+        photoswipe = false,
+    } = $props()
 
     const srcset = generateSrcSets(filePath)
     const { caption } = customMetadata || {}

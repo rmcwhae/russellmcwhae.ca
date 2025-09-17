@@ -1,12 +1,11 @@
 import { mdsvex } from 'mdsvex'
-import mdsvexConfig from './mdsvex.config.js'
+import mdsvexConfig from './mdsvex.config.ts'
 import adapter from '@sveltejs/adapter-vercel'
 import preprocess from 'svelte-preprocess'
 import { imagePreprocessor } from 'svimg'
+import type { Config } from '@sveltejs/kit'
 
-/** @type {import('@sveltejs/kit').Config} */
-
-const config = {
+const config: Config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
     preprocess: [
         mdsvex(mdsvexConfig),
@@ -18,8 +17,8 @@ const config = {
         }),
         preprocess({
             scss: {
-                includePaths: ['src', 'src/lib/scss']
-            }
+                includePaths: ['src', 'src/lib/scss'],
+            },
         }),
     ],
     kit: {

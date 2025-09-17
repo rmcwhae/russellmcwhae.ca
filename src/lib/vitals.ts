@@ -1,21 +1,23 @@
-import { onCLS, onFCP, onLCP, onTTFB } from 'web-vitals'
+import { onCLS, onFCP, onLCP, onTTFB, type Metric } from 'web-vitals'
 
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals'
 
-function getConnectionSpeed() {
+interface AnalyticsOptions {
+    params: Record<string, any>
+    path: string
+    analyticsId: string
+    debug: boolean
+}
+
+function getConnectionSpeed(): string {
     return 'connection' in navigator &&
         navigator['connection'] &&
         'effectiveType' in navigator['connection']
-        ? // @ts-ignore
-          navigator['connection']['effectiveType']
+        ? (navigator['connection'] as any)['effectiveType']
         : ''
 }
 
-/**
- * @param {import("web-vitals").Metric} metric
- * @param {{ params: { [s: string]: any; } | ArrayLike<any>; path: string; analyticsId: string; debug: boolean; }} options
- */
-function sendToAnalytics(metric, options) {
+function sendToAnalytics(metric: Metric, options: AnalyticsOptions): void {
     const page = Object.entries(options.params).reduce(
         (acc, [key, value]) => acc.replace(value, `[${key}]`),
         options.path
@@ -50,10 +52,7 @@ function sendToAnalytics(metric, options) {
         })
 }
 
-/**
- * @param {any} options
- */
-export function webVitals(options) {
+export function webVitals(options: AnalyticsOptions): void {
     try {
         onTTFB((metric) => sendToAnalytics(metric, options))
         onLCP((metric) => sendToAnalytics(metric, options))

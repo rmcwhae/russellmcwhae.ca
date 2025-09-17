@@ -1,5 +1,5 @@
 <script>
-    let { category } = $props();
+    let { category } = $props()
 
     const href = '/journal/category/' + category
 </script>

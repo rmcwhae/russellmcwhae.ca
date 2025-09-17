@@ -255,20 +255,20 @@ Happy travels.
 
 Here is our itinerary. One optimization I’d make would be to depart directly out of San Cristóbal Airport, thus skipping the return trip to Santa Cruz.
 
--   July 17: Flight from Vancouver to Houston; flight from Houston to Quito
--   July 18: Flight from Quito to Baltra Island (GPS); bus to Puerto Ayora
--   July 19: Pinzón tour
--   July 20: Tortuga Bay
--   July 21: Rent bikes; El Chato tortoise ranch and lava tunnels
--   July 22: Seymour tour
--   July 23: 7:00 AM boat to Isabela; afternoon beach walk
--   July 24: Surf lesson
--   July 25: Volcano Sierra Negra hike
--   July 26: Los Túneles tour
--   July 27: Wall of Tears bike ride
--   July 28: Kayak tour 9:20 AM; flight from Isabela to San Cristóbal 2:00 PM
--   July 29: Interpretation Centre and hike
--   July 30: 9:00 AM tsunami watch; surf lessons 2:30 PM
--   July 31: Snorkel Darwin Bay/Muelle Tijeretas
--   August 1: 7:00 AM ferry to Santa Cruz; Las Grietas swim
--   August 2: 8:00 AM taxi for flight from GPS to Quito; overnight flight from Quito to Houston; flight from Houston to Vancouver
+- July 17: Flight from Vancouver to Houston; flight from Houston to Quito
+- July 18: Flight from Quito to Baltra Island (GPS); bus to Puerto Ayora
+- July 19: Pinzón tour
+- July 20: Tortuga Bay
+- July 21: Rent bikes; El Chato tortoise ranch and lava tunnels
+- July 22: Seymour tour
+- July 23: 7:00 AM boat to Isabela; afternoon beach walk
+- July 24: Surf lesson
+- July 25: Volcano Sierra Negra hike
+- July 26: Los Túneles tour
+- July 27: Wall of Tears bike ride
+- July 28: Kayak tour 9:20 AM; flight from Isabela to San Cristóbal 2:00 PM
+- July 29: Interpretation Centre and hike
+- July 30: 9:00 AM tsunami watch; surf lessons 2:30 PM
+- July 31: Snorkel Darwin Bay/Muelle Tijeretas
+- August 1: 7:00 AM ferry to Santa Cruz; Las Grietas swim
+- August 2: 8:00 AM taxi for flight from GPS to Quito; overnight flight from Quito to Houston; flight from Houston to Vancouver

@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit'
 import { posts } from '$lib/services/posts'
+import type { PageLoad } from './$types'
 
 export const prerender = false // Necessary for the hit counter
 
-export async function load({ params, fetch }) {
+export const load: PageLoad = async ({ params, fetch }) => {
     const { slug } = params
     const index = posts.findIndex((post) => slug === post.slug)
 

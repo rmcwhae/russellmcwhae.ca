@@ -44,7 +44,7 @@
         })
 
         lightbox.init()
-        
+
         return () => {
             lightbox.destroy()
         }
@@ -53,7 +53,7 @@
     const rowHeight = 500
     const gutter = 12
 
-    let { images } = $props();
+    let { images } = $props()
 </script>
 
 <div id="gallery">

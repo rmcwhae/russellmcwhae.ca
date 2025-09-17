@@ -2,7 +2,7 @@
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
-    let { totalItems, pageSize, currentPage, onSetPage } = $props();
+    let { totalItems, pageSize, currentPage, onSetPage } = $props()
 
     let lastPage = $derived(Math.ceil(totalItems / pageSize))
 

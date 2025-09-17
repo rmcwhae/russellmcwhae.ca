@@ -6,7 +6,7 @@
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
-    let { data } = $props();
+    let { data } = $props()
 
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)

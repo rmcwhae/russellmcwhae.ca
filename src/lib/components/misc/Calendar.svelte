@@ -11,13 +11,15 @@
      */
 
     /** @type {Props} */
-    let { filename, purchase = false, children } = $props();
+    let { filename, purchase = false, children } = $props()
 
     const href = '/pdf/' + filename
 </script>
 
 <section>
-    <a {href} target="_blank" rel="noopener noreferrer nofollow">{@render children?.()}</a>
+    <a {href} target="_blank" rel="noopener noreferrer nofollow"
+        >{@render children?.()}</a
+    >
     <div class="mb-2">
         {#if purchase}
             <ButtonSet>

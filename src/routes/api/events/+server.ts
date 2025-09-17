@@ -1,8 +1,18 @@
 import { json } from '@sveltejs/kit'
+import type { RequestHandler } from './$types'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
 
-export async function GET() {
+interface EventWithImages {
+    name: string
+    title: string
+    date: string
+    count: number
+    featuredImage: any
+    [key: string]: any
+}
+
+export const GET: RequestHandler = async () => {
     try {
         const events = await ImageKitNodeServices.listFiles({
             path: '/events/',
@@ -39,7 +49,9 @@ export async function GET() {
             })
             .sort((a, b) => {
                 try {
-                    return new Date(b.date) - new Date(a.date)
+                    return (
+                        new Date(b.date).getTime() - new Date(a.date).getTime()
+                    )
                 } catch (error) {
                     console.error('Error sorting events:', error)
                     return 0
@@ -47,7 +59,7 @@ export async function GET() {
             })
 
         // Process images for each event with error handling
-        const eventsWithImages = []
+        const eventsWithImages: EventWithImages[] = []
         for (const event of sortedEvents) {
             try {
                 const images = await getImagesForEvent(event.name)
@@ -77,7 +89,7 @@ export async function GET() {
     }
 }
 
-function getImagesForEvent(name) {
+function getImagesForEvent(name: string): Promise<any[]> {
     if (!name) {
         return Promise.resolve([])
     }
@@ -88,7 +100,7 @@ function getImagesForEvent(name) {
     })
 }
 
-function getFeaturedImage(images) {
+function getFeaturedImage(images: any[]): any {
     if (!Array.isArray(images) || images.length === 0) {
         return null
     }

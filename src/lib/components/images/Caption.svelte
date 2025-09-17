@@ -1,5 +1,5 @@
 <script>
-    let { text, children } = $props();
+    let { text, children } = $props()
 </script>
 
 <figure>

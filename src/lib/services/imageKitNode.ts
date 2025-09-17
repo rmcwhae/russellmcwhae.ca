@@ -4,7 +4,7 @@ import {
     IMAGEKIT_PUBLIC_KEY,
     IMAGEKIT_PRIVATE_KEY,
     IMAGEKIT_URL_ENDPOINT,
-} from '../../../env.js'
+} from '../../../env.ts'
 
 const CONFIG_OPTIONS = {
     urlEndpoint: IMAGEKIT_URL_ENDPOINT,
@@ -12,9 +12,9 @@ const CONFIG_OPTIONS = {
     privateKey: IMAGEKIT_PRIVATE_KEY,
 }
 
-let client = null
+let client: ImageKit | null = null
 
-function getClient() {
+function getClient(): ImageKit {
     if (client) {
         return client
     }
@@ -24,10 +24,27 @@ function getClient() {
     return client
 }
 
-export async function listFiles(options) {
+interface ImageKitFile {
+    filePath: string
+    url?: string
+    [key: string]: any
+}
+
+interface ProcessedFile extends ImageKitFile {
+    photoswipe: boolean
+    lqip: string
+}
+
+interface ListFilesOptions {
+    [key: string]: any
+}
+
+export async function listFiles(
+    options: ListFilesOptions
+): Promise<ProcessedFile[]> {
     try {
         // Add timeout to prevent hanging requests
-        const timeoutPromise = new Promise((_, reject) => {
+        const timeoutPromise = new Promise<never>((_, reject) => {
             setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
         })
 
@@ -40,7 +57,7 @@ export async function listFiles(options) {
             return []
         }
 
-        return images.map((file) => {
+        return images.map((file: ImageKitFile) => {
             try {
                 const lqip = ImageUtils.buildURL(file.filePath, {
                     width: 300,

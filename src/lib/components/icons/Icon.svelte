@@ -7,7 +7,7 @@
      */
 
     /** @type {Props} */
-    let { viewBox = '0 0 24 24', height = '1em', children } = $props();
+    let { viewBox = '0 0 24 24', height = '1em', children } = $props()
 </script>
 
 <svg

@@ -1,9 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite'
-import path from 'path'
+import type { UserConfig } from 'vite'
 // Removed deprecated vite-plugin-iso-import; use SvelteKit's client guards instead
 
-/** @type {import('vite').UserConfig} */
-const config = {
+const config: UserConfig = {
     ssr: {
         noExternal: [],
     },

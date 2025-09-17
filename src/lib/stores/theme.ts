@@ -7,7 +7,7 @@ const store = writable(storage.get() || '')
 
 export const mode = {
     ...store,
-    set(mode) {
+    set(mode: string) {
         store.set(mode)
         storage.set(mode)
     },

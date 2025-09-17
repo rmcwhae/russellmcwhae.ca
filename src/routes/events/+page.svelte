@@ -3,7 +3,7 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
-    let { data } = $props();
+    let { data } = $props()
 
     let events = $derived(data.events)
 </script>

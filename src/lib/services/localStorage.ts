@@ -1,4 +1,9 @@
-export function create(key) {
+interface Storage {
+    get<T>(defaultValue?: T): T
+    set<T>(value: T): void
+}
+
+export function create(key: string): Storage {
     try {
         // Trying a test key
         const testKey = '99999'
@@ -6,16 +11,16 @@ export function create(key) {
         localStorage.removeItem(testKey)
 
         return {
-            get(defaultValue) {
+            get<T>(defaultValue?: T): T {
                 const value = localStorage.getItem(key)
 
                 try {
-                    return value ? JSON.parse(value) : defaultValue
+                    return value ? JSON.parse(value) : defaultValue!
                 } catch {
-                    return value || defaultValue
+                    return (value || defaultValue) as T
                 }
             },
-            set(value) {
+            set<T>(value: T): void {
                 localStorage.setItem(key, JSON.stringify(value))
             },
         }
@@ -27,8 +32,8 @@ export function create(key) {
     }
 }
 
-function identity(arg) {
+function identity<T>(arg: T): T {
     return arg
 }
 
-function noop() {}
+function noop(): void {}

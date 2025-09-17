@@ -18,8 +18,7 @@
         tabindex="0"
         aria-label="Scroll to top"
         onclick={topFunction}
-        onkeydown={(e) =>
-            (e.key === 'Enter' || e.key === ' ') && topFunction()}
+        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && topFunction()}
         title="Scroll to top"
     ></div>
     <div class="wrapper">

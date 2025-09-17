@@ -6,7 +6,10 @@
      */
 
     /** @type {Props} */
-    let { description = 'Russell McWhae’s Portfolio and Creative Outlet', title = '' } = $props();
+    let {
+        description = 'Russell McWhae’s Portfolio and Creative Outlet',
+        title = '',
+    } = $props()
 
     const base = 'Russell’s Portfolio'
     const img = 'https://russellmcwhae.ca/opengraph.png'

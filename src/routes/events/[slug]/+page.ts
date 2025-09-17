@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit'
+import type { PageLoad } from './$types'
 
-export async function load({ params, fetch }) {
+export const load: PageLoad = async ({ params, fetch }) => {
     const { slug } = params
 
     // Validate slug parameter
@@ -27,7 +28,7 @@ export async function load({ params, fetch }) {
         }
 
         return { event }
-    } catch (err) {
+    } catch (err: any) {
         // If it's already a SvelteKit error, re-throw it
         if (err.status) {
             throw err

@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
+import type { Linter } from 'eslint'
 
 export default [
     {
