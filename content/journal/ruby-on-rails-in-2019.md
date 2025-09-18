@@ -33,12 +33,12 @@ Ruby on Rails reached one of its first big milestones with a [1.0 release](https
 
 Ruby on Rails rose in popularity as a server-side language and subsequently underwent many major revisions occurring every few years (from Wikipedia’s “[Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails)”):
 
--   Rails 1.0: December 2005
--   Rails 2.0: December 2007
--   Rails 3.0: August 2010
--   Rails 4.0: June 2013
--   Rails 5.0: June 2016
--   Rails 6.0: August 2019
+- Rails 1.0: December 2005
+- Rails 2.0: December 2007
+- Rails 3.0: August 2010
+- Rails 4.0: June 2013
+- Rails 5.0: June 2016
+- Rails 6.0: August 2019
 
 Rails’ market share reached an [estimated 0.5%](https://w3techs.com/technologies/history_overview/programming_language/ms/y) among all web servers in 2010 and has grown steadily to an estimated 2.7% in 2019 (over [400,000](https://www.similartech.com/compare/php-vs-ruby-on-rails) known websites). Overshadowed by PHP’s consistent 75–80% share, Rails may appear as a niche language; nevertheless, Rails serves as the backbone for many mega-trafficked websites today, including [Github](https://github.com/), [Shopify](https://shopify.com/), [Airbnb](https://airbnb.com/), [Square](https://squareup.com/), and [Kickstarter](https://www.kickstarter.com/). Its source code is still under active development, as evidenced by the very recent release of Rails 6.0; however, an overall sentiment of decline in Rails’ popularity has been observed in recent years:
 
@@ -114,9 +114,9 @@ We have seen how Ruby on Rails has established itself as a mature, opinionated w
 
 ## References
 
--   “[The Rails Doctrine](https://rubyonrails.org/doctrine/),” David Heinemeier Hansson.
--   “[Asynchronous Programming](https://eloquentjavascript.net/11_async.html),” Marijn Haverbeke.
--   “[Who gives a F\*\*\* about Rails in 2019?](https://naturaily.com/blog/who-gives-f-about-rails)” Wojciech Miśta.
--   “[Don’t Know Metaprogramming In Ruby?](http://rubylearning.com/blog/2010/11/23/dont-know-metaprogramming-in-ruby/)” Gavin Morrice.
--   “[Historical yearly trends in the usage of server-side programming languages for websites](https://w3techs.com/technologies/history_overview/programming_language/ms/y),” W3Techs.
--   “[Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails),” Wikipedia.
+- “[The Rails Doctrine](https://rubyonrails.org/doctrine/),” David Heinemeier Hansson.
+- “[Asynchronous Programming](https://eloquentjavascript.net/11_async.html),” Marijn Haverbeke.
+- “[Who gives a F\*\*\* about Rails in 2019?](https://naturaily.com/blog/who-gives-f-about-rails)” Wojciech Miśta.
+- “[Don’t Know Metaprogramming In Ruby?](http://rubylearning.com/blog/2010/11/23/dont-know-metaprogramming-in-ruby/)” Gavin Morrice.
+- “[Historical yearly trends in the usage of server-side programming languages for websites](https://w3techs.com/technologies/history_overview/programming_language/ms/y),” W3Techs.
+- “[Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails),” Wikipedia.

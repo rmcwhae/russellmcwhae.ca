@@ -705,12 +705,12 @@ August 2017
 
 ## Further Reading
 
--   _When Breath Becomes Air_ by Paul Kalanithi
--   _The Reason for God: Belief in an Age of Skepticism_ by Timothy Keller
--   _Mere Christianity_ by C.S. Lewis
--   _The Case for a Creator_ by Lee Strobel
--   _The Case for Faith_ by Lee Strobel
--   _Disappointment with God_ by Philip Yancey
--   _What’s So Amazing About Grace?_ by Philip Yancey
--   _Who Moved the Stone?_ by Frank Morison
--   _The Real Face of Atheism_ by Ravi Zacharias
+- _When Breath Becomes Air_ by Paul Kalanithi
+- _The Reason for God: Belief in an Age of Skepticism_ by Timothy Keller
+- _Mere Christianity_ by C.S. Lewis
+- _The Case for a Creator_ by Lee Strobel
+- _The Case for Faith_ by Lee Strobel
+- _Disappointment with God_ by Philip Yancey
+- _What’s So Amazing About Grace?_ by Philip Yancey
+- _Who Moved the Stone?_ by Frank Morison
+- _The Real Face of Atheism_ by Ravi Zacharias

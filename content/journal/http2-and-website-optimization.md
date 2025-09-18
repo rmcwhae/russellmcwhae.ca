@@ -122,10 +122,10 @@ As support for HTTP/2 required updates to both web servers and web browsers alik
 
 Here are a few tips on how to leverage HTTP/2 in web development:
 
--   Enable HTTP/2. To verify that your site is running HTTP/2, open your page in Chrome Developer Tools (or equivalent), click the Network tab, reload your page, and see if “h2” appears under Protocol, as in the above screenshot. If your site is not yet running HTTP/2 (which will appear as ‘http/1.1’), your web server may need to be upgraded.
--   Stop concatenating assets. The old optimization practice of reducing the total number of HTTP requests made by a page no longer necessarily holds. The general recommendation with HTTP/2 is to deliver small, granular resources with optimized caching policies (such that changes to one file would require clients to re-download only that particular file instead of a massive concatenated file). However, unique situations must be addressed individually, as _Craig Silverstein_ explains in [Forgo JS packaging? Not so fast](http://engineering.khanacademy.org/posts/js-packaging-http2.htm)_._
--   Eliminate domain sharding. Domain sharding is the practice of splitting web page resources (images, scripts, etc.) over multiple domains to maximize the number of concurrent TCP requests over HTTP/1.1. This technique has been obviated by multiplexing in HTTP/2.
--   Stop inlining assets. Inlining assets is the practice of embedding stylesheets and scripts directly into an HTML page to reduce total HTTP requests. Again, this issue has been largely resolved by HTTP/2 multiplexing.
+- Enable HTTP/2. To verify that your site is running HTTP/2, open your page in Chrome Developer Tools (or equivalent), click the Network tab, reload your page, and see if “h2” appears under Protocol, as in the above screenshot. If your site is not yet running HTTP/2 (which will appear as ‘http/1.1’), your web server may need to be upgraded.
+- Stop concatenating assets. The old optimization practice of reducing the total number of HTTP requests made by a page no longer necessarily holds. The general recommendation with HTTP/2 is to deliver small, granular resources with optimized caching policies (such that changes to one file would require clients to re-download only that particular file instead of a massive concatenated file). However, unique situations must be addressed individually, as _Craig Silverstein_ explains in [Forgo JS packaging? Not so fast](http://engineering.khanacademy.org/posts/js-packaging-http2.htm)_._
+- Eliminate domain sharding. Domain sharding is the practice of splitting web page resources (images, scripts, etc.) over multiple domains to maximize the number of concurrent TCP requests over HTTP/1.1. This technique has been obviated by multiplexing in HTTP/2.
+- Stop inlining assets. Inlining assets is the practice of embedding stylesheets and scripts directly into an HTML page to reduce total HTTP requests. Again, this issue has been largely resolved by HTTP/2 multiplexing.
 
 [HTTP/2 is here, let’s optimize!](https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/edit#slide=id.p19), a slideshow by _Ilya Grigorik_, gives a great visual overview of these HTTP/2 optimization strategies.
 
@@ -145,10 +145,10 @@ We have seen how HTTP/2 implements several improvements over its predecessor HTT
 
 ## References
 
--   [5 Ways to Improve Your Website’s PageSpeed Using HTTP/2](https://www.makeuseof.com/tag/ways-improve-websites-pagespeed-using-http2/), _Bernt Fuglseth._
--   [Brief History of HTTP](https://hpbn.co/brief-history-of-http/), _Ilya Grigorik_.
--   [Introduction to HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/), _Ilya Grigorik, and Surma_.
--   [HTTP/2 For Web Developers](https://blog.cloudflare.com/http-2-for-web-developers/), _Ryan Hodson._
--   [What Is HTTP/3 — Lowdown on the Fast New UDP-Based Protocol](https://kinsta.com/blog/http3/), _Tonino Jankov_.
--   [Forgo JS packaging? Not so fast](http://engineering.khanacademy.org/posts/js-packaging-http2.htm), _Craig Silverstein._
--   [How HTTP/2 Is Changing Web Performance Best Practices](https://blog.newrelic.com/engineering/http2-best-practices-web-performance/), _Clay Smith_.
+- [5 Ways to Improve Your Website’s PageSpeed Using HTTP/2](https://www.makeuseof.com/tag/ways-improve-websites-pagespeed-using-http2/), _Bernt Fuglseth._
+- [Brief History of HTTP](https://hpbn.co/brief-history-of-http/), _Ilya Grigorik_.
+- [Introduction to HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/), _Ilya Grigorik, and Surma_.
+- [HTTP/2 For Web Developers](https://blog.cloudflare.com/http-2-for-web-developers/), _Ryan Hodson._
+- [What Is HTTP/3 — Lowdown on the Fast New UDP-Based Protocol](https://kinsta.com/blog/http3/), _Tonino Jankov_.
+- [Forgo JS packaging? Not so fast](http://engineering.khanacademy.org/posts/js-packaging-http2.htm), _Craig Silverstein._
+- [How HTTP/2 Is Changing Web Performance Best Practices](https://blog.newrelic.com/engineering/http2-best-practices-web-performance/), _Clay Smith_.

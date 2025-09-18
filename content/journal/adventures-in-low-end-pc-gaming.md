@@ -100,10 +100,10 @@ Now that everything was running smoothly, it was time to test the upgrades out.
 
 While this is not an article about benchmarks (for those, see [GPU Check](https://www.gpucheck.com/gpu/amd-radeon-rx-580/intel-core-i5-3570k-3-40ghz/) and [UserBenchMark](https://gpu.userbenchmark.com/Compare/Nvidia-GTX-670-vs-AMD-RX-580/2181vs3923)), here are some subjective guidelines on the capability of this hardware at achieving playable framerates (>60 FPS) in various games:
 
--   [Black Mesa](https://store.steampowered.com/app/362890/Black_Mesa/): 4K, maximum settings
--   [Halo: Reach](https://store.steampowered.com/app/1064220/Halo_Reach/): 4K, maximum settings
--   [Arma 3](https://store.steampowered.com/app/107410/Arma_3/): 1440p, reduced settings
--   [Destiny 2](https://store.steampowered.com/app/1085660/Destiny_2/): 1440p, reduced settings
+- [Black Mesa](https://store.steampowered.com/app/362890/Black_Mesa/): 4K, maximum settings
+- [Halo: Reach](https://store.steampowered.com/app/1064220/Halo_Reach/): 4K, maximum settings
+- [Arma 3](https://store.steampowered.com/app/107410/Arma_3/): 1440p, reduced settings
+- [Destiny 2](https://store.steampowered.com/app/1085660/Destiny_2/): 1440p, reduced settings
 
 The GeForce 670 struggled to deliver 60 FPS in Black Mesa at 1080p, so the RX 580 is objectively a massive upgrade. It is immensely satisfying that such old, affordable hardware can run some new-ish titles at 4K with maxed-out settings. While newer cards can absolutely obliterate the 580, they come with two-to-ten times the cost.
 

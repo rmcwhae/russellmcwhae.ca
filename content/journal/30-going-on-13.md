@@ -65,30 +65,30 @@ Lately I have re-discovered the [local public library](http://calgarylibrary.ca)
 
 ### Books to Read for Fun
 
--   _Sh\*t My Dad Says_ by Justin Halpern
--   _I Hope They Serve Beer in Hell_ by Tucker Max
--   _Ready Player One_ by Ernest Cline
--   _Crazy Rich Asians_ by Kevin Kwan
+- _Sh\*t My Dad Says_ by Justin Halpern
+- _I Hope They Serve Beer in Hell_ by Tucker Max
+- _Ready Player One_ by Ernest Cline
+- _Crazy Rich Asians_ by Kevin Kwan
 
 ### Mountaineering Books
 
--   _One Day as a Tiger: Alex Macintyre and the Birth of Light and Fast Alpinism_ by John Porter
--   _The Bold and Cold: A History of 25 Classic Climbs in the Canadian Rockies_ by Brandon Pullan
--   _The Calling: A Life Rocked by Mountains_ by Barry Blanchard
--   _Art of Freedom: The Life and Climbs of Voytek Kurtyka_ by Bernadette McDonald
--   _Autonomy, Mastery and Purpose in the Avalanche Patch_ by Bruce Kay
--   _Mountains in My Heart: A Passion for Climbing_ by Gerlinde Kaltenbrunner
--   _No Shortcuts to the Top: Climbing the World’s 14 Highest Peaks_ by Ed Viesturs
--   _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
+- _One Day as a Tiger: Alex Macintyre and the Birth of Light and Fast Alpinism_ by John Porter
+- _The Bold and Cold: A History of 25 Classic Climbs in the Canadian Rockies_ by Brandon Pullan
+- _The Calling: A Life Rocked by Mountains_ by Barry Blanchard
+- _Art of Freedom: The Life and Climbs of Voytek Kurtyka_ by Bernadette McDonald
+- _Autonomy, Mastery and Purpose in the Avalanche Patch_ by Bruce Kay
+- _Mountains in My Heart: A Passion for Climbing_ by Gerlinde Kaltenbrunner
+- _No Shortcuts to the Top: Climbing the World’s 14 Highest Peaks_ by Ed Viesturs
+- _Annapurna: First Conquest of an 8000-meter Peak_ by Maurice Herzog
 
 ### Other Books
 
--   _When Breath Becomes Air_ by Paul Kalanithi
--   _Chickenhawk_ by Robert Mason
--   _A Purpose Ridden_ by Ryan Correy
--   _Modern Romance_ by Aziz Ansari
--   _How to Win Friends and Influence People_ by Dale Carnegie
--   _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
+- _When Breath Becomes Air_ by Paul Kalanithi
+- _Chickenhawk_ by Robert Mason
+- _A Purpose Ridden_ by Ryan Correy
+- _Modern Romance_ by Aziz Ansari
+- _How to Win Friends and Influence People_ by Dale Carnegie
+- _Better: A Surgeon’s Notes on Performance_ by Atul Gawande
 
 ## Materialism and Minimalism
 
@@ -782,14 +782,14 @@ Friend, in a detailed planning email for our Victoria, Lefroy, and Huber attempt
 >
 > Personal Food
 >
-> -   4 - Lunches
-> -   1 - Trail mix and/or nuts
-> -   1 - Granola bars
-> -   1 - Candy or Cliff Shots
-> -   1 - Pepperoni/Cheese Slices (protein)
-> -   1 - Flask o’ Something
-> -   Tea & Coffee
-> -   Don’t bring Bitch sauce! We are climbing Mt. Victoria this time not hiking to Aster Lake.
+> - 4 - Lunches
+> - 1 - Trail mix and/or nuts
+> - 1 - Granola bars
+> - 1 - Candy or Cliff Shots
+> - 1 - Pepperoni/Cheese Slices (protein)
+> - 1 - Flask o’ Something
+> - Tea & Coffee
+> - Don’t bring Bitch sauce! We are climbing Mt. Victoria this time not hiking to Aster Lake.
 
 (We had previously bailed on a Joffre attempt due to rain and ended up not leaving our base camp at Aster Lake, despite our friend’s claim that it was “bluebird.” Thereafter stormy days were referred to as bluebird.)
 
@@ -802,7 +802,6 @@ Friend 1, in a group chat planning a winter ski ascent of Mount Joffre:
 > Two things:
 >
 > 1.  I woke up this morning with a cold. I am going to see how I feel tomorrow morning but there is a high chance of my stubbornness outweighing logical thought even if I feel worse. That being said you may not want to share a tent with me, does anyone have an extra winter tent?
->
 > 2.  What about a summit of Cordonnier as well? It’s on the same ridge and is rated an easy scramble in the summer with mild, brief exposure. Thoughts?
 >
 > In the meantime I will be drinking lots of tea and sticking ginger and echinecea up my butt to get better. That’s how you do it right?
@@ -948,6 +947,7 @@ These stories were then assessed using the [MCORE](https://motivationalcore.com)
    Your motivation is satisfied when you are able to gain complete command of a skill, subject, procedure, technique, or process. You want your knowledge, execution, or control over the intricacies and details involved to be flawless. The focus of your attention may be a sales technique, production procedure, or a core method employed in a trade or craft. You might want to master a sport like golf, tennis, or skiing[^9]. It could be that you concentrate on the principles behind an engineering problem or on some economic, scientific, or philosophical concept. You may seek command over a system, the variables of a process, or the various elements of a multi-faceted job responsibility. It may be some element of your character or your nature that you seek to perfect. In any case, your achievements are full of such examples. Your thinking and talents are oriented toward mastery, your goals toward perfection.[^10]
 
 [^9]: How did it know?!
+
 [^10]: Me? Perfection? That doesn’t sound right—no sir, not one bit!
 
 In short, I like to do things _properly_, preferably with equally highly qualified collaborators, and I _absolutely_ love acquiring new skills and becoming proficient at them in short order.

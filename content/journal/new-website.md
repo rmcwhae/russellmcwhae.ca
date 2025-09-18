@@ -27,12 +27,12 @@ My goal in redesigning this website was to keep it as simple as possible. Except
 
 It has been said that good design doesn’t start in a vacuum. Here are a number of websites that served as visual inspiration for this redesign (and sometimes code too—thanks to all who open-sourced their repos):
 
--   https://airbnb.ca
--   https://kentcdodds.com/
--   https://fantinel.dev/
--   http://lucaorio.com/
--   https://jwie.be/
--   https://rosshill.ca/
+- https://airbnb.ca
+- https://kentcdodds.com/
+- https://fantinel.dev/
+- http://lucaorio.com/
+- https://jwie.be/
+- https://rosshill.ca/
 
 I have borrowed or adapted certain design elements from each of these websites, among many others. To start with a blank slate, to then take ideas from other sources, and ultimately to morph them into a new creation and see it take on a style of its own is what makes the creative process so satisfying to me.
 
@@ -89,11 +89,11 @@ Photos are a big part of this website’s _raison d'être_, so I wanted to featu
 
 The following packages were quite helpful in the development of this site:
 
--   [mdsvex](https://mdsvex.pngwn.io/) for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
--   [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
--   [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
--   [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
--   [svimg](https://github.com/xiphux/svimg) for optimizing all non-ImageKit images (such as images embedded in journal entries)
+- [mdsvex](https://mdsvex.pngwn.io/) for combined Markdown/Svelte content (such as the above inline light/dark mode toggle—slick!)
+- [remark-reading-time](https://github.com/mattjennings/remark-reading-time) for word counts and reading time estimates
+- [Svelte Gallery](https://www.npmjs.com/package/svelte-gallery) for the photo masonry grids
+- [PhotoSwipe](https://photoswipe.com/) (v5 beta) for the full-screen photo lightboxes
+- [svimg](https://github.com/xiphux/svimg) for optimizing all non-ImageKit images (such as images embedded in journal entries)
 
 ### Browser Support
 
