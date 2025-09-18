@@ -25,18 +25,18 @@ To display images, you will need an [ImageKit](https://imagekit.io) account and 
 
 For homepage images, add a “featured” tag to four ImageKit images in `/portfolio`. Captions can be added via a `caption` custom metadata field in ImageKit.
 
-Next, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start the development server:
+Next, install dependencies with `pnpm install`, then start the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## Deployment
 
-`npm run build` then `npm run preview`.
+`pnpm build` then `pnpm preview`.
 
 ## Testing
 
 End-to-end testing is done with Cypress.
 
-While running `npm run dev`, run `npx cypress open` or `npx cypress run` to run tests.
+While running `pnpm dev`, run `pnpm exec cypress open` or `pnpm exec cypress run` to run tests.
