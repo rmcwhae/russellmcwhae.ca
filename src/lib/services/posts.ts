@@ -1,5 +1,5 @@
 // Import only the browser-safe implementation to avoid Node stream/util
-import readingTime from 'reading-time'
+import readingTime from 'reading-time/lib/reading-time'
 import type { SvelteComponent } from 'svelte'
 
 interface PostMetadata {

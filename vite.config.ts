@@ -6,6 +6,11 @@ const config: UserConfig = {
     ssr: {
         noExternal: [],
     },
+    server: {
+        fs: {
+            allow: ['..'],
+        },
+    },
     // Prefer SvelteKit's kit.alias in svelte.config.js rather than Vite alias.
     plugins: [sveltekit()],
 }
