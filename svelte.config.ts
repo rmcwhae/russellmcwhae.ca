@@ -1,9 +1,9 @@
-import { mdsvex } from 'mdsvex'
-import mdsvexConfig from './mdsvex.config.ts'
 import adapter from '@sveltejs/adapter-vercel'
-import { imagePreprocessor } from 'svimg'
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import type { Config } from '@sveltejs/kit'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+import { mdsvex } from 'mdsvex'
+import { imagePreprocessor } from 'svimg'
+import mdsvexConfig from './mdsvex.config.ts'
 
 const config: Config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
@@ -16,7 +16,7 @@ const config: Config = {
             avif: true,
         }),
         vitePreprocess(),
-    ],
+    ] as Config['preprocess'],
     kit: {
         adapter: adapter(),
         alias: {
