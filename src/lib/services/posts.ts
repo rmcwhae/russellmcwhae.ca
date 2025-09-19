@@ -37,10 +37,17 @@ export const posts: Post[] = Object.entries(postModules)
         const rawSource = postSources[path] || ''
         const computedReadingTime = readingTime(rawSource)
 
+        // Generate slug from filename if not present in metadata
+        const slug =
+            postModule.metadata.slug ||
+            path.split('/').pop()?.replace('.md', '') ||
+            ''
+
         return {
             // frontmatter data
             ...postModule.metadata,
-            href: '/journal/' + postModule.metadata.slug,
+            slug,
+            href: '/journal/' + slug,
             // include computed reading stats
             readingTime: computedReadingTime,
             // the processed Svelte component from the markdown file
