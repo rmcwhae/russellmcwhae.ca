@@ -8,6 +8,7 @@ export function frontMatterSlug() {
             data?: { filename?: string; fm?: Record<string, unknown> }
         }
     ) {
+        // Try multiple possible path sources
         const filename = file.path || file.data?.filename || ''
         const parsed = path.parse(filename)
         const slug = parsed.base.replace('.md', '')
