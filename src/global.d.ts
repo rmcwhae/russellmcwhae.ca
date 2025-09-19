@@ -8,6 +8,6 @@ declare module 'reading-time/lib/reading-time' {
         words: number
     }
 
-    function readingTime(text: string): ReadTimeResults
+    function readingTime(): ReadTimeResults
     export = readingTime
 }
