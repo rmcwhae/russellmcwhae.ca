@@ -8,7 +8,7 @@ import mdsvexConfig from './mdsvex.config.ts'
 const config: Config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
     preprocess: [
-        mdsvex(mdsvexConfig),
+        mdsvex(mdsvexConfig as unknown as Parameters<typeof mdsvex>[0]),
         imagePreprocessor({
             inputDir: 'static',
             outputDir: 'static/g',
