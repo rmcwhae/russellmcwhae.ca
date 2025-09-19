@@ -4,11 +4,10 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import { frontMatterSlug } from './src/lib/utils/markdown.ts'
 import path from 'path'
-import type { MdsvexConfig } from 'mdsvex'
 
 const layoutRoot = path.resolve('src/lib/components/layout')
 
-const config: MdsvexConfig = {
+const config = {
     extensions: ['.svelte.md', '.md', '.svx'],
 
     layout: {
