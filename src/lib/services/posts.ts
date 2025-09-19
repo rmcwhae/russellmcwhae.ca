@@ -18,7 +18,7 @@ interface PostModule {
 
 interface Post extends PostMetadata {
     href: string
-    readingTime: ReturnType<typeof readingTime>['text']
+    readingTime: ReturnType<typeof readingTime>
     component: SvelteComponent
 }
 
@@ -42,7 +42,7 @@ export const posts: Post[] = Object.entries(postModules)
             ...postModule.metadata,
             href: '/journal/' + postModule.metadata.slug,
             // include computed reading stats
-            readingTime: computedReadingTime.text,
+            readingTime: computedReadingTime,
             // the processed Svelte component from the markdown file
             component: postModule.default,
         }
