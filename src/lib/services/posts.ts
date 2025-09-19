@@ -7,6 +7,8 @@ interface PostMetadata {
     title: string
     date: string
     draft?: boolean
+    category?: string
+    description?: string
 }
 
 interface PostModule {
