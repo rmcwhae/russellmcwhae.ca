@@ -1,5 +1,5 @@
 import ImageKit from 'imagekit-javascript'
-import { IMAGEKIT_URL_ENDPOINT } from '../../../env.ts'
+import { PUBLIC_IMAGEKIT_URL_ENDPOINT as IMAGEKIT_URL_ENDPOINT } from '$env/static/public'
 
 const CONFIG_OPTIONS = {
     urlEndpoint: IMAGEKIT_URL_ENDPOINT,

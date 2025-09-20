@@ -20,7 +20,7 @@
     $effect(async () => {
         const { env } = await import('$env/dynamic/public')
         analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
-        if (import.meta.env.VERCEL && analyticsId) {
+        if (env.VERCEL && analyticsId) {
             inject({ mode: dev ? 'development' : 'production' })
         }
     })

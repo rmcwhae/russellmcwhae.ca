@@ -1,4 +1,4 @@
-import { IMAGEKIT_URL_ENDPOINT } from '../../../../env.ts'
+import { env } from '$env/dynamic/public'
 import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
@@ -16,7 +16,7 @@ interface ImageOptions {
 export function buildURL(path: string, options: ImageOptions): string {
     return ImageKitJavascriptServices.url({
         path,
-        urlEndpoint: IMAGEKIT_URL_ENDPOINT,
+        urlEndpoint: env.PUBLIC_IMAGEKIT_URL_ENDPOINT,
         transformation: [options],
     })
 }
