@@ -11,25 +11,43 @@ layout: micro
 
 ### Four recent purchases
 
-In an effort to counteract the financial shock of moving to one of the most expensive cities in the world, here are some recent purchases of mine that have delivered exceptional value:
+In an effort to counteract the financial shock of moving to one of the most expensive cities in the world, here are some recent purchases of mine that have delivered exceptional value.
 
-#### 1. Cordless hair trimmer, $49.66
+#### 1. Philips cordless hair trimmer, $49.66
 
-For my wedding, I did something I hadn’t done in nearly a decade: pay for a haircut. The barber used a cordless trimmer, which gave me an idea. My new suite also inconveniently lacked a working electrical outlet in the bathroom, meaning I had to run an extension cord from another room to run my wired hair trimmer (the outlet has since been repaired). I checked my Amazon purchase history, and it was nine years ago that I bought a “Wahl 3231 22 Piece Home Pro Haircutting Kit” for $23.87. It saved me easily a couple thousand dollars in haircuts in the ensuing years. A few weeks ago, I ordered a “Philips Multi Groomer All-in-One Trimmer Series 5000” for $49.66 (on sale, naturally). It is battery powered (lithium-ion batteries have greatly improved in the last nine years) and thus has no cord to get twisted, which makes trimming hair on the back of my head slightly easier. With “Techtober” starting in just over a week, tech companies are pushing their latest gadgets, usually with outrageously high prices. Too often, the discussion around such new items misses the nuance that gadgets can be harmfully addictive. In the case of an upgraded hair trimmer—technically a gadget, but bear with me—I get a tangible improvement to a task I do regularly, for only a modest cost. This unambiguous enhancement is so much more satisfying than owning the latest smartphone. Here’s to not paying for another haircut for the next decade.
+For my wedding, I did something I hadn’t done in nearly a decade: pay for a haircut. The barber used a cordless trimmer, which inspired this purchase. My new suite also inconveniently lacked a working electrical outlet in the bathroom, meaning I had to run an extension cord from another room to run my wired hair trimmer (the outlet has since been repaired).
+
+I checked my Amazon purchase history, and it was nine years ago that I bought a “Wahl 3231 22 Piece Home Pro Haircutting Kit” for $23.87. It saved me easily a couple thousand dollars in haircuts in the ensuing years. A few weeks ago, I ordered a “Philips Multi Groomer All-in-One Trimmer Series 5000” for $49.66 (on sale, naturally). It is battery powered—lithium-ion batteries have greatly improved in the last nine years—and thus has no cord to get twisted, which makes trimming hair on the back of my head slightly easier.
+
+With “Techtober” starting in just over a week, tech companies are pushing their latest gadgets, usually with outrageously high prices. Too often, the discussion around such new items misses the nuance that gadgets can be harmfully addictive. In the case of an upgraded hair trimmer—technically a gadget, but bear with me—I get a tangible improvement to a task I do regularly, for only a modest cost. This simple workflow enhancement is so much more satisfying than owning the latest smartphone.
+
+Here’s to not paying for another haircut for the next decade.
 
 #### 2. Used pull-up tower, $50
 
-My old place had a pull-up bar, which I used every couple of days, alternating strength with cardio workouts. My new place lacked such an item, which I was missing (nor are there any nearby parks with monkey bars). When a used pull-up tower appeared in the local classifieds, I jumped on it. I can’t tell you what brand it is, but I can tell you that for less than the price of a single month’s membership at most gyms, I can now do unlimited pull-ups outside my back door. Terrific.
+My old place had a pull-up bar, which I used every couple of days, alternating strength with cardio workouts. My new place lacked such an item, nor are there any nearby parks with monkey bars.
 
-#### 3. 16-inch portable display, $139.21
+When a used pull-up tower appeared in the local classifieds, I jumped on it. While I can’t tell you what brand it is, I can tell you that for less than the price of a single month’s membership at most gyms, I can now do unlimited pull-ups outside my back door. Terrific.
 
-If you'll indulge me in including one tech purchase in this list, I recently acquired a small portable monitor. In the age of vibe coding, I find myself working with many windows open: web browsers, front- and back-end repos, API clients, database visualization apps, and Microsoft Teams. I had tried using an iPad as an additional display over [Sidecar](https://support.apple.com/en-ca/102597) but found the 9.7-inch screen too small to be useful. Officially known as the "EVICIV 15.6-inch 4K Portable Gaming Monitor 3840x1260 UHD Screen USB C Display W/VESA," this is a portable screen that can be plugged into a laptop or desktop (or anything with HDMI). The specs on this particular display seemed similar to ones costing three times as much, so my curiosity was piqued. Alas, the aphorism "you get what you pay for" is annoyingly true in tech: the display came with a few stuck pixels from the factory (small enough to ignore), and the colour reproduction is mediocre. The display can run off a single included USB-C cable connected to my laptop, despite poorly translated instructions indicating that the cable was incapable of doing this. It means that no power brick is required when running the display off my laptop—slick! My main [4K display](/journal/the-upgrade-to-4k/), now a similar vintage to my old Wahl trimmer, is still my daily driver (how often do tech purchases last _nine_ years!?). The portable monitor sits underneath it on my desk, giving me even more screen real estate.
+#### 3. USB-C portable display, $139.21
+
+If you’ll indulge me in including one tech purchase in this list, I recently acquired a small portable monitor. In the age of vibe coding, I find myself working with many windows open: web browsers, front- and back-end repos, API clients, database visualization apps, and Microsoft Teams. I had tried using an iPad as an additional display over [Sidecar](https://support.apple.com/en-ca/102597) but found the 9.7-inch screen too small to be useful.
+
+Officially known as the “EVICIV 15.6-inch 4K Portable Gaming Monitor 3840x1260 UHD Screen USB C Display W/VESA,” this is a portable screen that can be plugged into a laptop or desktop (or anything with HDMI). The specs on this particular display seemed similar to ones costing three times as much, so my curiosity was piqued. Alas, the aphorism “you get what you pay for” is annoyingly true in tech: the display came with a few stuck pixels from the factory (small enough to ignore), and the colour reproduction is mediocre. The display can run off a single included USB-C cable connected to my laptop (power and data), despite poorly translated instructions indicating that the cable was incapable of doing this—bonus!
+
+My main [4K display](/journal/the-upgrade-to-4k/) is still my daily driver. It is of a similar vintage to my old Wahl trimmer now—why are tech purchases that last nine years or more so exceptionally rare? The portable monitor sits underneath my 4K display on my desk, giving me even more screen real estate, another small workflow improvement.
 
 #### 4. Used Yokohama Geolander A/T G015 tires, $787
 
-One of the benefits of not needing certain things like car tires urgently is that you have time to shop around. While avoiding the replacement of my worn-out summer tires, I researched options including new and used tires. I decided to try purchasing used tires for the first time and went to a used-tire shop in Coquitlam. They had a set of “almost new” Yokohama Geolander all-terrain tires in the right size. They said the manufacture year was 2023, though, somewhat suspiciously, this appears to have been rubbed off the DOT code on the tires and cannot be verified. Compared to ~$1200 new, I can live with that. Twenty minutes later, they were installed.
+One of the benefits of not needing certain things like car tires urgently is that you have time to shop around. While delaying the replacement of my worn-out summer tires, I researched options including new and used tires.
 
-In contrast to living in a ski town, the used market in the lower mainland feels like the heyday of the gold rush. Search for almost anything and you will get multiple hits. Playing used-market roulette in Vancouver is thrilling—I can’t wait to see what it delivers next. If Red 17 doesn’t work out, there is always Black 22, then Red 12, and so on. A little time and patience, and you can win. The abundance of used items here is staggering, a nice benefit in light of the high cost of living. On my _only-purchase-if-there-is-a-screaming-deal_ list is a wetsuit and a surfboard.
+I decided to try purchasing used tires for the very first time and went to a used-tire shop in Coquitlam. They had a set of “almost new” Yokohama Geolander all-terrain tires in the right size. They said the manufacture year was 2023, though, somewhat suspiciously, this appears to have been rubbed off the DOT code on the tires and cannot be verified. Compared to ~$1200 new, I can live with that. Twenty minutes later, they were installed.
+
+---
+
+I have always enjoyed playing used-market roulette. After living in an isolated ski town for five years, the lower mainland feels like the Las Vegas of secondhand markets. The liquidity is fantastic: search for almost anything and you will get multiple hits (it is equally good for selling things too). With a little time and patience, you can save big on used items, a nice benefit in light of the elevated cost of living here.
+
+I can’t wait to see what the used market delivers next. On my _only-purchase-if-there-is-a-screaming-deal_ list is a wetsuit and a surfboard.
 
 Happy fall. If you missed it earlier, check out my [Galápagos travelogue](/journal/two-weeks-in-the-galapagos).
 
