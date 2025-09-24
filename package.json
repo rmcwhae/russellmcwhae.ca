@@ -51,6 +51,7 @@
         "dateformat": "^5.0.3",
         "imagekit-javascript": "^4.0.1",
         "reading-time": "^1.5.0",
+        "unist-util-visit": "^5.0.0",
         "web-vitals": "^5.1.0"
     }
 }
