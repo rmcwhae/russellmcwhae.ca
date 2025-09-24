@@ -51,9 +51,9 @@
                         on:close={hideMenu}
                     />
                 </li>
-                <!-- <li>
+                <li>
                     <Anchor title="Micro" href="/micro" on:close={hideMenu} />
-                </li> -->
+                </li>
                 <li
                     id="mobile-switcher"
                     data-test="mobile-colour-scheme-switcher"
