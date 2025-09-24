@@ -4,30 +4,68 @@
  */
 
 import { visit } from 'unist-util-visit'
+import type { Node, Parent } from 'unist'
+
+// Define custom node types for footnotes
+interface FootnoteReference extends Node {
+    type: 'footnoteReference'
+    identifier: string
+    label: string
+}
+
+interface FootnoteDefinition extends Node {
+    type: 'footnoteDefinition'
+    identifier: string
+    label: string
+    children: Node[]
+}
+
+interface Footnotes extends Node {
+    type: 'footnotes'
+    children: Node[]
+}
+
+interface TextNode extends Node {
+    type: 'text'
+    value: string
+}
+
+interface ParagraphNode extends Node {
+    type: 'paragraph'
+    children: Node[]
+}
+
+interface LinkReferenceNode extends Node {
+    type: 'linkReference'
+    identifier: string
+    referenceType?: string
+    children?: Node[]
+}
+
 
 function remarkFootnotes() {
-    return (tree) => {
+    return (tree: Node & Parent) => {
         const footnotes = new Map()
 
         // First pass: collect footnote definitions
-        visit(tree, 'paragraph', (node, index, parent) => {
+        visit(tree, 'paragraph', (node: ParagraphNode, index, parent: Parent) => {
             if (node.children && node.children.length > 0) {
                 const firstChild = node.children[0]
 
                 // Check for footnote definition in text node
                 if (
                     firstChild.type === 'text' &&
-                    /^\[\^[^\]]+\]:\s*/.test(firstChild.value)
+                    /^\[\^[^\]]+\]:\s*/.test((firstChild as TextNode).value)
                 ) {
                     // This is a footnote definition
-                    const match = firstChild.value.match(
+                    const match = (firstChild as TextNode).value.match(
                         /^\[\^([^\]]+)\]:\s*(.*)$/
                     )
                     if (match) {
                         const [, identifier, content] = match
 
                         // Create footnote definition node
-                        const footnoteDef = {
+                        const footnoteDef: FootnoteDefinition = {
                             type: 'footnoteDefinition',
                             identifier: identifier,
                             label: identifier,
@@ -38,16 +76,16 @@ function remarkFootnotes() {
                                         {
                                             type: 'text',
                                             value: content,
-                                        },
+                                        } as TextNode,
                                     ],
-                                },
+                                } as ParagraphNode,
                             ],
                         }
 
                         footnotes.set(identifier, footnoteDef)
 
                         // Remove the original paragraph
-                        parent.children.splice(index, 1)
+                        parent!.children.splice(index, 1)
                         return index // Adjust index since we removed an element
                     }
                 }
@@ -55,23 +93,23 @@ function remarkFootnotes() {
                 // Check for footnote definition in linkReference node
                 if (
                     firstChild.type === 'linkReference' &&
-                    firstChild.identifier &&
-                    firstChild.identifier.startsWith('^')
+                    (firstChild as LinkReferenceNode).identifier &&
+                    (firstChild as LinkReferenceNode).identifier!.startsWith('^')
                 ) {
-                    const identifier = firstChild.identifier.substring(1) // Remove the ^
+                    const identifier = (firstChild as LinkReferenceNode).identifier!.substring(1) // Remove the ^
 
                     // Check if there's a colon after the linkReference
                     if (
                         node.children.length > 1 &&
                         node.children[1].type === 'text' &&
-                        node.children[1].value.startsWith(':')
+                        (node.children[1] as TextNode).value.startsWith(':')
                     ) {
-                        const content = node.children[1].value
+                        const content = (node.children[1] as TextNode).value
                             .substring(1)
                             .trim() // Remove the colon and trim
 
                         // Create footnote definition node
-                        const footnoteDef = {
+                        const footnoteDef: FootnoteDefinition = {
                             type: 'footnoteDefinition',
                             identifier: identifier,
                             label: identifier,
@@ -82,16 +120,16 @@ function remarkFootnotes() {
                                         {
                                             type: 'text',
                                             value: content,
-                                        },
+                                        } as TextNode,
                                     ],
-                                },
+                                } as ParagraphNode,
                             ],
                         }
 
                         footnotes.set(identifier, footnoteDef)
 
                         // Remove the original paragraph
-                        parent.children.splice(index, 1)
+                        parent!.children.splice(index, 1)
                         return index // Adjust index since we removed an element
                     }
                 }
@@ -99,9 +137,9 @@ function remarkFootnotes() {
         })
 
         // Second pass: convert footnote references
-        visit(tree, 'text', (node, index, parent) => {
+        visit(tree, 'text', (node: TextNode, index, parent: Parent) => {
             if (node.value.includes('[^')) {
-                const parts = []
+                const parts: Node[] = []
                 let remaining = node.value
 
                 while (remaining.length > 0) {
@@ -114,7 +152,7 @@ function remarkFootnotes() {
                             parts.push({
                                 type: 'text',
                                 value: before,
-                            })
+                            } as TextNode)
                         }
 
                         // Add footnote reference
@@ -122,7 +160,7 @@ function remarkFootnotes() {
                             type: 'footnoteReference',
                             identifier: identifier,
                             label: identifier,
-                        })
+                        } as FootnoteReference)
 
                         remaining = after
                     } else {
@@ -131,7 +169,7 @@ function remarkFootnotes() {
                             parts.push({
                                 type: 'text',
                                 value: remaining,
-                            })
+                            } as TextNode)
                         }
                         break
                     }
@@ -139,29 +177,30 @@ function remarkFootnotes() {
 
                 if (parts.length > 1) {
                     // Replace the text node with multiple nodes
-                    parent.children.splice(index, 1, ...parts)
-                    return index + parts.length - 1
+                    parent!.children.splice(index!, 1, ...parts)
+                    return index! + parts.length - 1
                 }
             }
         })
 
         // Also handle linkReference nodes that are footnote references
-        visit(tree, 'linkReference', (node, index, parent) => {
+        visit(tree, 'linkReference', (node: LinkReferenceNode) => {
             if (node.identifier && node.identifier.startsWith('^')) {
                 const identifier = node.identifier.substring(1) // Remove the ^
 
                 // Convert to footnote reference
-                node.type = 'footnoteReference'
-                node.identifier = identifier
-                node.label = identifier
-                delete node.referenceType
-                delete node.children
+                const footnoteRef = node as unknown as FootnoteReference
+                footnoteRef.type = 'footnoteReference'
+                footnoteRef.identifier = identifier
+                footnoteRef.label = identifier
+                delete (footnoteRef as unknown as LinkReferenceNode).referenceType
+                delete (footnoteRef as unknown as LinkReferenceNode).children
             }
         })
 
         // Third pass: add footnotes section at the end
         if (footnotes.size > 0) {
-            const footnotesSection = {
+            const footnotesSection: Footnotes = {
                 type: 'footnotes',
                 children: Array.from(footnotes.values()),
             }
