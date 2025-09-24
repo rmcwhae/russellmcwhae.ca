@@ -15,10 +15,6 @@ const config = {
         micro: path.join(layoutRoot, 'Micro.svelte'),
     },
 
-    smartypants: {
-        dashes: 'oldschool',
-    },
-
     remarkPlugins: [remarkGfm, frontMatterSlug],
     rehypePlugins: [
         rehypeSlug,
