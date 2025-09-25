@@ -8,4 +8,3 @@ node_modules
 /static/g
 /.vercel_build_output
 .vercel
-/cypress/videos

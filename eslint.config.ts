@@ -56,20 +56,4 @@ export default [
             'no-unused-vars': 'warn',
         },
     },
-    {
-        files: ['cypress/**/*.{js,ts}', 'cypress.config.{js,ts}'],
-        languageOptions: {
-            globals: {
-                cy: 'readonly',
-                Cypress: 'readonly',
-                describe: 'readonly',
-                it: 'readonly',
-                before: 'readonly',
-                beforeEach: 'readonly',
-                after: 'readonly',
-                afterEach: 'readonly',
-                expect: 'readonly',
-            },
-        },
-    },
 ]

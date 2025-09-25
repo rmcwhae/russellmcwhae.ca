@@ -37,6 +37,4 @@ pnpm dev
 
 ## Testing
 
-End-to-end testing is done with Cypress.
-
-While running `pnpm dev`, run `pnpm exec cypress open` or `pnpm exec cypress run` to run tests.
+End-to-end testing is done with Playwright.
