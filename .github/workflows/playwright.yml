@@ -25,6 +25,9 @@ jobs:
             - name: Install dependencies
               run: pnpm i
 
+            - name: Rebuild native dependencies
+              run: pnpm rebuild sharp
+
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
 
