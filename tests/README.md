@@ -36,6 +36,7 @@ npm run test:debug
 ### CI/CD
 
 Tests run automatically on:
+
 - Push to main/master branches
 - Pull requests to main/master branches
 
@@ -44,35 +45,36 @@ Tests run automatically on:
 The tests cover:
 
 1. **Basic Navigation**
-   - Homepage loading
-   - Navigation links functionality
-   - Mobile menu toggle
-   - Footer presence
+    - Homepage loading
+    - Navigation links functionality
+    - Mobile menu toggle
+    - Footer presence
 
 2. **Color Scheme Toggle**
-   - Desktop/mobile switcher visibility
-   - Theme switching functionality
-   - Theme persistence across navigation
-   - System preference respect
+    - Desktop/mobile switcher visibility
+    - Theme switching functionality
+    - Theme persistence across navigation
+    - System preference respect
 
 3. **Journal Pages**
-   - Journal listing page
-   - Individual journal entries
-   - Reading time and publication dates
-   - Back navigation
-   - SEO elements
+    - Journal listing page
+    - Individual journal entries
+    - Reading time and publication dates
+    - Back navigation
+    - SEO elements
 
 4. **Photos and Events**
-   - Photography gallery
-   - Events listing
-   - Event detail pages
-   - PhotoSwipe lightbox functionality
-   - Image loading and alt text
-   - Responsive design
+    - Photography gallery
+    - Events listing
+    - Event detail pages
+    - PhotoSwipe lightbox functionality
+    - Image loading and alt text
+    - Responsive design
 
 ## Browser Support
 
 Tests run on:
+
 - Chromium (Desktop Chrome)
 - Firefox (Desktop Firefox)
 - WebKit (Desktop Safari)
@@ -82,6 +84,7 @@ Tests run on:
 ## Configuration
 
 Tests are configured in `playwright.config.ts`:
+
 - Base URL: `http://localhost:4000`
 - Parallel execution enabled
 - Retry on CI failures

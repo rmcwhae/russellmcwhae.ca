@@ -1,6 +1,9 @@
 import ImageKit from 'imagekit'
 import * as ImageUtils from '$lib/utils/images'
-import { PUBLIC_IMAGEKIT_PUBLIC_KEY as IMAGEKIT_PUBLIC_KEY, PUBLIC_IMAGEKIT_URL_ENDPOINT as IMAGEKIT_URL_ENDPOINT } from '$env/static/public'
+import {
+    PUBLIC_IMAGEKIT_PUBLIC_KEY as IMAGEKIT_PUBLIC_KEY,
+    PUBLIC_IMAGEKIT_URL_ENDPOINT as IMAGEKIT_URL_ENDPOINT,
+} from '$env/static/public'
 import { IMAGEKIT_PRIVATE_KEY } from '$env/static/private'
 
 const CONFIG_OPTIONS = {

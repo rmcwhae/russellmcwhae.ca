@@ -42,7 +42,6 @@ interface ParagraphNode extends Node {
     children: Node[]
 }
 
-
 function rehypeFootnotes() {
     return (tree: Node & Parent) => {
         const footnotes = new Map()
@@ -79,7 +78,10 @@ function rehypeFootnotes() {
             footnotes.set(identifier, {
                 id: identifier,
                 counter: footnoteCounter++,
-                content: ((elementNode.children[0] as ElementNode).children[0] as TextNode).value,
+                content: (
+                    (elementNode.children[0] as ElementNode)
+                        .children[0] as TextNode
+                ).value,
             })
         })
 

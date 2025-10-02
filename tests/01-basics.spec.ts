@@ -58,7 +58,7 @@ test.describe('Basic Navigation', () => {
 
         // Check that mobile menu toggle exists
         await expect(page.locator('.nav-toggle')).toBeVisible()
-        
+
         // Check that mobile menu exists (it's hidden by default)
         await expect(page.locator('.nav-menu')).toBeAttached()
     })
@@ -69,10 +69,16 @@ test.describe('Basic Navigation', () => {
         await page.goto('/')
 
         // Check that mobile navigation links exist
-        await expect(page.locator('.nav-menu a[href="/photography"]')).toBeVisible()
+        await expect(
+            page.locator('.nav-menu a[href="/photography"]')
+        ).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/journal"]')).toBeVisible()
-        await expect(page.locator('.nav-menu a[href="/projects"]')).toBeVisible()
-        await expect(page.locator('.nav-menu a[href="/calendars"]')).toBeVisible()
+        await expect(
+            page.locator('.nav-menu a[href="/projects"]')
+        ).toBeVisible()
+        await expect(
+            page.locator('.nav-menu a[href="/calendars"]')
+        ).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/micro"]')).toBeVisible()
     })
 
