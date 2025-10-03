@@ -30,6 +30,10 @@ jobs:
                   pnpm exec npm rebuild sharp --platform=linux --arch=x64 --ignore-scripts=false
 
             - name: Build SvelteKit app
+              env:
+                  IMAGEKIT_PRIVATE_KEY: ${{ secrets.IMAGEKIT_PRIVATE_KEY }}
+                  PUBLIC_IMAGEKIT_URL_ENDPOINT: ${{ secrets.PUBLIC_IMAGEKIT_URL_ENDPOINT }}
+                  PUBLIC_IMAGEKIT_PUBLIC_KEY: ${{ secrets.PUBLIC_IMAGEKIT_PUBLIC_KEY }}
               run: pnpm run build
 
             - name: Install Playwright Browsers
