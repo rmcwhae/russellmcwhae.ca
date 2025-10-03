@@ -58,5 +58,11 @@
         "imagekit-javascript": "^4.0.1",
         "reading-time": "^1.5.0",
         "unist-util-visit": "^5.0.0"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@vercel/speed-insights",
+            "svelte-preprocess"
+        ]
     }
 }
