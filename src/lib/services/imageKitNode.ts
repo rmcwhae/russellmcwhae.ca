@@ -32,7 +32,6 @@ interface ImageKitFile {
 
 interface ProcessedFile extends ImageKitFile {
     photoswipe: boolean
-    lqip: string
 }
 
 interface ListFilesOptions {
@@ -58,26 +57,9 @@ export async function listFiles(
         }
 
         return images.map((file: ImageKitFile) => {
-            try {
-                const lqip = ImageUtils.buildURL(file.filePath, {
-                    width: 300,
-                    quality: 50,
-                    blur: 30,
-                })
-
-                return {
-                    ...file,
-                    photoswipe: true,
-                    lqip,
-                }
-            } catch (error) {
-                console.error('Error processing file:', file, error)
-                // Return a fallback object to prevent crashes
-                return {
-                    ...file,
-                    photoswipe: true,
-                    lqip: file.url || '',
-                }
+            return {
+                ...file,
+                photoswipe: true,
             }
         })
     } catch (error) {

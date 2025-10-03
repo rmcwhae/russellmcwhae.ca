@@ -7,7 +7,6 @@
      * @property {any} filePath
      * @property {any} width
      * @property {any} height
-     * @property {any} lqip - low quality image placeholder
      * @property {any} customMetadata
      * @property {boolean} [lockedRatio]
      * @property {boolean} [photoswipe]
@@ -18,7 +17,6 @@
         filePath,
         width,
         height,
-        lqip,
         customMetadata,
         lockedRatio = false,
         photoswipe = false,
@@ -32,10 +30,10 @@
     {#if photoswipe}
         <a
             class="no-shadow"
-            href={lqip}
+            href={filePath}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={lqip}
+            data-pswp-src={filePath}
             data-pswp-srcset={srcset}
             data-sveltekit-preload-data="off"
         >
@@ -43,7 +41,7 @@
                 loading="lazy"
                 {sizes}
                 {srcset}
-                src={lqip}
+                src={filePath}
                 {width}
                 {height}
                 alt={caption}
@@ -54,7 +52,7 @@
             loading="lazy"
             {sizes}
             {srcset}
-            src={lqip}
+            src={filePath}
             {width}
             {height}
             alt={caption}

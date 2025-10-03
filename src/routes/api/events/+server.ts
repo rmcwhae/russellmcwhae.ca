@@ -13,7 +13,6 @@ interface EventWithImages {
         filePath: string
         width: number
         height: number
-        lqip: string
     }
     [key: string]:
         | string
@@ -23,7 +22,6 @@ interface EventWithImages {
               filePath: string
               width: number
               height: number
-              lqip: string
           }
         | undefined
 }
@@ -133,7 +131,6 @@ function getFeaturedImage(
     filePath: string
     width: number
     height: number
-    lqip: string
 } | null {
     if (!Array.isArray(images) || images.length === 0) {
         return null

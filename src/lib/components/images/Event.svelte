@@ -3,7 +3,7 @@
 
     let { eventName, title, date, count, featuredImage } = $props()
 
-    const { name, filePath, width, height, lqip } = featuredImage
+    const { name, filePath, width, height } = featuredImage
 </script>
 
 <section>
@@ -13,7 +13,6 @@
             {filePath}
             {width}
             {height}
-            {lqip}
             lockedRatio
             photoswipe={false}
         />
