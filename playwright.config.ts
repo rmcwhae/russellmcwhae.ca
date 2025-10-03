@@ -64,11 +64,8 @@ export default defineConfig({
 
     /* Run your local preview server before starting the tests */
     webServer: {
-        command: process.env.CI
-            ? 'pnpm run preview'
-            : 'pnpm run build && pnpm run preview',
+        command: 'pnpm run build && pnpm run preview',
         url: 'http://localhost:4000',
         reuseExistingServer: !process.env.CI,
-        timeout: 120 * 1000, // 2 minutes timeout
     },
 })
