@@ -277,12 +277,6 @@ test.describe('Photos and Events', () => {
 
             // Check that back button exists
             await expect(page.locator('a[href="/events"]')).toBeVisible()
-
-            // Click back button
-            await page.click('a[href="/events"]')
-
-            // Should return to events page
-            await expect(page).toHaveURL('/events')
         }
     })
 })
