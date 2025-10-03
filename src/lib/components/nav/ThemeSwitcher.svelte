@@ -1,12 +1,11 @@
 <script>
-    import { onMount } from 'svelte'
     import { browser } from '$app/environment'
     import { mode } from '$lib/stores/theme'
 
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
     import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
 
-    onMount(() => {
+    $effect(() => {
         if (!$mode) {
             $mode = window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? 'dark'
@@ -14,12 +13,12 @@
         }
     })
 
-    $: nextMode = $mode === 'dark' ? 'light' : 'dark'
-    $: {
+    let nextMode = $derived($mode === 'dark' ? 'light' : 'dark')
+    $effect(() => {
         if (browser) {
             window.document.body.setAttribute('data-theme', $mode)
         }
-    }
+    })
 
     function changeTheme() {
         $mode = nextMode
@@ -27,7 +26,7 @@
 </script>
 
 <div>
-    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <!-- svelte-ignore a11y_label_has_associated_control -->
     <label class="toggle-wrapper">
         <div class={nextMode === 'dark' ? 'toggle disabled' : 'toggle enabled'}>
             <div class="icons">
@@ -38,7 +37,7 @@
                 id="toggle"
                 name="toggle"
                 type="checkbox"
-                on:click={changeTheme}
+                onclick={changeTheme}
             />
         </div>
     </label>
@@ -73,7 +72,9 @@
         position: absolute;
         z-index: 2;
         transform: translate(0);
-        transition: transform var(--transition), background var(--transition);
+        transition:
+            transform var(--transition),
+            background var(--transition);
     }
 
     .toggle.enabled::before {

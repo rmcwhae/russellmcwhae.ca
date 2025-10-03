@@ -1,6 +1,13 @@
 <script>
-    export let viewBox = '0 0 24 24'
-    export let height = '1em'
+    /**
+     * @typedef {Object} Props
+     * @property {string} [viewBox]
+     * @property {string} [height]
+     * @property {import('svelte').Snippet} [children]
+     */
+
+    /** @type {Props} */
+    let { viewBox = '0 0 24 24', height = '1em', children } = $props()
 </script>
 
 <svg
@@ -10,7 +17,7 @@
     {viewBox}
     fill="currentColor"
 >
-    <slot />
+    {@render children?.()}
 </svg>
 
 <style>

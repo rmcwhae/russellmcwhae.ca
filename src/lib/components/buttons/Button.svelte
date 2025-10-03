@@ -2,11 +2,17 @@
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
-    export let href
-    export let text
-    export let external = false
-    export let left = false
-    export let right = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} href
+     * @property {any} text
+     * @property {boolean} [external]
+     * @property {boolean} [left]
+     * @property {boolean} [right]
+     */
+
+    /** @type {Props} */
+    let { href, text, external = false, left = false, right = false } = $props()
 
     const rel = external ? 'noopener noreferrer nofollow' : ''
     const target = external ? '_blank' : ''

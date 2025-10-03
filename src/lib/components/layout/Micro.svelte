@@ -1,13 +1,13 @@
 <script>
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let title
+    let { title, children } = $props()
 </script>
 
 <SEO {title} />
 
 <article>
     <div class="char-limit flow margin-0-auto micro">
-        <slot />
+        {@render children?.()}
     </div>
 </article>

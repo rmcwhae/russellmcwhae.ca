@@ -1,38 +1,46 @@
 // Thanks to https://github.com/matfantinel/matfantinel.github.io/blob/main/src/lib/scss/breakpoints.scss
-$breakpoint-xs: 320px;
-$breakpoint-phone-max: 576px;
-$breakpoint-tablet-portrait-min: 577px;
-$breakpoint-tablet-portrait-max: 900px;
-$breakpoint-tablet-landscape-min: 901px;
-$breakpoint-tablet-landscape-max: 1200px;
-$breakpoint-desktop-min: 1201px;
-$breakpoint-xl: 1300px;
 
+// Breakpoint variables
+$breakpoint-xs: 320px !default;
+$breakpoint-phone-max: 576px !default;
+$breakpoint-tablet-portrait-min: 577px !default;
+$breakpoint-tablet-portrait-max: 900px !default;
+$breakpoint-tablet-landscape-min: 901px !default;
+$breakpoint-tablet-landscape-max: 1200px !default;
+$breakpoint-desktop-min: 1201px !default;
+$breakpoint-xl: 1300px !default;
+
+// Breakpoint mixins
 @mixin for-phone-only {
     @media (max-width: $breakpoint-phone-max) {
         @content;
     }
 }
+
 @mixin for-tablet-portrait-up {
     @media (min-width: $breakpoint-tablet-portrait-min) {
         @content;
     }
 }
+
 @mixin for-tablet-portrait-down {
     @media (max-width: $breakpoint-tablet-portrait-max) {
         @content;
     }
 }
+
 @mixin for-tablet-landscape-up {
     @media (min-width: $breakpoint-tablet-landscape-min) {
         @content;
     }
 }
+
 @mixin for-tablet-landscape-down {
     @media (max-width: $breakpoint-tablet-landscape-max) {
         @content;
     }
 }
+
 @mixin for-desktop-up {
     @media (min-width: $breakpoint-desktop-min) {
         @content;

@@ -1,7 +1,7 @@
 <script>
     import JournalEntry from './Entry.svelte'
 
-    export let posts
+    let { posts } = $props()
 </script>
 
 <div class="two-col-grid">

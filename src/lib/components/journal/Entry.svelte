@@ -3,10 +3,17 @@
     import Date from '$lib/components/misc/Date.svelte'
     import CategoryLink from './CategoryLink.svelte'
 
-    export let post
-    export let featured = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} post
+     * @property {boolean} [featured]
+     */
 
-    $: ({ href, title, description, date, readingTime, category } = post)
+    /** @type {Props} */
+    let { post, featured = false } = $props()
+
+    let { href, title, description, date, readingTime, category } =
+        $derived(post)
 </script>
 
 <section class:featured>
@@ -16,7 +23,9 @@
         </div>
     {/if}
     <h3>
-        <a sveltekit:prefetch {href}>{@html preventLastTwoWordWrap(title)}</a>
+        <a data-sveltekit-preload-data {href}
+            >{@html preventLastTwoWordWrap(title)}</a
+        >
     </h3>
     {#if description}
         <p class:big={featured}>{@html preventLastTwoWordWrap(description)}</p>
@@ -30,8 +39,8 @@
     {/if}
 </section>
 
-<style type="scss">
-    @import '../../scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
 
     h3 {
         margin: 0;

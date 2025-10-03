@@ -1,12 +1,19 @@
 <script>
-    import { onMount, onDestroy } from 'svelte'
-    import { page } from '$app/stores'
     import { browser } from '$app/environment'
 
-    export let allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-    export let activeHeading = null
+    /**
+     * @typedef {Object} Props
+     * @property {any} [allowedHeadings]
+     * @property {any} [activeHeading]
+     */
 
-    let headings = []
+    /** @type {Props} */
+    let {
+        allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        activeHeading = null,
+    } = $props()
+
+    let headings = $state([])
     let observer
 
     function updateHeadings() {
@@ -32,35 +39,73 @@
         })
     }
 
-    onMount(() => {
-        updateHeadings()
-    })
+    $effect(() => {
+        if (browser) {
+            updateHeadings()
 
-    onDestroy(() => {
-        if (observer) {
-            observer.disconnect()
+            return () => {
+                if (observer) {
+                    observer.disconnect()
+                }
+            }
         }
     })
 
-    if (browser) {
-        page.subscribe(() => {
+    $effect(() => {
+        if (browser) {
+            // Access page to make this reactive to page changes
             updateHeadings()
-        })
-    }
+        }
+    })
 
     function handleIntersect(entries) {
-        entries.forEach((entry) => {
-            const id = entry.target.getAttribute('id')
+        const visibleHeadings = []
 
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                document.querySelectorAll(`.toc li`).forEach((element) => {
-                    element.classList.remove('active')
+                const rect = entry.boundingClientRect
+                const viewportHeight = window.innerHeight
+
+                // Calculate how much of the heading's content is visible
+                const visibleHeight =
+                    Math.min(rect.bottom, viewportHeight) -
+                    Math.max(rect.top, 0)
+                const visibilityRatio = visibleHeight / viewportHeight
+
+                visibleHeadings.push({
+                    id: entry.target.getAttribute('id'),
+                    element: entry.target,
+                    visibilityRatio,
+                    top: rect.top,
                 })
-                document
-                    .querySelector(`.toc li a[href="#${id}"]`)
-                    .parentElement.classList.add('active')
             }
         })
+
+        if (visibleHeadings.length > 0) {
+            // Find the heading with the highest visibility ratio
+            // or if tied, the one closest to the top
+            const activeHeading = visibleHeadings.reduce((prev, current) => {
+                if (current.visibilityRatio > prev.visibilityRatio)
+                    return current
+                if (
+                    current.visibilityRatio === prev.visibilityRatio &&
+                    current.top < prev.top
+                )
+                    return current
+                return prev
+            })
+
+            // Update active state
+            document.querySelectorAll('.toc li').forEach((element) => {
+                element.classList.remove('active')
+            })
+            const activeElement = document.querySelector(
+                `.toc li a[href="#${activeHeading.id}"]`
+            )
+            if (activeElement) {
+                activeElement.parentElement.classList.add('active')
+            }
+        }
     }
 </script>
 
@@ -79,8 +124,8 @@
     </aside>
 {/if}
 
-<style type="scss">
-    @import '../../../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
 
     aside {
         max-width: 70ch;

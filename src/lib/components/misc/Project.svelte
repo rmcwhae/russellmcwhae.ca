@@ -3,14 +3,13 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
 
-    export let project
-    export let reverse
+    let { project, reverse, children } = $props()
 
     const { title, description, stack, href, repoHref } = project
 </script>
 
 <div class="two-col-grid" class:reverse>
-    <slot />
+    {@render children?.()}
     <div class="details mb-2">
         <h2>{title}</h2>
         <p class="big">{@html preventLastTwoWordWrap(description)}</p>
@@ -27,8 +26,8 @@
     </div>
 </div>
 
-<style type="scss">
-    @import '../../scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
 
     h2 {
         margin-bottom: 0;

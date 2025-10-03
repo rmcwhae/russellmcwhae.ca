@@ -1,15 +1,15 @@
 <script>
-    import Image from 'svimg'
+    import Image from 'svimg/Image.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import Gallery from '$lib/components/images/Gallery.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
 
-    export let data
+    let { data } = $props()
 
-    $: images = data.images
-    $: latestPosts = data.latestPosts
+    let images = $derived(data.images)
+    let latestPosts = $derived(data.latestPosts)
 
     const etCetera = [
         {
@@ -58,9 +58,9 @@
     <div class="boxes">
         <div>
             <a
-                href="photography"
+                href="/photography"
                 class="hover-underline-animation"
-                sveltekit:prefetch
+                data-sveltekit-preload-data
                 ><span
                     >see my <h3>photos</h3></span
                 ></a
@@ -68,8 +68,8 @@
         </div>
         <div>
             <a
-                href="calendars"
-                sveltekit:prefetch
+                href="/calendars"
+                data-sveltekit-preload-data
                 class="hover-underline-animation"
                 ><span
                     >preview my <h3>calendars</h3></span
@@ -78,8 +78,8 @@
         </div>
         <div>
             <a
-                href="projects"
-                sveltekit:prefetch
+                href="/projects"
+                data-sveltekit-preload-data
                 class="hover-underline-animation"
                 ><span
                     >check out my <h3>projects</h3></span
@@ -88,8 +88,8 @@
         </div>
         <div>
             <a
-                href="journal"
-                sveltekit:prefetch
+                href="/journal"
+                data-sveltekit-preload-data
                 class="hover-underline-animation"
                 ><span
                     >read my <h3>journal</h3></span
@@ -186,8 +186,8 @@
     <JournalEntrySet posts={etCetera} />
 </div>
 
-<style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../lib/scss/breakpoints' as *;
     .home {
         margin-top: var(--s1);
         display: flex;

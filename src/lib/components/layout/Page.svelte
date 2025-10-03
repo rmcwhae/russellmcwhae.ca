@@ -1,7 +1,7 @@
 <script>
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let title
+    let { title, children } = $props()
 </script>
 
 <SEO {title} />
@@ -11,7 +11,7 @@
         <h1>{title}</h1>
     </header>
     <div class="char-limit flow margin-0-auto">
-        <slot />
+        {@render children?.()}
     </div>
 </article>
 

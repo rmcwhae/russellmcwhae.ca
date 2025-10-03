@@ -41,7 +41,7 @@ My main [4K display](/journal/the-upgrade-to-4k/) is still my daily driver. It i
 
 One of the benefits of not needing certain things like car tires urgently is that you have time to shop around. While delaying the replacement of my worn-out summer tires, I researched options including new and used tires.
 
-I decided to try purchasing used tires for the very first time and went to a used-tire shop in Coquitlam. They had a set of “almost new” Yokohama Geolander all-terrain tires in the right size. They said the manufacture year was 2023, though, somewhat suspiciously, this appears to have been rubbed off the DOT code on the tires and cannot be verified. Compared to ~$1200 new, I can live with that. Twenty minutes later, they were installed.
+I decided to try purchasing used tires for the very first time and went to a used-tire shop in Coquitlam. They had a set of “almost new” Yokohama Geolander all-terrain tires in the right size. They said the manufacture year was 2023, though, somewhat suspiciously, this appears to have been rubbed off the DOT code on the tires and cannot be verified (**Update**: the year of manufacture is on the _inside_ side of the tires, “3922”, meaning that they made on the 39th week of 2022, so the tires are just over three years old). Compared to ~$1200 new, I can live with that. Twenty minutes later, they were installed.
 
 ---
 

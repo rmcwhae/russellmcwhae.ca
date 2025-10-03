@@ -3,12 +3,12 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let data
+    let { data } = $props()
 
-    $: images = data.event.images
-    $: count = data.event.count
-    $: date = data.event.date
-    $: title = data.event.title
+    let images = $derived(data.event.images)
+    let count = $derived(data.event.count)
+    let date = $derived(data.event.date)
+    let title = $derived(data.event.title)
 </script>
 
 <SEO {title} />

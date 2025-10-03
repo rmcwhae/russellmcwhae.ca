@@ -1,36 +1,52 @@
 <script>
     import { inject } from '@vercel/analytics'
     import { browser, dev } from '$app/environment'
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
     import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
     import '../app.scss'
+    /**
+     * @typedef {Object} Props
+     * @property {import('svelte').Snippet} [children]
+     */
 
-    inject({ mode: dev ? 'development' : 'production' })
+    /** @type {Props} */
+    let { children } = $props()
 
-    let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
+    let analyticsId = $state()
 
-    $: if (browser && analyticsId) {
-        webVitals({
-            path: $page.url.pathname,
-            params: $page.params,
-            analyticsId,
-        })
-    }
+    $effect(async () => {
+        const { env } = await import('$env/dynamic/public')
+        analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
+        if (env.VERCEL && analyticsId) {
+            inject({ mode: dev ? 'development' : 'production' })
+        }
+    })
+
+    $effect(() => {
+        if (browser && analyticsId) {
+            // Access page to make this reactive to page changes
+            webVitals({
+                path: page.url.pathname,
+                params: page.params,
+                analyticsId,
+            })
+        }
+    })
 </script>
 
 <Loading />
 
 <main class="wrapper">
     <Nav />
-    <slot />
+    {@render children?.()}
     <Footer />
 </main>
 
-<style type="scss">
-    @import '../lib/scss/breakpoints.scss';
+<style lang="scss">
+    @use '../lib/scss/breakpoints' as *;
 
     .wrapper {
         margin: 0 var(--s0);

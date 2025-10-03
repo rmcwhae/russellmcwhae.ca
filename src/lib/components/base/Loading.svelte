@@ -1,10 +1,6 @@
 <script>
     // Thanks to https://github.com/elianiva/elianiva.my.id
-    import { onMount, onDestroy } from 'svelte'
-    import { navigating } from '$app/stores'
-
-    onMount(() => startProgress())
-    onDestroy(() => resetProgress())
+    import { beforeNavigate, afterNavigate } from '$app/navigation'
 
     const resetProgress = () => {
         clearInterval(counter)
@@ -23,15 +19,23 @@
     }
 
     let counter
-    let width = 0
+    let width = $state(0)
     let speed = 10
+    let isNavigating = $state(false)
 
-    $: if (!$navigating) resetProgress()
-    $: if ($navigating) startProgress()
+    beforeNavigate(() => {
+        isNavigating = true
+        startProgress()
+    })
+
+    afterNavigate(() => {
+        isNavigating = false
+        resetProgress()
+    })
 </script>
 
-{#if $navigating}
-    <div class="loading" style="width: {width}%" />
+{#if isNavigating}
+    <div class="loading" style="width: {width}%"></div>
 {/if}
 
 <style>

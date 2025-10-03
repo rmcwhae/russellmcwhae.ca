@@ -12,14 +12,22 @@
 </script>
 
 <footer>
-    <div class="up" on:click={topFunction} title="Scroll to top" />
+    <div
+        class="up"
+        role="button"
+        tabindex="0"
+        aria-label="Scroll to top"
+        onclick={topFunction}
+        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && topFunction()}
+        title="Scroll to top"
+    ></div>
     <div class="wrapper">
         <div class="text">
             &copy; {year} Russell McWhae.
             <span class="nowrap">Made in Canada.</span>
         </div>
         <div class="icons">
-            <!-- svelte-ignore a11y-invalid-attribute -->
+            <!-- svelte-ignore a11y_invalid_attribute -->
             <a
                 href="javascript:window.location.href=atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')"
                 rel="noopener noreferrer nofollow"><IoIosMail /></a

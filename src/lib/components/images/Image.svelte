@@ -1,14 +1,26 @@
 <script>
-    import 'lazysizes'
+    // Use native lazy loading; remove lazysizes dependency
     import { generateSrcSets, sizes } from '$lib/utils/images'
 
-    export let filePath
-    export let width
-    export let height
-    export let lqip // low quality image placeholder
-    export let customMetadata
-    export let lockedRatio = false
-    export let photoswipe = false
+    /**
+     * @typedef {Object} Props
+     * @property {any} filePath
+     * @property {any} width
+     * @property {any} height
+     * @property {any} customMetadata
+     * @property {boolean} [lockedRatio]
+     * @property {boolean} [photoswipe]
+     */
+
+    /** @type {Props} */
+    let {
+        filePath,
+        width,
+        height,
+        customMetadata,
+        lockedRatio = false,
+        photoswipe = false,
+    } = $props()
 
     const srcset = generateSrcSets(filePath)
     const { caption } = customMetadata || {}
@@ -18,33 +30,32 @@
     {#if photoswipe}
         <a
             class="no-shadow"
-            href={lqip}
+            href={filePath}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={lqip}
+            data-pswp-src={filePath}
             data-pswp-srcset={srcset}
+            data-sveltekit-preload-data="off"
         >
             <img
-                data-sizes="auto"
-                data-srcset={srcset}
-                src={lqip}
+                loading="lazy"
                 {sizes}
+                {srcset}
+                src={filePath}
                 {width}
                 {height}
                 alt={caption}
-                class="lazyload"
             />
         </a>
     {:else}
         <img
-            data-sizes="auto"
-            data-srcset={srcset}
-            src={lqip}
+            loading="lazy"
             {sizes}
+            {srcset}
+            src={filePath}
             {width}
             {height}
             alt={caption}
-            class="lazyload"
         />
     {/if}
 </div>

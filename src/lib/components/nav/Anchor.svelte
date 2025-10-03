@@ -1,26 +1,22 @@
 <script>
-    import { createEventDispatcher } from 'svelte'
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
 
-    export let href
-    export let title
-
-    const dispatch = createEventDispatcher()
+    let { href, title, onClose } = $props()
 
     function handleClick() {
-        dispatch('close')
+        onClose?.()
     }
 </script>
 
 <a
-    sveltekit:prefetch
+    data-sveltekit-preload-data
     {href}
     class="hover-underline-animation"
-    on:click={handleClick}
-    aria-current={$page.url.pathname.search(href) > -1 ? 'page' : undefined}
+    onclick={handleClick}
+    aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
     <!-- {#if href === '/calendars'}
-        <span class="notification" />
+        <span class="notification"></span>
     {/if}</a -->
 </a>
 
@@ -37,7 +33,7 @@
         color: var(--high-contrast-color);
         text-decoration: none;
     }
-    .notification {
+    /* .notification {
         border-radius: 50%;
         content: '';
         display: inline-flex;
@@ -46,5 +42,5 @@
         height: 7px;
         width: 7px;
         background: red;
-    }
+    } */
 </style>

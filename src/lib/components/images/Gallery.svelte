@@ -1,12 +1,12 @@
 <script>
-    import { onMount } from 'svelte'
-    import PhotoSwipeLightbox from 'photoswipe/lightbox?client'
-    import PhotoSwipe from 'photoswipe?client'
+    // PhotoSwipe must only load on the client
+    import PhotoSwipeLightbox from 'photoswipe/lightbox'
+    import PhotoSwipe from 'photoswipe'
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
     import 'photoswipe/dist/photoswipe.css'
 
-    onMount(async () => {
+    $effect(async () => {
         const lightbox = new PhotoSwipeLightbox({
             pswpModule: PhotoSwipe,
             gallery: '#gallery',
@@ -21,7 +21,7 @@
                 isButton: false,
                 appendTo: 'root',
                 html: 'Caption text',
-                onInit: (el, pswp) => {
+                onInit: (el) => {
                     lightbox.pswp.on('change', () => {
                         const currSlideElement =
                             lightbox.pswp.currSlide.data.element
@@ -44,12 +44,16 @@
         })
 
         lightbox.init()
+
+        return () => {
+            lightbox.destroy()
+        }
     })
 
     const rowHeight = 500
     const gutter = 12
 
-    export let images
+    let { images } = $props()
 </script>
 
 <div id="gallery">

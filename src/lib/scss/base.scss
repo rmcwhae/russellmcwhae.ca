@@ -1,5 +1,5 @@
 // Layout and a few other items
-@import './breakpoints.scss';
+@use 'breakpoints' as *;
 
 .full-width {
     width: 100vw;

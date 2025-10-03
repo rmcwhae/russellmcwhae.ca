@@ -3,7 +3,7 @@
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 
-    let mobileMenuOpen = false
+    let mobileMenuOpen = $state(false)
 
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
@@ -18,7 +18,7 @@
 
 <header>
     <div id="logo" class:active={mobileMenuOpen}>
-        <a href="/" on:click={hideMenu}><Logo /></a>
+        <a href="/" onclick={hideMenu}><Logo /></a>
     </div>
     <nav>
         <div class="nav-menu" class:active={mobileMenuOpen}>
@@ -51,9 +51,9 @@
                         on:close={hideMenu}
                     />
                 </li>
-                <!-- <li>
+                <li>
                     <Anchor title="Micro" href="/micro" on:close={hideMenu} />
-                </li> -->
+                </li>
                 <li
                     id="mobile-switcher"
                     data-test="mobile-colour-scheme-switcher"
@@ -66,16 +66,24 @@
     <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
         <ThemeSwitcher />
     </div>
-    <div class="nav-toggle" on:click={toggle} class:active={mobileMenuOpen}>
-        <span class="icon-bar" />
-        <span class="icon-bar" />
-        <span class="icon-bar" />
+    <div
+        class="nav-toggle"
+        role="button"
+        tabindex="0"
+        aria-pressed={mobileMenuOpen}
+        onclick={toggle}
+        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
+        class:active={mobileMenuOpen}
+    >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
     </div>
-    <div class="nav-overlay" class:active={mobileMenuOpen} />
+    <div class="nav-overlay" class:active={mobileMenuOpen}></div>
 </header>
 
-<style type="scss">
-    @import '../../scss/breakpoints.scss';
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
     header {
         display: flex;
         justify-content: space-between;

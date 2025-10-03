@@ -3,9 +3,9 @@
     import Button from '$lib/components/buttons/Button.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
-    export let data
+    let { data } = $props()
 
-    $: events = data.events
+    let events = $derived(data.events)
 </script>
 
 <SEO title="Events" />

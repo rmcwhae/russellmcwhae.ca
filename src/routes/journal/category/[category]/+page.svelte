@@ -3,11 +3,11 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
 
-    export let data
+    let { data } = $props()
 
-    $: posts = data.posts
-    $: category = data.category
-    $: otherCategories = data.otherCategories
+    let posts = $derived(data.posts)
+    let category = $derived(data.category)
+    let otherCategories = $derived(data.otherCategories)
 </script>
 
 <SEO title="Journal" />

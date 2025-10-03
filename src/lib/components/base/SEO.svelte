@@ -1,11 +1,20 @@
 <script>
-    export let description = 'Russell McWhae’s Portfolio and Creative Outlet'
-    export let title = ''
+    /**
+     * @typedef {Object} Props
+     * @property {string} [description]
+     * @property {string} [title]
+     */
+
+    /** @type {Props} */
+    let {
+        description = 'Russell McWhae’s Portfolio and Creative Outlet',
+        title = '',
+    } = $props()
 
     const base = 'Russell’s Portfolio'
     const img = 'https://russellmcwhae.ca/opengraph.png'
 
-    $: pageTitle = title ? base + ' » ' + title : base
+    let pageTitle = $derived(title ? base + ' » ' + title : base)
 </script>
 
 <svelte:head>

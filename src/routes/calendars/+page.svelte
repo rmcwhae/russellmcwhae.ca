@@ -1,5 +1,5 @@
 <script>
-    import Image from 'svimg'
+    import Image from 'svimg/Image.svelte'
     import Calendar from '$lib/components/misc/Calendar.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 </script>
@@ -96,8 +96,8 @@
         border: 1px solid white;
         padding: var(--s-2) var(--s-1);
     }
-    p span {
+    /* p span {
         text-decoration: underline;
         text-decoration-color: red;
-    }
+    } */
 </style>
