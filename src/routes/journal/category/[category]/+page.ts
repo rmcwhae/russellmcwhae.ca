@@ -1,4 +1,4 @@
-import { posts } from '$lib/services/posts'
+import { getPosts } from '$lib/services/posts'
 import { error } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
 
@@ -6,6 +6,7 @@ export const prerender = true
 
 export const load: PageLoad = async ({ params }) => {
     const { category } = params
+    const posts = await getPosts()
     const filteredPosts = [...posts].filter(
         (post) => post.category === category
     )
