@@ -18,6 +18,7 @@ interface PostModule {
 
 interface Post extends PostMetadata {
     href: string
+    readingTime: ReturnType<typeof readingTime>
     loadComponent: () => Promise<SvelteComponent>
     loadReadingTime: () => Promise<ReturnType<typeof readingTime>>
 }
@@ -82,8 +83,10 @@ export async function getPosts(): Promise<Post[]> {
     const postsWithMetadata = await Promise.all(
         postEntries.map(async (post) => {
             const metadata = await post.loadMetadata()
+            const readingTime = await post.loadReadingTime()
             return {
                 ...metadata,
+                readingTime,
                 loadComponent: post.loadComponent,
                 loadReadingTime: post.loadReadingTime,
             }

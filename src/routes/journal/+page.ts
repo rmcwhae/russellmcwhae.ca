@@ -6,13 +6,9 @@ export const prerender = true
 export const load: PageLoad = async () => {
     const posts = await getPosts()
     
-    // Load reading times for all posts to calculate total word count
-    const readingTimes = await Promise.all(
-        posts.map(post => post.loadReadingTime())
-    )
-    
-    const totalWordCount = readingTimes.reduce((acc, readingTime) => {
-        return acc + readingTime.words
+    // Calculate total word count from reading times
+    const totalWordCount = posts.reduce((acc, post) => {
+        return acc + post.readingTime.words
     }, 0)
 
     return {
