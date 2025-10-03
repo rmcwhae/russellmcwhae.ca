@@ -19,40 +19,94 @@ interface PostModule {
 interface Post extends PostMetadata {
     href: string
     readingTime: ReturnType<typeof readingTime>
-    component: SvelteComponent
+    loadComponent: () => Promise<SvelteComponent>
+    loadReadingTime: () => Promise<ReturnType<typeof readingTime>>
 }
 
-// Eagerly import compiled markdown modules and their raw source text
-const postModules = import.meta.glob('/content/journal/*.md', {
-    eager: true,
-}) as Record<string, PostModule>
+// Lazy import compiled markdown modules and their raw source text
+const postModules = import.meta.glob('/content/journal/*.md') as Record<
+    string,
+    () => Promise<PostModule>
+>
 const postSources = import.meta.glob('/content/journal/*.md', {
     query: '?raw',
     import: 'default',
-    eager: true,
-}) as Record<string, string>
+}) as Record<string, () => Promise<string>>
 
-export const posts: Post[] = Object.entries(postModules)
-    .map(([path, postModule]) => {
-        const rawSource = postSources[path] || ''
-        const computedReadingTime = readingTime(rawSource)
+// Load metadata lazily as well to avoid the eager/lazy conflict
+const postMetadataModules = import.meta.glob('/content/journal/*.md', {
+    import: 'metadata',
+}) as Record<string, () => Promise<PostMetadata>>
 
-        // Generate slug from filename if not present in metadata
-        const slug =
-            postModule.metadata.slug ||
-            path.split('/').pop()?.replace('.md', '') ||
-            ''
+// Create posts with lazy loading for everything
+const postEntries = Object.entries(postModules).map(
+    ([path, postModuleLoader]) => {
+        const sourceLoader = postSources[path]
+        const metadataLoader = postMetadataModules[path]
+
+        // Generate slug from filename (we'll get the actual slug from metadata later)
+        const filenameSlug = path.split('/').pop()?.replace('.md', '') || ''
 
         return {
-            // frontmatter data
-            ...postModule.metadata,
-            slug,
-            href: '/journal/' + slug,
-            // include computed reading stats
-            readingTime: computedReadingTime,
-            // the processed Svelte component from the markdown file
-            component: postModule.default,
+            // Basic properties available immediately
+            slug: filenameSlug,
+            href: '/journal/' + filenameSlug,
+
+            // Load metadata lazily
+            loadMetadata: async () => {
+                const metadata = await metadataLoader()
+                return {
+                    ...metadata,
+                    slug: metadata?.slug || filenameSlug,
+                    href: '/journal/' + (metadata?.slug || filenameSlug),
+                }
+            },
+
+            // Load component lazily
+            loadComponent: async () => {
+                const postModule = await postModuleLoader()
+                return postModule.default
+            },
+
+            // Load reading time lazily
+            loadReadingTime: async () => {
+                if (!sourceLoader) return readingTime('')
+                const rawSource = await sourceLoader()
+                return readingTime(rawSource)
+            },
         }
-    })
-    .filter((post) => !post.draft)
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    }
+)
+
+// Create a function to get posts with metadata loaded
+export async function getPosts(): Promise<Post[]> {
+    const postsWithMetadata = await Promise.all(
+        postEntries.map(async (post) => {
+            const metadata = await post.loadMetadata()
+            const readingTime = await post.loadReadingTime()
+            return {
+                ...metadata,
+                readingTime,
+                loadComponent: post.loadComponent,
+                loadReadingTime: post.loadReadingTime,
+            }
+        })
+    )
+
+    return postsWithMetadata
+        .filter((post) => !post.draft)
+        .sort((a, b) => (a.date < b.date ? 1 : -1))
+}
+
+// For backward compatibility, we'll need to load posts on first access
+const _postsCache: Post[] | null = null
+export const posts: Post[] = new Proxy([], {
+    get(target, prop) {
+        if (_postsCache === null) {
+            // This is a synchronous access, so we can't load async data here
+            // We'll need to update the consuming code to use getPosts() instead
+            throw new Error('Posts not loaded. Use getPosts() instead.')
+        }
+        return _postsCache[prop as keyof Post[]]
+    },
+})

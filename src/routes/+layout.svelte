@@ -1,8 +1,8 @@
 <script>
     import { inject } from '@vercel/analytics'
+    import { injectSpeedInsights } from '@vercel/speed-insights'
     import { browser, dev } from '$app/environment'
     import { page } from '$app/state'
-    import { webVitals } from '$lib/vitals'
     import Nav from '$lib/components/nav/Nav.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
@@ -22,19 +22,10 @@
         analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
         if (env.VERCEL && analyticsId) {
             inject({ mode: dev ? 'development' : 'production' })
+            injectSpeedInsights({ mode: dev ? 'development' : 'production' })
         }
     })
 
-    $effect(() => {
-        if (browser && analyticsId) {
-            // Access page to make this reactive to page changes
-            webVitals({
-                path: page.url.pathname,
-                params: page.params,
-                analyticsId,
-            })
-        }
-    })
 </script>
 
 <Loading />

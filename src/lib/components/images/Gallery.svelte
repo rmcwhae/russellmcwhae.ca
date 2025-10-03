@@ -1,12 +1,14 @@
 <script>
     // PhotoSwipe must only load on the client
-    import PhotoSwipeLightbox from 'photoswipe/lightbox'
-    import PhotoSwipe from 'photoswipe'
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
     import 'photoswipe/dist/photoswipe.css'
 
     $effect(async () => {
+        // Dynamic imports to avoid linter issues
+        const { default: PhotoSwipeLightbox } = await import('photoswipe/lightbox')
+        const { default: PhotoSwipe } = await import('photoswipe')
+        
         const lightbox = new PhotoSwipeLightbox({
             pswpModule: PhotoSwipe,
             gallery: '#gallery',
