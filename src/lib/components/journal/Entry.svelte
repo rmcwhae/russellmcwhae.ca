@@ -23,7 +23,7 @@
         </div>
     {/if}
     <h3>
-        <a data-sveltekit-preload-data {href}
+        <a data-sveltekit-preload-data="hover" {href}
             >{@html preventLastTwoWordWrap(title)}</a
         >
     </h3>

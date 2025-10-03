@@ -1,6 +1,6 @@
 <script>
     // Use native lazy loading; remove lazysizes dependency
-    import { generateSrcSets, sizes } from '$lib/utils/images'
+    import { generateSrcSets, sizes, buildURL } from '$lib/utils/images'
 
     /**
      * @typedef {Object} Props
@@ -22,6 +22,7 @@
         photoswipe = false,
     } = $props()
 
+    const src = buildURL(filePath, { width, height })
     const srcset = generateSrcSets(filePath)
     const { caption } = customMetadata || {}
 </script>
@@ -30,18 +31,17 @@
     {#if photoswipe}
         <a
             class="no-shadow"
-            href={filePath}
+            href={src}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={filePath}
+            data-pswp-src={src}
             data-pswp-srcset={srcset}
-            data-sveltekit-preload-data="off"
         >
             <img
                 loading="lazy"
                 {sizes}
                 {srcset}
-                src={filePath}
+                {src}
                 {width}
                 {height}
                 alt={caption}
@@ -52,7 +52,7 @@
             loading="lazy"
             {sizes}
             {srcset}
-            src={filePath}
+            {src}
             {width}
             {height}
             alt={caption}
