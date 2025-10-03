@@ -9,7 +9,7 @@
 </script>
 
 <a
-    data-sveltekit-preload-data
+    data-sveltekit-preload-data="hover"
     {href}
     class="hover-underline-animation"
     onclick={handleClick}

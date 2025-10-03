@@ -60,7 +60,7 @@
             <a
                 href="/photography"
                 class="hover-underline-animation"
-                data-sveltekit-preload-data
+                data-sveltekit-preload-data="hover"
                 ><span
                     >see my <h3>photos</h3></span
                 ></a
@@ -69,7 +69,7 @@
         <div>
             <a
                 href="/calendars"
-                data-sveltekit-preload-data
+                data-sveltekit-preload-data="hover"
                 class="hover-underline-animation"
                 ><span
                     >preview my <h3>calendars</h3></span
@@ -79,7 +79,7 @@
         <div>
             <a
                 href="/projects"
-                data-sveltekit-preload-data
+                data-sveltekit-preload-data="hover"
                 class="hover-underline-animation"
                 ><span
                     >check out my <h3>projects</h3></span
@@ -89,7 +89,7 @@
         <div>
             <a
                 href="/journal"
-                data-sveltekit-preload-data
+                data-sveltekit-preload-data="hover"
                 class="hover-underline-animation"
                 ><span
                     >read my <h3>journal</h3></span
