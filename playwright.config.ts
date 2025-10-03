@@ -66,7 +66,6 @@ export default defineConfig({
     webServer: {
         command: 'pnpm run build && pnpm run preview',
         url: 'http://localhost:4000',
-        port: 4000,
         reuseExistingServer: !process.env.CI,
     },
 })
