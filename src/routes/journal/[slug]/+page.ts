@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit'
 import { getPosts } from '$lib/services/posts'
 import type { PageLoad } from './$types'
 
-export const prerender = false // Needs to be false if using a hit counter
+export const prerender = true // Needs to be false if using a hit counter
 
 export const load: PageLoad = async ({ params }) => {
     const { slug } = params
@@ -15,13 +15,13 @@ export const load: PageLoad = async ({ params }) => {
 
     const post = posts[index]
     const { title, date, description, category } = post
-    
+
     // Load component and reading time asynchronously
     const [component, readingTime] = await Promise.all([
         post.loadComponent(),
-        post.loadReadingTime()
+        post.loadReadingTime(),
     ])
-    
+
     const relatedPosts = posts
         .filter((p) => p.title !== title)
         .filter((p) => p.category === category)

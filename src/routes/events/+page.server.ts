@@ -1,7 +1,8 @@
-import { json } from '@sveltejs/kit'
-import type { RequestHandler } from './$types'
+import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '$lib/services/imageKitNode'
 import { parseTitleAndDate } from '$lib/utils/string'
+
+export const prerender = true
 
 interface EventWithImages {
     name: string
@@ -13,7 +14,7 @@ interface EventWithImages {
         filePath: string
         width: number
         height: number
-    }
+    } | null
     [key: string]:
         | string
         | number
@@ -23,10 +24,11 @@ interface EventWithImages {
               width: number
               height: number
           }
+        | null
         | undefined
 }
 
-export const GET: RequestHandler = async () => {
+export const load: PageServerLoad = async () => {
     try {
         const events = await ImageKitNodeServices.listFiles({
             path: '/events/',
@@ -38,7 +40,7 @@ export const GET: RequestHandler = async () => {
                 'Non-array response from ImageKit for events:',
                 events
             )
-            return json([])
+            return { events: [] }
         }
 
         const sortedEvents = events
@@ -96,10 +98,10 @@ export const GET: RequestHandler = async () => {
             }
         }
 
-        return json(eventsWithImages)
+        return { events: eventsWithImages }
     } catch (error) {
-        console.error('Error in events API:', error)
-        return json([])
+        console.error('Error in events load function:', error)
+        return { events: [] }
     }
 }
 
