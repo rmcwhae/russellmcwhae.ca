@@ -7,7 +7,7 @@
 </script>
 
 <section>
-    <a href={`/events/${eventName}`} data-sveltekit-preload-data="hover">
+    <a href={`/events/${eventName}`}>
         <Image
             {name}
             {filePath}
