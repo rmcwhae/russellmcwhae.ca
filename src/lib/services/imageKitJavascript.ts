@@ -1,8 +1,8 @@
 import ImageKit from 'imagekit-javascript'
-import { PUBLIC_IMAGEKIT_URL_ENDPOINT as IMAGEKIT_URL_ENDPOINT } from '$env/static/public'
+import { PUBLIC_IMAGEKIT_URL_ENDPOINT } from '$env/static/public'
 
 const CONFIG_OPTIONS = {
-    urlEndpoint: IMAGEKIT_URL_ENDPOINT,
+    urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,
 }
 
 let client: ImageKit | null = null
