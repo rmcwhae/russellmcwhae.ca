@@ -25,8 +25,8 @@ jobs:
             - name: Install dependencies
               run: pnpm i
 
-            - name: Install sharp
-              run: npm install -g --platform=linux --arch=x64 sharp
+            - name: Rebuild Sharp for Linux
+              run: pnpm rebuild sharp
 
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
