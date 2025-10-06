@@ -16,7 +16,7 @@
         "test:ui": "playwright test --ui",
         "test:headed": "playwright test --headed",
         "test:debug": "playwright test --debug",
-        "postinstall": "pnpm exec npm rebuild sharp --platform=linux --arch=x64 --ignore-scripts=false"
+        "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then pnpm exec npm rebuild sharp --platform=linux --arch=x64 --ignore-scripts=false; fi"
     },
     "devDependencies": {
         "@eslint/js": "^9.37.0",
