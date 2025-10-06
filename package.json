@@ -15,8 +15,7 @@
         "test": "playwright test",
         "test:ui": "playwright test --ui",
         "test:headed": "playwright test --headed",
-        "test:debug": "playwright test --debug",
-        "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then pnpm exec npm rebuild sharp --platform=linux --arch=x64 --ignore-scripts=false; fi"
+        "test:debug": "playwright test --debug"
     },
     "devDependencies": {
         "@eslint/js": "^9.37.0",
@@ -58,13 +57,18 @@
         "dateformat": "^5.0.3",
         "imagekit-javascript": "^4.0.1",
         "reading-time": "^1.5.0",
-        "sharp": "^0.32.6",
+        "sharp": "^0.34.4",
         "unist-util-visit": "^5.0.0"
     },
     "pnpm": {
         "onlyBuiltDependencies": [
             "@vercel/speed-insights",
             "svelte-preprocess"
+        ],
+        "ignoredBuiltDependencies": [
+            "@parcel/watcher",
+            "esbuild",
+            "sharp"
         ]
     }
 }
