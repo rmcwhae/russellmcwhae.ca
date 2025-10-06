@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+- _Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones_ by James Clear
 - _Anxious for Nothing: Finding Calm in a Chaotic World_ by Max Lucado (audiobook)
 - _Try Softer: A Fresh Approach to Move Us out of Anxiety, Stress, and Survival Mode—and into a Life of Connection and Joy_ by Aundi Kolber
 - _How to Win Over Depression_ by Tim LaHaye
