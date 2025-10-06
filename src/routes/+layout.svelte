@@ -1,8 +1,7 @@
 <script>
     import { inject } from '@vercel/analytics'
     import { injectSpeedInsights } from '@vercel/speed-insights'
-    import { browser, dev } from '$app/environment'
-    import { page } from '$app/state'
+    import { dev } from '$app/environment'
     import Nav from '$lib/components/nav/Nav.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
@@ -25,7 +24,6 @@
             injectSpeedInsights({ mode: dev ? 'development' : 'production' })
         }
     })
-
 </script>
 
 <Loading />

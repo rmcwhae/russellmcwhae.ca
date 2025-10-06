@@ -13,7 +13,10 @@ export async function entries() {
         })
 
         if (!Array.isArray(events)) {
-            console.error('Non-array response from ImageKit for events:', events)
+            console.error(
+                'Non-array response from ImageKit for events:',
+                events
+            )
             return []
         }
 
@@ -57,7 +60,7 @@ export const load: PageServerLoad = async ({ params }) => {
                     title,
                     date,
                     images,
-                }
+                },
             }
         } else {
             throw error(404, 'No images found for this event')
