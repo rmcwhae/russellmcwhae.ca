@@ -1,6 +1,6 @@
 {
     "regions": ["pdx1"],
     "buildCommand": "pnpm run build",
-    "installCommand": "pnpm install",
+    "installCommand": "pnpm install --platform=linux --arch=x64",
     "framework": "sveltekit"
 }

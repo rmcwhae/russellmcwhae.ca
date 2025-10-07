@@ -64,8 +64,7 @@
         ],
         "ignoredBuiltDependencies": [
             "@parcel/watcher",
-            "esbuild",
-            "sharp"
+            "esbuild"
         ]
     }
 }
