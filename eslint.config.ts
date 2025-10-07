@@ -10,6 +10,8 @@ export default [
             'node_modules/**',
             '.vercel/**',
             'static/_app/**',
+            'playwright-report/**',
+            'test-results/**',
         ],
     },
     js.configs.recommended,

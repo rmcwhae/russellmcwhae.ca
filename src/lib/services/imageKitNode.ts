@@ -1,5 +1,4 @@
 import ImageKit from 'imagekit'
-import * as ImageUtils from '$lib/utils/images'
 import {
     PUBLIC_IMAGEKIT_PUBLIC_KEY,
     PUBLIC_IMAGEKIT_URL_ENDPOINT,
