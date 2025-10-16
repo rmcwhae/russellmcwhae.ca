@@ -1,7 +1,7 @@
 <script>
-    import { inject } from '@vercel/analytics'
-    import { injectSpeedInsights } from '@vercel/speed-insights'
     import { dev } from '$app/environment'
+    import { injectAnalytics } from '@vercel/analytics/sveltekit'
+    import { injectSpeedInsights } from '@vercel/speed-insights'
     import Nav from '$lib/components/nav/Nav.svelte'
     import Footer from '$lib/components/base/Footer.svelte'
     import Loading from '$lib/components/base/Loading.svelte'
@@ -14,16 +14,8 @@
     /** @type {Props} */
     let { children } = $props()
 
-    let analyticsId = $state()
-
-    $effect(async () => {
-        const { env } = await import('$env/dynamic/public')
-        analyticsId = env.PUBLIC_VERCEL_ANALYTICS_ID
-        if (env.VERCEL && analyticsId) {
-            inject({ mode: dev ? 'development' : 'production' })
-            injectSpeedInsights({ mode: dev ? 'development' : 'production' })
-        }
-    })
+    injectAnalytics({ mode: dev ? 'development' : 'production' })
+    injectSpeedInsights()
 </script>
 
 <Loading />
