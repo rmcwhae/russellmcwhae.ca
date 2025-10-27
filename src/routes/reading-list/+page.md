@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+- _The Color of Everything: A Journey to Quiet the Chaos Within_ by Cory Richards
 - _Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones_ by James Clear
 - _Anxious for Nothing: Finding Calm in a Chaotic World_ by Max Lucado (audiobook)
 - _Try Softer: A Fresh Approach to Move Us out of Anxiety, Stress, and Survival Mode—and into a Life of Connection and Joy_ by Aundi Kolber
