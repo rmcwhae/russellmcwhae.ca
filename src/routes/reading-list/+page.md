@@ -9,6 +9,8 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+- _Ready Player Two_ by Ernest Cline
+- _Lolita_ by Vladimir Nabokov (audiobook)
 - _Fire Weather: The Making of a Beast_ by John Vaillant
 - _The Color of Everything: A Journey to Quiet the Chaos Within_ by Cory Richards
 - _Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones_ by James Clear
