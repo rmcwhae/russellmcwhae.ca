@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2025
 
+- _The Last Blue Mountain: The Great Karakoram Climbing Tragedy_ by Ralph Barker
 - _Ready Player Two_ by Ernest Cline
 - _Lolita_ by Vladimir Nabokov (audiobook)
 - _Fire Weather: The Making of a Beast_ by John Vaillant
