@@ -1,13 +1,7 @@
-import ImageKit from 'imagekit'
-import {
-    PUBLIC_IMAGEKIT_PUBLIC_KEY,
-    PUBLIC_IMAGEKIT_URL_ENDPOINT,
-} from '$env/static/public'
+import ImageKit from '@imagekit/nodejs'
 import { IMAGEKIT_PRIVATE_KEY } from '$env/static/private'
 
 const CONFIG_OPTIONS = {
-    urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,
-    publicKey: PUBLIC_IMAGEKIT_PUBLIC_KEY,
     privateKey: IMAGEKIT_PRIVATE_KEY,
 }
 
@@ -34,7 +28,20 @@ interface ProcessedFile extends ImageKitFile {
 }
 
 interface ListFilesOptions {
+    path?: string
+    skip?: number
+    limit?: number
+    sort?: string
+    type?: string
+    fileType?: string
+    searchQuery?: string
     [key: string]: string | number | boolean | undefined
+}
+
+function isFile(
+    item: { filePath?: string; folderPath?: string }
+): item is { filePath: string; url?: string; [key: string]: unknown } {
+    return 'filePath' in item && typeof item.filePath === 'string'
 }
 
 export async function listFiles(
@@ -46,20 +53,53 @@ export async function listFiles(
             setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
         })
 
-        const listPromise = getClient().listFiles(options)
+        const listPromise = getClient().assets.list({
+            path: options.path as string | undefined,
+            skip: options.skip as number | undefined,
+            limit: options.limit as number | undefined,
+            sort: options.sort as
+                | 'ASC_NAME'
+                | 'DESC_NAME'
+                | 'ASC_CREATED'
+                | 'DESC_CREATED'
+                | 'ASC_UPDATED'
+                | 'DESC_UPDATED'
+                | 'ASC_HEIGHT'
+                | 'DESC_HEIGHT'
+                | 'ASC_WIDTH'
+                | 'DESC_WIDTH'
+                | 'ASC_SIZE'
+                | 'DESC_SIZE'
+                | 'ASC_RELEVANCE'
+                | 'DESC_RELEVANCE'
+                | undefined,
+            type: options.type as 'file' | 'folder' | 'all' | undefined,
+            fileType: options.fileType as 'all' | 'image' | 'non-image' | undefined,
+            searchQuery: options.searchQuery as string | undefined,
+        })
 
-        const images = await Promise.race([listPromise, timeoutPromise])
+        const items = await Promise.race([listPromise, timeoutPromise])
 
-        if (!Array.isArray(images)) {
-            console.error('ImageKit returned non-array response:', images)
+        if (!Array.isArray(items)) {
+            console.error('ImageKit returned non-array response:', items)
             return []
         }
 
-        return images.map((file: ImageKitFile) => {
-            return {
-                ...file,
-                photoswipe: true,
+        return items.map((item) => {
+            const filePath =
+                'filePath' in item && item.filePath
+                    ? item.filePath
+                    : 'folderPath' in item && item.folderPath
+                      ? item.folderPath
+                      : ''
+            const base: ImageKitFile = {
+                ...item,
+                filePath,
             }
+            return {
+                ...base,
+                photoswipe: isFile(item),
+            } as ProcessedFile
         })
     } catch (error) {
         console.error('Error in listFiles:', error)

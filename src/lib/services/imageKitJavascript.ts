@@ -1,21 +1,4 @@
-import ImageKit from 'imagekit-javascript'
-import { PUBLIC_IMAGEKIT_URL_ENDPOINT } from '$env/static/public'
-
-const CONFIG_OPTIONS = {
-    urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,
-}
-
-let client: ImageKit | null = null
-
-function getClient(): ImageKit {
-    if (client) {
-        return client
-    }
-
-    client = new ImageKit(CONFIG_OPTIONS)
-
-    return client
-}
+import { buildSrc } from '@imagekit/javascript'
 
 interface UrlOptions {
     path: string
@@ -29,5 +12,9 @@ interface UrlOptions {
 }
 
 export function url(options: UrlOptions): string {
-    return getClient().url(options)
+    return buildSrc({
+        src: options.path,
+        urlEndpoint: options.urlEndpoint,
+        transformation: options.transformation,
+    })
 }
