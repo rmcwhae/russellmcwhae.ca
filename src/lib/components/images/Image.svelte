@@ -22,9 +22,9 @@
         photoswipe = false,
     } = $props()
 
-    const src = buildURL(filePath, { width, height })
-    const srcset = generateSrcSets(filePath)
-    const { caption } = customMetadata || {}
+    const src = $derived(buildURL(filePath, { width, height }))
+    const srcset = $derived(generateSrcSets(filePath))
+    const caption = $derived(customMetadata?.caption ?? '')
 </script>
 
 <div class:lockedRatio>
