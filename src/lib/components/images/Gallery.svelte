@@ -6,9 +6,8 @@
 
     $effect(async () => {
         // Dynamic imports to avoid linter issues
-        const { default: PhotoSwipeLightbox } = await import(
-            'photoswipe/lightbox'
-        )
+        const { default: PhotoSwipeLightbox } =
+            await import('photoswipe/lightbox')
         const { default: PhotoSwipe } = await import('photoswipe')
 
         const lightbox = new PhotoSwipeLightbox({

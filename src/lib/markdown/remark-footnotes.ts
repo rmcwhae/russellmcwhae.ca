@@ -79,7 +79,9 @@ function remarkFootnotes() {
 
                             // Preserve any additional inline nodes in the paragraph (emphasis, links, etc.)
                             if (node.children.length > 1) {
-                                remainingChildren.push(...node.children.slice(1))
+                                remainingChildren.push(
+                                    ...node.children.slice(1)
+                                )
                             }
 
                             // Create footnote definition node
@@ -136,7 +138,9 @@ function remarkFootnotes() {
                             }
 
                             if (node.children.length > 2) {
-                                remainingChildren.push(...node.children.slice(2))
+                                remainingChildren.push(
+                                    ...node.children.slice(2)
+                                )
                             }
 
                             // Create footnote definition node
