@@ -5,7 +5,11 @@
 
     let { project, reverse, children } = $props()
 
-    const { title, description, stack, href, repoHref } = project
+    const title = $derived(project?.title ?? '')
+    const description = $derived(project?.description ?? '')
+    const stack = $derived(project?.stack ?? [])
+    const href = $derived(project?.href)
+    const repoHref = $derived(project?.repoHref)
 </script>
 
 <div class="two-col-grid" class:reverse>

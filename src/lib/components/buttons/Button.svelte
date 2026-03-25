@@ -14,8 +14,8 @@
     /** @type {Props} */
     let { href, text, external = false, left = false, right = false } = $props()
 
-    const rel = external ? 'noopener noreferrer nofollow' : ''
-    const target = external ? '_blank' : ''
+    const rel = $derived(external ? 'noopener noreferrer nofollow' : '')
+    const target = $derived(external ? '_blank' : '')
 </script>
 
 <a {href} class="button" {rel} {target}>

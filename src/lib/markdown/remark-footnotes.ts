@@ -59,12 +59,30 @@ function remarkFootnotes() {
                         firstChild.type === 'text' &&
                         /^\[\^[^\]]+\]:\s*/.test((firstChild as TextNode).value)
                     ) {
-                        // This is a footnote definition
+                        // This is a footnote definition. Important: the markdown parser may
+                        // split the paragraph into multiple nodes (e.g. emphasis from `_and_`),
+                        // so we must keep *all* remaining children, not just the first text node.
                         const match = (firstChild as TextNode).value.match(
                             /^\[\^([^\]]+)\]:\s*(.*)$/
                         )
                         if (match) {
                             const [, identifier, content] = match
+                            const remainingChildren: Node[] = []
+
+                            // Keep the remainder of the first text node (after the `[^id]: ` prefix)
+                            if (content) {
+                                remainingChildren.push({
+                                    type: 'text',
+                                    value: content,
+                                } as TextNode)
+                            }
+
+                            // Preserve any additional inline nodes in the paragraph (emphasis, links, etc.)
+                            if (node.children.length > 1) {
+                                remainingChildren.push(
+                                    ...node.children.slice(1)
+                                )
+                            }
 
                             // Create footnote definition node
                             const footnoteDef: FootnoteDefinition = {
@@ -74,12 +92,7 @@ function remarkFootnotes() {
                                 children: [
                                     {
                                         type: 'paragraph',
-                                        children: [
-                                            {
-                                                type: 'text',
-                                                value: content,
-                                            } as TextNode,
-                                        ],
+                                        children: remainingChildren,
                                     } as ParagraphNode,
                                 ],
                             }
@@ -110,9 +123,25 @@ function remarkFootnotes() {
                             node.children[1].type === 'text' &&
                             (node.children[1] as TextNode).value.startsWith(':')
                         ) {
+                            // Same issue as the text-node path: markdown may emit additional
+                            // inline nodes after the initial `: ...` text (e.g. emphasis from `_and_`).
+                            const remainingChildren: Node[] = []
                             const content = (node.children[1] as TextNode).value
                                 .substring(1)
-                                .trim() // Remove the colon and trim
+                                .trimStart() // Remove the colon and keep spacing consistent
+
+                            if (content) {
+                                remainingChildren.push({
+                                    type: 'text',
+                                    value: content,
+                                } as TextNode)
+                            }
+
+                            if (node.children.length > 2) {
+                                remainingChildren.push(
+                                    ...node.children.slice(2)
+                                )
+                            }
 
                             // Create footnote definition node
                             const footnoteDef: FootnoteDefinition = {
@@ -122,12 +151,7 @@ function remarkFootnotes() {
                                 children: [
                                     {
                                         type: 'paragraph',
-                                        children: [
-                                            {
-                                                type: 'text',
-                                                value: content,
-                                            } as TextNode,
-                                        ],
+                                        children: remainingChildren,
                                     } as ParagraphNode,
                                 ],
                             }

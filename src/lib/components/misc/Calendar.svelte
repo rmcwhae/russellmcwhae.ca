@@ -13,7 +13,7 @@
     /** @type {Props} */
     let { filename, purchase = false, children } = $props()
 
-    const href = '/pdf/' + filename
+    const href = $derived('/pdf/' + filename)
 </script>
 
 <section>

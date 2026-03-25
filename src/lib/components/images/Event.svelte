@@ -3,7 +3,10 @@
 
     let { eventName, title, date, count, featuredImage } = $props()
 
-    const { name, filePath, width, height } = featuredImage
+    const name = $derived(featuredImage?.name)
+    const filePath = $derived(featuredImage?.filePath)
+    const width = $derived(featuredImage?.width)
+    const height = $derived(featuredImage?.height)
 </script>
 
 <section>

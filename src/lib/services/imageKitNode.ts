@@ -38,9 +38,10 @@ interface ListFilesOptions {
     [key: string]: string | number | boolean | undefined
 }
 
-function isFile(
-    item: { filePath?: string; folderPath?: string }
-): item is { filePath: string; url?: string; [key: string]: unknown } {
+function isFile(item: {
+    filePath?: string
+    folderPath?: string
+}): item is { filePath: string; url?: string; [key: string]: unknown } {
     return 'filePath' in item && typeof item.filePath === 'string'
 }
 
@@ -74,7 +75,11 @@ export async function listFiles(
                 | 'DESC_RELEVANCE'
                 | undefined,
             type: options.type as 'file' | 'folder' | 'all' | undefined,
-            fileType: options.fileType as 'all' | 'image' | 'non-image' | undefined,
+            fileType: options.fileType as
+                | 'all'
+                | 'image'
+                | 'non-image'
+                | undefined,
             searchQuery: options.searchQuery as string | undefined,
         })
 

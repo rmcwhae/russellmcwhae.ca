@@ -1,7 +1,7 @@
 <script>
     let { category } = $props()
 
-    const href = '/journal/category/' + category
+    const href = $derived('/journal/category/' + category)
 </script>
 
 <span>
