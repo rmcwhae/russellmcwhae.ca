@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2026
 
+- _No More Mr. Nice Guy: A Proven Plan For Getting What You Want In Love, Sex, And Life_ by Robert A. Glover
 - _Murder in Mesopotamia_ by Agatha Christie
 - _The Darkest White: A Mountain Legend and the Avalanche That Took Him_ by Eric Blehm
 - _Freakonomics: A Rogue Economist Explores the Hidden Side of Everything_ by Steven Levitt and Stephen J. Dubner (audiobook)
