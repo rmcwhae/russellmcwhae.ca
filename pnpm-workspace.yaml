@@ -1,0 +1,9 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@vercel/speed-insights': true
+  esbuild: true
+  sharp: true
+
+overrides:
+  'cookie@<0.7.0': '>=0.7.0'
+  yaml: '>=2.8.3'
