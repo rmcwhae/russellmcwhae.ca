@@ -15,8 +15,10 @@
     let { post, archive = false, firstInYear = false, featured = false } =
         $props()
 
-    let { href, title, description, date, readingTime, category } =
+    let { href, title, description, preview, date, readingTime, category } =
         $derived(post)
+
+    let featuredPreview = $derived(featured ? preview || description : description)
 </script>
 
 <section
@@ -43,8 +45,11 @@
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
         </h3>
     {/if}
-    {#if description}
-        <p class:big={featured}>{@html preventLastTwoWordWrap(description)}</p>
+    {#if featuredPreview}
+        <p class:big={featured}>
+            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}
+                <a {href}>Continue Reading →</a>{/if}
+        </p>
     {/if}
     {#if date || readingTime}
         <div class="sub entry-meta">

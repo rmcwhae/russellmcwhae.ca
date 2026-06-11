@@ -24,7 +24,7 @@ a {
     }
 }
 
-:is(article, .flow, .journal-intro)
+:is(article, .flow, .journal-intro, section.featured)
     :is(p, li, blockquote)
     a:not(.button, .no-shadow, .hover-underline-animation, .category-pill) {
     color: var(--link-color);
