@@ -7,6 +7,8 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
+    import StatusPill from '$lib/components/journal/StatusPill.svelte'
+    import { isLongRead } from '$lib/constants/journal'
 
     let { data } = $props()
 
@@ -19,15 +21,21 @@
     let relatedPosts = $derived(data.relatedPosts)
 
     const SvelteComponent = $derived(component)
+    let longRead = $derived(isLongRead(readingTime))
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
 
 <header>
     <div class="entry-category">
-        {#if category}
-            <CategoryLink {category} />
-        {/if}
+        <div class="entry-category-leading">
+            {#if category}
+                <CategoryLink {category} />
+            {/if}
+            {#if longRead}
+                <StatusPill variant="long-read" />
+            {/if}
+        </div>
         <div class="sub entry-meta">
             <Date {date} />
             &middot;
@@ -76,6 +84,12 @@
         margin: 0;
     }
     header .entry-category {
+        align-items: center;
+        gap: var(--s-2);
+        flex-wrap: wrap;
+    }
+    header .entry-category-leading {
+        display: flex;
         align-items: center;
         gap: var(--s-2);
         flex-wrap: wrap;
