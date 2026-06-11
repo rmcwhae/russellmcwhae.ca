@@ -37,8 +37,8 @@
     <div class="archive">
         {#each postsByYear as [year, yearPosts] (year)}
             <section class="year-group">
-                <h4 class="mt-3">{year}</h4>
-                <div class="archive-list">
+                <h4 class="year-label">{year}</h4>
+                <div class="year-posts">
                     {#each yearPosts as post, i (post.slug)}
                         <JournalEntry {post} archive firstInYear={i === 0} />
                     {/each}
@@ -55,8 +55,33 @@
 {/if}
 
 <style lang="scss">
-    .archive-list {
+    @use '../../scss/breakpoints' as *;
+
+    .year-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--s-1);
+    }
+
+    .year-group + .year-group {
+        margin-top: var(--s3);
+    }
+
+    .year-label {
+        margin: 0;
+    }
+
+    .year-posts {
         display: flex;
         flex-direction: column;
+        min-width: 0;
+    }
+
+    @include for-tablet-landscape-up {
+        .year-group {
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: var(--s2);
+            align-items: start;
+        }
     }
 </style>

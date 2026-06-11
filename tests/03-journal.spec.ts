@@ -11,7 +11,7 @@ test.describe('Journal Page', () => {
         await expect(page.locator('.journal.restricted-width')).toBeVisible()
 
         // Check welcome text
-        await expect(page.locator('p').first()).toContainText(
+        await expect(page.locator('.journal-intro p')).toContainText(
             'Welcome to my online journal'
         )
     })
@@ -20,7 +20,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         await expect(page.locator('.archive').first()).toBeVisible()
-        await expect(page.locator('.year-group h4').first()).toBeVisible()
+        await expect(page.locator('.year-group .year-label').first()).toBeVisible()
         await expect(page.locator('.year-group section').first()).toBeVisible()
     })
 
@@ -185,9 +185,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Get all journal entry dates
-        const entryDates = await page
-            .locator('section .entry-meta time')
-            .allTextContents()
+        const entryDates = await page.locator('section time').allTextContents()
 
         if (entryDates.length > 1) {
             // Convert dates to Date objects for comparison
