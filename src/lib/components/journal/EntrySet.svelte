@@ -48,7 +48,7 @@
     </div>
 {:else}
     <div class="two-col-grid">
-        {#each posts as post (post.slug)}
+        {#each posts as post (post.slug ?? post.href)}
             <JournalEntry {post} />
         {/each}
     </div>
