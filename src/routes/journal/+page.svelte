@@ -36,7 +36,7 @@
     .journal {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--s2);
+        gap: var(--s1);
     }
 
     .journal-intro p {
@@ -49,6 +49,12 @@
 
     .count {
         text-align: left;
+    }
+
+    @include for-tablet-landscape-down {
+        .journal-main :global(.year-group:first-child h4) {
+            margin-top: var(--s1);
+        }
     }
 
     @include for-tablet-landscape-up {
