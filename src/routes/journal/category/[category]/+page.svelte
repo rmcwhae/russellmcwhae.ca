@@ -15,9 +15,9 @@
 <div class="restricted-width">
     <h2 class="mb-s0">Posts categorized as “{category}”</h2>
     <p class="mb-2">
-        <a href="/journal">All posts</a><span>|</span>Other categories:
+        <a href="/journal">← All posts</a><span>|</span>Other categories:
         {#each otherCategories as otherCategory, i (otherCategory)}
-            <CategoryLink category={otherCategory} />{#if i !== otherCategories.length - 1}<span>|</span>{/if}
+            <CategoryLink category={otherCategory} />{#if i !== otherCategories.length - 1}<span></span>{/if}
         {/each}
     </p>
 
