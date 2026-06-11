@@ -1,13 +1,24 @@
 <script>
+    import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
     let { data } = $props()
     let posts = $derived(data.posts)
     let totalWordCount = $derived(data.totalWordCount)
+    let featuredPost = $derived(posts[0])
+    let remainingPosts = $derived(posts.slice(1))
 </script>
 
 <SEO title="Journal" />
+
+{#if featuredPost}
+    <section class="featured-article full-bleed">
+        <div class="featured-article-inner restricted-width">
+            <JournalEntry post={featuredPost} featured />
+        </div>
+    </section>
+{/if}
 
 <div class="journal restricted-width">
     <aside class="journal-intro">
@@ -24,7 +35,7 @@
     </aside>
 
     <div class="journal-main">
-        <JournalEntrySet {posts} layout="archive" />
+        <JournalEntrySet posts={remainingPosts} layout="archive" />
 
         <p class="count sub mt-2">Total written words: {totalWordCount}</p>
     </div>
@@ -32,6 +43,17 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
+
+    .featured-article {
+        margin-bottom: var(--s3);
+        padding: var(--s3) 0 var(--s3);
+        border-top: 1px solid var(--light-grey);
+        border-bottom: 1px solid var(--light-grey);
+
+        @include for-tablet-landscape-up {
+            padding: var(--s4) 0 var(--s4);
+        }
+    }
 
     .journal {
         display: grid;
