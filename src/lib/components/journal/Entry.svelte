@@ -48,6 +48,19 @@
     h3 {
         margin: 0;
         line-height: 1.2;
+
+        a {
+            transition: none;
+
+            &:hover {
+                color: var(--link-color-hover);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--link-color);
+                outline-offset: 2px;
+            }
+        }
     }
     p {
         margin: 0;
