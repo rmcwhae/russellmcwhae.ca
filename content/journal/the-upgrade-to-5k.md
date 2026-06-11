@@ -1,11 +1,12 @@
 ---
-title: The Upgrade to 5K: LG 27MD5KL-B Review
+title: 'The Upgrade to 5K: LG 27MD5KL-B Review'
 description: A twelve-year dream has come true.
 author: Russell McWhae
 date: 2026-06-11
 draft: 0
 category: Tech
 ---
+
 I have had my eyes on 5K displays ever since they first came into existence. In October 2014, Apple launched the 27-inch “iMac with Retina 5K display,” the highest-resolution desktop-sized screen ever made. I remember ogling the crispness of these displays at the Apple Store in Calgary.
 
 Retina displays have pixels so small that they are effectively invisible to the naked eye. The first such display came with the iPhone 4 in June 2010, a revolutionary advancement which doubled the linear pixel density of its predecessor, the iPhone 3GS, by jumping from 320 x 480 pixels to 640 x 960 pixels on the same 3.5-inch screen. Interface elements were drawn at twice their previous dimensions in order to appear at the same physical size. This means higher resolution and sharpness—the magic of Retina displays.
@@ -32,9 +33,9 @@ My 27-inch 4K (3840 x 2160) monitor has a pixel density of 163 PPI, also below t
 
 On my 4K display, I run it in “2560 x 1440” mode, which comes with the warning “Using a scaled resolution may affect performance.” In this scaled mode, macOS renders a 5120 x 2880 virtual canvas, then downsamples the image on the fly to 3840 x 2160 to match the display’s physical resolution. This is known as non-integer scaling: 3840 pixels divided by the target width of 2560 pixels is 1.5, a floating-point conversion. With 5K, the virtual 5120 x 2880 canvas maps directly onto the display’s 5120 x 2880 physical resolution, requiring no such conversion.
 
-With 4K, the secondary downsampling step puts additional overhead on the GPU, meaning that a 5K screen—with more physical pixels—is counter-intuitively *more* performant than running a 4K screen at a scaled resolution. How much is the impact? AppleInsider [estimates](https://appleinsider.com/inside/macos/tips/what-is-display-scaling-on-mac-and-why-you-probably-shouldnt-worry-about-it) a negligible 1–3% drop in GPU performance. Anecdotally, I have used a scaled resolution on my 4K screen for a decade now without issue, even when using older hardware like my 2013 15-inch MacBook Pro.
+With 4K, the secondary downsampling step puts additional overhead on the GPU, meaning that a 5K screen—with more physical pixels—is counter-intuitively _more_ performant than running a 4K screen at a scaled resolution. How much is the impact? AppleInsider [estimates](https://appleinsider.com/inside/macos/tips/what-is-display-scaling-on-mac-and-why-you-probably-shouldnt-worry-about-it) a negligible 1–3% drop in GPU performance. Anecdotally, I have used a scaled resolution on my 4K screen for a decade now without issue, even when using older hardware like my 2013 15-inch MacBook Pro.
 
-Furthermore, note that certain Mac laptops come with scaled resolutions *by default*. For example, my 2019 16-inch MacBook Pro came with a native resolution of 3072 x 1920. Exact pixel doubling would mean a workspace that “looks like” 1536 x 960, yet Apple defaulted the “looks like” resolution to 1792 x 1120 in order to increase the apparent screen real estate. I actually overrode this default to use “looks like” 1536 x 960 as I found the interface elements too small at the higher-resolution setting.
+Furthermore, note that certain Mac laptops come with scaled resolutions _by default_. For example, my 2019 16-inch MacBook Pro came with a native resolution of 3072 x 1920. Exact pixel doubling would mean a workspace that “looks like” 1536 x 960, yet Apple defaulted the “looks like” resolution to 1792 x 1120 in order to increase the apparent screen real estate. I actually overrode this default to use “looks like” 1536 x 960 as I found the interface elements too small at the higher-resolution setting.
 
 Essentially, Retina resolution comes down to a combination of a display’s size, pixel density, and viewing distances. If the underlying pixel density is high enough, as in Apple’s laptops, using a scaled resolution is fine. If, as with a 4K 27-inch monitor, the pixel density cannot match that of an equivalent pixel-doubled display, non-integer scaling will result in text and interface elements that appear slightly more pixelated.
 
@@ -60,21 +61,21 @@ A higher-end sibling model was announced too: the 27-inch 5K Studio Display XDR.
 
 Many third-party manufacturers have started selling 5K displays. Prices range from $830 to $1,729, all less than Apple’s offerings. Currently shipping options include:
 
-* **ASUS ProArt Display PA27JCV** ($999): 60Hz IPS, Mac-focused
-* **ASUS ROG Strix 5K XG27JCG** ($999): dual-mode IPS, 5K@180Hz / 1440p@330Hz, gaming-focused
-* **BenQ PD2730S** ($1,729): 60Hz IPS, Thunderbolt 4
-* **Samsung ViewFinity S9** (~$1,000): 60Hz IPS, Thunderbolt 4 (harder to find)
-* **ViewSonic ColorPro VP2788-5K** ($1,170): 60Hz IPS, Thunderbolt 4
+- **ASUS ProArt Display PA27JCV** ($999): 60Hz IPS, Mac-focused
+- **ASUS ROG Strix 5K XG27JCG** ($999): dual-mode IPS, 5K@180Hz / 1440p@330Hz, gaming-focused
+- **BenQ PD2730S** ($1,729): 60Hz IPS, Thunderbolt 4
+- **Samsung ViewFinity S9** (~$1,000): 60Hz IPS, Thunderbolt 4 (harder to find)
+- **ViewSonic ColorPro VP2788-5K** ($1,170): 60Hz IPS, Thunderbolt 4
 
 A few other 5K monitors have either been announced or are not yet widely available (at least in Canada):
 
-* **AOC AGON PRO AGP277KX** (price unknown): dual-mode IPS, 5K@180Hz / 1440p@350Hz
-* **Hisense GX Ultra** (price unknown): glossy dual-mode mini-LED, 5K@180Hz / 1440p@330Hz, China only
-* **KTC H27P3** (~$830): dual-mode IPS, 5K@60Hz / 1440p@120Hz
-* **Kuycon G27P** (~$1,250): 60Hz IPS
-* **LG Ultra Gear Evo AI 27GM950B-B** (~$1,400): dual-mode mini-LED, 5K@180Hz / 1440p@330Hz
-* **MSI MAG 271KPD7** (price unknown): dual-mode IPS, 5K@75Hz / 1440p@300Hz
-* **MSI MPG 271KRAW16** (price unknown): dual-mode mini-LED, 5K@165Hz / 1440p@330Hz
+- **AOC AGON PRO AGP277KX** (price unknown): dual-mode IPS, 5K@180Hz / 1440p@350Hz
+- **Hisense GX Ultra** (price unknown): glossy dual-mode mini-LED, 5K@180Hz / 1440p@330Hz, China only
+- **KTC H27P3** (~$830): dual-mode IPS, 5K@60Hz / 1440p@120Hz
+- **Kuycon G27P** (~$1,250): 60Hz IPS
+- **LG Ultra Gear Evo AI 27GM950B-B** (~$1,400): dual-mode mini-LED, 5K@180Hz / 1440p@330Hz
+- **MSI MAG 271KPD7** (price unknown): dual-mode IPS, 5K@75Hz / 1440p@300Hz
+- **MSI MPG 271KRAW16** (price unknown): dual-mode mini-LED, 5K@165Hz / 1440p@330Hz
 
 If you can find one—I could not—KTC’s H27P3 is the best value offering of all the 5K displays, apparently available for as little as $830. This list is not comprehensive. The site [RetinaDisplays.com](https://retinadisplays.com/) maintains a list of 4K, 5K, and 6K monitors that meet Apple’s 218+ PPI Retina requirement.
 
@@ -84,13 +85,13 @@ I am particularly intrigued by the LG Ultra Gear Evo AI 27GM950B-B, estimated to
 
 The demand for affordable 5K monitors is high enough that a fascinating cottage industry has developed. It has become possible to convert many of the 2014–2019 5K iMacs into standalone displays by gutting their old internals and replacing them with aftermarket conversion boards. Quinn Nelson of Snazzy Labs made a video about this, [I Turned a $200 iMac Into a $1,600 Studio Display!](https://www.youtube.com/watch?v=5q3SdtiLAPk) (USD prices):
 
-> Non-integer scaling on macOS drives me insane. Text at 4K on a 27-inch display is just a little fuzzy, enough that it may *vuelve loco* [Spanish for going crazy]. And I know that I’m pathetic, but, you know, I want an Apple monitor, ideally on the cheap. The thing is—I’ve already got one. It’s just inconveniently attached to this worthlessly old and slow 2014 computer.
+> Non-integer scaling on macOS drives me insane. Text at 4K on a 27-inch display is just a little fuzzy, enough that it may _vuelve loco_ [Spanish for going crazy]. And I know that I’m pathetic, but, you know, I want an Apple monitor, ideally on the cheap. The thing is—I’ve already got one. It’s just inconveniently attached to this worthlessly old and slow 2014 computer.
 
 I saw someone selling such a converted iMac in Vancouver for $600. It went quickly.
 
 Many of the 5K monitors shipping today still use 60Hz IPS panels, similar to the original 5K iMac. Apple’s Studio Display is the most egregious example of this: in 2026, spending over $2,000 on panel technology largely unchanged from 2014 makes little sense.
 
-If so many new 5K displays are based on dated hardware, why not buy *dated hardware*?
+If so many new 5K displays are based on dated hardware, why not buy _dated hardware_?
 
 ## LG 27MD5KL-B Review
 
@@ -118,12 +119,12 @@ I have set up both of my 27-inch LG monitors side by side. On the left is the 5K
 
 This highlights some ergonomic issues with dual 27-inch displays. As the displays are so wide, having them both aligned in a straight line means having to twist your neck quite far to see the extreme edges. To alleviate this, you can either angle them toward you (janky unless you have a corner desk), position one screen vertically (it would need to be my primary PC screen, which isn’t ideal), or try my dual-peripherals approach (more items on the desk). Each of these options involves some amount of compromise, which is likely the reason why ultrawide monitors are gaining popularity.
 
-***
+---
 
 ## Wrap-up
 
 A truly perfect monitor does not exist. Given today’s technology, my specs for such a hypothetical monitor would be a 32-inch 6K OLED monitor (even deeper blacks than mini-LED) with a high refresh rate (180Hz or more), and Thunderbolt 5 connectivity. Obviously, the price on such a monitor—especially if made by Apple—would be outrageous.
 
-Even if such a monitor existed, I wouldn’t pay for it. Given the demonstrated longevity of my old LG 4K monitor—not to mention those DIY 5K iMac conversions—I have no qualms about buying used. Readers of previous musings such as *[Longitudinal Tech Reviews](/journal/longitudinal-tech-reviews)* and *[Behind the Curve](/journal/behind-the-curve)* will know of my propensity for value and staying power over novelty. My MO for tech purchases—and essentially all other purchases, too—has always been to maximize utility while minimizing cost.
+Even if such a monitor existed, I wouldn’t pay for it. Given the demonstrated longevity of my old LG 4K monitor—not to mention those DIY 5K iMac conversions—I have no qualms about buying used. Readers of previous musings such as _[Longitudinal Tech Reviews](/journal/longitudinal-tech-reviews)_ and _[Behind the Curve](/journal/behind-the-curve)_ will know of my propensity for value and staying power over novelty. My MO for tech purchases—and essentially all other purchases, too—has always been to maximize utility while minimizing cost.
 
 In this light, upgrading from a ten-year-old 4K monitor to a seven-year-old 5K monitor is the perfect embodiment of my tech philosophy. It ticks every box: no retail sticker shock, tangible usability improvements, and the satisfaction of over a decade of large-screen Retina expectations. This 5K display is one of my favourite tech purchases in years.
