@@ -41,7 +41,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Get the href attribute
@@ -61,7 +61,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Click the entry
@@ -82,7 +82,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Click the entry
@@ -104,18 +104,18 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Click the entry
             await firstEntry.click()
 
             // Check that publication date is displayed
-            await expect(page.locator('header .sub').first()).toBeVisible()
+            await expect(page.locator('header .entry-meta').first()).toBeVisible()
 
             // Check that date is in a reasonable format
             const dateText = await page
-                .locator('header .sub')
+                .locator('header .entry-meta time')
                 .first()
                 .textContent()
             expect(dateText).toMatch(/\w+ \d+, \d{4}/)
@@ -126,7 +126,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Click the entry
@@ -149,7 +149,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Find the first journal entry link
-        const firstEntry = page.locator('section a').first()
+        const firstEntry = page.locator('section h3 a').first()
 
         if (await firstEntry.isVisible()) {
             // Click the entry
@@ -185,7 +185,9 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Get all journal entry dates
-        const entryDates = await page.locator('section .sub').allTextContents()
+        const entryDates = await page
+            .locator('section .entry-meta time')
+            .allTextContents()
 
         if (entryDates.length > 1) {
             // Convert dates to Date objects for comparison

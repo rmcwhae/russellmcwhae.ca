@@ -24,18 +24,18 @@
 <SEO title={'Journal » ' + title} {description} />
 
 <header>
-    <div class="sub">
-        <Date {date} />
-    </div>
+    {#if category}
+        <div class="entry-category">
+            <CategoryLink {category} />
+        </div>
+    {/if}
     <h1><NoWrapLastTwoWords text={title} /></h1>
     {#if description}
         <p><NoWrapLastTwoWords text={description} /></p>
     {/if}
-    <div class="sub">
-        {#if category}
-            <CategoryLink {category} />
-            &middot;
-        {/if}
+    <div class="sub entry-meta">
+        <Date {date} />
+        &middot;
         <span class="nowrap">{readingTime.words} words</span>
         &middot;
         <span class="nowrap">{readingTime.text}</span>

@@ -181,3 +181,11 @@ article strong {
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+.entry-category {
+    display: flex;
+}
+
+header .entry-category {
+    justify-content: center;
+}
