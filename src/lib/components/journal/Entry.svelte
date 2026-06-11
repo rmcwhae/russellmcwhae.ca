@@ -12,30 +12,22 @@
      */
 
     /** @type {Props} */
-    let { post, archive = false, firstInYear = false, featured = false } =
-        $props()
+    let {
+        post,
+        archive = false,
+        firstInYear = false,
+        featured = false,
+    } = $props()
 
     let { href, title, description, preview, date, readingTime, category } =
         $derived(post)
 
-    let featuredPreview = $derived(featured ? preview || description : description)
+    let featuredPreview = $derived(
+        featured ? preview || description : description
+    )
 </script>
 
-<section
-    class:archive
-    class:first-in-year={firstInYear}
-    class:featured
->
-    {#if category || featured}
-        <div class="entry-category">
-            {#if category}
-                <CategoryLink {category} />
-            {/if}
-            {#if featured}
-                <span class="latest-label">Latest</span>
-            {/if}
-        </div>
-    {/if}
+<section class:archive class:first-in-year={firstInYear} class:featured>
     {#if featured}
         <h2>
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
@@ -45,24 +37,33 @@
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
         </h3>
     {/if}
+    {#if category || date || readingTime}
+        <div class="entry-category">
+            <div class="entry-category-leading">
+                {#if category}
+                    <CategoryLink {category} />
+                {/if}
+            </div>
+            {#if date || readingTime}
+                <div class="sub entry-meta">
+                    {#if date}
+                        <Date {date} />
+                    {/if}
+                    {#if date && readingTime}
+                        &middot;
+                    {/if}
+                    {#if readingTime}
+                        <span>{readingTime.text}</span>
+                    {/if}
+                </div>
+            {/if}
+        </div>
+    {/if}
     {#if featuredPreview}
         <p class:big={featured}>
             {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}
                 <a {href}>Continue Reading →</a>{/if}
         </p>
-    {/if}
-    {#if date || readingTime}
-        <div class="sub entry-meta">
-            {#if date}
-                <Date {date} />
-            {/if}
-            {#if date && readingTime}
-                &middot;
-            {/if}
-            {#if readingTime}
-                <span>{readingTime.text}</span>
-            {/if}
-        </div>
     {/if}
 </section>
 
@@ -90,6 +91,20 @@
     p {
         margin: 0;
     }
+    .entry-category {
+        align-items: center;
+        gap: var(--s-2);
+        flex-wrap: wrap;
+    }
+    .entry-category-leading {
+        display: flex;
+        align-items: center;
+        gap: var(--s-2);
+        min-width: 0;
+    }
+    .entry-meta {
+        white-space: nowrap;
+    }
     section {
         display: flex;
         flex-direction: column;
@@ -101,19 +116,6 @@
         gap: var(--s-1);
         padding: 0;
         border-bottom: none;
-
-        .entry-category {
-            align-items: center;
-            gap: var(--s-2);
-        }
-
-        .latest-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            line-height: 1.3;
-            white-space: nowrap;
-            color: var(--text-color);
-        }
 
         h2 {
             font-size: max(3em, 1.953rem);

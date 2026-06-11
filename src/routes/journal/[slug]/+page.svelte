@@ -24,22 +24,22 @@
 <SEO title={'Journal » ' + title} {description} />
 
 <header>
-    {#if category}
-        <div class="entry-category">
-            <CategoryLink {category} />
-        </div>
-    {/if}
     <h1><NoWrapLastTwoWords text={title} /></h1>
+    <div class="entry-category">
+        {#if category}
+            <CategoryLink {category} />
+        {/if}
+        <div class="sub entry-meta">
+            <Date {date} />
+            &middot;
+            <span class="nowrap">{readingTime.words} words</span>
+            &middot;
+            <span class="nowrap">{readingTime.text}</span>
+        </div>
+    </div>
     {#if description}
         <p><NoWrapLastTwoWords text={description} /></p>
     {/if}
-    <div class="sub entry-meta">
-        <Date {date} />
-        &middot;
-        <span class="nowrap">{readingTime.words} words</span>
-        &middot;
-        <span class="nowrap">{readingTime.text}</span>
-    </div>
 </header>
 
 <div class="wrapper">
@@ -74,6 +74,14 @@
     h1,
     p {
         margin: 0;
+    }
+    header .entry-category {
+        align-items: center;
+        gap: var(--s-2);
+        flex-wrap: wrap;
+    }
+    header .entry-meta {
+        white-space: nowrap;
     }
     article {
         margin: 0 auto;
