@@ -36,7 +36,7 @@
     {/if}
     {#if featured}
         <h2>
-            <a {href}>{title}</a>
+            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
         </h2>
     {:else}
         <h3>
@@ -113,7 +113,6 @@
         h2 {
             font-size: max(3em, 1.953rem);
             line-height: 1.1;
-            // white-space: nowrap;
         }
 
         @include for-tablet-landscape-up {
