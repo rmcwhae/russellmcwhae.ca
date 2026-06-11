@@ -1,5 +1,8 @@
 {
     "regions": ["pdx1"],
     "buildCommand": "pnpm run build",
-    "framework": "sveltekit"
+    "framework": "sveltekit",
+    "env": {
+        "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    }
 }

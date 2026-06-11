@@ -49,6 +49,7 @@
         "vite": "^8.0.16"
     },
     "type": "module",
+    "packageManager": "pnpm@10.28.0",
     "dependencies": {
         "@imagekit/javascript": "^5.4.1",
         "@vercel/analytics": "^2.0.1",
