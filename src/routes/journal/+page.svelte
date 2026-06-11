@@ -31,12 +31,11 @@
         <p class="sub">
             Also see my <a href="/reading-list">reading list</a>.
         </p>
+        <p class="count sub">Total written words: {totalWordCount}</p>
     </aside>
 
     <div class="journal-main">
         <JournalEntrySet posts={remainingPosts} layout="archive" />
-
-        <p class="count sub mt-2">Total written words: {totalWordCount}</p>
     </div>
 </div>
 
