@@ -8,7 +8,7 @@ test.describe('Journal Page', () => {
         await expect(page).toHaveTitle(/Journal/)
 
         // Check that the page has content
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.journal.restricted-width')).toBeVisible()
 
         // Check welcome text
         await expect(page.locator('p').first()).toContainText(
@@ -16,14 +16,12 @@ test.describe('Journal Page', () => {
         )
     })
 
-    test('journal displays featured post', async ({ page }) => {
+    test('journal displays posts grouped by year', async ({ page }) => {
         await page.goto('/journal')
 
-        // Check that featured post section exists
-        await expect(page.locator('.featured').first()).toBeVisible()
-
-        // Check that there's a featured journal entry
-        await expect(page.locator('.featured section').first()).toBeVisible()
+        await expect(page.locator('.archive').first()).toBeVisible()
+        await expect(page.locator('.year-group h4').first()).toBeVisible()
+        await expect(page.locator('.year-group section').first()).toBeVisible()
     })
 
     test('journal displays word count', async ({ page }) => {
@@ -175,12 +173,12 @@ test.describe('Journal Page', () => {
         // Test desktop view
         await page.setViewportSize({ width: 1200, height: 800 })
         await page.goto('/journal')
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.journal.restricted-width')).toBeVisible()
 
         // Test mobile view
         await page.setViewportSize({ width: 375, height: 667 })
         await page.goto('/journal')
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.journal.restricted-width')).toBeVisible()
     })
 
     test('journal entries are sorted by date', async ({ page }) => {
