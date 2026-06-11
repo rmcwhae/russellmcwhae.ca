@@ -18,6 +18,9 @@
             generation and ideas are my own. I hope you’ll join me for a glimpse
             into my head.
         </p>
+        <p class="sub">
+            Also see my <a href="/reading-list">reading list</a>.
+        </p>
     </aside>
 
     <div class="journal-main">
@@ -38,6 +41,10 @@
 
     .journal-intro p {
         margin: 0;
+    }
+
+    .journal-intro p + p {
+        margin-top: var(--s1);
     }
 
     .count {
@@ -64,7 +71,12 @@
             line-height: 1.5;
         }
 
-        .journal-intro p {
+        .journal-intro p:first-child {
+            padding-bottom: var(--s0);
+        }
+
+        .journal-intro p + p {
+            margin-top: 0;
             border-top: 1px solid var(--light-grey);
             padding-top: var(--s0);
         }

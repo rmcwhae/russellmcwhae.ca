@@ -11,9 +11,13 @@ test.describe('Journal Page', () => {
         await expect(page.locator('.journal.restricted-width')).toBeVisible()
 
         // Check welcome text
-        await expect(page.locator('.journal-intro p')).toContainText(
+        await expect(page.locator('.journal-intro p').first()).toContainText(
             'Welcome to my online journal'
         )
+
+        await expect(
+            page.locator('.journal-intro a[href="/reading-list"]')
+        ).toBeVisible()
     })
 
     test('journal displays posts grouped by year', async ({ page }) => {
