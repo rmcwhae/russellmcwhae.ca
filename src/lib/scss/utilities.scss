@@ -134,6 +134,7 @@ blockquote > * + * {
     padding-left: var(--s-1);
     padding-right: var(--s-1);
     display: inline-block;
+    text-decoration: none;
 }
 .toc-level-1 {
     font-size: 0.9em;

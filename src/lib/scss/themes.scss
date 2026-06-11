@@ -5,6 +5,9 @@
     --high-contrast-color: black;
     --light-grey: rgb(218, 218, 218);
     --medium-grey: #888;
+    --link-color: #4a6485;
+    --link-color-hover: #3a5270;
+    --link-underline-color: rgba(74, 100, 133, 0.35);
 }
 
 @mixin dark-theme {
@@ -14,6 +17,9 @@
     --text-color: rgb(172, 172, 172);
     --light-grey: rgb(70, 70, 70);
     --medium-grey: #999;
+    --link-color: #8eb0d4;
+    --link-color-hover: #a8c4e8;
+    --link-underline-color: rgba(142, 176, 212, 0.45);
 }
 
 :root {
