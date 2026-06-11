@@ -44,7 +44,7 @@
         top: 0;
         left: 0;
         height: 0.25rem;
-        background-color: var(--medium-grey);
+        background-color: var(--link-color);
         z-index: 50;
         transition: width ease-out 0.5s;
         width: 0;
