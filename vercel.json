@@ -1,8 +1,6 @@
 {
     "regions": ["pdx1"],
     "buildCommand": "pnpm run build",
-    "framework": "sveltekit",
-    "env": {
-        "ENABLE_EXPERIMENTAL_COREPACK": "1"
-    }
+    "installCommand": "corepack enable && corepack prepare pnpm@10.28.0 --activate && pnpm install --frozen-lockfile",
+    "framework": "sveltekit"
 }
