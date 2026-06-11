@@ -1,5 +1,6 @@
 <script>
     import { browser } from '$app/environment'
+    import { page } from '$app/state'
 
     /**
      * @typedef {Object} Props
@@ -16,12 +17,27 @@
     let headings = $state([])
     let observer
 
+    function disconnectObserver() {
+        if (observer) {
+            observer.disconnect()
+            observer = undefined
+        }
+    }
+
     function updateHeadings() {
+        disconnectObserver()
+
         const nodes = [
             ...document.querySelectorAll(
                 `article :where(${allowedHeadings.join(', ')})`
             ),
         ]
+
+        if (nodes.length === 0) {
+            headings = []
+            return
+        }
+
         const depths = nodes.map((node) => Number(node.nodeName[1]))
         const minDepth = Math.min(...depths)
 
@@ -33,28 +49,22 @@
 
         observer = new IntersectionObserver(handleIntersect)
 
-        // Track all headings that have an `id` applied
         nodes.forEach((heading) => {
             observer.observe(heading)
         })
     }
 
     $effect(() => {
-        if (browser) {
-            updateHeadings()
+        if (!browser) return
 
-            return () => {
-                if (observer) {
-                    observer.disconnect()
-                }
-            }
-        }
-    })
+        // Re-run when navigating between journal entries
+        page.url.pathname
 
-    $effect(() => {
-        if (browser) {
-            // Access page to make this reactive to page changes
-            updateHeadings()
+        updateHeadings()
+
+        return () => {
+            headings = []
+            disconnectObserver()
         }
     })
 
@@ -112,7 +122,7 @@
 {#if headings.length}
     <aside class="toc char-limit" data-test="toc">
         <ul>
-            {#each headings as heading}
+            {#each headings as heading (heading.node.id)}
                 <li
                     class="toc-level-{heading.depth}"
                     class:active={activeHeading?.node === heading.node}
