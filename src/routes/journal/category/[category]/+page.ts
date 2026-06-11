@@ -18,7 +18,9 @@ export const load: PageLoad = async ({ params }) => {
     const filteredPosts = [...posts].filter(
         (post) => post.category === category
     )
-    const allCategories = new Set(posts.map((post) => post.category))
+    const allCategories = new Set(
+        posts.map((post) => post.category).filter(Boolean)
+    )
     const otherCategories = [...allCategories].filter(
         (item) => item !== category
     )

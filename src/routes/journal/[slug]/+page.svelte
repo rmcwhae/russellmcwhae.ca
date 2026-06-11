@@ -1,6 +1,6 @@
 <script>
     import Date from '$lib/components/misc/Date.svelte'
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
+    import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
@@ -27,13 +27,15 @@
     <div class="sub">
         <Date {date} />
     </div>
-    <h1>{@html preventLastTwoWordWrap(title)}</h1>
+    <h1><NoWrapLastTwoWords text={title} /></h1>
     {#if description}
-        <p>{@html preventLastTwoWordWrap(description)}</p>
+        <p><NoWrapLastTwoWords text={description} /></p>
     {/if}
     <div class="sub">
-        <CategoryLink {category} />
-        &middot;
+        {#if category}
+            <CategoryLink {category} />
+            &middot;
+        {/if}
         <span class="nowrap">{readingTime.words} words</span>
         &middot;
         <span class="nowrap">{readingTime.text}</span>

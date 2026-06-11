@@ -1,12 +1,16 @@
 <script>
-    let { category } = $props()
+    import { resolve } from '$app/paths'
 
-    const href = $derived('/journal/category/' + category)
+    let { category } = $props()
 </script>
 
-<span>
-    <a {href}>{category}</a>
-</span>
+{#if category}
+    <span>
+        <a href={resolve('/journal/category/[category]', { category })}>
+            {category}
+        </a>
+    </span>
+{/if}
 
 <style>
     a {
