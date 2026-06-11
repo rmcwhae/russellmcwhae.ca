@@ -28,17 +28,18 @@ test.describe('Journal Page', () => {
         await expect(page.locator('.year-group section').first()).toBeVisible()
     })
 
-    test('journal displays word count', async ({ page }) => {
+    test('journal displays writing stats', async ({ page }) => {
         await page.goto('/journal')
 
-        // Check that word count is displayed
-        await expect(page.locator('.count')).toContainText(
-            'Total written words:'
-        )
+        const stats = page.locator('.journal-stats')
+        await expect(stats).toContainText('Writing since')
+        await expect(stats).toContainText(/essays?/)
+        await expect(stats).toContainText(/words/)
 
-        // Check that word count is a number
-        const wordCountText = await page.locator('.count').textContent()
-        expect(wordCountText).toMatch(/Total written words: \d+/)
+        const statsText = await stats.textContent()
+        expect(statsText).toMatch(/Writing since \d{4}/)
+        expect(statsText).toMatch(/\d[\d,]* essays?/)
+        expect(statsText).toMatch(/\d[\d,]* words/)
     })
 
     test('journal entries are clickable', async ({ page }) => {

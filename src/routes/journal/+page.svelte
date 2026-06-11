@@ -6,6 +6,9 @@
     let { data } = $props()
     let posts = $derived(data.posts)
     let totalWordCount = $derived(data.totalWordCount)
+    let essayCount = $derived(data.essayCount)
+    let writingSinceYear = $derived(data.writingSinceYear)
+    let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
     let featuredPost = $derived(posts[0])
     let remainingPosts = $derived(posts.slice(1))
 </script>
@@ -25,13 +28,17 @@
         <p>
             Welcome to my online journal, a collection of long-form thoughts on
             topics that are important to me. Text generation and ideas are my
-            own, though I do use AI for editing and refining. I hope you’ll join
-            me for a glimpse into my head.
+            own, though I do use AI for editing and refining (as of 2025). I
+            hope you’ll join me for a glimpse into my head.
         </p>
         <p class="sub">
             Also see my <a href="/reading-list">reading list</a>.
         </p>
-        <p class="count sub">Total written words: {totalWordCount}</p>
+        <ul class="journal-stats sub">
+            <li>Writing since {writingSinceYear}</li>
+            <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
+            <li>{formattedWordCount} words</li>
+        </ul>
     </aside>
 
     <div class="journal-main">
@@ -62,12 +69,19 @@
         margin: 0;
     }
 
-    .journal-intro p + p {
+    .journal-intro p + p,
+    .journal-intro p + .journal-stats {
         margin-top: var(--s1);
     }
 
-    .count {
-        text-align: left;
+    .journal-stats {
+        margin: var(--s1) 0 0;
+        padding-left: var(--s1);
+        list-style-type: disc;
+    }
+
+    .journal-stats li {
+        margin: 0;
     }
 
     @include for-tablet-landscape-up {
