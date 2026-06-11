@@ -18,9 +18,9 @@
 </script>
 
 <section class:archive class:first-in-year={firstInYear}>
-    {#if date}
-        <div class="sub">
-            <Date {date} />
+    {#if category}
+        <div class="entry-category">
+            <CategoryLink {category} />
         </div>
     {/if}
     <h3>
@@ -29,12 +29,12 @@
     {#if description}
         <p>{@html preventLastTwoWordWrap(description)}</p>
     {/if}
-    {#if category || readingTime}
+    {#if date || readingTime}
         <div class="sub entry-meta">
-            {#if category}
-                <CategoryLink {category} />
+            {#if date}
+                <Date {date} />
             {/if}
-            {#if category && readingTime}
+            {#if date && readingTime}
                 &middot;
             {/if}
             {#if readingTime}
@@ -62,8 +62,8 @@
     section.archive {
         padding-top: var(--s0);
     }
-    section.first-in-year {
-        border-top: 1px solid var(--light-grey);
+    section.archive.first-in-year {
+        padding-top: 0;
     }
 
     @media (max-width: 640px) {

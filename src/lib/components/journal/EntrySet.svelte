@@ -69,6 +69,7 @@
 
     .year-label {
         margin: 0;
+        color: var(--text-color);
     }
 
     .year-posts {
@@ -78,10 +79,26 @@
     }
 
     @include for-tablet-landscape-up {
+        .archive {
+            --pill-row-height: calc(0.9rem * 1.3 + 0.9rem * 0.3);
+        }
+
         .year-group {
             grid-template-columns: auto minmax(0, 1fr);
             gap: var(--s2);
             align-items: start;
+        }
+
+        .year-label {
+            display: flex;
+            align-items: flex-end;
+            line-height: 1;
+            height: var(--pill-row-height);
+        }
+
+        .year-group:not(:has(.entry-category)) .year-label {
+            display: block;
+            height: auto;
         }
     }
 </style>
