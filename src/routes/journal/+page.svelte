@@ -54,7 +54,7 @@
     @include for-tablet-landscape-up {
         .journal {
             grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-            gap: var(--s4);
+            gap: var(--s2);
             align-items: start;
         }
 
@@ -74,7 +74,8 @@
         }
 
         .journal-intro p {
-            margin-top: -5px;
+            border-top: 1px solid var(--light-grey);
+            padding-top: var(--s0);
         }
 
         .journal-main {
