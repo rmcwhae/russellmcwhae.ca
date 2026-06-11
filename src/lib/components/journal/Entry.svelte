@@ -129,6 +129,7 @@
     }
     section.archive {
         padding-top: var(--s0);
+        border-bottom: none;
     }
     section.archive.first-in-year {
         padding-top: 0;
