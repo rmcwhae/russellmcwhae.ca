@@ -34,15 +34,16 @@
 <style lang="scss">
     .category-pill {
         display: inline-block;
-        padding: 0.15em 0.65em;
+        padding: 0.08em 0.6em;
         border-radius: 999px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
         line-height: 1.3;
         text-decoration: none;
         white-space: nowrap;
         background-color: var(--pill-bg);
         color: var(--pill-color);
+        border: 1px solid color-mix(in srgb, var(--pill-color) 30%, transparent);
     }
 
     .category-pill:hover {

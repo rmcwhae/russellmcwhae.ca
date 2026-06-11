@@ -80,7 +80,7 @@
 
     @include for-tablet-landscape-up {
         .archive {
-            --pill-row-height: calc(0.9rem * 1.3 + 0.9rem * 0.3);
+            --pill-row-height: calc(0.85rem * 1.3 + 0.85rem * 0.24);
         }
 
         .year-group {
