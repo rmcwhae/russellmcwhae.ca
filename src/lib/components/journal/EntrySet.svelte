@@ -80,7 +80,7 @@
 
     @include for-tablet-landscape-up {
         .archive {
-            --entry-title-line-height: calc(1.536rem * 1.2);
+            --entry-meta-row-height: calc(0.85rem * 1.3 + 0.85rem * 0.16);
         }
 
         .year-group {
@@ -92,8 +92,13 @@
         .year-label {
             display: flex;
             align-items: flex-end;
-            height: var(--entry-title-line-height);
+            height: var(--entry-meta-row-height);
             line-height: 1.2;
+        }
+
+        .year-group:not(:has(.entry-category)) .year-label {
+            display: block;
+            height: auto;
         }
     }
 </style>

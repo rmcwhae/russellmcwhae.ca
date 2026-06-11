@@ -24,7 +24,6 @@
 <SEO title={'Journal » ' + title} {description} />
 
 <header>
-    <h1><NoWrapLastTwoWords text={title} /></h1>
     <div class="entry-category">
         {#if category}
             <CategoryLink {category} />
@@ -37,6 +36,7 @@
             <span class="nowrap">{readingTime.text}</span>
         </div>
     </div>
+    <h1><NoWrapLastTwoWords text={title} /></h1>
     {#if description}
         <p><NoWrapLastTwoWords text={description} /></p>
     {/if}

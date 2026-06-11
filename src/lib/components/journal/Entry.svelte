@@ -28,15 +28,6 @@
 </script>
 
 <section class:archive class:first-in-year={firstInYear} class:featured>
-    {#if featured}
-        <h2>
-            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-        </h2>
-    {:else}
-        <h3>
-            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-        </h3>
-    {/if}
     {#if category || date || readingTime}
         <div class="entry-category">
             <div class="entry-category-leading">
@@ -58,6 +49,15 @@
                 </div>
             {/if}
         </div>
+    {/if}
+    {#if featured}
+        <h2>
+            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
+        </h2>
+    {:else}
+        <h3>
+            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
+        </h3>
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
