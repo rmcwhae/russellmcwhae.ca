@@ -23,11 +23,10 @@
 <div class="journal restricted-width">
     <aside class="journal-intro">
         <p>
-            Welcome to my online journal, a collection of infrequently published,
-            long-form thoughts on topics that are important to me. While AI is
-            used solely to assist with editing and refining my work, all text
-            generation and ideas are my own. I hope you’ll join me for a glimpse
-            into my head.
+            Welcome to my online journal, a collection of long-form thoughts on
+            topics that are important to me. Text generation and ideas are my
+            own, though I do use AI for editing and refining. I hope you’ll join
+            me for a glimpse into my head.
         </p>
         <p class="sub">
             Also see my <a href="/reading-list">reading list</a>.
@@ -90,16 +89,6 @@
             grid-row: 1;
             font-size: 0.95rem;
             line-height: 1.5;
-        }
-
-        .journal-intro p:first-child {
-            padding-bottom: var(--s0);
-        }
-
-        .journal-intro p + p {
-            margin-top: 0;
-            border-top: 1px solid var(--light-grey);
-            padding-top: var(--s0);
         }
     }
 </style>
