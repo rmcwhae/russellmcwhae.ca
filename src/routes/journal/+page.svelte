@@ -47,11 +47,10 @@
     .featured-article {
         margin-bottom: var(--s3);
         padding: var(--s3) 0 var(--s3);
-        border-top: 1px solid var(--light-grey);
         border-bottom: 1px solid var(--light-grey);
 
         @include for-tablet-landscape-up {
-            padding: var(--s4) 0 var(--s4);
+            padding: var(--s3) 0 var(--s4);
         }
     }
 
