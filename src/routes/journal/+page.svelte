@@ -34,16 +34,19 @@
         <p class="sub">
             Also see my <a href="/reading-list">reading list</a>.
         </p>
-        <ul class="journal-stats sub">
-            <li>Writing since {writingSinceYear}</li>
-            <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
-            <li>{formattedWordCount} words</li>
-        </ul>
     </aside>
 
     <div class="journal-main">
         <JournalEntrySet posts={remainingPosts} layout="archive" />
     </div>
+</div>
+
+<div class="journal-stats-bar restricted-width">
+    <ul class="journal-stats sub">
+        <li>Writing since {writingSinceYear}</li>
+        <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
+        <li>{formattedWordCount} words</li>
+    </ul>
 </div>
 
 <style lang="scss">
@@ -69,15 +72,25 @@
         margin: 0;
     }
 
-    .journal-intro p + p,
-    .journal-intro p + .journal-stats {
+    .journal-intro p + p {
         margin-top: var(--s1);
     }
 
+    .journal-stats-bar {
+        margin-top: var(--s3);
+        padding-top: var(--s2);
+        border-top: 1px solid var(--light-grey);
+        text-align: center;
+    }
+
     .journal-stats {
-        margin: var(--s1) 0 0;
-        padding-left: var(--s1);
-        list-style-type: disc;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--s0) var(--s1);
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
 
     .journal-stats li {
