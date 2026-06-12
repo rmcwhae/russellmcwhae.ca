@@ -23,7 +23,7 @@ In June 2016, with 5K monitor prices still out of reach, I bought a 27-inch LG 4
 
 If you can manage the upfront sticker shock, external monitors can offer a surprisingly strong value proposition, as they routinely outlast your computer. My “stopgap” 4K monitor has lasted three different MacBook Pros. Such longevity is truly exceptional among gadgets: nothing else I can think of has given me a decade of daily use for $550. It brings my review, [The Upgrade to 4K](/journal/the-upgrade-to-4k), from ten years ago full circle—here’s hoping for many more years yet out of my 4K monitor.
 
-After a long wait—twelve years!—my 5K dream has come true: my eyes are literally on a 5K display while writing this. Here’s how I got one without breaking the bank, and some thoughts on using it.
+After a long wait—twelve years and two cities later—my 5K dream has come true: my eyes are literally on a 5K display while writing this. Here’s how I got one without breaking the bank, and some thoughts on using it.
 
 ## A Note on Resolution
 
