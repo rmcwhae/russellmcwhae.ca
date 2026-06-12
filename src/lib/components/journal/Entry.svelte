@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Date from '$lib/components/misc/Date.svelte'
     import CategoryLink from './CategoryLink.svelte'
@@ -21,7 +22,7 @@
         featured = false,
     } = $props()
 
-    let { href, title, description, preview, date, readingTime, category } =
+    let { slug, title, description, preview, date, readingTime, category } =
         $derived(post)
 
     let featuredPreview = $derived(
@@ -61,21 +62,27 @@
     {/if}
     {#if featured}
         <h2>
-            <a class="entry-title-link" {href}
+            <a
+                class="entry-title-link"
+                href={resolve('/journal/[slug]', { slug })}
                 >{@html preventLastTwoWordWrap(title)}</a
             >
         </h2>
     {:else}
         <h3>
-            <a class="entry-title-link" {href}
+            <a
+                class="entry-title-link"
+                href={resolve('/journal/[slug]', { slug })}
                 >{@html preventLastTwoWordWrap(title)}</a
             >
         </h3>
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
-            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}
-                <a {href}>Continue Reading →</a>{/if}
+            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured} <a
+                href={resolve('/journal/[slug]', { slug })}
+                >Continue Reading →</a
+            >{/if}
         </p>
     {/if}
 </section>
@@ -151,7 +158,6 @@
     }
     section.archive {
         padding-top: var(--s0);
-        border-bottom: none;
     }
     section.archive.first-in-year {
         padding-top: 0;

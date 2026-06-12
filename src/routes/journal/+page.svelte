@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import CategorySelector from '$lib/components/journal/CategorySelector.svelte'
@@ -32,8 +33,8 @@
             own, though I do use AI for editing and refining (as of 2025). I
             hope you’ll join me for a glimpse into my head.
         </p>
-        <p class="sub">
-            Also see my <a href="/reading-list">reading list</a>.
+        <p>
+            Also see my <a href={resolve('/reading-list')}>reading list</a>.
         </p>
         <CategorySelector />
     </aside>
@@ -81,7 +82,6 @@
     .journal-stats-bar {
         margin-top: var(--s3);
         padding-top: var(--s2);
-        border-top: 1px solid var(--light-grey);
         text-align: center;
     }
 

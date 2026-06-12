@@ -33,7 +33,6 @@
         margin: 0 0 var(--s-2);
         font-size: 0.9rem;
         font-weight: 600;
-        color: var(--text-color);
     }
 
     .category-selector-list {
