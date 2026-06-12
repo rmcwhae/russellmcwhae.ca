@@ -123,7 +123,7 @@ This highlights some ergonomic issues with dual 27-inch displays. As the display
 
 ## Wrap-up
 
-A truly perfect monitor does not exist. Given today’s technology, my specs for such a hypothetical monitor would be a 32-inch 6K OLED monitor (even deeper blacks than mini-LED) with a high refresh rate (180Hz or more), and Thunderbolt 5 connectivity. Obviously, the price on such a monitor—especially if made by Apple—would be outrageous.
+A truly perfect monitor does not exist. Given today’s technology, my specs for such a hypothetical monitor would be a 32-inch 6K OLED monitor with a high refresh rate (180Hz or more), and Thunderbolt 5 connectivity. Obviously, the price on such a monitor—especially if made by Apple—would be outrageous.
 
 Even if such a monitor existed, I wouldn’t pay for it. Given the demonstrated longevity of my old LG 4K monitor—not to mention those DIY 5K iMac conversions—I have no qualms about buying used. Readers of previous musings such as [Longitudinal Tech Reviews](/journal/longitudinal-tech-reviews) and [Behind the Curve](/journal/behind-the-curve) will know of my propensity for value and staying power over novelty. My MO for tech purchases—and essentially all other purchases, too—has always been to maximize utility while minimizing cost.
 
