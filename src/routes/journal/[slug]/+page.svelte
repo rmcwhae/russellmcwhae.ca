@@ -26,35 +26,39 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header>
-    <div class="entry-category">
-        <div class="entry-category-leading">
-            {#if category}
-                <CategoryLink {category} />
+<section class="article-header full-bleed">
+    <div class="restricted-width">
+        <header>
+            <div class="entry-category">
+                <div class="entry-category-leading">
+                    {#if category}
+                        <CategoryLink {category} />
+                    {/if}
+                    {#if longRead}
+                        <StatusPill variant="long-read" />
+                    {/if}
+                </div>
+                <div class="sub entry-meta">
+                    <Date {date} />
+                    &middot;
+                    <span class="nowrap">{readingTime.words} words</span>
+                    &middot;
+                    <span class="nowrap">{readingTime.text}</span>
+                </div>
+            </div>
+            <h1><NoWrapLastTwoWords text={title} /></h1>
+            {#if description}
+                <p class="big"><NoWrapLastTwoWords text={description} /></p>
             {/if}
-            {#if longRead}
-                <StatusPill variant="long-read" />
-            {/if}
-        </div>
-        <div class="sub entry-meta">
-            <Date {date} />
-            &middot;
-            <span class="nowrap">{readingTime.words} words</span>
-            &middot;
-            <span class="nowrap">{readingTime.text}</span>
-        </div>
+        </header>
     </div>
-    <h1><NoWrapLastTwoWords text={title} /></h1>
-    {#if description}
-        <p><NoWrapLastTwoWords text={description} /></p>
-    {/if}
-</header>
+</section>
 
-<div class="wrapper">
-    <ToC allowedHeadings={['h2', 'h3']} />
-    <article class="char-limit flow">
+<div class="article-body">
+    <article class="article-main char-limit flow">
         <SvelteComponent />
     </article>
+    <ToC allowedHeadings={['h2', 'h3']} />
 </div>
 
 <div class="restricted-width">
@@ -68,20 +72,27 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../../lib/scss/breakpoints' as *;
+
+    .article-header {
+        margin-bottom: var(--s1);
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+    }
     header {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: var(--s-1);
-        margin-bottom: var(--s1);
         text-align: center;
-        padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
     }
     h1,
     p {
         margin: 0;
+    }
+    h1 {
+        font-weight: 700;
     }
     header .entry-category {
         align-items: center;
@@ -97,7 +108,61 @@
     header .entry-meta {
         white-space: nowrap;
     }
-    article {
+    .article-body {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--s1);
+    }
+    .article-main {
         margin: 0 auto;
+        min-width: 0;
+        width: 100%;
+    }
+
+    @include for-tablet-landscape-up {
+        .article-header {
+            margin-bottom: var(--s3);
+            padding: var(--s3) 0 var(--s4);
+        }
+        header {
+            align-items: flex-start;
+            gap: var(--s-1);
+            text-align: left;
+        }
+        header .entry-category {
+            justify-content: flex-start;
+        }
+        h1 {
+            font-size: max(3em, 1.953rem);
+            line-height: 1.1;
+        }
+        header p {
+            max-width: 70ch;
+        }
+    }
+
+    @include for-desktop-up {
+        header {
+            gap: var(--s1);
+        }
+        .article-body {
+            grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+            align-items: start;
+            gap: 0;
+        }
+        .article-main {
+            grid-column: 2;
+            grid-row: 1;
+            margin: 0;
+        }
+        .article-body :global(.toc) {
+            grid-column: 3;
+            grid-row: 1;
+            justify-self: start;
+            padding-left: var(--s2);
+            max-width: 100%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
     }
 </style>

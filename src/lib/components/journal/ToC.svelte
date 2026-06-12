@@ -120,7 +120,7 @@
 </script>
 
 {#if headings.length}
-    <aside class="toc char-limit" data-test="toc">
+    <aside class="toc" data-test="toc">
         <ul>
             {#each headings as heading (heading.node.id)}
                 <li
@@ -142,12 +142,10 @@
         margin: 0 auto;
 
         @include for-desktop-up {
-            margin: inherit;
-            max-width: 238px;
+            max-width: none;
+            margin: 0;
             position: sticky;
             top: var(--s0);
-            left: var(--s0);
-            float: left;
             max-height: calc(100vh - var(--s0));
             overflow: auto;
         }
