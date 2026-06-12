@@ -110,6 +110,12 @@
     }
     #logo a {
         display: block;
+        color: var(--high-contrast-color);
+        transition: color var(--duration);
+    }
+    #logo a:hover,
+    #logo a:focus-visible {
+        color: var(--link-color);
     }
     ul {
         list-style: none;
