@@ -55,10 +55,10 @@
 </section>
 
 <div class="article-body">
+    <ToC allowedHeadings={['h2', 'h3']} />
     <article class="article-main char-limit flow">
         <SvelteComponent />
     </article>
-    <ToC allowedHeadings={['h2', 'h3']} />
 </div>
 
 <div class="restricted-width">

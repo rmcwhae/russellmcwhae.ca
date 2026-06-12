@@ -121,7 +121,8 @@
 
 {#if headings.length}
     <aside class="toc" data-test="toc">
-        <ul>
+        <p class="toc-title" id="toc-title">Contents</p>
+        <ul aria-labelledby="toc-title">
             {#each headings as heading (heading.node.id)}
                 <li
                     class="toc-level-{heading.depth}"
@@ -137,11 +138,20 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
+    .toc-title {
+        margin: 0 0 var(--s-1);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--high-contrast-color);
+    }
+
     aside {
+        width: 100%;
         max-width: 70ch;
         margin: 0 auto;
 
         @include for-desktop-up {
+            width: auto;
             max-width: none;
             margin: 0;
             position: sticky;
