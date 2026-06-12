@@ -26,7 +26,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<section class="article-header full-bleed">
+<section class="article-header border-bottom-thick full-bleed">
     <div class="restricted-width">
         <header>
             <div class="entry-category">
@@ -78,7 +78,6 @@
     .article-header {
         margin-bottom: var(--s1);
         padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
     }
     header {
         display: flex;

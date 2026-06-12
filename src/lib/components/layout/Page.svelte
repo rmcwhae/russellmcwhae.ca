@@ -7,7 +7,7 @@
 <SEO {title} />
 
 <article>
-    <header>
+    <header class="border-bottom-thick">
         <h1>{title}</h1>
     </header>
     <div class="char-limit flow margin-0-auto">
@@ -20,6 +20,5 @@
     header {
         padding-bottom: var(--s0);
         margin-bottom: var(--s2);
-        border-bottom: 1px solid var(--light-grey);
     }
 </style>

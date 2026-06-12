@@ -18,7 +18,7 @@
 <SEO title="Journal" />
 
 {#if featuredPost}
-    <section class="featured-article full-bleed">
+    <section class="featured-article border-bottom-thick full-bleed">
         <div class="featured-article-inner restricted-width">
             <JournalEntry post={featuredPost} featured />
         </div>
@@ -58,7 +58,6 @@
     .featured-article {
         margin-bottom: var(--s3);
         padding: var(--s3) 0 var(--s3);
-        border-bottom: 1px solid var(--light-grey);
 
         @include for-tablet-landscape-up {
             padding: var(--s3) 0 var(--s4);
