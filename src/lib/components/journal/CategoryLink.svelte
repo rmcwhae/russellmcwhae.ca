@@ -1,7 +1,13 @@
 <script>
     import { resolve } from '$app/paths'
 
-    let { category } = $props()
+    /** @typedef {Object} Props
+     * @property {string} category
+     * @property {boolean} [active]
+     */
+
+    /** @type {Props} */
+    let { category, active = false } = $props()
 
     /** @param {string | undefined} value */
     function getCategoryVariant(value) {
@@ -26,6 +32,7 @@
         class="category-pill"
         data-variant={variant}
         href={resolve('/journal/category/[category]', { category })}
+        aria-current={active ? 'page' : undefined}
     >
         {category}
     </a>
@@ -44,6 +51,11 @@
         background-color: transparent;
         color: var(--pill-color);
         border: 1px solid var(--light-grey);
+    }
+
+    .category-pill[aria-current='page'] {
+        font-weight: 600;
+        border-color: var(--pill-color);
     }
 
     .category-pill[data-variant='reflection'] {

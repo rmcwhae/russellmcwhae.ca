@@ -1,6 +1,7 @@
 <script>
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import CategorySelector from '$lib/components/journal/CategorySelector.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
 
     let { data } = $props()
@@ -34,6 +35,7 @@
         <p class="sub">
             Also see my <a href="/reading-list">reading list</a>.
         </p>
+        <CategorySelector />
     </aside>
 
     <div class="journal-main">

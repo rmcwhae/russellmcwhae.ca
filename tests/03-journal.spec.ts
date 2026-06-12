@@ -28,6 +28,30 @@ test.describe('Journal Page', () => {
         await expect(page.locator('.year-group section').first()).toBeVisible()
     })
 
+    test('journal displays category selector', async ({ page }) => {
+        await page.goto('/journal')
+
+        const selector = page.locator('.category-selector')
+        await expect(selector).toBeVisible()
+        await expect(selector.getByRole('heading', { name: 'Categories' })).toBeVisible()
+
+        await expect(selector.getByRole('link', { name: 'Tech' })).toHaveAttribute(
+            'href',
+            '/journal/category/Tech'
+        )
+        await expect(selector.getByRole('link', { name: 'Reflection' })).toHaveAttribute(
+            'href',
+            '/journal/category/Reflection'
+        )
+        await expect(selector.getByRole('link', { name: 'Outdoor' })).toHaveAttribute(
+            'href',
+            '/journal/category/Outdoor'
+        )
+
+        await selector.getByRole('link', { name: 'Tech' }).click()
+        await expect(page).toHaveURL('/journal/category/Tech')
+    })
+
     test('journal displays writing stats', async ({ page }) => {
         await page.goto('/journal')
 
