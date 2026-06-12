@@ -79,7 +79,7 @@
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
-            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured} <a
+            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}<a
                 href={resolve('/journal/[slug]', { slug })}
                 >Continue Reading →</a
             >{/if}
