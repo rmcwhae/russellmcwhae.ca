@@ -59,7 +59,12 @@
         margin-bottom: var(--s3);
         padding: var(--s3) 0 var(--s3);
 
-        @include for-tablet-landscape-up {
+        @include for-laptop-only {
+            margin-bottom: var(--s2);
+            padding: var(--s2) 0 var(--s3);
+        }
+
+        @include for-desktop-up {
             padding: var(--s3) 0 var(--s4);
         }
     }

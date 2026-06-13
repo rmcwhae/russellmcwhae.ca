@@ -140,6 +140,19 @@
         }
     }
 
+    @include for-laptop-only {
+        .article-header {
+            margin-bottom: var(--s2);
+            padding: var(--s2) 0 var(--s3);
+        }
+        h1 {
+            font-size: max(2.5em, 1.802rem);
+        }
+        header p:global(.big) {
+            font-size: 1.2rem;
+        }
+    }
+
     @include for-desktop-up {
         header {
             gap: var(--s1);

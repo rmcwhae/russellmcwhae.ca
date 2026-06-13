@@ -97,7 +97,7 @@ article header {
     text-align: center;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $breakpoint-tablet-landscape-max) {
     article header,
     article nav {
         margin-left: 0;

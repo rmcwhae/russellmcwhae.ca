@@ -142,10 +142,18 @@
         h2 {
             font-size: max(3em, 1.953rem);
             line-height: 1.1;
+
+            @include for-laptop-only {
+                font-size: max(2.5em, 1.802rem);
+            }
         }
 
         @include for-tablet-landscape-up {
             gap: var(--s0);
+        }
+
+        @include for-laptop-only {
+            gap: var(--s-1);
         }
 
         @include for-desktop-up {
@@ -154,6 +162,12 @@
 
         p {
             max-width: 70ch;
+        }
+
+        p:global(.big) {
+            @include for-laptop-only {
+                font-size: 1.2rem;
+            }
         }
     }
     section.archive {
