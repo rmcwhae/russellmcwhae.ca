@@ -157,24 +157,8 @@
         header {
             gap: var(--s1);
         }
-        .article-body {
-            grid-template-columns: 1fr minmax(0, 70ch) 1fr;
-            align-items: start;
-            gap: 0;
-        }
         .article-main {
-            grid-column: 2;
-            grid-row: 1;
-            margin: 0;
-        }
-        .article-body :global(.toc) {
-            grid-column: 3;
-            grid-row: 1;
-            justify-self: start;
-            padding-left: var(--s2);
-            max-width: 100%;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            margin: 0 auto;
         }
     }
 </style>
