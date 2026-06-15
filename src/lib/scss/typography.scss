@@ -53,6 +53,11 @@ a.no-shadow:hover {
 
 // Article styles
 
+article {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: 'lnum' 1;
+}
+
 article h2:not(:first-child) {
     margin-top: var(--s4) !important;
 }
@@ -210,7 +215,6 @@ article strong {
     text-transform: uppercase;
     color: var(--medium-grey);
     display: inline-block;
-
 }
 .nowrap {
     white-space: nowrap;

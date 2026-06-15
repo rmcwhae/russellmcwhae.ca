@@ -96,6 +96,8 @@
     h3 {
         margin: 0;
         line-height: 1.2;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
 
     :is(h2, h3) :global(a.entry-title-link) {
@@ -155,6 +157,8 @@
         font-weight: normal;
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     section {
         display: flex;

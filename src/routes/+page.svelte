@@ -4,7 +4,6 @@
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import { buildURL } from '$lib/utils/images'
 
-
     let { data } = $props()
 
     let images = $derived(data.images)
@@ -152,7 +151,7 @@
             <div class="currently-item">
                 <div class="c-label">Reading</div>
                 <div class="c-value">
-                    Spirit-Controlled Temperament by Tim LaHaye
+                    <i>Spirit-Controlled Temperament</i> by Tim LaHaye
                 </div>
             </div>
             <div class="currently-item">

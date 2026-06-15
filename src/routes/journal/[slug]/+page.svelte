@@ -92,6 +92,8 @@
     }
     h1 {
         font-weight: normal;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     header .entry-category {
         align-items: center;
@@ -111,6 +113,8 @@
         font-weight: normal;
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     .article-body {
         display: grid;
