@@ -38,11 +38,7 @@
                     />
                 </li>
                 <li>
-                    <Anchor
-                        title="About"
-                        href="/#about"
-                        on:close={hideMenu}
-                    />
+                    <Anchor title="About" href="/#about" on:close={hideMenu} />
                 </li>
                 <li
                     id="mobile-switcher"
@@ -84,9 +80,10 @@
     nav {
         color: var(--high-contrast-color);
         font-family: var(--font-sans);
-        font-weight: 500;
-        font-size: 13px;
-        letter-spacing: 0.04em;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
     }
     :global(#logo svg) {
         height: 22px !important; /* TODO be less lazy than using !important */
