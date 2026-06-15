@@ -1,8 +1,9 @@
 <script>
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
+    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import { buildURL } from '$lib/utils/images'
-    import dateformat from 'dateformat'
+
 
     let { data } = $props()
 
@@ -66,20 +67,11 @@
         <p class="section-desc">
             Writing about technology, the outdoors, and life.
         </p>
-        <div class="journal-list">
-            {#each latestPosts as post (post.slug)}
-                <article>
-                    <div class="journal-date">
-                        {dateformat(post.date, 'UTC:mmm yyyy')}
-                    </div>
-                    <a href="/journal/{post.slug}">{post.title}</a>
-                </article>
-            {/each}
-        </div>
+        <JournalEntrySet posts={latestPosts} />
     </section>
 
     <!-- Explore Topics -->
-    <section class="page-section">
+    <section class="page-section" style="border-top: none">
         <div class="section-header">
             <span class="section-label">Explore Topics</span>
         </div>
@@ -388,38 +380,6 @@
                 text-decoration-color: var(--accent);
             }
         }
-    }
-
-    /* Journal list */
-    .journal-list article {
-        display: grid;
-        grid-template-columns: 80px 1fr;
-        gap: 24px;
-        align-items: baseline;
-        padding: 16px 0;
-        border-bottom: 1px solid var(--light-grey);
-
-        a {
-            font-size: 15px;
-            color: var(--high-contrast-color);
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 4px;
-
-            &:hover {
-                color: var(--link-color);
-                text-decoration-color: var(--link-color);
-            }
-        }
-    }
-
-    .journal-date {
-        font-family: var(--font-sans);
-        font-size: 12px;
-        color: var(--medium-grey);
-        letter-spacing: 0.03em;
-        white-space: nowrap;
     }
 
     /* Explore Topics */
