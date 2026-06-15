@@ -186,11 +186,6 @@
     .home {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 var(--s1);
-
-        @include for-phone-only {
-            padding: 0 var(--s0);
-        }
     }
 
     /* Hero */
@@ -420,7 +415,6 @@
     .topic-icon {
         width: 36px;
         height: 36px;
-        color: var(--accent);
         margin-bottom: var(--s-1);
 
         svg {
@@ -428,6 +422,21 @@
             height: 100%;
         }
     }
+
+    /* Technology, Outdoor, Reflections — match category pill colours */
+    .topic:nth-child(1) .topic-icon { color: #4a7a9e; }
+    .topic:nth-child(2) .topic-icon { color: #5a8f5a; }
+    .topic:nth-child(3) .topic-icon { color: #7a5a9e; }
+
+    @media (prefers-color-scheme: dark) {
+        :global(html body:not([data-theme='light'])) .topic:nth-child(1) .topic-icon { color: #90b8d8; }
+        :global(html body:not([data-theme='light'])) .topic:nth-child(2) .topic-icon { color: #90c890; }
+        :global(html body:not([data-theme='light'])) .topic:nth-child(3) .topic-icon { color: #b890d0; }
+    }
+
+    :global(html body[data-theme='dark']) .topic:nth-child(1) .topic-icon { color: #90b8d8; }
+    :global(html body[data-theme='dark']) .topic:nth-child(2) .topic-icon { color: #90c890; }
+    :global(html body[data-theme='dark']) .topic:nth-child(3) .topic-icon { color: #b890d0; }
 
     .topic h3 {
         font-family: var(--font-serif);
