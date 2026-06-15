@@ -2,10 +2,6 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import techIcon from '$lib/icons/tech.svg?raw'
-    import outdoorIcon from '$lib/icons/outdoor.svg?raw'
-    import reflectionIcon from '$lib/icons/reflection.svg?raw'
-
     let { data } = $props()
 
     let images = $derived(data.images)
@@ -68,7 +64,7 @@
         <div class="topics">
             <div class="topic">
                 <div class="topic-icon" aria-hidden="true">
-                    {@html techIcon}
+                    <img src="/icons/tech.png" alt="" />
                 </div>
                 <h3>Technology</h3>
                 <p>Personal tech and software development.</p>
@@ -78,7 +74,7 @@
             </div>
             <div class="topic">
                 <div class="topic-icon" aria-hidden="true">
-                    {@html outdoorIcon}
+                    <img src="/icons/outdoor.png" alt="" />
                 </div>
                 <h3>Outdoor</h3>
                 <p>Musings from wandering in the wild.</p>
@@ -88,7 +84,7 @@
             </div>
             <div class="topic">
                 <div class="topic-icon" aria-hidden="true">
-                    {@html reflectionIcon}
+                    <img src="/icons/reflection.png" alt="" />
                 </div>
                 <h3>Reflections</h3>
                 <p>Long-form personal writing.</p>
@@ -386,30 +382,21 @@
     }
 
     .topic-icon {
-        width: 36px;
-        height: 36px;
+        width: 130px;
         margin-bottom: var(--s-1);
 
-        :global(svg) {
+        img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
         }
     }
 
-    /* Technology, Outdoor, Reflections — match category pill colours */
-    .topic:nth-child(1) .topic-icon { color: #4a7a9e; }
-    .topic:nth-child(2) .topic-icon { color: #5a8f5a; }
-    .topic:nth-child(3) .topic-icon { color: #7a5a9e; }
-
+    /* Invert topic illustrations in dark mode so white backgrounds disappear */
     @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .topic:nth-child(1) .topic-icon { color: #90b8d8; }
-        :global(html body:not([data-theme='light'])) .topic:nth-child(2) .topic-icon { color: #90c890; }
-        :global(html body:not([data-theme='light'])) .topic:nth-child(3) .topic-icon { color: #b890d0; }
+        :global(html body:not([data-theme='light'])) .topic-icon img { filter: invert(1); }
     }
-
-    :global(html body[data-theme='dark']) .topic:nth-child(1) .topic-icon { color: #90b8d8; }
-    :global(html body[data-theme='dark']) .topic:nth-child(2) .topic-icon { color: #90c890; }
-    :global(html body[data-theme='dark']) .topic:nth-child(3) .topic-icon { color: #b890d0; }
+    :global(html body[data-theme='dark']) .topic-icon img { filter: invert(1); }
 
     .topic h3 {
         font-family: var(--font-serif);
@@ -417,7 +404,30 @@
         font-weight: normal;
         margin-bottom: var(--s-2);
         margin-top: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-bottom: var(--s-2);
+        }
     }
+
+    .topics .topic:nth-child(1) h3::before { background: #4a7a9e; }
+    .topics .topic:nth-child(2) h3::before { background: #5a8f5a; }
+    .topics .topic:nth-child(3) h3::before { background: #7a5a9e; }
+
+    @media (prefers-color-scheme: dark) {
+        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(1) h3::before { background: #90b8d8; }
+        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(2) h3::before { background: #90c890; }
+        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(3) h3::before { background: #b890d0; }
+    }
+
+    :global(html body[data-theme='dark']) .topics .topic:nth-child(1) h3::before { background: #90b8d8; }
+    :global(html body[data-theme='dark']) .topics .topic:nth-child(2) h3::before { background: #90c890; }
+    :global(html body[data-theme='dark']) .topics .topic:nth-child(3) h3::before { background: #b890d0; }
 
     .topic p {
         font-size: 14px;
