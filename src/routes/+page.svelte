@@ -18,31 +18,34 @@
 
 <SEO />
 
-<div class="home">
-    <!-- Hero -->
-    <section class="hero border-bottom">
+<!-- Hero: full-bleed outside .home so full-width class reaches viewport edges -->
+<section class="hero full-width">
+    <div class="hero-image-bg">
+        <img
+            src={heroSrc}
+            srcset={heroSrcset}
+            sizes="(max-width: 700px) 700px, (max-width: 1000px) 1000px, (max-width: 1400px) 1400px, 1800px"
+            alt="Mountain landscape"
+            loading="eager"
+        />
+    </div>
+    <div class="hero-gradient"></div>
+    <div class="hero-inner">
         <div class="hero-text">
             <div class="kicker">My creative outlet</div>
             <h1>A quiet eye<br />in a loud world.</h1>
             <p class="lead">
-                Photography and writing from a life spent exploring the
-                outdoors.
+                Images and writing from the trails, the desk, and the spaces in between.
             </p>
             <div class="hero-links">
                 <a href="/photography">Explore my Photography →</a>
                 <a href="/journal">Read my Journal →</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img
-                src={heroSrc}
-                srcset={heroSrcset}
-                sizes="(max-width: 700px) 700px, (max-width: 1000px) 1000px, (max-width: 1400px) 1400px, 1800px"
-                alt="Mountain landscape"
-                loading="eager"
-            />
-        </div>
-    </section>
+    </div>
+</section>
+
+<div class="home">
 
     <!-- Photography -->
     <section class="page-section">
@@ -170,25 +173,80 @@
 
     /* Hero */
     .hero {
-        display: grid;
-        grid-template-columns: 1fr 1.75fr;
-        gap: 56px;
-        align-items: start;
-        padding: 72px 0 72px;
-        margin-bottom: 0;
+        position: relative;
+        overflow: hidden;
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+        @include for-tablet-portrait-down {
+            min-height: 520px;
+            align-items: flex-end;
+        }
+
+        @include for-phone-only {
+            min-height: 480px;
+        }
+    }
+
+    .hero-image-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 65% center;
+            display: block;
+        }
+    }
+
+    .hero-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+            to right,
+            var(--background-color) 0%,
+            var(--background-color) 32%,
+            var(--background-color-transparent) 52%,
+            transparent 72%
+        );
 
         @include for-tablet-portrait-down {
-            grid-template-columns: 1fr;
-            gap: var(--s2);
-            padding: var(--s2) 0 var(--s2);
+            background: linear-gradient(
+                to top,
+                var(--background-color) 0%,
+                var(--background-color) 28%,
+                var(--background-color-transparent) 52%,
+                transparent 78%
+            );
+        }
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 80px var(--s2);
+
+        @include for-tablet-portrait-down {
+            padding: 48px var(--s1) 64px;
         }
     }
 
     .hero-text {
-        padding-top: 20px;
+        max-width: 480px;
         display: flex;
         flex-direction: column;
         gap: var(--s0);
+
+        @include for-tablet-portrait-down {
+            max-width: none;
+        }
     }
 
     .hero-text h1 {
@@ -218,28 +276,6 @@
 
             &:hover {
                 color: var(--accent);
-            }
-        }
-    }
-
-    .hero-image {
-        border-radius: 2px;
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 2px;
-            object-fit: cover;
-        }
-
-        @include for-tablet-portrait-down {
-            max-height: 400px;
-
-            img {
-                height: 400px;
-                object-fit: cover;
             }
         }
     }
