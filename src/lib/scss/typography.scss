@@ -27,7 +27,7 @@ a {
 :is(article, .flow, .journal-intro, section.featured, .sidebar-block)
     :is(p, li, blockquote)
     a:not(.button, .no-shadow, .hover-underline-animation, .category-pill) {
-    color: var(--link-color);
+    color: var(--high-contrast-color);
     font-weight: inherit;
     text-decoration: underline;
     text-decoration-color: var(--link-underline-color);
