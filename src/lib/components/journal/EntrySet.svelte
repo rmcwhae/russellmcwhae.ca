@@ -1,5 +1,6 @@
 <script>
     import JournalEntry from './Entry.svelte'
+    import { SvelteMap } from 'svelte/reactivity'
 
     /** @typedef {'grid' | 'archive'} Layout */
 
@@ -16,7 +17,7 @@
         if (layout !== 'archive') return []
 
         /** @type {Map<number, typeof posts>} */
-        const groups = new Map()
+        const groups = new SvelteMap()
 
         for (const post of posts) {
             const year = new Date(post.date).getFullYear()

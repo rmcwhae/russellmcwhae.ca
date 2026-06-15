@@ -1,20 +1,18 @@
-<script lang="ts">
+<script>
     import { browser } from '$app/environment'
 
-    let currentlyOpen: HTMLElement | null = null
+    /** @type {HTMLElement | null} */
+    let currentlyOpen = null
 
     function closeOpen() {
         if (!currentlyOpen) return
         const el = currentlyOpen
         el.classList.remove('open')
-        el.querySelector<HTMLButtonElement>('.footnote-button')?.setAttribute(
-            'aria-expanded',
-            'false'
-        )
+        el.querySelector('.footnote-button')?.setAttribute('aria-expanded', 'false')
         currentlyOpen = null
         // Defer removing popup-below until after the transition so the popup
         // doesn't snap position mid-fade.
-        const popup = el.querySelector<HTMLElement>('.footnote-popup')
+        const popup = el.querySelector('.footnote-popup')
         if (popup) {
             popup.addEventListener(
                 'transitionend',
@@ -28,10 +26,11 @@
         }
     }
 
-    function openPopup(sup: HTMLElement, btn: HTMLButtonElement) {
+    /** @param {HTMLElement} sup @param {HTMLElement} btn */
+    function openPopup(sup, btn) {
         // Popup is already absolutely positioned even when hidden (visibility:hidden
         // keeps layout). If its top would be negative, flip it below the reference.
-        const popup = sup.querySelector<HTMLElement>('.footnote-popup')
+        const popup = sup.querySelector('.footnote-popup')
         if (popup && popup.getBoundingClientRect().top < 0) {
             sup.classList.add('popup-below')
         }
@@ -40,13 +39,13 @@
         currentlyOpen = sup
     }
 
-    function handleClick(e: MouseEvent) {
-        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(
-            '.footnote-button'
-        )
+    /** @param {MouseEvent} e */
+    function handleClick(e) {
+        const btn = e.target.closest('.footnote-button')
         if (btn) {
             e.stopPropagation()
-            const sup = btn.closest<HTMLElement>('.footnote-ref')!
+            const sup = btn.closest('.footnote-ref')
+            if (!sup) return
             if (currentlyOpen === sup) {
                 closeOpen()
                 return
@@ -55,17 +54,15 @@
             openPopup(sup, btn)
             return
         }
-        if (!(e.target as HTMLElement).closest('.footnote-ref')) {
+        if (!e.target.closest('.footnote-ref')) {
             closeOpen()
         }
     }
 
-    function handleKeydown(e: KeyboardEvent) {
+    /** @param {KeyboardEvent} e */
+    function handleKeydown(e) {
         if (e.key === 'Escape' && currentlyOpen) {
-            const btn =
-                currentlyOpen.querySelector<HTMLButtonElement>(
-                    '.footnote-button'
-                )
+            const btn = currentlyOpen.querySelector('.footnote-button')
             closeOpen()
             btn?.focus()
         }
