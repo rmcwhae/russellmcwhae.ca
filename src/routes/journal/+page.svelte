@@ -33,7 +33,7 @@
 
     <aside class="journal-sidebar">
         <div class="sidebar-block">
-            <div class="section-label sidebar-heading">About this journal</div>
+            <div class="section-label sidebar-heading">About</div>
             <p>
                 Welcome to my online journal, a collection of long-form thoughts
                 on topics that are important to me. Text generation and ideas
