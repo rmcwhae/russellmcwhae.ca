@@ -25,22 +25,8 @@
             <ul>
                 <li>
                     <Anchor
-                        title="Photos"
+                        title="Photography"
                         href="/photography"
-                        on:close={hideMenu}
-                    />
-                </li>
-                <li>
-                    <Anchor
-                        title="Calendars"
-                        href="/calendars"
-                        on:close={hideMenu}
-                    />
-                </li>
-                <li>
-                    <Anchor
-                        title="Projects"
-                        href="/projects"
                         on:close={hideMenu}
                     />
                 </li>
@@ -52,7 +38,11 @@
                     />
                 </li>
                 <li>
-                    <Anchor title="Micro" href="/micro" on:close={hideMenu} />
+                    <Anchor
+                        title="About"
+                        href="/#about"
+                        on:close={hideMenu}
+                    />
                 </li>
                 <li
                     id="mobile-switcher"
@@ -93,8 +83,10 @@
     }
     nav {
         color: var(--high-contrast-color);
-        font-weight: 600;
-        font-size: 1rem;
+        font-family: var(--font-sans);
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.04em;
     }
     :global(#logo svg) {
         height: 25px !important; /* TODO be less lazy than using !important */

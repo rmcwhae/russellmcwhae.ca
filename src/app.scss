@@ -12,7 +12,7 @@ body {
     background: var(--background-color);
     transition: all ease var(--duration);
     margin: 0;
-    font-family: source-sans-3, azo-sans-web, sans-serif;
+    font-family: var(--font-serif);
     font-size: 1.125rem;
     line-height: 1.5;
 

@@ -126,23 +126,25 @@ h5,
 h6 {
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
-    font-weight: 600;
+    font-weight: 500;
 }
 h1 {
     font-size: 3.052rem;
     line-height: 1;
     margin: var(--s-1) 0;
+    font-weight: normal;
 }
 h2 {
     font-size: 1.953rem;
-    font-weight: 700;
+    font-weight: normal;
 }
 h3 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.536rem;
 }
 h4 {
     font-size: 1.25rem;
+    font-weight: 500;
 }
 .big {
     @include for-tablet-landscape-up {
@@ -190,6 +192,23 @@ article strong {
     font-size: 0.95rem;
     letter-spacing: 0.075em;
     font-weight: 600;
+}
+
+.kicker {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.section-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--medium-grey);
 }
 .nowrap {
     white-space: nowrap;

@@ -26,30 +26,38 @@
 {/if}
 
 <div class="journal restricted-width">
-    <aside class="journal-intro">
-        <p>
-            Welcome to my online journal, a collection of long-form thoughts on
-            topics that are important to me. Text generation and ideas are my
-            own, though I do use AI for editing and refining (as of 2025). I
-            hope you’ll join me for a glimpse into my head.
-        </p>
-        <p>
-            Also see my <a href={resolve('/reading-list')}>reading list</a>.
-        </p>
-        <CategorySelector />
-    </aside>
-
     <div class="journal-main">
         <JournalEntrySet posts={remainingPosts} layout="archive" />
     </div>
-</div>
 
-<div class="journal-stats-bar restricted-width">
-    <ul class="journal-stats sub">
-        <li>Writing since {writingSinceYear}</li>
-        <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
-        <li>{formattedWordCount} words</li>
-    </ul>
+    <aside class="journal-sidebar">
+        <div class="sidebar-block">
+            <div class="section-label sidebar-heading">About this journal</div>
+            <p>
+                Welcome to my online journal, a collection of long-form thoughts on
+                topics that are important to me. Text generation and ideas are my
+                own, though I do use AI for editing and refining (as of 2025). I
+                hope you'll join me for a glimpse into my head.
+            </p>
+            <p>
+                Also see my <a href={resolve('/reading-list')}>reading list</a>.
+            </p>
+        </div>
+
+        <div class="sidebar-block">
+            <div class="section-label sidebar-heading">Categories</div>
+            <CategorySelector />
+        </div>
+
+        <div class="sidebar-block sidebar-stats">
+            <div class="section-label sidebar-heading">Stats</div>
+            <ul class="stats-list sub">
+                <li>Writing since {writingSinceYear}</li>
+                <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
+                <li>{formattedWordCount} words</li>
+            </ul>
+        </div>
+    </aside>
 </div>
 
 <style lang="scss">
@@ -72,55 +80,59 @@
     .journal {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--s1);
+        gap: var(--s2);
     }
 
-    .journal-intro p {
-        margin: 0;
-    }
-
-    .journal-intro p + p {
-        margin-top: var(--s1);
-    }
-
-    .journal-stats-bar {
-        margin-top: var(--s3);
-        padding-top: var(--s2);
-        text-align: center;
-    }
-
-    .journal-stats {
+    .journal-sidebar {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--s0) var(--s1);
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        flex-direction: column;
+        gap: var(--s2);
     }
 
-    .journal-stats li {
+    .sidebar-block p {
+        font-size: 0.9rem;
+        line-height: 1.6;
         margin: 0;
+        color: var(--text-color);
+
+        & + p {
+            margin-top: var(--s-1);
+        }
+    }
+
+    .sidebar-heading {
+        margin-bottom: var(--s-1);
+    }
+
+    .stats-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        color: var(--text-color);
     }
 
     @include for-tablet-landscape-up {
         .journal {
-            grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr);
-            gap: var(--s2);
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
             align-items: start;
         }
 
         .journal-main {
-            grid-column: 1 / 3;
+            grid-column: 1;
             grid-row: 1;
             min-width: 0;
         }
 
-        .journal-intro {
-            grid-column: 3;
+        .journal-sidebar {
+            grid-column: 2;
             grid-row: 1;
             font-size: 0.95rem;
             line-height: 1.5;
+            position: sticky;
+            top: var(--s1);
         }
     }
 </style>

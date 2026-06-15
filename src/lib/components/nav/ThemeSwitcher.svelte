@@ -247,6 +247,7 @@
 
     .theme-option-label {
         white-space: nowrap;
+        font-family: var(--font-sans);
     }
 
     @include for-tablet-portrait-down {
