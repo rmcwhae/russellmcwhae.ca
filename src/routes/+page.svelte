@@ -51,7 +51,7 @@
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Photography</span>
-            <a href="/photography" class="view-all">View all →</a>
+            <a href="/photography" class="view-all"><span>View all</span> →</a>
         </div>
         <p class="section-desc">Some of my all-time favourite images.</p>
         <HomepageGallery {images} />
@@ -61,7 +61,7 @@
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Journal</span>
-            <a href="/journal" class="view-all">View all →</a>
+            <a href="/journal" class="view-all"><span>View all</span> →</a>
         </div>
         <p class="section-desc">
             Writing about technology, the outdoors, and life.
@@ -325,11 +325,25 @@
     .view-all {
         font-family: var(--font-sans);
         font-size: 12px;
-        letter-spacing: 0.05em;
-        color: var(--medium-grey);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--high-contrast-color);
+        text-decoration: none;
+
+        span {
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 5px;
+        }
 
         &:hover {
-            color: var(--high-contrast-color);
+            color: var(--accent);
+
+            span {
+                text-decoration-color: var(--accent);
+            }
         }
     }
 
