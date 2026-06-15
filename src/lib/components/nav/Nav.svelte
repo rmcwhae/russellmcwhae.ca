@@ -73,8 +73,6 @@
     header {
         display: flex;
         justify-content: space-between;
-        margin-top: var(--s-2);
-        margin-bottom: var(--s-1);
         align-items: center;
     }
     nav {
