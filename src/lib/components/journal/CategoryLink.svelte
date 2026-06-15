@@ -57,13 +57,41 @@
         text-underline-offset: 0.2em;
     }
 
-    .category-pill[data-variant='reflection'],
-    .category-pill[data-variant='outdoor'],
+    .category-pill[data-variant='outdoor'] {
+        --pill-color: #5a8f5a;
+    }
+
+    .category-pill[data-variant='reflection'] {
+        --pill-color: #7a5a9e;
+    }
+
     .category-pill[data-variant='tech'] {
-        --pill-color: var(--accent);
+        --pill-color: #4a7a9e;
     }
 
     .category-pill[data-variant='neutral'] {
         --pill-color: var(--text-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :global(html body:not([data-theme='light'])) .category-pill[data-variant='outdoor'] {
+            --pill-color: #90c890;
+        }
+        :global(html body:not([data-theme='light'])) .category-pill[data-variant='reflection'] {
+            --pill-color: #b890d0;
+        }
+        :global(html body:not([data-theme='light'])) .category-pill[data-variant='tech'] {
+            --pill-color: #90b8d8;
+        }
+    }
+
+    :global(html body[data-theme='dark']) .category-pill[data-variant='outdoor'] {
+        --pill-color: #90c890;
+    }
+    :global(html body[data-theme='dark']) .category-pill[data-variant='reflection'] {
+        --pill-color: #b890d0;
+    }
+    :global(html body[data-theme='dark']) .category-pill[data-variant='tech'] {
+        --pill-color: #90b8d8;
     }
 </style>
