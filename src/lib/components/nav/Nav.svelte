@@ -77,8 +77,8 @@
     header {
         display: flex;
         justify-content: space-between;
-        margin-top: var(--s1);
-        margin-bottom: var(--s2);
+        margin-top: var(--s-2);
+        margin-bottom: var(--s-1);
         align-items: center;
     }
     nav {
@@ -89,12 +89,12 @@
         letter-spacing: 0.04em;
     }
     :global(#logo svg) {
-        height: 25px !important; /* TODO be less lazy than using !important */
+        height: 22px !important; /* TODO be less lazy than using !important */
         @include for-tablet-portrait-up {
-            height: 35px !important;
+            height: 28px !important;
         }
         @include for-tablet-landscape-up {
-            height: 45px !important;
+            height: 34px !important;
         }
     }
     #logo {

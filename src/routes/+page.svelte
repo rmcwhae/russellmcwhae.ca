@@ -85,22 +85,63 @@
         </div>
         <div class="topics">
             <div class="topic">
+                <div class="topic-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="7 18 3 12 7 6" />
+                        <line x1="10" y1="19" x2="14" y2="5" />
+                        <polyline points="17 6 21 12 17 18" />
+                    </svg>
+                </div>
                 <h3>Technology</h3>
                 <p>Personal tech and software development.</p>
-                <a href="/journal/category/tech" class="topic-link">Browse →</a>
-            </div>
-            <div class="topic">
-                <h3>Outdoors</h3>
-                <p>Musings from wandering in the wild.</p>
-                <a href="/journal/category/outdoor" class="topic-link"
-                    >Browse →</a
+                <a href="/journal/category/Tech" class="topic-link"
+                    ><span>Explore</span> →</a
                 >
             </div>
             <div class="topic">
+                <div class="topic-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="2 20 7 8 12 14 17 3 22 20" />
+                    </svg>
+                </div>
+                <h3>Outdoor</h3>
+                <p>Musings from wandering in the wild.</p>
+                <a href="/journal/category/Outdoor" class="topic-link"
+                    ><span>Explore</span> →</a
+                >
+            </div>
+            <div class="topic">
+                <div class="topic-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                </div>
                 <h3>Reflections</h3>
                 <p>Long-form personal writing.</p>
-                <a href="/journal/category/personal" class="topic-link"
-                    >Browse →</a
+                <a href="/journal/category/Reflection" class="topic-link"
+                    ><span>Explore</span> →</a
                 >
             </div>
         </div>
@@ -392,11 +433,22 @@
         }
     }
 
+    .topic-icon {
+        width: 36px;
+        height: 36px;
+        color: var(--accent);
+        margin-bottom: var(--s-1);
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .topic h3 {
-        font-family: var(--font-sans);
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.03em;
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        font-weight: normal;
         margin-bottom: var(--s-2);
         margin-top: 0;
     }
@@ -405,16 +457,31 @@
         font-size: 14px;
         color: var(--text-color);
         line-height: 1.6;
-        margin: 0 0 var(--s-2);
+        margin: 0 0 var(--s0);
     }
 
     .topic-link {
         font-family: var(--font-sans);
         font-size: 12px;
-        color: var(--medium-grey);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--high-contrast-color);
+        text-decoration: none;
+
+        span {
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 5px;
+        }
 
         &:hover {
-            color: var(--high-contrast-color);
+            color: var(--accent);
+
+            span {
+                text-decoration-color: var(--accent);
+            }
         }
     }
 
@@ -448,14 +515,20 @@
     /* About */
     .about-grid {
         display: grid;
-        grid-template-columns: 1fr 280px;
+        grid-template-columns: 1fr 320px;
         gap: 56px;
-        align-items: start;
+        align-items: stretch;
 
         @include for-tablet-portrait-down {
             grid-template-columns: 1fr;
             gap: var(--s2);
         }
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .about-text p {
@@ -464,5 +537,17 @@
         color: var(--text-color);
         max-width: 52ch;
         margin-bottom: var(--s0);
+    }
+
+    .portrait {
+        @include for-tablet-landscape-up {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+                display: block;
+            }
+        }
     }
 </style>
