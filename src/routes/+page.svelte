@@ -57,15 +57,15 @@
     </section>
 
     <!-- Explore Topics -->
-    <section class="page-section" style="border-top: none; padding-top: var(--s1)">
+    <section
+        class="page-section"
+        style="border-top: none; padding-top: var(--s1)"
+    >
         <div class="section-header">
             <span class="section-label">Explore Topics</span>
         </div>
         <div class="topics">
             <div class="topic">
-                <div class="topic-icon" aria-hidden="true">
-                    <img src="/icons/tech.png" alt="" />
-                </div>
                 <h3>Technology</h3>
                 <p>Personal tech and software development.</p>
                 <a href="/journal/category/Tech" class="topic-link"
@@ -73,9 +73,6 @@
                 >
             </div>
             <div class="topic">
-                <div class="topic-icon" aria-hidden="true">
-                    <img src="/icons/outdoor.png" alt="" />
-                </div>
                 <h3>Outdoor</h3>
                 <p>Musings from wandering in the wild.</p>
                 <a href="/journal/category/Outdoor" class="topic-link"
@@ -83,9 +80,6 @@
                 >
             </div>
             <div class="topic">
-                <div class="topic-icon" aria-hidden="true">
-                    <img src="/icons/reflection.png" alt="" />
-                </div>
                 <h3>Reflections</h3>
                 <p>Long-form personal writing.</p>
                 <a href="/journal/category/Reflection" class="topic-link"
@@ -394,9 +388,13 @@
 
     /* Invert topic illustrations in dark mode so white backgrounds disappear */
     @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .topic-icon img { filter: invert(1); }
+        :global(html body:not([data-theme='light'])) .topic-icon img {
+            filter: invert(1);
+        }
     }
-    :global(html body[data-theme='dark']) .topic-icon img { filter: invert(1); }
+    :global(html body[data-theme='dark']) .topic-icon img {
+        filter: invert(1);
+    }
 
     .topic h3 {
         font-family: var(--font-serif);
@@ -415,19 +413,55 @@
         }
     }
 
-    .topics .topic:nth-child(1) h3::before { background: #4a7a9e; }
-    .topics .topic:nth-child(2) h3::before { background: #5a8f5a; }
-    .topics .topic:nth-child(3) h3::before { background: #7a5a9e; }
-
-    @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(1) h3::before { background: #90b8d8; }
-        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(2) h3::before { background: #90c890; }
-        :global(html body:not([data-theme='light'])) .topics .topic:nth-child(3) h3::before { background: #b890d0; }
+    .topics .topic:nth-child(1) h3::before {
+        background: #4a7a9e;
+    }
+    .topics .topic:nth-child(2) h3::before {
+        background: #5a8f5a;
+    }
+    .topics .topic:nth-child(3) h3::before {
+        background: #7a5a9e;
     }
 
-    :global(html body[data-theme='dark']) .topics .topic:nth-child(1) h3::before { background: #90b8d8; }
-    :global(html body[data-theme='dark']) .topics .topic:nth-child(2) h3::before { background: #90c890; }
-    :global(html body[data-theme='dark']) .topics .topic:nth-child(3) h3::before { background: #b890d0; }
+    @media (prefers-color-scheme: dark) {
+        :global(html body:not([data-theme='light']))
+            .topics
+            .topic:nth-child(1)
+            h3::before {
+            background: #90b8d8;
+        }
+        :global(html body:not([data-theme='light']))
+            .topics
+            .topic:nth-child(2)
+            h3::before {
+            background: #90c890;
+        }
+        :global(html body:not([data-theme='light']))
+            .topics
+            .topic:nth-child(3)
+            h3::before {
+            background: #b890d0;
+        }
+    }
+
+    :global(html body[data-theme='dark'])
+        .topics
+        .topic:nth-child(1)
+        h3::before {
+        background: #90b8d8;
+    }
+    :global(html body[data-theme='dark'])
+        .topics
+        .topic:nth-child(2)
+        h3::before {
+        background: #90c890;
+    }
+    :global(html body[data-theme='dark'])
+        .topics
+        .topic:nth-child(3)
+        h3::before {
+        background: #b890d0;
+    }
 
     .topic p {
         font-size: 14px;

@@ -7,6 +7,7 @@
     import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
     import StatusPill from '$lib/components/journal/StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
+    import FootnoteManager from '$lib/components/journal/FootnoteManager.svelte'
 
     let { data } = $props()
 
@@ -57,6 +58,7 @@
     <article class="article-main char-limit flow">
         <SvelteComponent />
     </article>
+    <FootnoteManager />
 </div>
 
 <div class="restricted-width">

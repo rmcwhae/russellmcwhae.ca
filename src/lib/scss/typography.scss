@@ -219,8 +219,116 @@ article strong {
 .nowrap {
     white-space: nowrap;
 }
-.footnote-backref {
-    margin-left: var(--s-2);
+// Footnote inline tooltips
+sup.footnote-ref {
+    position: relative;
+    isolation: isolate;
+    // Prevent the sup from expanding the line-height of the row it sits in
+    line-height: 0;
+    vertical-align: middle;
+    margin-left: 0.2em;
+}
+
+.footnote-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 1.5px solid var(--medium-grey);
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: var(--medium-grey);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color var(--duration), border-color var(--duration);
+
+    &:hover,
+    &[aria-expanded='true'] {
+        color: var(--link-color);
+        border-color: var(--link-color);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--link-color);
+        outline-offset: 2px;
+    }
+}
+
+.footnote-popup {
+    position: absolute;
+    bottom: calc(100% + 0.5em);
+    left: 50%;
+    transform: translateX(-50%) translateY(0.25rem);
+    width: min(32ch, 90vw);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity var(--duration) ease,
+        visibility var(--duration) ease,
+        transform var(--duration) ease;
+}
+
+sup.footnote-ref.open > .footnote-popup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+// Position below the reference when near the top of the viewport
+sup.footnote-ref.popup-below > .footnote-popup {
+    bottom: auto;
+    top: calc(100% + 0.5em);
+    transform: translateX(-50%) translateY(-0.25rem);
+}
+
+sup.footnote-ref.popup-below.open > .footnote-popup {
+    transform: translateX(-50%) translateY(0);
+}
+
+sup.footnote-ref.popup-below .footnote-popup-inner::after {
+    bottom: auto;
+    top: -5px;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px solid var(--light-grey);
+    border-left: 1px solid var(--light-grey);
+}
+
+.footnote-popup-inner {
+    position: relative;
+    display: block;
+    background: var(--background-color);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    padding: var(--s-1) var(--s0);
+    font-family: var(--font-serif);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-color);
+
+    // Downward caret pointing at the reference
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 8px;
+        height: 8px;
+        background: var(--background-color);
+        border-right: 1px solid var(--light-grey);
+        border-bottom: 1px solid var(--light-grey);
+    }
 }
 .sub {
     font-size: 0.9rem;

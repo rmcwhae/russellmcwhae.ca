@@ -1,156 +1,144 @@
 /**
- * Custom rehype plugin to render footnotes as HTML
- * Converts footnote nodes to proper HTML elements
+ * Custom rehype plugin to render footnotes as inline tooltip popups.
+ *
+ * mdsvex converts mdast footnotes to HTML before rehype plugins run, so this
+ * transforms the rendered GFM output (`sup#fnref-*` + `.footnotes` section)
+ * into inline popup markup for FootnoteManager.
  */
 
 import { visit } from 'unist-util-visit'
 import type { Node, Parent } from 'unist'
 
-// Define custom node types for footnotes
-interface FootnoteReference extends Node {
-    type: 'footnoteReference'
-    identifier: string
-    label: string
-}
-
-interface FootnoteDefinition extends Node {
-    type: 'footnoteDefinition'
-    identifier: string
-    label: string
-    children: Node[]
-}
-
-interface Footnotes extends Node {
-    type: 'footnotes'
-    children: Node[]
-}
-
 interface ElementNode extends Node {
     type: 'element'
     tagName: string
-    properties?: Record<string, string | string[]>
-    children: Node[]
+    properties?: Record<string, string | string[] | boolean>
+    children?: Node[]
 }
 
-interface TextNode extends Node {
-    type: 'text'
-    value: string
+function classNames(node: ElementNode): string[] {
+    const cls = node.properties?.className
+    if (!cls) return []
+    return Array.isArray(cls) ? cls.map(String) : [String(cls)]
 }
 
-interface ParagraphNode extends Node {
-    type: 'paragraph'
-    children: Node[]
+function hasClass(node: ElementNode, name: string): boolean {
+    return classNames(node).includes(name)
+}
+
+function nodeId(node: ElementNode): string | undefined {
+    const id = node.properties?.id
+    return typeof id === 'string' ? id : undefined
+}
+
+function footnoteIdFromLi(id: string): string | undefined {
+    const match = id.match(/^(?:user-content-)?fn-(.+)$/)
+    return match?.[1]
+}
+
+function footnoteIdFromSup(id: string): string | undefined {
+    const match = id.match(/^(?:user-content-)?fnref-(.+)$/)
+    return match?.[1]
+}
+
+function footnoteIdFromRefLink(node: ElementNode): string | undefined {
+    const href = node.properties?.href
+    if (typeof href !== 'string') return undefined
+    const match = href.match(/#(?:user-content-)?fn-(.+)$/)
+    return match?.[1]
+}
+
+function withoutBackrefs(children: Node[]): Node[] {
+    return children.filter((child) => {
+        if ((child as ElementNode).type !== 'element') return true
+        const el = child as ElementNode
+        return !(el.tagName === 'a' && hasClass(el, 'footnote-backref'))
+    })
+}
+
+function isFootnotesSection(node: ElementNode): boolean {
+    if (node.tagName === 'section' && node.properties?.dataFootnotes) return true
+    return node.tagName === 'div' && hasClass(node, 'footnotes')
 }
 
 function rehypeFootnotes() {
     return (tree: Node & Parent) => {
-        const footnotes = new Map()
+        const contentMap = new Map<string, Node[]>()
+
+        visit(tree, 'element', (node: ElementNode) => {
+            if (node.tagName !== 'li') return
+            const identifier = footnoteIdFromLi(nodeId(node) ?? '')
+            if (!identifier) return
+            contentMap.set(identifier, withoutBackrefs(node.children ?? []))
+        })
+
         let footnoteCounter = 1
+        visit(tree, 'element', (node: ElementNode) => {
+            if (node.tagName !== 'sup') return
 
-        // First pass: collect footnote definitions and convert references
-        visit(tree, 'footnoteReference', (node: FootnoteReference) => {
-            const identifier = node.identifier
+            const link = (node.children ?? []).find(
+                (child) =>
+                    (child as ElementNode).type === 'element' &&
+                    (child as ElementNode).tagName === 'a' &&
+                    (hasClass(child as ElementNode, 'footnote-ref') ||
+                        (child as ElementNode).properties?.dataFootnoteRef)
+            ) as ElementNode | undefined
 
-            // Create HTML structure for footnote reference
-            const elementNode = node as unknown as ElementNode
-            elementNode.type = 'element'
-            elementNode.tagName = 'sup'
-            elementNode.properties = {
+            if (!link) return
+
+            const identifier =
+                footnoteIdFromSup(nodeId(node) ?? '') ??
+                footnoteIdFromRefLink(link) ??
+                nodeId(link)?.replace(/^(?:user-content-)?fnref-/, '')
+
+            if (!identifier) return
+
+            const counter = footnoteCounter++
+            const popupId = `footnote-popup-${identifier}-${counter}`
+            const content = contentMap.get(identifier) ?? []
+
+            node.properties = {
+                className: ['footnote-ref'],
                 id: `footnote-ref-${identifier}`,
             }
-            elementNode.children = [
+
+            node.children = [
                 {
                     type: 'element',
-                    tagName: 'a',
+                    tagName: 'button',
                     properties: {
-                        href: `#footnote-${identifier}`,
-                        'aria-describedby': `footnote-${identifier}`,
+                        className: ['footnote-button'],
+                        type: 'button',
+                        'aria-label': `Footnote ${counter}`,
+                        'aria-expanded': 'false',
+                        'aria-controls': popupId,
+                    },
+                    children: [{ type: 'text', value: '…' }],
+                },
+                {
+                    type: 'element',
+                    tagName: 'span',
+                    properties: {
+                        className: ['footnote-popup'],
+                        id: popupId,
+                        role: 'note',
+                        'aria-label': `Footnote ${counter}`,
                     },
                     children: [
                         {
-                            type: 'text',
-                            value: footnoteCounter.toString(),
-                        } as TextNode,
-                    ],
-                } as ElementNode,
-            ]
-
-            footnotes.set(identifier, {
-                id: identifier,
-                counter: footnoteCounter++,
-                content: (
-                    (elementNode.children[0] as ElementNode)
-                        .children[0] as TextNode
-                ).value,
-            })
-        })
-
-        // Second pass: convert footnote definitions
-        visit(tree, 'footnoteDefinition', (node: FootnoteDefinition) => {
-            const identifier = node.identifier
-            const footnote = footnotes.get(identifier)
-
-            if (footnote) {
-                const elementNode = node as unknown as ElementNode
-                elementNode.type = 'element'
-                elementNode.tagName = 'li'
-                elementNode.properties = {
-                    id: `footnote-${identifier}`,
-                }
-
-                // Process the content
-                const content = node.children[0] as ParagraphNode
-                if (content && content.children) {
-                    elementNode.children = [
-                        ...content.children,
-                        {
                             type: 'element',
-                            tagName: 'a',
-                            properties: {
-                                href: `#footnote-ref-${identifier}`,
-                                'aria-label': 'Back to reference',
-                            },
-                            children: [
-                                {
-                                    type: 'text',
-                                    value: '↩',
-                                } as TextNode,
-                            ],
-                        } as ElementNode,
-                    ]
-                }
-            }
+                            tagName: 'span',
+                            properties: { className: ['footnote-popup-inner'] },
+                            children: content,
+                        },
+                    ],
+                },
+            ]
         })
 
-        // Third pass: convert footnotes section
-        visit(tree, 'footnotes', (node: Footnotes) => {
-            const elementNode = node as unknown as ElementNode
-            elementNode.type = 'element'
-            elementNode.tagName = 'section'
-            elementNode.properties = {
-                className: ['footnotes'],
-            }
-
-            // Add heading
-            const heading: ElementNode = {
-                type: 'element',
-                tagName: 'h2',
-                children: [
-                    {
-                        type: 'text',
-                        value: 'Footnotes',
-                    } as TextNode,
-                ],
-            }
-
-            // Add ordered list
-            const list: ElementNode = {
-                type: 'element',
-                tagName: 'ol',
-                children: node.children,
-            }
-
-            elementNode.children = [heading, list]
+        ;(tree as Parent).children = (tree as Parent).children.filter((n: Node) => {
+            if ((n as ElementNode).type !== 'element') return true
+            return !isFootnotesSection(n as ElementNode)
         })
     }
 }
