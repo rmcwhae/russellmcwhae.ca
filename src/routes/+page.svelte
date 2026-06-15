@@ -154,12 +154,14 @@
         </div>
         <div class="currently">
             <div class="currently-item">
-                <div class="c-label">Building</div>
-                <div class="c-value">A redesign of this website</div>
+                <div class="c-label">Learning</div>
+                <div class="c-value">Retrieval-Augmented Generation (RAG)</div>
             </div>
             <div class="currently-item">
                 <div class="c-label">Reading</div>
-                <div class="c-value">The Spirit-Controlled Temperament</div>
+                <div class="c-value">
+                    Spirit-Controlled Temperament by Tim LaHaye
+                </div>
             </div>
             <div class="currently-item">
                 <div class="c-label">Exploring</div>
@@ -499,11 +501,10 @@
     }
 
     .c-label {
-        font-family: var(--font-sans);
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--medium-grey);
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: var(--high-contrast-color);
         margin-bottom: var(--s-2);
     }
 
