@@ -23,14 +23,27 @@ a {
         text-decoration: none;
     }
 }
-main a {
-    text-decoration: none;
-    color: var(--high-contrast-color);
-    font-weight: 600;
+
+:is(article, .flow, .journal-intro, section.featured)
+    :is(p, li, blockquote)
+    a:not(.button, .no-shadow, .hover-underline-animation, .category-pill) {
+    color: var(--link-color);
+    font-weight: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline-color);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
 
     &:hover {
-        text-decoration: underline;
+        color: var(--link-color-hover);
+        text-decoration-color: var(--link-color-hover);
         text-decoration-thickness: 2px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--link-color);
+        outline-offset: 2px;
     }
 }
 a.no-shadow,
@@ -90,13 +103,20 @@ hr {
 
 // Headings
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+:is(h1, h2, h3, h4, h5, h6) a:not(.button, .category-pill, .entry-title-link) {
     color: var(--high-contrast-color);
+    text-decoration: none;
+    font-weight: inherit;
+
+    &:hover {
+        color: var(--high-contrast-color);
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--high-contrast-color);
+        outline-offset: 2px;
+    }
 }
 h1,
 h2,
@@ -178,6 +198,13 @@ article strong {
     margin-left: var(--s-2);
 }
 .sub {
-    font-weight: 600;
     font-size: 0.9rem;
+}
+
+.entry-category {
+    display: flex;
+}
+
+header .entry-category {
+    justify-content: center;
 }

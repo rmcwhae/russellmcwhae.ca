@@ -10,29 +10,6 @@
 
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)
-
-    const etCetera = [
-        {
-            href: 'reading-list',
-            title: 'Reading List',
-            description: 'Books I have read',
-        },
-        {
-            href: 'uses',
-            title: 'What I use',
-            description: 'Tools used in my work',
-        },
-        {
-            href: 'videos',
-            title: 'Outdoor Videos',
-            description: 'A list of my favourite outdoor videos',
-        },
-        {
-            href: 'ski-footage',
-            title: 'Skiing GoPro Footage',
-            description: 'Some backcountry skiing GoPro footage',
-        },
-    ]
 </script>
 
 <SEO />
@@ -166,12 +143,6 @@
             <Button href="/journal" text="All entries" right />
         </ButtonSet>
     </div>
-
-    <h2>Et Cetera</h2>
-
-    <p class="mb-3">A few bits of content that had nowhere else to go.</p>
-
-    <JournalEntrySet posts={etCetera} />
 </div>
 
 <style lang="scss">

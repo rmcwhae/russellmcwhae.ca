@@ -58,13 +58,13 @@
                     id="mobile-switcher"
                     data-test="mobile-colour-scheme-switcher"
                 >
-                    <ThemeSwitcher />
+                    <ThemeSwitcher instanceId="mobile" />
                 </li>
             </ul>
         </div>
     </nav>
     <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
-        <ThemeSwitcher />
+        <ThemeSwitcher instanceId="desktop" />
     </div>
     <div
         class="nav-toggle"
@@ -110,6 +110,12 @@
     }
     #logo a {
         display: block;
+        color: var(--high-contrast-color);
+        transition: color var(--duration);
+    }
+    #logo a:hover,
+    #logo a:focus-visible {
+        color: var(--link-color);
     }
     ul {
         list-style: none;
@@ -141,6 +147,7 @@
     }
     .nav-menu.active {
         height: auto;
+        overflow: visible;
     }
     .nav-overlay.active {
         opacity: 1;
@@ -150,6 +157,13 @@
         display: inline-flex;
         align-self: center;
         padding: var(--s-1) 0;
+    }
+
+    @media (max-width: $breakpoint-tablet-portrait-max) {
+        #mobile-switcher {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     .nav-toggle {
         z-index: 12;

@@ -6,6 +6,7 @@ const config: UserConfig = {
         noExternal: [],
     },
     server: {
+        allowedHosts: ['m2.local'],
         fs: {
             allow: ['..'],
         },

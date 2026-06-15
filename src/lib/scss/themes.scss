@@ -1,10 +1,13 @@
 @mixin light-theme {
-    --background-color: white;
-    --background-color-transparent: rgba(255, 255, 255, 0.8);
+    --background-color: #fafafa;
+    --background-color-transparent: rgba(250, 250, 250, 0.8);
     --text-color: rgb(100, 100, 100);
     --high-contrast-color: black;
     --light-grey: rgb(218, 218, 218);
     --medium-grey: #888;
+    --link-color: #5880a8;
+    --link-color-hover: #4a6d94;
+    --link-underline-color: rgba(88, 128, 168, 0.35);
 }
 
 @mixin dark-theme {
@@ -14,6 +17,9 @@
     --text-color: rgb(172, 172, 172);
     --light-grey: rgb(70, 70, 70);
     --medium-grey: #999;
+    --link-color: #8eb0d4;
+    --link-color-hover: #a8c4e8;
+    --link-underline-color: rgba(142, 176, 212, 0.45);
 }
 
 :root {
