@@ -57,7 +57,7 @@
     </section>
 
     <!-- Explore Topics -->
-    <section class="page-section" style="border-top: none">
+    <section class="page-section" style="border-top: none; padding-top: var(--s1)">
         <div class="section-header">
             <span class="section-label">Explore Topics</span>
         </div>
