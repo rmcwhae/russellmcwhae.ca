@@ -26,7 +26,7 @@ a {
 
 :is(article, .flow, .journal-intro, section.featured, .sidebar-block)
     :is(p, li, blockquote)
-    a:not(.button, .no-shadow, .hover-underline-animation, .category-pill) {
+    a:not(.button, .no-shadow, .hover-underline-animation, .category-pill, .all-entries) {
     color: var(--high-contrast-color);
     font-weight: inherit;
     text-decoration: underline;
