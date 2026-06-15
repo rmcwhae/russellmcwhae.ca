@@ -26,7 +26,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<section class="article-header border-bottom-thick full-bleed">
+<section class="article-header border-bottom full-bleed">
     <div class="restricted-width">
         <header>
             <div class="entry-category">
