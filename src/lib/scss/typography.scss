@@ -209,6 +209,16 @@ article strong {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--medium-grey);
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--accent);
+        margin-top: 5px;
+    }
 }
 .nowrap {
     white-space: nowrap;

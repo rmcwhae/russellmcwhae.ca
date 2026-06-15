@@ -35,18 +35,18 @@
             <div class="kicker">My creative outlet</div>
             <h1>A quiet eye<br />in a loud world.</h1>
             <p class="lead">
-                Images and writing from the trails, the desk, and the spaces in between.
+                Images and writing from the trails, the desk, and the spaces in
+                between.
             </p>
             <div class="hero-links">
-                <a href="/photography">Explore my Photography →</a>
-                <a href="/journal">Read my Journal →</a>
+                <a href="/photography"><span>Explore my Photography</span> →</a>
+                <a href="/journal"><span>Read my Journal</span> →</a>
             </div>
         </div>
     </div>
 </section>
 
 <div class="home">
-
     <!-- Photography -->
     <section class="page-section">
         <div class="section-header">
@@ -130,9 +130,6 @@
     <!-- About -->
     <section class="page-section about-section" id="about">
         <div class="about-grid">
-            <div class="portrait">
-                <img src="/russell.png" alt="Russell McWhae" />
-            </div>
             <div class="about-text">
                 <div class="section-label" style="margin-bottom: var(--s0)">
                     About
@@ -151,8 +148,11 @@
                     Alberta. In early 2019, I earned an MSc. in biomedical
                     engineering from the University of Calgary. I then took the
                     Lighthouse Labs web development boot camp and now work as a
-                    web developer, specializing in front-end work.
+                    web developer.
                 </p>
+            </div>
+            <div class="portrait">
+                <img src="/russell.png" alt="Russell McWhae" />
             </div>
         </div>
     </section>
@@ -209,9 +209,9 @@
         background: linear-gradient(
             to right,
             var(--background-color) 0%,
-            var(--background-color) 32%,
-            var(--background-color-transparent) 52%,
-            transparent 72%
+            var(--background-color) 33%,
+            var(--background-color-transparent) 44%,
+            transparent 55%
         );
 
         @include for-tablet-portrait-down {
@@ -253,6 +253,15 @@
         font-size: clamp(2.8rem, 5vw, 4.5rem);
         line-height: 1.02;
         margin: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 18px;
+        }
     }
 
     .lead {
@@ -266,16 +275,30 @@
     .hero-links {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 16px;
         font-family: var(--font-sans);
-        font-size: 13px;
-        letter-spacing: 0.04em;
+        font-size: 12px;
+        letter-spacing: 0.1em;
 
         a {
             color: var(--high-contrast-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            span {
+                text-decoration: underline;
+                text-decoration-color: var(--accent);
+                text-decoration-thickness: 3px;
+                text-underline-offset: 5px;
+            }
 
             &:hover {
                 color: var(--accent);
+
+                span {
+                    text-decoration-color: var(--accent);
+                }
             }
         }
     }
@@ -322,10 +345,14 @@
         a {
             font-size: 15px;
             color: var(--high-contrast-color);
-            text-decoration: none;
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
 
             &:hover {
                 color: var(--link-color);
+                text-decoration-color: var(--link-color);
             }
         }
     }
@@ -407,7 +434,7 @@
     /* About */
     .about-grid {
         display: grid;
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 1fr 280px;
         gap: 56px;
         align-items: start;
 
