@@ -15,10 +15,21 @@ export const load: PageLoad = async () => {
         return year < earliestYear ? year : earliestYear
     }, new Date(posts[0]?.date ?? Date.now()).getFullYear())
 
+    const categoryCounts = posts.reduce(
+        (acc, post) => {
+            if (post.category) {
+                acc[post.category] = (acc[post.category] ?? 0) + 1
+            }
+            return acc
+        },
+        {} as Record<string, number>
+    )
+
     return {
         posts,
         totalWordCount,
         essayCount: posts.length,
         writingSinceYear,
+        categoryCounts,
     }
 }

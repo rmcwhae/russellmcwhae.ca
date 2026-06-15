@@ -10,6 +10,7 @@
     let totalWordCount = $derived(data.totalWordCount)
     let essayCount = $derived(data.essayCount)
     let writingSinceYear = $derived(data.writingSinceYear)
+    let categoryCounts = $derived(data.categoryCounts)
     let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
     let featuredPost = $derived(posts[0])
     let remainingPosts = $derived(posts.slice(1))
@@ -46,7 +47,7 @@
 
         <div class="sidebar-block">
             <div class="section-label sidebar-heading">Categories</div>
-            <CategorySelector />
+            <CategorySelector counts={categoryCounts} />
         </div>
     </aside>
 </div>
