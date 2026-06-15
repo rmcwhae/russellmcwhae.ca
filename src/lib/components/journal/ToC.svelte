@@ -324,7 +324,7 @@
     }
 
     .toc-progress-fill {
-        stroke: var(--link-color);
+        stroke: var(--high-contrast-color);
         stroke-linecap: round;
         transition: stroke-dashoffset 0.15s ease;
     }
