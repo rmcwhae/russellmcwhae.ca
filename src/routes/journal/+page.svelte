@@ -38,7 +38,7 @@
                 Welcome to my online journal, a collection of long-form thoughts
                 on topics that are important to me. Text generation and ideas
                 are my own, though I do use AI for editing and refining (as of
-                2025). I hope you'll join me for a glimpse into my head.
+                2025). I hope you’ll join me for a glimpse into my head.
             </p>
             <p>
                 Also see my <a href={resolve('/reading-list')}>reading list</a>.

@@ -24,7 +24,7 @@ a {
     }
 }
 
-:is(article, .flow, .journal-intro, section.featured)
+:is(article, .flow, .journal-intro, section.featured, .sidebar-block)
     :is(p, li, blockquote)
     a:not(.button, .no-shadow, .hover-underline-animation, .category-pill) {
     color: var(--link-color);
@@ -211,14 +211,6 @@ article strong {
     color: var(--medium-grey);
     display: inline-block;
 
-    &::after {
-        content: '';
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--accent);
-        margin-top: 10px;
-    }
 }
 .nowrap {
     white-space: nowrap;
