@@ -4,6 +4,29 @@
 
     let { images } = $props()
 
+    let galleryEl = $state(null)
+
+    $effect(() => {
+        if (!galleryEl) return
+        const items = galleryEl.querySelectorAll('.gallery-item')
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible')
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+        items.forEach((item, i) => {
+            item.style.setProperty('--delay', `${Math.min(i, 3) * 0.08}s`)
+            observer.observe(item)
+        })
+        return () => observer.disconnect()
+    })
+
     $effect(async () => {
         const { default: PhotoSwipeLightbox } = await import('photoswipe/lightbox')
         const { default: PhotoSwipe } = await import('photoswipe')
@@ -48,7 +71,7 @@
     })
 </script>
 
-<div id="homepage-gallery" class="homepage-gallery-grid">
+<div id="homepage-gallery" class="homepage-gallery-grid" bind:this={galleryEl}>
     {#each images as image (image.filePath)}
         {@const caption = image.customMetadata?.caption ?? ''}
         {@const fullSrc = buildURL(image.filePath, { width: 2000 })}
@@ -102,6 +125,23 @@
     .gallery-item {
         display: flex;
         flex-direction: column;
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+            opacity 0.5s ease-out,
+            transform 0.5s ease-out;
+        transition-delay: var(--delay, 0s);
+
+        @media (prefers-reduced-motion: reduce) {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+    .gallery-item:global(.visible) {
+        opacity: 1;
+        transform: none;
     }
 
     .thumb {
