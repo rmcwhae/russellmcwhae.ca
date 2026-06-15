@@ -91,7 +91,7 @@
         margin: 0;
     }
     h1 {
-        font-weight: 700;
+        font-weight: normal;
     }
     header .entry-category {
         align-items: center;
@@ -106,6 +106,11 @@
     }
     header .entry-meta {
         white-space: nowrap;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
     }
     .article-body {
         display: grid;

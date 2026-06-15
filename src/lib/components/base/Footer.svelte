@@ -4,23 +4,9 @@
     import IoIosMail from 'svelte-icons/io/IoIosMail.svelte'
 
     const year = new Date().getFullYear()
-
-    function topFunction() {
-        document.body.scrollTop = 0 // For Safari
-        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
-    }
 </script>
 
 <footer>
-    <div
-        class="up"
-        role="button"
-        tabindex="0"
-        aria-label="Scroll to top"
-        onclick={topFunction}
-        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && topFunction()}
-        title="Scroll to top"
-    ></div>
     <div class="wrapper">
         <div class="text">
             &copy; {year} Russell McWhae.
@@ -51,8 +37,8 @@
         padding-top: var(--s0);
         margin-top: var(--s4);
         color: var(--high-contrast-color);
+        font-family: var(--font-sans);
         font-size: 0.9rem;
-        position: relative;
     }
     .text {
         margin-bottom: var(--s0);
@@ -63,16 +49,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    .up {
-        position: absolute;
-        left: calc(50% - 100px);
-        top: 0;
-        width: 200px;
-        height: 100%;
-        background: url('/assiniboine.png') center bottom no-repeat;
-        background-size: auto 100%;
-        cursor: pointer;
     }
     a {
         color: var(--high-contrast-color);
@@ -88,19 +64,9 @@
     @media (max-width: 1023px) {
         .wrapper {
             display: block;
-            padding: var(--s0) 33% var(--s0) 0;
         }
         .text {
             margin-bottom: var(--s-1);
-        }
-        .up {
-            width: 33%;
-            right: var(--s0);
-            left: inherit;
-            top: inherit;
-            bottom: 0;
-            background-size: 100px 56.75px;
-            background-position: right bottom;
         }
     }
 </style>

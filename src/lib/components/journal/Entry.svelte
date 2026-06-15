@@ -79,11 +79,13 @@
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
-            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}<a
-                href={resolve('/journal/[slug]', { slug })}
-                >Continue Reading →</a
-            >{/if}
+            {@html preventLastTwoWordWrap(featuredPreview)}
         </p>
+    {/if}
+    {#if featured}
+        <a class="continue-reading" href={resolve('/journal/[slug]', { slug })}>
+            <span>Continue Reading</span> →
+        </a>
     {/if}
 </section>
 
@@ -112,6 +114,23 @@
     }
     p {
         margin: 0;
+        font-size: 0.9rem;
+    }
+    .continue-reading {
+        font-family: var(--font-sans);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--high-contrast-color);
+
+        span {
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 5px;
+        }
     }
     .entry-category {
         align-items: center;
@@ -124,8 +143,18 @@
         gap: var(--s-2);
         min-width: 0;
     }
+    .entry-category-leading :global(.category-pill + .status-pill)::before {
+        content: '·';
+        margin-right: var(--s-2);
+        color: var(--medium-grey);
+    }
     .entry-meta {
         white-space: nowrap;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
     }
     section {
         display: flex;
@@ -172,9 +201,6 @@
     }
     section.archive {
         padding-top: var(--s0);
-    }
-    section.archive.first-in-year {
-        padding-top: 0;
     }
 
     @media (max-width: 640px) {

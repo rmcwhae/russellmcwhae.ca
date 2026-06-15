@@ -9,7 +9,7 @@
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)
 
-    const heroPath = '/portfolio/RMCWHAE-20210109-DSC03461-Edit_ZSrW1OfjYN.jpg'
+    const heroPath = '/portfolio/RMCWHAE-20180617-DSC05125_U1gi2GGobf.jpg'
     const heroSrc = buildURL(heroPath, { width: 1400 })
     const heroSrcset = [700, 1000, 1400, 1800]
         .map((w) => `${buildURL(heroPath, { width: w })} ${w}w`)
@@ -25,7 +25,7 @@
             src={heroSrc}
             srcset={heroSrcset}
             sizes="(max-width: 700px) 700px, (max-width: 1000px) 1000px, (max-width: 1400px) 1400px, 1800px"
-            alt="Mountain landscape"
+            alt="Elbow Lake"
             loading="eager"
         />
     </div>

@@ -18,7 +18,7 @@
 <SEO title="Journal" />
 
 {#if featuredPost}
-    <section class="featured-article border-bottom-thick full-bleed">
+    <section class="featured-article border-bottom full-bleed">
         <div class="featured-article-inner restricted-width">
             <JournalEntry post={featuredPost} featured />
         </div>
@@ -45,7 +45,6 @@
         </div>
 
         <div class="sidebar-block">
-            <div class="section-label sidebar-heading">Categories</div>
             <CategorySelector />
         </div>
 
@@ -115,15 +114,23 @@
     }
 
     @include for-tablet-landscape-up {
+        .featured-article {
+            margin-bottom: 0;
+        }
+
         .journal {
             grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
             align-items: start;
+            gap: 0;
         }
 
         .journal-main {
             grid-column: 1;
             grid-row: 1;
             min-width: 0;
+            padding-top: var(--s3);
+            padding-right: var(--s2);
+            border-right: 1px solid var(--light-grey);
         }
 
         .journal-sidebar {
@@ -133,6 +140,18 @@
             line-height: 1.5;
             position: sticky;
             top: var(--s1);
+            padding-top: var(--s3);
+            padding-left: var(--s2);
+        }
+    }
+
+    @include for-laptop-only {
+        .journal-main {
+            padding-top: var(--s2);
+        }
+
+        .journal-sidebar {
+            padding-top: var(--s2);
         }
     }
 </style>
