@@ -10,7 +10,6 @@
 
 <a
     {href}
-    class="hover-underline-animation"
     onclick={handleClick}
     aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
     >{title}
@@ -23,14 +22,12 @@
     a {
         font-size: 1.2em;
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--high-contrast-color);
         display: block;
         margin: var(--s-1) var(--s0);
     }
-    a[aria-current],
     a:hover {
-        color: var(--high-contrast-color);
-        text-decoration: none;
+        color: var(--link-color);
     }
     /* .notification {
         border-radius: 50%;

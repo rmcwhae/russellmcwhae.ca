@@ -17,40 +17,46 @@
 </script>
 
 <header>
-    <div id="logo" class:active={mobileMenuOpen}>
-        <a href="/" onclick={hideMenu}><Logo /></a>
-    </div>
-    <nav>
-        <div class="nav-menu" class:active={mobileMenuOpen}>
-            <ul>
-                <li>
-                    <Anchor
-                        title="Photography"
-                        href="/photography"
-                        on:close={hideMenu}
-                    />
-                </li>
-                <li>
-                    <Anchor
-                        title="Journal"
-                        href="/journal"
-                        on:close={hideMenu}
-                    />
-                </li>
-                <li>
-                    <Anchor title="About" href="/#about" on:close={hideMenu} />
-                </li>
-                <li
-                    id="mobile-switcher"
-                    data-test="mobile-colour-scheme-switcher"
-                >
-                    <ThemeSwitcher instanceId="mobile" />
-                </li>
-            </ul>
+    <div class="nav-inner">
+        <div id="logo" class:active={mobileMenuOpen}>
+            <a href="/" onclick={hideMenu}><Logo /></a>
         </div>
-    </nav>
-    <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
-        <ThemeSwitcher instanceId="desktop" />
+        <nav>
+            <div class="nav-menu" class:active={mobileMenuOpen}>
+                <ul>
+                    <li>
+                        <Anchor
+                            title="Photography"
+                            href="/photography"
+                            on:close={hideMenu}
+                        />
+                    </li>
+                    <li>
+                        <Anchor
+                            title="Journal"
+                            href="/journal"
+                            on:close={hideMenu}
+                        />
+                    </li>
+                    <li>
+                        <Anchor
+                            title="About"
+                            href="/#about"
+                            on:close={hideMenu}
+                        />
+                    </li>
+                    <li
+                        id="mobile-switcher"
+                        data-test="mobile-colour-scheme-switcher"
+                    >
+                        <ThemeSwitcher instanceId="mobile" />
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
+            <ThemeSwitcher instanceId="desktop" />
+        </div>
     </div>
     <div
         class="nav-toggle"
@@ -71,15 +77,35 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
     header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        padding: 0 var(--s0);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        background: var(--background-color-transparent);
+        border-bottom: 1px solid var(--light-grey);
+
+        @include for-tablet-portrait-up {
+            padding: 0 var(--s1);
+        }
+    }
+
+    .nav-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        max-width: $breakpoint-xl;
+        margin: 0 auto;
     }
     nav {
         color: var(--high-contrast-color);
         font-family: var(--font-sans);
         font-weight: 600;
-        font-size: 12px;
+        font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
     }
@@ -156,7 +182,7 @@
         z-index: 12;
         position: absolute;
         top: 7px;
-        right: 0;
+        right: var(--s0);
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -239,6 +265,10 @@
         ul {
             display: flex;
             flex-direction: row;
+        }
+        nav :global(a) {
+            margin-top: var(--s-3);
+            margin-bottom: var(--s-3);
         }
     }
 </style>
