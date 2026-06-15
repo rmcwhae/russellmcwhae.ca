@@ -42,8 +42,9 @@
 
     <section class="calendars-note">
         <p>
-            I also produce annual wall calendars featuring my landscape photography. Previous editions
-            and more information are available on the <a href="/calendars">calendars page</a>.
+            I also produce annual wall calendars featuring my landscape
+            photography. Previous editions and more information are available on
+            the <a href="/calendars">calendars page</a>.
         </p>
     </section>
 </div>

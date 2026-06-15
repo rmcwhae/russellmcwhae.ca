@@ -24,7 +24,9 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         await expect(page.locator('.archive').first()).toBeVisible()
-        await expect(page.locator('.year-group .year-label').first()).toBeVisible()
+        await expect(
+            page.locator('.year-group .year-label').first()
+        ).toBeVisible()
         await expect(page.locator('.year-group section').first()).toBeVisible()
     })
 
@@ -33,20 +35,19 @@ test.describe('Journal Page', () => {
 
         const selector = page.locator('.category-selector')
         await expect(selector).toBeVisible()
-        await expect(selector.getByRole('heading', { name: 'Categories' })).toBeVisible()
+        await expect(
+            selector.getByRole('heading', { name: 'Categories' })
+        ).toBeVisible()
 
-        await expect(selector.getByRole('link', { name: 'Tech' })).toHaveAttribute(
-            'href',
-            '/journal/category/Tech'
-        )
-        await expect(selector.getByRole('link', { name: 'Reflection' })).toHaveAttribute(
-            'href',
-            '/journal/category/Reflection'
-        )
-        await expect(selector.getByRole('link', { name: 'Outdoor' })).toHaveAttribute(
-            'href',
-            '/journal/category/Outdoor'
-        )
+        await expect(
+            selector.getByRole('link', { name: 'Tech' })
+        ).toHaveAttribute('href', '/journal/category/Tech')
+        await expect(
+            selector.getByRole('link', { name: 'Reflection' })
+        ).toHaveAttribute('href', '/journal/category/Reflection')
+        await expect(
+            selector.getByRole('link', { name: 'Outdoor' })
+        ).toHaveAttribute('href', '/journal/category/Outdoor')
 
         await selector.getByRole('link', { name: 'Tech' }).click()
         await expect(page).toHaveURL('/journal/category/Tech')
@@ -140,7 +141,9 @@ test.describe('Journal Page', () => {
             await firstEntry.click()
 
             // Check that publication date is displayed
-            await expect(page.locator('header .entry-meta').first()).toBeVisible()
+            await expect(
+                page.locator('header .entry-meta').first()
+            ).toBeVisible()
 
             // Check that date is in a reasonable format
             const dateText = await page

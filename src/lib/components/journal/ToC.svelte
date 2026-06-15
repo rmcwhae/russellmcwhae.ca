@@ -24,9 +24,7 @@
     let drawerEl = $state(null)
     let triggerEl = $state(null)
 
-    let progressOffset = $derived(
-        PROGRESS_CIRCUMFERENCE * (1 - scrollProgress)
-    )
+    let progressOffset = $derived(PROGRESS_CIRCUMFERENCE * (1 - scrollProgress))
 
     function disconnectObserver() {
         if (observer) {
@@ -175,11 +173,7 @@
 
 {#if headings.length}
     <div class="toc-fab-wrap" data-test="toc-fab">
-        <svg
-            class="toc-progress-ring"
-            viewBox="0 0 56 56"
-            aria-hidden="true"
-        >
+        <svg class="toc-progress-ring" viewBox="0 0 56 56" aria-hidden="true">
             <circle
                 class="toc-progress-track"
                 cx="28"
@@ -205,11 +199,7 @@
             bind:this={triggerEl}
             onclick={toggleDrawer}
         >
-            <svg
-                class="toc-fab-icon"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-            >
+            <svg class="toc-fab-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="4.5" cy="6" r="1.25" fill="currentColor" />
                 <line
                     x1="8"
@@ -267,7 +257,8 @@
                 type="button"
                 aria-label="Close table of contents"
                 onclick={closeDrawer}
-            ><span aria-hidden="true">&times;</span></button>
+                ><span aria-hidden="true">&times;</span></button
+            >
         </div>
         <nav class="toc" aria-label="Table of contents">
             <ul>
@@ -278,8 +269,8 @@
                     >
                         <a
                             href={`#${heading.node.id}`}
-                            onclick={handleLinkClick}
-                        >{heading.title}</a>
+                            onclick={handleLinkClick}>{heading.title}</a
+                        >
                     </li>
                 {/each}
             </ul>
@@ -394,7 +385,8 @@
         background-color: var(--background-color);
         border-top: 1px solid var(--light-grey);
         border-radius: var(--radius) var(--radius) 0 0;
-        padding: var(--s0) var(--s1) max(var(--s1), env(safe-area-inset-bottom, 0px));
+        padding: var(--s0) var(--s1)
+            max(var(--s1), env(safe-area-inset-bottom, 0px));
         overflow: hidden;
         transform: translateY(100%);
         transition: transform var(--duration) ease;

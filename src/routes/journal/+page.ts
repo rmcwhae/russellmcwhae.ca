@@ -10,10 +10,13 @@ export const load: PageLoad = async () => {
         return acc + post.readingTime.words
     }, 0)
 
-    const writingSinceYear = posts.reduce((earliestYear, post) => {
-        const year = new Date(post.date).getFullYear()
-        return year < earliestYear ? year : earliestYear
-    }, new Date(posts[0]?.date ?? Date.now()).getFullYear())
+    const writingSinceYear = posts.reduce(
+        (earliestYear, post) => {
+            const year = new Date(post.date).getFullYear()
+            return year < earliestYear ? year : earliestYear
+        },
+        new Date(posts[0]?.date ?? Date.now()).getFullYear()
+    )
 
     const categoryCounts = posts.reduce(
         (acc, post) => {

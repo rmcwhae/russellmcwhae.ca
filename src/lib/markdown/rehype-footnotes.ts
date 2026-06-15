@@ -57,7 +57,8 @@ function withoutBackrefs(children: Node[]): Node[] {
 }
 
 function isFootnotesSection(node: ElementNode): boolean {
-    if (node.tagName === 'section' && node.properties?.dataFootnotes) return true
+    if (node.tagName === 'section' && node.properties?.dataFootnotes)
+        return true
     return node.tagName === 'div' && hasClass(node, 'footnotes')
 }
 
@@ -135,11 +136,12 @@ function rehypeFootnotes() {
                 },
             ]
         })
-
-        ;(tree as Parent).children = (tree as Parent).children.filter((n: Node) => {
-            if ((n as ElementNode).type !== 'element') return true
-            return !isFootnotesSection(n as ElementNode)
-        })
+        ;(tree as Parent).children = (tree as Parent).children.filter(
+            (n: Node) => {
+                if ((n as ElementNode).type !== 'element') return true
+                return !isFootnotesSection(n as ElementNode)
+            }
+        )
     }
 }
 

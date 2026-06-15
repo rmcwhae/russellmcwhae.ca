@@ -6,7 +6,10 @@ export function isLongRead(readingTime: { minutes: number } | undefined) {
     return (readingTime?.minutes ?? 0) >= LONG_READ_MINUTES
 }
 
-export const CATEGORY_META: Record<string, { description: string; color: string; colorDark: string }> = {
+export const CATEGORY_META: Record<
+    string,
+    { description: string; color: string; colorDark: string }
+> = {
     Tech: {
         description: 'Personal tech and software development.',
         color: '#4a7a9e',

@@ -47,12 +47,18 @@ export const load: PageServerLoad = async () => {
                     const { title, date } = parseTitleAndDate(name as string)
                     return { ...event, title, date }
                 } catch {
-                    return { ...event, title: 'Untitled Event', date: 'Unknown Date' }
+                    return {
+                        ...event,
+                        title: 'Untitled Event',
+                        date: 'Unknown Date',
+                    }
                 }
             })
             .sort((a, b) => {
                 try {
-                    return new Date(b.date).getTime() - new Date(a.date).getTime()
+                    return (
+                        new Date(b.date).getTime() - new Date(a.date).getTime()
+                    )
                 } catch {
                     return 0
                 }
@@ -67,7 +73,9 @@ export const load: PageServerLoad = async () => {
                 })
                 const featuredImage =
                     (Array.isArray(images) &&
-                        (images.find((img) => img.tags && img.tags.includes('featured')) ||
+                        (images.find(
+                            (img) => img.tags && img.tags.includes('featured')
+                        ) ||
                             images[0])) ||
                     null
                 eventsWithImages.push({
@@ -76,7 +84,11 @@ export const load: PageServerLoad = async () => {
                     featuredImage,
                 })
             } catch {
-                eventsWithImages.push({ ...event, count: 0, featuredImage: null })
+                eventsWithImages.push({
+                    ...event,
+                    count: 0,
+                    featuredImage: null,
+                })
             }
         }
 

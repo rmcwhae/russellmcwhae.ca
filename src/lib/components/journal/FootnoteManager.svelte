@@ -7,16 +7,22 @@
         if (!currentlyOpen) return
         const el = currentlyOpen
         el.classList.remove('open')
-        el.querySelector<HTMLButtonElement>('.footnote-button')
-            ?.setAttribute('aria-expanded', 'false')
+        el.querySelector<HTMLButtonElement>('.footnote-button')?.setAttribute(
+            'aria-expanded',
+            'false'
+        )
         currentlyOpen = null
         // Defer removing popup-below until after the transition so the popup
         // doesn't snap position mid-fade.
         const popup = el.querySelector<HTMLElement>('.footnote-popup')
         if (popup) {
-            popup.addEventListener('transitionend', () => {
-                el.classList.remove('popup-below')
-            }, { once: true })
+            popup.addEventListener(
+                'transitionend',
+                () => {
+                    el.classList.remove('popup-below')
+                },
+                { once: true }
+            )
         } else {
             el.classList.remove('popup-below')
         }
@@ -35,7 +41,9 @@
     }
 
     function handleClick(e: MouseEvent) {
-        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.footnote-button')
+        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(
+            '.footnote-button'
+        )
         if (btn) {
             e.stopPropagation()
             const sup = btn.closest<HTMLElement>('.footnote-ref')!
@@ -54,7 +62,10 @@
 
     function handleKeydown(e: KeyboardEvent) {
         if (e.key === 'Escape' && currentlyOpen) {
-            const btn = currentlyOpen.querySelector<HTMLButtonElement>('.footnote-button')
+            const btn =
+                currentlyOpen.querySelector<HTMLButtonElement>(
+                    '.footnote-button'
+                )
             closeOpen()
             btn?.focus()
         }

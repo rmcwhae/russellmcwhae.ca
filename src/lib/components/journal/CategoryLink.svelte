@@ -74,21 +74,26 @@
     }
 
     @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .category-pill[data-variant='outdoor'] {
+        :global(html body:not([data-theme='light']))
+            .category-pill[data-variant='outdoor'] {
             --pill-color: #90c890;
         }
-        :global(html body:not([data-theme='light'])) .category-pill[data-variant='reflection'] {
+        :global(html body:not([data-theme='light']))
+            .category-pill[data-variant='reflection'] {
             --pill-color: #b890d0;
         }
-        :global(html body:not([data-theme='light'])) .category-pill[data-variant='tech'] {
+        :global(html body:not([data-theme='light']))
+            .category-pill[data-variant='tech'] {
             --pill-color: #90b8d8;
         }
     }
 
-    :global(html body[data-theme='dark']) .category-pill[data-variant='outdoor'] {
+    :global(html body[data-theme='dark'])
+        .category-pill[data-variant='outdoor'] {
         --pill-color: #90c890;
     }
-    :global(html body[data-theme='dark']) .category-pill[data-variant='reflection'] {
+    :global(html body[data-theme='dark'])
+        .category-pill[data-variant='reflection'] {
         --pill-color: #b890d0;
     }
     :global(html body[data-theme='dark']) .category-pill[data-variant='tech'] {

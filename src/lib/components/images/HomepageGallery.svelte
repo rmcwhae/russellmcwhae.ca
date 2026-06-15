@@ -28,7 +28,8 @@
     })
 
     $effect(async () => {
-        const { default: PhotoSwipeLightbox } = await import('photoswipe/lightbox')
+        const { default: PhotoSwipeLightbox } =
+            await import('photoswipe/lightbox')
         const { default: PhotoSwipe } = await import('photoswipe')
 
         const lightbox = new PhotoSwipeLightbox({
@@ -47,10 +48,13 @@
                 html: 'Caption text',
                 onInit: (el) => {
                     lightbox.pswp.on('change', () => {
-                        const currSlideElement = lightbox.pswp.currSlide.data.element
+                        const currSlideElement =
+                            lightbox.pswp.currSlide.data.element
                         let captionHTML = ''
                         if (currSlideElement) {
-                            captionHTML = currSlideElement.querySelector('img').getAttribute('alt')
+                            captionHTML = currSlideElement
+                                .querySelector('img')
+                                .getAttribute('alt')
                         }
                         el.innerHTML = captionHTML || ''
                         if (!captionHTML) {

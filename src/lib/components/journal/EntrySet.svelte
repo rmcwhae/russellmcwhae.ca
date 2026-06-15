@@ -82,7 +82,9 @@
 
     @include for-tablet-landscape-up {
         .archive {
-            --entry-meta-row-height: calc(0.7rem * 1.3 + 0.7rem * 0.16 + var(--s0));
+            --entry-meta-row-height: calc(
+                0.7rem * 1.3 + 0.7rem * 0.16 + var(--s0)
+            );
         }
 
         .year-group {

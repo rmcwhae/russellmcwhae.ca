@@ -99,10 +99,7 @@
                         stroke="currentColor"
                         stroke-width="1"
                     />
-                    <path
-                        d="M12 2a10 10 0 0 1 0 20z"
-                        fill="#000"
-                    />
+                    <path d="M12 2a10 10 0 0 1 0 20z" fill="#000" />
                 </svg>
             {/if}
         </span>

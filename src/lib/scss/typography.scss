@@ -26,7 +26,13 @@ a {
 
 :is(article, .flow, .journal-intro, section.featured, .sidebar-block)
     :is(p, li, blockquote)
-    a:not(.button, .no-shadow, .hover-underline-animation, .category-pill, .all-entries) {
+    a:not(
+        .button,
+        .no-shadow,
+        .hover-underline-animation,
+        .category-pill,
+        .all-entries
+    ) {
     color: var(--high-contrast-color);
     font-weight: inherit;
     text-decoration: underline;
@@ -246,7 +252,9 @@ sup.footnote-ref {
     color: var(--medium-grey);
     cursor: pointer;
     text-decoration: none;
-    transition: color var(--duration), border-color var(--duration);
+    transition:
+        color var(--duration),
+        border-color var(--duration);
 
     &:hover,
     &[aria-expanded='true'] {
