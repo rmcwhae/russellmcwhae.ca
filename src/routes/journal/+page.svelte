@@ -34,10 +34,10 @@
         <div class="sidebar-block">
             <div class="section-label sidebar-heading">About this journal</div>
             <p>
-                Welcome to my online journal, a collection of long-form thoughts on
-                topics that are important to me. Text generation and ideas are my
-                own, though I do use AI for editing and refining (as of 2025). I
-                hope you'll join me for a glimpse into my head.
+                Welcome to my online journal, a collection of long-form thoughts
+                on topics that are important to me. Text generation and ideas
+                are my own, though I do use AI for editing and refining (as of
+                2025). I hope you'll join me for a glimpse into my head.
             </p>
             <p>
                 Also see my <a href={resolve('/reading-list')}>reading list</a>.
@@ -45,18 +45,25 @@
         </div>
 
         <div class="sidebar-block">
+            <div class="section-label sidebar-heading">Categories</div>
             <CategorySelector />
         </div>
-
-        <div class="sidebar-block sidebar-stats">
-            <div class="section-label sidebar-heading">Stats</div>
-            <ul class="stats-list sub">
-                <li>Writing since {writingSinceYear}</li>
-                <li>{essayCount} {essayCount === 1 ? 'essay' : 'essays'}</li>
-                <li>{formattedWordCount} words</li>
-            </ul>
-        </div>
     </aside>
+</div>
+
+<div class="journal-stats restricted-width">
+    <div class="stat">
+        <span class="stat-value">{writingSinceYear}</span>
+        <span class="stat-label">Writing since</span>
+    </div>
+    <div class="stat">
+        <span class="stat-value">{essayCount}</span>
+        <span class="stat-label">{essayCount === 1 ? 'essay' : 'essays'}</span>
+    </div>
+    <div class="stat">
+        <span class="stat-value">{formattedWordCount}</span>
+        <span class="stat-label">words</span>
+    </div>
 </div>
 
 <style lang="scss">
@@ -103,13 +110,33 @@
         margin-bottom: var(--s-1);
     }
 
-    .stats-list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+    .journal-stats {
+        display: flex;
+        justify-content: center;
+        gap: var(--s4);
+        padding: var(--s3) 0;
+        text-align: center;
+    }
+
+    .stat {
         display: flex;
         flex-direction: column;
         gap: var(--s-3);
+    }
+
+    .stat-value {
+        font-size: 1.953rem;
+        font-weight: normal;
+        color: var(--high-contrast-color);
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: normal;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: var(--text-color);
     }
 

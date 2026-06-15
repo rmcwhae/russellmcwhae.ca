@@ -14,7 +14,6 @@
 </script>
 
 <nav class="category-selector" aria-label="Journal categories">
-    <h3 class="category-selector-heading">Categories</h3>
     <ul class="category-selector-list">
         {#each JOURNAL_CATEGORIES as category (category)}
             <li>
@@ -26,13 +25,7 @@
 
 <style lang="scss">
     .category-selector {
-        margin-top: var(--s1);
-    }
-
-    .category-selector-heading {
-        margin: 0 0 var(--s-2);
-        font-size: 0.9rem;
-        font-weight: 600;
+        margin-top: 0;
     }
 
     .category-selector-list {
