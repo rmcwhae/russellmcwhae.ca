@@ -2,18 +2,11 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import { buildURL } from '$lib/utils/images'
 
     let { data } = $props()
 
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)
-
-    const heroPath = '/portfolio/RMCWHAE-20180617-DSC05125_U1gi2GGobf.jpg'
-    const heroSrc = buildURL(heroPath, { width: 1400 })
-    const heroSrcset = [700, 1000, 1400, 1800]
-        .map((w) => `${buildURL(heroPath, { width: w })} ${w}w`)
-        .join(', ')
 </script>
 
 <SEO />
@@ -21,18 +14,13 @@
 <!-- Hero: full-bleed outside .home so full-width class reaches viewport edges -->
 <section class="hero full-width">
     <div class="hero-image-bg">
-        <img
-            src={heroSrc}
-            srcset={heroSrcset}
-            sizes="(max-width: 700px) 700px, (max-width: 1000px) 1000px, (max-width: 1400px) 1400px, 1800px"
-            alt="Elbow Lake"
-            loading="eager"
-        />
+        <img src="/hero.jpg" alt="Hero" loading="eager" />
     </div>
+    <div class="hero-blur"></div>
     <div class="hero-gradient"></div>
     <div class="hero-inner">
         <div class="hero-text">
-            <div class="kicker">My creative outlet</div>
+            <!-- <div class="kicker">My creative outlet</div> -->
             <h1>A quiet eye<br />in a loud world.</h1>
             <p class="lead">
                 Images and writing from the trails, the desk, and the spaces in
@@ -236,16 +224,51 @@
         }
     }
 
-    .hero-gradient {
+    .hero-blur {
         position: absolute;
         inset: 0;
         z-index: 1;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        mask-image: linear-gradient(
+            to right,
+            black 0%,
+            black 15%,
+            transparent 62%
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            black 0%,
+            black 15%,
+            transparent 62%
+        );
+
+        @include for-tablet-portrait-down {
+            mask-image: linear-gradient(
+                to top,
+                black 0%,
+                black 28%,
+                transparent 55%
+            );
+            -webkit-mask-image: linear-gradient(
+                to top,
+                black 0%,
+                black 28%,
+                transparent 55%
+            );
+        }
+    }
+
+    .hero-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
         background: linear-gradient(
             to right,
             var(--background-color) 0%,
-            var(--background-color) 33%,
-            var(--background-color-transparent) 44%,
-            transparent 55%
+            var(--background-color) 15%,
+            var(--background-color-transparent) 30%,
+            transparent 62%
         );
 
         @include for-tablet-portrait-down {
