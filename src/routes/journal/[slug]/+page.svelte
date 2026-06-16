@@ -4,7 +4,7 @@
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
-import StatusPill from '$lib/components/journal/StatusPill.svelte'
+    import StatusPill from '$lib/components/journal/StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
     import FootnoteManager from '$lib/components/journal/FootnoteManager.svelte'
     import { resolve } from '$app/paths'
@@ -13,7 +13,7 @@ import StatusPill from '$lib/components/journal/StatusPill.svelte'
 
     let title = $derived(data.title)
     let date = $derived(data.date)
-let description = $derived(data.description)
+    let description = $derived(data.description)
     let readingTime = $derived(data.readingTime)
     let component = $derived(data.component)
     let relatedPosts = $derived(data.relatedPosts)
@@ -62,7 +62,9 @@ let description = $derived(data.description)
     <JournalEntrySet posts={relatedPosts} />
 
     <div class="mt-3">
-        <a href={resolve('/journal')} class="accent-link"><span>All entries</span> →</a>
+        <a href={resolve('/journal')} class="accent-link"
+            ><span>All entries</span> →</a
+        >
     </div>
 </div>
 

@@ -16,7 +16,8 @@
 <div class="event-page">
     <section class="hero-section">
         <div class="hero-left">
-            <a href={resolve('/photography')} class="back-link">← Photography</a>
+            <a href={resolve('/photography')} class="back-link">← Photography</a
+            >
             <h1>{title}</h1>
         </div>
         <div class="hero-right">

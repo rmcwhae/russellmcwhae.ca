@@ -8,7 +8,10 @@
         if (!currentlyOpen) return
         const el = currentlyOpen
         el.classList.remove('open')
-        el.querySelector('.footnote-button')?.setAttribute('aria-expanded', 'false')
+        el.querySelector('.footnote-button')?.setAttribute(
+            'aria-expanded',
+            'false'
+        )
         currentlyOpen = null
         // Defer removing popup-below until after the transition so the popup
         // doesn't snap position mid-fade.

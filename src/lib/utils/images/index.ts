@@ -8,10 +8,12 @@ export const DEFAULT_SRC_WIDTH = 900
 export const LIGHTBOX_MAX_WIDTH = 2000
 
 /** Conservative fallback when rendered width is unknown (masonry tiles). */
-export const masonrySizes = '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw'
+export const masonrySizes =
+    '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw'
 
 /** Four-column homepage grid. */
-export const gridSizes = '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 25vw'
+export const gridSizes =
+    '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 25vw'
 
 interface ImageOptions {
     width?: number

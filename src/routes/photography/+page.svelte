@@ -48,7 +48,9 @@
             <h1>Photography</h1>
         </div>
         <div class="hero-right">
-            <p>A collection of landscape images from Western Canada and beyond.</p>
+            <p>
+                A collection of landscape images from Western Canada and beyond.
+            </p>
         </div>
     </section>
 

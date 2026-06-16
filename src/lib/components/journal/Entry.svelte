@@ -2,7 +2,7 @@
     import { resolve } from '$app/paths'
     import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
     import Date from '$lib/components/misc/Date.svelte'
-import StatusPill from './StatusPill.svelte'
+    import StatusPill from './StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
 
     /**

@@ -84,8 +84,12 @@
 <div id="homepage-gallery" class="homepage-gallery-grid" bind:this={galleryEl}>
     {#each images as image (image.filePath)}
         {@const caption = image.customMetadata?.caption ?? ''}
-        {@const fullSrc = buildURL(image.filePath, { width: LIGHTBOX_MAX_WIDTH })}
-        {@const thumbSrc = buildURL(image.filePath, { width: DEFAULT_SRC_WIDTH })}
+        {@const fullSrc = buildURL(image.filePath, {
+            width: LIGHTBOX_MAX_WIDTH,
+        })}
+        {@const thumbSrc = buildURL(image.filePath, {
+            width: DEFAULT_SRC_WIDTH,
+        })}
         {@const srcset = generateSrcSets(image.filePath)}
         <div class="gallery-item">
             <!-- PhotoSwipe uses href as the full-size image URL, not in-app navigation -->

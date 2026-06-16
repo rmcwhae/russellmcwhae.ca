@@ -56,7 +56,9 @@
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Journal</span>
-            <a href={resolve('/journal')} class="accent-link"><span>View all</span> →</a>
+            <a href={resolve('/journal')} class="accent-link"
+                ><span>View all</span> →</a
+            >
         </div>
         <p class="section-desc">
             Writing about technology, the outdoors, and life.

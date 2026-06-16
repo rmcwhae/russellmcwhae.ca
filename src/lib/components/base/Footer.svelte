@@ -5,7 +5,9 @@
 
     function openEmail(e) {
         e.preventDefault()
-        window.location.href = window.atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')
+        window.location.href = window.atob(
+            'bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ=='
+        )
     }
 </script>
 

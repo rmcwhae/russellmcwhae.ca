@@ -57,9 +57,9 @@
                 Initially created as Christmas gifts for family and friends,
                 these calendars are an effort to do more with my photography.
                 It’s hard to stand out in the crowded, high-volume world of
-                online photography, so printing can be a way to make
-                photography less ephemeral. Calendars provide a high-density
-                collection of photographs in an affordable physical product.
+                online photography, so printing can be a way to make photography
+                less ephemeral. Calendars provide a high-density collection of
+                photographs in an affordable physical product.
             </p>
             <p>
                 I design the calendars in Adobe Indesign with the <a
@@ -67,9 +67,9 @@
                     target="_blank"
                     rel="noopener noreferrer nofollow">Calendar Wizard</a
                 >
-                plugin to create the basic table layout before heavy
-                customization. There’s a steep learning curve, but the result
-                is highly original. I then send a print-ready PDF to
+                plugin to create the basic table layout before heavy customization.
+                There’s a steep learning curve, but the result is highly original.
+                I then send a print-ready PDF to
                 <a
                     href="https://www.dhq.ca"
                     target="_blank"
