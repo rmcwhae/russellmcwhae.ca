@@ -420,10 +420,14 @@
         background: var(--topic-color-dark);
     }
 
-    .topic p {
+    .topic p,
+    .c-value {
         font-size: 14px;
         color: var(--text-color);
         line-height: 1.6;
+    }
+
+    .topic p {
         margin: 0 0 var(--s0);
     }
 
@@ -471,11 +475,6 @@
         font-weight: normal;
         color: var(--high-contrast-color);
         margin-bottom: var(--s-2);
-    }
-
-    .c-value {
-        font-size: 16px;
-        color: var(--high-contrast-color);
     }
 
     /* About */
