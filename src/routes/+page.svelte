@@ -1,13 +1,14 @@
 <script>
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
-    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import JournalEntry from '$lib/components/journal/Entry.svelte'
     import { resolve } from '$app/paths'
 
     let { data } = $props()
 
     let images = $derived(data.images)
-    let latestPosts = $derived(data.latestPosts)
+    let featuredPost = $derived(data.featuredPost)
+    let recentPosts = $derived(data.recentPosts)
 </script>
 
 <SEO />
@@ -57,16 +58,21 @@
 
     <!-- Journal -->
     <section class="page-section">
-        <div class="section-header">
-            <span class="section-label">Journal</span>
+        <span class="recent-entries-heading journal-section-heading">From My Journal</span>
+        <div class="restricted-width">
+            <JournalEntry post={featuredPost} featured />
+        </div>
+        <div class="section-header recent-entries-header mt-3">
+            <span class="recent-entries-heading">Recent Entries</span>
             <a href={resolve('/journal')} class="accent-link"
                 ><span>View all</span> →</a
             >
         </div>
-        <p class="section-desc">
-            Writing about technology, the outdoors, and life.
-        </p>
-        <JournalEntrySet posts={latestPosts} />
+        <div class="recent-posts-grid">
+            {#each recentPosts as post (post.slug ?? post.href)}
+                <JournalEntry {post} />
+            {/each}
+        </div>
     </section>
 
     <!-- Currently -->
@@ -313,6 +319,34 @@
 
     .gallery-wrapper {
         margin: var(--s2) 0;
+    }
+
+    .journal-section-heading {
+        display: block;
+        margin-bottom: var(--s3);
+    }
+
+    .section-header.recent-entries-header {
+        margin-bottom: var(--s1);
+    }
+
+    .recent-posts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--s1);
+
+        @include for-tablet-portrait-down {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .recent-entries-heading {
+        font-family: var(--font-sans);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--medium-grey);
     }
 
     .section-header {
