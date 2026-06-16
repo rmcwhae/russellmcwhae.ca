@@ -19,6 +19,7 @@
     </div>
     <div class="hero-blur"></div>
     <div class="hero-gradient"></div>
+    <div class="hero-light-gradient"></div>
     <div class="hero-inner">
         <div class="hero-text">
             <div class="kicker">My creative outlet</div>
@@ -166,31 +167,31 @@
         z-index: 1;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        mask-image: linear-gradient(
-            to right,
+        mask-image: radial-gradient(
+            ellipse 95% 150% at -30% 50%,
             black 0%,
-            black 15%,
-            transparent 62%
+            black 25%,
+            transparent 65%
         );
-        -webkit-mask-image: linear-gradient(
-            to right,
+        -webkit-mask-image: radial-gradient(
+            ellipse 95% 150% at -30% 50%,
             black 0%,
-            black 15%,
-            transparent 62%
+            black 25%,
+            transparent 65%
         );
 
         @include for-tablet-portrait-down {
-            mask-image: linear-gradient(
-                to top,
+            mask-image: radial-gradient(
+                ellipse 130% 95% at 0% 70%,
                 black 0%,
-                black 28%,
-                transparent 55%
+                black 25%,
+                transparent 65%
             );
-            -webkit-mask-image: linear-gradient(
-                to top,
+            -webkit-mask-image: radial-gradient(
+                ellipse 130% 95% at 0% 70%,
                 black 0%,
-                black 28%,
-                transparent 55%
+                black 25%,
+                transparent 65%
             );
         }
     }
@@ -199,23 +200,54 @@
         position: absolute;
         inset: 0;
         z-index: 2;
+        inset: -30px;
+        background: radial-gradient(
+            ellipse 95% 150% at -30% 50%,
+            var(--background-color) 0%,
+            var(--background-color) 40%,
+            var(--background-color-transparent) 65%,
+            transparent 85%
+        );
+        filter: blur(80px);
+
+        @include for-tablet-portrait-down {
+            inset: -30px;
+            background: radial-gradient(
+                ellipse 130% 95% at 0% 70%,
+                var(--background-color) 0%,
+                var(--background-color-transparent) 50%,
+                transparent 75%
+            );
+            filter: blur(20px);
+        }
+    }
+
+    .hero-light-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
         background: linear-gradient(
             to right,
             var(--background-color) 0%,
-            var(--background-color) 15%,
-            var(--background-color-transparent) 30%,
-            transparent 62%
+            transparent 33%
         );
+        pointer-events: none;
 
         @include for-tablet-portrait-down {
-            background: linear-gradient(
-                to top,
-                var(--background-color) 0%,
-                var(--background-color) 28%,
-                var(--background-color-transparent) 52%,
-                transparent 78%
-            );
+            display: none;
         }
+
+        @media (prefers-color-scheme: dark) {
+            display: none;
+        }
+    }
+
+    :global(body[data-theme='dark']) .hero-light-gradient {
+        display: none;
+    }
+
+    :global(body[data-theme='light']) .hero-light-gradient {
+        display: block;
     }
 
     .hero-inner {
