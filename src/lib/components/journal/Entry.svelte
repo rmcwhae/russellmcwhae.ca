@@ -33,14 +33,16 @@ import StatusPill from './StatusPill.svelte'
 <section class:archive class:first-in-year={firstInYear} class:featured>
     {#if date || readingTime || featured || longRead}
         <div class="entry-category">
-            <div class="entry-category-leading">
-                {#if featured}
-                    <StatusPill variant="latest" />
-                {/if}
-                {#if longRead}
-                    <StatusPill variant="long-read" />
-                {/if}
-            </div>
+            {#if featured || longRead}
+                <div class="entry-category-leading">
+                    {#if featured}
+                        <StatusPill variant="latest" />
+                    {/if}
+                    {#if longRead}
+                        <StatusPill variant="long-read" />
+                    {/if}
+                </div>
+            {/if}
             {#if date || readingTime}
                 <div class="sub entry-meta">
                     {#if date}

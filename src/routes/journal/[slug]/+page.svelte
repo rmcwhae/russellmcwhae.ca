@@ -27,11 +27,11 @@ let description = $derived(data.description)
     <div class="restricted-width">
         <header>
             <div class="entry-category">
-                <div class="entry-category-leading">
-                    {#if longRead}
+                {#if longRead}
+                    <div class="entry-category-leading">
                         <StatusPill variant="long-read" />
-                    {/if}
-                </div>
+                    </div>
+                {/if}
                 <div class="sub entry-meta">
                     <Date {date} />
                     &middot;
