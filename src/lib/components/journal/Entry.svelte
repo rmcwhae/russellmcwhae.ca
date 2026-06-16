@@ -1,8 +1,7 @@
 <script>
     import { resolve } from '$app/paths'
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
+    import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
     import Date from '$lib/components/misc/Date.svelte'
-    import CategoryLink from './CategoryLink.svelte'
     import StatusPill from './StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
 
@@ -22,7 +21,7 @@
         featured = false,
     } = $props()
 
-    let { slug, title, description, preview, date, readingTime, category } =
+    let { slug, title, description, preview, date, readingTime } =
         $derived(post)
 
     let featuredPreview = $derived(
@@ -32,19 +31,18 @@
 </script>
 
 <section class:archive class:first-in-year={firstInYear} class:featured>
-    {#if category || date || readingTime || featured || longRead}
+    {#if date || readingTime || featured || longRead}
         <div class="entry-category">
-            <div class="entry-category-leading">
-                {#if category}
-                    <CategoryLink {category} />
-                {/if}
-                {#if featured}
-                    <StatusPill variant="latest" />
-                {/if}
-                {#if longRead}
-                    <StatusPill variant="long-read" />
-                {/if}
-            </div>
+            {#if featured || longRead}
+                <div class="entry-category-leading">
+                    {#if featured}
+                        <StatusPill variant="latest" />
+                    {/if}
+                    {#if longRead}
+                        <StatusPill variant="long-read" />
+                    {/if}
+                </div>
+            {/if}
             {#if date || readingTime}
                 <div class="sub entry-meta">
                     {#if date}
@@ -65,7 +63,7 @@
             <a
                 class="entry-title-link"
                 href={resolve('/journal/[slug]', { slug })}
-                >{@html preventLastTwoWordWrap(title)}</a
+                ><NoWrapLastTwoWords text={title} /></a
             >
         </h2>
     {:else}
@@ -73,17 +71,19 @@
             <a
                 class="entry-title-link"
                 href={resolve('/journal/[slug]', { slug })}
-                >{@html preventLastTwoWordWrap(title)}</a
+                ><NoWrapLastTwoWords text={title} /></a
             >
         </h3>
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
-            {@html preventLastTwoWordWrap(featuredPreview)}{#if featured}{' '}<a
-                href={resolve('/journal/[slug]', { slug })}
-                >Continue Reading →</a
-            >{/if}
+            <NoWrapLastTwoWords text={featuredPreview} />
         </p>
+    {/if}
+    {#if featured}
+        <a class="accent-link" href={resolve('/journal/[slug]', { slug })}>
+            <span>Continue Reading</span> →
+        </a>
     {/if}
 </section>
 
@@ -94,6 +94,8 @@
     h3 {
         margin: 0;
         line-height: 1.2;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
 
     :is(h2, h3) :global(a.entry-title-link) {
@@ -102,7 +104,10 @@
         transition: none;
 
         &:hover {
-            color: var(--link-color);
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
 
         &:focus-visible {
@@ -112,6 +117,7 @@
     }
     p {
         margin: 0;
+        font-size: 0.9rem;
     }
     .entry-category {
         align-items: center;
@@ -124,8 +130,20 @@
         gap: var(--s-2);
         min-width: 0;
     }
+    .entry-category-leading :global(.category-pill + .status-pill)::before {
+        content: '·';
+        margin-right: var(--s-2);
+        color: var(--medium-grey);
+    }
     .entry-meta {
         white-space: nowrap;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     section {
         display: flex;
@@ -172,9 +190,6 @@
     }
     section.archive {
         padding-top: var(--s0);
-    }
-    section.archive.first-in-year {
-        padding-top: 0;
     }
 
     @media (max-width: 640px) {

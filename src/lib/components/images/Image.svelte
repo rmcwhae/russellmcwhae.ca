@@ -1,6 +1,11 @@
 <script>
-    // Use native lazy loading; remove lazysizes dependency
-    import { generateSrcSets, sizes, buildURL } from '$lib/utils/images'
+    import {
+        generateSrcSets,
+        buildURL,
+        displaySizes,
+        pickSrcWidth,
+        LIGHTBOX_MAX_WIDTH,
+    } from '$lib/utils/images'
 
     /**
      * @typedef {Object} Props
@@ -10,6 +15,7 @@
      * @property {any} customMetadata
      * @property {boolean} [lockedRatio]
      * @property {boolean} [photoswipe]
+     * @property {number} [displayWidth] Rendered width in px (for accurate sizes/src).
      */
 
     /** @type {Props} */
@@ -20,26 +26,37 @@
         customMetadata,
         lockedRatio = false,
         photoswipe = false,
+        displayWidth = undefined,
     } = $props()
 
-    const src = $derived(buildURL(filePath, { width, height }))
+    const src = $derived(
+        buildURL(filePath, { width: pickSrcWidth(displayWidth) })
+    )
+    const lightboxSrc = $derived(
+        buildURL(filePath, {
+            width: Math.min(width ?? LIGHTBOX_MAX_WIDTH, LIGHTBOX_MAX_WIDTH),
+        })
+    )
     const srcset = $derived(generateSrcSets(filePath))
+    const imgSizes = $derived(displaySizes(displayWidth))
     const caption = $derived(customMetadata?.caption ?? '')
 </script>
 
 <div class:lockedRatio>
     {#if photoswipe}
+        <!-- PhotoSwipe uses href as the full-size image URL, not in-app navigation -->
+        <!-- eslint-disable svelte/no-navigation-without-resolve -->
         <a
             class="no-shadow"
-            href={src}
+            href={lightboxSrc}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={src}
+            data-pswp-src={lightboxSrc}
             data-pswp-srcset={srcset}
         >
             <img
                 loading="lazy"
-                {sizes}
+                sizes={imgSizes}
                 {srcset}
                 {src}
                 {width}
@@ -47,10 +64,11 @@
                 alt={caption}
             />
         </a>
+        <!-- eslint-enable svelte/no-navigation-without-resolve -->
     {:else}
         <img
             loading="lazy"
-            {sizes}
+            sizes={imgSizes}
             {srcset}
             {src}
             {width}

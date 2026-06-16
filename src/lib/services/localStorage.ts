@@ -1,9 +1,4 @@
-interface Storage {
-    get<T>(defaultValue?: T): T
-    set<T>(value: T): void
-}
-
-export function create(key: string): Storage {
+export function create(key: string) {
     try {
         // Trying a test key
         const testKey = '99999'

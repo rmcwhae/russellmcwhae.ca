@@ -4,7 +4,7 @@ description: All good things must come to an end.
 author: Russell McWhae
 date: 2021-02-24
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 <script>

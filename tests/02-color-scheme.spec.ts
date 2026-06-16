@@ -77,7 +77,10 @@ test.describe('Color Scheme Dropdown', () => {
 
         await selectTheme(page, 'light')
 
-        await expect(page.locator('body')).toHaveAttribute('data-theme', 'light')
+        await expect(page.locator('body')).toHaveAttribute(
+            'data-theme',
+            'light'
+        )
     })
 
     test('selecting dark mode sets data-theme to dark', async ({ page }) => {
@@ -94,7 +97,10 @@ test.describe('Color Scheme Dropdown', () => {
         await page.goto('/')
 
         await selectTheme(page, 'light')
-        await expect(page.locator('body')).toHaveAttribute('data-theme', 'light')
+        await expect(page.locator('body')).toHaveAttribute(
+            'data-theme',
+            'light'
+        )
 
         await selectTheme(page, 'system')
 

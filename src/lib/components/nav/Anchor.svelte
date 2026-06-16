@@ -1,45 +1,43 @@
 <script>
     import { page } from '$app/state'
+    import { resolve } from '$app/paths'
 
     let { href, title, onClose } = $props()
+
+    const isHashOnHome = $derived(href.startsWith('/#'))
 
     function handleClick() {
         onClose?.()
     }
 </script>
 
-<a
-    {href}
-    class="hover-underline-animation"
-    onclick={handleClick}
-    aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
-    >{title}
-    <!-- {#if href === '/calendars'}
-        <span class="notification"></span>
-    {/if}</a -->
-</a>
+{#if isHashOnHome}
+    <!-- eslint-disable svelte/no-navigation-without-resolve -- in-page hash on home -->
+    <a
+        href={resolve('/') + href.slice(1)}
+        onclick={handleClick}
+        aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
+        >{title}</a
+    >
+    <!-- eslint-enable svelte/no-navigation-without-resolve -->
+{:else}
+    <a
+        href={resolve(href)}
+        onclick={handleClick}
+        aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
+        >{title}</a
+    >
+{/if}
 
 <style>
     a {
         font-size: 1.2em;
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--high-contrast-color);
         display: block;
         margin: var(--s-1) var(--s0);
     }
-    a[aria-current],
     a:hover {
-        color: var(--high-contrast-color);
-        text-decoration: none;
+        color: var(--link-color);
     }
-    /* .notification {
-        border-radius: 50%;
-        content: '';
-        display: inline-flex;
-        margin-bottom: 9px;
-        flex-shrink: 0;
-        height: 7px;
-        width: 7px;
-        background: red;
-    } */
 </style>

@@ -4,7 +4,7 @@ description: The second time’s the charm.
 author: Russell McWhae
 date: 2024-02-11
 draft: 0
-category: Outdoor
+category: Adventure
 ---
 
 [Three seasons ago](/journal/11-months-later#ski-days-33-and-34), I attempted the Siffleur Traverse with a friend. We bailed on the second day due to horribly slow travel conditions: bare ground, breakable crust, overgrown trails. It isn’t a popular traverse, just something my friend and I schemed up one day.

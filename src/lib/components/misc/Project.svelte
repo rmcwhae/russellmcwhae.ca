@@ -1,7 +1,7 @@
 <script>
     import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import Button from '$lib/components/buttons/Button.svelte'
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
+    import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
 
     let { project, reverse, children } = $props()
 
@@ -16,7 +16,7 @@
     {@render children?.()}
     <div class="details mb-2">
         <h2>{title}</h2>
-        <p class="big">{@html preventLastTwoWordWrap(description)}</p>
+        <p class="big"><NoWrapLastTwoWords text={description} /></p>
         <div class="sub mb-2">{stack.join(' · ')}</div>
 
         <ButtonSet>

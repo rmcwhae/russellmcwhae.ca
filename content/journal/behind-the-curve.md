@@ -4,7 +4,7 @@ description: An alternative approach to owning the latest and greatest gear.
 author: Russell McWhae
 date: 2022-03-04
 draft: 0
-category: Reflection
+category: Tech
 ---
 
 My desktop PC turns 10 this year. It features a quad-core Intel Core i5-3570K processor, released in the second quarter of 2012. As far as gaming PCs go, it is antediluvian. In [April 2020](/journal/adventures-in-low-end-pc-gaming), I put in some modest upgrades—a bigger, faster hard drive and a more powerful video card—for $100.

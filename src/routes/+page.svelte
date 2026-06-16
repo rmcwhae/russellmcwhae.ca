@@ -1,10 +1,8 @@
 <script>
-    import Image from 'svimg/Image.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
-    import Gallery from '$lib/components/images/Gallery.svelte'
-    import Button from '$lib/components/buttons/Button.svelte'
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
+    import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import { resolve } from '$app/paths'
 
     let { data } = $props()
 
@@ -14,185 +12,349 @@
 
 <SEO />
 
-<div class="home restricted-width">
-    <div class="hero border-bottom">
-        <div class="mb-2">
-            <h1>Hi, I’m Russell.</h1>
-            <p class="big mt-2 mb-2 char-limit">
-                I’m a web developer with a background in structural engineering
-                and biomedical research who likes spending <span class="nowrap"
-                    >time outside.</span
+<!-- Hero: full-bleed outside .home so full-width class reaches viewport edges -->
+<section class="hero full-width">
+    <div class="hero-image-bg">
+        <img src="/hero.jpg" alt="Hero" loading="eager" />
+    </div>
+    <div class="hero-blur"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-inner">
+        <div class="hero-text">
+            <!-- <div class="kicker">My creative outlet</div> -->
+            <h1>A quiet eye<br />in a loud world.</h1>
+            <p class="lead">
+                Images and writing from the trails, the desk, and the spaces in
+                between.
+            </p>
+            <div class="hero-links">
+                <a class="accent-link" href={resolve('/photography')}
+                    ><span>Explore my Photography</span> →</a
                 >
-            </p>
-            <Button href="#about" text="About me" right />
-        </div>
-
-        <div class="portrait">
-            <Image src="/russell.png" alt="Russell portrait" />
+                <a class="accent-link" href={resolve('/journal')}
+                    ><span>Read my Journal</span> →</a
+                >
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="boxes">
-        <div>
-            <a href="/photography" class="hover-underline-animation"
-                ><span
-                    >see my <h3>photos</h3></span
-                ></a
+<div class="home">
+    <!-- Photography -->
+    <section class="page-section">
+        <div class="section-header">
+            <span class="section-label">Photography</span>
+            <a href={resolve('/photography')} class="accent-link"
+                ><span>View all</span> →</a
             >
         </div>
-        <div>
-            <a href="/calendars" class="hover-underline-animation"
-                ><span
-                    >preview my <h3>calendars</h3></span
-                ></a
+        <p class="section-desc">Some of my all-time favourite images.</p>
+        <HomepageGallery {images} />
+    </section>
+
+    <!-- Journal -->
+    <section class="page-section">
+        <div class="section-header">
+            <span class="section-label">Journal</span>
+            <a href={resolve('/journal')} class="accent-link"
+                ><span>View all</span> →</a
             >
         </div>
-        <div>
-            <a href="/projects" class="hover-underline-animation"
-                ><span
-                    >check out my <h3>projects</h3></span
-                ></a
-            >
+        <p class="section-desc">
+            Writing about technology, the outdoors, and life.
+        </p>
+        <JournalEntrySet posts={latestPosts} />
+    </section>
+
+    <!-- Currently -->
+    <section class="page-section">
+        <div class="section-header">
+            <span class="section-label">Currently</span>
         </div>
-        <div>
-            <a href="/journal" class="hover-underline-animation"
-                ><span
-                    >read my <h3>journal</h3></span
-                ></a
-            >
+        <div class="currently">
+            <div class="currently-item">
+                <div class="c-label">Learning</div>
+                <div class="c-value">Retrieval-Augmented Generation (RAG)</div>
+            </div>
+            <div class="currently-item">
+                <div class="c-label">Reading</div>
+                <div class="c-value">
+                    <i>Spirit-Controlled Temperament</i> by Tim LaHaye
+                </div>
+            </div>
+            <div class="currently-item">
+                <div class="c-label">Exploring</div>
+                <div class="c-value">Lower Mainland gravel routes</div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <h2>Photos</h2>
-
-    <p class="mb-3">Here are a few of my all-time favourites.</p>
-</div>
-
-<Gallery {images} />
-
-<div class="mt-3 mb-5">
-    <ButtonSet>
-        <Button href="photography" text="Portfolio" right />
-        <Button href="events" text="Events" right />
-    </ButtonSet>
-</div>
-
-<div class="restricted-width">
-    <h2 id="about">About Me</h2>
-
-    <div class="two-col-grid">
-        <div class="flow">
-            <p>
-                Growing up in Calgary, Alberta, Canada I spent time mountain
-                biking, hiking and downhill skiing in the Canadian Rocky
-                Mountains. My interest in outdoor pursuits has continually
-                increased and now includes backcountry skiing and basic
-                mountaineering. As my outdoor experience grew, I began to
-                venture further into the backcountry and started bringing a
-                camera to share my experiences in hard-to-reach places. This has
-                become my preferred style of photography: finding awe-inspiring
-                landscapes, frequently far and high in the mountains.
-            </p>
-            <p>
-                Similar to photography, graphic design—especially web
-                design—requires a keen technical understanding. Coding has
-                always come naturally to me, but it is the combination of the
-                logic of coding and the creative side of design that makes the
-                web a rewarding medium to design for. I cut my teeth back in the
-                days of Internet Explorer 6 and have kept up with the evolution
-                of the web over the years.
-            </p>
+    <!-- About -->
+    <section class="page-section about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="section-label" style="margin-bottom: var(--s0)">
+                    About
+                </div>
+                <p>
+                    I’m Russell McWhae, a software developer, photographer, and
+                    writer based in British Columbia. My journey has taken me
+                    from the prairies of Calgary and the peaks of Revelstoke to
+                    my current home on the Vancouver coast. This website is
+                    where I collect photographs and share observations about
+                    technology, the outdoors, and everyday life.
+                </p>
+                <p>
+                    Professionally, I have had a few different careers. In 2011,
+                    I graduated from civil engineering at the University of
+                    Alberta. In early 2019, I earned an MSc. in biomedical
+                    engineering from the University of Calgary. I then took the
+                    Lighthouse Labs web development boot camp and now work as a
+                    web developer.
+                </p>
+            </div>
+            <div class="portrait">
+                <img src="/russell.png" alt="Russell McWhae" />
+            </div>
         </div>
-        <div class="flow">
-            <p>
-                Photography and design are complementary skills. Design
-                principles provide an expanded tool kit to use in photography.
-                Similarly, being able to take photos allows me to readily
-                incorporate them into my design work.
-            </p>
-            <p>
-                Professionally, I have had a few different careers. In 2011, I
-                graduated from civil engineering at the University of Alberta
-                and worked as a structural engineer-in-training for just over
-                three years. In early 2019, I earned an MSc. in biomedical
-                engineering from the University of Calgary. My thesis, “<a
-                    href="https://prism.ucalgary.ca/handle/1880/109915"
-                    rel="noopener noreferrer nofollow"
-                    target="_blank"
-                    >Intercellular Gap Junction Communication in the Bovine
-                    Annulus Fibrosus</a
-                >,” investigated cell-cell signaling in the intervertebral disc.
-            </p>
-            <p>
-                Wanting to further my coding skills, I took the <a
-                    href="https://www.lighthouselabs.ca"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow">Lighthouse Labs</a
-                > web development boot camp course from July to October 2019. I now
-                work as a web developer, specializing in front-end work.
-            </p>
-        </div>
-    </div>
-
-    <h2 class="mt-5 mb-3">Latest Journal Entries</h2>
-
-    <JournalEntrySet posts={latestPosts} />
-
-    <div class="mt-3 mb-5">
-        <ButtonSet>
-            <Button href="/journal" text="All entries" right />
-        </ButtonSet>
-    </div>
+    </section>
 </div>
 
 <style lang="scss">
     @use '../lib/scss/breakpoints' as *;
+
     .home {
-        margin-top: var(--s1);
+        margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+        margin-top: calc(-1 * var(--nav-height));
+
+        @include for-tablet-portrait-down {
+            min-height: 520px;
+            align-items: flex-end;
+        }
+
+        @include for-phone-only {
+            min-height: 480px;
+        }
+    }
+
+    .hero-image-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 65% center;
+            display: block;
+        }
+    }
+
+    .hero-blur {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        mask-image: linear-gradient(
+            to right,
+            black 0%,
+            black 15%,
+            transparent 62%
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            black 0%,
+            black 15%,
+            transparent 62%
+        );
+
+        @include for-tablet-portrait-down {
+            mask-image: linear-gradient(
+                to top,
+                black 0%,
+                black 28%,
+                transparent 55%
+            );
+            -webkit-mask-image: linear-gradient(
+                to top,
+                black 0%,
+                black 28%,
+                transparent 55%
+            );
+        }
+    }
+
+    .hero-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: linear-gradient(
+            to right,
+            var(--background-color) 0%,
+            var(--background-color) 15%,
+            var(--background-color-transparent) 30%,
+            transparent 62%
+        );
+
+        @include for-tablet-portrait-down {
+            background: linear-gradient(
+                to top,
+                var(--background-color) 0%,
+                var(--background-color) 28%,
+                var(--background-color-transparent) 52%,
+                transparent 78%
+            );
+        }
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin: 0 auto;
+        padding: calc(80px + var(--nav-height))
+            max(var(--s1), calc((100% - #{$breakpoint-xl}) / 2))
+            80px;
+
+        @include for-tablet-portrait-down {
+            padding: calc(48px + var(--nav-height)) var(--s1) 64px;
+        }
+    }
+
+    .hero-text {
+        max-width: 480px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-    }
-    .hero {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--s1);
-
-        @include for-tablet-portrait-down {
-            grid-template-columns: 2fr 1fr;
-        }
-        @include for-phone-only {
-            grid-template-columns: 1fr;
-        }
-    }
-    .portrait {
-        margin-top: auto;
-        @include for-tablet-portrait-down {
-            width: 50vw;
-        }
-        @include for-phone-only {
-            margin-left: auto;
-            margin-top: -100px;
-        }
-    }
-    .boxes {
-        margin: var(--s4) auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: var(--s0);
-    }
-    .boxes a {
-        text-decoration: none;
-        font-weight: 400;
-        display: block;
-        padding: var(--s-1) var(--s3) var(--s-3) 0;
+
+        @include for-tablet-portrait-down {
+            max-width: none;
+        }
     }
 
-    .boxes a h3 {
-        margin-bottom: 0;
-        line-height: 1.1;
+    .hero-text h1 {
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        line-height: 1.02;
+        margin: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 18px;
+        }
     }
-    .boxes a:hover {
-        text-decoration: none;
+
+    .lead {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-color);
+        max-width: 36ch;
+        margin: 0;
+    }
+
+    .hero-links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Sections */
+    .page-section {
+        padding: 64px 0;
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 6px;
+    }
+
+    .section-desc {
+        font-size: 15px;
+        color: var(--text-color);
+        margin: 0 0 var(--s1);
+    }
+
+    .c-value {
+        font-size: 14px;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    /* Currently */
+    .currently {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--s2);
+        margin-top: var(--s1);
+
+        @include for-tablet-portrait-down {
+            grid-template-columns: 1fr;
+            gap: var(--s1);
+        }
+    }
+
+    .c-label {
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: var(--high-contrast-color);
+        margin-bottom: var(--s-2);
+    }
+
+    /* About */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 56px;
+        align-items: stretch;
+        max-width: 820px;
+
+        @include for-tablet-portrait-down {
+            grid-template-columns: 1fr;
+            gap: var(--s2);
+        }
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--text-color);
+        max-width: 52ch;
+        margin-bottom: var(--s0);
+    }
+
+    .portrait {
+        @include for-tablet-landscape-up {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+                display: block;
+            }
+        }
     }
 </style>

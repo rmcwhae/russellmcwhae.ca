@@ -8,7 +8,7 @@
     /** @type {{ instanceId?: string }} */
     let { instanceId = 'default' } = $props()
 
-    const menuId = `theme-menu-${instanceId}`
+    const menuId = $derived(`theme-menu-${instanceId}`)
 
     /** @type {import('$lib/stores/theme').ThemeMode[]} */
     const options = ['light', 'dark', 'system']
@@ -95,14 +95,11 @@
                         cx="12"
                         cy="12"
                         r="10"
-                        fill="#fff"
+                        fill="transparent"
                         stroke="currentColor"
                         stroke-width="1"
                     />
-                    <path
-                        d="M12 2a10 10 0 0 1 0 20z"
-                        fill="#000"
-                    />
+                    <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor" />
                 </svg>
             {/if}
         </span>
@@ -137,13 +134,13 @@
                                         cx="12"
                                         cy="12"
                                         r="10"
-                                        fill="#fff"
+                                        fill="transparent"
                                         stroke="currentColor"
                                         stroke-width="1"
                                     />
                                     <path
                                         d="M12 2a10 10 0 0 1 0 20z"
-                                        fill="#000"
+                                        fill="currentColor"
                                     />
                                 </svg>
                             {/if}
@@ -168,7 +165,7 @@
     .theme-option {
         color: var(--high-contrast-color);
         background: transparent;
-        border: 1px solid var(--high-contrast-color);
+        border: none;
         cursor: pointer;
         font: inherit;
     }
@@ -183,12 +180,9 @@
         padding: 0;
     }
 
-    .theme-trigger:hover,
     .theme-option:hover,
-    .theme-trigger:focus-visible,
     .theme-option:focus-visible {
         color: var(--link-color);
-        border-color: var(--link-color);
         outline: none;
     }
 
@@ -247,6 +241,7 @@
 
     .theme-option-label {
         white-space: nowrap;
+        font-family: var(--font-sans);
     }
 
     @include for-tablet-portrait-down {

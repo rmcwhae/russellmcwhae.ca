@@ -1,5 +1,6 @@
 <script>
     import JournalEntry from './Entry.svelte'
+    import { SvelteMap } from 'svelte/reactivity'
 
     /** @typedef {'grid' | 'archive'} Layout */
 
@@ -16,7 +17,7 @@
         if (layout !== 'archive') return []
 
         /** @type {Map<number, typeof posts>} */
-        const groups = new Map()
+        const groups = new SvelteMap()
 
         for (const post of posts) {
             const year = new Date(post.date).getFullYear()
@@ -64,12 +65,14 @@
     }
 
     .year-group + .year-group {
-        margin-top: var(--s3);
+        margin-top: -1px;
+        border-top: 1px solid var(--light-grey);
     }
 
     .year-label {
         margin: 0;
         color: var(--text-color);
+        font-family: var(--font-sans);
     }
 
     .year-posts {
@@ -80,7 +83,9 @@
 
     @include for-tablet-landscape-up {
         .archive {
-            --entry-meta-row-height: calc(0.85rem * 1.3 + 0.85rem * 0.16);
+            --entry-meta-row-height: calc(
+                0.7rem * 1.3 + 0.7rem * 0.16 + var(--s0)
+            );
         }
 
         .year-group {

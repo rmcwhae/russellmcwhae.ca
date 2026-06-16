@@ -1,5 +1,6 @@
 <script>
     import Image from './Image.svelte'
+    import { resolve } from '$app/paths'
 
     let { eventName, title, date, count, featuredImage } = $props()
 
@@ -10,7 +11,7 @@
 </script>
 
 <section>
-    <a href={`/events/${eventName}`}>
+    <a href={resolve('/events/' + eventName)}>
         <Image
             {name}
             {filePath}

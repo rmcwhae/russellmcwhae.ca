@@ -4,6 +4,17 @@ import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 const MAX_BREAKPOINT = Math.max(...BREAKPOINTS)
 
+export const DEFAULT_SRC_WIDTH = 900
+export const LIGHTBOX_MAX_WIDTH = 2000
+
+/** Conservative fallback when rendered width is unknown (masonry tiles). */
+export const masonrySizes =
+    '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw'
+
+/** Four-column homepage grid. */
+export const gridSizes =
+    '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 25vw'
+
 interface ImageOptions {
     width?: number
     height?: number
@@ -13,26 +24,33 @@ interface ImageOptions {
     [key: string]: string | number | undefined
 }
 
-export function buildURL(path: string, options: ImageOptions): string {
+export function buildURL(path: string, options: ImageOptions = {}): string {
     return ImageKitJavascriptServices.url({
         path,
         urlEndpoint: env.PUBLIC_IMAGEKIT_URL_ENDPOINT,
-        transformation: [options],
+        transformation: [{ format: 'auto', ...options }],
     })
 }
 
-export function generateSrcSets(image: string): string {
-    function generate(breakpoint: number): string {
-        const src = buildURL(image, { width: breakpoint })
-        return `${src} ${breakpoint}w`
-    }
-    return BREAKPOINTS.map(generate).join(', ')
+export function pickSrcWidth(displayWidth?: number): number {
+    if (!displayWidth) return DEFAULT_SRC_WIDTH
+    const target = Math.ceil(displayWidth)
+    return BREAKPOINTS.find((bp) => bp >= target) ?? MAX_BREAKPOINT
 }
 
-const sizesArray = BREAKPOINTS.slice(0, -1).map(
-    (breakpoint) => `(max-width: ${breakpoint}px) ${breakpoint}px`
-)
-sizesArray.push(`${MAX_BREAKPOINT}px`)
-const sizes = sizesArray.join(', ')
+export function displaySizes(displayWidth?: number): string {
+    if (displayWidth) return `${Math.ceil(displayWidth)}px`
+    return masonrySizes
+}
+
+export function generateSrcSets(image: string): string {
+    return BREAKPOINTS.map((breakpoint) => {
+        const src = buildURL(image, { width: breakpoint })
+        return `${src} ${breakpoint}w`
+    }).join(', ')
+}
+
+/** @deprecated Use displaySizes() or gridSizes/masonrySizes instead. */
+const sizes = masonrySizes
 
 export { sizes }

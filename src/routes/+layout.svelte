@@ -19,9 +19,9 @@
 </script>
 
 <Loading />
+<Nav />
 
 <main class="wrapper">
-    <Nav />
     {@render children?.()}
     <Footer />
 </main>
@@ -32,12 +32,12 @@
     .wrapper {
         margin: 0 var(--s0);
         display: grid;
+        flex: 1;
         grid-template-columns:
             1fr
             min($breakpoint-xl, 100%)
             1fr;
-        min-height: 100%;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 1fr auto;
 
         @include for-tablet-portrait-up {
             margin: 0 var(--s1);

@@ -4,7 +4,7 @@ description: While many assets depreciate, some provide disproportionately good 
 author: Russell McWhae
 date: 2022-09-08
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 In spring 2012, with my 2011 tax return in hand, I was in the market for a new mountain bike. Bikes costed much less a decade ago, so I budgeted three thousands dollars (all amounts CAD) for a mid- to high-end full-suspension bike. Prior to that, I had owned a hardtail, and a basic full-suspension Trek Fuel, albeit with V-brakes instead of better-performing disc brakes. The new bike was to be both an investment and an indulgence: a means of taking mountain biking more seriously while also providing a major upgrade over my previous bikes.

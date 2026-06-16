@@ -12,11 +12,13 @@
     /** @param {string | undefined} value */
     function getCategoryVariant(value) {
         switch (value?.toLowerCase()) {
+            case 'essays':
             case 'reflection':
-                return 'reflection'
+                return 'essays'
+            case 'adventure':
             case 'outdoor':
             case 'outdoors':
-                return 'outdoor'
+                return 'adventure'
             case 'tech':
                 return 'tech'
             default:
@@ -41,67 +43,62 @@
 <style lang="scss">
     .category-pill {
         display: inline-block;
-        padding: 0.08em 0.6em;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        // font-weight: 600;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         line-height: 1.3;
         text-decoration: none;
         white-space: nowrap;
-        background-color: transparent;
         color: var(--pill-color);
-        border: 1px solid var(--light-grey);
     }
 
     .category-pill[aria-current='page'] {
-        font-weight: 600;
-        border-color: var(--pill-color);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
     }
 
-    .category-pill[data-variant='reflection'] {
-        --pill-color: #5e35b1;
+    .category-pill[data-variant='adventure'] {
+        --pill-color: #5a8f5a;
     }
 
-    .category-pill[data-variant='outdoor'] {
-        --pill-color: #2e7d32;
+    .category-pill[data-variant='essays'] {
+        --pill-color: #7a5a9e;
     }
 
     .category-pill[data-variant='tech'] {
-        --pill-color: #1565c0;
+        --pill-color: #4a7a9e;
     }
 
     .category-pill[data-variant='neutral'] {
         --pill-color: var(--text-color);
     }
 
-    :global(html body[data-theme='dark'])
-        .category-pill[data-variant='reflection'] {
-        --pill-color: #ce93d8;
-    }
-
-    :global(html body[data-theme='dark'])
-        .category-pill[data-variant='outdoor'] {
-        --pill-color: #a5d6a7;
-    }
-
-    :global(html body[data-theme='dark']) .category-pill[data-variant='tech'] {
-        --pill-color: #90caf9;
-    }
-
     @media (prefers-color-scheme: dark) {
         :global(html body:not([data-theme='light']))
-            .category-pill[data-variant='reflection'] {
-            --pill-color: #ce93d8;
+            .category-pill[data-variant='adventure'] {
+            --pill-color: #90c890;
         }
-
         :global(html body:not([data-theme='light']))
-            .category-pill[data-variant='outdoor'] {
-            --pill-color: #a5d6a7;
+            .category-pill[data-variant='essays'] {
+            --pill-color: #b890d0;
         }
-
         :global(html body:not([data-theme='light']))
             .category-pill[data-variant='tech'] {
-            --pill-color: #90caf9;
+            --pill-color: #90b8d8;
         }
+    }
+
+    :global(html body[data-theme='dark'])
+        .category-pill[data-variant='adventure'] {
+        --pill-color: #90c890;
+    }
+    :global(html body[data-theme='dark'])
+        .category-pill[data-variant='essays'] {
+        --pill-color: #b890d0;
+    }
+    :global(html body[data-theme='dark']) .category-pill[data-variant='tech'] {
+        --pill-color: #90b8d8;
     }
 </style>

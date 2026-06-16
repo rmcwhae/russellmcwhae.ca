@@ -1,20 +1,18 @@
 <script>
     import Date from '$lib/components/misc/Date.svelte'
     import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
-    import Button from '$lib/components/buttons/Button.svelte'
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
-    import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
     import StatusPill from '$lib/components/journal/StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
+    import FootnoteManager from '$lib/components/journal/FootnoteManager.svelte'
+    import { resolve } from '$app/paths'
 
     let { data } = $props()
 
     let title = $derived(data.title)
     let date = $derived(data.date)
-    let category = $derived(data.category)
     let description = $derived(data.description)
     let readingTime = $derived(data.readingTime)
     let component = $derived(data.component)
@@ -26,18 +24,15 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<section class="article-header border-bottom-thick full-bleed">
+<section class="article-header border-bottom full-bleed">
     <div class="restricted-width">
         <header>
             <div class="entry-category">
-                <div class="entry-category-leading">
-                    {#if category}
-                        <CategoryLink {category} />
-                    {/if}
-                    {#if longRead}
+                {#if longRead}
+                    <div class="entry-category-leading">
                         <StatusPill variant="long-read" />
-                    {/if}
-                </div>
+                    </div>
+                {/if}
                 <div class="sub entry-meta">
                     <Date {date} />
                     &middot;
@@ -59,6 +54,7 @@
     <article class="article-main char-limit flow">
         <SvelteComponent />
     </article>
+    <FootnoteManager />
 </div>
 
 <div class="restricted-width">
@@ -66,9 +62,9 @@
     <JournalEntrySet posts={relatedPosts} />
 
     <div class="mt-3">
-        <ButtonSet>
-            <Button href="/journal" text="All entries" right />
-        </ButtonSet>
+        <a href={resolve('/journal')} class="accent-link"
+            ><span>All entries</span> →</a
+        >
     </div>
 </div>
 
@@ -91,7 +87,9 @@
         margin: 0;
     }
     h1 {
-        font-weight: 700;
+        font-weight: normal;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     header .entry-category {
         align-items: center;
@@ -106,6 +104,13 @@
     }
     header .entry-meta {
         white-space: nowrap;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
     }
     .article-body {
         display: grid;
