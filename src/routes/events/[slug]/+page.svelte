@@ -34,8 +34,9 @@
 
     .event-page {
         grid-column: 1 / -1;
+        width: 100%;
         max-width: 1800px;
-        margin: 0 auto;
+        justify-self: center;
     }
 
     .hero-section {
