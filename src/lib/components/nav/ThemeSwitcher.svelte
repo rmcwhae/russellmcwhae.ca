@@ -4,7 +4,7 @@
     import sunSvg from './icon-sun.svg?raw'
     import moonSvg from './icon-moon.svg?raw'
 
-/** @type {{ instanceId?: string }} */
+    /** @type {{ instanceId?: string }} */
     let { instanceId = 'default' } = $props()
 
     const menuId = $derived(`theme-menu-${instanceId}`)
@@ -241,6 +241,12 @@
     .theme-option-label {
         white-space: nowrap;
         font-family: var(--font-sans);
+    }
+
+    @include for-tablet-landscape-up {
+        .theme-option-label {
+            font-size: 13px;
+        }
     }
 
     @include for-tablet-portrait-down {
