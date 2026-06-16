@@ -9,6 +9,15 @@
     let images = $derived(data.images)
     let events = $derived(data.events ?? [])
 
+    const BATCH = 12
+    let visibleCount = $state(BATCH)
+    let visibleImages = $derived(images?.slice(0, visibleCount) ?? [])
+    let hasMore = $derived((images?.length ?? 0) > visibleCount)
+
+    function loadMore() {
+        visibleCount += BATCH
+    }
+
     let searchQuery = $state('')
 
     let filteredEvents = $derived(
@@ -52,7 +61,20 @@
         <div class="section-header-row">
             <span class="section-label">Selected Works</span>
         </div>
-        <Gallery {images} />
+        <Gallery images={visibleImages} />
+        {#if hasMore}
+            <div class="load-more-row">
+                <button class="load-more-btn" type="button" onclick={loadMore}>
+                    Load more
+                    <span class="load-more-count"
+                        >({Math.min(
+                            BATCH,
+                            (images?.length ?? 0) - visibleCount
+                        )} more)</span
+                    >
+                </button>
+            </div>
+        {/if}
     </section>
 
     {#if events.length > 0}
@@ -245,5 +267,41 @@
         font-size: 0.9rem;
         color: var(--text-color);
         margin: var(--s0) 0;
+    }
+
+    .load-more-row {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--s1);
+    }
+
+    .load-more-btn {
+        font: inherit;
+        font-size: 0.9rem;
+        padding: var(--s-2) var(--s1);
+        border: 1px solid var(--light-grey);
+        border-radius: var(--radius);
+        background: var(--background-color);
+        color: var(--text-color);
+        cursor: pointer;
+        transition:
+            border-color var(--duration),
+            color var(--duration);
+
+        &:hover {
+            border-color: var(--accent);
+            color: var(--link-color);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+    }
+
+    .load-more-count {
+        color: var(--text-color);
+        font-size: 0.8rem;
+        margin-left: var(--s-3);
     }
 </style>
