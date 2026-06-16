@@ -57,9 +57,45 @@
     const gutter = 12
 
     let { images } = $props()
+    let galleryEl = $state(null)
+
+    $effect(() => {
+        if (!galleryEl || !images.length) return
+
+        let observer
+
+        const id = setTimeout(() => {
+            observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('scroll-in-visible')
+                            observer.unobserve(entry.target)
+                        }
+                    })
+                },
+                { threshold: 0.05 }
+            )
+
+            galleryEl.querySelectorAll('img').forEach((img, i) => {
+                if (!img.classList.contains('scroll-in-visible')) {
+                    img.style.setProperty(
+                        '--scroll-delay',
+                        `${Math.min(i % 4, 3) * 0.07}s`
+                    )
+                    observer.observe(img)
+                }
+            })
+        }, 50)
+
+        return () => {
+            clearTimeout(id)
+            observer?.disconnect()
+        }
+    })
 </script>
 
-<div id="gallery">
+<div id="gallery" bind:this={galleryEl}>
     {#key images[0]}
         <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
     {/key}
@@ -80,5 +116,26 @@
     }
     :global(.no-caption) {
         display: none;
+    }
+
+    #gallery :global(img) {
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+            opacity 0.45s ease-out var(--scroll-delay, 0s),
+            transform 0.45s ease-out var(--scroll-delay, 0s);
+    }
+
+    #gallery :global(img.scroll-in-visible) {
+        opacity: 1;
+        transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #gallery :global(img) {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
     }
 </style>
