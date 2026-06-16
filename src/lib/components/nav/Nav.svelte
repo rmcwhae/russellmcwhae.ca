@@ -227,7 +227,7 @@
     }
     span.icon-bar {
         position: absolute;
-        right: var(--s1);
+        right: 0;
         display: block;
         width: 26px;
         height: 1px;
@@ -305,9 +305,11 @@
             display: flex;
             flex-direction: row;
         }
+        li {
+            margin: 0 var(--s-2);
+        }
         nav :global(a) {
-            margin-top: var(--s-3);
-            margin-bottom: var(--s-3);
+            margin: var(--s-3) var(--s-2);
         }
     }
 </style>
