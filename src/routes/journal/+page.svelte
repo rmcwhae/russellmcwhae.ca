@@ -2,14 +2,14 @@
     import { resolve } from '$app/paths'
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-import SEO from '$lib/components/base/SEO.svelte'
+    import SEO from '$lib/components/base/SEO.svelte'
 
     let { data } = $props()
     let posts = $derived(data.posts)
     let totalWordCount = $derived(data.totalWordCount)
     let essayCount = $derived(data.essayCount)
     let writingSinceYear = $derived(data.writingSinceYear)
-let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
+    let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
     let featuredPost = $derived(posts[0])
     let remainingPosts = $derived(posts.slice(1))
 </script>
@@ -34,7 +34,7 @@ let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
             <div class="section-label sidebar-heading">About</div>
             <p>
                 Welcome to my online journal, a collection of long-form thoughts
-                on topics that are important to me. Text generation and ideas
+                on technology, the outdoors, and life. Text generation and ideas
                 are my own, though I do use AI for editing and refining (as of
                 2025). I hope you’ll join me for a glimpse into my head.
             </p>
@@ -42,7 +42,6 @@ let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
                 Also see my <a href={resolve('/reading-list')}>reading list</a>.
             </p>
         </div>
-
     </aside>
 </div>
 
