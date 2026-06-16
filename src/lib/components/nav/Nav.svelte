@@ -99,6 +99,7 @@
         z-index: 10;
         display: flex;
         align-items: center;
+        height: var(--nav-height);
         padding: 0 var(--s0);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
