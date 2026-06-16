@@ -185,7 +185,7 @@
     }
 
     .archive-search {
-        font: inherit;
+        font-family: var(--font-sans);
         font-size: 0.85rem;
         padding: var(--s-3) var(--s-1);
         border: 1px solid var(--light-grey);
