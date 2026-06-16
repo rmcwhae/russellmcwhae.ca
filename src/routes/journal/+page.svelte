@@ -59,7 +59,7 @@
     </div>
     <div class="stat">
         <span class="stat-value">{essayCount}</span>
-        <span class="stat-label">{essayCount === 1 ? 'essay' : 'essays'}</span>
+        <span class="stat-label">{essayCount === 1 ? 'entry' : 'entries'}</span>
     </div>
     <div class="stat">
         <span class="stat-value">{formattedWordCount}</span>
