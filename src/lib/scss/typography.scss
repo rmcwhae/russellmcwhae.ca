@@ -248,7 +248,9 @@ article strong {
     display: inline-block;
 }
 .nowrap {
-    white-space: nowrap;
+    @include for-tablet-landscape-up {
+        white-space: nowrap;
+    }
 }
 // Footnote inline tooltips
 sup.footnote-ref {

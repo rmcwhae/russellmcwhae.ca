@@ -161,6 +161,10 @@
             font-size: max(3em, 1.953rem);
             line-height: 1.1;
 
+            @include for-tablet-portrait-down {
+                font-size: 1.802rem;
+            }
+
             @include for-laptop-only {
                 font-size: max(2.5em, 1.802rem);
             }

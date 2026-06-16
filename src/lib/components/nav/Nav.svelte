@@ -74,19 +74,19 @@
         <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
             <ThemeSwitcher instanceId="desktop" />
         </div>
-    </div>
-    <div
-        class="nav-toggle"
-        role="button"
-        tabindex="0"
-        aria-pressed={mobileMenuOpen}
-        onclick={toggle}
-        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
-        class:active={mobileMenuOpen}
-    >
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <div
+            class="nav-toggle"
+            role="button"
+            tabindex="0"
+            aria-pressed={mobileMenuOpen}
+            onclick={toggle}
+            onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
+            class:active={mobileMenuOpen}
+        >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
     </div>
     <div class="nav-overlay" class:active={mobileMenuOpen}></div>
 </header>
@@ -99,6 +99,7 @@
         z-index: 10;
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         height: var(--nav-height);
         padding: 0 var(--s0);
         backdrop-filter: blur(14px);
@@ -217,9 +218,9 @@
     }
     .nav-toggle {
         z-index: 12;
-        position: absolute;
-        top: 7px;
-        right: var(--s0);
+        position: relative;
+        flex-shrink: 0;
+        margin-left: auto;
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -234,13 +235,13 @@
         transition-duration: var(--duration);
     }
     .icon-bar:nth-child(1) {
-        top: 24px;
+        top: 18px;
     }
     .icon-bar:nth-child(2) {
-        top: 31px;
+        top: 25px;
     }
     .icon-bar:nth-child(3) {
-        top: 38px;
+        top: 32px;
     }
     .nav-overlay {
         position: absolute;
@@ -260,7 +261,7 @@
 
     /* ICON BARS ANIMATION */
     .nav-toggle.active .icon-bar:nth-child(1) {
-        top: 32px;
+        top: 25px;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -269,7 +270,7 @@
         width: 0;
     }
     .nav-toggle.active .icon-bar:nth-child(3) {
-        top: 32px;
+        top: 25px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
