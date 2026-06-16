@@ -21,7 +21,7 @@
     <div class="hero-gradient"></div>
     <div class="hero-inner">
         <div class="hero-text">
-            <!-- <div class="kicker">My creative outlet</div> -->
+            <div class="kicker">My creative outlet</div>
             <h1>A quiet eye<br />in a loud world.</h1>
             <p class="lead">
                 Images and writing from the trails, the desk, and the spaces in
