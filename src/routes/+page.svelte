@@ -124,7 +124,6 @@
     @use '../lib/scss/breakpoints' as *;
 
     .home {
-        max-width: 1400px;
         margin: 0 auto;
     }
 
@@ -223,9 +222,10 @@
         position: relative;
         z-index: 2;
         width: 100%;
-        max-width: 1400px;
         margin: 0 auto;
-        padding: calc(80px + var(--nav-height)) var(--s2) 80px;
+        padding: calc(80px + var(--nav-height))
+            max(var(--s1), calc((100% - #{$breakpoint-xl}) / 2))
+            80px;
 
         @include for-tablet-portrait-down {
             padding: calc(48px + var(--nav-height)) var(--s1) 64px;
@@ -324,6 +324,7 @@
         grid-template-columns: 1fr 320px;
         gap: 56px;
         align-items: stretch;
+        max-width: 820px;
 
         @include for-tablet-portrait-down {
             grid-template-columns: 1fr;

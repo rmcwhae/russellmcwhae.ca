@@ -95,11 +95,11 @@
                         cx="12"
                         cy="12"
                         r="10"
-                        fill="#fff"
+                        fill="transparent"
                         stroke="currentColor"
                         stroke-width="1"
                     />
-                    <path d="M12 2a10 10 0 0 1 0 20z" fill="#000" />
+                    <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor" />
                 </svg>
             {/if}
         </span>
@@ -134,13 +134,13 @@
                                         cx="12"
                                         cy="12"
                                         r="10"
-                                        fill="#fff"
+                                        fill="transparent"
                                         stroke="currentColor"
                                         stroke-width="1"
                                     />
                                     <path
                                         d="M12 2a10 10 0 0 1 0 20z"
-                                        fill="#000"
+                                        fill="currentColor"
                                     />
                                 </svg>
                             {/if}
@@ -180,9 +180,7 @@
         padding: 0;
     }
 
-    .theme-trigger:hover,
     .theme-option:hover,
-    .theme-trigger:focus-visible,
     .theme-option:focus-visible {
         color: var(--link-color);
         outline: none;
