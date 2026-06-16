@@ -31,7 +31,7 @@
     </header>
 
     <p class="intro">
-        Reading is how I feed my soul. A list of books I've read, in reverse
+        Reading is how I feed my soul. A list of books I’ve read, in reverse
         chronological&nbsp;order.
     </p>
 
