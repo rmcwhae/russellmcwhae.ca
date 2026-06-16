@@ -48,12 +48,7 @@
             <h1>Photography</h1>
         </div>
         <div class="hero-right">
-            <p>
-                A collection of images from the Canadian Rockies and beyond. I
-                also produce annual wall calendars — see the <a
-                    href={resolve('/calendars')}>calendars page</a
-                > for more.
-            </p>
+            <p>A collection of landscape images from Western Canada and beyond.</p>
         </div>
     </section>
 
@@ -119,6 +114,15 @@
             {/if}
         </section>
     {/if}
+
+    <section class="calendars-note">
+        <p>
+            Looking for calendars? I am no longer actively making annual wall
+            calendars, but you can still see an archive of them on the <a
+                href={resolve('/calendars')}>calendars page</a
+            >.
+        </p>
+    </section>
 </div>
 
 <style lang="scss">
@@ -158,6 +162,10 @@
 
         .section-header-row {
             margin-bottom: var(--s1);
+        }
+
+        :global(img) {
+            border-radius: 0;
         }
     }
 
@@ -267,6 +275,18 @@
         font-size: 0.9rem;
         color: var(--text-color);
         margin: var(--s0) 0;
+    }
+
+    .calendars-note {
+        padding: var(--s2) 0 var(--s3);
+        border-top: 1px solid var(--light-grey);
+
+        p {
+            font-size: 15px;
+            color: var(--text-color);
+            max-width: 60ch;
+            margin: 0;
+        }
     }
 
     .load-more-row {

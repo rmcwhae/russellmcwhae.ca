@@ -19,11 +19,17 @@
 </div>
 <div class="sub mb-s0">{date} &middot; {count} photos</div>
 
-<Gallery {images} />
+<div class="event-gallery">
+    <Gallery {images} />
+</div>
 
 <style>
     .sub {
         margin-top: var(--s-1);
         margin-bottom: var(--s1);
+    }
+
+    .event-gallery :global(img) {
+        border-radius: 0;
     }
 </style>
