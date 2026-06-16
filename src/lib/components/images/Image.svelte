@@ -44,6 +44,8 @@
 
 <div class:lockedRatio>
     {#if photoswipe}
+        <!-- PhotoSwipe uses href as the full-size image URL, not in-app navigation -->
+        <!-- eslint-disable svelte/no-navigation-without-resolve -->
         <a
             class="no-shadow"
             href={lightboxSrc}
@@ -62,6 +64,7 @@
                 alt={caption}
             />
         </a>
+        <!-- eslint-enable svelte/no-navigation-without-resolve -->
     {:else}
         <img
             loading="lazy"

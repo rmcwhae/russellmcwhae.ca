@@ -1,6 +1,6 @@
 <script>
     import { resolve } from '$app/paths'
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
+    import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
     import Date from '$lib/components/misc/Date.svelte'
 import StatusPill from './StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
@@ -63,7 +63,7 @@ import StatusPill from './StatusPill.svelte'
             <a
                 class="entry-title-link"
                 href={resolve('/journal/[slug]', { slug })}
-                >{@html preventLastTwoWordWrap(title)}</a
+                ><NoWrapLastTwoWords text={title} /></a
             >
         </h2>
     {:else}
@@ -71,13 +71,13 @@ import StatusPill from './StatusPill.svelte'
             <a
                 class="entry-title-link"
                 href={resolve('/journal/[slug]', { slug })}
-                >{@html preventLastTwoWordWrap(title)}</a
+                ><NoWrapLastTwoWords text={title} /></a
             >
         </h3>
     {/if}
     {#if featuredPreview}
         <p class:big={featured}>
-            {@html preventLastTwoWordWrap(featuredPreview)}
+            <NoWrapLastTwoWords text={featuredPreview} />
         </p>
     {/if}
     {#if featured}

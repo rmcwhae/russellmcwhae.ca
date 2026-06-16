@@ -5,6 +5,8 @@
 <figure>
     {@render children?.()}
     <figcaption>
+        <!-- Caption HTML is authored in trusted journal markdown -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html text}
     </figcaption>
 </figure>

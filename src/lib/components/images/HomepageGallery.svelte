@@ -88,6 +88,8 @@
         {@const thumbSrc = buildURL(image.filePath, { width: DEFAULT_SRC_WIDTH })}
         {@const srcset = generateSrcSets(image.filePath)}
         <div class="gallery-item">
+            <!-- PhotoSwipe uses href as the full-size image URL, not in-app navigation -->
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
                 class="no-shadow"
                 href={fullSrc}
@@ -108,6 +110,7 @@
                     />
                 </div>
             </a>
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
             {#if caption}
                 <div class="thumb-caption">{caption}</div>
             {/if}

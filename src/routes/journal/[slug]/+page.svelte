@@ -7,6 +7,7 @@
 import StatusPill from '$lib/components/journal/StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
     import FootnoteManager from '$lib/components/journal/FootnoteManager.svelte'
+    import { resolve } from '$app/paths'
 
     let { data } = $props()
 
@@ -61,7 +62,7 @@ let description = $derived(data.description)
     <JournalEntrySet posts={relatedPosts} />
 
     <div class="mt-3">
-        <a href="/journal" class="accent-link"><span>All entries</span> →</a>
+        <a href={resolve('/journal')} class="accent-link"><span>All entries</span> →</a>
     </div>
 </div>
 

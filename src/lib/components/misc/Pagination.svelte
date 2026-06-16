@@ -34,7 +34,7 @@
                     class=""><LeftChevron /></a
                 >
             </li>
-            {#each range(lastPage, 1) as page}
+            {#each range(lastPage, 1) as page (page)}
                 <li class={page === currentPage ? 'active' : ''}>
                     <!-- svelte-ignore a11y_missing_attribute -->
                     <a onclick={() => changePage(page)}>{page}</a>

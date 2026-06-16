@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
     import RightChevron from '$lib/components/icons/RightChevron.svelte'
 
@@ -18,7 +19,7 @@
     const target = $derived(external ? '_blank' : '')
 </script>
 
-<a {href} class="button" {rel} {target}>
+{#snippet label()}
     {#if left}
         <span class="left">
             <LeftChevron />
@@ -30,7 +31,14 @@
             <RightChevron />
         </span>
     {/if}
-</a>
+{/snippet}
+
+{#if external}
+    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
+    <a class="button" {href} {rel} {target}>{@render label()}</a>
+{:else}
+    <a class="button" href={resolve(href)} {rel} {target}>{@render label()}</a>
+{/if}
 
 <style>
     a {

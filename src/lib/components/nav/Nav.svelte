@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Logo from '$lib/components/icons/Logo.svelte'
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
@@ -19,7 +20,7 @@
 <header>
     <div class="nav-inner">
         <div id="logo" class:active={mobileMenuOpen}>
-            <a href="/" onclick={hideMenu}><Logo /></a>
+            <a href={resolve('/')} onclick={hideMenu}><Logo /></a>
         </div>
         <nav>
             <div class="nav-menu" class:active={mobileMenuOpen}>
