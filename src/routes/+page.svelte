@@ -254,12 +254,12 @@
             width: 40px;
             height: 3px;
             background: var(--accent);
-            margin-top: 18px;
+            margin-top: var(--s0);
         }
     }
 
     .lead {
-        font-size: 16px;
+        font-size: var(--body-sm);
         line-height: 1.7;
         color: var(--text-color);
         max-width: 36ch;
@@ -269,12 +269,12 @@
     .hero-links {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: var(--s0);
     }
 
     /* Sections */
     .page-section {
-        padding: 64px 0;
+        padding: var(--s3) 0;
         border-top: 1px solid var(--light-grey);
     }
 
@@ -282,17 +282,17 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 6px;
+        margin-bottom: var(--s-4);
     }
 
     .section-desc {
-        font-size: 15px;
+        font-size: var(--body-sm);
         color: var(--text-color);
         margin: 0 0 var(--s1);
     }
 
     .c-value {
-        font-size: 14px;
+        font-size: var(--body-sm);
         color: var(--text-color);
         line-height: 1.6;
     }
@@ -312,7 +312,7 @@
 
     .c-label {
         font-family: var(--font-serif);
-        font-size: 1.4rem;
+        font-size: var(--s1);
         font-weight: normal;
         color: var(--high-contrast-color);
         margin-bottom: var(--s-2);
@@ -322,7 +322,7 @@
     .about-grid {
         display: grid;
         grid-template-columns: 1fr 320px;
-        gap: 56px;
+        gap: var(--s3);
         align-items: stretch;
         max-width: 820px;
 
@@ -339,8 +339,8 @@
     }
 
     .about-text p {
-        font-size: 15px;
-        line-height: 1.75;
+        font-size: var(--body-sm);
+        line-height: 1.7;
         color: var(--text-color);
         max-width: 52ch;
         margin-bottom: var(--s0);

@@ -16,6 +16,11 @@
 
 <SEO title="Journal" />
 
+<div class="journal-page-header">
+    <div class="kicker">Writing</div>
+    <h1>Journal</h1>
+</div>
+
 {#if featuredPost}
     <section class="featured-article border-bottom full-bleed">
         <div class="featured-article-inner restricted-width">
@@ -62,6 +67,14 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
+
+    .journal-page-header {
+        padding: var(--s2) 0 var(--s1);
+
+        h1 {
+            margin: var(--s-3) 0 0;
+        }
+    }
 
     .featured-article {
         margin-bottom: var(--s3);

@@ -26,11 +26,12 @@
 
 <div class="reading-page">
     <header>
+        <div class="kicker">Library</div>
         <h1>Reading List</h1>
     </header>
 
     <p class="intro">
-        Reading is how I feed my soul. A list of books I’ve read, in reverse
+        Reading is how I feed my soul. A list of books I've read, in reverse
         chronological&nbsp;order.
     </p>
 
@@ -52,7 +53,7 @@
             {#each filtered as { year, books } (year)}
                 <div class="year-group">
                     <div class="year-label">{year}</div>
-                    <div class="year-books">
+                    <div class="year-items">
                         {#each books as book (book.title)}
                             <div class="book-row">
                                 <span class="book-title">{book.title}</span>
@@ -72,6 +73,7 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
+    @use '../../lib/scss/archive' as archive;
 
     .reading-page {
         max-width: 900px;
@@ -85,75 +87,19 @@
         margin-bottom: var(--s2);
 
         h1 {
-            margin: 0;
+            margin: var(--s-3) 0 0;
         }
     }
 
     .intro {
-        font-size: 15px;
+        font-size: var(--body-sm);
         color: var(--text-color);
         max-width: 60ch;
         margin: 0 0 var(--s2);
+        line-height: 1.7;
     }
 
-    .archive-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--s1);
-        margin-bottom: var(--s1);
-        flex-wrap: wrap;
-    }
-
-    .archive-search {
-        font-family: var(--font-sans);
-        font-size: 0.85rem;
-        padding: var(--s-3) var(--s-1);
-        border: 1px solid var(--light-grey);
-        border-radius: var(--radius);
-        background: var(--background-color);
-        color: var(--text-color);
-        width: 12rem;
-        transition: border-color var(--duration);
-
-        &:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-    }
-
-    .year-group {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--s-2);
-
-        @include for-tablet-landscape-up {
-            grid-template-columns: 5rem minmax(0, 1fr);
-            gap: var(--s2);
-        }
-    }
-
-    .year-group + .year-group {
-        margin-top: -1px;
-        border-top: 1px solid var(--light-grey);
-        padding-top: var(--s-1);
-    }
-
-    .year-label {
-        font-family: var(--font-sans);
-        font-size: 0.85rem;
-        color: var(--text-color);
-        padding-top: var(--s-1);
-
-        @include for-tablet-landscape-up {
-            padding-top: calc(var(--s0) + 0.1rem);
-        }
-    }
-
-    .year-books {
-        display: flex;
-        flex-direction: column;
-    }
+    @include archive.styles();
 
     .book-row {
         display: flex;
@@ -181,11 +127,5 @@
         white-space: nowrap;
         flex-shrink: 0;
         text-align: right;
-    }
-
-    .no-results {
-        font-size: 0.9rem;
-        color: var(--text-color);
-        margin: var(--s0) 0;
     }
 </style>

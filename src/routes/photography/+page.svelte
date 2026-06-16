@@ -1,6 +1,7 @@
 <script>
     import Gallery from '$lib/components/images/Gallery.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+    import PageHero from '$lib/components/layout/PageHero.svelte'
     import { resolve } from '$app/paths'
     import { SvelteMap } from 'svelte/reactivity'
 
@@ -42,17 +43,16 @@
 <SEO title="Photography" />
 
 <div class="photography-page">
-    <section class="hero-section">
-        <div class="hero-left">
+    <PageHero title="Photography">
+        {#snippet eyebrow()}
             <div class="kicker">Visual Work</div>
-            <h1>Photography</h1>
-        </div>
-        <div class="hero-right">
-            <p>
+        {/snippet}
+        {#snippet right()}
+            <p class="hero-description">
                 A collection of landscape images from Western Canada and beyond.
             </p>
-        </div>
-    </section>
+        {/snippet}
+    </PageHero>
 
     <section class="portfolio-section">
         <div class="section-header-row">
@@ -91,7 +91,7 @@
                     {#each eventsByYear as [year, yearEvents] (year)}
                         <div class="year-group">
                             <div class="year-label">{year}</div>
-                            <div class="year-events">
+                            <div class="year-items">
                                 {#each yearEvents as event (event.name)}
                                     <a
                                         href={resolve('/events/' + event.name)}
@@ -126,34 +126,18 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
+    @use '../../lib/scss/archive' as archive;
 
     .photography-page {
-        max-width: 1400px;
         margin: 0 auto;
     }
 
-    .hero-section {
-        padding: var(--s2) 0;
-        border-bottom: 1px solid var(--light-grey);
-        margin-bottom: var(--s2);
-
-        @include for-tablet-landscape-up {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--s3);
-            align-items: end;
-        }
-    }
-
-    .hero-left h1 {
-        margin: var(--s-2) 0 0;
-    }
-
-    .hero-right p {
-        font-size: 15px;
+    .hero-description {
+        font-size: var(--body-sm);
         color: var(--text-color);
         margin: 0;
         max-width: 52ch;
+        line-height: 1.7;
     }
 
     .portfolio-section {
@@ -174,64 +158,7 @@
         padding-bottom: var(--s3);
     }
 
-    .archive-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--s1);
-        margin-bottom: var(--s1);
-        flex-wrap: wrap;
-    }
-
-    .archive-search {
-        font-family: var(--font-sans);
-        font-size: 0.85rem;
-        padding: var(--s-3) var(--s-1);
-        border: 1px solid var(--light-grey);
-        border-radius: var(--radius);
-        background: var(--background-color);
-        color: var(--text-color);
-        width: 12rem;
-        transition: border-color var(--duration);
-
-        &:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-    }
-
-    .year-group {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--s-2);
-
-        @include for-tablet-landscape-up {
-            grid-template-columns: 5rem minmax(0, 1fr);
-            gap: var(--s2);
-        }
-    }
-
-    .year-group + .year-group {
-        margin-top: -1px;
-        border-top: 1px solid var(--light-grey);
-        padding-top: var(--s-1);
-    }
-
-    .year-label {
-        font-family: var(--font-sans);
-        font-size: 0.85rem;
-        color: var(--text-color);
-        padding-top: var(--s-1);
-
-        @include for-tablet-landscape-up {
-            padding-top: calc(var(--s0) + 0.1rem);
-        }
-    }
-
-    .year-events {
-        display: flex;
-        flex-direction: column;
-    }
+    @include archive.styles();
 
     .event-row {
         display: flex;
@@ -270,18 +197,12 @@
         flex-shrink: 0;
     }
 
-    .no-results {
-        font-size: 0.9rem;
-        color: var(--text-color);
-        margin: var(--s0) 0;
-    }
-
     .calendars-note {
         padding: var(--s2) 0 var(--s3);
         border-top: 1px solid var(--light-grey);
 
         p {
-            font-size: 15px;
+            font-size: var(--body-sm);
             color: var(--text-color);
             max-width: 60ch;
             margin: 0;
