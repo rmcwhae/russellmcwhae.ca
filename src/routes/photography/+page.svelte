@@ -60,12 +60,9 @@
         {#if hasMore}
             <div class="load-more-row">
                 <button class="load-more-btn" type="button" onclick={loadMore}>
-                    Load more
+                    + Load more
                     <span class="load-more-count"
-                        >({Math.min(
-                            BATCH,
-                            (images?.length ?? 0) - visibleCount
-                        )} more)</span
+                        >({(images?.length ?? 0) - visibleCount} more)</span
                     >
                 </button>
             </div>
@@ -296,7 +293,7 @@
     }
 
     .load-more-btn {
-        font: inherit;
+        font-family: var(--font-sans);
         font-size: 0.9rem;
         padding: var(--s-2) var(--s1);
         border: 1px solid var(--light-grey);
