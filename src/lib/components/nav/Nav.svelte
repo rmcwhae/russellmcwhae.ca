@@ -1,10 +1,26 @@
 <script>
     import { resolve } from '$app/paths'
+    import { page } from '$app/stores'
     import Logo from '$lib/components/icons/Logo.svelte'
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 
     let mobileMenuOpen = $state(false)
+    let scrolled = $state(false)
+    let isHome = $derived($page.url.pathname === '/')
+
+    $effect(() => {
+        if (!isHome) {
+            scrolled = false
+            return
+        }
+        const onScroll = () => {
+            scrolled = window.scrollY > 80
+        }
+        window.addEventListener('scroll', onScroll, { passive: true })
+        onScroll()
+        return () => window.removeEventListener('scroll', onScroll)
+    })
 
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
@@ -17,7 +33,7 @@
     }
 </script>
 
-<header>
+<header class:transparent={isHome && !scrolled}>
     <div class="nav-inner">
         <div id="logo" class:active={mobileMenuOpen}>
             <a href={resolve('/')} onclick={hideMenu}><Logo /></a>
@@ -88,15 +104,33 @@
         -webkit-backdrop-filter: blur(14px);
         background: var(--background-color-transparent);
         border-bottom: 1px solid var(--light-grey);
+        transition:
+            background-color 0.3s ease,
+            border-color 0.3s ease,
+            backdrop-filter 0.3s ease;
 
         @include for-tablet-portrait-up {
             padding: 0 var(--s1);
+        }
+
+        &.transparent {
+            background: transparent;
+            border-bottom-color: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+
+            :global(a),
+            :global(button) {
+                color: var(--high-contrast-color);
+            }
+            .icon-bar {
+                background-color: var(--high-contrast-color);
+            }
         }
     }
 
     .nav-inner {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         width: 100%;
         max-width: $breakpoint-xl;
@@ -109,6 +143,7 @@
         font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+        margin-left: var(--s2);
     }
     :global(#logo svg) {
         height: 22px !important; /* TODO be less lazy than using !important */
@@ -240,6 +275,7 @@
     }
     #desktop-switcher {
         display: none;
+        margin-left: auto;
     }
 
     @include for-tablet-landscape-up {

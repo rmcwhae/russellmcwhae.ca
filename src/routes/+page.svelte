@@ -135,6 +135,8 @@
         min-height: 680px;
         display: flex;
         align-items: center;
+        margin-top: calc(-1 * var(--nav-height));
+
         @include for-tablet-portrait-down {
             min-height: 520px;
             align-items: flex-end;
@@ -223,10 +225,10 @@
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 80px var(--s2);
+        padding: calc(80px + var(--nav-height)) var(--s2) 80px;
 
         @include for-tablet-portrait-down {
-            padding: 48px var(--s1) 64px;
+            padding: calc(48px + var(--nav-height)) var(--s1) 64px;
         }
     }
 

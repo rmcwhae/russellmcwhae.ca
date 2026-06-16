@@ -165,7 +165,7 @@
     .theme-option {
         color: var(--high-contrast-color);
         background: transparent;
-        border: 1px solid var(--high-contrast-color);
+        border: none;
         cursor: pointer;
         font: inherit;
     }
@@ -185,7 +185,6 @@
     .theme-trigger:focus-visible,
     .theme-option:focus-visible {
         color: var(--link-color);
-        border-color: var(--link-color);
         outline: none;
     }
 
