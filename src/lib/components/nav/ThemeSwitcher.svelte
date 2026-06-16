@@ -8,7 +8,7 @@
     /** @type {{ instanceId?: string }} */
     let { instanceId = 'default' } = $props()
 
-    const menuId = `theme-menu-${instanceId}`
+    const menuId = $derived(`theme-menu-${instanceId}`)
 
     /** @type {import('$lib/stores/theme').ThemeMode[]} */
     const options = ['light', 'dark', 'system']

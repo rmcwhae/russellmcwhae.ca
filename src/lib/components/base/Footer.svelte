@@ -30,9 +30,7 @@
                 target="_blank"
                 rel="noopener noreferrer nofollow">LinkedIn</a
             >
-            <a href="#" onclick={openEmail} rel="noopener noreferrer nofollow"
-                >Email</a
-            >
+            <button onclick={openEmail}>Email</button>
         </div>
     </div>
     <div class="footer-copy">
@@ -66,7 +64,8 @@
         flex-wrap: wrap;
     }
 
-    a {
+    a,
+    button {
         font-size: 0.75rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -77,6 +76,14 @@
         &:hover {
             color: var(--link-color);
         }
+    }
+
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-family: inherit;
     }
 
     .footer-copy {
