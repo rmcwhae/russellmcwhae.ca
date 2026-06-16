@@ -1,5 +1,11 @@
 <script>
-    import { buildURL, generateSrcSets, sizes } from '$lib/utils/images'
+    import {
+        buildURL,
+        generateSrcSets,
+        gridSizes,
+        DEFAULT_SRC_WIDTH,
+        LIGHTBOX_MAX_WIDTH,
+    } from '$lib/utils/images'
     import 'photoswipe/dist/photoswipe.css'
 
     let { images } = $props()
@@ -78,8 +84,8 @@
 <div id="homepage-gallery" class="homepage-gallery-grid" bind:this={galleryEl}>
     {#each images as image (image.filePath)}
         {@const caption = image.customMetadata?.caption ?? ''}
-        {@const fullSrc = buildURL(image.filePath, { width: 2000 })}
-        {@const thumbSrc = buildURL(image.filePath, { width: 700 })}
+        {@const fullSrc = buildURL(image.filePath, { width: LIGHTBOX_MAX_WIDTH })}
+        {@const thumbSrc = buildURL(image.filePath, { width: DEFAULT_SRC_WIDTH })}
         {@const srcset = generateSrcSets(image.filePath)}
         <div class="gallery-item">
             <a
@@ -93,7 +99,7 @@
                 <div class="thumb">
                     <img
                         loading="lazy"
-                        {sizes}
+                        sizes={gridSizes}
                         {srcset}
                         src={thumbSrc}
                         width={image.width}
