@@ -36,7 +36,7 @@
                     category={otherCategory}
                 />{#if i !== otherCategories.length - 1}<span></span>{/if}
             {/each}
-            <a href={resolve('/journal')} class="all-entries"
+            <a href={resolve('/journal')} class="accent-link all-entries"
                 ><span>All entries</span> →</a
             >
         </p>
@@ -97,28 +97,9 @@
 
     .all-entries {
         margin-left: auto;
-        font-family: var(--font-sans);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--high-contrast-color);
-        text-decoration: none;
 
         span {
             margin: 0;
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 5px;
-        }
-
-        &:hover {
-            color: var(--accent);
-
-            span {
-                text-decoration-color: var(--accent);
-            }
         }
     }
 </style>

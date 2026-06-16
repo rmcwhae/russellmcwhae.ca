@@ -2,7 +2,9 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-let { data } = $props()
+    import { resolve } from '$app/paths'
+
+    let { data } = $props()
 
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)
@@ -26,8 +28,12 @@ let { data } = $props()
                 between.
             </p>
             <div class="hero-links">
-                <a href="/photography"><span>Explore my Photography</span> →</a>
-                <a href="/journal"><span>Read my Journal</span> →</a>
+                <a class="accent-link" href={resolve('/photography')}
+                    ><span>Explore my Photography</span> →</a
+                >
+                <a class="accent-link" href={resolve('/journal')}
+                    ><span>Read my Journal</span> →</a
+                >
             </div>
         </div>
     </div>
@@ -38,7 +44,9 @@ let { data } = $props()
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Photography</span>
-            <a href="/photography" class="view-all"><span>View all</span> →</a>
+            <a href={resolve('/photography')} class="accent-link"
+                ><span>View all</span> →</a
+            >
         </div>
         <p class="section-desc">Some of my all-time favourite images.</p>
         <HomepageGallery {images} />
@@ -48,7 +56,7 @@ let { data } = $props()
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Journal</span>
-            <a href="/journal" class="view-all"><span>View all</span> →</a>
+            <a href={resolve('/journal')} class="accent-link"><span>View all</span> →</a>
         </div>
         <p class="section-desc">
             Writing about technology, the outdoors, and life.
@@ -258,31 +266,6 @@ let { data } = $props()
         display: flex;
         flex-direction: column;
         gap: 16px;
-        font-family: var(--font-sans);
-        font-size: 12px;
-        letter-spacing: 0.1em;
-
-        a {
-            color: var(--high-contrast-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-
-            span {
-                text-decoration: underline;
-                text-decoration-color: var(--accent);
-                text-decoration-thickness: 3px;
-                text-underline-offset: 5px;
-            }
-
-            &:hover {
-                color: var(--accent);
-
-                span {
-                    text-decoration-color: var(--accent);
-                }
-            }
-        }
     }
 
     /* Sections */
@@ -302,31 +285,6 @@ let { data } = $props()
         font-size: 15px;
         color: var(--text-color);
         margin: 0 0 var(--s1);
-    }
-
-    .view-all {
-        font-family: var(--font-sans);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--high-contrast-color);
-        text-decoration: none;
-
-        span {
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 5px;
-        }
-
-        &:hover {
-            color: var(--accent);
-
-            span {
-                text-decoration-color: var(--accent);
-            }
-        }
     }
 
     .c-value {

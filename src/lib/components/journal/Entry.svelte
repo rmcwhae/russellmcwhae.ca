@@ -81,7 +81,7 @@ import StatusPill from './StatusPill.svelte'
         </p>
     {/if}
     {#if featured}
-        <a class="continue-reading" href={resolve('/journal/[slug]', { slug })}>
+        <a class="accent-link" href={resolve('/journal/[slug]', { slug })}>
             <span>Continue Reading</span> →
         </a>
     {/if}
@@ -118,22 +118,6 @@ import StatusPill from './StatusPill.svelte'
     p {
         margin: 0;
         font-size: 0.9rem;
-    }
-    .continue-reading {
-        font-family: var(--font-sans);
-        font-size: 12px;
-        letter-spacing: 0.1em;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: var(--high-contrast-color);
-
-        span {
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 5px;
-        }
     }
     .entry-category {
         align-items: center;

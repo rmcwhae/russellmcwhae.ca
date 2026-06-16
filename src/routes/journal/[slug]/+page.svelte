@@ -61,33 +61,12 @@ let description = $derived(data.description)
     <JournalEntrySet posts={relatedPosts} />
 
     <div class="mt-3">
-        <a href="/journal" class="all-entries"><span>All entries</span> →</a>
+        <a href="/journal" class="accent-link"><span>All entries</span> →</a>
     </div>
 </div>
 
 <style lang="scss">
     @use '../../../lib/scss/breakpoints' as *;
-
-    .all-entries {
-        font-family: var(--font-sans);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--high-contrast-color);
-        text-decoration: none;
-
-        span {
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 5px;
-        }
-
-        &:hover {
-            color: var(--accent);
-        }
-    }
 
     .article-header {
         margin-bottom: var(--s1);

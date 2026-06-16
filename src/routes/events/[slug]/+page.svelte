@@ -33,7 +33,8 @@
     @use '../../../lib/scss/breakpoints' as *;
 
     .event-page {
-        max-width: 1400px;
+        grid-column: 1 / -1;
+        max-width: 1800px;
         margin: 0 auto;
     }
 
