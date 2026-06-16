@@ -7,7 +7,7 @@
 <SEO {title} />
 
 <article>
-    <header class="border-bottom-thick">
+    <header>
         <h1>{title}</h1>
     </header>
     <div class="char-limit flow margin-0-auto">
@@ -16,8 +16,8 @@
 </article>
 
 <style>
-    /* TODO make me DRYer with routes/journal/[slug].svelte */
     header {
+        padding-top: var(--s2);
         padding-bottom: var(--s0);
         margin-bottom: var(--s2);
     }
