@@ -1,11 +1,10 @@
 <script>
     import { browser } from '$app/environment'
     import { mode } from '$lib/stores/theme'
+    import sunSvg from './icon-sun.svg?raw'
+    import moonSvg from './icon-moon.svg?raw'
 
-    import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
-    import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
-
-    /** @type {{ instanceId?: string }} */
+/** @type {{ instanceId?: string }} */
     let { instanceId = 'default' } = $props()
 
     const menuId = $derived(`theme-menu-${instanceId}`)
@@ -86,9 +85,9 @@
     >
         <span class="theme-trigger-icon" aria-hidden="true">
             {#if $mode === 'light'}
-                <IoMdSunny />
+                {@html sunSvg}
             {:else if $mode === 'dark'}
-                <IoIosMoon />
+                {@html moonSvg}
             {:else}
                 <svg viewBox="0 0 24 24" class="system-icon">
                     <circle
@@ -125,9 +124,9 @@
                     >
                         <span class="theme-option-icon" aria-hidden="true">
                             {#if value === 'light'}
-                                <IoMdSunny />
+                                {@html sunSvg}
                             {:else if value === 'dark'}
-                                <IoIosMoon />
+                                {@html moonSvg}
                             {:else}
                                 <svg viewBox="0 0 24 24" class="system-icon">
                                     <circle
