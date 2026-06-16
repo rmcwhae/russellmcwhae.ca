@@ -127,12 +127,8 @@
 
     .homepage-gallery-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-
-        @include for-tablet-portrait-down {
-            grid-template-columns: repeat(2, 1fr);
-        }
 
         @include for-phone-only {
             grid-template-columns: 1fr;

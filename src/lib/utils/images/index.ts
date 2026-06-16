@@ -11,9 +11,8 @@ export const LIGHTBOX_MAX_WIDTH = 2000
 export const masonrySizes =
     '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw'
 
-/** Four-column homepage grid. */
-export const gridSizes =
-    '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 25vw'
+/** Two-column homepage grid. */
+export const gridSizes = '(max-width: 576px) 100vw, 50vw'
 
 interface ImageOptions {
     width?: number

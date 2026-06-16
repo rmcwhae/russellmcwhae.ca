@@ -50,7 +50,9 @@
             >
         </div>
         <p class="section-desc">Some of my all-time favourite images.</p>
-        <HomepageGallery {images} />
+        <div class="gallery-wrapper">
+            <HomepageGallery {images} />
+        </div>
     </section>
 
     <!-- Journal -->
@@ -307,7 +309,10 @@
     /* Sections */
     .page-section {
         padding: var(--s3) 0;
-        border-top: 1px solid var(--light-grey);
+    }
+
+    .gallery-wrapper {
+        margin: var(--s2) 0;
     }
 
     .section-header {
