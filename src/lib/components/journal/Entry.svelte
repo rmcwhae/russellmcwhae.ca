@@ -2,8 +2,7 @@
     import { resolve } from '$app/paths'
     import { preventLastTwoWordWrap } from '$lib/utils/string'
     import Date from '$lib/components/misc/Date.svelte'
-    import CategoryLink from './CategoryLink.svelte'
-    import StatusPill from './StatusPill.svelte'
+import StatusPill from './StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
 
     /**
@@ -22,7 +21,7 @@
         featured = false,
     } = $props()
 
-    let { slug, title, description, preview, date, readingTime, category } =
+    let { slug, title, description, preview, date, readingTime } =
         $derived(post)
 
     let featuredPreview = $derived(
@@ -32,12 +31,9 @@
 </script>
 
 <section class:archive class:first-in-year={firstInYear} class:featured>
-    {#if category || date || readingTime || featured || longRead}
+    {#if date || readingTime || featured || longRead}
         <div class="entry-category">
             <div class="entry-category-leading">
-                {#if category}
-                    <CategoryLink {category} />
-                {/if}
                 {#if featured}
                     <StatusPill variant="latest" />
                 {/if}

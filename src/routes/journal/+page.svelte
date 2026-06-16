@@ -2,16 +2,14 @@
     import { resolve } from '$app/paths'
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import CategorySelector from '$lib/components/journal/CategorySelector.svelte'
-    import SEO from '$lib/components/base/SEO.svelte'
+import SEO from '$lib/components/base/SEO.svelte'
 
     let { data } = $props()
     let posts = $derived(data.posts)
     let totalWordCount = $derived(data.totalWordCount)
     let essayCount = $derived(data.essayCount)
     let writingSinceYear = $derived(data.writingSinceYear)
-    let categoryCounts = $derived(data.categoryCounts)
-    let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
+let formattedWordCount = $derived(totalWordCount.toLocaleString('en-US'))
     let featuredPost = $derived(posts[0])
     let remainingPosts = $derived(posts.slice(1))
 </script>
@@ -45,10 +43,6 @@
             </p>
         </div>
 
-        <div class="sidebar-block">
-            <div class="section-label sidebar-heading">Categories</div>
-            <CategorySelector counts={categoryCounts} />
-        </div>
     </aside>
 </div>
 

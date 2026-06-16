@@ -4,8 +4,7 @@
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import ToC from '$lib/components/journal/ToC.svelte'
-    import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
-    import StatusPill from '$lib/components/journal/StatusPill.svelte'
+import StatusPill from '$lib/components/journal/StatusPill.svelte'
     import { isLongRead } from '$lib/constants/journal'
     import FootnoteManager from '$lib/components/journal/FootnoteManager.svelte'
 
@@ -13,8 +12,7 @@
 
     let title = $derived(data.title)
     let date = $derived(data.date)
-    let category = $derived(data.category)
-    let description = $derived(data.description)
+let description = $derived(data.description)
     let readingTime = $derived(data.readingTime)
     let component = $derived(data.component)
     let relatedPosts = $derived(data.relatedPosts)
@@ -30,9 +28,6 @@
         <header>
             <div class="entry-category">
                 <div class="entry-category-leading">
-                    {#if category}
-                        <CategoryLink {category} />
-                    {/if}
                     {#if longRead}
                         <StatusPill variant="long-read" />
                     {/if}

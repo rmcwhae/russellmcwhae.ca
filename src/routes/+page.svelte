@@ -2,9 +2,7 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import { CATEGORY_META, JOURNAL_CATEGORIES } from '$lib/constants/journal'
-    import { resolve } from '$app/paths'
-    let { data } = $props()
+let { data } = $props()
 
     let images = $derived(data.images)
     let latestPosts = $derived(data.latestPosts)
@@ -56,34 +54,6 @@
             Writing about technology, the outdoors, and life.
         </p>
         <JournalEntrySet posts={latestPosts} />
-    </section>
-
-    <!-- Explore Topics -->
-    <section
-        class="page-section"
-        style="border-top: none; padding-top: var(--s1)"
-    >
-        <div class="section-header">
-            <span class="section-label">Explore Topics</span>
-        </div>
-        <div class="topics">
-            {#each JOURNAL_CATEGORIES as category (category)}
-                {@const meta = CATEGORY_META[category]}
-                <div
-                    class="topic"
-                    style="--topic-color: {meta.color}; --topic-color-dark: {meta.colorDark}"
-                >
-                    <h3>{category}</h3>
-                    <p>{meta.description}</p>
-                    <a
-                        href={resolve('/journal/category/[category]', {
-                            category,
-                        })}
-                        class="topic-link"><span>Explore</span> →</a
-                    >
-                </div>
-            {/each}
-        </div>
     </section>
 
     <!-- Currently -->
@@ -359,101 +329,10 @@
         }
     }
 
-    /* Explore Topics */
-    .topics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--s2);
-        margin-top: var(--s1);
-
-        @include for-tablet-portrait-down {
-            grid-template-columns: 1fr;
-            gap: var(--s1);
-        }
-    }
-
-    .topic-icon {
-        width: 130px;
-        margin-bottom: var(--s-1);
-
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    }
-
-    /* Invert topic illustrations in dark mode so white backgrounds disappear */
-    @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .topic-icon img {
-            filter: invert(1);
-        }
-    }
-    :global(html body[data-theme='dark']) .topic-icon img {
-        filter: invert(1);
-    }
-
-    .topic h3 {
-        font-family: var(--font-serif);
-        font-size: 1.4rem;
-        font-weight: normal;
-        margin-bottom: var(--s-2);
-        margin-top: 0;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--topic-color);
-            margin-bottom: var(--s-2);
-        }
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light'])) .topic h3::before {
-            background: var(--topic-color-dark);
-        }
-    }
-
-    :global(html body[data-theme='dark']) .topic h3::before {
-        background: var(--topic-color-dark);
-    }
-
-    .topic p,
     .c-value {
         font-size: 14px;
         color: var(--text-color);
         line-height: 1.6;
-    }
-
-    .topic p {
-        margin: 0 0 var(--s0);
-    }
-
-    .topic-link {
-        font-family: var(--font-sans);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--high-contrast-color);
-        text-decoration: none;
-
-        span {
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 5px;
-        }
-
-        &:hover {
-            color: var(--accent);
-
-            span {
-                text-decoration-color: var(--accent);
-            }
-        }
     }
 
     /* Currently */
