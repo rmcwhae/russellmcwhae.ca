@@ -4,7 +4,7 @@ description: A lengthy essay on a deeply personal topic.
 author: Russell McWhae
 date: 2017-08-31
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 ## Introduction

@@ -12,11 +12,13 @@
     /** @param {string | undefined} value */
     function getCategoryVariant(value) {
         switch (value?.toLowerCase()) {
+            case 'essays':
             case 'reflection':
-                return 'reflection'
+                return 'essays'
+            case 'adventure':
             case 'outdoor':
             case 'outdoors':
-                return 'outdoor'
+                return 'adventure'
             case 'tech':
                 return 'tech'
             default:
@@ -57,11 +59,11 @@
         text-underline-offset: 0.2em;
     }
 
-    .category-pill[data-variant='outdoor'] {
+    .category-pill[data-variant='adventure'] {
         --pill-color: #5a8f5a;
     }
 
-    .category-pill[data-variant='reflection'] {
+    .category-pill[data-variant='essays'] {
         --pill-color: #7a5a9e;
     }
 
@@ -75,11 +77,11 @@
 
     @media (prefers-color-scheme: dark) {
         :global(html body:not([data-theme='light']))
-            .category-pill[data-variant='outdoor'] {
+            .category-pill[data-variant='adventure'] {
             --pill-color: #90c890;
         }
         :global(html body:not([data-theme='light']))
-            .category-pill[data-variant='reflection'] {
+            .category-pill[data-variant='essays'] {
             --pill-color: #b890d0;
         }
         :global(html body:not([data-theme='light']))
@@ -89,11 +91,11 @@
     }
 
     :global(html body[data-theme='dark'])
-        .category-pill[data-variant='outdoor'] {
+        .category-pill[data-variant='adventure'] {
         --pill-color: #90c890;
     }
     :global(html body[data-theme='dark'])
-        .category-pill[data-variant='reflection'] {
+        .category-pill[data-variant='essays'] {
         --pill-color: #b890d0;
     }
     :global(html body[data-theme='dark']) .category-pill[data-variant='tech'] {

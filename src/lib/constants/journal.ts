@@ -1,4 +1,4 @@
-export const JOURNAL_CATEGORIES = ['Tech', 'Reflection', 'Outdoor'] as const
+export const JOURNAL_CATEGORIES = ['Tech', 'Essays', 'Adventure'] as const
 
 export const LONG_READ_MINUTES = 20
 
@@ -11,18 +11,18 @@ export const CATEGORY_META: Record<
     { description: string; color: string; colorDark: string }
 > = {
     Tech: {
-        description: 'Personal tech and software development.',
+        description: 'Living with technology',
         color: '#4a7a9e',
         colorDark: '#90b8d8',
     },
-    Outdoor: {
-        description: 'Musings from wandering in the wild.',
-        color: '#5a8f5a',
-        colorDark: '#90c890',
-    },
-    Reflection: {
-        description: 'Long-form personal writing.',
+    Essays: {
+        description: 'Personal reflections',
         color: '#7a5a9e',
         colorDark: '#b890d0',
+    },
+    Adventure: {
+        description: 'The outdoor life',
+        color: '#5a8f5a',
+        colorDark: '#90c890',
     },
 }

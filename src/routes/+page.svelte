@@ -2,6 +2,8 @@
     import SEO from '$lib/components/base/SEO.svelte'
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import { CATEGORY_META, JOURNAL_CATEGORIES } from '$lib/constants/journal'
+    import { resolve } from '$app/paths'
     let { data } = $props()
 
     let images = $derived(data.images)
@@ -65,27 +67,22 @@
             <span class="section-label">Explore Topics</span>
         </div>
         <div class="topics">
-            <div class="topic">
-                <h3>Technology</h3>
-                <p>Personal tech and software development.</p>
-                <a href="/journal/category/Tech" class="topic-link"
-                    ><span>Explore</span> →</a
+            {#each JOURNAL_CATEGORIES as category (category)}
+                {@const meta = CATEGORY_META[category]}
+                <div
+                    class="topic"
+                    style="--topic-color: {meta.color}; --topic-color-dark: {meta.colorDark}"
                 >
-            </div>
-            <div class="topic">
-                <h3>Outdoor</h3>
-                <p>Musings from wandering in the wild.</p>
-                <a href="/journal/category/Outdoor" class="topic-link"
-                    ><span>Explore</span> →</a
-                >
-            </div>
-            <div class="topic">
-                <h3>Reflections</h3>
-                <p>Long-form personal writing.</p>
-                <a href="/journal/category/Reflection" class="topic-link"
-                    ><span>Explore</span> →</a
-                >
-            </div>
+                    <h3>{category}</h3>
+                    <p>{meta.description}</p>
+                    <a
+                        href={resolve('/journal/category/[category]', {
+                            category,
+                        })}
+                        class="topic-link"><span>Explore</span> →</a
+                    >
+                </div>
+            {/each}
         </div>
     </section>
 
@@ -408,59 +405,19 @@
             display: block;
             width: 40px;
             height: 3px;
-            background: var(--accent);
+            background: var(--topic-color);
             margin-bottom: var(--s-2);
         }
     }
 
-    .topics .topic:nth-child(1) h3::before {
-        background: #4a7a9e;
-    }
-    .topics .topic:nth-child(2) h3::before {
-        background: #5a8f5a;
-    }
-    .topics .topic:nth-child(3) h3::before {
-        background: #7a5a9e;
-    }
-
     @media (prefers-color-scheme: dark) {
-        :global(html body:not([data-theme='light']))
-            .topics
-            .topic:nth-child(1)
-            h3::before {
-            background: #90b8d8;
-        }
-        :global(html body:not([data-theme='light']))
-            .topics
-            .topic:nth-child(2)
-            h3::before {
-            background: #90c890;
-        }
-        :global(html body:not([data-theme='light']))
-            .topics
-            .topic:nth-child(3)
-            h3::before {
-            background: #b890d0;
+        :global(html body:not([data-theme='light'])) .topic h3::before {
+            background: var(--topic-color-dark);
         }
     }
 
-    :global(html body[data-theme='dark'])
-        .topics
-        .topic:nth-child(1)
-        h3::before {
-        background: #90b8d8;
-    }
-    :global(html body[data-theme='dark'])
-        .topics
-        .topic:nth-child(2)
-        h3::before {
-        background: #90c890;
-    }
-    :global(html body[data-theme='dark'])
-        .topics
-        .topic:nth-child(3)
-        h3::before {
-        background: #b890d0;
+    :global(html body[data-theme='dark']) .topic h3::before {
+        background: var(--topic-color-dark);
     }
 
     .topic p {

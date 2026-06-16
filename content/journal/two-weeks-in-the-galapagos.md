@@ -4,7 +4,7 @@ description: A travelogue
 author: Russell McWhae
 date: 2025-08-19
 draft: 0
-category: Reflection
+category: Adventure
 ---
 
 In a year of many firsts, I just spent two weeks in the Galápagos Islands, the furthest destination from Canada I have visited in a decade. (See [the corresponding photos](/events/Galapagos_July-2025/).)

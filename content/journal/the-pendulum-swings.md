@@ -4,7 +4,7 @@ description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
 date: 2021-12-26
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 In my final year of high-school English, we studied _Nineteen Eighty-Four_. One of the many quotations that stuck with me is about deprivation: “War is a way of shattering to pieces, or pouring into the stratosphere, or sinking into the depths of the sea, materials which might otherwise be used to make the masses too comfortable, and hence, in the long run, too intelligent.” Such destitution, coupled with the chilling concept of thoughtcrime—“Thoughtcrime does not entail death: thoughtcrime IS death.”—illustrate Orwell’s predominant fear: that oppression would lead to our collective downfall. This notion likely reflected the devastation of World War II, after which the book was written.

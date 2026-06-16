@@ -43,11 +43,11 @@ test.describe('Journal Page', () => {
             selector.getByRole('link', { name: 'Tech' })
         ).toHaveAttribute('href', '/journal/category/Tech')
         await expect(
-            selector.getByRole('link', { name: 'Reflection' })
-        ).toHaveAttribute('href', '/journal/category/Reflection')
+            selector.getByRole('link', { name: 'Essays' })
+        ).toHaveAttribute('href', '/journal/category/Essays')
         await expect(
-            selector.getByRole('link', { name: 'Outdoor' })
-        ).toHaveAttribute('href', '/journal/category/Outdoor')
+            selector.getByRole('link', { name: 'Adventure' })
+        ).toHaveAttribute('href', '/journal/category/Adventure')
 
         await selector.getByRole('link', { name: 'Tech' }).click()
         await expect(page).toHaveURL('/journal/category/Tech')
