@@ -4,6 +4,7 @@
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import { resolve } from '$app/paths'
     import { EDITOR_PICKS } from '$lib/constants/journal'
+    import { CURRENTLY_READING } from '$lib/data/reading-list'
 
     let { data } = $props()
 
@@ -136,7 +137,7 @@
                 </div>
                 <div class="c-label">Reading</div>
                 <div class="c-value">
-                    <i>Spirit-Controlled Temperament</i> by Tim LaHaye
+                    <i>{CURRENTLY_READING.title}</i> by {CURRENTLY_READING.author}
                 </div>
             </div>
             <div class="currently-item">

@@ -9,6 +9,11 @@ export interface YearGroup {
     books: Book[]
 }
 
+export const CURRENTLY_READING: Book = {
+    title: 'Spirit-Controlled Temperament',
+    author: 'Tim LaHaye',
+}
+
 export const READING_LIST: YearGroup[] = [
     {
         year: 2026,
