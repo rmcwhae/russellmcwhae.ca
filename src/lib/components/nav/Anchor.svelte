@@ -6,6 +6,19 @@
 
     const isHashOnHome = $derived(href.startsWith('/#'))
 
+    const isActive = $derived.by(() => {
+        if (page.url.pathname === '/') return false
+
+        if (isHashOnHome) {
+            return page.url.hash === href.slice(1)
+        }
+
+        return (
+            page.url.pathname === href ||
+            page.url.pathname.startsWith(`${href}/`)
+        )
+    })
+
     function handleClick() {
         onClose?.()
     }
@@ -16,7 +29,7 @@
     <a
         href={resolve('/') + href.slice(1)}
         onclick={handleClick}
-        aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
+        aria-current={isActive ? 'page' : undefined}
         >{title}</a
     >
     <!-- eslint-enable svelte/no-navigation-without-resolve -->
@@ -24,7 +37,7 @@
     <a
         href={resolve(href)}
         onclick={handleClick}
-        aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
+        aria-current={isActive ? 'page' : undefined}
         >{title}</a
     >
 {/if}
@@ -35,7 +48,7 @@
         text-decoration: none;
         color: var(--high-contrast-color);
         display: block;
-        margin: var(--s-1) var(--s0);
+        margin: 0 var(--s0);
     }
 
     a:focus-visible {

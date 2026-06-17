@@ -45,21 +45,21 @@
                         <Anchor
                             title="Photography"
                             href="/photography"
-                            on:close={hideMenu}
+                            onClose={hideMenu}
                         />
                     </li>
                     <li>
                         <Anchor
                             title="Journal"
                             href="/journal"
-                            on:close={hideMenu}
+                            onClose={hideMenu}
                         />
                     </li>
                     <li>
                         <Anchor
                             title="About"
                             href="/about"
-                            on:close={hideMenu}
+                            onClose={hideMenu}
                         />
                     </li>
                     <li
@@ -98,7 +98,7 @@
         top: 0;
         z-index: 10;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         flex-shrink: 0;
         height: var(--nav-height);
         padding: 0 var(--s0);
@@ -137,6 +137,7 @@
         width: 100%;
         max-width: $breakpoint-xl;
         margin: 0 auto;
+        min-height: 100%;
     }
     nav {
         color: var(--high-contrast-color);
@@ -158,6 +159,8 @@
     }
     #logo {
         z-index: 13;
+        display: flex;
+        align-items: center;
     }
     #logo a {
         display: block;
@@ -182,6 +185,16 @@
         display: inline-block;
         position: relative;
         margin: 0 var(--s-1);
+    }
+
+    .nav-menu li:has(:global(a[aria-current='page']))::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        background: var(--accent);
     }
     :global(.no-scroll-mobile) {
         overflow: hidden;
@@ -214,6 +227,10 @@
         #mobile-switcher {
             flex-direction: column;
             align-items: center;
+        }
+
+        .nav-menu li:has(:global(a[aria-current='page'])) {
+            padding-left: var(--s-2);
         }
     }
     .nav-toggle {
@@ -278,11 +295,12 @@
     #desktop-switcher {
         display: none;
         margin-left: auto;
+        align-items: center;
     }
 
     @include for-tablet-landscape-up {
         #desktop-switcher {
-            display: inherit;
+            display: flex;
         }
         #mobile-switcher {
             display: none;
@@ -294,22 +312,43 @@
         .nav-overlay {
             display: none;
         }
+        nav {
+            display: flex;
+            align-self: stretch;
+        }
         .nav-menu {
             position: inherit;
             height: auto;
             display: flex;
-            align-items: center;
+            align-items: stretch;
+            align-self: stretch;
             justify-content: center;
         }
         ul {
             display: flex;
             flex-direction: row;
+            align-items: stretch;
+            height: 100%;
         }
         li {
             margin: 0 var(--s-2);
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
         nav :global(a) {
-            margin: var(--s-3) var(--s-2);
+            margin: 0 var(--s-2);
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .nav-menu li:has(:global(a[aria-current='page']))::before {
+            top: 0;
+            bottom: auto;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 4px;
         }
     }
 </style>
