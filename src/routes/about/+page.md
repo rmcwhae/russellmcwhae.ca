@@ -1,6 +1,6 @@
 ---
 title: About Me
-description: About me.
+description: An Intro description.
 author: Russell McWhae
 date: 2026-06-16
 draft: 0
