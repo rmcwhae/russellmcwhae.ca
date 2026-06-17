@@ -16,6 +16,7 @@ const config = {
     layout: {
         page: path.join(layoutRoot, 'Page.svelte'),
         micro: path.join(layoutRoot, 'Micro.svelte'),
+        about: path.join(layoutRoot, 'About.svelte'),
     },
 
     remarkPlugins: [remarkGfm, frontMatterSlug, remarkFootnotes],

@@ -37,7 +37,9 @@
         display: block;
         margin: var(--s-1) var(--s0);
     }
-    a:hover {
-        color: var(--link-color);
+
+    a:focus-visible {
+        outline: 2px solid var(--high-contrast-color);
+        outline-offset: 2px;
     }
 </style>
