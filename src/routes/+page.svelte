@@ -360,7 +360,11 @@
     }
 
     .hero-text h1 {
-        font-size: clamp(var(--text-display), 5vw, calc(var(--text-display) * 1.5));
+        font-size: clamp(
+            var(--text-display),
+            5vw,
+            calc(var(--text-display) * 1.5)
+        );
         line-height: 1.02;
         margin: 0;
 
@@ -470,7 +474,7 @@
 
     .pick-title {
         margin: 0;
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
         line-height: 1.2;
         font-variant-numeric: lining-nums;
         font-feature-settings: 'lnum' 1;

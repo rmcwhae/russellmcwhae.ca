@@ -66,7 +66,7 @@
 
     a,
     button {
-        font-size: var(--text-xs);
+        font-size: var(--text-sm);
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--text-color);
@@ -87,7 +87,7 @@
     }
 
     .footer-copy {
-        font-size: var(--text-xs);
+        font-size: var(--text-sm);
         color: var(--text-color);
     }
 </style>
