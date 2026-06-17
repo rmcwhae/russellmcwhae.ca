@@ -470,12 +470,15 @@
 
     .pick-title {
         margin: 0;
-        font-size: 1rem;
-        line-height: 1.25;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
 
         a {
             color: var(--high-contrast-color);
             text-decoration: none;
+            transition: none;
 
             &:hover {
                 text-decoration: underline;
@@ -483,12 +486,17 @@
                 text-decoration-thickness: 2px;
                 text-underline-offset: 4px;
             }
+
+            &:focus-visible {
+                outline: 2px solid var(--link-color);
+                outline-offset: 2px;
+            }
         }
     }
 
     .pick-desc {
         margin: 0;
-        font-size: var(--body-sm);
+        font-size: 0.9rem;
         color: var(--text-color);
         line-height: 1.5;
     }
