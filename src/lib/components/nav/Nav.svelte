@@ -141,7 +141,7 @@
     nav {
         color: var(--high-contrast-color);
         font-family: var(--font-sans);
-        font-weight: 600;
+        font-weight: 700;
         font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;

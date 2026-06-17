@@ -7,7 +7,7 @@ a {
     transition: var(--duration);
 }
 .button {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     padding: var(--s-1) var(--s1);
     text-decoration: none;
@@ -241,7 +241,7 @@ article strong {
     text-transform: uppercase;
     font-size: 0.95rem;
     letter-spacing: 0.075em;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .kicker {
@@ -249,14 +249,14 @@ article strong {
     font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--accent);
 }
 
 .section-label {
     font-family: var(--font-sans);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--medium-grey);

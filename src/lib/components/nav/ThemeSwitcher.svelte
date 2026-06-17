@@ -234,7 +234,7 @@
     }
 
     .theme-option.active {
-        font-weight: 600;
+        font-weight: 700;
         background: var(--light-grey);
     }
 

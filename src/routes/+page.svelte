@@ -410,7 +410,7 @@
     .journal-heading {
         font-family: var(--font-sans);
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--accent);
@@ -444,7 +444,7 @@
     .journal-recent-heading {
         font-family: var(--font-sans);
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--medium-grey);
