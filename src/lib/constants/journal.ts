@@ -1,5 +1,24 @@
 export const JOURNAL_CATEGORIES = ['Tech', 'Essays', 'Adventure'] as const
 
+export const EDITOR_PICKS = [
+    {
+        slug: 'two-weeks-in-the-galapagos',
+        title: 'Two Weeks in the Galápagos',
+        description: 'A travelogue through an unforgettable landscape.',
+    },
+    {
+        slug: 'longitudinal-tech-reviews',
+        title: 'Longitudinal Tech Reviews',
+        description:
+            'The true utility of tech products is demonstrated over longer time periods than are usually discussed.',
+    },
+    {
+        slug: 'equilibrium',
+        title: 'Equilibrium',
+        description: 'How long should we pursue our dreams and passions?',
+    },
+] as const
+
 export const LONG_READ_MINUTES = 20
 
 export function isLongRead(readingTime: { minutes: number } | undefined) {

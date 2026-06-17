@@ -3,30 +3,14 @@
     import HomepageGallery from '$lib/components/images/HomepageGallery.svelte'
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import { resolve } from '$app/paths'
+    import { EDITOR_PICKS } from '$lib/constants/journal'
 
     let { data } = $props()
 
     let images = $derived(data.images)
     let featuredPost = $derived(data.featuredPost)
 
-    const editorsPicks = [
-        {
-            slug: 'two-weeks-in-the-galapagos',
-            title: 'Two Weeks in the Galápagos',
-            description: 'A travelogue through an unforgettable landscape.',
-        },
-        {
-            slug: 'longitudinal-tech-reviews',
-            title: 'Longitudinal Tech Reviews',
-            description:
-                'The true utility of tech products is demonstrated over longer time periods than are usually discussed.',
-        },
-        {
-            slug: 'equilibrium',
-            title: 'Equilibrium',
-            description: 'How long should we pursue our dreams and passions?',
-        },
-    ]
+    const editorsPicks = EDITOR_PICKS
 </script>
 
 <SEO />

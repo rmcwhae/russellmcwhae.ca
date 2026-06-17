@@ -3,6 +3,7 @@
     import JournalEntry from '$lib/components/journal/Entry.svelte'
     import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
+    import { EDITOR_PICKS } from '$lib/constants/journal'
 
     let { data } = $props()
     let posts = $derived(data.posts)
@@ -48,6 +49,20 @@
             <p>
                 Also see my <a href={resolve('/reading-list')}>reading list</a>.
             </p>
+            <p>If you’re new here, these articles are a good place to start:</p>
+            <ul class="starter-list">
+                {#each EDITOR_PICKS as pick (pick.slug)}
+                    <li class="starter-entry">
+                        <h3 class="starter-title">
+                            <a
+                                href={resolve('/journal/[slug]', {
+                                    slug: pick.slug,
+                                })}>{pick.title}</a
+                            >
+                        </h3>
+                    </li>
+                {/each}
+            </ul>
         </div>
     </aside>
 </div>
@@ -115,6 +130,49 @@
         margin-bottom: var(--s-1);
     }
 
+    .starter-list {
+        list-style: none;
+        margin: var(--s-1) 0 0;
+        padding: 0;
+    }
+
+    .starter-entry {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        padding: var(--s-1) 0;
+        border-bottom: 1px solid var(--light-grey);
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .starter-list .starter-entry .starter-title a {
+        color: var(--high-contrast-color);
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--link-color);
+            outline-offset: 2px;
+        }
+    }
+
+    .starter-title {
+        margin: 0;
+        font-size: var(--text-base);
+        line-height: 1.2;
+        font-weight: normal;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: 'lnum' 1;
+    }
+
     .journal-stats {
         display: flex;
         justify-content: center;
@@ -170,7 +228,6 @@
             grid-row: 1;
             font-size: var(--text-base);
             line-height: 1.5;
-            position: sticky;
             top: var(--s1);
             padding-top: var(--s3);
             padding-left: var(--s2);
