@@ -14,6 +14,9 @@ export const masonrySizes =
 /** Two-column homepage grid. */
 export const gridSizes = '(max-width: 576px) 100vw, 50vw'
 
+/** Horizontally scrollable homepage carousel (~2.5 items visible). */
+export const carouselSizes = '(max-width: 576px) 85vw, (max-width: 900px) 72vw, 40vw'
+
 interface ImageOptions {
     width?: number
     height?: number

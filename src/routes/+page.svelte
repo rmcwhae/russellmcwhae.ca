@@ -8,7 +8,25 @@
 
     let images = $derived(data.images)
     let featuredPost = $derived(data.featuredPost)
-    let recentPosts = $derived(data.recentPosts)
+
+    const editorsPicks = [
+        {
+            slug: 'two-weeks-in-the-galapagos',
+            title: 'Two Weeks in the Galápagos',
+            description: 'A travelogue through an unforgettable landscape.',
+        },
+        {
+            slug: 'longitudinal-tech-reviews',
+            title: 'Longitudinal Tech Reviews',
+            description:
+                'The true utility of tech products is demonstrated over longer time periods than are usually discussed.',
+        },
+        {
+            slug: 'equilibrium',
+            title: 'Equilibrium',
+            description: 'How long should we pursue our dreams and passions?',
+        },
+    ]
 </script>
 
 <SEO />
@@ -46,52 +64,115 @@
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Photography</span>
-            <a href={resolve('/photography')} class="accent-link"
-                ><span>View all</span> →</a
+            <a href={resolve('/photography')} class="accent-link-plain"
+                >View all Photographs →</a
             >
         </div>
-        <p class="section-desc">Some of my all-time favourite images.</p>
+        <h2 class="section-headline">Featured Images</h2>
         <div class="gallery-wrapper">
             <HomepageGallery {images} />
         </div>
     </section>
 
     <!-- Journal -->
-    <section class="page-section">
-        <span class="recent-entries-heading journal-section-heading">From My Journal</span>
-        <div class="restricted-width">
-            <JournalEntry post={featuredPost} featured />
-        </div>
-        <div class="section-header recent-entries-header mt-3">
-            <span class="recent-entries-heading">Recent Entries</span>
-            <a href={resolve('/journal')} class="accent-link"
-                ><span>View all</span> →</a
-            >
-        </div>
-        <div class="recent-posts-grid">
-            {#each recentPosts as post (post.slug ?? post.href)}
-                <JournalEntry {post} />
-            {/each}
+    <section class="page-section journal-section">
+        <div class="journal-heading">From My Journal</div>
+        <div class="journal-grid">
+            <div class="journal-featured">
+                <JournalEntry post={featuredPost} featured />
+            </div>
+            <div class="journal-recent">
+                <div class="journal-recent-heading">Featured Entries</div>
+                {#each editorsPicks as pick (pick.slug)}
+                    <div class="editors-pick-entry">
+                        <h3 class="pick-title">
+                            <a
+                                href={resolve('/journal/[slug]', {
+                                    slug: pick.slug,
+                                })}>{pick.title}</a
+                            >
+                        </h3>
+                        <p class="pick-desc">{pick.description}</p>
+                    </div>
+                {/each}
+                <a
+                    href={resolve('/journal')}
+                    class="accent-link-plain journal-view-all"
+                    >View All Entries →</a
+                >
+            </div>
         </div>
     </section>
 
     <!-- Currently -->
-    <section class="page-section">
+    <section class="page-section currently-section">
         <div class="section-header">
             <span class="section-label">Currently</span>
         </div>
         <div class="currently">
             <div class="currently-item">
+                <div class="c-icon">
+                    <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M10 2a5 5 0 0 1 3.5 8.5l-.5.5V14h-6v-3l-.5-.5A5 5 0 0 1 10 2Z"
+                        />
+                        <line x1="7.5" y1="15.5" x2="12.5" y2="15.5" />
+                        <line x1="8.5" y1="17.5" x2="11.5" y2="17.5" />
+                    </svg>
+                </div>
                 <div class="c-label">Learning</div>
                 <div class="c-value">Retrieval-Augmented Generation (RAG)</div>
             </div>
             <div class="currently-item">
+                <div class="c-icon">
+                    <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M2 5c0 0 3.5-1.5 8-1.5S18 5 18 5v10c0 0-3.5-1-8-1s-8 1-8 1V5Z"
+                        />
+                        <line x1="10" y1="3.5" x2="10" y2="14" />
+                    </svg>
+                </div>
                 <div class="c-label">Reading</div>
                 <div class="c-value">
                     <i>Spirit-Controlled Temperament</i> by Tim LaHaye
                 </div>
             </div>
             <div class="currently-item">
+                <div class="c-icon">
+                    <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="10" cy="10" r="7.5" />
+                        <polyline points="10,3 11.5,10 10,14 8.5,10 10,3" />
+                        <line x1="10" y1="2" x2="10" y2="3.5" />
+                        <line x1="10" y1="16.5" x2="10" y2="18" />
+                    </svg>
+                </div>
                 <div class="c-label">Exploring</div>
                 <div class="c-value">Lower Mainland gravel routes</div>
             </div>
@@ -107,20 +188,16 @@
                 </div>
                 <p>
                     I’m Russell McWhae, a software developer, photographer, and
-                    writer based in British Columbia. My journey has taken me
-                    from the prairies of Calgary and the peaks of Revelstoke to
-                    my current home on the Vancouver coast. This website is
-                    where I collect photographs and share observations about
-                    technology, the outdoors, and everyday life.
+                    writer based in British Columbia. This website is where I
+                    collect photographs and share observations about technology,
+                    the outdoors, and everyday life.
                 </p>
-                <p>
-                    Professionally, I have had a few different careers. In 2011,
-                    I graduated from civil engineering at the University of
-                    Alberta. In early 2019, I earned an MSc. in biomedical
-                    engineering from the University of Calgary. I then took the
-                    Lighthouse Labs web development boot camp and now work as a
-                    web developer.
-                </p>
+                <a
+                    href={resolve('/about')}
+                    class="accent-link"
+                    style="margin-top: var(--s-1); display: inline-block"
+                    ><span>Learn more</span> →</a
+                >
             </div>
             <div class="portrait">
                 <img src="/russell.png" alt="Russell McWhae" />
@@ -264,8 +341,7 @@
         width: 100%;
         margin: 0 auto;
         padding: calc(80px + var(--nav-height))
-            max(var(--s1), calc((100% - #{$breakpoint-xl}) / 2))
-            80px;
+            max(var(--s1), calc((100% - #{$breakpoint-xl}) / 2)) 80px;
 
         @include for-tablet-portrait-down {
             padding: calc(48px + var(--nav-height)) var(--s1) 64px;
@@ -317,36 +393,109 @@
         padding: var(--s3) 0;
     }
 
+    .section-headline {
+        font-family: var(--font-serif);
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: normal;
+        color: var(--high-contrast-color);
+        margin: var(--s-1) 0 var(--s1);
+        line-height: 1.15;
+    }
+
     .gallery-wrapper {
-        margin: var(--s2) 0;
+        margin-top: 0;
     }
 
-    .journal-section-heading {
-        display: block;
-        margin-bottom: var(--s3);
+    /* Journal */
+    .journal-heading {
+        font-family: var(--font-sans);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: var(--s2);
     }
 
-    .section-header.recent-entries-header {
-        margin-bottom: var(--s1);
-    }
-
-    .recent-posts-grid {
+    .journal-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--s1);
+        grid-template-columns: 3fr 2fr;
+        gap: var(--s3);
+        align-items: start;
 
         @include for-tablet-portrait-down {
             grid-template-columns: 1fr;
+            gap: var(--s2);
         }
     }
 
-    .recent-entries-heading {
+    .journal-recent {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--light-grey);
+        padding-left: var(--s2);
+
+        @include for-tablet-portrait-down {
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+
+    .journal-recent-heading {
         font-family: var(--font-sans);
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--medium-grey);
+        margin-bottom: var(--s1);
+    }
+
+    .editors-pick-entry {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+
+        & + & {
+            padding-top: var(--s0);
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .pick-title {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.25;
+
+        a {
+            color: var(--high-contrast-color);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: var(--accent);
+                text-decoration-thickness: 2px;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+
+    .pick-desc {
+        margin: 0;
+        font-size: var(--body-sm);
+        color: var(--text-color);
+        line-height: 1.5;
+    }
+
+    .journal-view-all {
+        display: inline-block;
+        margin-top: var(--s1);
     }
 
     .section-header {
@@ -356,19 +505,17 @@
         margin-bottom: var(--s-4);
     }
 
-    .section-desc {
-        font-size: var(--body-sm);
-        color: var(--text-color);
-        margin: 0 0 var(--s1);
-    }
-
     .c-value {
         font-size: var(--body-sm);
-        color: var(--text-color);
+        color: var(--high-contrast-color);
         line-height: 1.6;
     }
 
     /* Currently */
+    .currently-section {
+        border-top: 1px solid var(--light-grey);
+    }
+
     .currently {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -381,6 +528,22 @@
         }
     }
 
+    .currently-item + .currently-item {
+        border-left: 1px solid var(--light-grey);
+        padding-left: var(--s2);
+
+        @include for-tablet-portrait-down {
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+
+    .c-icon {
+        color: var(--medium-grey);
+        margin-bottom: var(--s-2);
+        line-height: 0;
+    }
+
     .c-label {
         font-family: var(--font-serif);
         font-size: var(--s1);
@@ -390,6 +553,10 @@
     }
 
     /* About */
+    .about-section {
+        border-top: 1px solid var(--light-grey);
+    }
+
     .about-grid {
         display: grid;
         grid-template-columns: 1fr 320px;

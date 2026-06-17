@@ -58,7 +58,7 @@
                     <li>
                         <Anchor
                             title="About"
-                            href="/#about"
+                            href="/about"
                             on:close={hideMenu}
                         />
                     </li>

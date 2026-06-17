@@ -82,6 +82,20 @@ a.no-shadow:hover {
     }
 }
 
+.accent-link-plain {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--high-contrast-color);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--accent);
+    }
+}
+
 // Article styles
 
 article {
