@@ -133,7 +133,7 @@
     }
 
     .hero-description {
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         color: var(--text-color);
         margin: 0;
         max-width: 52ch;
@@ -185,13 +185,13 @@
 
     .event-title {
         font-family: var(--font-sans);
-        font-size: 0.95rem;
+        font-size: var(--text-base);
         transition: color var(--duration);
     }
 
     .event-meta {
         font-family: var(--font-sans);
-        font-size: 0.8rem;
+        font-size: var(--text-sm);
         color: var(--text-color);
         white-space: nowrap;
         flex-shrink: 0;
@@ -202,7 +202,7 @@
         border-top: 1px solid var(--light-grey);
 
         p {
-            font-size: var(--body-sm);
+            font-size: var(--text-base);
             color: var(--text-color);
             max-width: 60ch;
             margin: 0;
@@ -217,7 +217,7 @@
 
     .load-more-btn {
         font-family: var(--font-sans);
-        font-size: 0.9rem;
+        font-size: var(--text-base);
         padding: var(--s-2) var(--s1);
         border: 1px solid var(--light-grey);
         border-radius: var(--radius);
@@ -241,7 +241,7 @@
 
     .load-more-count {
         color: var(--text-color);
-        font-size: 0.8rem;
+        font-size: var(--text-sm);
         margin-left: var(--s-3);
     }
 </style>

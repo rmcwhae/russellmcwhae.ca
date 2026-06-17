@@ -14,7 +14,7 @@
 
     .archive-search {
         font-family: var(--font-sans);
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         padding: var(--s-3) var(--s-1);
         border: 1px solid var(--light-grey);
         border-radius: var(--radius);
@@ -48,7 +48,7 @@
 
     .year-label {
         font-family: var(--font-sans);
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         color: var(--text-color);
         padding-top: var(--s-1);
 
@@ -63,7 +63,7 @@
     }
 
     .no-results {
-        font-size: 0.9rem;
+        font-size: var(--text-base);
         color: var(--text-color);
         margin: var(--s0) 0;
     }

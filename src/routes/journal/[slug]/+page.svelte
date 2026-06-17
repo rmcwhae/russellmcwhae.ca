@@ -105,7 +105,7 @@
     header .entry-meta {
         white-space: nowrap;
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
         font-weight: normal;
         text-transform: uppercase;
         letter-spacing: 0.06em;
@@ -137,7 +137,7 @@
             justify-content: flex-start;
         }
         h1 {
-            font-size: max(3em, 1.953rem);
+            font-size: max(3em, var(--text-2xl));
             line-height: 1.1;
         }
         header p {
@@ -151,10 +151,10 @@
             padding: var(--s2) 0 var(--s3);
         }
         h1 {
-            font-size: max(2.5em, 1.802rem);
+            font-size: max(2.5em, var(--text-2xl));
         }
         header p:global(.big) {
-            font-size: 1.2rem;
+            font-size: var(--text-xl);
         }
     }
 

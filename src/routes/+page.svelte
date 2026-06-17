@@ -360,7 +360,7 @@
     }
 
     .hero-text h1 {
-        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-size: clamp(var(--text-display), 5vw, calc(var(--text-display) * 1.5));
         line-height: 1.02;
         margin: 0;
 
@@ -375,7 +375,7 @@
     }
 
     .lead {
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         line-height: 1.7;
         color: var(--text-color);
         max-width: 36ch;
@@ -395,7 +395,7 @@
 
     .section-headline {
         font-family: var(--font-serif);
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
         font-weight: normal;
         color: var(--high-contrast-color);
         margin: var(--s-1) 0 var(--s1);
@@ -409,7 +409,7 @@
     /* Journal */
     .journal-heading {
         font-family: var(--font-sans);
-        font-size: 12px;
+        font-size: var(--text-xs);
         font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -443,7 +443,7 @@
 
     .journal-recent-heading {
         font-family: var(--font-sans);
-        font-size: 12px;
+        font-size: var(--text-xs);
         font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -470,7 +470,7 @@
 
     .pick-title {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: var(--text-lg);
         line-height: 1.2;
         font-variant-numeric: lining-nums;
         font-feature-settings: 'lnum' 1;
@@ -496,7 +496,7 @@
 
     .pick-desc {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: var(--text-base);
         color: var(--text-color);
         line-height: 1.5;
     }
@@ -514,7 +514,7 @@
     }
 
     .c-value {
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         color: var(--high-contrast-color);
         line-height: 1.6;
     }
@@ -554,7 +554,7 @@
 
     .c-label {
         font-family: var(--font-serif);
-        font-size: var(--s1);
+        font-size: var(--text-xl);
         font-weight: normal;
         color: var(--high-contrast-color);
         margin-bottom: var(--s-2);
@@ -585,7 +585,7 @@
     }
 
     .about-text p {
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         line-height: 1.7;
         color: var(--text-color);
         max-width: 52ch;

@@ -101,7 +101,7 @@
     }
 
     .sidebar-block p {
-        font-size: 0.9rem;
+        font-size: var(--text-base);
         line-height: 1.6;
         margin: 0;
         color: var(--text-color);
@@ -130,7 +130,7 @@
     }
 
     .stat-value {
-        font-size: 1.953rem;
+        font-size: var(--text-2xl);
         font-weight: normal;
         color: var(--high-contrast-color);
         line-height: 1;
@@ -138,7 +138,7 @@
 
     .stat-label {
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
         font-weight: normal;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -168,7 +168,7 @@
         .journal-sidebar {
             grid-column: 2;
             grid-row: 1;
-            font-size: 0.95rem;
+            font-size: var(--text-base);
             line-height: 1.5;
             position: sticky;
             top: var(--s1);

@@ -117,7 +117,7 @@
     }
     p {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: var(--text-base);
     }
     .entry-category {
         align-items: center;
@@ -138,7 +138,7 @@
     .entry-meta {
         white-space: nowrap;
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
         font-weight: normal;
         text-transform: uppercase;
         letter-spacing: 0.06em;
@@ -158,15 +158,15 @@
         border-bottom: none;
 
         h2 {
-            font-size: max(3em, 1.953rem);
+            font-size: max(3em, var(--text-2xl));
             line-height: 1.1;
 
             @include for-tablet-portrait-down {
-                font-size: 1.802rem;
+                font-size: var(--text-2xl);
             }
 
             @include for-laptop-only {
-                font-size: max(2.5em, 1.802rem);
+                font-size: max(2.5em, var(--text-2xl));
             }
         }
 
@@ -188,7 +188,7 @@
 
         p:global(.big) {
             @include for-laptop-only {
-                font-size: 1.2rem;
+                font-size: var(--text-xl);
             }
         }
     }

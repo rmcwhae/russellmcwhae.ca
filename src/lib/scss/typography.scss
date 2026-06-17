@@ -8,7 +8,7 @@ a {
 }
 .button {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: var(--text-base);
     padding: var(--s-1) var(--s1);
     text-decoration: none;
     border: 1px solid var(--light-grey);
@@ -59,7 +59,7 @@ a.no-shadow:hover {
 
 .accent-link {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -84,7 +84,7 @@ a.no-shadow:hover {
 
 .accent-link-plain {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -127,7 +127,7 @@ blockquote {
     padding-left: var(--s1);
     margin-right: var(--s1);
     border-left: 1px solid var(--light-grey);
-    font-size: 1.05rem;
+    font-size: var(--text-lg);
 }
 pre {
     padding: var(--s-1) var(--s1);
@@ -179,45 +179,45 @@ h6 {
     font-weight: 500;
 }
 h1 {
-    font-size: 3.052rem;
+    font-size: var(--text-display);
     line-height: 1;
     margin: var(--s-1) 0;
     font-weight: normal;
 }
 h2 {
-    font-size: 1.953rem;
+    font-size: var(--text-2xl);
     font-weight: normal;
 }
 h3 {
     font-weight: 500;
-    font-size: 1.536rem;
+    font-size: var(--text-xl);
 }
 h4 {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     font-weight: 500;
 }
 .big {
     @include for-tablet-landscape-up {
-        font-size: 1.3rem;
+        font-size: var(--text-xl);
     }
     @include for-desktop-up {
         line-height: 1.2;
-        font-size: 1.563rem;
+        font-size: var(--text-2xl);
     }
 }
 @include for-tablet-portrait-down {
     // Via https://type-scale.com (Major Second scale for mobile; Major Third otherwise)
     h1 {
-        font-size: 1.802rem;
+        font-size: var(--text-2xl);
     }
     h2 {
-        font-size: 1.602rem;
+        font-size: var(--text-xl);
     }
     h3 {
-        font-size: 1.424rem;
+        font-size: var(--text-xl);
     }
     h4 {
-        font-size: 1.266rem;
+        font-size: var(--text-xl);
     }
 }
 
@@ -230,7 +230,7 @@ pre,
 code {
     font-family: monospace, monospace;
     white-space: pre-wrap;
-    font-size: 1rem;
+    font-size: var(--text-base);
     word-break: break-word;
 }
 
@@ -239,14 +239,14 @@ code {
 .uppercase,
 article strong {
     text-transform: uppercase;
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     letter-spacing: 0.075em;
     font-weight: 500;
 }
 
 .kicker {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: var(--text-xs);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 400;
@@ -255,7 +255,7 @@ article strong {
 
 .section-label {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -288,7 +288,7 @@ sup.footnote-ref {
     border-radius: 3px;
     padding: 1px 4px;
     font-family: var(--font-sans);
-    font-size: 0.6rem;
+    font-size: var(--text-xs);
     line-height: 1;
     letter-spacing: 0.05em;
     color: var(--medium-grey);
@@ -362,7 +362,7 @@ sup.footnote-ref.popup-below .footnote-popup-inner::after {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     padding: var(--s-1) var(--s0);
     font-family: var(--font-serif);
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     line-height: 1.5;
     color: var(--text-color);
 
@@ -381,7 +381,7 @@ sup.footnote-ref.popup-below .footnote-popup-inner::after {
     }
 }
 .sub {
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 .entry-category {

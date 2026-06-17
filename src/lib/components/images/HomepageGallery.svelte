@@ -211,7 +211,7 @@
     }
 
     .thumb-caption {
-        font-size: 14px;
+        font-size: var(--text-base);
         font-family: var(--font-sans);
         color: var(--high-contrast-color);
         line-height: 1.4;

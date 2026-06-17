@@ -164,7 +164,7 @@
 
     .fact-label {
         font-family: var(--font-sans);
-        font-size: 11px;
+        font-size: var(--text-xs);
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -172,7 +172,7 @@
     }
 
     .fact-value {
-        font-size: 0.9rem;
+        font-size: var(--text-base);
         color: var(--high-contrast-color);
     }
 
@@ -197,7 +197,7 @@
         }
 
         h1 {
-            font-size: max(3em, 1.953rem);
+            font-size: max(3em, var(--text-2xl));
             line-height: 1.1;
         }
 
@@ -213,11 +213,11 @@
         }
 
         h1 {
-            font-size: max(2.5em, 1.802rem);
+            font-size: max(2.5em, var(--text-2xl));
         }
 
         header p:global(.big) {
-            font-size: 1.2rem;
+            font-size: var(--text-xl);
         }
     }
 

@@ -245,7 +245,7 @@
 
     @include for-tablet-landscape-up {
         .theme-option-label {
-            font-size: 13px;
+            font-size: var(--text-sm);
         }
     }
 

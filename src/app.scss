@@ -13,7 +13,7 @@ body {
     transition: all ease var(--duration);
     margin: 0;
     font-family: var(--font-serif);
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     line-height: 1.5;
 
     display: flex;

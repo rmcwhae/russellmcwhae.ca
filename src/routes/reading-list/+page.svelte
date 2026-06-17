@@ -92,7 +92,7 @@
     }
 
     .intro {
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         color: var(--text-color);
         max-width: 60ch;
         margin: 0 0 var(--s2);
@@ -116,13 +116,13 @@
 
     .book-title {
         font-family: var(--font-serif);
-        font-size: 0.95rem;
+        font-size: var(--text-base);
         font-style: italic;
     }
 
     .book-meta {
         font-family: var(--font-sans);
-        font-size: 0.8rem;
+        font-size: var(--text-sm);
         color: var(--text-color);
         white-space: nowrap;
         flex-shrink: 0;

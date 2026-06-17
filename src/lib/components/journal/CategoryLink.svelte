@@ -44,7 +44,7 @@
     .category-pill {
         display: inline-block;
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;

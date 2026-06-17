@@ -31,7 +31,7 @@
 
 <style>
     a {
-        font-size: 1.2em;
+        font-size: var(--text-xl);
         text-decoration: none;
         color: var(--high-contrast-color);
         display: block;

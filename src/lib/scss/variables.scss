@@ -10,7 +10,14 @@
     --flow-space: var(--s1);
     --nav-height: 64px;
 
-    --body-sm: 0.9rem;
+    // Type scale (7 sizes, 1rem = 16px)
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-display: 3rem;
 
     --ratio: 1.5;
     --s-5: calc(var(--s-4) / var(--ratio));

@@ -56,7 +56,7 @@
 
     .category-count {
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
         color: var(--medium-grey);
     }
 </style>

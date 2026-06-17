@@ -99,7 +99,7 @@
     }
 
     .intro {
-        font-size: 15px;
+        font-size: var(--text-base);
         color: var(--text-color);
         max-width: 60ch;
         margin: 0 0 var(--s2);
@@ -114,7 +114,7 @@
     }
 
     .about-section p {
-        font-size: 0.95rem;
+        font-size: var(--text-base);
         line-height: 1.6;
         margin: 0;
     }

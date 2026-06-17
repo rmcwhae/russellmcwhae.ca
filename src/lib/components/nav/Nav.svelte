@@ -142,7 +142,7 @@
         color: var(--high-contrast-color);
         font-family: var(--font-sans);
         font-weight: 700;
-        font-size: 11px;
+        font-size: var(--text-xs);
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-left: var(--s2);

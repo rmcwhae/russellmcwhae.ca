@@ -41,7 +41,7 @@
 
     .back-link {
         font-family: var(--font-sans);
-        font-size: 0.8rem;
+        font-size: var(--text-sm);
         color: var(--text-color);
         text-decoration: none;
         letter-spacing: 0.08em;
@@ -54,7 +54,7 @@
 
     .event-meta {
         font-family: var(--font-sans);
-        font-size: var(--body-sm);
+        font-size: var(--text-base);
         color: var(--text-color);
     }
 

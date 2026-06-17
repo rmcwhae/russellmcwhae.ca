@@ -72,7 +72,7 @@
     }
 
     .category-desc {
-        font-size: 15px;
+        font-size: var(--text-base);
         color: var(--text-color);
         margin: 0;
     }
@@ -80,7 +80,7 @@
     .nav-line {
         display: flex;
         align-items: baseline;
-        font-size: 15px;
+        font-size: var(--text-base);
         color: var(--text-color);
         margin: 0;
     }
