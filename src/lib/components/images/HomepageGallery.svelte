@@ -2,38 +2,12 @@
     import {
         buildURL,
         generateSrcSets,
-        carouselSizes,
         DEFAULT_SRC_WIDTH,
         LIGHTBOX_MAX_WIDTH,
     } from '$lib/utils/images'
     import 'photoswipe/dist/photoswipe.css'
 
     let { images } = $props()
-
-    let galleryEl = $state(null)
-    let isDragging = $state(false)
-    let startX = $state(0)
-    let scrollLeft = $state(0)
-    let didDrag = $state(false)
-
-    function onPointerDown(e) {
-        isDragging = true
-        didDrag = false
-        startX = e.clientX
-        scrollLeft = galleryEl.scrollLeft
-        // No setPointerCapture — allows click events to reach child <a> elements
-    }
-
-    function onPointerMove(e) {
-        if (!isDragging) return
-        const dx = e.clientX - startX
-        if (Math.abs(dx) > 5) didDrag = true
-        galleryEl.scrollLeft = scrollLeft - dx
-    }
-
-    function onPointerUp() {
-        isDragging = false
-    }
 
     $effect(async () => {
         const { default: PhotoSwipeLightbox } =
@@ -83,16 +57,7 @@
     })
 </script>
 
-<div
-    id="homepage-gallery"
-    class="homepage-gallery-carousel"
-    class:dragging={isDragging}
-    bind:this={galleryEl}
-    onpointerdown={onPointerDown}
-    onpointermove={onPointerMove}
-    onpointerup={onPointerUp}
-    onpointercancel={onPointerUp}
->
+<div id="homepage-gallery" class="stack-gallery">
     {#each images as image (image.filePath)}
         {@const caption = image.customMetadata?.caption ?? ''}
         {@const fullSrc = buildURL(image.filePath, {
@@ -112,17 +77,11 @@
                 data-pswp-height={image.height}
                 data-pswp-src={fullSrc}
                 data-pswp-srcset={srcset}
-                onclick={(e) => {
-                    if (didDrag) {
-                        e.preventDefault()
-                        didDrag = false
-                    }
-                }}
             >
                 <div class="thumb">
                     <img
                         loading="lazy"
-                        sizes={carouselSizes}
+                        sizes="50vw"
                         {srcset}
                         src={thumbSrc}
                         width={image.width}
@@ -140,74 +99,33 @@
 </div>
 
 <style lang="scss">
-    @use '../../scss/breakpoints' as *;
-
-    .homepage-gallery-carousel {
-        display: flex;
-        gap: 20px;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 12px;
-        cursor: grab;
-        user-select: none;
-
-        &::-webkit-scrollbar {
-            height: 3px;
-        }
-        &::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: var(--medium-grey);
-            border-radius: 2px;
-        }
-        scrollbar-width: thin;
-        scrollbar-color: var(--medium-grey) transparent;
-
-        @include for-phone-only {
-            gap: 12px;
-        }
-    }
-
-    .homepage-gallery-carousel.dragging {
-        cursor: grabbing;
-        scroll-snap-type: none;
+    .stack-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s1);
     }
 
     .gallery-item {
-        flex: 0 0 clamp(320px, 42%, 520px);
-        scroll-snap-align: start;
         display: flex;
         flex-direction: column;
-
-        @include for-tablet-portrait-down {
-            flex: 0 0 clamp(260px, 72%, 380px);
-        }
-
-        @include for-phone-only {
-            flex: 0 0 clamp(240px, 85vw, 320px);
-        }
     }
 
     .thumb {
         aspect-ratio: 3 / 2;
         overflow: hidden;
         border-radius: 2px;
-        margin-bottom: 12px;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 2px;
-            transition: transform 0.3s ease;
-            will-change: transform;
+            display: block;
+            transition: opacity 0.3s ease;
         }
     }
 
     a:hover .thumb img {
-        transform: scale(1.03);
+        opacity: 0.92;
     }
 
     .thumb-caption {
@@ -215,6 +133,7 @@
         font-family: var(--font-sans);
         color: var(--high-contrast-color);
         line-height: 1.4;
+        margin-top: 10px;
     }
 
     :global(.pswp__custom-caption) {
