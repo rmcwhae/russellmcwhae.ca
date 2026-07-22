@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2026
 
+- _Malibu Rising_ by Taylor Jenkins Reid (audiobook)
 - _The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness_ by Jonathan Haidt (audiobook)
 - _No More Mr. Nice Guy: A Proven Plan For Getting What You Want In Love, Sex, And Life_ by Robert A. Glover (audiobook)
 - _Murder in Mesopotamia_ by Agatha Christie
