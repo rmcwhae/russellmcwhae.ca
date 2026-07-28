@@ -9,6 +9,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2026
 
+- _ Spirit-Controlled Temperament_ by Time LaHaye
 - _Leave the World Behind_ by Rumaan Alam (audiobook)
 - _Malibu Rising_ by Taylor Jenkins Reid (audiobook)
 - _The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness_ by Jonathan Haidt (audiobook)
