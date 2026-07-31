@@ -69,7 +69,7 @@ In civil engineering, we talked about return periods: the average time between e
 
 One benefit of vibe coding is that it has made it easier for back-burnered side projects to actually get made. The message here is that procrastination pays off: if you wait long enough, your digital projects will eventually take care of themselves. Kidding aside, let’s examine how capable coding agents have become.
 
-Fiddling around this past winter, I asked a coding agent to port my neglected Quotations app from Wails to Swift, the native language for Apple software. Why not make a fully native app, instead of using a web-based framework stuffed inside a native wrapper?
+Fiddling around this past winter, I asked a coding agent to port my neglected Quotations app from Wails to Swift, the native language for macOS (and iOS). Why not make a fully native app, instead of using a web-based framework stuffed inside a native wrapper?
 
 Because I don’t know Swift, this would be a purer test of vibe coding than using a language I was familiar with. Almost all of my LLM use had been in web-development languages, where I have enough background to know if the generated code follows good patterns or not. I went in as blissfully ignorant of Swift syntax as possible.
 
@@ -91,7 +91,7 @@ The irony of coding a knowledge-retention app while trying to avoid learning Swi
 
 ## Inflection Point
 
-Long restricted to the domain of science fiction, artificial intelligence has now become a reality. Never in my wildest dreams did I imagine a computer would actually write code, a skill that took me years to master. Coding agents can increasingly write better code than humans too, unless you are doing something quite obscure that a model has not been trained on.
+Long restricted to the domain of science fiction, artificial intelligence has now become a reality. Never in my wildest dreams did I imagine a computer would actually write code. Coding agents can increasingly write better code than humans too, unless you are doing something quite obscure that a model has not been trained on.
 
 One of the effects of vibe coding has been to lower the barriers to entry for software development. No longer the exclusive domain of tech geeks, anyone can now access high-powered LLMs and write software themselves. What does this mean for developers? Let’s examine two other fields that underwent a similar reduction in barriers to entry: photography and cycling.
 
@@ -141,7 +141,7 @@ This isn’t the first time we’ve been warned about maximizing economic output
 
 > Work is of two kinds: first, altering the position of matter at or near the earth’s surface relatively to other such matter; second, telling other people to do so. The first kind is unpleasant and ill paid; the second is pleasant and highly paid.
 
-While the nature of work has changed with the digital economy, Russell’s push for the diminution of work is, in a way, similar to the notion of using AI to automate mundane tasks. If output is increased via automation—either by physical machines manipulating matter or by digital “machines” like AI—it means that more is accomplished in a given period of time. The question then becomes what to do with this new excess of time.
+While the nature of work has changed with the digital economy, Russell’s push for the diminution of work is, in a way, similar to the notion of using AI to automate mundane tasks. If output is increased via automation—either by physical machines manipulating matter or by digital “machines” like AI—it means that more is accomplished in a given period of time. The question then becomes what to do with this newfound excess of time.
 
 [^7]: It feels like I’m writing about myself in the third person.
 
