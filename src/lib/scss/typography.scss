@@ -161,6 +161,13 @@ code {
     font-size: 1rem;
     word-break: break-word;
 }
+sup {
+    position: relative;
+    top: -0.5em;
+    font-size: 0.7em;
+    line-height: 0;
+    vertical-align: baseline;
+}
 
 // Other classes
 
