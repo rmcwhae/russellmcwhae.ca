@@ -89,6 +89,8 @@ I put many hours of work into this project despite rarely looking at the code. T
 
 The irony of coding a knowledge-retention app while trying to avoid learning Swift is not lost on me. And yet, maybe this is exactly how we _should_ use AI: to selectively apply it to certain tasks, while freeing up our mental capacity for tasks best reserved for humans.
 
+In the same way that good leadership is about influence and not micromanagement, vibe coding enables developers to focus on building features instead of fretting over implementation details. On the one hand, this has eliminated bottlenecks in software development, but, on the other, it has forever changed a craft that took me years to learn. I can’t help but feel a tinge of nostalgia for what we’re already calling the “dark ages” of manual coding.
+
 ## Inflection Point
 
 Long restricted to the domain of science fiction, artificial intelligence has now become a reality. Never in my wildest dreams did I imagine a computer would actually write code. Coding agents can increasingly write better code than humans too, unless you are doing something quite obscure that a model has not been trained on.
