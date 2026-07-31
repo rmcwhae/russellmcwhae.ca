@@ -145,7 +145,7 @@ While the nature of work has changed with the digital economy, Russell’s push 
 
 [^7]: It feels like I’m writing about myself in the third person.
 
-Russell argues that efficiency-improving technological advancements should be used to reduce labour hours. Instead of working the same amount of hours at higher levels of productivity, why not work _less_ and have more leisure time. This would simultaneously solve the issue of many people being overworked while others are unemployed. He proposes four-hour workdays (one can dream). Imagine if we were to take the productivity gains achieved through AI and _not work_ with the surplus time gained, a modern realization of Russell’s “organized diminution of work.”
+Russell argues that efficiency-improving technological advancements should be used to reduce labour hours. Instead of working the same amount of hours at higher levels of productivity, why not work _less_ and have more leisure time. This would simultaneously solve the issue of many people being overworked while others are unemployed. He proposes four-hour workdays. Imagine if we were to take the productivity gains achieved through AI and _not work_ with the surplus time gained, a modern realization of Russell’s “organized diminution of work.” One can dream.
 
 The pace of AI model improvement over the last two years has left many of us with a feeling of whiplash. I’m not advocating that we should all become modern-day Luddites and oppose technological progress. I am suggesting, though, that we should carefully divide work done by machines and work done by humans, upholding the dignity of the latter. Any time or attention freed up by AI subsequently invested in slow, deliberate human pursuits is surely a worthwhile gain.
 
