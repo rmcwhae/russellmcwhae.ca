@@ -59,7 +59,7 @@ This brings us to the age of vibe coding.
 
 ## Vibe Coding
 
-On February 2, 2025, AI researcher Andrej Karpathy coined the term vibe coding in a landmark [tweet](https://x.com/karpathy/status/1886192184808149383?s=20):
+On February 2, 2025, AI researcher Andrej Karpathy coined the term “vibe coding” in a landmark [tweet](https://x.com/karpathy/status/1886192184808149383?s=20):
 
 > There’s a new kind of coding I call “vibe coding”, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It’s possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like “decrease the padding on the sidebar by half” because I’m too lazy to find it. I “Accept All” always, I don’t read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I’d have to really read through it for a while. Sometimes the LLMs can’t fix a bug so I just work around it or ask for random changes until it goes away. It’s not too bad for throwaway weekend projects, but still quite amusing. I’m building a project or webapp, but it’s not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works.
 
@@ -73,7 +73,7 @@ Fiddling around this past winter, I asked a coding agent to port my neglected Qu
 
 Because I don’t know Swift, this would be a purer test of vibe coding than using a language I was familiar with. Almost all of my LLM use had been in web-development languages, where I have enough background to know if the generated code follows good patterns or not. I went in as blissfully ignorant of Swift syntax as possible.
 
-I finalized the basic functionality of the app. Often, styles needed tweaking, newly added features contained bugs, or the app stopped compiling, which required further “steering” of the coding agent. In February 2026, Apple added support for chat-based coding agents in Xcode 26.3, giving an alternative interface to Cursor.
+Once the port was working, I finalized the basic functionality of the app. Often, styles needed tweaking, newly added features contained bugs, or the app stopped compiling, which required further “steering” of the coding agent. In February 2026, Apple added support for chat-based coding agents in Xcode 26.3, giving an alternative interface to Cursor.
 
 I kept adding new features, always by text prompting. One was a desktop widget that rotated through saved quotations. Curiously, deep-linking from the widget to the app (clicking on the current quotation in the widget should open it within the app) tripped up all the coding agents. I had to add some debug code inside the app to sort this out: log the incoming URI destination to see why it wasn’t opening the correct view. This is similar to JavaScript’s `console.log`. Always remember the basics.
 
@@ -83,17 +83,17 @@ I added features like semantic search[^4], a chatbot, and a word cloud. I have n
 
 With inexpensive iteration, visual design is as important as ever: there is little excuse for bad-looking software now. I wanted my app to nod toward printed pages, without relying too heavily on skeuomorphism, like textured parchment backgrounds. I used a tan highlight colour sparingly, trying to make the app look like a good macOS citizen while also having its own unique style.
 
-I’ve wondered how efficient—or not—the import process should be. Slow quotation importing, as with manual text entry, forces you to spend more time looking at each given quotation, lingering over its words (and thus promoting memorization), but friction in the user experience is rarely advisable. I think the best approach is to streamline importing (with text file and CSV import) while finding other ways of encouraging recall, like the desktop widget, chatbot, and semantic search. This is important as your library grows: at the time of writing, I already have over 1500 quotations from 57 books.
+I’ve wondered how efficient—or not—the import process should be. Slow quotation importing, as with manual text entry, forces you to spend more time looking at each given quotation, lingering over its words (and thus promoting memorization). But friction in the user experience is rarely advisable. I think the best approach is to streamline importing (with text file and CSV import) while finding other ways of encouraging recall, like the desktop widget, chatbot, and semantic search. This is important as your library grows: at the time of writing, I already have over 1500 quotations from 57 books.
 
-I put many hours of work into this project despite rarely looking at the code. There is a flow state to be found in vibe coding, though it is different from the intense brown studies of manual coding. Agentic coding involves asking the agent to plan or perform a task, then waiting a few minutes for the task to complete; most of my tasks take no more than fifteen minutes. Similar to how one’s mind drifts at a stoplight—if you wait too long to start moving after the light turns green, people behind start honking—I find my focus shifting elsewhere while awaiting coding agents. It’s a different way of working, more distracted.
-
-The irony of coding a knowledge-retention app while trying to avoid learning Swift is not lost on me. And yet, maybe this is exactly how we _should_ use AI: to selectively apply it to certain tasks, while freeing up our mental capacity for tasks best reserved for humans.
+I put many hours of work into this project despite rarely looking at the code. There is a flow state to be found in vibe coding, though it is different from the deep focus of manual coding. Agentic coding involves asking the agent to plan or perform a task, then waiting a few minutes for the task to complete; most of my tasks take no more than fifteen minutes. Similar to how one’s mind drifts at a stoplight—if you wait too long to start moving after the light turns green, people behind start honking—I find my focus shifting elsewhere while awaiting coding agents. It’s a different way of working, more distracted.
 
 In the same way that good leadership is about influence and not micromanagement, vibe coding enables developers to focus on building features instead of fretting over implementation details. On the one hand, this has eliminated bottlenecks in software development, but, on the other, it has forever changed a craft that took me years to learn. I can’t help but feel a tinge of nostalgia for what we’re already calling the “dark ages” of manual coding.
 
+The irony of coding a knowledge-retention app while trying to avoid learning Swift is not lost on me. And yet, maybe this is exactly how we _should_ use AI: to selectively apply it to certain tasks, while freeing up our mental capacity for tasks best reserved for humans.
+
 ## Inflection Point
 
-Long restricted to the domain of science fiction, artificial intelligence has now become a reality. Never in my wildest dreams did I imagine a computer would actually write code. Coding agents can increasingly write better code than humans too, unless you are doing something quite obscure that a model has not been trained on.
+Code-writing AI has left science fiction. Never in my wildest dreams did I imagine a computer would actually write code. Coding agents can write better code than humans, too, unless you are doing something quite obscure that a model has not been trained on. Swizec Teller [found that](https://swizec.com/blog/ai-now-writes-97-of-my-code-heres-what-i-learned/) 97% of his production code at a high-valuation Silicon Valley startup is now written by AI.
 
 One of the effects of vibe coding has been to lower the barriers to entry for software development. No longer the exclusive domain of tech geeks, anyone can now access high-powered LLMs and write software themselves. What does this mean for developers? Let’s examine two other fields that underwent a similar reduction in barriers to entry: photography and cycling.
 
@@ -101,7 +101,7 @@ First, the democratization of photography. Despite everyone having a camera in t
 
 Next is cycling. With the invention of e-bikes, the world of cycling opened up to a wider audience than ever before. After the inevitable gatekeeping by purists—_if you can’t pedal a bike under your own power, you shouldn’t be riding one_—the industry seems to have reached a state of equilibrium. E-bikes are here to stay. Trails are shared by e-bikers and non-e-bikers alike, with more people benefiting from outdoor exercise (points from me). Like e-bike motors, LLMs accelerate software development—but you still need to be able to steer and pedal the bike, while understanding that the consequences of crashes are more severe at higher speeds.
 
-These analogies are not perfect, however. While many photographers prefer “real” cameras over mobile phones, and many bikers refuse to ride e-bikes altogether (like yours truly), AI’s adoption rates are unsurpassably high.
+These analogies are not perfect, however. While many photographers prefer “real” cameras over mobile phones, and many bikers refuse to ride e-bikes altogether (like yours truly), AI’s adoption rates are nearly universal.
 
 Almost everyone working in the knowledge economy will be impacted by AI. It’s hard to avoid: Internet searches, long the de facto means of accessing information, are now full of AI-generated results[^5]. AI can also help us complete computer-based tasks, as we’ve seen here with vibe coding, unlocking higher levels of productivity than before.
 
