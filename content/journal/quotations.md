@@ -1,6 +1,6 @@
 ---
 title: 'Quotations.app: Vibe Coding My Way Through a Changing Profession'
-description: A coding memoir, a side project, and a commentary on the AI age.
+description: A side project, a coding memoir, and a commentary on AI.
 author: Russell McWhae
 date: 2026-07-30
 draft: 0
@@ -77,17 +77,17 @@ I finalized the basic functionality of the app. Often, styles needed tweaking, n
 
 I kept adding new features, always by text prompting. One was a desktop widget that rotated through saved quotations. Curiously, deep-linking from the widget to the app (clicking on the current quotation in the widget should open it within the app) tripped up all the coding agents. I had to add some debug code inside the app to sort this out: log the incoming URI destination to see why it wasn’t opening the correct view. This is similar to JavaScript’s `console.log`. Always remember the basics.
 
-I added features like semantic search and a word cloud[^4]. I have never been able to iterate so quickly before. This aspect of software development has not changed: you have an idea and build it with code, iterating and refining as you go. Whether the code was written by a human or a robot is immaterial. Even before the vibe coding age, it was said that coding is the easy part. Knowing _what_ to code is the real problem. How do you make and market a feature or app that people will want to use and benefit from?
+I added features like semantic search, a chatbot, and a word cloud[^4]. I have never been able to iterate so quickly before. This aspect of software development has not changed: you have an idea and build it with code, iterating and refining as you go. Whether the code was written by a human or a robot is immaterial. Even before the vibe coding age, it was said that coding is the easy part. Knowing _what_ to code is the real problem. How do you make and market a feature or app that people will want to use and benefit from?
 
 [^4]: Semantic search is a wholly new way of searching: instead of simply comparing strings, it attempts to infer the contextual meaning behind a search phrase. This is done by a complicated mathematical process known as vector embedding. While slick as a computer science concept, the true test of semantic search is how well it actually works. In my app, it is of dubious utility, giving a scattered mix of appropriate and irrelevant results.
 
 With inexpensive iteration, visual design is as important as ever: there is little excuse for bad-looking software now. I wanted my app to nod toward printed pages, without relying too heavily on skeuomorphism, like textured parchment backgrounds. I used a tan highlight colour sparingly, trying to make the app look like a good macOS citizen while also having its own unique style.
 
-I’ve wondered how efficient—or not—to make the import process. Slow quotation importing, as with manual text entry, forces you to spend more time looking at each given quotation, lingering over its words (and thus promoting memorization), but friction in the user experience is rarely advisable. I think the best approach is to streamline importing (with text file and CSV import) while finding other ways of encouraging recall, like the desktop widget, chatbot, and semantic search. This is important as your library grows: at the time of writing, I already have over 1500 quotations from 57 books.
+I’ve wondered how efficient—or not—the import process should be. Slow quotation importing, as with manual text entry, forces you to spend more time looking at each given quotation, lingering over its words (and thus promoting memorization), but friction in the user experience is rarely advisable. I think the best approach is to streamline importing (with text file and CSV import) while finding other ways of encouraging recall, like the desktop widget, chatbot, and semantic search. This is important as your library grows: at the time of writing, I already have over 1500 quotations from 57 books.
 
 I put many hours of work into this project despite rarely looking at the code. There is a flow state to be found in vibe coding, though it is different from the intense brown studies of manual coding. Agentic coding involves asking the agent to plan or perform a task, then waiting a few minutes for the task to complete; most of my tasks take no more than fifteen minutes. Similar to how one’s mind drifts at a stoplight—if you wait too long to start moving after the light turns green, people behind start honking—I find my focus shifting elsewhere while awaiting coding agents. It’s a different way of working, more distracted.
 
-The irony of coding an app designed to increase knowledge retention in quotation memorization while attempting to minimize knowledge in another area—learning the Swift programming language—is not lost on me. And yet, maybe this is exactly how we _should_ use AI: to selectively apply it to certain mundane tasks, while freeing up our mental capacity for tasks best reserved for humans.
+The irony of coding a knowledge-retention app while trying to avoid learning Swift is not lost on me. And yet, maybe this is exactly how we _should_ use AI: to selectively apply it to certain tasks, while freeing up our mental capacity for tasks best reserved for humans.
 
 ## Inflection Point
 
@@ -141,13 +141,13 @@ This isn’t the first time we’ve been warned about maximizing economic output
 
 > Work is of two kinds: first, altering the position of matter at or near the earth’s surface relatively to other such matter; second, telling other people to do so. The first kind is unpleasant and ill paid; the second is pleasant and highly paid.
 
-While the nature of work has changed with the digital economy, Russell’s push for the diminution of work is, in a way, similar to the notion of using AI to automate mundane tasks. If output is increased via automation—either by physical machines manipulating matter or by digital “machines” like AI—it means that more is accomplished in a given period of time. The question becomes what to do with this new excess of time.
+While the nature of work has changed with the digital economy, Russell’s push for the diminution of work is, in a way, similar to the notion of using AI to automate mundane tasks. If output is increased via automation—either by physical machines manipulating matter or by digital “machines” like AI—it means that more is accomplished in a given period of time. The question then becomes what to do with this new excess of time.
 
 [^7]: It feels like I’m writing about myself in the third person.
 
-Russell argues that efficiency-improving technological advancements should be used to reduce labour hours. Instead of working the same amount of hours at higher levels of productivity, why not work _less_ and have more leisure time. This would simultaneously solve the issue of many people being overworked while others are unemployed. He proposes four-hour workdays. Imagine if we were to take the productivity gains achieved through AI and _not work_ with the surplus time gained, a modern realization of Russell’s “organized diminution of work.” One can dream.
+Russell argues that efficiency-improving technological advancements should be used to reduce labour hours. Instead of working the same amount of hours at higher levels of productivity, why not work _less_ and have more leisure time? This would simultaneously solve the issue of many people being overworked while others are unemployed. He proposes four-hour workdays. Imagine if we were to take the productivity gains achieved through AI and _not work_ with the surplus time gained, a modern realization of Russell’s “organized diminution of work.” One can dream.
 
-The pace of AI model improvement over the last two years has left many of us with a feeling of whiplash. I’m not advocating that we should all become modern-day Luddites and oppose technological progress. I am suggesting, though, that we should carefully divide work done by machines and work done by humans, upholding the dignity of the latter. Any time or attention freed up by AI subsequently invested in slow, deliberate human pursuits is surely a worthwhile gain.
+The pace of AI model improvement over the last two years has left many of us with a feeling of whiplash. I’m not advocating that we should all become modern-day Luddites and oppose technological progress. I am suggesting, though, that we should carefully divide work done by machines and work done by humans, upholding the dignity of the latter. Any time or attention freed up by AI, subsequently invested in slow, deliberate human pursuits, is surely a worthwhile gain.
 
 ## Final Words
 
