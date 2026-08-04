@@ -11,8 +11,8 @@ export interface YearGroup {
 }
 
 export const CURRENTLY_READING: Book = {
-    title: 'Spirit-Controlled Temperament',
-    author: 'Tim LaHaye',
+    title: 'The Three-Body Problem',
+    author: 'Cixin Liu',
 }
 
 export const FEATURED_BOOKS: string[] = [
