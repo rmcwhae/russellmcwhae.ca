@@ -26,6 +26,18 @@ export const READING_LIST: YearGroup[] = [
         year: 2026,
         books: [
             {
+                title: 'Leave the World Behind',
+                author: 'Rumaan Alam',
+                format: 'audiobook',
+                categories: ['Fiction'],
+            },
+            {
+                title: 'Malibu Rising',
+                author: 'Taylor Jenkins Reid',
+                format: 'audiobook',
+                categories: ['Fiction'],
+            },
+            {
                 title: 'The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness',
                 author: 'Jonathan Haidt',
                 format: 'audiobook',
