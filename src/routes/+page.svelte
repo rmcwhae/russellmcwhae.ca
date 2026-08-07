@@ -252,16 +252,16 @@
 
         @include for-tablet-portrait-down {
             mask-image: radial-gradient(
-                ellipse 130% 95% at 0% 70%,
+                ellipse 160% 130% at -10% 100%,
                 black 0%,
-                black 25%,
-                transparent 65%
+                black 30%,
+                transparent 70%
             );
             -webkit-mask-image: radial-gradient(
-                ellipse 130% 95% at 0% 70%,
+                ellipse 160% 130% at -10% 100%,
                 black 0%,
-                black 25%,
-                transparent 65%
+                black 30%,
+                transparent 70%
             );
         }
     }
@@ -283,10 +283,10 @@
         @include for-tablet-portrait-down {
             inset: -30px;
             background: radial-gradient(
-                ellipse 130% 95% at 0% 70%,
+                ellipse 160% 130% at -10% 100%,
                 var(--background-color) 0%,
-                var(--background-color-transparent) 50%,
-                transparent 75%
+                var(--background-color-transparent) 55%,
+                transparent 80%
             );
             filter: blur(20px);
         }
