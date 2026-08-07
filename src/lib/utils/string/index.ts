@@ -83,11 +83,13 @@ function markdownParagraphs(body: string): string[] {
 
     if (current.length) paragraphs.push(current.join(' '))
 
-    return paragraphs
+    return paragraphs.filter((paragraph) => !/^Note:/i.test(paragraph))
 }
 
 function splitSentences(text: string): string[] {
-    const matches = text.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g)
+    const matches = text.match(
+        /[^.!?]+[.!?]+[)'"’”\]]*(?=\s|$)|[^.!?]+$/g
+    )
     return matches?.map((sentence) => sentence.trim()).filter(Boolean) ?? []
 }
 

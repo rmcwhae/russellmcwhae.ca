@@ -2,11 +2,6 @@ export const JOURNAL_CATEGORIES = ['Tech', 'Essays', 'Adventure'] as const
 
 export const EDITOR_PICKS = [
     {
-        slug: 'two-weeks-in-the-galapagos',
-        title: 'Two Weeks in the Galápagos',
-        description: 'A travelogue through an unforgettable landscape.',
-    },
-    {
         slug: 'longitudinal-tech-reviews',
         title: 'Longitudinal Tech Reviews',
         description:
@@ -16,6 +11,11 @@ export const EDITOR_PICKS = [
         slug: 'equilibrium',
         title: 'Equilibrium',
         description: 'How long should we pursue our dreams and passions?',
+    },
+    {
+        slug: 'a-new-chapter',
+        title: 'A New Chapter',
+        description: 'Mountain-town life has finally happened.',
     },
 ] as const
 
