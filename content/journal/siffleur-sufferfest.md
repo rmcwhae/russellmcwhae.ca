@@ -77,7 +77,7 @@ I messaged work to say I’d be late getting in the following day (Thursday). Af
 
 After three years, we finally completed the Siffleur Traverse.
 
-(Here are [some photos](/events/Siffleur-Traverse_January-2024) from the trip, with some rare shots of yours truly.)
+(Here are [some photos](/field-expeditions/Siffleur-Traverse_January-2024) from the trip, with some rare shots of yours truly.)
 
 ---
 
@@ -101,7 +101,7 @@ I don’t think I have ever heard my last decade in the hills so succinctly desc
 
 I have long since mastered skiing and am now at the point of doing self-guided, multi-day ski traverses, per the first half of this essay. But the thrill of such expeditions isn’t what it was in earlier years. Do I need to keep pursuing bigger and better objectives? Or, has my ski career already reached its plateau, found its [Equilibrium](/journal/equilibrium)? (One of my working titles for “Equilibrium” was “Logical Conclusions,” the idea being that you pursue your passions until their end becomes fairly clear.)
 
-Perhaps the answer is to pivot, to try something different. I’ve kept up my annual Christmas [surf trips](/events/Tofino_December-2023), where my surfing ability improves every time I go. It’s still very much at the fun part of the learning curve. I also recently heard of another skier who bought a dirt bike to challenge himself in a new way.
+Perhaps the answer is to pivot, to try something different. I’ve kept up my annual Christmas [surf trips](/field-expeditions/Tofino_December-2023), where my surfing ability improves every time I go. It’s still very much at the fun part of the learning curve. I also recently heard of another skier who bought a dirt bike to challenge himself in a new way.
 
 Or—here’s a question—are outdoor pursuits in and of themselves _not_ the answer?
 

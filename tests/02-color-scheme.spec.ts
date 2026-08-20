@@ -162,4 +162,39 @@ test.describe('Color Scheme Dropdown', () => {
             await expect(page.locator(desktopSwitcher)).toBeAttached()
         }
     })
+
+    test('an open nav dropdown does not overlap the theme switcher', async ({
+        page,
+    }) => {
+        await page.setViewportSize({ width: 1200, height: 800 })
+        await page.goto('/')
+
+        await page
+            .locator('button.parent-trigger', { hasText: 'Photography' })
+            .hover()
+
+        const panel = page.locator('.submenu', {
+            has: page.locator('a[href="/portfolio"]'),
+        })
+        await expect(panel).toBeVisible()
+
+        const panelBox = await panel.boundingBox()
+        const switcherBox = await page
+            .locator('#desktop-switcher')
+            .boundingBox()
+
+        expect(panelBox).not.toBeNull()
+        expect(switcherBox).not.toBeNull()
+
+        if (panelBox && switcherBox) {
+            const overlapsHorizontally =
+                panelBox.x < switcherBox.x + switcherBox.width &&
+                panelBox.x + panelBox.width > switcherBox.x
+            const overlapsVertically =
+                panelBox.y < switcherBox.y + switcherBox.height &&
+                panelBox.y + panelBox.height > switcherBox.y
+
+            expect(overlapsHorizontally && overlapsVertically).toBe(false)
+        }
+    })
 })

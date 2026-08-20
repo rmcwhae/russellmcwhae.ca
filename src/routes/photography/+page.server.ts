@@ -4,96 +4,60 @@ import { parseTitleAndDate } from '$lib/utils/string'
 
 export const prerender = true
 
-interface EventWithImages {
-    name: string
-    title: string
-    date: string
-    count: number
-    featuredImage: {
-        name: string
-        filePath: string
-        width: number
-        height: number
-    } | null
-    [key: string]:
-        | string
-        | number
-        | {
-              name: string
-              filePath: string
-              width: number
-              height: number
-          }
-        | null
-        | undefined
-}
-
 export const load: PageServerLoad = async () => {
     try {
-        const events = await ImageKitNodeServices.listFiles({
+        const folders = await ImageKitNodeServices.listFiles({
             path: '/events/',
             type: 'folder',
         })
 
-        if (!Array.isArray(events)) {
-            return { events: [] }
+        const sortedFolders = folders
+            .filter((folder) => folder && folder.name)
+            .map((folder) => {
+                const { name } = folder
+                const { date } = parseTitleAndDate(name)
+                return { name, date, year: new Date(date).getFullYear() }
+            })
+            .sort(
+                (a, b) =>
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
+            )
+
+        const years = sortedFolders
+            .map((folder) => folder.year)
+            .filter((year) => !Number.isNaN(year))
+
+        const expeditionYearRange =
+            years.length > 0
+                ? { min: Math.min(...years), max: Math.max(...years) }
+                : null
+
+        let expeditionImage = null
+        const mostRecent = sortedFolders[0]
+        if (mostRecent) {
+            const images = await ImageKitNodeServices.listFiles({
+                path: '/events/' + mostRecent.name,
+                sort: 'ASC_NAME',
+            })
+            expeditionImage =
+                images.find(
+                    (image) => image.tags && image.tags.includes('featured')
+                ) ||
+                images[0] ||
+                null
         }
 
-        const sortedEvents = events
-            .filter((event) => event && event.name)
-            .map((event) => {
-                try {
-                    const { name } = event
-                    const { title, date } = parseTitleAndDate(name as string)
-                    return { ...event, title, date }
-                } catch {
-                    return {
-                        ...event,
-                        title: 'Untitled Event',
-                        date: 'Unknown Date',
-                    }
-                }
-            })
-            .sort((a, b) => {
-                try {
-                    return (
-                        new Date(b.date).getTime() - new Date(a.date).getTime()
-                    )
-                } catch {
-                    return 0
-                }
-            })
-
-        const eventsWithImages: EventWithImages[] = []
-        for (const event of sortedEvents) {
-            try {
-                const images = await ImageKitNodeServices.listFiles({
-                    path: '/events/' + event.name,
-                    sort: 'ASC_NAME',
-                })
-                const featuredImage =
-                    (Array.isArray(images) &&
-                        (images.find(
-                            (img) => img.tags && img.tags.includes('featured')
-                        ) ||
-                            images[0])) ||
-                    null
-                eventsWithImages.push({
-                    ...event,
-                    count: Array.isArray(images) ? images.length : 0,
-                    featuredImage,
-                })
-            } catch {
-                eventsWithImages.push({
-                    ...event,
-                    count: 0,
-                    featuredImage: null,
-                })
-            }
+        return {
+            expeditionCount: folders.length,
+            expeditionYearRange,
+            expeditionImage,
         }
-
-        return { events: eventsWithImages }
-    } catch {
-        return { events: [] }
+    } catch (error) {
+        console.error('Error loading expedition summary:', error)
+        return {
+            expeditionCount: null,
+            expeditionYearRange: null,
+            expeditionImage: null,
+        }
     }
 }

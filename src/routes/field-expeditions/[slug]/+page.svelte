@@ -17,7 +17,10 @@
 <div class="event-page">
     <PageHero {title}>
         {#snippet eyebrow()}
-            <a href={resolve('/photography')} class="back-link">← Photography</a>
+            <a
+                href={resolve('/field-expeditions')}
+                class="back-link">← Field Expeditions</a
+            >
         {/snippet}
         {#snippet right()}
             <span class="event-meta">{date} · {count} photos</span>

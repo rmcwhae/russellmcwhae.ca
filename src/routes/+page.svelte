@@ -49,7 +49,7 @@
     <section class="page-section">
         <div class="section-header">
             <span class="section-label">Photography</span>
-            <a href={resolve('/photography')} class="accent-link-plain"
+            <a href={resolve('/portfolio')} class="accent-link-plain"
                 >View all Photographs →</a
             >
         </div>

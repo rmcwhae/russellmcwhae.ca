@@ -1,13 +1,63 @@
 <script>
     import { resolve } from '$app/paths'
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
+    import { SvelteSet } from 'svelte/reactivity'
     import Logo from '$lib/components/icons/Logo.svelte'
     import Anchor from './Anchor.svelte'
+    import SubMenu from './SubMenu.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
+
+    const PHOTOGRAPHY_ITEMS = [
+        {
+            href: '/portfolio',
+            name: 'Portfolio',
+            desc: 'Selected landscape work',
+        },
+        {
+            href: '/field-expeditions',
+            name: 'Field Expeditions',
+            desc: 'Photo sets, trip by trip',
+        },
+        {
+            href: '/calendars',
+            name: 'Calendars',
+            desc: 'Archive of print editions',
+        },
+    ]
 
     let mobileMenuOpen = $state(false)
     let scrolled = $state(false)
-    let isHome = $derived($page.url.pathname === '/')
+    let isHome = $derived(page.url.pathname === '/')
+
+    /** @type {'photography' | null} */
+    let openMenu = $state(null)
+    let expanded = new SvelteSet()
+
+    /** @param {string} path */
+    function isUnderPhotography(path) {
+        return (
+            path.startsWith('/photography') ||
+            PHOTOGRAPHY_ITEMS.some(
+                (item) =>
+                    path === item.href || path.startsWith(`${item.href}/`)
+            )
+        )
+    }
+
+    $effect(() => {
+        const path = page.url.pathname
+        expanded.clear()
+        if (isUnderPhotography(path)) expanded.add('photography')
+    })
+
+    /** @param {'photography'} id */
+    function toggleExpanded(id) {
+        if (expanded.has(id)) {
+            expanded.delete(id)
+        } else {
+            expanded.add(id)
+        }
+    }
 
     $effect(() => {
         if (!isHome) {
@@ -41,13 +91,17 @@
         <nav>
             <div class="nav-menu" class:active={mobileMenuOpen}>
                 <ul>
-                    <li>
-                        <Anchor
-                            title="Photography"
-                            href="/photography"
-                            onClose={hideMenu}
-                        />
-                    </li>
+                    <SubMenu
+                        label="Photography"
+                        sectionPath="/photography"
+                        items={PHOTOGRAPHY_ITEMS}
+                        instanceId="photography"
+                        {openMenu}
+                        onOpenMenu={(id) => (openMenu = id)}
+                        expandedMobile={expanded.has('photography')}
+                        onToggleMobile={() => toggleExpanded('photography')}
+                        onNavigate={hideMenu}
+                    />
                     <li>
                         <Anchor
                             title="Journal"
@@ -104,7 +158,7 @@
         padding: 0 var(--s0);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
-        background: var(--background-color-transparent);
+        background: var(--nav-background-color-transparent);
         border-bottom: 1px solid var(--light-grey);
         transition:
             background-color 0.3s ease,
@@ -267,8 +321,8 @@
         bottom: 0;
         left: 0;
         height: 100vh;
-        background-color: var(--background-color);
-        background-color: var(--background-color-transparent);
+        background-color: var(--nav-background-color);
+        background-color: var(--nav-background-color-transparent);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         z-index: 11;
@@ -319,6 +373,7 @@
         .nav-menu {
             position: inherit;
             height: auto;
+            overflow: visible;
             display: flex;
             align-items: stretch;
             align-self: stretch;

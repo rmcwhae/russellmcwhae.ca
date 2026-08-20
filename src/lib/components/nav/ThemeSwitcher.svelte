@@ -216,8 +216,7 @@
         margin: 0;
         padding: var(--s-3);
         list-style: none;
-        background: var(--background-color);
-        border: 1px solid var(--light-grey);
+        background: var(--light-grey);
         border-radius: var(--radius);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
@@ -235,7 +234,7 @@
 
     .theme-option.active {
         font-weight: 700;
-        background: var(--light-grey);
+        background: var(--background-color);
     }
 
     .theme-option-label {

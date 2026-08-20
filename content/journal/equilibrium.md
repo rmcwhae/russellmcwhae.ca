@@ -29,7 +29,7 @@ My study of science continued in university, where I took engineering. In underg
 
 Upon starting my first full-time engineering job post graduation, I rediscovered the notion of free time. With both disposable time and income, I caught the mountain bug hard. I binged mountain literature, movies, and culture. Once, I got a signed poster at the Banff Mountain Film Festival from Gerlinde Kaltenbrunner, the first woman to climb all fourteen 8,000 metre peaks without supplemental oxygen.
 
-In June 2013, I signed up for a week-long [Intro to Mountaineering](/events/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with an ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
+In June 2013, I signed up for a week-long [Intro to Mountaineering](/field-expeditions/Intro-to-Mountaineering_June-2013) course out of Bow Hut, where we learned the basics of glacier travel, crevasse rescue, self-arresting with an ice axe, and compass-based navigation. A few of the other participants were Calgary locals, so we exchanged numbers and kicked off our mountaineering careers together.
 
 We climbed together that summer, teaching ourselves the basics of sport and trad climbing and attempted a few different mountaineering objectives (including a doomed attempt of the Rundle Traverse, more on that in [30 Going on 13](/journal/30-going-on-13#introduction)). When winter came, our ambitions changed to ice climbing and backcountry skiing.
 
@@ -44,7 +44,7 @@ The mountains were calling, and so I went.
 ---
 
 **1:21 PM, March 21, 2014**  
-On a guided trip to [Mistaya Lodge](/events/Mistaya_March-2014), we toured up to a col that overlooked the northern part of the Wapta Icefield. Mistaya, way up the Blaeberry valley and accessed by helicopter from Golden, is actually fairly close to Bow Hut, where I’d just done the mountaineering course. I took a photo of the vista, where a guide said you could see Peyto Hut. Not knowing exactly where to look—a metal-hut needle in an expansive snow-covered alpine haystack—I gave up searching and stashed my camera.
+On a guided trip to [Mistaya Lodge](/field-expeditions/Mistaya_March-2014), we toured up to a col that overlooked the northern part of the Wapta Icefield. Mistaya, way up the Blaeberry valley and accessed by helicopter from Golden, is actually fairly close to Bow Hut, where I’d just done the mountaineering course. I took a photo of the vista, where a guide said you could see Peyto Hut. Not knowing exactly where to look—a metal-hut needle in an expansive snow-covered alpine haystack—I gave up searching and stashed my camera.
 
 At the end of the ski week, the guides presented us with two options for the final day: to ski up and over the same col, then traverse across a glacier to exit via Peyto Lake to a waiting shuttle, or to ski a final day near the lodge then fly out back to Golden. I opted for the second choice but was nonetheless intrigued by the idea of traversing glaciers on skis in winter—still beyond my skill set but gradually coming into range.
 
@@ -53,7 +53,7 @@ A few years later, some friends and I undertook a self-guided traverse of the Wa
 ---
 
 **9:00 AM, April 29, 2017**  
-In terrible weather, three ski partners and I set out on the [Spearhead traverse](/events/Spearhead_May-2017). The route starts at the top of Blackcomb ski resort then loops clockwise around to Whistler. It typically takes two to four days, so we brought food for four days given that a break in the weather was still a few days out. You have to purchase a one-time lift ticket to get up Blackcomb, and guest services had us open our packs to see our avalanche safety gear before selling us these tickets. I’m sure more than enough people have gotten into trouble on the Spearhead over the years.
+In terrible weather, three ski partners and I set out on the [Spearhead traverse](/field-expeditions/Spearhead_May-2017). The route starts at the top of Blackcomb ski resort then loops clockwise around to Whistler. It typically takes two to four days, so we brought food for four days given that a break in the weather was still a few days out. You have to purchase a one-time lift ticket to get up Blackcomb, and guest services had us open our packs to see our avalanche safety gear before selling us these tickets. I’m sure more than enough people have gotten into trouble on the Spearhead over the years.
 
 Topping out on the Glacier Express quad chair, the final Showcase T-bar takes you to the entrance of the Blackcomb glacier, the start of the traverse. Only that today, given the storm, the T-bar was not running. Unfazed by this, we skinned up by the T-bar, a nice handrail, and entered the ping-pong ball that is an alpine glacier in a whiteout. It was windy too, but at least the spring snowfall rate wasn’t that of a typical midwinter low-pressure system hammering the coast (and causing elevated avalanche danger).
 
@@ -88,7 +88,7 @@ The next morning, day four, dawned bluebird, and we finished the trip.
 **12:00 PM, February 23, 2019**  
 In six years and over 150 days of backcountry skiing, I triggered my first avalanche.
 
-Two friends and I were ascending the broad, south-facing summit ridge of Cirque Peak. Our intention was to ski [Cirque North Couloir](/events/Cirque-Peak-North-Couloir_February-2019) (note the chunks of avalanche debris behind the skier in the first photo), a classic Rockies ski-descent that is frequently attempted in ski-guide exams.
+Two friends and I were ascending the broad, south-facing summit ridge of Cirque Peak. Our intention was to ski [Cirque North Couloir](/field-expeditions/Cirque-Peak-North-Couloir_February-2019) (note the chunks of avalanche debris behind the skier in the first photo), a classic Rockies ski-descent that is frequently attempted in ski-guide exams.
 
 Above tree line, the main ascent route gradually starts up the summit ridge. Low on this ridge, we encountered a restriction in our route: the ridge got narrower and steeper with a short gully ascending between two rock bands on either side. Too steep to skin, it would require a boot-pack. The alternative of traversing out onto the looker’s-right face—a large, exposed alpine slope—was far less appealing.
 

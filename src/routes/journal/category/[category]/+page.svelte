@@ -36,8 +36,9 @@
                     category={otherCategory}
                 />{#if i !== otherCategories.length - 1}<span></span>{/if}
             {/each}
-            <a href={resolve('/journal')} class="accent-link all-entries"
-                ><span>All entries</span> →</a
+            <a
+                href={resolve('/journal')}
+                class="accent-link all-entries"><span>All entries</span> →</a
             >
         </p>
     </div>

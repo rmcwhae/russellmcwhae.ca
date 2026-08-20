@@ -1,6 +1,8 @@
 @mixin light-theme {
     --background-color: #f7f5f1;
     --background-color-transparent: rgba(247, 245, 241, 0.88);
+    --nav-background-color: #ffffff;
+    --nav-background-color-transparent: rgba(255, 255, 255, 0.88);
     --text-color: #6b6b6b;
     --high-contrast-color: #1a1a1a;
     --light-grey: #e2ddd6;
@@ -12,8 +14,10 @@
 }
 
 @mixin dark-theme {
-    --background-color: #111214;
-    --background-color-transparent: rgba(17, 18, 20, 0.88);
+    --background-color: #000000;
+    --background-color-transparent: rgba(0, 0, 0, 0.88);
+    --nav-background-color: #121212;
+    --nav-background-color-transparent: rgba(18, 18, 18, 0.88);
     --high-contrast-color: #f0ede7;
     --text-color: #999;
     --light-grey: #272a2e;

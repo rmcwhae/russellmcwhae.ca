@@ -1,134 +1,95 @@
 <script>
-    import Gallery from '$lib/components/images/Gallery.svelte'
     import SEO from '$lib/components/base/SEO.svelte'
     import PageHero from '$lib/components/layout/PageHero.svelte'
+    import Image from '$lib/components/images/Image.svelte'
+    import SvimgImage from 'svimg/Image.svelte'
     import { resolve } from '$app/paths'
-    import { SvelteMap } from 'svelte/reactivity'
 
     let { data } = $props()
 
-    let images = $derived(data.images)
-    let events = $derived(data.events ?? [])
+    let portfolioCount = $derived(data.portfolioCount)
+    let portfolioImage = $derived(data.portfolioImage)
+    let expeditionCount = $derived(data.expeditionCount)
+    let expeditionYearRange = $derived(data.expeditionYearRange)
+    let expeditionImage = $derived(data.expeditionImage)
 
-    const BATCH = 12
-    let visibleCount = $state(BATCH)
-    let visibleImages = $derived(images?.slice(0, visibleCount) ?? [])
-    let hasMore = $derived((images?.length ?? 0) > visibleCount)
-
-    function loadMore() {
-        visibleCount += BATCH
-    }
-
-    let searchQuery = $state('')
-
-    let filteredEvents = $derived(
-        searchQuery.trim()
-            ? events.filter((e) =>
-                  e.title.toLowerCase().includes(searchQuery.toLowerCase())
-              )
-            : events
+    let expeditionMeta = $derived(
+        expeditionCount != null && expeditionYearRange
+            ? `${expeditionCount} trips · ${expeditionYearRange.min}–${expeditionYearRange.max}`
+            : 'Photo sets, trip by trip'
     )
-
-    let eventsByYear = $derived.by(() => {
-        const groups = new SvelteMap()
-        for (const event of filteredEvents) {
-            const year = new Date(event.date).getFullYear()
-            if (!groups.has(year)) groups.set(year, [])
-            groups.get(year).push(event)
-        }
-        return Array.from(groups.entries()).sort(([a], [b]) => b - a)
-    })
 </script>
 
 <SEO title="Photography" />
 
-<div class="photography-page">
+<div class="photography-landing">
     <PageHero title="Photography">
         {#snippet eyebrow()}
             <div class="kicker">Visual Work</div>
         {/snippet}
         {#snippet right()}
             <p class="hero-description">
-                A collection of landscape images from Western Canada and beyond.
+                A collection of landscape images from Western Canada and beyond,
+                in three parts: the edit, the trips behind it, and ten years of
+                print editions.
             </p>
         {/snippet}
     </PageHero>
 
-    <section class="portfolio-section">
-        <div class="section-header-row">
-            <span class="section-label">Selected Works</span>
-        </div>
-        <Gallery images={visibleImages} />
-        {#if hasMore}
-            <div class="load-more-row">
-                <button class="load-more-btn" type="button" onclick={loadMore}>
-                    + Load more
-                    <span class="load-more-count"
-                        >({(images?.length ?? 0) - visibleCount} more)</span
-                    >
-                </button>
+    <span class="section-label">Sections</span>
+    <div class="three-col-grid">
+        <a href={resolve('/portfolio')} class="section-card">
+            <div class="card-image">
+                {#if portfolioImage}
+                    <Image
+                        filePath={portfolioImage.filePath}
+                        width={portfolioImage.width}
+                        height={portfolioImage.height}
+                    />
+                {/if}
             </div>
-        {/if}
-    </section>
-
-    {#if events.length > 0}
-        <section class="archive-section">
-            <div class="archive-header">
-                <span class="section-label">Field Expeditions</span>
-                <input
-                    class="archive-search"
-                    type="search"
-                    placeholder="Filter…"
-                    bind:value={searchQuery}
-                    aria-label="Filter expeditions"
-                />
+            <div class="card-title">Portfolio</div>
+            <p class="card-desc">
+                The selected edit — the images I would show first.
+            </p>
+            <div class="card-meta">{portfolioCount} photographs</div>
+        </a>
+        <a
+            href={resolve('/field-expeditions')}
+            class="section-card"
+        >
+            <div class="card-image">
+                {#if expeditionImage}
+                    <Image
+                        filePath={expeditionImage.filePath}
+                        width={expeditionImage.width}
+                        height={expeditionImage.height}
+                    />
+                {/if}
             </div>
-
-            {#if eventsByYear.length === 0}
-                <p class="no-results">No expeditions match your search.</p>
-            {:else}
-                <div class="archive">
-                    {#each eventsByYear as [year, yearEvents] (year)}
-                        <div class="year-group">
-                            <div class="year-label">{year}</div>
-                            <div class="year-items">
-                                {#each yearEvents as event (event.name)}
-                                    <a
-                                        href={resolve('/events/' + event.name)}
-                                        class="event-row"
-                                    >
-                                        <span class="event-title"
-                                            >{event.title}</span
-                                        >
-                                        <span class="event-meta">
-                                            {event.date}&thinsp;·&thinsp;{event.count}
-                                            photos
-                                        </span>
-                                    </a>
-                                {/each}
-                            </div>
-                        </div>
-                    {/each}
-                </div>
-            {/if}
-        </section>
-    {/if}
-
-    <section class="calendars-note">
-        <p>
-            Looking for calendars? I am no longer actively making annual wall
-            calendars, but you can still see an archive of them on the <a
-                href={resolve('/calendars')}>calendars page</a
-            >.
-        </p>
-    </section>
+            <div class="card-title">Field Expeditions</div>
+            <p class="card-desc">
+                Full photo sets from individual trips, listed by year.
+            </p>
+            <div class="card-meta">{expeditionMeta}</div>
+        </a>
+        <a href={resolve('/calendars')} class="section-card">
+            <div class="card-image">
+                <SvimgImage src="/calendar-images/2024.jpg" />
+            </div>
+            <div class="card-title">Calendars</div>
+            <p class="card-desc">
+                An archive of the annual wall calendars, free to download.
+            </p>
+            <div class="card-meta">10 editions · 2015–2024</div>
+        </a>
+    </div>
 </div>
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
-    @use '../../lib/scss/archive' as archive;
 
-    .photography-page {
+    .photography-landing {
         margin: 0 auto;
     }
 
@@ -140,108 +101,55 @@
         line-height: 1.7;
     }
 
-    .portfolio-section {
-        margin-bottom: var(--s3);
+    .section-label {
+        display: block;
+        margin: 0 0 var(--s1);
+    }
 
-        .section-header-row {
-            margin-bottom: var(--s1);
-        }
+    .section-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-1);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card-image {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--light-grey);
 
         :global(img) {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 0;
         }
     }
 
-    .archive-section {
-        padding-top: var(--s2);
-        border-top: 1px solid var(--light-grey);
-        padding-bottom: var(--s3);
+    .card-title {
+        font-family: var(--font-sans);
+        font-size: var(--text-xl);
+        font-weight: 500;
+        color: var(--high-contrast-color);
     }
 
-    @include archive.styles();
-
-    .event-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: var(--s1);
-        padding: var(--s-1) 0;
-        border-bottom: 1px solid var(--light-grey);
-        text-decoration: none;
-        color: inherit;
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        &:hover .event-title {
-            color: var(--link-color);
-            text-decoration: underline;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-        }
-    }
-
-    .event-title {
+    .card-desc {
         font-family: var(--font-sans);
         font-size: var(--text-base);
-        transition: color var(--duration);
+        color: var(--text-color);
+        margin: 0;
     }
 
-    .event-meta {
+    .card-meta {
         font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        color: var(--text-color);
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-
-    .calendars-note {
-        padding: var(--s2) 0 var(--s3);
-        border-top: 1px solid var(--light-grey);
-
-        p {
-            font-size: var(--text-base);
-            color: var(--text-color);
-            max-width: 60ch;
-            margin: 0;
-        }
-    }
-
-    .load-more-row {
-        display: flex;
-        justify-content: center;
-        margin-top: var(--s1);
-    }
-
-    .load-more-btn {
-        font-family: var(--font-sans);
-        font-size: var(--text-base);
-        padding: var(--s-2) var(--s1);
-        border: 1px solid var(--light-grey);
-        border-radius: var(--radius);
-        background: var(--background-color);
-        color: var(--text-color);
-        cursor: pointer;
-        transition:
-            border-color var(--duration),
-            color var(--duration);
-
-        &:hover {
-            border-color: var(--accent);
-            color: var(--link-color);
-        }
-
-        &:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-    }
-
-    .load-more-count {
-        color: var(--text-color);
-        font-size: var(--text-sm);
-        margin-left: var(--s-3);
+        font-size: var(--text-xs);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--medium-grey);
     }
 </style>

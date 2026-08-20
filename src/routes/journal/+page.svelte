@@ -47,7 +47,9 @@
                 2025). I hope you’ll join me for a glimpse into my head.
             </p>
             <p>
-                Also see my <a href={resolve('/reading-list')}>reading list</a>.
+                Also see my <a href={resolve('/writing/reading-list')}
+                    >reading list</a
+                >.
             </p>
             <p>If you’re new here, these articles are a good place to start:</p>
             <ul class="starter-list">

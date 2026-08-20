@@ -16,7 +16,7 @@ test.describe('Journal Page', () => {
         )
 
         await expect(
-            page.locator('.journal-intro a[href="/reading-list"]')
+            page.locator('.journal-intro a[href="/writing/reading-list"]')
         ).toBeVisible()
     })
 

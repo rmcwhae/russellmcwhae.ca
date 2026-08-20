@@ -16,7 +16,6 @@
         <nav class="footer-nav">
             <a href={resolve('/photography')}>Photography</a>
             <a href={resolve('/journal')}>Journal</a>
-            <a href={resolve('/reading-list')}>Reading List</a>
             <a href={resolve('/about')}>About</a>
         </nav>
         <div class="footer-social">

@@ -7,9 +7,9 @@ draft: 0
 category: Adventure
 ---
 
-In a year of many firsts, I just spent two weeks in the Galápagos Islands, the furthest destination from Canada I have visited in a decade. (See [the corresponding photos](/events/Galapagos_July-2025/).)
+In a year of many firsts, I just spent two weeks in the Galápagos Islands, the furthest destination from Canada I have visited in a decade. (See [the corresponding photos](/field-expeditions/Galapagos_July-2025/).)
 
-The last time I travelled internationally (beyond the USA) was ten years ago, to [Asia](/events/Asia_February-2015/). In the subsequent years, I eschewed more expensive trips in favour of exploring the mountains and coast of Western Canada. My modus operandi for this period was to spend as little money as possible while exercising as much as possible.
+The last time I travelled internationally (beyond the USA) was ten years ago, to [Asia](/field-expeditions/Asia_February-2015/). In the subsequent years, I eschewed more expensive trips in favour of exploring the mountains and coast of Western Canada. My modus operandi for this period was to spend as little money as possible while exercising as much as possible.
 
 My vacations during this season consisted of mountain bike, climbing, backpacking, and ski trips. Surprisingly, for such an adventurous season, I took not one international or domestic flight for the entire decade, giving credence to the idea that, if you look hard enough, you can find a lifetime of adventure in your own backyard.
 

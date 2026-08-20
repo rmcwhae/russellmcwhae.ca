@@ -8,6 +8,7 @@
 
 <div class="calendars-page">
     <header>
+        <div class="kicker">Photography</div>
         <h1>Calendars</h1>
     </header>
 
@@ -94,7 +95,7 @@
         margin-bottom: var(--s2);
 
         h1 {
-            margin: 0;
+            margin: var(--s-2) 0 0;
         }
     }
 
