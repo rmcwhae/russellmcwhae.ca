@@ -1,5 +1,4 @@
 <script>
-    // Thanks to https://github.com/elianiva/elianiva.my.id
     import { beforeNavigate, afterNavigate } from '$app/navigation'
 
     const resetProgress = () => {
@@ -43,7 +42,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        height: 0.25rem;
+        height: 0.15rem;
         background-color: var(--medium-grey);
         z-index: 50;
         transition: width ease-out 0.5s;

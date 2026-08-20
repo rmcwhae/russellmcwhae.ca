@@ -13,7 +13,7 @@ Have you ever read a sentence so clever and impactful that you instantly memoriz
 
 Too much of what we read does fade, however. Immediately after finishing a novel, I can usually recall most of the plot and many of the conversations between the characters. In time, though, the story loses its saturation, and the dialogue diminishes to but a few of the most memorable sound bites.
 
-I like to read. In addition to [tracking](/reading-list) the books I read, I also highlight text or ideas that are insightful or interesting, ranging from a few words to a few paragraphs. I often use such quotations in my own writing, always giving other writers their due credit.
+I like to read. In addition to [tracking](/writing/reading-list) the books I read, I also highlight text or ideas that are insightful or interesting, ranging from a few words to a few paragraphs. I often use such quotations in my own writing, always giving other writers their due credit.
 
 My primary means of collecting such citations has been a mix of Apple Books highlights, iPad[^1] screenshots (of borrowed virtual library books in the Libby app), and iPhone pictures (of print books). Fragmented as it is, this mishmash of screenshots and photos has been my quotation-management “system” for over a decade. As the cliché goes, a picture is worth a thousand words—and I have thousands of literal words in my camera roll.
 

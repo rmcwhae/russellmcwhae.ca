@@ -4,7 +4,7 @@ description: An alternative approach to owning the latest and greatest gear.
 author: Russell McWhae
 date: 2022-03-04
 draft: 0
-category: Reflection
+category: Tech
 ---
 
 My desktop PC turns 10 this year. It features a quad-core Intel Core i5-3570K processor, released in the second quarter of 2012. As far as gaming PCs go, it is antediluvian. In [April 2020](/journal/adventures-in-low-end-pc-gaming), I put in some modest upgrades—a bigger, faster hard drive and a more powerful video card—for $100.
@@ -58,7 +58,7 @@ In a less geeky example of tech, I bought a used iPad about a year ago (iPad Air
 Among other industries, photography is one where Gear Acquisition Syndrome can rear its head. It’s the same ploy as computers: enticing, expensive gear that quickly becomes replaced by newer and better offerings. I haven’t purchased camera gear in years but have been getting arguably my best photos recently.
 
 With my older Sony NEX-6 body, I converted it to shoot infrared. This required disassembling the camera and removing the band-pass filter mounted over the sensor, a full-spectrum conversion. Then, for the price of a lens-mounted IR-pass filter ($50), I could shoot the invisible spectrum. (See [Forgetmenot and Sandy Ann
-](/events/Forgetmenot-and-Sandy-Ann_June-2020) for examples of IR photographs.) A terrific project, including an imaginative new way of thinking about photography (certain IR shots work best at high noon on sunny days, which can otherwise be harsh in the visible spectrum), with a minimal gear investment.
+](/field-expeditions/Forgetmenot-and-Sandy-Ann_June-2020) for examples of IR photographs.) A terrific project, including an imaginative new way of thinking about photography (certain IR shots work best at high noon on sunny days, which can otherwise be harsh in the visible spectrum), with a minimal gear investment.
 
 Bikes have become prohibitively expensive of late. While I did upgrade to a used Norco Optic C2 last spring, my previous mountain bike, a Santa Cruz Tallboy LT, lasted nine years. Having maintained it, I was able to sell it to offset the cost of the Norco. The Tallboy did not come with a dropper post, so I ordered an [externally routed, cable-actuated post](https://www.chainreactioncycles.com/brand-x-ascend-ii-dropper-seatpost/rp-prod159176) in 2019 for around $150. While not as performant (less travel) than a fancier, more expensive hydraulic post (over $300), it does not require expensive servicing ($75 to $125 per service). Most of the performance, at a fraction of the cost.
 

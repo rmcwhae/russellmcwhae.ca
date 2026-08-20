@@ -1,7 +1,7 @@
 <script>
     import dateformat from 'dateformat'
 
-    let { date } = $props()
+    let { date, format = 'UTC:mmmm d, yyyy' } = $props()
 </script>
 
-<time>{dateformat(date, 'UTC:mmmm d, yyyy')}</time>
+<time>{dateformat(date, format)}</time>

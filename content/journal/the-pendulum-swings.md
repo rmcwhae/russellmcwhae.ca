@@ -4,7 +4,7 @@ description: Digital entertainment can have a lot more zeroes than ones.
 author: Russell McWhae
 date: 2021-12-26
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 In my final year of high-school English, we studied _Nineteen Eighty-Four_. One of the many quotations that stuck with me is about deprivation: “War is a way of shattering to pieces, or pouring into the stratosphere, or sinking into the depths of the sea, materials which might otherwise be used to make the masses too comfortable, and hence, in the long run, too intelligent.” Such destitution, coupled with the chilling concept of thoughtcrime—“Thoughtcrime does not entail death: thoughtcrime IS death.”—illustrate Orwell’s predominant fear: that oppression would lead to our collective downfall. This notion likely reflected the devastation of World War II, after which the book was written.
@@ -61,7 +61,7 @@ Perhaps it is time for the pendulum that is our collective attention span, inste
 
 ---
 
-As most of you probably know, I am a huge reader. One of the most recent updates to my website is my [reading list](/reading-list), my now-public book-tracking list. As an aspiring writer, I try to read almost every day. While falling short of the “four to six hours a day, every day,” recommended by Stephen King in his memoir, _On Writing: A Memoir of the Craft_, I try to dedicate at least an hour to reading on free nights.
+As most of you probably know, I am a huge reader. One of the most recent updates to my website is my [reading list](/writing/reading-list), my now-public book-tracking list. As an aspiring writer, I try to read almost every day. While falling short of the “four to six hours a day, every day,” recommended by Stephen King in his memoir, _On Writing: A Memoir of the Craft_, I try to dedicate at least an hour to reading on free nights.
 
 I have found my attention span for reading to imitate a muscle: the more you use it, the stronger it gets, and vice versa with neglecting it. In my last long-winded reflection, [30 Going on 13](/journal/30-going-on-13#too-long-read-anyway), I recommended finding some trashy reading as a means to reinvigorate your desire to read if it has been a while since you last picked up a book. Eventually, you’ll be able to work your way up to much longer works.
 

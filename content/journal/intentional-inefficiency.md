@@ -4,7 +4,7 @@ description: Take the time to slow it down.
 author: Russell McWhae
 date: 2023-10-15
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 I recently learned of the term intentional inefficiency: the idea of purposefully spending unstructured time, like driving to a nearby town with no more of a plan than to walk around and see where the day takes you. Rather than emphasizing organization, productivity, and efficiency as we do in our jobs, intentional inefficiency provides a space for spontaneity, slowing down, and recharging.

@@ -6,8 +6,8 @@ $breakpoint-phone-max: 576px !default;
 $breakpoint-tablet-portrait-min: 577px !default;
 $breakpoint-tablet-portrait-max: 900px !default;
 $breakpoint-tablet-landscape-min: 901px !default;
-$breakpoint-tablet-landscape-max: 1200px !default;
-$breakpoint-desktop-min: 1201px !default;
+$breakpoint-tablet-landscape-max: 1400px !default;
+$breakpoint-desktop-min: 1401px !default;
 $breakpoint-xl: 1300px !default;
 
 // Breakpoint mixins
@@ -37,6 +37,12 @@ $breakpoint-xl: 1300px !default;
 
 @mixin for-tablet-landscape-down {
     @media (max-width: $breakpoint-tablet-landscape-max) {
+        @content;
+    }
+}
+
+@mixin for-laptop-only {
+    @media (min-width: $breakpoint-tablet-landscape-min) and (max-width: $breakpoint-tablet-landscape-max) {
         @content;
     }
 }

@@ -1,5 +1,6 @@
 // Import only the browser-safe implementation to avoid Node stream/util
 import readingTime from 'reading-time/lib/reading-time'
+import { extractPreview } from '$lib/utils/string'
 import type { SvelteComponent } from 'svelte'
 
 interface PostMetadata {
@@ -16,8 +17,9 @@ interface PostModule {
     default: SvelteComponent
 }
 
-interface Post extends PostMetadata {
+export interface Post extends PostMetadata {
     href: string
+    preview: string
     readingTime: ReturnType<typeof readingTime>
     loadComponent: () => Promise<SvelteComponent>
     loadReadingTime: () => Promise<ReturnType<typeof readingTime>>
@@ -68,11 +70,21 @@ const postEntries = Object.entries(postModules).map(
                 return postModule.default
             },
 
-            // Load reading time lazily
-            loadReadingTime: async () => {
-                if (!sourceLoader) return readingTime('')
+            // Load reading time and preview lazily
+            loadContentMeta: async () => {
+                if (!sourceLoader) {
+                    return {
+                        readingTime: readingTime(''),
+                        preview: '',
+                    }
+                }
+
                 const rawSource = await sourceLoader()
-                return readingTime(rawSource)
+
+                return {
+                    readingTime: readingTime(rawSource),
+                    preview: extractPreview(rawSource, 2),
+                }
             },
         }
     }
@@ -82,13 +94,16 @@ const postEntries = Object.entries(postModules).map(
 export async function getPosts(): Promise<Post[]> {
     const postsWithMetadata = await Promise.all(
         postEntries.map(async (post) => {
-            const metadata = await post.loadMetadata()
-            const readingTime = await post.loadReadingTime()
+            const [metadata, contentMeta] = await Promise.all([
+                post.loadMetadata(),
+                post.loadContentMeta(),
+            ])
+
             return {
                 ...metadata,
-                readingTime,
+                ...contentMeta,
                 loadComponent: post.loadComponent,
-                loadReadingTime: post.loadReadingTime,
+                loadReadingTime: async () => contentMeta.readingTime,
             }
         })
     )

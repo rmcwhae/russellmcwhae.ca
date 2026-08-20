@@ -4,7 +4,7 @@ description: Another year in a ski town.
 author: Russell McWhae
 date: 2022-12-31
 draft: 0
-category: Reflection
+category: Essays
 ---
 
 On a bike lap of the local Sunnyside trail in Revelstoke this summer, I brought along a dog I was looking after for a few days.

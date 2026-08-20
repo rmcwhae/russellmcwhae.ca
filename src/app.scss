@@ -12,8 +12,8 @@ body {
     background: var(--background-color);
     transition: all ease var(--duration);
     margin: 0;
-    font-family: source-sans-3, azo-sans-web, sans-serif;
-    font-size: 1.125rem;
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
     line-height: 1.5;
 
     display: flex;
@@ -31,6 +31,7 @@ html {
     scroll-behavior: smooth;
     width: 100%;
     height: -webkit-fill-available;
+    font-size: 16px;
 }
 
 @media (prefers-reduced-motion) {

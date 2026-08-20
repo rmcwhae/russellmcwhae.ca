@@ -83,7 +83,7 @@ My journal entries are written in Markdown, so transferring these from the old P
 
 ### Images
 
-Photos are a big part of this website’s _raison d'être_, so I wanted to feature them extensively while also loading images as quickly as possible. On my previous website, image galleries relied too heavily on client-side JavaScript and were quite slow. The [Events](/events) page is now much more performant and engaging—kind of fun to look back on all the adventures I’ve had over the years. Photos are hosted on [ImageKit](https://imagekit.io/) and are also served via its responsive-image pipeline and CDN. By using their service (and staying within the free tier), image-loading performance is as good as possible, with minimal infrastructure for me to manage.
+Photos are a big part of this website’s _raison d'être_, so I wanted to feature them extensively while also loading images as quickly as possible. On my previous website, image galleries relied too heavily on client-side JavaScript and were quite slow. The [Events](/field-expeditions) page is now much more performant and engaging—kind of fun to look back on all the adventures I’ve had over the years. Photos are hosted on [ImageKit](https://imagekit.io/) and are also served via its responsive-image pipeline and CDN. By using their service (and staying within the free tier), image-loading performance is as good as possible, with minimal infrastructure for me to manage.
 
 ### Notable Packages
 
@@ -117,7 +117,7 @@ During development, I often deployed the code to my already-paid-for shared host
 alias deploy="cd <local-repo-directory> && npm run build && rsync -cvzhe \"ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_deploy\" --links --times --delete --recursive --safe-links <local repo directory>/build/ <username>@<server-ssh-address>:public_html"
 ```
 
-If you want to get really fancy, use [adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify) to get dynamic server rendering via Netlify functions. One benefit of this approach would be getting the [events](/events) list to dynamically update when a new event gallery is uploaded in ImageKit. With the static export, a full rebuild is required every time a new event is added, requiring me to manually trigger a rebuild (via a custom webook mapped to a terminal alias). Given how rarely the content changes, dynamic server rendering is overkill for a site like this, but it’s nice to see how wonderfully simple it would be to implement.
+If you want to get really fancy, use [adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify) to get dynamic server rendering via Netlify functions. One benefit of this approach would be getting the [events](/field-expeditions) list to dynamically update when a new event gallery is uploaded in ImageKit. With the static export, a full rebuild is required every time a new event is added, requiring me to manually trigger a rebuild (via a custom webook mapped to a terminal alias). Given how rarely the content changes, dynamic server rendering is overkill for a site like this, but it’s nice to see how wonderfully simple it would be to implement.
 
 ## Final words
 

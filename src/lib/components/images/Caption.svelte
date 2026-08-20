@@ -5,6 +5,8 @@
 <figure>
     {@render children?.()}
     <figcaption>
+        <!-- Caption HTML is authored in trusted journal markdown -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html text}
     </figcaption>
 </figure>
@@ -15,7 +17,7 @@
         color: var(--medium-grey);
     }
     figcaption {
-        font-size: 0.9em;
+        font-size: var(--text-base);
         margin-top: var(--s-2);
         text-align: center;
     }
