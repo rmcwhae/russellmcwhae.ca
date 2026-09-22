@@ -76,10 +76,7 @@ export async function listFiles(
                 | undefined,
             type: options.type as 'file' | 'folder' | 'all' | undefined,
             fileType: options.fileType as
-                | 'all'
-                | 'image'
-                | 'non-image'
-                | undefined,
+                'all' | 'image' | 'non-image' | undefined,
             searchQuery: options.searchQuery as string | undefined,
         })
 

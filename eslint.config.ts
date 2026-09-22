@@ -12,6 +12,7 @@ export default [
             'static/_app/**',
             'playwright-report/**',
             'test-results/**',
+            '.claude/**',
         ],
     },
     js.configs.recommended,

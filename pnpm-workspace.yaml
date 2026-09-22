@@ -8,5 +8,6 @@ allowBuilds:
     sharp: true
 
 overrides:
-    'cookie@<0.7.0': '>=0.7.0'
+    # <0.7.0 has a security vulnerability; 2.x breaks SvelteKit 2 (cookie API change)
+    'cookie@<0.7.0': '^1.0.0'
     yaml: '>=2.8.3'
