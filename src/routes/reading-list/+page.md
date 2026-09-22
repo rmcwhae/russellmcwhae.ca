@@ -9,7 +9,13 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 
 ## 2026
 
-- _ Spirit-Controlled Temperament_ by Tim LaHaye
+- _Blue Collar, Blue Scrubs: The Making of a Surgeon_ by Michael J. Collins, MD
+- _The Dark Forest_ by Cixin Liu (audiobook)
+- _Crazy Love: Overwhelmed by a Relentless God_ by Francis Chan
+- _The Good Life Method: Reasoning Through the Big Questions of Happiness, Faith, and Meaning_ by Meghan Sullivan and Paul Blaschko (audiobook)
+- _White Oleander_ by Janet Fitch (audiobook)
+- _The Three-Body Problem_ by Cixin Liu (audiobook)
+- _Spirit-Controlled Temperament_ by Tim LaHaye
 - _Leave the World Behind_ by Rumaan Alam (audiobook)
 - _Malibu Rising_ by Taylor Jenkins Reid (audiobook)
 - _The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness_ by Jonathan Haidt (audiobook)
