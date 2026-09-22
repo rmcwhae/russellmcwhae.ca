@@ -58,7 +58,7 @@
         if (!browser) return
 
         // Re-run when navigating between journal entries
-        page.url.pathname
+        void page.url.pathname
 
         updateHeadings()
 

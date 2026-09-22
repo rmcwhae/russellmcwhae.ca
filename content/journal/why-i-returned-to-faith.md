@@ -602,7 +602,7 @@ Saul then made an about-face from Christian-murderer to Christian evangelist. Ra
 
 Morison himself was initially rather skeptical about the supernatural story of the Resurrection, believing that “[Christ’s] history rested upon very insecure foundations” (9), but, like Saul, he came to a highly intellectual belief in the Resurrection when all other natural explanations fell short:
 
-> [*Who Moved the Stone?*] is essentially a confession, the inner story of a man who originally set out to write one kind of book and found himself compelled by the sheer force of circumstances to write quite another.
+> [_Who Moved the Stone?_] is essentially a confession, the inner story of a man who originally set out to write one kind of book and found himself compelled by the sheer force of circumstances to write quite another.
 >
 > It is not that the facts themselves altered, for they are recorded imperishably in the monuments and in the pages of human history. But the interpretation to be put upon the facts underwent a change. Somehow the perspective shifted—not suddenly, as in a flash of inisght or inspiration, but slowly, almost imperceptibly, by the very stubbornness of the facts themselves. (5)
 

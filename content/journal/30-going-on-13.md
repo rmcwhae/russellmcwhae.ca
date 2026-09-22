@@ -708,7 +708,7 @@ Me: Let’s just say that my skis got B3at.
 
 ---
 
-Me, getting all philosophical on risk, loss, reward, and living: That’s where the title of _One Day as a Tiger_ [John Porter’s book subtitled *Alex Macintyre and the Birth of Light and Fast Alpinism* that describes the life of Alex Macintyre, an aspiring British alpinist who died at 28 while attempting a new route on Annapurna] comes from: “It’s better to live one day as a tiger than a thousand years as a sheep.”
+Me, getting all philosophical on risk, loss, reward, and living: That’s where the title of _One Day as a Tiger_ [John Porter’s book subtitled _Alex Macintyre and the Birth of Light and Fast Alpinism_ that describes the life of Alex Macintyre, an aspiring British alpinist who died at 28 while attempting a new route on Annapurna] comes from: “It’s better to live one day as a tiger than a thousand years as a sheep.”
 
 Friend, without missing a beat: I mean, I suppose it depends on which Welsh farmer is fucking you.
 

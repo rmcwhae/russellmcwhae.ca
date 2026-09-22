@@ -5,10 +5,7 @@ interface UrlOptions {
     urlEndpoint: string
     transformation?: Record<string, string | number>[]
     [key: string]:
-        | string
-        | number
-        | Record<string, string | number>[]
-        | undefined
+        string | number | Record<string, string | number>[] | undefined
 }
 
 export function url(options: UrlOptions): string {
