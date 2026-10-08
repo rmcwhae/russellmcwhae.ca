@@ -13,6 +13,7 @@ Here is a non-exhaustive list of the books I have read, in reverse chronological
 - _The Mountain Between Us_ by Charles Martin (audiobook)
 - _The Redemption of Time: A Three-Body Problem Novel_ by Baoshu (audiobook)
 - _Blue Collar, Blue Scrubs: The Making of a Surgeon_ by Michael J. Collins, MD
+- _Death’s End_ by Cixin Liu (audiobook)
 - _The Dark Forest_ by Cixin Liu (audiobook)
 - _Crazy Love: Overwhelmed by a Relentless God_ by Francis Chan
 - _The Good Life Method: Reasoning Through the Big Questions of Happiness, Faith, and Meaning_ by Meghan Sullivan and Paul Blaschko (audiobook)
