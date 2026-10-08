@@ -1,5 +1,5 @@
 <script>
-    import { browser } from '$app/environment'
+    import { browser } from '$app/env'
     import { page } from '$app/state'
 
     /**
@@ -46,7 +46,6 @@
             depth: depths[idx] - minDepth,
             node,
         }))
-
         observer = new IntersectionObserver(handleIntersect)
 
         nodes.forEach((heading) => {
@@ -80,6 +79,7 @@
                 const visibleHeight =
                     Math.min(rect.bottom, viewportHeight) -
                     Math.max(rect.top, 0)
+
                 const visibilityRatio = visibleHeight / viewportHeight
 
                 visibleHeadings.push({
@@ -102,6 +102,7 @@
                     current.top < prev.top
                 )
                     return current
+
                 return prev
             })
 

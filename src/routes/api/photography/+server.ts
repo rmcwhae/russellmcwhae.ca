@@ -1,7 +1,6 @@
-import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
 
-import * as ImageKitNodeServices from '$lib/services/imageKitNode'
+import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
 
 export const GET: RequestHandler = async () => {
     const images = await ImageKitNodeServices.listFiles({
@@ -9,7 +8,7 @@ export const GET: RequestHandler = async () => {
         sort: 'DESC_NAME',
     })
 
-    return json({
+    return Response.json({
         images,
     })
 }

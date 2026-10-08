@@ -1,5 +1,5 @@
 <script>
-    import SEO from '$lib/components/base/SEO.svelte'
+    import SEO from '#lib/components/base/SEO.svelte'
 
     let { title, children } = $props()
 </script>

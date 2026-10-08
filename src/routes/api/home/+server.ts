@@ -1,6 +1,5 @@
-import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
-import * as ImageKitNodeServices from '$lib/services/imageKitNode'
+import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
 
 export const GET: RequestHandler = async () => {
     const homepageImages = await ImageKitNodeServices.listFiles({
@@ -8,5 +7,5 @@ export const GET: RequestHandler = async () => {
         searchQuery: 'tags IN ["homepage"]',
     })
 
-    return json(homepageImages)
+    return Response.json(homepageImages)
 }

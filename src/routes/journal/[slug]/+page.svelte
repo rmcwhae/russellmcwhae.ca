@@ -1,12 +1,12 @@
 <script>
-    import Date from '$lib/components/misc/Date.svelte'
-    import NoWrapLastTwoWords from '$lib/components/misc/NoWrapLastTwoWords.svelte'
-    import Button from '$lib/components/buttons/Button.svelte'
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
-    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import SEO from '$lib/components/base/SEO.svelte'
-    import ToC from '$lib/components/journal/ToC.svelte'
-    import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
+    import Date from '#lib/components/misc/Date.svelte'
+    import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
+    import Button from '#lib/components/buttons/Button.svelte'
+    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
+    import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
+    import SEO from '#lib/components/base/SEO.svelte'
+    import ToC from '#lib/components/journal/ToC.svelte'
+    import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
 
     let { data } = $props()
 

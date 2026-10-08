@@ -1,7 +1,6 @@
 <script>
-    import { browser } from '$app/environment'
-    import { mode } from '$lib/stores/theme'
-
+    import { browser } from '$app/env'
+    import { mode } from '#lib/stores/theme.js'
     import IoIosMoon from 'svelte-icons/io/IoIosMoon.svelte'
     import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte'
 

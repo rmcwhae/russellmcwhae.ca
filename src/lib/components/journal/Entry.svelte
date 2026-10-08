@@ -1,6 +1,6 @@
 <script>
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
-    import Date from '$lib/components/misc/Date.svelte'
+    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
+    import Date from '#lib/components/misc/Date.svelte'
     import CategoryLink from './CategoryLink.svelte'
 
     /**

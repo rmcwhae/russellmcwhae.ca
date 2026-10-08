@@ -19,6 +19,15 @@ export default [
     ...tseslint.configs.recommended,
     ...svelte.configs['flat/recommended'],
     {
+        files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+        languageOptions: {
+            parserOptions: {
+                parser: tseslint.parser,
+                extraFileExtensions: ['.svelte'],
+            },
+        },
+    },
+    {
         // Global language options (apply to JS and Svelte)
         languageOptions: {
             ecmaVersion: 2023,

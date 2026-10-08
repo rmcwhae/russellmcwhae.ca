@@ -1,5 +1,5 @@
 <script>
-    import Logo from '$lib/components/icons/Logo.svelte'
+    import Logo from '#lib/components/icons/Logo.svelte'
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 

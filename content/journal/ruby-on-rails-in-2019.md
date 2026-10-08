@@ -8,7 +8,7 @@ category: Tech
 
 <script>
   import Image from 'svimg/Image.svelte'
-    import Caption from '$lib/components/images/Caption.svelte'
+    import Caption from '#lib/components/images/Caption.svelte'
 </script>
 
 <Image src="/journal-images/rails-1.jpg" alt="Ruby on Rails" />

@@ -1,10 +1,10 @@
 <script>
     import Image from 'svimg/Image.svelte'
-    import SEO from '$lib/components/base/SEO.svelte'
-    import Gallery from '$lib/components/images/Gallery.svelte'
-    import Button from '$lib/components/buttons/Button.svelte'
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
-    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
+    import SEO from '#lib/components/base/SEO.svelte'
+    import Gallery from '#lib/components/images/Gallery.svelte'
+    import Button from '#lib/components/buttons/Button.svelte'
+    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
+    import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
 
     let { data } = $props()
 

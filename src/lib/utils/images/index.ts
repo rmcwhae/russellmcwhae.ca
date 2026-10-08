@@ -1,5 +1,5 @@
-import { env } from '$env/dynamic/public'
-import * as ImageKitJavascriptServices from '$lib/services/imageKitJavascript'
+import { PUBLIC_IMAGEKIT_URL_ENDPOINT } from '$app/env/public'
+import * as ImageKitJavascriptServices from '#lib/services/imageKitJavascript.js'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 const MAX_BREAKPOINT = Math.max(...BREAKPOINTS)
@@ -16,7 +16,7 @@ interface ImageOptions {
 export function buildURL(path: string, options: ImageOptions): string {
     return ImageKitJavascriptServices.url({
         path,
-        urlEndpoint: env.PUBLIC_IMAGEKIT_URL_ENDPOINT,
+        urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,
         transformation: [options],
     })
 }
@@ -32,7 +32,9 @@ export function generateSrcSets(image: string): string {
 const sizesArray = BREAKPOINTS.slice(0, -1).map(
     (breakpoint) => `(max-width: ${breakpoint}px) ${breakpoint}px`
 )
+
 sizesArray.push(`${MAX_BREAKPOINT}px`)
+
 const sizes = sizesArray.join(', ')
 
 export { sizes }

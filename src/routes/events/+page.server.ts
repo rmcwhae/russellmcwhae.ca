@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types'
-import * as ImageKitNodeServices from '$lib/services/imageKitNode'
-import { parseTitleAndDate } from '$lib/utils/string'
+import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
+import { parseTitleAndDate } from '#lib/utils/string/index.js'
 
 export const prerender = true
 

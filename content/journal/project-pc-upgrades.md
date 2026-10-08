@@ -9,7 +9,7 @@ category: Tech
 
 <script>
   import Image from 'svimg/Image.svelte'
-  import Caption from '$lib/components/images/Caption.svelte'
+  import Caption from '#lib/components/images/Caption.svelte'
 </script>
 
 Recently, I got to experience one of tech’s truisms while upgrading my project PC: “We overestimate how much progress we can make in a year, and underestimate how much we can make in a decade” (via [Daring Fireball](https://daringfireball.net/linked/2023/02/20/camera-phone-progress)).

@@ -1,11 +1,17 @@
 <script>
-    import { dev } from '$app/environment'
-    import { injectAnalytics } from '@vercel/analytics/sveltekit'
+    import { dev } from '$app/env'
+    import { page } from '$app/state'
+    import { inject, pageview } from '@vercel/analytics'
     import { injectSpeedInsights } from '@vercel/speed-insights'
-    import Nav from '$lib/components/nav/Nav.svelte'
-    import Footer from '$lib/components/base/Footer.svelte'
-    import Loading from '$lib/components/base/Loading.svelte'
+    import Nav from '#lib/components/nav/Nav.svelte'
+    import Footer from '#lib/components/base/Footer.svelte'
+    import Loading from '#lib/components/base/Loading.svelte'
     import '../app.scss'
+    import '@fontsource/source-sans-3/400.css'
+    import '@fontsource/source-sans-3/400-italic.css'
+    import '@fontsource/source-sans-3/600.css'
+    import '@fontsource/source-sans-3/700.css'
+    import sourceSans400 from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url'
     /**
      * @typedef {Object} Props
      * @property {import('svelte').Snippet} [children]
@@ -14,9 +20,36 @@
     /** @type {Props} */
     let { children } = $props()
 
-    injectAnalytics({ mode: dev ? 'development' : 'production' })
+    // Stable @vercel/analytics still tracks pages through removed SvelteKit 2
+    // modules. Mirror that behavior with the generic client and $app/state.
+    inject(
+        {
+            mode: dev ? 'development' : 'production',
+            framework: 'sveltekit',
+            disableAutoTrack: true,
+            basePath: import.meta.env.VITE_VERCEL_OBSERVABILITY_BASEPATH,
+        },
+        import.meta.env.VITE_VERCEL_OBSERVABILITY_CLIENT_CONFIG
+    )
+
+    $effect(() => {
+        if (page.route.id) {
+            pageview({ route: page.route.id, path: page.url.pathname })
+        }
+    })
+
     injectSpeedInsights()
 </script>
+
+<svelte:head>
+    <link
+        rel="preload"
+        href={sourceSans400}
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+    />
+</svelte:head>
 
 <Loading />
 

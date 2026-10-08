@@ -4,7 +4,7 @@ layout: micro
 ---
 
 <script>
-  import MicroHeader from '$lib/components/misc/MicroHeader.svelte'
+  import MicroHeader from '#lib/components/misc/MicroHeader.svelte'
 </script>
 
 <MicroHeader date="2025-09-23" />

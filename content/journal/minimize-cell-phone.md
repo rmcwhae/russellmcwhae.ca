@@ -9,7 +9,7 @@ category: Tech
 
 <script>
   import Image from 'svimg/Image.svelte'
-  import Caption from '$lib/components/images/Caption.svelte'
+  import Caption from '#lib/components/images/Caption.svelte'
 </script>
 
 ## Introduction

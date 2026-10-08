@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import * as LocalStorage from '$lib/services/localStorage'
+import * as LocalStorage from '#lib/services/localStorage.js'
 
 const storage = LocalStorage.create('user-theme')
 

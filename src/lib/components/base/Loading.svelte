@@ -13,6 +13,7 @@
                 clearInterval(counter)
                 return
             }
+
             width += 5
             speed += 500
         }, speed)
@@ -23,12 +24,16 @@
     let speed = 10
     let isNavigating = $state(false)
 
-    beforeNavigate(() => {
+    beforeNavigate(({ shallow, type }) => {
+        if (shallow && type === 'goto') return
+
         isNavigating = true
         startProgress()
     })
 
-    afterNavigate(() => {
+    afterNavigate(({ shallow, type }) => {
+        if (shallow && type === 'goto') return
+
         isNavigating = false
         resetProgress()
     })
