@@ -1,6 +1,6 @@
 <script>
-    import LeftChevron from '$lib/components/icons/LeftChevron.svelte'
-    import RightChevron from '$lib/components/icons/RightChevron.svelte'
+    import LeftChevron from '#lib/components/icons/LeftChevron.svelte'
+    import RightChevron from '#lib/components/icons/RightChevron.svelte'
 
     /**
      * @typedef {Object} Props

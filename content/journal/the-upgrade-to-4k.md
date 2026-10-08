@@ -9,7 +9,7 @@ category: Tech
 
 <script>
   import Image from 'svimg/Image.svelte'
-  import Caption from '$lib/components/images/Caption.svelte'
+  import Caption from '#lib/components/images/Caption.svelte'
 </script>
 
 <Image src="/journal-images/LG-screen-and-keyboard.jpg" alt="LG 27UD68-W" />

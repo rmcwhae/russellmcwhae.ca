@@ -1,4 +1,4 @@
-import { getPosts } from '$lib/services/posts'
+import { getPosts } from '#lib/services/posts.js'
 import type { PageLoad } from './$types'
 
 export const prerender = true

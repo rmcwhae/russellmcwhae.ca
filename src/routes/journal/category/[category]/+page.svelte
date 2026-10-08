@@ -1,7 +1,7 @@
 <script>
-    import JournalEntrySet from '$lib/components/journal/EntrySet.svelte'
-    import SEO from '$lib/components/base/SEO.svelte'
-    import CategoryLink from '$lib/components/journal/CategoryLink.svelte'
+    import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
+    import SEO from '#lib/components/base/SEO.svelte'
+    import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
 
     let { data } = $props()
 

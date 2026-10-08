@@ -1,7 +1,7 @@
 <script>
-    import Button from '$lib/components/buttons/Button.svelte'
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
-    import PurchaseCalendar from '$lib/components/misc/PurchaseCalendar.svelte'
+    import Button from '#lib/components/buttons/Button.svelte'
+    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
+    import PurchaseCalendar from '#lib/components/misc/PurchaseCalendar.svelte'
 
     /**
      * @typedef {Object} Props

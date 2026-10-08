@@ -1,7 +1,7 @@
 <script>
-    import ButtonSet from '$lib/components/buttons/ButtonSet.svelte'
-    import Button from '$lib/components/buttons/Button.svelte'
-    import { preventLastTwoWordWrap } from '$lib/utils/string'
+    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
+    import Button from '#lib/components/buttons/Button.svelte'
+    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
 
     let { project, reverse, children } = $props()
 

@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'
-import { getPosts } from '$lib/services/posts'
+import { getPosts } from '#lib/services/posts.js'
 import type { PageLoad } from './$types'
 
 export const prerender = true // Needs to be false if using a hit counter

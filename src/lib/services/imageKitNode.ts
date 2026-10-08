@@ -1,10 +1,7 @@
 import ImageKit from '@imagekit/nodejs'
-import { IMAGEKIT_PRIVATE_KEY } from '$env/static/private'
+import { IMAGEKIT_PRIVATE_KEY } from '$app/env/private'
 
-const CONFIG_OPTIONS = {
-    privateKey: IMAGEKIT_PRIVATE_KEY,
-}
-
+const CONFIG_OPTIONS = { privateKey: IMAGEKIT_PRIVATE_KEY }
 let client: ImageKit | null = null
 
 function getClient(): ImageKit {

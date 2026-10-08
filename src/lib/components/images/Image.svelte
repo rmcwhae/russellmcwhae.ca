@@ -1,6 +1,10 @@
 <script>
     // Use native lazy loading; remove lazysizes dependency
-    import { generateSrcSets, sizes, buildURL } from '$lib/utils/images'
+    import {
+        generateSrcSets,
+        sizes,
+        buildURL,
+    } from '#lib/utils/images/index.js'
 
     /**
      * @typedef {Object} Props

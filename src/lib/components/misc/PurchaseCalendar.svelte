@@ -1,5 +1,5 @@
 <script>
-    import RightChevron from '$lib/components/icons/RightChevron.svelte'
+    import RightChevron from '#lib/components/icons/RightChevron.svelte'
 </script>
 
 <form
