@@ -41,10 +41,10 @@
         </div>
     </nav>
     <div id="desktop-switcher" data-test="desktop-colour-scheme-switcher">
-        <ThemeSwitcher />
+        <ThemeSwitcher instanceId="desktop" />
     </div>
     <div id="mobile-switcher" data-test="mobile-colour-scheme-switcher">
-        <ThemeSwitcher />
+        <ThemeSwitcher instanceId="mobile" />
     </div>
     <div
         class="nav-toggle"

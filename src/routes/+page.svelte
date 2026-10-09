@@ -35,13 +35,15 @@
 <div class="home">
     <section class="hero">
         <div class="intro">
-            <p class="eyebrow">Developer / Photographer / Writer</p>
-            <h1>I build for the web<br />and head outside.</h1>
+            <h1>
+                <span class="line-sans">Thoughtful work.</span>
+                <span class="line-serif">Open horizons.</span>
+            </h1>
             <p class="lede">
-                I’m a web developer with a background in structural engineering
-                and biomedical research who likes spending time outside.
+                I’m Russell — a web developer with a background in engineering
+                and biomedical research, drawn to good systems, thoughtful
+                design, and time outside.
             </p>
-            <span class="rule"></span>
         </div>
         {#if hero}
             <a class="photo-link" href="/photography">
@@ -135,30 +137,37 @@
     }
 
     .intro {
-        max-width: 38rem;
+        max-width: 40rem;
     }
 
     h1 {
-        margin: 0.75rem 0 1rem;
-        font-size: clamp(2.35rem, 4.4vw, 4.15rem);
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.6rem, 4.6vw, 4.35rem);
         font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 0.98;
+    }
+
+    .line-sans {
+        font-family: var(--font-sans);
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    .line-serif {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
         letter-spacing: -0.03em;
-        line-height: 1.02;
     }
 
     .lede {
-        max-width: 38ch;
+        max-width: 34rem;
         margin: 0;
         font-size: 1.05rem;
         line-height: 1.55;
-    }
-
-    .rule {
-        display: block;
-        width: 2.75rem;
-        height: 2px;
-        margin-top: 1.35rem;
-        background: var(--alpine);
     }
 
     .band {
