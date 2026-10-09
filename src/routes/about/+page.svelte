@@ -68,7 +68,7 @@
         <p>
             This website is my creative outlet—a place to share the world as I
             see it through photographs and words. Thanks for stopping by my
-            quiet corner of a noisy internet.
+            quiet corner of a busy internet.
         </p>
     </div>
 </article>

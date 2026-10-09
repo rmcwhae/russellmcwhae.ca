@@ -49,9 +49,14 @@ main a {
 }
 
 article a {
-    color: var(--alpine);
+    color: var(--high-contrast-color);
     text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
+
+    &:hover {
+        color: var(--alpine);
+        text-decoration-thickness: 2px;
+    }
 }
 
 a.no-shadow,

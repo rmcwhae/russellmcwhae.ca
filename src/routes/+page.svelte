@@ -62,7 +62,7 @@
     {#if favourites.length}
         <section class="band">
             <div class="section-label">
-                <h2 class="eyebrow">Favourite moments</h2>
+                <h2 class="eyebrow">Favourite Landscapes</h2>
                 <Button href="/photography" text="View all photography" right />
             </div>
             <div class="moments">
@@ -90,7 +90,7 @@
         <div class="about">
             <p class="eyebrow">About</p>
             <h2>
-                Engineer, researcher, photographer, and lifelong outdoor
+                Software developer, photographer, writer, and lifelong outdoor
                 enthusiast.
             </h2>
             <p>
@@ -166,23 +166,35 @@
         z-index: 0;
     }
 
+    .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+            to top,
+            rgb(9 10 9 / 75%) 0%,
+            rgb(9 10 9 / 42%) 28%,
+            transparent 58%
+        );
+    }
+
     .hero-frame {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         width: min(#{$breakpoint-xl}, 100%);
         margin-inline: auto;
     }
 
     .intro {
         max-width: 40rem;
-        padding: var(--s1) var(--s2);
-        background: light-dark(rgb(247 246 242 / 78%), rgb(9 10 9 / 72%));
-        color: light-dark(var(--charcoal), var(--paper));
+        color: var(--paper);
     }
 
     .intro h1,
     .intro .lede {
-        color: light-dark(var(--charcoal), var(--paper));
+        color: var(--paper);
     }
 
     h1 {
