@@ -148,19 +148,29 @@
             <img
                 src="/russell.png"
                 alt="Russell McWhae"
-                width="320"
-                height="480"
+                width="1000"
+                height="822"
                 loading="lazy"
                 decoding="async"
             />
         </figure>
         <div class="about-copy">
             <p>
-                Growing up in Calgary, I spent time mountain biking, hiking, and
-                skiing in the Canadian Rockies. I trained as a structural
-                engineer, completed an MSc in biomedical engineering, and now
-                work as a web developer.
+                My work has moved through structural engineering, biomedical
+                research, and web development. Across those fields, I've always
+                enjoyed the same process: understanding how things work, then
+                making them work better.
             </p>
+            <p>
+                Away from the computer, you'll find me exploring the natural
+                world on foot, skis, or a bike, with my camera along for the
+                journey.
+            </p>
+            <p>
+                This website is my creative outlet, a place to share the world
+                as I see it through photographs and words.
+            </p>
+
             <Button href="/about" text="Learn more about me" right />
         </div>
         <div class="interests-col">
@@ -344,20 +354,13 @@
     }
 
     .portrait {
-        position: relative;
-        width: min(100%, 14rem);
-        aspect-ratio: 2 / 3;
+        width: min(100%, 250px);
         margin: var(--s0) 0 0;
-        overflow: hidden;
     }
 
     .portrait img {
-        position: absolute;
-        width: 333.333%;
-        max-width: none;
+        width: 100%;
         height: auto;
-        left: -132%;
-        top: -44.44%;
     }
 
     .about-copy {
@@ -514,7 +517,6 @@
 
         .portrait {
             grid-area: photo;
-            width: 100%;
             margin-top: var(--s1);
         }
 
