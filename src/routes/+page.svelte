@@ -140,15 +140,22 @@
     {/if}
 
     <section class="band about-band">
-        <div class="about">
-            <div class="about-heading">
-                <p class="eyebrow">About</p>
-                <h2>
-                    Software developer, photographer, writer, and lifelong
-                    outdoor enthusiast.
-                </h2>
-            </div>
-            <p class="about-body">
+        <p class="eyebrow about-kicker">About</p>
+        <h2 class="about-title">
+            A balance of logic, curiosity, and creativity.
+        </h2>
+        <figure class="portrait">
+            <img
+                src="/russell.png"
+                alt="Russell McWhae"
+                width="320"
+                height="480"
+                loading="lazy"
+                decoding="async"
+            />
+        </figure>
+        <div class="about-copy">
+            <p>
                 Growing up in Calgary, I spent time mountain biking, hiking, and
                 skiing in the Canadian Rockies. I trained as a structural
                 engineer, completed an MSc in biomedical engineering, and now
@@ -156,30 +163,18 @@
             </p>
             <Button href="/about" text="Learn more about me" right />
         </div>
-        <div class="aside">
-            <figure class="portrait">
-                <img
-                    src="/russell.png"
-                    alt="Russell McWhae"
-                    width="320"
-                    height="480"
-                    loading="lazy"
-                    decoding="async"
-                />
-            </figure>
-            <div class="interests-col">
-                <h2 class="eyebrow">Other interests</h2>
-                <ul class="interests">
-                    {#each interests as interest (interest.href)}
-                        <li>
-                            <a href={interest.href}>
-                                <h3>{interest.title}</h3>
-                                <p>{interest.description}</p>
-                            </a>
-                        </li>
-                    {/each}
-                </ul>
-            </div>
+        <div class="interests-col">
+            <h2 class="eyebrow">Other interests</h2>
+            <ul class="interests">
+                {#each interests as interest (interest.href)}
+                    <li>
+                        <a href={interest.href}>
+                            <h3>{interest.title}</h3>
+                            <p>{interest.description}</p>
+                        </a>
+                    </li>
+                {/each}
+            </ul>
         </div>
     </section>
 </div>
@@ -337,26 +332,23 @@
     }
 
     .about-band {
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
-        column-gap: var(--s1);
-        align-items: start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
     }
 
-    .about,
-    .aside {
-        display: contents;
+    .about-title {
+        margin: 0;
+        max-width: 16ch;
     }
 
     .portrait {
-        grid-column: 1;
-        grid-row: 1;
         position: relative;
-        width: 8.5rem;
+        width: min(100%, 14rem);
         aspect-ratio: 2 / 3;
-        margin: 0;
+        margin: var(--s0) 0 0;
         overflow: hidden;
-        align-self: start;
     }
 
     .portrait img {
@@ -368,30 +360,18 @@
         top: -44.44%;
     }
 
-    .about-heading {
-        grid-column: 2;
-        grid-row: 1;
-        align-self: start;
-    }
-
-    .about h2 {
-        margin: 0.6rem 0 0;
-        max-width: 16ch;
-    }
-
-    .about-body {
-        grid-column: 1 / -1;
+    .about-copy {
         max-width: 42ch;
-        margin: 1rem 0 1.25rem;
+        margin-top: var(--s1);
     }
 
-    .about :global(a.button) {
-        grid-column: 1 / -1;
+    .about-copy p {
+        margin: 0 0 1.25rem;
     }
 
     .interests-col {
-        grid-column: 1 / -1;
-        margin-top: var(--s3);
+        width: 100%;
+        margin-top: var(--s2);
     }
 
     .journal-heading {
@@ -510,40 +490,42 @@
         }
 
         .about-band {
-            grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
-            gap: var(--s3);
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr) minmax(
+                    0,
+                    0.9fr
+                );
+            column-gap: var(--s4);
+            row-gap: 0.6rem;
             align-items: start;
+            grid-template-areas:
+                'kicker . interests'
+                'title copy interests'
+                'photo copy interests';
         }
 
-        .about {
-            display: block;
-            grid-column: 1;
-            grid-row: 1;
+        .about-kicker {
+            grid-area: kicker;
         }
 
-        .aside {
-            grid-column: 2;
-            grid-row: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: var(--s2);
-        }
-
-        .portrait,
-        .about-heading,
-        .about-body,
-        .about :global(a.button),
-        .interests-col {
-            grid-column: auto;
-            grid-row: auto;
+        .about-title {
+            grid-area: title;
         }
 
         .portrait {
-            align-self: flex-start;
+            grid-area: photo;
+            width: 100%;
+            margin-top: var(--s1);
+        }
+
+        .about-copy {
+            grid-area: copy;
+            max-width: none;
+            margin-top: 0;
         }
 
         .interests-col {
+            grid-area: interests;
             margin-top: 0;
         }
     }
