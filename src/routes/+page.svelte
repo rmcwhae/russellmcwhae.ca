@@ -67,9 +67,8 @@
                     <span class="line-serif">Open horizons.</span>
                 </h1>
                 <p class="lede">
-                    I’m Russell — a web developer with a background in
-                    engineering and biomedical research, drawn to good systems,
-                    thoughtful design, and time outside.
+                    I’m Russell—a web developer, photographer, and writer with a
+                    deep appreciation for the natural world.
                 </p>
             </div>
         </div>
@@ -140,14 +139,16 @@
         </section>
     {/if}
 
-    <section class="band split">
+    <section class="band about-band">
         <div class="about">
-            <p class="eyebrow">About</p>
-            <h2>
-                Software developer, photographer, writer, and lifelong outdoor
-                enthusiast.
-            </h2>
-            <p>
+            <div class="about-heading">
+                <p class="eyebrow">About</p>
+                <h2>
+                    Software developer, photographer, writer, and lifelong
+                    outdoor enthusiast.
+                </h2>
+            </div>
+            <p class="about-body">
                 Growing up in Calgary, I spent time mountain biking, hiking, and
                 skiing in the Canadian Rockies. I trained as a structural
                 engineer, completed an MSc in biomedical engineering, and now
@@ -155,18 +156,30 @@
             </p>
             <Button href="/about" text="Learn more about me" right />
         </div>
-        <div>
-            <h2 class="eyebrow">Other interests</h2>
-            <ul class="interests">
-                {#each interests as interest (interest.href)}
-                    <li>
-                        <a href={interest.href}>
-                            <h3>{interest.title}</h3>
-                            <p>{interest.description}</p>
-                        </a>
-                    </li>
-                {/each}
-            </ul>
+        <div class="aside">
+            <figure class="portrait">
+                <img
+                    src="/russell.png"
+                    alt="Russell McWhae"
+                    width="320"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </figure>
+            <div class="interests-col">
+                <h2 class="eyebrow">Other interests</h2>
+                <ul class="interests">
+                    {#each interests as interest (interest.href)}
+                        <li>
+                            <a href={interest.href}>
+                                <h3>{interest.title}</h3>
+                                <p>{interest.description}</p>
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
         </div>
     </section>
 </div>
@@ -323,19 +336,62 @@
         cursor: zoom-in;
     }
 
-    .split {
+    .about-band {
         display: grid;
-        gap: var(--s3);
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: var(--s1);
+        align-items: start;
+    }
+
+    .about,
+    .aside {
+        display: contents;
+    }
+
+    .portrait {
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        width: 8.5rem;
+        aspect-ratio: 2 / 3;
+        margin: 0;
+        overflow: hidden;
+        align-self: start;
+    }
+
+    .portrait img {
+        position: absolute;
+        width: 333.333%;
+        max-width: none;
+        height: auto;
+        left: -132%;
+        top: -44.44%;
+    }
+
+    .about-heading {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
     }
 
     .about h2 {
-        margin: 0.6rem 0 1rem;
+        margin: 0.6rem 0 0;
         max-width: 16ch;
     }
 
-    .about p:not(.eyebrow) {
+    .about-body {
+        grid-column: 1 / -1;
         max-width: 42ch;
-        margin: 0 0 1.25rem;
+        margin: 1rem 0 1.25rem;
+    }
+
+    .about :global(a.button) {
+        grid-column: 1 / -1;
+    }
+
+    .interests-col {
+        grid-column: 1 / -1;
+        margin-top: var(--s3);
     }
 
     .journal-heading {
@@ -453,9 +509,42 @@
             padding-left: var(--s2);
         }
 
-        .split {
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: var(--s4);
+        .about-band {
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+            gap: var(--s3);
+            align-items: start;
+        }
+
+        .about {
+            display: block;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .aside {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: var(--s2);
+        }
+
+        .portrait,
+        .about-heading,
+        .about-body,
+        .about :global(a.button),
+        .interests-col {
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+        .portrait {
+            align-self: flex-start;
+        }
+
+        .interests-col {
+            margin-top: 0;
         }
     }
 </style>
