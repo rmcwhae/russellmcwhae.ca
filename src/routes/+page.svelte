@@ -8,8 +8,7 @@
 
     let images = $derived(Array.isArray(data.images) ? data.images : [])
     let latestPosts = $derived(data.latestPosts)
-    let hero = $derived(images[0])
-    let favourites = $derived(images.slice(1, 5))
+    let favourites = $derived(images.slice(0, 4))
 
     const interests = [
         {
@@ -32,31 +31,32 @@
 
 <SEO />
 
+<svelte:head>
+    <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
+</svelte:head>
+
 <div class="home">
-    <section class="hero">
-        <div class="intro">
-            <h1>
-                <span class="line-sans">Thoughtful work.</span>
-                <span class="line-serif">Open horizons.</span>
-            </h1>
-            <p class="lede">
-                I’m Russell — a web developer with a background in engineering
-                and biomedical research, drawn to good systems, thoughtful
-                design, and time outside.
-            </p>
+    <section class="hero full-width">
+        <img
+            class="hero-bg"
+            src="/hero.jpg"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+        />
+        <div class="hero-frame">
+            <div class="intro">
+                <h1>
+                    <span class="line-sans">Thoughtful work.</span>
+                    <span class="line-serif">Open horizons.</span>
+                </h1>
+                <p class="lede">
+                    I’m Russell — a web developer with a background in
+                    engineering and biomedical research, drawn to good systems,
+                    thoughtful design, and time outside.
+                </p>
+            </div>
         </div>
-        {#if hero}
-            <a class="photo-link" href="/photography">
-                <Image
-                    filePath={hero.filePath}
-                    width={hero.width}
-                    height={hero.height}
-                    customMetadata={hero.customMetadata}
-                    lockedRatio
-                    priority
-                />
-            </a>
-        {/if}
     </section>
 
     {#if favourites.length}
@@ -65,7 +65,7 @@
                 <h2 class="eyebrow">Favourite moments</h2>
                 <Button href="/photography" text="View all photography" right />
             </div>
-            <div class="moments" style:--count={favourites.length}>
+            <div class="moments">
                 {#each favourites as image (image.filePath)}
                     <a class="photo-link" href="/photography">
                         <Image
@@ -75,6 +75,11 @@
                             customMetadata={image.customMetadata}
                             lockedRatio
                         />
+                        {#if image.customMetadata?.caption}
+                            <p class="caption">
+                                {image.customMetadata.caption}
+                            </p>
+                        {/if}
                     </a>
                 {/each}
             </div>
@@ -126,18 +131,58 @@
     @use '../lib/scss/breakpoints' as *;
 
     .home {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns:
+            1fr
+            min(#{$breakpoint-xl}, 100%)
+            1fr;
+    }
+
+    .hero,
+    .band {
+        grid-column: 1 / -1;
+    }
+
+    .band {
+        width: min(#{$breakpoint-xl}, 100%);
+        margin-inline: auto;
     }
 
     .hero {
-        display: grid;
-        gap: var(--s2);
-        align-items: end;
+        display: flex;
+        align-items: flex-end;
+        box-sizing: border-box;
+        height: 100vh;
+        height: 100dvh;
+        padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(1.5rem, 4vh, 3rem);
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .hero-frame {
+        position: relative;
+        z-index: 1;
+        width: min(#{$breakpoint-xl}, 100%);
+        margin-inline: auto;
     }
 
     .intro {
         max-width: 40rem;
+        padding: var(--s1) var(--s2);
+        background: light-dark(rgb(247 246 242 / 78%), rgb(9 10 9 / 72%));
+        color: light-dark(var(--charcoal), var(--paper));
+    }
+
+    .intro h1,
+    .intro .lede {
+        color: light-dark(var(--charcoal), var(--paper));
     }
 
     h1 {
@@ -198,8 +243,16 @@
 
     .moments {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem 1rem;
+    }
+
+    .caption {
+        margin: 0.5rem 0 0;
+        color: var(--text-color);
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.4;
     }
 
     .photo-link {
@@ -271,14 +324,15 @@
         font-weight: 400;
     }
 
-    @include for-tablet-landscape-up {
-        .hero {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-            gap: var(--s3);
-        }
-
+    @include for-tablet-portrait-up {
         .moments {
-            grid-template-columns: repeat(var(--count, 4), minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        .moments {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
         }
 
         .split {
