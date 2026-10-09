@@ -3,6 +3,7 @@
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
     import JournalEntry from '#lib/components/journal/Entry.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
+    import { EDITOR_PICKS } from '#lib/constants/journal'
 
     let { data } = $props()
     let posts = $derived(data.posts)
@@ -16,36 +17,138 @@
     <header>
         <h1>Journal</h1>
     </header>
-    <p class="mb-2 intro">
-        Welcome to my online journal, a collection of long-form thoughts on
-        technology, the outdoors, and life. Text generation and ideas are my
-        own, though I do use AI for editing and refining (as of 2025). I hope
-        you’ll join me for a glimpse into my head. Also see my
-        <a href={resolve('reading-list')}>reading list</a>.
-    </p>
 
-    <div class="mb-s0 featured">
-        <JournalEntry post={latestPost} featured />
+    {#if latestPost}
+        <div class="featured">
+            <JournalEntry post={latestPost} featured />
+        </div>
+    {/if}
+
+    <div class="columns">
+        <div class="archive">
+            <JournalEntrySet {posts} />
+        </div>
+
+        <aside class="sidebar">
+            <p class="eyebrow">About</p>
+            <p>
+                Welcome to my online journal, a collection of long-form thoughts
+                on technology, the outdoors, and life. Text generation and ideas
+                are my own, though I do use AI for editing and refining (as of
+                2025). I hope you’ll join me for a glimpse into my head. Also
+                see my
+                <a href={resolve('/reading-list')}>reading list</a>.
+            </p>
+            <p class="starters-label">
+                If you’re new here, these articles are a good place to start:
+            </p>
+            <ul class="starters">
+                {#each EDITOR_PICKS as pick (pick.slug)}
+                    <li>
+                        <a
+                            href={resolve('/journal/[slug]', {
+                                slug: pick.slug,
+                            })}>{pick.title}</a
+                        >
+                    </li>
+                {/each}
+            </ul>
+        </aside>
     </div>
-    <JournalEntrySet {posts} />
-    <p class="count sub mt-2">Total written words: {totalWordCount}</p>
+
+    <p class="count">Total written words: {totalWordCount}</p>
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../lib/scss/breakpoints' as *;
+
     header {
-        margin-bottom: var(--s1);
+        margin-bottom: var(--s2);
     }
+
     h1 {
         margin: 0;
     }
-    .intro {
-        max-width: 62ch;
-    }
+
     .featured {
+        margin-bottom: var(--s3);
+    }
+
+    .columns {
+        display: grid;
+        gap: var(--s3);
+        margin-top: var(--s2);
+        padding-top: var(--s2);
         border-top: 1px solid var(--light-grey);
     }
+
+    .archive {
+        min-width: 0;
+    }
+
+    .sidebar {
+        min-width: 0;
+    }
+
+    .sidebar .eyebrow {
+        margin: 0 0 0.75rem;
+    }
+
+    .sidebar p:not(.eyebrow) {
+        max-width: 42ch;
+        margin: 0 0 1rem;
+    }
+
+    .starters-label {
+        margin-bottom: 0.35rem;
+    }
+
+    .starters {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .starters li {
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .starters a {
+        display: block;
+        padding: 0.75rem 0;
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.25;
+        text-decoration: none;
+    }
+
+    .starters a:hover {
+        color: var(--alpine);
+        text-decoration: none;
+    }
+
     .count {
+        margin-top: var(--s2);
         text-align: left;
         color: var(--medium-grey);
+    }
+
+    @include for-tablet-landscape-up {
+        .columns {
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+            align-items: start;
+            gap: var(--s4);
+        }
+
+        .archive {
+            padding-inline-end: var(--s2);
+            border-inline-end: 1px solid var(--light-grey);
+        }
+
+        .sidebar {
+            padding-inline-start: var(--s2);
+        }
     }
 </style>

@@ -10,8 +10,8 @@ test.describe('Journal Page', () => {
         // Check that the page has content
         await expect(page.locator('.restricted-width')).toBeVisible()
 
-        // Check welcome text
-        await expect(page.locator('p').first()).toContainText(
+        // Check welcome text in the sidebar
+        await expect(page.locator('.sidebar')).toContainText(
             'Welcome to my online journal'
         )
     })
