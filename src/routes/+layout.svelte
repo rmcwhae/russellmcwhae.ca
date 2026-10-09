@@ -7,11 +7,6 @@
     import Footer from '#lib/components/base/Footer.svelte'
     import Loading from '#lib/components/base/Loading.svelte'
     import '../app.scss'
-    import '@fontsource/source-sans-3/400.css'
-    import '@fontsource/source-sans-3/400-italic.css'
-    import '@fontsource/source-sans-3/600.css'
-    import '@fontsource/source-sans-3/700.css'
-    import sourceSans400 from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url'
     /**
      * @typedef {Object} Props
      * @property {import('svelte').Snippet} [children]
@@ -44,7 +39,14 @@
 <svelte:head>
     <link
         rel="preload"
-        href={sourceSans400}
+        href="/fonts/schibsted-grotesk-latin-400-normal.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="preload"
+        href="/fonts/newsreader-latin-500-normal.woff2"
         as="font"
         type="font/woff2"
         crossorigin="anonymous"
@@ -63,7 +65,7 @@
     @use '../lib/scss/breakpoints' as *;
 
     .wrapper {
-        margin: 0 var(--s0);
+        margin: 0 clamp(1.25rem, 4vw, 2.75rem);
         display: grid;
         grid-template-columns:
             1fr
@@ -71,10 +73,6 @@
             1fr;
         min-height: 100%;
         grid-template-rows: auto 1fr auto;
-
-        @include for-tablet-portrait-up {
-            margin: 0 var(--s1);
-        }
     }
     :global(.wrapper > *) {
         grid-column: 2;

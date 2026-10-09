@@ -13,9 +13,12 @@
     })
 
     let nextMode = $derived($mode === 'dark' ? 'light' : 'dark')
+
     $effect(() => {
-        if (browser) {
+        if (browser && ($mode === 'light' || $mode === 'dark')) {
             window.document.body.setAttribute('data-theme', $mode)
+            const meta = document.querySelector('meta[name="color-scheme"]')
+            if (meta) meta.setAttribute('content', $mode)
         }
     })
 
@@ -24,84 +27,40 @@
     }
 </script>
 
-<div>
-    <!-- svelte-ignore a11y_label_has_associated_control -->
-    <label class="toggle-wrapper">
-        <div class={nextMode === 'dark' ? 'toggle disabled' : 'toggle enabled'}>
-            <div class="icons">
-                <IoMdSunny />
-                <IoIosMoon />
-            </div>
-            <input
-                id="toggle"
-                name="toggle"
-                type="checkbox"
-                onclick={changeTheme}
-            />
-        </div>
-    </label>
-</div>
+<button
+    type="button"
+    class="theme-toggle"
+    aria-label={nextMode === 'dark'
+        ? 'Switch to dark theme'
+        : 'Switch to light theme'}
+    onclick={changeTheme}
+>
+    {#if $mode === 'dark'}
+        <IoMdSunny />
+    {:else}
+        <IoIosMoon />
+    {/if}
+</button>
 
 <style>
-    .toggle-wrapper {
-        width: 44px;
-        display: block;
-        --transition: var(--duration) ease;
-    }
-
-    .toggle {
-        height: 22px;
-        width: 44px;
+    .theme-toggle {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        border: none;
+        background: none;
         color: var(--high-contrast-color);
-        border: 1px solid var(--high-contrast-color);
-        border-radius: 40px;
-        padding: 2px;
-        position: relative;
-        transition: background var(--transition);
         cursor: pointer;
     }
 
-    .toggle::before {
-        content: '';
-        display: block;
-        height: 16px;
-        width: 16px;
-        border-radius: 30px;
-        background: var(--high-contrast-color);
-        position: absolute;
-        z-index: 2;
-        transform: translate(0);
-        transition:
-            transform var(--transition),
-            background var(--transition);
+    .theme-toggle:hover {
+        color: var(--alpine);
     }
 
-    .toggle.enabled::before {
-        transform: translateX(22px);
-    }
-
-    .toggle input {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-    }
-
-    .toggle .icons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-    }
-
-    :global(.toggle .icons svg) {
-        fill: var(--high-contrast-color);
-        height: 18px;
-        width: inherit;
-        z-index: 0;
-    }
-    @media screen and (max-width: 1023px) {
-        .toggle-wrapper {
-            margin: 0 auto;
-        }
+    :global(.theme-toggle svg) {
+        width: 1.15rem;
+        height: 1.15rem;
     }
 </style>

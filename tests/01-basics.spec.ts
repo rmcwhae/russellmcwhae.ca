@@ -32,17 +32,13 @@ test.describe('Basic Navigation', () => {
         await page.goto('/calendars')
         await expect(page).toHaveURL('/calendars')
 
-        // Test Projects link
-        await page.goto('/projects')
-        await expect(page).toHaveURL('/projects')
-
         // Test Journal link
         await page.goto('/journal')
         await expect(page).toHaveURL('/journal')
 
-        // Test Micro link
-        await page.goto('/micro')
-        await expect(page).toHaveURL('/micro')
+        // Test About link
+        await page.goto('/about')
+        await expect(page).toHaveURL('/about')
     })
 
     test('logo link returns to homepage', async ({ page }) => {
@@ -69,28 +65,17 @@ test.describe('Basic Navigation', () => {
         await page.goto('/')
 
         // Check that mobile navigation links exist
+        await page.locator('.nav-toggle').click()
+
         await expect(
             page.locator('.nav-menu a[href="/photography"]')
         ).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/journal"]')).toBeVisible()
-        await expect(
-            page.locator('.nav-menu a[href="/projects"]')
-        ).toBeVisible()
-        await expect(
-            page.locator('.nav-menu a[href="/calendars"]')
-        ).toBeVisible()
-        await expect(page.locator('.nav-menu a[href="/micro"]')).toBeVisible()
+        await expect(page.locator('.nav-menu a[href="/about"]')).toBeVisible()
     })
 
     test('footer is present on all pages', async ({ page }) => {
-        const pages = [
-            '/',
-            '/photography',
-            '/journal',
-            '/projects',
-            '/calendars',
-            '/micro',
-        ]
+        const pages = ['/', '/photography', '/journal', '/about', '/calendars']
 
         for (const pagePath of pages) {
             await page.goto(pagePath)

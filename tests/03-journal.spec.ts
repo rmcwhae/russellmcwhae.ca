@@ -187,7 +187,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Get all journal entry dates
-        const entryDates = await page.locator('section .sub').allTextContents()
+        const entryDates = await page.locator('section time').allTextContents()
 
         if (entryDates.length > 1) {
             // Convert dates to Date objects for comparison

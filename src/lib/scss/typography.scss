@@ -1,44 +1,74 @@
 @use 'breakpoints' as *;
 
-// Links
+:focus-visible {
+    outline: 2px solid var(--alpine);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: light-dark(#d5e0d6, #3d5242);
+    color: var(--high-contrast-color);
+}
 
 a {
     color: var(--high-contrast-color);
-    transition: var(--duration);
+    transition: color var(--duration);
 }
+
 .button {
-    font-weight: 600;
-    font-size: 1rem;
-    padding: var(--s-1) var(--s1);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0;
     text-decoration: none;
-    border: 1px solid var(--light-grey);
-    border-radius: var(--circle-radius);
+    border: none;
+    border-radius: 0;
     box-shadow: none;
     color: var(--high-contrast-color);
+    background: none;
     position: relative;
 
     &:hover {
         box-shadow: none;
-        color: var(--text-color);
+        color: var(--alpine);
         text-decoration: none;
     }
 }
+
 main a {
     text-decoration: none;
     color: var(--high-contrast-color);
-    font-weight: 600;
+    font-weight: 500;
+    text-underline-offset: 0.18em;
 
     &:hover {
         text-decoration: underline;
-        text-decoration-thickness: 2px;
+        text-decoration-thickness: 1px;
     }
 }
+
+article a {
+    color: var(--alpine);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
 a.no-shadow,
 a.no-shadow:hover {
     box-shadow: none;
 }
 
-// Article styles
+.eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--medium-grey);
+    font-size-adjust: cap-height from-font;
+}
 
 article h2:not(:first-child) {
     margin-top: var(--s4) !important;
@@ -47,48 +77,47 @@ article h2:not(:first-child) {
 article h3 {
     margin-top: var(--s3) !important;
 }
-.micro h3 {
-    margin-top: var(--s-5) !important;
-    margin-bottom: 0 !important;
-}
-.micro :first-child {
-    margin-top: 0 !important;
-}
+
 @media (max-width: 1023px) {
     article {
         margin: 0 auto;
     }
 }
+
 blockquote {
     margin-left: 0;
     padding-left: var(--s1);
     margin-right: var(--s1);
-    border-left: 1px solid var(--light-grey);
-    font-size: 1.05rem;
+    border-left: 1px solid var(--stone);
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.5;
 }
+
 pre {
     padding: var(--s-1) var(--s1);
     border: 1px solid var(--light-grey);
     border-radius: var(--radius);
 }
+
 ul {
     list-style-type: disc;
 }
+
 article li p {
     margin: 0;
 }
+
 hr {
     height: 1px;
     padding: 0;
     border: none;
-    border-top: 1px dashed var(--light-grey);
+    border-top: 1px solid var(--light-grey);
     color: var(--light-grey);
     text-align: center;
     overflow: visible;
     margin: var(--s3) 0 !important;
 }
-
-// Headings
 
 h1 a,
 h2 a,
@@ -98,69 +127,83 @@ h5 a,
 h6 a {
     color: var(--high-contrast-color);
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    font-family: var(--font-serif);
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
+
 h1 {
-    font-size: 3.052rem;
-    line-height: 1;
+    font-size: 3.25rem;
+    line-height: 1.05;
     margin: var(--s-1) 0;
 }
+
 h2 {
-    font-size: 1.953rem;
-    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.15;
 }
+
 h3 {
-    font-weight: 600;
-    font-size: 1.536rem;
+    font-size: 1.35rem;
+    line-height: 1.25;
 }
+
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
+
+em,
+i {
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
 .big {
     @include for-tablet-landscape-up {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     @include for-desktop-up {
-        line-height: 1.2;
-        font-size: 1.563rem;
-    }
-}
-@include for-tablet-portrait-down {
-    // Via https://type-scale.com (Major Second scale for mobile; Major Third otherwise)
-    h1 {
-        font-size: 1.802rem;
-    }
-    h2 {
-        font-size: 1.602rem;
-    }
-    h3 {
-        font-size: 1.424rem;
-    }
-    h4 {
-        font-size: 1.266rem;
+        line-height: 1.5;
+        font-size: 1.25rem;
     }
 }
 
-// Other tags
+@include for-tablet-portrait-down {
+    h1 {
+        font-size: 2.15rem;
+    }
+    h2 {
+        font-size: 1.65rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
+}
 
 main ul {
     padding-left: var(--s1);
 }
+
 pre,
 code {
-    font-family: monospace, monospace;
+    font-family: ui-monospace, 'SFMono-Regular', monospace;
     white-space: pre-wrap;
-    font-size: 1rem;
+    font-size: 0.95rem;
     word-break: break-word;
 }
+
 sup {
     position: relative;
     top: -0.5em;
@@ -169,22 +212,23 @@ sup {
     vertical-align: baseline;
 }
 
-// Other classes
-
-.uppercase,
-article strong {
+.uppercase {
     text-transform: uppercase;
     font-size: 0.95rem;
     letter-spacing: 0.075em;
     font-weight: 600;
 }
+
 .nowrap {
     white-space: nowrap;
 }
+
 .footnote-backref {
     margin-left: var(--s-2);
 }
+
 .sub {
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
 }

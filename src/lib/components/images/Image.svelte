@@ -14,6 +14,7 @@
      * @property {any} customMetadata
      * @property {boolean} [lockedRatio]
      * @property {boolean} [photoswipe]
+     * @property {boolean} [priority]
      */
 
     /** @type {Props} */
@@ -24,6 +25,7 @@
         customMetadata,
         lockedRatio = false,
         photoswipe = false,
+        priority = false,
     } = $props()
 
     const src = $derived(buildURL(filePath, { width, height }))
@@ -42,7 +44,8 @@
             data-pswp-srcset={srcset}
         >
             <img
-                loading="lazy"
+                loading={priority ? 'eager' : 'lazy'}
+                fetchpriority={priority ? 'high' : 'auto'}
                 {sizes}
                 {srcset}
                 {src}
@@ -53,7 +56,8 @@
         </a>
     {:else}
         <img
-            loading="lazy"
+            loading={priority ? 'eager' : 'lazy'}
+            fetchpriority={priority ? 'high' : 'auto'}
             {sizes}
             {srcset}
             {src}

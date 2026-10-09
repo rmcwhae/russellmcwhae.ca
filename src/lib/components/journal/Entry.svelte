@@ -18,58 +18,94 @@
 
 <section class:featured>
     {#if date}
-        <div class="sub">
-            <Date {date} />
+        <div class="when">
+            <Date {date} compact />
         </div>
     {/if}
-    <h3>
-        <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-    </h3>
-    {#if description}
-        <p class:big={featured}>{@html preventLastTwoWordWrap(description)}</p>
-    {/if}
-    {#if category && readingTime}
-        <div class="sub">
-            <CategoryLink {category} />
-            &middot;
-            <span>{readingTime.text}</span>
-        </div>
+    <div class="body">
+        <h3>
+            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
+        </h3>
+        {#if description}
+            <p>{@html preventLastTwoWordWrap(description)}</p>
+        {/if}
+        {#if category}
+            <div class="meta">
+                <CategoryLink {category} />
+            </div>
+        {/if}
+    </div>
+    {#if readingTime}
+        <div class="time">{readingTime.text}</div>
     {/if}
 </section>
 
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    h3 {
-        margin: 0;
-        line-height: 1.2;
-    }
-    p {
-        margin: 0;
-    }
     section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-3);
-        padding-bottom: var(--s0);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.35rem 1rem;
+        padding: var(--s0) 0;
         border-bottom: 1px solid var(--light-grey);
     }
-    section.featured {
-        padding-top: var(--s0);
+
+    h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.25;
     }
 
-    @media (max-width: 640px) {
-        section {
-            padding-bottom: var(--s0);
-        }
+    h3 a {
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    h3 a:hover {
+        text-decoration: none;
+        color: var(--alpine);
+    }
+
+    p {
+        margin: 0.35rem 0 0;
+        color: var(--text-color);
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .when {
+        grid-column: 1 / -1;
+    }
+
+    .time {
+        color: var(--medium-grey);
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .meta {
+        margin-top: 0.35rem;
+        font-size: 0.8rem;
+    }
+
+    section.featured h3 {
+        font-size: 1.85rem;
     }
 
     @include for-tablet-portrait-up {
-        section.featured {
-            padding: var(--s4) 0;
+        section {
+            grid-template-columns: 8.5rem 1fr auto;
+            align-items: baseline;
+            gap: 0.25rem 1.5rem;
         }
-        .featured h3 {
-            font-size: 3.052rem;
+
+        .when {
+            grid-column: auto;
+        }
+
+        section.featured h3 {
+            font-size: 2.15rem;
         }
     }
 </style>

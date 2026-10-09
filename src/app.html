@@ -31,12 +31,12 @@
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta
             name="theme-color"
-            content="#fff"
+            content="#F7F6F2"
             media="(prefers-color-scheme: light)"
         />
         <meta
             name="theme-color"
-            content="#000000"
+            content="#191B1A"
             media="(prefers-color-scheme: dark)"
         />
 
@@ -45,6 +45,18 @@
 
         <!-- Light and dark modes -->
         <meta name="color-scheme" content="light dark" />
+        <script>
+            try {
+                var raw = localStorage.getItem('user-theme')
+                var mode = raw ? JSON.parse(raw) : ''
+                if (mode === 'light' || mode === 'dark') {
+                    var meta = document.querySelector(
+                        'meta[name="color-scheme"]'
+                    )
+                    if (meta) meta.setAttribute('content', mode)
+                }
+            } catch (e) {}
+        </script>
 
         %sveltekit.head%
     </head>

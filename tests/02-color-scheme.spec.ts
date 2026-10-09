@@ -34,9 +34,9 @@ test.describe('Color Scheme Toggle', () => {
 
         // Check that toggle exists (may be hidden on mobile)
         await expect(
-            page.locator('#desktop-switcher .toggle-wrapper')
+            page.locator('#desktop-switcher .theme-toggle')
         ).toBeAttached()
-        await expect(page.locator('#desktop-switcher #toggle')).toBeAttached()
+        await expect(page.locator('#desktop-switcher button')).toBeAttached()
     })
 
     test('color scheme toggle persists across page navigation', async ({
@@ -46,7 +46,7 @@ test.describe('Color Scheme Toggle', () => {
 
         // Check that toggle exists
         await expect(
-            page.locator('#desktop-switcher .toggle-wrapper')
+            page.locator('#desktop-switcher .theme-toggle')
         ).toBeAttached()
 
         // Navigate to another page
@@ -55,7 +55,7 @@ test.describe('Color Scheme Toggle', () => {
 
         // Check that toggle still exists
         await expect(
-            page.locator('#desktop-switcher .toggle-wrapper')
+            page.locator('#desktop-switcher .theme-toggle')
         ).toBeAttached()
     })
 
@@ -66,7 +66,7 @@ test.describe('Color Scheme Toggle', () => {
 
         // Check that mobile toggle exists
         await expect(
-            page.locator('#mobile-switcher .toggle-wrapper')
+            page.locator('#mobile-switcher .theme-toggle')
         ).toBeAttached()
     })
 
@@ -77,7 +77,7 @@ test.describe('Color Scheme Toggle', () => {
 
         // Check that toggle exists (may be hidden on mobile)
         await expect(
-            page.locator('#desktop-switcher .toggle-wrapper')
+            page.locator('#desktop-switcher .theme-toggle')
         ).toBeAttached()
     })
 
@@ -85,28 +85,23 @@ test.describe('Color Scheme Toggle', () => {
         await page.goto('/')
 
         // Check that toggle has proper structure (may be hidden on mobile)
-        await expect(page.locator('#desktop-switcher .toggle')).toBeAttached()
         await expect(
-            page.locator('#desktop-switcher .toggle .icons')
+            page.locator('#desktop-switcher .theme-toggle')
+        ).toBeAttached()
+        await expect(
+            page.locator('#desktop-switcher .theme-toggle svg')
         ).toBeAttached()
     })
 
     test('color scheme toggle exists on all pages', async ({ page }) => {
-        const pages = [
-            '/',
-            '/photography',
-            '/journal',
-            '/projects',
-            '/calendars',
-            '/micro',
-        ]
+        const pages = ['/', '/photography', '/journal', '/about', '/calendars']
 
         for (const pagePath of pages) {
             await page.goto(pagePath)
 
             // Check that toggle exists (may be hidden on mobile)
             await expect(
-                page.locator('#desktop-switcher .toggle-wrapper')
+                page.locator('#desktop-switcher .theme-toggle')
             ).toBeAttached()
         }
     })

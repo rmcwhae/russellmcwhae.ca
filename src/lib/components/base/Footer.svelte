@@ -4,103 +4,107 @@
     import IoIosMail from 'svelte-icons/io/IoIosMail.svelte'
 
     const year = new Date().getFullYear()
-
-    function topFunction() {
-        document.body.scrollTop = 0 // For Safari
-        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
-    }
 </script>
 
 <footer>
-    <div
-        class="up"
-        role="button"
-        tabindex="0"
-        aria-label="Scroll to top"
-        onclick={topFunction}
-        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && topFunction()}
-        title="Scroll to top"
-    ></div>
-    <div class="wrapper">
-        <div class="text">
+    <div class="meta">
+        <p>
             &copy; {year} Russell McWhae.
             <span class="nowrap">Made in Canada.</span>
-        </div>
+        </p>
         <div class="icons">
             <!-- svelte-ignore a11y_invalid_attribute -->
             <a
                 href="javascript:window.location.href=atob('bWFpbHRvOnJ1c3NlbGwubWN3aGFlQGdtYWlsLmNvbQ==')"
-                rel="noopener noreferrer nofollow"><IoIosMail /></a
+                rel="noopener noreferrer nofollow"
+                aria-label="Email"><IoIosMail /></a
             >
             <a
                 href="https://github.com/rmcwhae"
                 rel="noopener noreferrer nofollow"
-                target="_blank"><IoLogoGithub /></a
+                target="_blank"
+                aria-label="GitHub"><IoLogoGithub /></a
             >
             <a
                 href="https://www.linkedin.com/in/rmcwhae/"
                 rel="noopener noreferrer nofollow"
-                target="_blank"><IoLogoLinkedin /></a
+                target="_blank"
+                aria-label="LinkedIn"><IoLogoLinkedin /></a
             >
         </div>
     </div>
+    <nav aria-label="Footer">
+        <a href="/photography">Photography</a>
+        <a href="/journal">Journal</a>
+        <a href="/about">About</a>
+    </nav>
 </footer>
 
 <style>
     footer {
-        padding-top: var(--s0);
-        margin-top: var(--s4);
-        color: var(--high-contrast-color);
-        font-size: 0.9rem;
-        position: relative;
-    }
-    .text {
-        margin-bottom: var(--s0);
-    }
-    .wrapper {
-        /* border-top: 1px solid var(--light-grey); */
-        padding: var(--s0) 0;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
+        gap: var(--s1);
+        margin-top: var(--s4);
+        padding: var(--s2) 0 var(--s1);
+        border-top: 1px solid var(--light-grey);
+        color: var(--medium-grey);
+        font-size: 0.85rem;
     }
-    .up {
-        position: absolute;
-        left: calc(50% - 100px);
-        top: 0;
-        width: 200px;
-        height: 100%;
-        background: url('/assiniboine.png') center bottom no-repeat;
-        background-size: auto 100%;
-        cursor: pointer;
+
+    .meta {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-2);
     }
+
+    .meta p {
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        gap: var(--s1);
+    }
+
+    nav a {
+        color: var(--medium-grey);
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    nav a:hover {
+        color: var(--high-contrast-color);
+        text-decoration: none;
+    }
+
     a {
         color: var(--high-contrast-color);
     }
-    .icons a:not(:last-of-type) {
-        margin-right: var(--s-2);
+
+    .icons {
+        display: flex;
+        align-items: center;
     }
+
+    .icons a:not(:last-of-type) {
+        margin-right: var(--s-1);
+    }
+
     :global(.icons svg) {
-        height: 1.5rem !important;
+        height: 1.25rem !important;
         width: auto !important;
         display: inline;
     }
-    @media (max-width: 1023px) {
-        .wrapper {
-            display: block;
-            padding: var(--s0) 33% var(--s0) 0;
-        }
-        .text {
-            margin-bottom: var(--s-1);
-        }
-        .up {
-            width: 33%;
-            right: var(--s0);
-            left: inherit;
-            top: inherit;
-            bottom: 0;
-            background-size: 100px 56.75px;
-            background-position: right bottom;
+
+    @media (max-width: 700px) {
+        footer {
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 </style>

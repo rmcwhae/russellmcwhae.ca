@@ -64,11 +64,12 @@
     header {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: var(--s-1);
-        margin-bottom: var(--s1);
-        text-align: center;
-        padding-bottom: var(--s0);
+        width: min(100%, 70ch);
+        margin: 0 auto var(--s2);
+        text-align: left;
+        padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
     }
     h1,

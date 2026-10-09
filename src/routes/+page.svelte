@@ -1,227 +1,280 @@
 <script>
-    import Image from 'svimg/Image.svelte'
+    import Image from '#lib/components/images/Image.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
-    import Gallery from '#lib/components/images/Gallery.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
-    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
 
     let { data } = $props()
 
-    let images = $derived(data.images)
+    let images = $derived(Array.isArray(data.images) ? data.images : [])
     let latestPosts = $derived(data.latestPosts)
+    let hero = $derived(images[0])
+    let favourites = $derived(images.slice(1, 5))
 
-    const etCetera = [
+    const interests = [
         {
-            href: 'reading-list',
-            title: 'Reading List',
-            description: 'Books I have read',
+            href: '/calendars',
+            title: 'Calendars',
+            description: 'Printed photo calendars from a ten-year run.',
         },
         {
-            href: 'uses',
+            href: '/reading-list',
+            title: 'Reading list',
+            description: 'Books I have read.',
+        },
+        {
+            href: '/uses',
             title: 'What I use',
-            description: 'Tools used in my work',
-        },
-        {
-            href: 'videos',
-            title: 'Outdoor Videos',
-            description: 'A list of my favourite outdoor videos',
-        },
-        {
-            href: 'ski-footage',
-            title: 'Skiing GoPro Footage',
-            description: 'Some backcountry skiing GoPro footage',
+            description: 'Tools used in my work.',
         },
     ]
 </script>
 
 <SEO />
 
-<div class="home restricted-width">
-    <div class="hero border-bottom">
-        <div class="mb-2">
-            <h1>Hi, I’m Russell.</h1>
-            <p class="big mt-2 mb-2 char-limit">
+<div class="home">
+    <section class="hero">
+        <div class="intro">
+            <p class="eyebrow">Developer / Photographer / Writer</p>
+            <h1>I build for the web<br />and head outside.</h1>
+            <p class="lede">
                 I’m a web developer with a background in structural engineering
-                and biomedical research who likes spending <span class="nowrap"
-                    >time outside.</span
-                >
+                and biomedical research who likes spending time outside.
             </p>
-            <Button href="#about" text="About me" right />
+            <span class="rule"></span>
         </div>
+        {#if hero}
+            <a class="photo-link" href="/photography">
+                <Image
+                    filePath={hero.filePath}
+                    width={hero.width}
+                    height={hero.height}
+                    customMetadata={hero.customMetadata}
+                    lockedRatio
+                    priority
+                />
+            </a>
+        {/if}
+    </section>
 
-        <div class="portrait">
-            <Image src="/russell.png" alt="Russell portrait" />
+    {#if favourites.length}
+        <section class="band">
+            <div class="section-label">
+                <h2 class="eyebrow">Favourite moments</h2>
+                <Button href="/photography" text="View all photography" right />
+            </div>
+            <div class="moments" style:--count={favourites.length}>
+                {#each favourites as image (image.filePath)}
+                    <a class="photo-link" href="/photography">
+                        <Image
+                            filePath={image.filePath}
+                            width={image.width}
+                            height={image.height}
+                            customMetadata={image.customMetadata}
+                            lockedRatio
+                        />
+                    </a>
+                {/each}
+            </div>
+        </section>
+    {/if}
+
+    <section class="band split">
+        <div class="about">
+            <p class="eyebrow">About</p>
+            <h2>
+                Engineer, researcher, photographer, and lifelong outdoor
+                enthusiast.
+            </h2>
+            <p>
+                Growing up in Calgary, I spent time mountain biking, hiking, and
+                skiing in the Canadian Rockies. I trained as a structural
+                engineer, completed an MSc in biomedical engineering, and now
+                work as a web developer.
+            </p>
+            <Button href="/about" text="Learn more about me" right />
         </div>
-    </div>
-
-    <div class="boxes">
         <div>
-            <a href="/photography" class="hover-underline-animation"
-                ><span
-                    >see my <h3>photos</h3></span
-                ></a
-            >
+            <div class="section-label">
+                <h2 class="eyebrow">Recent journal entries</h2>
+                <Button href="/journal" text="View all" right />
+            </div>
+            <div class="journal-list">
+                <JournalEntrySet posts={latestPosts} />
+            </div>
         </div>
-        <div>
-            <a href="/calendars" class="hover-underline-animation"
-                ><span
-                    >preview my <h3>calendars</h3></span
-                ></a
-            >
-        </div>
-        <div>
-            <a href="/projects" class="hover-underline-animation"
-                ><span
-                    >check out my <h3>projects</h3></span
-                ></a
-            >
-        </div>
-        <div>
-            <a href="/journal" class="hover-underline-animation"
-                ><span
-                    >read my <h3>journal</h3></span
-                ></a
-            >
-        </div>
-    </div>
+    </section>
 
-    <h2>Photos</h2>
-
-    <p class="mb-3">Here are a few of my all-time favourites.</p>
-</div>
-
-<Gallery {images} />
-
-<div class="mt-3 mb-5">
-    <ButtonSet>
-        <Button href="photography" text="Portfolio" right />
-        <Button href="events" text="Events" right />
-    </ButtonSet>
-</div>
-
-<div class="restricted-width">
-    <h2 id="about">About Me</h2>
-
-    <div class="two-col-grid">
-        <div class="flow">
-            <p>
-                Growing up in Calgary, Alberta, Canada I spent time mountain
-                biking, hiking and downhill skiing in the Canadian Rocky
-                Mountains. My interest in outdoor pursuits has continually
-                increased and now includes backcountry skiing and basic
-                mountaineering. As my outdoor experience grew, I began to
-                venture further into the backcountry and started bringing a
-                camera to share my experiences in hard-to-reach places. This has
-                become my preferred style of photography: finding awe-inspiring
-                landscapes, frequently far and high in the mountains.
-            </p>
-            <p>
-                Similar to photography, graphic design—especially web
-                design—requires a keen technical understanding. Coding has
-                always come naturally to me, but it is the combination of the
-                logic of coding and the creative side of design that makes the
-                web a rewarding medium to design for. I cut my teeth back in the
-                days of Internet Explorer 6 and have kept up with the evolution
-                of the web over the years.
-            </p>
-        </div>
-        <div class="flow">
-            <p>
-                Photography and design are complementary skills. Design
-                principles provide an expanded tool kit to use in photography.
-                Similarly, being able to take photos allows me to readily
-                incorporate them into my design work.
-            </p>
-            <p>
-                Professionally, I have had a few different careers. In 2011, I
-                graduated from civil engineering at the University of Alberta
-                and worked as a structural engineer-in-training for just over
-                three years. In early 2019, I earned an MSc. in biomedical
-                engineering from the University of Calgary. My thesis, “<a
-                    href="https://prism.ucalgary.ca/handle/1880/109915"
-                    rel="noopener noreferrer nofollow"
-                    target="_blank"
-                    >Intercellular Gap Junction Communication in the Bovine
-                    Annulus Fibrosus</a
-                >,” investigated cell-cell signaling in the intervertebral disc.
-            </p>
-            <p>
-                Wanting to further my coding skills, I took the <a
-                    href="https://www.lighthouselabs.ca"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow">Lighthouse Labs</a
-                > web development boot camp course from July to October 2019. I now
-                work as a web developer, specializing in front-end work.
-            </p>
-        </div>
-    </div>
-
-    <h2 class="mt-5 mb-3">Latest Journal Entries</h2>
-
-    <JournalEntrySet posts={latestPosts} />
-
-    <div class="mt-3 mb-5">
-        <ButtonSet>
-            <Button href="/journal" text="All entries" right />
-        </ButtonSet>
-    </div>
-
-    <h2>Et Cetera</h2>
-
-    <p class="mb-3">A few bits of content that had nowhere else to go.</p>
-
-    <JournalEntrySet posts={etCetera} />
+    <section class="band">
+        <h2 class="eyebrow">Other interests</h2>
+        <ul class="interests">
+            {#each interests as interest (interest.href)}
+                <li>
+                    <a href={interest.href}>
+                        <h3>{interest.title}</h3>
+                        <p>{interest.description}</p>
+                    </a>
+                </li>
+            {/each}
+        </ul>
+    </section>
 </div>
 
 <style lang="scss">
     @use '../lib/scss/breakpoints' as *;
+
     .home {
-        margin-top: var(--s1);
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
     }
+
     .hero {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--s1);
+        gap: var(--s2);
+        align-items: end;
+    }
 
-        @include for-tablet-portrait-down {
-            grid-template-columns: 2fr 1fr;
-        }
-        @include for-phone-only {
-            grid-template-columns: 1fr;
-        }
+    .intro {
+        max-width: 38rem;
     }
-    .portrait {
-        margin-top: auto;
-        @include for-tablet-portrait-down {
-            width: 50vw;
-        }
-        @include for-phone-only {
-            margin-left: auto;
-            margin-top: -100px;
-        }
+
+    h1 {
+        margin: 0.75rem 0 1rem;
+        font-size: clamp(2.35rem, 4.4vw, 4.15rem);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
     }
-    .boxes {
-        margin: var(--s4) auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--s0);
+
+    .lede {
+        max-width: 38ch;
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.55;
     }
-    .boxes a {
-        text-decoration: none;
-        font-weight: 400;
+
+    .rule {
         display: block;
-        padding: var(--s-1) var(--s3) var(--s-3) 0;
+        width: 2.75rem;
+        height: 2px;
+        margin-top: 1.35rem;
+        background: var(--alpine);
     }
 
-    .boxes a h3 {
-        margin-bottom: 0;
-        line-height: 1.1;
+    .band {
+        margin-top: var(--s4);
+        padding-top: var(--s2);
+        border-top: 1px solid var(--light-grey);
     }
-    .boxes a:hover {
+
+    .section-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: var(--s1);
+    }
+
+    @include for-phone-only {
+        .section-label {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+    }
+
+    .section-label :global(h2) {
+        margin: 0;
+    }
+
+    .moments {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .photo-link {
+        display: block;
+        min-width: 0;
+        color: inherit;
+    }
+
+    .photo-link:hover {
         text-decoration: none;
+    }
+
+    .split {
+        display: grid;
+        gap: var(--s3);
+    }
+
+    .about h2 {
+        margin: 0.6rem 0 1rem;
+        max-width: 16ch;
+    }
+
+    .about p:not(.eyebrow) {
+        max-width: 42ch;
+        margin: 0 0 1.25rem;
+    }
+
+    .journal-list {
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .interests {
+        list-style: none;
+        margin: var(--s1) 0 0;
+        padding: 0;
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .interests li {
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .interests a {
+        display: grid;
+        gap: 0.2rem;
+        padding: 0.9rem 0;
+        text-decoration: none;
+    }
+
+    .interests a:hover {
+        text-decoration: none;
+    }
+
+    .interests h3 {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+
+    .interests a:hover h3 {
+        color: var(--alpine);
+    }
+
+    .interests p {
+        margin: 0;
+        color: var(--text-color);
+        font-weight: 400;
+    }
+
+    @include for-tablet-landscape-up {
+        .hero {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: var(--s3);
+        }
+
+        .moments {
+            grid-template-columns: repeat(var(--count, 4), minmax(0, 1fr));
+        }
+
+        .split {
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+            gap: var(--s4);
+        }
     }
 </style>

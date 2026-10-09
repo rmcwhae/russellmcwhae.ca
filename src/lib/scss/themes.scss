@@ -1,32 +1,29 @@
-@mixin light-theme {
-    --background-color: white;
-    --background-color-transparent: rgba(255, 255, 255, 0.8);
-    --text-color: rgb(100, 100, 100);
-    --high-contrast-color: black;
-    --light-grey: rgb(218, 218, 218);
-    --medium-grey: #888;
-}
-
-@mixin dark-theme {
-    --background-color: black;
-    --background-color-transparent: rgba(0, 0, 0, 0.8);
-    --high-contrast-color: white;
-    --text-color: rgb(172, 172, 172);
-    --light-grey: rgb(70, 70, 70);
-    --medium-grey: #999;
-}
-
 :root {
-    @include light-theme;
-    @media (prefers-color-scheme: dark) {
-        @include dark-theme;
+    color-scheme: light dark;
+
+    --paper: #f7f6f2;
+    --charcoal: #191b1a;
+    --alpine: #54705b;
+    --stone: light-dark(#d9d9d0, #3a3d3a);
+    --ink: light-dark(#3c3e3c, #c8c6be);
+
+    --background-color: light-dark(var(--paper), var(--charcoal));
+    --background-color-transparent: light-dark(
+        rgb(247 246 242 / 88%),
+        rgb(25 27 26 / 88%)
+    );
+    --high-contrast-color: light-dark(var(--charcoal), var(--paper));
+    --text-color: var(--ink);
+    --light-grey: var(--stone);
+    --medium-grey: light-dark(#5e615c, #a7aaa2);
+
+    accent-color: var(--alpine);
+
+    &:has(> head > meta[name='color-scheme'][content='dark']) {
+        color-scheme: dark;
     }
-}
 
-html body[data-theme='dark'] {
-    @include dark-theme;
-}
-
-html body[data-theme='light'] {
-    @include light-theme;
+    &:has(> head > meta[name='color-scheme'][content='light']) {
+        color-scheme: light;
+    }
 }

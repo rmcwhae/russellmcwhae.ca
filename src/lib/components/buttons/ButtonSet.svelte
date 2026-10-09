@@ -15,7 +15,7 @@
 <style>
     div {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         gap: var(--s0);
     }
 </style>
