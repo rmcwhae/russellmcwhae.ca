@@ -180,7 +180,7 @@
                 as I see it through photographs and words.
             </p>
 
-            <Button href="/about" text="Learn more about me" right />
+            <Button href="/about" text="More about me" right />
         </div>
         <div class="interests-col">
             <h2 class="eyebrow">Other interests</h2>
@@ -440,6 +440,9 @@
     .recent-entry {
         display: flex;
         flex-direction: column;
+        align-self: stretch;
+        width: 100%;
+        margin-inline: 0;
         gap: 0.35rem;
         padding-bottom: var(--s0);
         border-bottom: 1px solid var(--light-grey);
