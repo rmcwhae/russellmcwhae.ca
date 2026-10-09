@@ -6,7 +6,6 @@
     import Nav from '#lib/components/nav/Nav.svelte'
     import Footer from '#lib/components/base/Footer.svelte'
     import Loading from '#lib/components/base/Loading.svelte'
-    import Logo from '#lib/components/icons/Logo.svelte'
     import '../app.scss'
     /**
      * @typedef {Object} Props
@@ -58,10 +57,6 @@
 
 <Loading />
 
-<div class="mark" class:is-home={isHome} aria-hidden="true">
-    <Logo height="clamp(8.8rem, 27.2vw, 17.6rem)" />
-</div>
-
 <main class="wrapper" class:is-home={isHome}>
     <Nav />
     {@render children?.()}
@@ -70,23 +65,6 @@
 
 <style lang="scss">
     @use '../lib/scss/breakpoints' as *;
-
-    .mark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        transform: translate(-6%, -8%);
-        color: var(--high-contrast-color);
-        opacity: 0.05;
-        line-height: 0;
-        pointer-events: none;
-        user-select: none;
-
-        &.is-home {
-            display: none;
-        }
-    }
 
     .wrapper.is-home {
         grid-template-rows: auto auto;
