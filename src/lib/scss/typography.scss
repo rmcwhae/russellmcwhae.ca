@@ -48,6 +48,22 @@ main a {
     }
 }
 
+a.button {
+    color: var(--medium-grey);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 4px;
+
+    &:hover {
+        color: var(--alpine);
+        text-decoration: none;
+    }
+}
+
 article a {
     color: var(--high-contrast-color);
     text-decoration: underline;

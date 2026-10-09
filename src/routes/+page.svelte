@@ -464,6 +464,7 @@
     }
 
     .journal-recent :global(a.button) {
+        align-self: flex-start;
         margin-top: var(--s1);
     }
 
