@@ -81,8 +81,12 @@
                 <Button href="/photography" text="View all photography" right />
             </div>
             <div class="moments" id="home-favourites">
-                {#each favourites as image (image.filePath)}
-                    <figure class="photo">
+                {#each favourites as image, i (image.filePath)}
+                    <figure
+                        class="photo"
+                        class:lead={i === 0}
+                        class:tall={i === 1}
+                    >
                         <Image
                             filePath={image.filePath}
                             width={image.width}
@@ -93,7 +97,12 @@
                         />
                         {#if image.customMetadata?.caption}
                             <figcaption class="caption">
-                                {image.customMetadata.caption}
+                                <span class="index"
+                                    >{String(i + 1).padStart(2, '0')}</span
+                                >
+                                <span class="caption-text"
+                                    >{image.customMetadata.caption}</span
+                                >
                             </figcaption>
                         {/if}
                     </figure>
@@ -157,12 +166,12 @@
         <div class="about-copy">
             <p>
                 My work has moved through structural engineering, biomedical
-                research, and web development. Across those fields, I've always
+                research, and web development. Across those fields, I’ve always
                 enjoyed the same process: understanding how things work, then
                 making them work better.
             </p>
             <p>
-                Away from the computer, you'll find me exploring the natural
+                Away from the computer, you’ll find me exploring the natural
                 world on foot, skis, or a bike, with my camera along for the
                 journey.
             </p>
@@ -322,6 +331,9 @@
     }
 
     .caption {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
         margin: 0.5rem 0 0;
         color: var(--text-color);
         font-size: 0.85rem;
@@ -329,10 +341,35 @@
         line-height: 1.4;
     }
 
+    .index {
+        flex: none;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.08em;
+        opacity: 0.7;
+    }
+
     .photo {
         display: block;
+        position: relative;
         min-width: 0;
         margin: 0;
+    }
+
+    .photo :global(.lockedRatio) {
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .photo :global(img) {
+            transition: transform 600ms ease;
+        }
+
+        .photo:hover :global(img) {
+            transform: scale(1.03);
+        }
     }
 
     .photo :global(a),
@@ -473,12 +510,72 @@
     @include for-tablet-portrait-up {
         .moments {
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-auto-rows: clamp(10rem, 22vw, 15rem);
+        }
+
+        .photo {
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .photo.lead {
+            grid-column: 1 / -1;
+            grid-row: span 2;
+        }
+
+        .photo.tall {
+            grid-row: span 2;
+        }
+
+        /* Let the grid cell set the size instead of the 3:2 ratio */
+        .photo :global(.lockedRatio) {
+            height: 100%;
+        }
+
+        .photo :global(.lockedRatio::after) {
+            aspect-ratio: auto;
+        }
+
+        .caption {
+            position: absolute;
+            inset: auto 0 0;
+            margin: 0;
+            padding: 2.5rem 1rem 0.85rem;
+            color: var(--paper);
+            background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+            pointer-events: none;
+        }
+
+        .caption-text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .lead .caption {
+            padding: 3.5rem 1.25rem 1.1rem;
+        }
+
+        .lead .caption-text {
+            font-size: 1.15rem;
         }
     }
 
     @include for-tablet-landscape-up {
         .moments {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(2, clamp(12rem, 17vw, 17rem));
+            grid-auto-rows: auto;
+        }
+
+        .photo.lead {
+            grid-column: 1;
+            grid-row: 1 / -1;
+        }
+
+        .photo.tall {
+            grid-column: 2;
+            grid-row: 1 / -1;
         }
 
         .journal-grid {
