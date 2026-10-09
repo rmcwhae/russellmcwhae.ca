@@ -14,14 +14,18 @@ test.describe('Photos and Events', () => {
         await expect(page.locator('#gallery')).toBeVisible()
     })
 
-    test('photography page has link to events', async ({ page }) => {
+    test('photography page has links to events and calendars', async ({
+        page,
+    }) => {
         await page.goto('/photography')
 
-        // Check that "All events" button is present
-        await expect(page.locator('a[href="/events"]')).toBeVisible()
-        await expect(page.locator('a[href="/events"]')).toContainText(
-            'All events'
-        )
+        const expeditions = page.locator('a[href="/events"]')
+        await expect(expeditions).toBeVisible()
+        await expect(expeditions).toContainText('Field Expeditions')
+
+        const calendars = page.locator('a[href="/calendars"]')
+        await expect(calendars).toBeVisible()
+        await expect(calendars).toContainText('Looking for Calendars?')
     })
 
     test('events page loads correctly', async ({ page }) => {

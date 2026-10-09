@@ -2,13 +2,16 @@
     import Image from '#lib/components/images/Image.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
-    import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
+    import JournalEntry from '#lib/components/journal/Entry.svelte'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
+    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
 
     let { data } = $props()
 
     let images = $derived(Array.isArray(data.images) ? data.images : [])
-    let latestPosts = $derived(data.latestPosts)
+    let latestPosts = $derived(data.latestPosts ?? [])
+    let latestPost = $derived(latestPosts[0])
+    let recentPosts = $derived(latestPosts.slice(1, 4))
     let favourites = $derived(images.slice(0, 4))
 
     $effect(() => {
@@ -29,11 +32,6 @@
     })
 
     const interests = [
-        {
-            href: '/calendars',
-            title: 'Calendars',
-            description: 'Printed photo calendars from a ten-year run.',
-        },
         {
             href: '/reading-list',
             title: 'Reading list',
@@ -105,6 +103,39 @@
         </section>
     {/if}
 
+    {#if latestPost}
+        <section class="band">
+            <h2 class="eyebrow journal-heading">Journal</h2>
+            <div class="journal-grid">
+                <div class="journal-featured">
+                    <JournalEntry post={latestPost} featured />
+                </div>
+                <div class="journal-recent">
+                    <p class="eyebrow">Recent entries</p>
+                    {#each recentPosts as post (post.href)}
+                        <article class="recent-entry">
+                            <h3 class="recent-title">
+                                <a href={post.href}
+                                    >{@html preventLastTwoWordWrap(
+                                        post.title
+                                    )}</a
+                                >
+                            </h3>
+                            {#if post.description}
+                                <p>
+                                    {@html preventLastTwoWordWrap(
+                                        post.description
+                                    )}
+                                </p>
+                            {/if}
+                        </article>
+                    {/each}
+                    <Button href="/journal" text="View all" right />
+                </div>
+            </div>
+        </section>
+    {/if}
+
     <section class="band split">
         <div class="about">
             <p class="eyebrow">About</p>
@@ -121,28 +152,18 @@
             <Button href="/about" text="Learn more about me" right />
         </div>
         <div>
-            <div class="section-label">
-                <h2 class="eyebrow">Recent journal entries</h2>
-                <Button href="/journal" text="View all" right />
-            </div>
-            <div class="journal-list">
-                <JournalEntrySet posts={latestPosts} />
-            </div>
+            <h2 class="eyebrow">Other interests</h2>
+            <ul class="interests">
+                {#each interests as interest (interest.href)}
+                    <li>
+                        <a href={interest.href}>
+                            <h3>{interest.title}</h3>
+                            <p>{interest.description}</p>
+                        </a>
+                    </li>
+                {/each}
+            </ul>
         </div>
-    </section>
-
-    <section class="band">
-        <h2 class="eyebrow">Other interests</h2>
-        <ul class="interests">
-            {#each interests as interest (interest.href)}
-                <li>
-                    <a href={interest.href}>
-                        <h3>{interest.title}</h3>
-                        <p>{interest.description}</p>
-                    </a>
-                </li>
-            {/each}
-        </ul>
     </section>
 </div>
 
@@ -313,8 +334,57 @@
         margin: 0 0 1.25rem;
     }
 
-    .journal-list {
-        border-top: 1px solid var(--light-grey);
+    .journal-heading {
+        margin: 0 0 var(--s1);
+    }
+
+    .journal-grid {
+        display: grid;
+        gap: var(--s2);
+    }
+
+    .journal-featured,
+    .journal-recent {
+        min-width: 0;
+    }
+
+    .journal-recent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .journal-recent .eyebrow {
+        margin: 0 0 var(--s0);
+    }
+
+    .recent-entry {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+
+        & + & {
+            padding-top: var(--s0);
+        }
+    }
+
+    .recent-title {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.25;
+    }
+
+    .recent-entry p {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.45;
+    }
+
+    .journal-recent :global(a.button) {
+        margin-top: var(--s1);
     }
 
     .interests {
@@ -368,8 +438,19 @@
             grid-template-columns: repeat(4, minmax(0, 1fr));
         }
 
+        .journal-grid {
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: var(--s3);
+            align-items: start;
+        }
+
+        .journal-recent {
+            border-left: 1px solid var(--light-grey);
+            padding-left: var(--s2);
+        }
+
         .split {
-            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
             gap: var(--s4);
         }
     }
