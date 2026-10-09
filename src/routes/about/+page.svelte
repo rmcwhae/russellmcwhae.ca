@@ -9,7 +9,6 @@
 
 <article class="about">
     <header>
-        <p class="eyebrow">About</p>
         <h1>
             Developer, photographer, writer, and lifelong outdoor enthusiast.
         </h1>
@@ -80,7 +79,7 @@
 
     h1 {
         max-width: 14ch;
-        margin-top: 0.6rem;
+        margin-top: 0;
         font-size: clamp(2.2rem, 4vw, 3.4rem);
     }
 
