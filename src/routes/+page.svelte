@@ -3,12 +3,30 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
+    import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
 
     let { data } = $props()
 
     let images = $derived(Array.isArray(data.images) ? data.images : [])
     let latestPosts = $derived(data.latestPosts)
     let favourites = $derived(images.slice(0, 4))
+
+    $effect(() => {
+        if (!favourites.length) return
+
+        let lightbox
+        let cancelled = false
+
+        mountPhotoSwipe('#home-favourites').then((instance) => {
+            if (cancelled) instance.destroy()
+            else lightbox = instance
+        })
+
+        return () => {
+            cancelled = true
+            lightbox?.destroy()
+        }
+    })
 
     const interests = [
         {
@@ -65,22 +83,23 @@
                 <h2 class="eyebrow">Favourite Landscapes</h2>
                 <Button href="/photography" text="View all photography" right />
             </div>
-            <div class="moments">
+            <div class="moments" id="home-favourites">
                 {#each favourites as image (image.filePath)}
-                    <a class="photo-link" href="/photography">
+                    <figure class="photo">
                         <Image
                             filePath={image.filePath}
                             width={image.width}
                             height={image.height}
                             customMetadata={image.customMetadata}
                             lockedRatio
+                            photoswipe
                         />
                         {#if image.customMetadata?.caption}
-                            <p class="caption">
+                            <figcaption class="caption">
                                 {image.customMetadata.caption}
-                            </p>
+                            </figcaption>
                         {/if}
-                    </a>
+                    </figure>
                 {/each}
             </div>
         </section>
@@ -267,14 +286,16 @@
         line-height: 1.4;
     }
 
-    .photo-link {
+    .photo {
         display: block;
         min-width: 0;
-        color: inherit;
+        margin: 0;
     }
 
-    .photo-link:hover {
+    .photo :global(a),
+    .photo :global(a:hover) {
         text-decoration: none;
+        cursor: zoom-in;
     }
 
     .split {

@@ -87,6 +87,11 @@
         aspect-ratio: 3 / 2;
     }
 
+    .lockedRatio a {
+        position: absolute;
+        inset: 0;
+    }
+
     /* Image is positioned absolutely relative to the parent element */
     .lockedRatio img {
         /* Image should match parent box size */

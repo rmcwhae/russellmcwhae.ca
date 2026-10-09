@@ -1,0 +1,16 @@
+.pswp__custom-caption {
+    background: var(--background-color-transparent);
+    color: var(--high-contrast-color);
+    max-width: 400px;
+    padding: var(--s-4) var(--s0);
+    border-radius: var(--radius);
+    position: absolute;
+    left: 50%;
+    bottom: var(--s0);
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.pswp__custom-caption.no-caption {
+    display: none;
+}
