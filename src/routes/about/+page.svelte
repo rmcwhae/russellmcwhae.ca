@@ -1,5 +1,18 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
+
+    const interests = [
+        {
+            href: '/reading-list',
+            title: 'Reading list',
+            description: 'Books I have read.',
+        },
+        {
+            href: '/uses',
+            title: 'What I use',
+            description: 'Tools used in my work.',
+        },
+    ]
 </script>
 
 <SEO
@@ -7,13 +20,14 @@
     description="Russell McWhae is a web developer, photographer, and outdoor enthusiast based in Calgary."
 />
 
-<article class="about">
-    <header>
-        <h1>
-            Developer, photographer, writer, and lifelong outdoor enthusiast.
-        </h1>
-    </header>
-    <div class="char-limit flow">
+<div class="about-layout">
+    <article class="about">
+        <header>
+            <h1>
+                Developer, photographer, writer, and lifelong outdoor enthusiast.
+            </h1>
+        </header>
+        <div class="char-limit flow">
         <p>
             I grew up in Calgary, Alberta, exploring the Canadian Rocky
             Mountains. Those early adventures sparked a lifelong passion for the
@@ -70,9 +84,36 @@
             quiet corner of a busy internet.
         </p>
     </div>
-</article>
+    </article>
+    <aside>
+        <h2 class="eyebrow">Other interests</h2>
+        <ul class="interests">
+            {#each interests as interest (interest.href)}
+                <li>
+                    <a href={interest.href}>
+                        <h3>{interest.title}</h3>
+                        <p>{interest.description}</p>
+                    </a>
+                </li>
+            {/each}
+        </ul>
+    </aside>
+</div>
 
-<style>
+<style lang="scss">
+    @use '../../lib/scss/breakpoints' as *;
+
+    .about-layout {
+        display: grid;
+        gap: var(--s3);
+        align-items: start;
+    }
+
+    .about {
+        margin: 0;
+        min-width: 0;
+    }
+
     header {
         margin-bottom: var(--s2);
     }
@@ -85,5 +126,56 @@
 
     .char-limit {
         max-width: 68ch;
+    }
+
+    aside {
+        min-width: 0;
+    }
+
+    .interests {
+        list-style: none;
+        margin: var(--s1) 0 0;
+        padding: 0;
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .interests li {
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .interests a {
+        display: grid;
+        gap: 0.2rem;
+        padding: 0.9rem 0;
+        text-decoration: none;
+    }
+
+    .interests a:hover {
+        text-decoration: none;
+    }
+
+    .interests h3 {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+
+    .interests a:hover h3 {
+        color: var(--alpine);
+    }
+
+    .interests p {
+        margin: 0;
+        color: var(--text-color);
+        font-weight: 400;
+    }
+
+    @include for-tablet-landscape-up {
+        .about-layout {
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: var(--s4);
+        }
     }
 </style>

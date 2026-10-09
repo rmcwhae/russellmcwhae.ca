@@ -21,9 +21,7 @@
     }
 
     header {
-        padding-bottom: var(--s1);
         margin-bottom: var(--s2);
-        border-bottom: 1px solid var(--light-grey);
     }
 
     h1 {

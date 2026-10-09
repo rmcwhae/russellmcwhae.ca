@@ -3,8 +3,6 @@ title: What I Use
 layout: page
 ---
 
-## Intro
-
 These are the tools I use in my professional and creative workflows. Inspired by [uses.tech](https://uses.tech) via the [Syntax](https://syntax.fm/) podcast.
 
 ## Software
@@ -13,16 +11,13 @@ macOS all the way!
 
 ### Editor and Terminal
 
-- [VS Code](https://code.visualstudio.com/) with the fabulous [JetBrains Mono](https://www.jetbrains.com/lp/mono/) typeface.
+- VS Code and Cursor
 - Previously, I used [Coda 2](https://panic.com/coda/) for quite a few years.
 - [Oh My Zsh](https://ohmyz.sh/).
 
 ### Desktop Apps
 
-- [Affinity Designer](https://affinity.serif.com/en-us/designer/) for vector work
-- [Postman](https://www.postman.com/) for RESTful API design.
 - [TablePlus](https://tableplus.com/) for database visualization. After trying many such apps over the years, this is by far my favourite.
-- [Adobe Creative Cloud](https://www.adobe.com/ca/creativecloud.html) Photography plan, including Lightroom Classic for photo management
 - [Starry Landscape Stacker](https://sites.google.com/site/starrylandscapestacker/home) for photo astro-stacking
 - [Typora](https://typora.io/), a delightfully minimal Markdown editor
 
@@ -32,10 +27,8 @@ A few useful apps that make macOS a bit more polished:
 
 - [BetterDisplay](https://github.com/waydabber/BetterDisplay) to change the brightness and volume of third-party external displays over DDC
 - [Hand Mirror](https://handmirror.app/) to test the webcam before online meetings
-- [Karabiner-Elements](https://karabiner-elements.pqrs.org/) to customize my mechanical keyboard
 - [Rocket Typist](https://www.witt-software.com/rockettypist/) with useful expansions like "ll30" to "http://localhost:3000" and "ddate" for the current date
 - [Maccy](https://maccy.app/) for clipboard management
-- [Backblaze](https://www.backblaze.com/) for online backups
 
 ## Hardware
 
@@ -43,8 +36,9 @@ A few useful apps that make macOS a bit more polished:
 - Previously, a 2019 MacBook Pro 16-inch (8-core Intel Core i9-9880H, 32 GB 2667 MHz DDR4 RAM, AMD Radeon Pro 5500M 4 GB, 1 TB SSD)
 - Before that, a Late 2013 15-inch MacBook Pro with Retina Display (4-core Intel Core i7-4850HQ, 16 GB 1600 MHz DDR3L RAM, NVIDIA GeForce GT 750M 2GB, 512 GB SSD)
 - Before that, a 15-inch mid-2007 MacBook Pro (Intel Core 2 Duo T7500, 4 GB 667MHz DDR2 RAM, NVIDIA GeForce 8600M GT 128 MB, aftermarket OCZ 120 GB SSD). The GPU in this laptop failed, requiring a logic-board replacement.
-- [27-inch LG 27UD68-W 4K Display](/journal/the-upgrade-to-4k)
-- [Ducky One 2 SF](https://www.duckychannel.com.tw/en/Ducky-One2-SF) RGB White mechanical keyboard with Cherry MX Brown switches. Being relatively new to mechanical keyboards, they really are game-changers.
+- 27-inch MSI PRO MAX 271UPXW12G 4K OLED display. The deep blacks are a treat!
+- [27-inch LG 27MDKL-B 5K display](/journal/the-upgrade-to-5k)
+- [27-inch LG 27UD68-W 4K display](/journal/the-upgrade-to-4k)
 - Magic Trackpad 2
 - Pulsar Xlite V2 wireless mouse
 - Desktop PC: NZXT H1 V2 case, Intel Core i3-12100F, 16 GB RAM, 1 TD SSD, MSI GeForce RTX 3060 Ti (see [Project PC Upgrades](/journal/project-pc-upgrades)).

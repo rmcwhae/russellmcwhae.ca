@@ -108,7 +108,11 @@
             <h2 class="eyebrow journal-heading">Journal</h2>
             <div class="journal-grid">
                 <div class="journal-featured">
-                    <JournalEntry post={latestPost} featured />
+                    <JournalEntry
+                        post={latestPost}
+                        featured
+                        showCategory={false}
+                    />
                 </div>
                 <div class="journal-recent">
                     <p class="eyebrow">Recent entries</p>

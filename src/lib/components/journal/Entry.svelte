@@ -8,13 +8,18 @@
      * @typedef {Object} Props
      * @property {any} post
      * @property {boolean} [featured]
+     * @property {boolean} [showCategory]
      */
 
     /** @type {Props} */
-    let { post, featured = false } = $props()
+    let { post, featured = false, showCategory = true } = $props()
 
-    let { href, title, description, date, readingTime, category } =
+    let { href, title, description, preview, date, readingTime, category } =
         $derived(post)
+
+    let featuredPreview = $derived(
+        featured ? preview || description : description
+    )
 </script>
 
 <section class:featured>
@@ -35,10 +40,10 @@
         <h1>
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
         </h1>
-        {#if description}
-            <p>{@html preventLastTwoWordWrap(description)}</p>
+        {#if featuredPreview}
+            <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
         {/if}
-        {#if category}
+        {#if category && showCategory}
             <div class="meta">
                 <CategoryLink {category} />
             </div>
@@ -54,8 +59,8 @@
             <h3>
                 <a {href}>{@html preventLastTwoWordWrap(title)}</a>
             </h3>
-            {#if description}
-                <p>{@html preventLastTwoWordWrap(description)}</p>
+            {#if featuredPreview}
+                <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
             {/if}
             {#if category}
                 <div class="meta">
