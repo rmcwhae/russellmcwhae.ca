@@ -14,10 +14,6 @@
 <SEO title="Journal" />
 
 <div class="restricted-width journal">
-    <header>
-        <h1>Journal</h1>
-    </header>
-
     {#if latestPost}
         <div class="featured">
             <JournalEntry post={latestPost} featured />
@@ -61,14 +57,6 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
-
-    header {
-        margin-bottom: var(--s2);
-    }
-
-    h1 {
-        margin: 0;
-    }
 
     .featured {
         margin-bottom: var(--s3);
@@ -139,7 +127,7 @@
         .columns {
             grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
             align-items: start;
-            gap: var(--s4);
+            gap: 0;
         }
 
         .archive {
@@ -148,7 +136,7 @@
         }
 
         .sidebar {
-            padding-inline-start: var(--s2);
+            padding-inline-start: var(--s1);
         }
     }
 </style>

@@ -32,9 +32,9 @@
                 {/if}
             </div>
         {/if}
-        <h2>
+        <h1>
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-        </h2>
+        </h1>
         {#if description}
             <p>{@html preventLastTwoWordWrap(description)}</p>
         {/if}
@@ -80,7 +80,7 @@
         border-bottom: 1px solid var(--light-grey);
     }
 
-    h2,
+    h1,
     h3 {
         margin: 0;
         line-height: 1.15;
@@ -91,13 +91,13 @@
         line-height: 1.25;
     }
 
-    h2 a,
+    h1 a,
     h3 a {
         font-weight: 500;
         text-decoration: none;
     }
 
-    h2 a:hover,
+    h1 a:hover,
     h3 a:hover {
         text-decoration: none;
         color: var(--alpine);
@@ -134,7 +134,7 @@
         border: none;
     }
 
-    section.featured h2 {
+    section.featured h1 {
         max-width: 18ch;
         font-size: clamp(2.15rem, 4vw, 3.15rem);
         letter-spacing: -0.03em;
