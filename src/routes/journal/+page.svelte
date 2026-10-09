@@ -85,6 +85,8 @@
     .sidebar p:not(.eyebrow) {
         max-width: 42ch;
         margin: 0 0 1rem;
+        font-size: 0.95rem;
+        line-height: 1.45;
     }
 
     .starters-label {

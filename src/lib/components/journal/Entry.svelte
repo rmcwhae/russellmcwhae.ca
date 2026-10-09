@@ -138,7 +138,7 @@
         max-width: 18ch;
         font-size: clamp(2.15rem, 4vw, 3.15rem);
         letter-spacing: -0.03em;
-        line-height: 1.05;
+        line-height: 1.1;
     }
 
     section.featured p {

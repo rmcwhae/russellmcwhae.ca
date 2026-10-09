@@ -42,7 +42,7 @@
     </div>
 </header>
 
-<div class="wrapper">
+<div class="article-columns">
     <ToC allowedHeadings={['h2', 'h3']} />
     <article class="char-limit flow">
         <SvelteComponent />
@@ -75,6 +75,16 @@
     h1,
     p {
         margin: 0;
+    }
+    .article-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) min(70ch, 100%) minmax(0, 1fr);
+        align-items: start;
+        container: article-columns / inline-size;
+    }
+    .article-columns > article {
+        grid-column: 2;
+        min-width: 0;
     }
     article {
         margin: 0 auto;
