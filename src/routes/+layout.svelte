@@ -57,7 +57,7 @@
 <Loading />
 
 <div class="mark" aria-hidden="true">
-    <Logo height="clamp(11rem, 34vw, 22rem)" />
+    <Logo height="clamp(8.8rem, 27.2vw, 17.6rem)" />
 </div>
 
 <main class="wrapper">
@@ -70,13 +70,13 @@
     @use '../lib/scss/breakpoints' as *;
 
     .mark {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 0;
         transform: translate(-6%, -8%);
         color: var(--high-contrast-color);
-        opacity: 0.08;
+        opacity: 0.05;
         line-height: 0;
         pointer-events: none;
         user-select: none;

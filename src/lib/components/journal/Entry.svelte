@@ -99,8 +99,10 @@
 
     h1 a:hover,
     h3 a:hover {
-        text-decoration: none;
-        color: var(--alpine);
+        color: var(--high-contrast-color);
+        text-decoration: underline;
+        text-decoration-color: var(--alpine);
+        text-decoration-thickness: 1px;
     }
 
     p {
