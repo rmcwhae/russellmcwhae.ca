@@ -51,10 +51,12 @@ main a {
 article a {
     color: var(--high-contrast-color);
     text-decoration: underline;
+    text-decoration-color: currentColor;
     text-decoration-thickness: 1px;
 
     &:hover {
-        color: var(--alpine);
+        color: var(--high-contrast-color);
+        text-decoration-color: var(--alpine);
         text-decoration-thickness: 2px;
     }
 }
@@ -95,7 +97,6 @@ blockquote {
     margin-right: var(--s1);
     border-left: 1px solid var(--stone);
     font-family: var(--font-serif);
-    font-size: 1.15rem;
     line-height: 1.5;
 }
 
