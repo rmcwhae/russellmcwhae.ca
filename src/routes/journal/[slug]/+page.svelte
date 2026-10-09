@@ -23,7 +23,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header>
+<header class="restricted-width">
     <div class="sub">
         <Date {date} />
     </div>
@@ -66,7 +66,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--s-1);
-        width: min(100%, 70ch);
+        width: 100%;
         margin: 0 auto var(--s2);
         text-align: left;
         padding-bottom: var(--s1);
@@ -78,13 +78,16 @@
     }
     .article-columns {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) min(70ch, 100%) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) min(62ch, 100%) minmax(0, 1fr);
         align-items: start;
         container: article-columns / inline-size;
     }
     .article-columns > article {
         grid-column: 2;
         min-width: 0;
+    }
+    .restricted-width {
+        width: 100%;
     }
     article {
         margin: 0 auto;

@@ -313,12 +313,12 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    // Matches the article's 70ch column. The sidebar stays hidden until the
+    // Matches the article's 62ch column. The sidebar stays hidden until the
     // centered column has a full 238px sidebar's worth of room on the left.
     $toc-sidebar-max: 238px;
 
     @mixin when-sidebar-fits {
-        @container article-columns (min-width: calc(70ch + 2 * #{$toc-sidebar-max})) {
+        @container article-columns (min-width: calc(62ch + 2 * #{$toc-sidebar-max})) {
             @content;
         }
     }
