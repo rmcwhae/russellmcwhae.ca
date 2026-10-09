@@ -102,7 +102,7 @@
         color: var(--high-contrast-color);
         text-decoration: underline;
         text-decoration-color: var(--alpine);
-        text-decoration-thickness: 1px;
+        text-decoration-thickness: 2px;
     }
 
     p {
