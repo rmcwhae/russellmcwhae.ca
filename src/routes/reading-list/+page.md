@@ -3,9 +3,7 @@ title: Reading List
 layout: page
 ---
 
-Reading is how I feed my soul. I saw a comment somewhere that a small bookstore contains more wisdom than all of television, which I wholeheartedly agree with. My reading generally includes a mix of classics, popular fiction, science fiction, non-fiction, Christian non-fiction, memoirs, satire, and mountaineering literature.
-
-Here is a non-exhaustive list of the books I have read, in reverse chronological order. Mostly, this is for me to keep track of things, but if I didn’t enjoy or complete a book, it won’t be here, so you could perhaps use this as a source of inspiration if you’re in need of something new to read. Books featured here are a combination of physical books and e-books, which I read on a Kobo.
+Reading is one of the ways I make sense of the world. Since 2012, I’ve tracked books that have influenced my thinking.
 
 ## 2026
 
