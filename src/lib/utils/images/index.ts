@@ -1,19 +1,11 @@
 import { PUBLIC_IMAGEKIT_URL_ENDPOINT } from '$app/env/public'
+import type { Transformation } from '@imagekit/javascript'
 import * as ImageKitJavascriptServices from '#lib/services/imageKitJavascript.js'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 const MAX_BREAKPOINT = Math.max(...BREAKPOINTS)
 
-interface ImageOptions {
-    width?: number
-    height?: number
-    quality?: number
-    format?: string
-    blur?: number
-    [key: string]: string | number | undefined
-}
-
-export function buildURL(path: string, options: ImageOptions): string {
+export function buildURL(path: string, options: Transformation): string {
     return ImageKitJavascriptServices.url({
         path,
         urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,

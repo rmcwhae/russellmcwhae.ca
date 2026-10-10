@@ -14,36 +14,20 @@ function getClient(): ImageKit {
     return client
 }
 
-interface ImageKitFile {
-    filePath: string
-    url?: string
-    [key: string]: string | number | boolean | undefined
-}
+export type ImageKitItem = ImageKit.File | ImageKit.Folder
 
-interface ProcessedFile extends ImageKitFile {
+/** An ImageKit file or folder, with a path for either and a lightbox flag */
+export type ProcessedFile = ImageKitItem & {
+    filePath: string
     photoswipe: boolean
 }
 
-interface ListFilesOptions {
-    path?: string
-    skip?: number
-    limit?: number
-    sort?: string
-    type?: string
-    fileType?: string
-    searchQuery?: string
-    [key: string]: string | number | boolean | undefined
-}
-
-function isFile(item: {
-    filePath?: string
-    folderPath?: string
-}): item is { filePath: string; url?: string; [key: string]: unknown } {
+function isFile(item: ImageKitItem): item is ImageKit.File {
     return 'filePath' in item && typeof item.filePath === 'string'
 }
 
 export async function listFiles(
-    options: ListFilesOptions
+    options: ImageKit.AssetListParams
 ): Promise<ProcessedFile[]> {
     try {
         // Add timeout to prevent hanging requests
@@ -51,31 +35,7 @@ export async function listFiles(
             setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
         })
 
-        const listPromise = getClient().assets.list({
-            path: options.path as string | undefined,
-            skip: options.skip as number | undefined,
-            limit: options.limit as number | undefined,
-            sort: options.sort as
-                | 'ASC_NAME'
-                | 'DESC_NAME'
-                | 'ASC_CREATED'
-                | 'DESC_CREATED'
-                | 'ASC_UPDATED'
-                | 'DESC_UPDATED'
-                | 'ASC_HEIGHT'
-                | 'DESC_HEIGHT'
-                | 'ASC_WIDTH'
-                | 'DESC_WIDTH'
-                | 'ASC_SIZE'
-                | 'DESC_SIZE'
-                | 'ASC_RELEVANCE'
-                | 'DESC_RELEVANCE'
-                | undefined,
-            type: options.type as 'file' | 'folder' | 'all' | undefined,
-            fileType: options.fileType as
-                'all' | 'image' | 'non-image' | undefined,
-            searchQuery: options.searchQuery as string | undefined,
-        })
+        const listPromise = getClient().assets.list(options)
 
         const items = await Promise.race([listPromise, timeoutPromise])
 
@@ -85,20 +45,15 @@ export async function listFiles(
         }
 
         return items.map((item) => {
-            const filePath =
-                'filePath' in item && item.filePath
-                    ? item.filePath
-                    : 'folderPath' in item && item.folderPath
-                      ? item.folderPath
-                      : ''
-            const base: ImageKitFile = {
+            const file = isFile(item)
+            const filePath = file
+                ? (item.filePath ?? '')
+                : ('folderPath' in item && item.folderPath) || ''
+            return {
                 ...item,
                 filePath,
+                photoswipe: file,
             }
-            return {
-                ...base,
-                photoswipe: isFile(item),
-            } as ProcessedFile
         })
     } catch (error) {
         console.error('Error in listFiles:', error)
