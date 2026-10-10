@@ -51,12 +51,13 @@
 
 <SEO title="Field Expeditions" />
 
-<div class="page-header">
-    <h1>Field Expeditions</h1>
-    <p class="lede">Complete photo sets from individual trips.</p>
-</div>
+<div class="restricted-width">
+    <div class="page-header">
+        <h1>Field Expeditions</h1>
+        <p class="lede">Complete photo sets from individual trips.</p>
+    </div>
 
-<section class="archive" aria-label="All expeditions">
+    <section class="archive" aria-label="All expeditions">
     <div class="archive-header">
         <p class="eyebrow">All expeditions</p>
         <input
@@ -102,10 +103,15 @@
             </div>
         {/each}
     {/if}
-</section>
+    </section>
+</div>
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
+
+    .restricted-width {
+        width: 100%;
+    }
 
     .archive-header {
         display: flex;
