@@ -1,5 +1,9 @@
 # Agent notes
 
+## Checks
+
+Changes should pass ESLint (`pnpm lint`) and TypeScript (`pnpm exec tsc --noEmit`).
+
 ## Typography
 
 Visible copy uses curly quotes and apostrophes. That includes page text, Markdown prose, captions, alt text, button labels, and similar strings readers see.
