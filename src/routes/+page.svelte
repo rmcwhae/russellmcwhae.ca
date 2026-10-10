@@ -100,7 +100,7 @@
     {/if}
 
     {#if latestPost}
-        <section class="band">
+        <section class="band journal-band">
             <h2 class="eyebrow journal-heading">Journal</h2>
             <div class="journal-grid">
                 <div class="journal-featured">
@@ -113,25 +113,27 @@
                 </div>
                 <div class="journal-recent">
                     <p class="eyebrow">Recent entries</p>
-                    {#each recentPosts as post (post.href)}
-                        <article class="recent-entry">
-                            <h3 class="recent-title title-sm">
-                                <a href={post.href}
-                                    >{@html preventLastTwoWordWrap(
-                                        post.title
-                                    )}</a
-                                >
-                            </h3>
-                            {#if post.description}
-                                <p>
-                                    {@html preventLastTwoWordWrap(
-                                        post.description
-                                    )}
-                                </p>
-                            {/if}
-                        </article>
-                    {/each}
-                    <Button href="/journal" text="View all" right />
+                    <div class="recent-list">
+                        {#each recentPosts as post (post.href)}
+                            <article class="recent-entry">
+                                <h3 class="recent-title title-sm">
+                                    <a href={post.href}
+                                        >{@html preventLastTwoWordWrap(
+                                            post.title
+                                        )}</a
+                                    >
+                                </h3>
+                                {#if post.description}
+                                    <p>
+                                        {@html preventLastTwoWordWrap(
+                                            post.description
+                                        )}
+                                    </p>
+                                {/if}
+                            </article>
+                        {/each}
+                        <Button href="/journal" text="View all" right />
+                    </div>
                 </div>
             </div>
         </section>
@@ -391,7 +393,8 @@
         min-width: 0;
     }
 
-    .journal-recent {
+    .journal-recent,
+    .recent-list {
         display: flex;
         flex-direction: column;
     }
@@ -503,13 +506,39 @@
             grid-row: 1 / -1;
         }
 
-        .journal-grid {
+        .journal-band {
+            display: grid;
             grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-            gap: var(--s3);
+            column-gap: var(--s3);
+            row-gap: var(--s1);
             align-items: start;
+            grid-template-areas:
+                'heading recent-heading'
+                'featured recent';
         }
 
+        .journal-heading {
+            grid-area: heading;
+            margin: 0;
+        }
+
+        .journal-grid,
         .journal-recent {
+            display: contents;
+        }
+
+        .journal-featured {
+            grid-area: featured;
+        }
+
+        .journal-recent .eyebrow {
+            grid-area: recent-heading;
+            margin: 0;
+            padding-left: var(--s2);
+        }
+
+        .recent-list {
+            grid-area: recent;
             border-left: 1px solid var(--light-grey);
             padding-left: var(--s2);
         }
