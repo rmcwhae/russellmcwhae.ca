@@ -142,16 +142,6 @@
         <p class="about-title">
             A balance of logic, curiosity, and creativity.
         </p>
-        <figure class="portrait">
-            <img
-                src="/russell.png"
-                alt="Russell McWhae"
-                width="1000"
-                height="822"
-                loading="lazy"
-                decoding="async"
-            />
-        </figure>
         <div class="about-copy">
             <p>
                 My work has moved through structural engineering, biomedical
@@ -373,16 +363,6 @@
         color: var(--high-contrast-color);
     }
 
-    .portrait {
-        width: min(100%, 250px);
-        margin: var(--s0) 0 0;
-    }
-
-    .portrait img {
-        width: 100%;
-        height: auto;
-    }
-
     .about-copy {
         max-width: 42ch;
         margin-top: var(--s1);
@@ -545,8 +525,7 @@
             align-items: start;
             grid-template-areas:
                 'kicker . interests'
-                'title copy interests'
-                'photo copy interests';
+                'title copy interests';
         }
 
         .about-kicker {
@@ -555,11 +534,6 @@
 
         .about-title {
             grid-area: title;
-        }
-
-        .portrait {
-            grid-area: photo;
-            margin-top: var(--s1);
         }
 
         .about-copy {

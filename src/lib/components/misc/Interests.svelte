@@ -1,5 +1,7 @@
 <script>
-    const interests = [
+    import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
+
+    const defaultItems = [
         {
             href: '/reading-list',
             title: 'Reading list',
@@ -11,19 +13,29 @@
             description: 'Tools used in my work.',
         },
     ]
+
+    let { heading = 'Beyond the Work', items = defaultItems, arrow = true } =
+        $props()
 </script>
 
 <div class="interests-block">
-    <h2 class="eyebrow">Other interests</h2>
+    <h2 class="eyebrow">{heading}</h2>
     <ul class="interests">
-    {#each interests as interest (interest.href)}
-        <li>
-            <a href={interest.href}>
-                <h3>{interest.title}</h3>
-                <p>{interest.description}</p>
-            </a>
-        </li>
-    {/each}
+        {#each items as item (item.href)}
+            <li>
+                <a href={item.href} class:has-arrow={arrow}>
+                    <span class="title-row">
+                        <h3>{item.title}</h3>
+                        {#if arrow}
+                            <ArrowNorthEast />
+                        {/if}
+                    </span>
+                    {#if item.description}
+                        <p>{item.description}</p>
+                    {/if}
+                </a>
+            </li>
+        {/each}
     </ul>
 </div>
 
@@ -48,6 +60,21 @@
 
     a:hover {
         text-decoration: none;
+    }
+
+    .title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .title-row :global(.icon) {
+        flex: none;
+    }
+
+    a.has-arrow:hover {
+        color: var(--alpine);
     }
 
     h3 {

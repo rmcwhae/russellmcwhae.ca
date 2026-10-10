@@ -92,12 +92,12 @@ article a {
 
 .lede {
     max-width: 36rem;
-    color: var(--text-color);
-    font-size: var(--text-base);
+    color: color-mix(in srgb, var(--text-color) 72%, var(--background-color));
+    font-size: var(--text-sm);
     line-height: var(--leading-compact);
 
     @include for-tablet-landscape-up {
-        font-size: var(--text-md);
+        font-size: var(--text-base);
     }
 }
 

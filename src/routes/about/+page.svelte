@@ -13,14 +13,15 @@
         <h1>
             Developer, photographer, writer, and lifelong outdoor adventurer.
         </h1>
+        <p class="lede">A balance of logic, curiosity, and creativity.</p>
     </header>
     <article class="about">
         <figure class="portrait-inline">
             <img
-                src="/russell.png"
+                src="/portrait.jpeg"
                 alt="Russell McWhae"
-                width="1000"
-                height="822"
+                width="3088"
+                height="2316"
                 decoding="async"
             />
         </figure>
@@ -88,13 +89,21 @@
     <aside class="rail">
         <figure class="portrait">
             <img
-                src="/russell.png"
+                src="/portrait.jpeg"
                 alt="Russell McWhae"
-                width="1000"
-                height="822"
+                width="3088"
+                height="2316"
                 decoding="async"
             />
         </figure>
+        <Interests
+            heading="My work"
+            arrow
+            items={[
+                { href: '/photography', title: 'Photography' },
+                { href: '/journal', title: 'Journal' },
+            ]}
+        />
         <Interests />
     </aside>
 </div>
