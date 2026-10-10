@@ -50,6 +50,8 @@ export default [
                 Blob: 'readonly',
                 IntersectionObserver: 'readonly',
                 ResizeObserver: 'readonly',
+                requestAnimationFrame: 'readonly',
+                cancelAnimationFrame: 'readonly',
                 // Node/browser common
                 console: 'readonly',
                 setTimeout: 'readonly',

@@ -32,8 +32,7 @@
     {#if featured}
         {#if date}
             <div class="sub">
-                Latest
-                &middot;
+                Latest &middot;
                 <Date {date} />
             </div>
         {/if}

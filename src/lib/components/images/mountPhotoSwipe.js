@@ -32,7 +32,8 @@ export async function mountPhotoSwipe(gallery) {
             html: '',
             onInit: (el) => {
                 lightbox.pswp.on('change', () => {
-                    const currSlideElement = lightbox.pswp.currSlide?.data?.element
+                    const currSlideElement =
+                        lightbox.pswp.currSlide?.data?.element
                     const captionHTML =
                         currSlideElement
                             ?.querySelector('img')
