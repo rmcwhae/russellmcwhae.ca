@@ -20,7 +20,7 @@ a {
 
 .button {
     font-family: var(--font-sans);
-    font-size: var(--text-xs);
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: var(--leading-compact);
     padding: 0 0 4px;
@@ -125,10 +125,6 @@ article a {
 
 article h2:not(:first-child) {
     margin-top: var(--s4) !important;
-}
-
-article h3 {
-    margin-top: var(--s0) !important;
 }
 
 @media (max-width: 1023px) {

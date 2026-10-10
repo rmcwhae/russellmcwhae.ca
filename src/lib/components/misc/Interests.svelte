@@ -63,6 +63,8 @@
     p {
         margin: 0;
         color: var(--text-color);
+        font-size: var(--text-sm);
         font-weight: 400;
+        line-height: var(--leading-compact);
     }
 </style>
