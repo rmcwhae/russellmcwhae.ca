@@ -375,7 +375,7 @@
     .photo :global(a),
     .photo :global(a:hover) {
         text-decoration: none;
-        cursor: zoom-in;
+        cursor: pointer;
     }
 
     .about-band {

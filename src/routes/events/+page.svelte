@@ -53,10 +53,7 @@
 
 <div class="page-header">
     <h1>Field Expeditions</h1>
-    <p class="lede">
-        Complete photo sets from individual trips — ski traverses, alpine
-        routes, and coastal walks — newest first.
-    </p>
+    <p class="lede">Complete photo sets from individual trips.</p>
 </div>
 
 <section class="archive" aria-label="All expeditions">
