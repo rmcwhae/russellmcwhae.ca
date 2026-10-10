@@ -79,7 +79,17 @@ test.describe('Basic Navigation', () => {
 
         for (const pagePath of pages) {
             await page.goto(pagePath)
-            await expect(page.locator('footer')).toBeVisible()
+            const footer = page.locator('footer')
+            await expect(footer).toBeVisible()
+            await expect(footer).toContainText(
+                'A personal collection of images and words.'
+            )
+            await expect(footer.locator('a[href="/photography"]')).toHaveText(
+                'images'
+            )
+            await expect(footer.locator('a[href="/journal"]')).toHaveText(
+                'words'
+            )
         }
     })
 })
