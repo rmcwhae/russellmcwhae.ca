@@ -42,6 +42,7 @@
             data-pswp-height={height}
             data-pswp-src={src}
             data-pswp-srcset={srcset}
+            data-cropped={lockedRatio ? 'true' : undefined}
         >
             <img
                 loading={priority ? 'eager' : 'lazy'}

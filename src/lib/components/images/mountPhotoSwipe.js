@@ -18,6 +18,11 @@ export async function mountPhotoSwipe(gallery) {
         zoomSVG: '',
     })
 
+    lightbox.addFilter('thumbEl', (thumbnail, itemData) => {
+        if (itemData.thumbCropped && itemData.element) return itemData.element
+        return thumbnail
+    })
+
     lightbox.on('uiRegister', function () {
         lightbox.pswp.ui.registerElement({
             name: 'custom-caption',

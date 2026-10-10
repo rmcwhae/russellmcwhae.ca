@@ -24,17 +24,9 @@
 
 <section class:featured>
     {#if featured}
-        {#if date || readingTime}
-            <div class="hero-meta">
-                {#if date}
-                    <Date {date} compact />
-                {/if}
-                {#if date && readingTime}
-                    <span aria-hidden="true">&middot;</span>
-                {/if}
-                {#if readingTime}
-                    <span class="time">{readingTime.text}</span>
-                {/if}
+        {#if date}
+            <div class="sub">
+                <Date {date} />
             </div>
         {/if}
         <h1>
@@ -43,9 +35,17 @@
         {#if featuredPreview}
             <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
         {/if}
-        {#if category && showCategory}
-            <div class="meta">
-                <CategoryLink {category} />
+        {#if (category && showCategory) || readingTime}
+            <div class="sub">
+                {#if category && showCategory}
+                    <CategoryLink {category} />
+                    {#if readingTime}&middot;{/if}
+                {/if}
+                {#if readingTime}
+                    <span class="nowrap">{readingTime.words} words</span>
+                    &middot;
+                    <span class="nowrap">{readingTime.text}</span>
+                {/if}
             </div>
         {/if}
         <Button {href} text="Continue reading" right />
@@ -136,31 +136,27 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.85rem;
+        gap: var(--s-1);
+        width: 100%;
         padding: 0;
         border: none;
     }
 
     section.featured h1 {
-        max-width: 18ch;
-        font-size: clamp(2.15rem, 4vw, 3.15rem);
-        letter-spacing: -0.03em;
+        width: 100%;
+        max-width: none;
     }
 
     section.featured p {
-        max-width: 62ch;
+        width: 100%;
+        max-width: none;
         margin: 0;
-        font-size: 1.05rem;
-        line-height: 1.55;
+        font-size: inherit;
+        line-height: inherit;
     }
 
-    .hero-meta {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 0.45rem;
-        color: var(--medium-grey);
-        font-size: 0.8rem;
+    section.featured .sub {
+        color: var(--text-color);
     }
 
     @include for-tablet-portrait-up {

@@ -23,7 +23,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header class="restricted-width">
+<header>
     <div class="sub">
         <Date {date} />
     </div>
@@ -67,14 +67,20 @@
         align-items: flex-start;
         gap: var(--s-1);
         width: 100%;
-        margin: 0 auto var(--s2);
+        max-width: none;
+        margin: 0 0 var(--s2);
         text-align: left;
         padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
     }
-    h1,
-    p {
+    header h1,
+    header p {
+        width: 100%;
+        max-width: none;
         margin: 0;
+    }
+    header .sub {
+        color: var(--text-color);
     }
     .article-columns {
         display: grid;
