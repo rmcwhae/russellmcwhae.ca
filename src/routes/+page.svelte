@@ -254,7 +254,7 @@
         font-size: var(--text-display);
         font-weight: 500;
         letter-spacing: -0.035em;
-        line-height: 0.98;
+        line-height: 1.08;
     }
 
     .line-sans {

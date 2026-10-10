@@ -48,7 +48,7 @@
     />
     <link
         rel="preload"
-        href="/fonts/source-serif-4-latin-500-normal.woff2"
+        href="/fonts/cardo-latin-400-normal.woff2"
         as="font"
         type="font/woff2"
         crossorigin="anonymous"
