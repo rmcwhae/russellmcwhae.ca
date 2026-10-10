@@ -36,9 +36,9 @@
         <aside class="sidebar">
             <p class="eyebrow">About</p>
             <p>
-                Text generation and ideas are my own, though I do use AI for
-                editing and refining (as of 2025). I hope you’ll join me for a
-                glimpse into my head.
+                I’ve kept an online journal since 2016. Text generation and
+                ideas are my own, though I do use AI for editing and refining
+                (as of 2025).
             </p>
             <p>
                 Also see my
