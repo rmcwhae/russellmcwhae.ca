@@ -27,7 +27,7 @@ A few useful apps that make macOS a bit more polished:
 
 - [BetterDisplay](https://github.com/waydabber/BetterDisplay) to change the brightness and volume of third-party external displays over DDC
 - [Hand Mirror](https://handmirror.app/) to test the webcam before online meetings
-- [Rocket Typist](https://www.witt-software.com/rockettypist/) with useful expansions like "ll30" to "http://localhost:3000" and "ddate" for the current date
+- [Rocket Typist](https://www.witt-software.com/rockettypist/) with useful expansions like “ll30” to “http://localhost:3000” and “ddate” for the current date
 - [Maccy](https://maccy.app/) for clipboard management
 
 ## Hardware
