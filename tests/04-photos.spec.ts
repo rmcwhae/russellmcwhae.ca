@@ -32,53 +32,41 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Check page title
-        await expect(page).toHaveTitle(/Events/)
+        await expect(page).toHaveTitle(/Field Expeditions/)
 
         // Check main heading
-        await expect(page.locator('h1')).toContainText('Events')
+        await expect(page.locator('h1')).toContainText('Field Expeditions')
 
-        // Check that events grid is present
-        await expect(page.locator('.events-grid')).toBeVisible()
+        // Check that the expedition archive is present
+        await expect(page.locator('.archive')).toBeVisible()
     })
 
     test('events page has link to photography', async ({ page }) => {
         await page.goto('/events')
 
-        // Check that "Portfolio" button is present
-        await expect(
-            page.locator('a[href="/photography"]').last()
-        ).toBeVisible()
-        await expect(
-            page.locator('a[href="/photography"]').last()
-        ).toContainText('Portfolio')
+        const photography = page.locator('.eyebrow a[href="/photography"]')
+        await expect(photography).toBeVisible()
+        await expect(photography).toContainText('Photography')
     })
 
     test('events display with correct information', async ({ page }) => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.events-grid section', { timeout: 10000 })
+        await page.waitForSelector('.event-row', { timeout: 10000 })
 
-        // Check that at least one event is displayed
-        const eventSections = page.locator('.events-grid section')
-        const eventCount = await eventSections.count()
+        const eventRows = page.locator('.event-row')
+        const eventCount = await eventRows.count()
 
         if (eventCount > 0) {
-            // Check first event has required elements
-            const firstEvent = eventSections.first()
+            const firstEvent = eventRows.first()
 
-            // Check that event has a link
-            await expect(firstEvent.locator('a')).toBeVisible()
+            await expect(firstEvent).toBeVisible()
+            await expect(firstEvent.locator('.event-title')).toBeVisible()
+            await expect(firstEvent.locator('.event-meta')).toBeVisible()
 
-            // Check that event has a title
-            await expect(firstEvent.locator('h4')).toBeVisible()
-
-            // Check that event has date and photo count
-            await expect(firstEvent.locator('p.sub')).toBeVisible()
-
-            // Check that date and photo count text is in correct format
             const dateAndCountText = await firstEvent
-                .locator('p.sub')
+                .locator('.event-meta')
                 .textContent()
             expect(dateAndCountText).toMatch(/.*\d+ photos/)
         }
@@ -88,14 +76,13 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.events-grid section', { timeout: 10000 })
+        await page.waitForSelector('.event-row', { timeout: 10000 })
 
-        const eventSections = page.locator('.events-grid section')
-        const eventCount = await eventSections.count()
+        const eventRows = page.locator('.event-row')
+        const eventCount = await eventRows.count()
 
         if (eventCount > 0) {
-            // Get the href of the first event
-            const firstEventLink = eventSections.first().locator('a')
+            const firstEventLink = eventRows.first()
             const href = await firstEventLink.getAttribute('href')
 
             if (href) {
@@ -115,14 +102,14 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.events-grid section', { timeout: 10000 })
+        await page.waitForSelector('.event-row', { timeout: 10000 })
 
-        const eventSections = page.locator('.events-grid section')
-        const eventCount = await eventSections.count()
+        const eventRows = page.locator('.event-row')
+        const eventCount = await eventRows.count()
 
         if (eventCount > 0) {
             // Click first event
-            await eventSections.first().locator('a').click()
+            await eventRows.first().click()
 
             // Wait for images to load
             await page.waitForSelector('img', { timeout: 10000 })
@@ -218,15 +205,15 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.events-grid section', { timeout: 10000 })
+        await page.waitForSelector('.event-row', { timeout: 10000 })
 
-        const eventSections = page.locator('.events-grid section')
-        const eventCount = await eventSections.count()
+        const eventRows = page.locator('.event-row')
+        const eventCount = await eventRows.count()
 
         if (eventCount > 1) {
             // Get all event dates
-            const eventDates = await eventSections
-                .locator('p.sub')
+            const eventDates = await eventRows
+                .locator('.event-meta')
                 .allTextContents()
 
             // Extract dates from the text (format: "September 2025 · X photos")
@@ -255,7 +242,8 @@ test.describe('Photos and Events', () => {
         await expect(page.locator('#gallery')).toBeVisible()
 
         await page.goto('/events')
-        await expect(page.locator('.events-grid')).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
+        await expect(page.locator('.event-row').first()).toBeVisible()
 
         // Test mobile view
         await page.setViewportSize({ width: 375, height: 667 })
@@ -263,24 +251,26 @@ test.describe('Photos and Events', () => {
         await expect(page.locator('#gallery')).toBeVisible()
 
         await page.goto('/events')
-        await expect(page.locator('.events-grid')).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
+        await expect(page.locator('.event-row').first()).toBeVisible()
     })
 
     test('event detail page has back navigation', async ({ page }) => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.events-grid section', { timeout: 10000 })
+        await page.waitForSelector('.event-row', { timeout: 10000 })
 
-        const eventSections = page.locator('.events-grid section')
-        const eventCount = await eventSections.count()
+        const eventRows = page.locator('.event-row')
+        const eventCount = await eventRows.count()
 
         if (eventCount > 0) {
             // Click first event
-            await eventSections.first().locator('a').click()
+            await eventRows.first().click()
 
-            // Check that back button exists
-            await expect(page.locator('a[href="/events"]')).toBeVisible()
+            const back = page.locator('a[href="/events"]')
+            await expect(back).toBeVisible()
+            await expect(back).toContainText('Field Expeditions')
         }
     })
 })

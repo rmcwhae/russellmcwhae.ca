@@ -21,7 +21,7 @@
 
     const gutter = 12
 
-    let { images, rowHeight = 500 } = $props()
+    let { images, rowHeight = 300 } = $props()
 </script>
 
 <div id="gallery">
