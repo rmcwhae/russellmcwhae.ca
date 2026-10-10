@@ -99,6 +99,18 @@
         line-height: var(--leading-compact);
     }
 
+    .sidebar p a {
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+
+        &:hover {
+            color: var(--alpine);
+            text-decoration-color: currentColor;
+        }
+    }
+
     .starters-label {
         margin-bottom: 0.35rem;
     }
