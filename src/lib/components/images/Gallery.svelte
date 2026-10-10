@@ -19,10 +19,9 @@
         }
     })
 
-    const rowHeight = 500
     const gutter = 12
 
-    let { images } = $props()
+    let { images, rowHeight = 500 } = $props()
 </script>
 
 <div id="gallery">

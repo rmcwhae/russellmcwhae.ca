@@ -5,7 +5,40 @@
 
     let { data } = $props()
 
-    let images = $derived(data.images)
+    let images = $derived(data.images ?? [])
+
+    const BATCH = 12
+    let visibleCount = $state(BATCH)
+    let visibleImages = $derived(images.slice(0, visibleCount))
+    let remaining = $derived(Math.max(images.length - visibleCount, 0))
+    let hasMore = $derived(remaining > 0)
+    /** @type {HTMLDivElement | null} */
+    let sentinel = $state(null)
+    let paging = false
+
+    function loadMore() {
+        if (paging || visibleCount >= images.length) return
+        paging = true
+        visibleCount = Math.min(visibleCount + BATCH, images.length)
+        requestAnimationFrame(() => {
+            paging = false
+        })
+    }
+
+    $effect(() => {
+        const node = sentinel
+        if (!node) return
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) loadMore()
+            },
+            { rootMargin: '0px 0px 240px 0px' }
+        )
+        observer.observe(node)
+
+        return () => observer.disconnect()
+    })
 
     const destinations = [
         { href: '/events', text: 'Field Expeditions' },
@@ -30,7 +63,17 @@
 
 <SEO title="Photography" />
 
-<Gallery {images} />
+<Gallery images={visibleImages} rowHeight={300} />
+
+{#if hasMore}
+    <div class="load-more">
+        <div class="sentinel" bind:this={sentinel} aria-hidden="true"></div>
+        <button type="button" onclick={loadMore}>
+            + Load more
+            <span class="load-more-count">({remaining} more)</span>
+        </button>
+    </div>
+{/if}
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
@@ -85,5 +128,39 @@
         .destinations a:last-child {
             padding-left: var(--s1);
         }
+    }
+
+    .load-more {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: var(--s1) 0 var(--s2);
+    }
+
+    .sentinel {
+        width: 100%;
+        height: 1px;
+    }
+
+    .load-more button {
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--high-contrast-color);
+        background: none;
+        border: none;
+        border-bottom: 1px solid currentColor;
+        padding: 0 0 4px;
+        cursor: pointer;
+    }
+
+    .load-more button:hover {
+        color: var(--alpine);
+    }
+
+    .load-more-count {
+        margin-left: 0.35em;
+        color: var(--medium-grey);
+        font-weight: 400;
     }
 </style>
