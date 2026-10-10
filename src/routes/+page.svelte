@@ -599,7 +599,7 @@
                     0,
                     0.9fr
                 );
-            column-gap: var(--s4);
+            column-gap: var(--s3);
             row-gap: 0.6rem;
             align-items: start;
             grid-template-areas:
