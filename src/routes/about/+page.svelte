@@ -9,13 +9,21 @@
 />
 
 <div class="about-layout">
+    <header>
+        <h1>
+            Developer, photographer, writer, and lifelong outdoor adventurer.
+        </h1>
+    </header>
     <article class="about">
-        <header>
-            <h1>
-                Developer, photographer, writer, and lifelong outdoor
-                adventurer.
-            </h1>
-        </header>
+        <figure class="portrait-inline">
+            <img
+                src="/russell.png"
+                alt="Russell McWhae"
+                width="1000"
+                height="822"
+                decoding="async"
+            />
+        </figure>
         <div class="char-limit flow">
             <p>
                 I grew up in Calgary, Alberta, exploring the Canadian Rocky
@@ -77,7 +85,16 @@
             </p>
         </div>
     </article>
-    <aside>
+    <aside class="rail">
+        <figure class="portrait">
+            <img
+                src="/russell.png"
+                alt="Russell McWhae"
+                width="1000"
+                height="822"
+                decoding="async"
+            />
+        </figure>
         <Interests />
     </aside>
 </div>
@@ -96,23 +113,110 @@
         min-width: 0;
     }
 
-    header {
-        margin-bottom: var(--s2);
-    }
-
     h1 {
-        max-width: 14ch;
+        max-width: 28ch;
         margin-top: 0;
     }
 
-    aside {
+    .portrait,
+    .portrait-inline {
+        margin: 0;
+    }
+
+    .portrait {
+        display: none;
+    }
+
+    .portrait img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .portrait-inline {
+        float: right;
+        width: clamp(6.75rem, 28%, 9rem);
+        margin: 0.15rem 0 0.35rem 1rem;
+    }
+
+    .portrait-inline img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .rail {
+        display: contents;
         min-width: 0;
     }
 
-    @include for-tablet-landscape-up {
+    header {
+        order: 1;
+    }
+
+    .portrait {
+        order: 2;
+    }
+
+    .about {
+        order: 3;
+    }
+
+    .rail > :global(.interests-block) {
+        order: 4;
+    }
+
+    .rail :global(ul.interests) {
+        margin-top: var(--s-1);
+    }
+
+    @include for-desktop-up {
         .about-layout {
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: var(--s4);
+            width: fit-content;
+            max-width: 100%;
+            grid-template-columns: minmax(0, var(--measure)) minmax(
+                    16rem,
+                    18rem
+                );
+            grid-template-areas:
+                'title title'
+                'copy rail';
+            column-gap: var(--s3);
+            justify-content: start;
+        }
+
+        header,
+        .about,
+        .portrait,
+        .rail > :global(.interests-block) {
+            order: 0;
+        }
+
+        header {
+            grid-area: title;
+        }
+
+        .about {
+            grid-area: copy;
+        }
+
+        .portrait-inline {
+            display: none;
+        }
+
+        .portrait {
+            display: block;
+        }
+
+        .portrait img {
+            height: auto;
+        }
+
+        .rail {
+            display: flex;
+            flex-direction: column;
+            gap: var(--s2);
+            grid-area: rail;
         }
     }
 </style>

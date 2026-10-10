@@ -17,7 +17,10 @@
 
 <style>
     article {
+        width: 100%;
         max-width: var(--measure);
+        margin-inline: auto;
+        justify-self: center;
     }
 
     header {

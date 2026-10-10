@@ -44,10 +44,6 @@ A few useful apps that make macOS a bit more polished:
 - Desktop PC: NZXT H1 V2 case, Intel Core i3-12100F, 16 GB RAM, 1 TD SSD, MSI GeForce RTX 3060 Ti (see [Project PC Upgrades](/journal/project-pc-upgrades)).
 - Previous PC: Intel Core i5-3570K overclocked to 4.2 GHz, 16 GB RAM, 500 GB SSD, 3 TB hardware RAID 5 array (4 x 1 TB drives), ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB (upgraded in April 2020).
 
-<!-- ```
-alias photobackup="rsync -avzP --exclude '.DS_Store' --delete --backup --backup-dir=\"//Volumes/PhotosfromrMBP/backups/backup_$(date +\%Y-\%m-\%d_\%H-\%M)\" ~/Pictures/ //Volumes/PhotosfromrMBP/"
-``` -->
-
 ## Camera Gear
 
 ### Bodies
@@ -63,10 +59,3 @@ Though a bit dated now, these bodies work very well for stills and are quite lig
 - Sony/Zeiss E 24 mm f/1.8: wickedly sharp and good in low light
 - Sony FE 50 mm f/1.8: an excellent medium length
 - Sony FE 70–200 mm f/4 G: quite sharp and much lighter than an f/2.8
-
-Lately, I’ve been trying to challenge myself creatively by primarily shooting with a single lens for six months to a year.
-
-### Other
-
-- GorillaPod
-- Circular polarizing filter
