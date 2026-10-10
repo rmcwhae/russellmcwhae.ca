@@ -273,6 +273,11 @@
         border-top: 1px solid var(--light-grey);
     }
 
+    .hero + .band {
+        padding-top: var(--s0);
+        border-top: none;
+    }
+
     .section-label {
         display: flex;
         justify-content: space-between;
