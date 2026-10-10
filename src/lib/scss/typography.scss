@@ -116,7 +116,7 @@ blockquote {
     margin-right: var(--s1);
     border-left: 1px solid var(--stone);
     font-family: var(--font-serif);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.5;
 }
 
@@ -199,6 +199,10 @@ em,
 i {
     font-family: var(--font-serif);
     font-style: italic;
+}
+
+:is(h1, h2, h3, h4, h5, h6, blockquote) :is(em, i) {
+    font-size: inherit;
 }
 
 .big {

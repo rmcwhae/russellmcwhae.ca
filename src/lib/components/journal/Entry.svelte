@@ -104,10 +104,10 @@
 
     h1 a:hover,
     h3 a:hover {
-        color: var(--high-contrast-color);
+        color: var(--alpine);
         text-decoration: underline;
-        text-decoration-color: var(--alpine);
-        text-decoration-thickness: 2px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
     }
 
     p {
