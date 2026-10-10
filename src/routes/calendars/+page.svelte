@@ -10,15 +10,11 @@
     <h1>Calendars</h1>
     <!-- <p class="mt-1 mb-1 big char-limit"> -->
     <p class="mt-1 mb-1 char-limit">
-        I’m afraid I no longer creating calendars. After a ten-year run,
-        including 2024’s “greatest hits” calendar, it felt like an appropriate
-        time to take a break from making these. They are a lot of work and have
-        never been profitable—a labour of love, as they say. If my inspiration
-        returns, I may again make them.
+        After a ten-year run, I am no longer actively making annual wall
+        calendars. Below is an archive of all previous editions.
     </p>
 </div>
 
-<h2>Previous Calendars</h2>
 <div class="three-col-grid">
     <Calendar filename="2024calendar.pdf">
         <Image src="/calendar-images/2024.jpg" />
