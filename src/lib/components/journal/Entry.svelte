@@ -34,6 +34,10 @@
             <div class="sub">
                 Latest &middot;
                 <Date {date} />
+                {#if readingTime}
+                    &middot;
+                    <span class="nowrap">{readingTime.text}</span>
+                {/if}
             </div>
         {/if}
         <svelte:element this={`h${level}`} class="entry-title">
@@ -41,19 +45,6 @@
         </svelte:element>
         {#if featuredPreview}
             <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
-        {/if}
-        {#if (category && showCategory) || readingTime}
-            <div class="sub">
-                {#if category && showCategory}
-                    <CategoryLink {category} />
-                    {#if readingTime}&middot;{/if}
-                {/if}
-                {#if readingTime}
-                    <span class="nowrap">{readingTime.words} words</span>
-                    &middot;
-                    <span class="nowrap">{readingTime.text}</span>
-                {/if}
-            </div>
         {/if}
         <Button {href} text="Continue reading" right />
     {:else}
