@@ -1,18 +1,6 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
-
-    const interests = [
-        {
-            href: '/reading-list',
-            title: 'Reading list',
-            description: 'Books I have read.',
-        },
-        {
-            href: '/uses',
-            title: 'What I use',
-            description: 'Tools used in my work.',
-        },
-    ]
+    import Interests from '#lib/components/misc/Interests.svelte'
 </script>
 
 <SEO
@@ -90,17 +78,7 @@
         </div>
     </article>
     <aside>
-        <h2 class="eyebrow">Other interests</h2>
-        <ul class="interests">
-            {#each interests as interest (interest.href)}
-                <li>
-                    <a href={interest.href}>
-                        <h3>{interest.title}</h3>
-                        <p>{interest.description}</p>
-                    </a>
-                </li>
-            {/each}
-        </ul>
+        <Interests />
     </aside>
 </div>
 
@@ -125,55 +103,10 @@
     h1 {
         max-width: 14ch;
         margin-top: 0;
-        font-size: clamp(2.2rem, 4vw, 3.4rem);
-    }
-
-    .char-limit {
-        max-width: 68ch;
     }
 
     aside {
         min-width: 0;
-    }
-
-    .interests {
-        list-style: none;
-        margin: var(--s1) 0 0;
-        padding: 0;
-        border-top: 1px solid var(--light-grey);
-    }
-
-    .interests li {
-        border-bottom: 1px solid var(--light-grey);
-    }
-
-    .interests a {
-        display: grid;
-        gap: 0.2rem;
-        padding: 0.9rem 0;
-        text-decoration: none;
-    }
-
-    .interests a:hover {
-        text-decoration: none;
-    }
-
-    .interests h3 {
-        margin: 0;
-        font-family: var(--font-sans);
-        font-size: 1rem;
-        font-weight: 500;
-        letter-spacing: 0;
-    }
-
-    .interests a:hover h3 {
-        color: var(--alpine);
-    }
-
-    .interests p {
-        margin: 0;
-        color: var(--text-color);
-        font-weight: 400;
     }
 
     @include for-tablet-landscape-up {

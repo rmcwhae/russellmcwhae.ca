@@ -53,7 +53,7 @@
     </p>
     <nav class="destinations" aria-label="Related">
         {#each destinations as destination (destination.href)}
-            <a href={destination.href}>
+            <a class="title-sm" href={destination.href}>
                 <span>{destination.text}</span>
                 <ArrowNorthEast />
             </a>
@@ -68,7 +68,7 @@
 {#if hasMore}
     <div class="load-more">
         <div class="sentinel" bind:this={sentinel} aria-hidden="true"></div>
-        <button type="button" onclick={loadMore}>
+        <button class="button" type="button" onclick={loadMore}>
             + Load more
             <span class="load-more-count">({remaining} more)</span>
         </button>
@@ -78,21 +78,9 @@
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
 
-    h1 {
-        margin-bottom: 0.4rem;
-    }
-
-    .lede {
-        max-width: 36rem;
-        margin: 0 0 var(--s1);
-        color: var(--text-color);
-        font-size: 1.05rem;
-        line-height: 1.5;
-    }
-
     .destinations {
         display: grid;
-        margin: 0 0 var(--s1);
+        margin: var(--s1) 0 0;
         border-top: 1px solid var(--light-grey);
     }
 
@@ -102,10 +90,6 @@
         justify-content: space-between;
         gap: 1rem;
         padding: 0.85rem 0;
-        font-family: var(--font-serif);
-        font-size: 1.15rem;
-        font-weight: 500;
-        line-height: 1.25;
         text-decoration: none;
         border-bottom: 1px solid var(--light-grey);
     }
@@ -140,22 +124,6 @@
     .sentinel {
         width: 100%;
         height: 1px;
-    }
-
-    .load-more button {
-        font-family: var(--font-sans);
-        font-size: 0.95rem;
-        font-weight: 500;
-        color: var(--high-contrast-color);
-        background: none;
-        border: none;
-        border-bottom: 1px solid currentColor;
-        padding: 0 0 4px;
-        cursor: pointer;
-    }
-
-    .load-more button:hover {
-        color: var(--alpine);
     }
 
     .load-more-count {

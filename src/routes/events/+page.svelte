@@ -73,7 +73,7 @@
     {:else}
         {#each eventsByYear as [year, yearEvents] (year)}
             <div class="year-group">
-                <div class="year-label">{year}</div>
+                <h2 class="year-label">{year}</h2>
                 <div class="year-items">
                     {#each yearEvents as event (event.name)}
                         <a class="event-row" href="/events/{event.name}">
@@ -89,7 +89,9 @@
                                 {/if}
                             </div>
                             <span class="event-copy">
-                                <span class="event-title">{event.title}</span>
+                                <span class="event-title title-sm"
+                                    >{event.title}</span
+                                >
                                 <span class="event-meta">
                                     {event.date} · {event.count} photos
                                 </span>
@@ -104,30 +106,6 @@
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
-
-    h1 {
-        margin-top: 0.35rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .eyebrow a {
-        color: inherit;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    .eyebrow a:hover {
-        color: var(--alpine);
-        text-decoration: none;
-    }
-
-    .lede {
-        max-width: 36rem;
-        margin: 0 0 var(--s1);
-        color: var(--text-color);
-        font-size: 1.05rem;
-        line-height: 1.5;
-    }
 
     .archive-header {
         display: flex;
@@ -144,7 +122,7 @@
 
     .archive-search {
         font-family: var(--font-sans);
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
         padding: var(--s-3) var(--s-1);
         border: 1px solid var(--light-grey);
         background: var(--background-color);
@@ -165,10 +143,14 @@
     }
 
     .year-label {
-        font-family: var(--font-sans);
-        font-size: 0.95rem;
-        color: var(--medium-grey);
+        margin: 0;
         padding-top: var(--s-1);
+        font-family: var(--font-sans);
+        font-size: var(--text-sm);
+        font-weight: 400;
+        line-height: var(--leading-body);
+        letter-spacing: 0;
+        color: var(--medium-grey);
     }
 
     .event-row {
@@ -208,17 +190,13 @@
     }
 
     .event-title {
-        font-family: var(--font-serif);
-        font-size: 1.15rem;
-        font-weight: 500;
-        line-height: 1.25;
         flex: 1;
         min-width: 0;
     }
 
     .event-meta {
         font-family: var(--font-sans);
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
         font-weight: 400;
         color: var(--medium-grey);
         white-space: nowrap;

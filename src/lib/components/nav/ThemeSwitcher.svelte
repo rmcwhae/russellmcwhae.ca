@@ -277,13 +277,13 @@
     }
 
     .theme-option.active {
-        font-weight: 700;
+        font-weight: 600;
         background: var(--background-color);
     }
 
     .theme-option-label {
         white-space: nowrap;
         font-family: var(--font-sans);
-        font-size: 0.85rem;
+        font-size: var(--text-xs);
     }
 </style>

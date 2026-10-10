@@ -10,7 +10,9 @@
     </p>
 </footer>
 
-<style>
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
+
     footer {
         display: flex;
         justify-content: space-between;
@@ -20,7 +22,7 @@
         padding: var(--s2) 0 var(--s1);
         border-top: 1px solid var(--light-grey);
         color: var(--medium-grey);
-        font-size: 0.85rem;
+        font-size: var(--text-xs);
     }
 
     p {
@@ -39,7 +41,7 @@
         color: var(--high-contrast-color);
     }
 
-    @media (max-width: 700px) {
+    @include for-phone-only {
         footer {
             flex-direction: column;
             align-items: flex-start;

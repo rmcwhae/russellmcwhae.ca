@@ -17,4 +17,25 @@
     --s3: calc(var(--s2) * var(--ratio));
     --s4: calc(var(--s3) * var(--ratio));
     --s5: calc(var(--s4) * var(--ratio));
+
+    // Type scale
+    --text-caps: 0.75rem; // uppercase labels: eyebrow, nav, logo, compact date
+    --text-xs: 0.85rem; // meta, captions, footer, popovers
+    --text-sm: 0.95rem; // secondary text: excerpts, sidebars, form fields, code
+    --text-base: 1.0625rem; // body
+    --text-md: 1.2rem; // lede, list-item titles, h4
+    --text-lg: 1.35rem; // h3
+    --text-xl: clamp(1.65rem, 1.3rem + 1.2vw, 2rem); // h2
+    --text-2xl: clamp(2.15rem, 1.6rem + 2.4vw, 3.25rem); // h1
+    --text-display: clamp(2.6rem, 4.6vw, 4.35rem); // home hero only
+
+    --leading-tight: 1.15; // h1, h2
+    --leading-snug: 1.25; // h3, h4, list titles
+    --leading-compact: 1.45; // small and secondary text
+    --leading-body: 1.6;
+
+    --tracking-caps: 0.12em;
+    --tracking-heading: -0.02em;
+
+    --measure: 68ch;
 }

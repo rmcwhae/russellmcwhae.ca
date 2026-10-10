@@ -118,9 +118,4 @@
     :global(.wrapper > *) {
         grid-column: 2;
     }
-    :global(.restricted-width) {
-        max-width: $breakpoint-tablet-landscape-min;
-        margin-left: auto;
-        margin-right: auto;
-    }
 </style>

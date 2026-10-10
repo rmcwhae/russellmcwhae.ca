@@ -23,26 +23,10 @@
 <Gallery {images} />
 
 <style>
-    h1 {
-        margin-top: 0.35rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .eyebrow a {
-        color: inherit;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    .eyebrow a:hover {
-        color: var(--alpine);
-        text-decoration: none;
-    }
-
     .meta {
-        margin: 0 0 var(--s1);
+        margin: 0;
         color: var(--medium-grey);
         font-family: var(--font-sans);
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
     }
 </style>

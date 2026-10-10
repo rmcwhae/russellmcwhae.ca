@@ -83,9 +83,9 @@
     #logo a {
         display: block;
         color: var(--high-contrast-color);
-        font-size: 0.78rem;
+        font-size: var(--text-caps);
         font-weight: 600;
-        letter-spacing: 0.16em;
+        letter-spacing: var(--tracking-caps);
         line-height: 1;
         text-decoration: none;
         text-transform: uppercase;

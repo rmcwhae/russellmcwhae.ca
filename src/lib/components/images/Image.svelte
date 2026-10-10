@@ -36,7 +36,6 @@
 <div class:lockedRatio>
     {#if photoswipe}
         <a
-            class="no-shadow"
             href={src}
             data-pswp-width={width}
             data-pswp-height={height}

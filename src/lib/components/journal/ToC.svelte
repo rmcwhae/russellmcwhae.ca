@@ -507,7 +507,7 @@
 
     .toc-drawer-title {
         margin: 0;
-        font-size: 1rem;
+        font-size: var(--text-base);
         font-weight: 500;
         color: var(--high-contrast-color);
     }

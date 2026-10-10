@@ -22,9 +22,9 @@
         margin: 0;
         padding: 0.35rem 0.65rem;
         color: var(--medium-grey);
-        font-size: 0.78rem;
+        font-size: var(--text-caps);
         font-weight: 500;
-        letter-spacing: 0.14em;
+        letter-spacing: var(--tracking-caps);
         line-height: 1;
         text-decoration: none;
         text-transform: uppercase;

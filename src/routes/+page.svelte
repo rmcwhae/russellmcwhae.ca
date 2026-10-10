@@ -3,6 +3,7 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
     import JournalEntry from '#lib/components/journal/Entry.svelte'
+    import Interests from '#lib/components/misc/Interests.svelte'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
     import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
 
@@ -30,19 +31,6 @@
             lightbox?.destroy()
         }
     })
-
-    const interests = [
-        {
-            href: '/reading-list',
-            title: 'Reading list',
-            description: 'Books I have read.',
-        },
-        {
-            href: '/uses',
-            title: 'What I use',
-            description: 'Tools used in my work.',
-        },
-    ]
 </script>
 
 <SEO />
@@ -120,13 +108,14 @@
                         post={latestPost}
                         featured
                         showCategory={false}
+                        level={3}
                     />
                 </div>
                 <div class="journal-recent">
                     <p class="eyebrow">Recent entries</p>
                     {#each recentPosts as post (post.href)}
                         <article class="recent-entry">
-                            <h3 class="recent-title">
+                            <h3 class="recent-title title-sm">
                                 <a href={post.href}
                                     >{@html preventLastTwoWordWrap(
                                         post.title
@@ -149,10 +138,10 @@
     {/if}
 
     <section class="band about-band">
-        <p class="eyebrow about-kicker">About</p>
-        <h2 class="about-title">
+        <h2 class="eyebrow about-kicker">About</h2>
+        <p class="about-title">
             A balance of logic, curiosity, and creativity.
-        </h2>
+        </p>
         <figure class="portrait">
             <img
                 src="/russell.png"
@@ -183,17 +172,7 @@
             <Button href="/about" text="More about me" right />
         </div>
         <div class="interests-col">
-            <h2 class="eyebrow">Other interests</h2>
-            <ul class="interests">
-                {#each interests as interest (interest.href)}
-                    <li>
-                        <a href={interest.href}>
-                            <h3>{interest.title}</h3>
-                            <p>{interest.description}</p>
-                        </a>
-                    </li>
-                {/each}
-            </ul>
+            <Interests />
         </div>
     </section>
 </div>
@@ -272,7 +251,7 @@
         display: flex;
         flex-direction: column;
         margin: 0 0 1.25rem;
-        font-size: clamp(2.6rem, 4.6vw, 4.35rem);
+        font-size: var(--text-display);
         font-weight: 500;
         letter-spacing: -0.035em;
         line-height: 0.98;
@@ -291,11 +270,9 @@
         letter-spacing: -0.03em;
     }
 
-    .lede {
+    .intro .lede {
         max-width: 34rem;
         margin: 0;
-        font-size: 1.05rem;
-        line-height: 1.55;
     }
 
     .band {
@@ -336,17 +313,17 @@
         gap: 0.6rem;
         margin: 0.5rem 0 0;
         color: var(--text-color);
-        font-size: 0.85rem;
+        font-size: var(--text-xs);
         font-weight: 400;
-        line-height: 1.4;
+        line-height: var(--leading-compact);
     }
 
     .index {
         flex: none;
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: var(--text-caps);
         font-variant-numeric: tabular-nums;
-        letter-spacing: 0.08em;
+        letter-spacing: var(--tracking-caps);
         opacity: 0.7;
     }
 
@@ -388,6 +365,12 @@
     .about-title {
         margin: 0;
         max-width: 16ch;
+        font-family: var(--font-serif);
+        font-size: var(--text-xl);
+        font-weight: 500;
+        line-height: var(--leading-tight);
+        letter-spacing: var(--tracking-heading);
+        color: var(--high-contrast-color);
     }
 
     .portrait {
@@ -454,61 +437,19 @@
 
     .recent-title {
         margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.25;
     }
 
     .recent-entry p {
         margin: 0;
         color: var(--text-color);
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
         font-weight: 400;
-        line-height: 1.45;
+        line-height: var(--leading-compact);
     }
 
     .journal-recent :global(a.button) {
         align-self: flex-start;
         margin-top: var(--s1);
-    }
-
-    .interests {
-        list-style: none;
-        margin: var(--s1) 0 0;
-        padding: 0;
-        border-top: 1px solid var(--light-grey);
-    }
-
-    .interests li {
-        border-bottom: 1px solid var(--light-grey);
-    }
-
-    .interests a {
-        display: grid;
-        gap: 0.2rem;
-        padding: 0.9rem 0;
-        text-decoration: none;
-    }
-
-    .interests a:hover {
-        text-decoration: none;
-    }
-
-    .interests h3 {
-        margin: 0;
-        font-family: var(--font-sans);
-        font-size: 1rem;
-        font-weight: 500;
-        letter-spacing: 0;
-    }
-
-    .interests a:hover h3 {
-        color: var(--alpine);
-    }
-
-    .interests p {
-        margin: 0;
-        color: var(--text-color);
-        font-weight: 400;
     }
 
     @include for-tablet-portrait-up {
@@ -553,7 +494,7 @@
         .caption-text {
             font-family: var(--font-serif);
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: var(--text-sm);
         }
 
         .lead .caption {
@@ -561,7 +502,7 @@
         }
 
         .lead .caption-text {
-            font-size: 1.15rem;
+            font-size: var(--text-md);
         }
     }
 

@@ -35,15 +35,8 @@
 }
 
 .restricted-width {
-    max-width: 70ch;
-    margin: 0 auto;
-}
-
-@include for-tablet-landscape-up {
-    .restricted-width {
-        max-width: inherit;
-        margin: 0;
-    }
+    max-width: $breakpoint-tablet-landscape-min;
+    margin-inline: auto;
 }
 
 article img {

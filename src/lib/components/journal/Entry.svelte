@@ -9,10 +9,16 @@
      * @property {any} post
      * @property {boolean} [featured]
      * @property {boolean} [showCategory]
+     * @property {number} [level] Heading level for the title
      */
 
     /** @type {Props} */
-    let { post, featured = false, showCategory = true } = $props()
+    let {
+        post,
+        featured = false,
+        showCategory = true,
+        level = featured ? 2 : 3,
+    } = $props()
 
     let { href, title, description, preview, date, readingTime, category } =
         $derived(post)
@@ -26,12 +32,14 @@
     {#if featured}
         {#if date}
             <div class="sub">
+                Latest
+                &middot;
                 <Date {date} />
             </div>
         {/if}
-        <h1>
+        <svelte:element this={`h${level}`} class="entry-title">
             <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-        </h1>
+        </svelte:element>
         {#if featuredPreview}
             <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
         {/if}
@@ -56,9 +64,9 @@
             </div>
         {/if}
         <div class="body">
-            <h3>
+            <svelte:element this={`h${level}`} class="entry-title title-sm">
                 <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-            </h3>
+            </svelte:element>
             {#if featuredPreview}
                 <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
             {/if}
@@ -85,25 +93,16 @@
         border-bottom: 1px solid var(--light-grey);
     }
 
-    h1,
-    h3 {
+    .entry-title {
         margin: 0;
-        line-height: 1.15;
     }
 
-    h3 {
-        font-size: 1.2rem;
-        line-height: 1.25;
-    }
-
-    h1 a,
-    h3 a {
+    .entry-title a {
         font-weight: 500;
         text-decoration: none;
     }
 
-    h1 a:hover,
-    h3 a:hover {
+    .entry-title a:hover {
         color: var(--alpine);
         text-decoration: underline;
         text-decoration-thickness: 1px;
@@ -113,8 +112,8 @@
     p {
         margin: 0.35rem 0 0;
         color: var(--text-color);
-        font-size: 0.95rem;
-        line-height: 1.45;
+        font-size: var(--text-sm);
+        line-height: var(--leading-compact);
     }
 
     .when {
@@ -123,13 +122,13 @@
 
     .time {
         color: var(--medium-grey);
-        font-size: 0.8rem;
+        font-size: var(--text-xs);
         white-space: nowrap;
     }
 
     .meta {
         margin-top: 0.35rem;
-        font-size: 0.8rem;
+        font-size: var(--text-xs);
     }
 
     section.featured {
@@ -142,9 +141,11 @@
         border: none;
     }
 
-    section.featured h1 {
+    section.featured .entry-title {
         width: 100%;
         max-width: none;
+        font-size: var(--text-xl);
+        line-height: var(--leading-tight);
     }
 
     section.featured p {

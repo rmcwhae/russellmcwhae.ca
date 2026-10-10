@@ -6,10 +6,9 @@
 
 <SEO title="Calendars" />
 
-<div class="mb-2">
+<div class="page-header mb-2">
     <h1>Calendars</h1>
-    <!-- <p class="mt-1 mb-1 big char-limit"> -->
-    <p class="mt-1 mb-1 char-limit">
+    <p class="lede">
         After a ten-year run, I am no longer actively making annual wall
         calendars. Below is an archive of all previous editions.
     </p>

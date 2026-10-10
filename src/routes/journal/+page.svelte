@@ -14,6 +14,13 @@
 <SEO title="Journal" />
 
 <div class="restricted-width journal">
+    <div class="page-header">
+        <h1>Journal</h1>
+        <p class="lede">
+            Long-form thoughts on technology, the outdoors, and life.
+        </p>
+    </div>
+
     {#if latestPost}
         <div class="featured">
             <JournalEntry post={latestPost} featured />
@@ -59,6 +66,7 @@
     @use '../../lib/scss/breakpoints' as *;
 
     .featured {
+        margin-top: var(--s2);
         margin-bottom: var(--s3);
     }
 
@@ -85,8 +93,8 @@
     .sidebar p:not(.eyebrow) {
         max-width: 42ch;
         margin: 0 0 1rem;
-        font-size: 0.95rem;
-        line-height: 1.45;
+        font-size: var(--text-sm);
+        line-height: var(--leading-compact);
     }
 
     .starters-label {
@@ -108,9 +116,9 @@
         display: block;
         padding: 0.75rem 0;
         font-family: var(--font-sans);
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
         font-weight: 500;
-        line-height: 1.35;
+        line-height: var(--leading-compact);
         text-decoration: none;
     }
 

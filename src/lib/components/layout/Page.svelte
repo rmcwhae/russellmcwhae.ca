@@ -17,14 +17,10 @@
 
 <style>
     article {
-        max-width: 70ch;
+        max-width: var(--measure);
     }
 
     header {
         margin-bottom: var(--s2);
-    }
-
-    h1 {
-        font-size: clamp(2.2rem, 4vw, 3.2rem);
     }
 </style>
