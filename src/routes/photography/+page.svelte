@@ -1,6 +1,6 @@
 <script>
     import Gallery from '#lib/components/images/Gallery.svelte'
-    import RightChevron from '#lib/components/icons/RightChevron.svelte'
+    import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
 
     let { data } = $props()
@@ -15,11 +15,14 @@
 
 <div class="page-header">
     <h1>Portfolio</h1>
+    <p class="lede">
+        A collection of landscape images from Western Canada and beyond.
+    </p>
     <nav class="destinations" aria-label="Related">
         {#each destinations as destination (destination.href)}
             <a href={destination.href}>
                 <span>{destination.text}</span>
-                <RightChevron />
+                <ArrowNorthEast />
             </a>
         {/each}
     </nav>
@@ -33,7 +36,15 @@
     @use '../../lib/scss/breakpoints' as *;
 
     h1 {
-        margin-bottom: 0;
+        margin-bottom: 0.4rem;
+    }
+
+    .lede {
+        max-width: 36rem;
+        margin: 0 0 var(--s1);
+        color: var(--text-color);
+        font-size: 1.05rem;
+        line-height: 1.5;
     }
 
     .destinations {
