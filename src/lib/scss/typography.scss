@@ -12,7 +12,9 @@
 
 a {
     color: var(--high-contrast-color);
-    transition: color var(--duration);
+    transition:
+        color var(--duration),
+        background-color var(--duration);
 }
 
 .button {
@@ -74,6 +76,16 @@ article a {
         color: var(--high-contrast-color);
         text-decoration-color: var(--alpine);
         text-decoration-thickness: 2px;
+    }
+}
+
+article :is(p, li, blockquote, figcaption) a:not(:has(img)) {
+    box-decoration-break: clone;
+    padding-inline: 0.12em;
+    margin-inline: -0.12em;
+
+    &:hover {
+        background-color: color-mix(in oklch, var(--alpine) 10%, transparent);
     }
 }
 
