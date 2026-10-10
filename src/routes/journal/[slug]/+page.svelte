@@ -23,7 +23,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header>
+<header class="restricted-width">
     <div class="sub">
         <Date {date} />
     </div>
@@ -60,15 +60,17 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../../lib/scss/breakpoints' as *;
+
     header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: var(--s-1);
         width: 100%;
-        max-width: none;
-        margin: 0 0 var(--s2);
+        max-width: $breakpoint-tablet-landscape-min;
+        margin: 0 auto var(--s2);
         text-align: left;
         padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
