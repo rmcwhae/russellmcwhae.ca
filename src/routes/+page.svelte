@@ -78,7 +78,7 @@
         <section class="band">
             <div class="section-label">
                 <h2 class="eyebrow">Favourite Landscapes</h2>
-                <Button href="/photography" text="View all photography" right />
+                <Button href="/photography" text="View all photos" right />
             </div>
             <div class="moments" id="home-favourites">
                 {#each favourites as image, i (image.filePath)}
