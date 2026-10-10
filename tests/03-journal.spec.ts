@@ -30,13 +30,15 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Check that word count is displayed
-        await expect(page.locator('.count')).toContainText(
+        await expect(page.locator('.sidebar .count')).toContainText(
             'Total written words:'
         )
 
-        // Check that word count is a number
-        const wordCountText = await page.locator('.count').textContent()
-        expect(wordCountText).toMatch(/Total written words: \d+/)
+        // Check that word count is a number with thousands separators
+        const wordCountText = await page
+            .locator('.sidebar .count')
+            .textContent()
+        expect(wordCountText).toMatch(/Total written words: \d{1,3}(,\d{3})*/)
     })
 
     test('journal entries are clickable', async ({ page }) => {

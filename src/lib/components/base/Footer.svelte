@@ -3,7 +3,7 @@
 </script>
 
 <footer>
-    <p>&copy; {year} Russell McWhae.</p>
+    <p>&copy; {year} Russell McWhae. Made in Canada.</p>
     <p>
         A personal collection of <a href="/photography">images</a> and
         <a href="/journal">words</a>.

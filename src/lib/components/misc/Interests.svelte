@@ -13,8 +13,9 @@
     ]
 </script>
 
-<h2 class="eyebrow">Other interests</h2>
-<ul class="interests">
+<div class="interests-block">
+    <h2 class="eyebrow">Other interests</h2>
+    <ul class="interests">
     {#each interests as interest (interest.href)}
         <li>
             <a href={interest.href}>
@@ -23,7 +24,8 @@
             </a>
         </li>
     {/each}
-</ul>
+    </ul>
+</div>
 
 <style>
     .interests {

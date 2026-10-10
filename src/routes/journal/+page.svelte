@@ -58,10 +58,11 @@
                     </li>
                 {/each}
             </ul>
+            <p class="count">
+                Total written words: {totalWordCount.toLocaleString('en-US')}
+            </p>
         </aside>
     </div>
-
-    <p class="count">Total written words: {totalWordCount}</p>
 </div>
 
 <style lang="scss">
@@ -92,7 +93,7 @@
         margin: 0 0 0.75rem;
     }
 
-    .sidebar p:not(.eyebrow) {
+    .sidebar p:not(.eyebrow):not(.count) {
         max-width: 42ch;
         margin: 0 0 1rem;
         font-size: var(--text-sm);
@@ -142,8 +143,8 @@
     }
 
     .count {
-        margin-top: var(--s2);
-        text-align: left;
+        margin: var(--s1) 0 0;
+        font-size: var(--text-sm);
         color: var(--medium-grey);
     }
 
