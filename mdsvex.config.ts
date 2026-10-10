@@ -5,7 +5,6 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 import { frontMatterSlug } from './src/lib/markdown/front-matter.ts'
-import rehypeFootnotes from './src/lib/markdown/rehype-footnotes.ts'
 import remarkFootnotes from './src/lib/markdown/remark-footnotes.ts'
 
 const layoutRoot = path.resolve('src/lib/components/layout')
@@ -25,7 +24,6 @@ const config = {
             rehypeExternalLinks,
             { target: '_blank', rel: ['noopener', 'noreferrer'] },
         ],
-        rehypeFootnotes,
     ],
 }
 

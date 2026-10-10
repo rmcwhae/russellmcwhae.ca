@@ -209,4 +209,71 @@ test.describe('Journal Page', () => {
             }
         }
     })
+
+    for (const viewport of [
+        { width: 1280, height: 800 },
+        { width: 375, height: 667 },
+    ]) {
+        test(`footnotes open inline within the viewport at ${viewport.width}px`, async ({
+            page,
+        }) => {
+            await page.setViewportSize(viewport)
+            await page.goto('/journal/30-going-on-13')
+
+            await expect(page.locator('.footnotes')).toBeHidden()
+
+            const refs = page.locator('a.footnote-ref')
+            const count = await refs.count()
+            expect(count).toBeGreaterThan(0)
+
+            for (let i = 0; i < count; i++) {
+                const ref = refs.nth(i)
+                await ref.scrollIntoViewIfNeeded()
+                await ref.click()
+
+                const popover = page.locator(
+                    `#${await ref.getAttribute('aria-controls')}`
+                )
+                await expect(popover).toBeVisible()
+                await expect(ref).toHaveAttribute('aria-expanded', 'true')
+
+                const box = await popover.boundingBox()
+                expect(box).not.toBeNull()
+                expect(box!.x).toBeGreaterThanOrEqual(0)
+                expect(box!.y).toBeGreaterThanOrEqual(0)
+                expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width)
+                expect(box!.y + box!.height).toBeLessThanOrEqual(
+                    viewport.height
+                )
+
+                await ref.click()
+                await expect(popover).toBeHidden()
+            }
+        })
+    }
+
+    test('footnote opens above when the reference is near the bottom', async ({
+        page,
+    }) => {
+        await page.setViewportSize({ width: 1280, height: 800 })
+        await page.goto('/journal/30-going-on-13')
+
+        await expect(page.locator('.footnotes')).toBeHidden()
+
+        const ref = page.locator('a.footnote-ref').first()
+        await ref.evaluate((el) => {
+            const { top } = el.getBoundingClientRect()
+            window.scrollBy({
+                top: top - window.innerHeight + 40,
+                behavior: 'instant',
+            })
+        })
+        await ref.click()
+
+        const popover = page.locator('.footnote-popover:popover-open')
+        await expect(popover).toHaveAttribute('data-placement', 'top')
+
+        await page.keyboard.press('Escape')
+        await expect(popover).toHaveCount(0)
+    })
 })

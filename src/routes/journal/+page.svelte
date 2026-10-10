@@ -107,10 +107,10 @@
     .starters a {
         display: block;
         padding: 0.75rem 0;
-        font-family: var(--font-serif);
-        font-size: 1.15rem;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
         font-weight: 500;
-        line-height: 1.25;
+        line-height: 1.35;
         text-decoration: none;
     }
 

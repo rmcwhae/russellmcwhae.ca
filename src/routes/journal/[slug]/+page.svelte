@@ -7,6 +7,7 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import ToC from '#lib/components/journal/ToC.svelte'
     import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
+    import { mountFootnotes } from '#lib/components/journal/mountFootnotes.js'
 
     let { data } = $props()
 
@@ -19,6 +20,16 @@
     let relatedPosts = $derived(data.relatedPosts)
 
     const SvelteComponent = $derived(component)
+
+    /** @type {HTMLElement | undefined} */
+    let article = $state()
+
+    $effect(() => {
+        if (!article || !component) return
+
+        const footnotes = mountFootnotes(article)
+        return () => footnotes.destroy()
+    })
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
@@ -44,7 +55,7 @@
 
 <div class="article-columns">
     <ToC allowedHeadings={['h2', 'h3']} />
-    <article class="char-limit flow">
+    <article class="char-limit flow" bind:this={article}>
         <SvelteComponent />
     </article>
 </div>
