@@ -10,10 +10,10 @@
 
 <div class="about-layout">
     <header>
-        <h1>
+        <h1>About Me</h1>
+        <p class="lede">
             Developer, photographer, writer, and lifelong outdoor adventurer.
-        </h1>
-        <p class="lede">A balance of logic, curiosity, and creativity.</p>
+        </p>
     </header>
     <article class="about">
         <figure class="portrait-inline">
