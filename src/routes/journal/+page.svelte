@@ -17,7 +17,8 @@
     <div class="page-header">
         <h1>Journal</h1>
         <p class="lede">
-            Long-form thoughts on technology, the outdoors, and life.
+            Long-form thoughts on technology, the outdoors, and life. I hope
+            you’ll join me for a glimpse into my head.
         </p>
     </div>
 
@@ -35,11 +36,12 @@
         <aside class="sidebar">
             <p class="eyebrow">About</p>
             <p>
-                Welcome to my online journal, a collection of long-form thoughts
-                on technology, the outdoors, and life. Text generation and ideas
-                are my own, though I do use AI for editing and refining (as of
-                2025). I hope you’ll join me for a glimpse into my head. Also
-                see my
+                Text generation and ideas are my own, though I do use AI for
+                editing and refining (as of 2025). I hope you’ll join me for a
+                glimpse into my head.
+            </p>
+            <p>
+                Also see my
                 <a href={resolve('/reading-list')}>reading list</a>.
             </p>
             <p class="starters-label">
