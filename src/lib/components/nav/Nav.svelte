@@ -173,12 +173,8 @@
     }
 
     .nav-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 100vh;
+        position: fixed;
+        inset: 0;
         background-color: var(--background-color-transparent);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
