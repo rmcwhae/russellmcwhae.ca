@@ -32,7 +32,8 @@
     {#if featured}
         {#if date}
             <div class="sub">
-                Latest &middot;
+                <span class="eyebrow">Latest</span>
+                &middot;
                 <Date {date} />
                 {#if readingTime}
                     &middot;

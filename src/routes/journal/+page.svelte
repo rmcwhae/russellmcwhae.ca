@@ -13,76 +13,95 @@
 
 <SEO title="Journal" />
 
-<div class="restricted-width journal">
-    <div class="page-header">
-        <h1>Journal</h1>
-        <p class="lede">
-            Long-form thoughts on technology, the outdoors, and life. I hope
-            you’ll join me for a glimpse into my head.
-        </p>
-    </div>
-
-    {#if latestPost}
-        <div class="featured">
-            <JournalEntry post={latestPost} featured />
-        </div>
-    {/if}
-
-    <div class="columns">
-        <div class="archive">
-            <JournalEntrySet {posts} />
+<div class="journal restricted-width">
+    <div class="rail">
+        <div class="page-header">
+            <h1>Journal</h1>
+            <p class="lede">
+                Long-form thoughts on technology, the outdoors, and life.
+            </p>
         </div>
 
         <aside class="sidebar">
             <p class="eyebrow">About</p>
             <p>
                 I’ve kept an online journal since 2016. Text generation and
-                ideas are my own, though I do use AI for editing and refining
-                (as of 2025).
+                ideas are my own, though, as of 2025, I do use AI for editing
+                and refining.
             </p>
             <p>
-                Also see my
-                <a href={resolve('/reading-list')}>reading list</a>.
+                <a href={resolve('/reading-list')}>Reading list</a>
             </p>
-            <p class="starters-label">
-                If you’re new here, these articles are a good place to start:
-            </p>
-            <ul class="starters">
-                {#each EDITOR_PICKS as pick (pick.slug)}
-                    <li>
-                        <a
-                            href={resolve('/journal/[slug]', {
-                                slug: pick.slug,
-                            })}>{pick.title}</a
-                        >
-                    </li>
-                {/each}
-            </ul>
+            <div class="start-here">
+                <p class="eyebrow">Start Here</p>
+                <ul class="starters">
+                    {#each EDITOR_PICKS as pick (pick.slug)}
+                        <li>
+                            <a
+                                href={resolve('/journal/[slug]', {
+                                    slug: pick.slug,
+                                })}>{pick.title}</a
+                            >
+                        </li>
+                    {/each}
+                </ul>
+            </div>
             <p class="count">
-                Total written words: {totalWordCount.toLocaleString('en-US')}
+                Total words: {totalWordCount.toLocaleString('en-US')}
             </p>
         </aside>
+    </div>
+
+    <div class="main">
+        {#if latestPost}
+            <div class="featured">
+                <JournalEntry post={latestPost} featured />
+            </div>
+        {/if}
+
+        <div class="archive">
+            <p class="eyebrow">All entries</p>
+            <JournalEntrySet {posts} />
+        </div>
     </div>
 </div>
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
 
-    .featured {
-        margin-top: var(--s2);
-        margin-bottom: var(--s3);
+    .journal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
-    .columns {
-        display: grid;
-        gap: var(--s3);
+    .rail {
+        display: contents;
+    }
+
+    .page-header {
+        order: 1;
+    }
+
+    .main {
+        order: 2;
+    }
+
+    .sidebar {
+        order: 3;
+    }
+
+    .featured {
         margin-top: var(--s2);
-        padding-top: var(--s2);
-        border-top: 1px solid var(--light-grey);
     }
 
     .archive {
         min-width: 0;
+        margin-top: var(--s3);
+
+        .eyebrow {
+            margin: 0 0 var(--s0);
+        }
 
         :global(.entries > section:last-child) {
             border-bottom: none;
@@ -91,14 +110,18 @@
 
     .sidebar {
         min-width: 0;
+        margin-top: var(--s3);
     }
 
     .sidebar .eyebrow {
         margin: 0 0 0.75rem;
     }
 
+    .start-here {
+        margin-top: var(--s2);
+    }
+
     .sidebar p:not(.eyebrow):not(.count) {
-        max-width: 42ch;
         margin: 0 0 1rem;
         font-size: var(--text-sm);
         line-height: var(--leading-compact);
@@ -114,10 +137,6 @@
             color: var(--alpine);
             text-decoration-color: currentColor;
         }
-    }
-
-    .starters-label {
-        margin-bottom: 0.35rem;
     }
 
     .starters {
@@ -153,19 +172,42 @@
     }
 
     @include for-tablet-landscape-up {
-        .columns {
-            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        .journal {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
             align-items: start;
-            gap: 0;
         }
 
-        .archive {
+        .rail {
+            display: block;
+            grid-column: 1;
+            min-width: 0;
             padding-inline-end: var(--s2);
-            border-inline-end: 1px solid var(--light-grey);
+        }
+
+        .page-header,
+        .sidebar,
+        .main {
+            order: 0;
+        }
+
+        .page-header {
+            margin-bottom: var(--s2);
         }
 
         .sidebar {
-            padding-inline-start: var(--s1);
+            margin-top: 0;
+        }
+
+        .main {
+            grid-column: 2;
+            min-width: 0;
+            padding-inline-start: var(--s2);
+            border-inline-start: 1px solid var(--light-grey);
+        }
+
+        .featured {
+            margin-top: 0;
         }
     }
 </style>
