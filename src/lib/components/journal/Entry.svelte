@@ -9,6 +9,8 @@
      * @property {any} post
      * @property {boolean} [featured]
      * @property {boolean} [showCategory]
+     * @property {boolean} [showDescription]
+     * @property {boolean} [showPreview]
      * @property {number} [level] Heading level for the title
      */
 
@@ -17,6 +19,8 @@
         post,
         featured = false,
         showCategory = true,
+        showDescription = true,
+        showPreview = true,
         level = featured ? 2 : 3,
     } = $props()
 
@@ -24,7 +28,13 @@
         $derived(post)
 
     let featuredPreview = $derived(
-        featured ? preview || description : description
+        featured
+            ? showPreview
+                ? preview || description
+                : description
+            : showDescription
+              ? description
+              : ''
     )
 </script>
 
@@ -52,6 +62,10 @@
         {#if date}
             <div class="when">
                 <Date {date} compact />
+                {#if category && showCategory}
+                    <span class="dot">&middot;</span>
+                    <CategoryLink {category} />
+                {/if}
             </div>
         {/if}
         <div class="body">
@@ -60,11 +74,6 @@
             </svelte:element>
             {#if featuredPreview}
                 <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
-            {/if}
-            {#if category}
-                <div class="meta">
-                    <CategoryLink {category} />
-                </div>
             {/if}
         </div>
         {#if readingTime}
@@ -109,17 +118,18 @@
 
     .when {
         grid-column: 1 / -1;
+        color: var(--medium-grey);
+        font-size: var(--text-xs);
+    }
+
+    .dot {
+        margin-inline: 0.35em;
     }
 
     .time {
         color: var(--medium-grey);
         font-size: var(--text-xs);
         white-space: nowrap;
-    }
-
-    .meta {
-        margin-top: 0.35rem;
-        font-size: var(--text-xs);
     }
 
     section.featured {
@@ -153,7 +163,7 @@
 
     @include for-tablet-portrait-up {
         section:not(.featured) {
-            grid-template-columns: 8.5rem 1fr auto;
+            grid-template-columns: 13.5rem 1fr auto;
             align-items: baseline;
             gap: 0.25rem 1.5rem;
         }

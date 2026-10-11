@@ -30,6 +30,10 @@
 </div>
 
 <style>
+    .restricted-width {
+        width: 100%;
+    }
+
     .categories {
         margin: 0 0 var(--s2);
         font-size: var(--text-sm);

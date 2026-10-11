@@ -1,33 +1,31 @@
 <script>
     import { resolve } from '$app/paths'
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
-    import JournalEntry from '#lib/components/journal/Entry.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
     import { EDITOR_PICKS } from '#lib/constants/journal'
 
     let { data } = $props()
     let posts = $derived(data.posts)
-    let latestPost = $derived(data.latestPost)
     let totalWordCount = $derived(data.totalWordCount)
 </script>
 
 <SEO title="Journal" />
 
 <div class="journal restricted-width">
-    <div class="rail">
-        <div class="page-header">
-            <h1>Journal</h1>
-            <p class="lede">
-                Long-form thoughts on technology, the outdoors, and life.
-            </p>
-        </div>
+    <div class="page-header">
+        <h1>Journal</h1>
+        <p class="lede">
+            Long-form thoughts on technology, the outdoors, and life.
+        </p>
+    </div>
 
+    <div class="split">
         <aside class="sidebar">
             <p class="eyebrow">About</p>
-            <p>
+            <p class="about-copy">
                 I’ve kept an online journal since 2016. Text generation and
-                ideas are my own, though, as of 2025, I do use AI for editing
-                and refining.
+                ideas are my own, though I do use AI for editing and refining,
+                as of 2025.
             </p>
             <p>
                 <a href={resolve('/reading-list')}>Reading list</a>
@@ -50,18 +48,12 @@
                 Total words: {totalWordCount.toLocaleString('en-US')}
             </p>
         </aside>
-    </div>
 
-    <div class="main">
-        {#if latestPost}
-            <div class="featured">
-                <JournalEntry post={latestPost} featured />
+        <div class="main">
+            <div class="archive">
+                <p class="eyebrow">All entries</p>
+                <JournalEntrySet {posts} />
             </div>
-        {/if}
-
-        <div class="archive">
-            <p class="eyebrow">All entries</p>
-            <JournalEntrySet {posts} />
         </div>
     </div>
 </div>
@@ -75,29 +67,24 @@
         width: 100%;
     }
 
-    .rail {
-        display: contents;
-    }
-
-    .page-header {
-        order: 1;
+    .split {
+        display: flex;
+        flex-direction: column;
     }
 
     .main {
-        order: 2;
+        order: 1;
     }
 
     .sidebar {
-        order: 3;
-    }
-
-    .featured {
-        margin-top: var(--s2);
+        order: 2;
+        min-width: 0;
+        margin-top: var(--s3);
     }
 
     .archive {
         min-width: 0;
-        margin-top: var(--s3);
+        margin-top: var(--s1);
 
         .eyebrow {
             margin: 0 0 var(--s0);
@@ -106,11 +93,6 @@
         :global(.entries > section:last-child) {
             border-bottom: none;
         }
-    }
-
-    .sidebar {
-        min-width: 0;
-        margin-top: var(--s3);
     }
 
     .sidebar .eyebrow {
@@ -125,6 +107,10 @@
         margin: 0 0 1rem;
         font-size: var(--text-sm);
         line-height: var(--leading-compact);
+    }
+
+    .sidebar p.about-copy:not(.eyebrow) {
+        line-height: 1.3;
     }
 
     .sidebar p a {
@@ -172,41 +158,36 @@
     }
 
     @include for-tablet-landscape-up {
-        .journal {
+        .page-header {
+            margin-bottom: var(--s2);
+        }
+
+        .split {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
             align-items: start;
         }
 
-        .rail {
-            display: block;
-            grid-column: 1;
-            min-width: 0;
-            padding-inline-end: var(--s2);
-        }
-
-        .page-header,
         .sidebar,
         .main {
             order: 0;
         }
 
-        .page-header {
-            margin-bottom: var(--s2);
+        .main {
+            grid-column: 1;
+            grid-row: 1;
+            min-width: 0;
+            padding-inline-end: var(--s2);
         }
 
         .sidebar {
-            margin-top: 0;
-        }
-
-        .main {
             grid-column: 2;
-            min-width: 0;
+            grid-row: 1;
+            margin-top: 0;
             padding-inline-start: var(--s2);
-            border-inline-start: 1px solid var(--light-grey);
         }
 
-        .featured {
+        .archive {
             margin-top: 0;
         }
     }

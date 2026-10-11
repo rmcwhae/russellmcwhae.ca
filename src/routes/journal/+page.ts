@@ -12,8 +12,7 @@ export const load: PageLoad = async () => {
     }, 0)
 
     return {
-        latestPost: posts[0],
-        posts: posts.slice(1, posts.length),
+        posts,
         totalWordCount,
     }
 }
