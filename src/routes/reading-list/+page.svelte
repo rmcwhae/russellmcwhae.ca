@@ -46,7 +46,7 @@
         <h1>Reading List</h1>
         <p class="lede">
             Reading is one of the ways I make sense of the world. Since 2012,
-            I’ve tracked books that have influenced my thinking.
+            I’ve tracked all the books I’ve read.
         </p>
     </div>
 
@@ -69,12 +69,6 @@
                 <div class="year-group">
                     <h2 class="year-label">{year}</h2>
                     <div class="year-items">
-                        {#if year === 'Earlier'}
-                            <p class="earlier-note">
-                                Exact timing on when I read these is fuzzy, but
-                                I do remember these titles being worthwhile.
-                            </p>
-                        {/if}
                         {#each yearBooks as book (book.title)}
                             <div class="book-row">
                                 <span class="book-title">{book.title}</span>
