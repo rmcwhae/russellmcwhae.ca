@@ -9,7 +9,7 @@
 />
 
 <div class="about-layout">
-    <header>
+    <header class="page-header">
         <h1>About Me</h1>
         <p class="lede">
             Developer, photographer, writer, and lifelong outdoor adventurer.
@@ -120,11 +120,6 @@
     .about {
         margin: 0;
         min-width: 0;
-    }
-
-    h1 {
-        max-width: 28ch;
-        margin-top: 0;
     }
 
     .portrait,

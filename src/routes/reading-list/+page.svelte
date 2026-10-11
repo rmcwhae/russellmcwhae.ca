@@ -77,9 +77,7 @@
                         {/if}
                         {#each yearBooks as book (book.title)}
                             <div class="book-row">
-                                <span class="book-title title-sm"
-                                    >{book.title}</span
-                                >
+                                <span class="book-title">{book.title}</span>
                                 <span class="book-meta">
                                     {book.author}{book.audiobook
                                         ? ' · Audiobook'
@@ -170,6 +168,12 @@
     .book-title {
         flex: 1;
         min-width: 0;
+        font-family: var(--font-sans);
+        font-size: var(--text-base);
+        font-weight: 400;
+        line-height: var(--leading-body);
+        letter-spacing: 0;
+        color: var(--text-color);
         text-wrap: pretty;
     }
 
