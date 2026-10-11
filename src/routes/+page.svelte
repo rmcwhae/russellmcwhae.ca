@@ -421,6 +421,10 @@
         & + & {
             padding-top: var(--s0);
         }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
     }
 
     .recent-title {

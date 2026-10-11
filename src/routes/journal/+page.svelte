@@ -83,6 +83,10 @@
 
     .archive {
         min-width: 0;
+
+        :global(.entries > section:last-child) {
+            border-bottom: none;
+        }
     }
 
     .sidebar {
