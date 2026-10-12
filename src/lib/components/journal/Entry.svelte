@@ -98,6 +98,7 @@
 
     .entry-title {
         margin: 0;
+        font-family: var(--font-serif);
     }
 
     .entry-title a {
