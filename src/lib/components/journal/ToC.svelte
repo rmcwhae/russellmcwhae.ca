@@ -313,8 +313,8 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    // Matches the article's 62ch column. The sidebar stays hidden until the
-    // centered column has a full 238px sidebar's worth of room on the left.
+    // Matches the article's 62ch column. The sidebar stays hidden until each
+    // side gutter is wide enough for a 238px sidebar.
     $toc-sidebar-max: 238px;
 
     @mixin when-sidebar-fits {
@@ -328,8 +328,8 @@
 
         @include when-sidebar-fits {
             display: block;
-            grid-column: 1;
-            justify-self: start;
+            grid-column: 3;
+            justify-self: end;
             align-self: start;
             max-width: $toc-sidebar-max;
             position: sticky;

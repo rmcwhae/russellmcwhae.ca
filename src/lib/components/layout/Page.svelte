@@ -1,14 +1,14 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
 
-    let { title, children } = $props()
+    let { title, children, ledeHeading = false } = $props()
 </script>
 
 <SEO {title} />
 
 <article>
     <header>
-        <h1>{title}</h1>
+        <h1 class:lede-heading={ledeHeading}>{title}</h1>
     </header>
     <div class="flow">
         {@render children?.()}
@@ -25,5 +25,9 @@
 
     header {
         margin-bottom: var(--s2);
+    }
+
+    h1.lede-heading {
+        font-size: var(--text-2xl);
     }
 </style>

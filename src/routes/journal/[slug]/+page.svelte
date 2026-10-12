@@ -54,10 +54,10 @@
 </header>
 
 <div class="article-columns">
-    <ToC allowedHeadings={['h2', 'h3']} />
     <article class="char-limit flow" bind:this={article}>
         <SvelteComponent />
     </article>
+    <ToC allowedHeadings={['h2', 'h3']} />
 </div>
 
 <div class="restricted-width">

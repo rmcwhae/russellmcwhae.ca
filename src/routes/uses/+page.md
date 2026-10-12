@@ -1,6 +1,7 @@
 ---
 title: What I Use
 layout: page
+ledeHeading: true
 ---
 
 These are the tools I use in my professional and creative workflows. Inspired by [uses.tech](https://uses.tech) via the [Syntax](https://syntax.fm/) podcast.
