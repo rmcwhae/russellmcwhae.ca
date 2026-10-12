@@ -161,7 +161,15 @@
                 as I see it through photographs and words.
             </p>
 
-            <Button href="/about" text="More about me" right />
+            <div class="about-actions">
+                <Button href="/about" text="More about me" right />
+                <Button
+                    href="https://github.com/rmcwhae"
+                    text="My GitHub profile"
+                    external
+                    right
+                />
+            </div>
         </div>
         <div class="interests-col">
             <Interests />
@@ -395,6 +403,13 @@
 
     .about-copy p {
         margin: 0 0 1.25rem;
+    }
+
+    .about-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--s1);
     }
 
     .interests-col {

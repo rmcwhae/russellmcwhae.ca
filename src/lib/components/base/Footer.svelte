@@ -3,7 +3,10 @@
 </script>
 
 <footer>
-    <p>&copy; {year} Russell McWhae. Made in Canada.</p>
+    <p>
+        &copy; {year} Russell McWhae.
+        <a href="mailto:russell.mcwhae@gmail.com">Email Me</a>.
+    </p>
     <p>
         A personal collection of <a href="/photography">images</a> and
         <a href="/journal">words</a>.
