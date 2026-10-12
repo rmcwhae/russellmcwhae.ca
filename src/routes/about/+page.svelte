@@ -1,6 +1,24 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
     import Interests from '#lib/components/misc/Interests.svelte'
+    import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
+
+    $effect(() => {
+        let lightbox
+        let cancelled = false
+
+        mountPhotoSwipe('.about .portrait, .about .portrait-inline').then(
+            (instance) => {
+                if (cancelled) instance.destroy()
+                else lightbox = instance
+            }
+        )
+
+        return () => {
+            cancelled = true
+            lightbox?.destroy()
+        }
+    })
 </script>
 
 <SEO
@@ -19,13 +37,19 @@
     <div class="split">
         <article class="main">
             <figure class="portrait-inline">
-                <img
-                    src="/portrait.jpeg"
-                    alt="Russell McWhae"
-                    width="3088"
-                    height="2316"
-                    decoding="async"
-                />
+                <a
+                    href="/portrait.jpeg"
+                    data-pswp-width="3088"
+                    data-pswp-height="2316"
+                >
+                    <img
+                        src="/portrait.jpeg"
+                        alt="Russell McWhae"
+                        width="3088"
+                        height="2316"
+                        decoding="async"
+                    />
+                </a>
             </figure>
             <div class="flow">
                 <p>
@@ -38,8 +62,7 @@
                     At the same time, I was dabbling in web development. In the
                     early 2000s, that meant drafting mockups in Photoshop,
                     slicing them into HTML tables, and building custom WordPress
-                    themes. (Shoutout to any developers who remember battling
-                    Internet Explorer 6 to get a webpage to render correctly.)
+                    themes.
                 </p>
                 <p>
                     As my outdoor experience grew, I ventured deeper into the
@@ -94,13 +117,19 @@
 
         <aside class="sidebar">
             <figure class="portrait">
-                <img
-                    src="/portrait.jpeg"
-                    alt="Russell McWhae"
-                    width="3088"
-                    height="2316"
-                    decoding="async"
-                />
+                <a
+                    href="/portrait.jpeg"
+                    data-pswp-width="3088"
+                    data-pswp-height="2316"
+                >
+                    <img
+                        src="/portrait.jpeg"
+                        alt="Russell McWhae"
+                        width="3088"
+                        height="2316"
+                        decoding="async"
+                    />
+                </a>
             </figure>
             <Interests
                 heading="My work"
@@ -108,6 +137,11 @@
                 items={[
                     { href: '/photography', title: 'Photography' },
                     { href: '/journal', title: 'Journal' },
+                    {
+                        href: 'https://github.com/rmcwhae',
+                        title: 'GitHub',
+                        external: true,
+                    },
                 ]}
             />
             <Interests />
@@ -150,6 +184,18 @@
         display: none;
     }
 
+    .portrait a,
+    .portrait-inline a {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .portrait a:hover,
+    .portrait-inline a:hover {
+        text-decoration: none;
+    }
+
     .portrait img,
     .portrait-inline img {
         display: block;
@@ -170,7 +216,7 @@
 
         .split {
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 2.75fr) minmax(0, 1.25fr);
             align-items: start;
         }
 

@@ -40,7 +40,7 @@
     </div>
     <h1><NoWrapLastTwoWords text={title} /></h1>
     {#if description}
-        <p><NoWrapLastTwoWords text={description} /></p>
+        <p class="lede"><NoWrapLastTwoWords text={description} /></p>
     {/if}
     <div class="sub">
         {#if category}
@@ -80,20 +80,29 @@
         align-items: flex-start;
         gap: var(--s-1);
         width: 100%;
-        max-width: $breakpoint-tablet-landscape-min;
+        max-width: $restricted-width;
         margin: 0 auto var(--s2);
         text-align: left;
         padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
     }
-    header h1,
-    header p {
+    header h1 {
         width: 100%;
         max-width: none;
         margin: 0;
     }
+    header p {
+        margin: 0;
+    }
     header .sub {
         color: var(--text-color);
+    }
+
+    @include for-desktop-up {
+        header {
+            align-items: center;
+            text-align: center;
+        }
     }
     .article-columns {
         display: grid;

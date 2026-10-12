@@ -208,6 +208,23 @@
         z-index: 0;
     }
 
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        height: 28%;
+        pointer-events: none;
+        background: linear-gradient(
+            to bottom,
+            rgb(0 0 0 / 42%) 0%,
+            rgb(0 0 0 / 16%) 46%,
+            transparent 100%
+        );
+    }
+
     .hero::after {
         content: '';
         position: absolute;
@@ -274,6 +291,7 @@
     }
 
     .hero + .band {
+        margin-top: var(--s3);
         padding-top: var(--s0);
         border-top: none;
     }

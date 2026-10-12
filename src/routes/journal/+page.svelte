@@ -24,8 +24,8 @@
             <p class="eyebrow">About</p>
             <p class="about-copy">
                 I’ve kept an online journal since 2016. Text generation and
-                ideas are my own, though I do use AI for editing and refining,
-                as of 2025.
+                ideas are my own, though I do use AI for editing and refining as
+                <span class="nowrap">of 2025.</span>
             </p>
             <p>
                 <a href={resolve('/reading-list')}>Reading list</a>
@@ -164,7 +164,7 @@
 
         .split {
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 2.75fr) minmax(0, 1.25fr);
             align-items: start;
         }
 

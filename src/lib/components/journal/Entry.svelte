@@ -62,10 +62,6 @@
         {#if date}
             <div class="when">
                 <Date {date} compact />
-                {#if category && showCategory}
-                    <span class="dot">&middot;</span>
-                    <CategoryLink {category} />
-                {/if}
             </div>
         {/if}
         <div class="body">
@@ -76,8 +72,15 @@
                 <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
             {/if}
         </div>
-        {#if readingTime}
-            <div class="time">{readingTime.text}</div>
+        {#if readingTime || (category && showCategory)}
+            <div class="meta">
+                {#if readingTime}
+                    <div class="time">{readingTime.text}</div>
+                {/if}
+                {#if category && showCategory}
+                    <CategoryLink {category} />
+                {/if}
+            </div>
         {/if}
     {/if}
 </section>
@@ -122,13 +125,17 @@
         font-size: var(--text-xs);
     }
 
-    .dot {
-        margin-inline: 0.35em;
+    .meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.15rem;
+        color: var(--medium-grey);
+        font-size: var(--text-xs);
+        text-align: right;
     }
 
     .time {
-        color: var(--medium-grey);
-        font-size: var(--text-xs);
         white-space: nowrap;
     }
 
@@ -163,13 +170,18 @@
 
     @include for-tablet-portrait-up {
         section:not(.featured) {
-            grid-template-columns: 13.5rem 1fr auto;
+            grid-template-columns: max-content 1fr auto;
             align-items: baseline;
             gap: 0.25rem 1.5rem;
         }
 
         section:not(.featured) .when {
             grid-column: auto;
+        }
+
+        :global(.entries) > section:not(.featured) {
+            grid-column: 1 / -1;
+            grid-template-columns: subgrid;
         }
     }
 </style>

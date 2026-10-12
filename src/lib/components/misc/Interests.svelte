@@ -23,7 +23,12 @@
     <ul class="interests">
         {#each items as item (item.href)}
             <li>
-                <a href={item.href} class:has-arrow={arrow}>
+                <a
+                    href={item.href}
+                    class:has-arrow={arrow}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                >
                     <span class="title-row">
                         <h3>{item.title}</h3>
                         {#if arrow}
