@@ -85,9 +85,6 @@
 
         :global(header #logo a),
         :global(header #logo a:hover),
-        :global(header nav a),
-        :global(header nav a:hover),
-        :global(header nav a[aria-current]),
         :global(header .theme-trigger),
         :global(header .theme-trigger:hover),
         :global(header .theme-trigger:focus-visible) {
@@ -100,6 +97,21 @@
 
         :global(header .nav-overlay) {
             position: fixed;
+        }
+
+        @include for-tablet-portrait-down {
+            :global(header:has(.nav-menu.active) #logo a),
+            :global(header:has(.nav-menu.active) #logo a:hover) {
+                color: var(--high-contrast-color);
+            }
+        }
+
+        @include for-tablet-landscape-up {
+            :global(header nav a),
+            :global(header nav a:hover),
+            :global(header nav a[aria-current]) {
+                color: var(--paper);
+            }
         }
     }
 
