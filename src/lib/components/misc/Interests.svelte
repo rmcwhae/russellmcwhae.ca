@@ -14,8 +14,11 @@
         },
     ]
 
-    let { heading = 'Beyond the Work', items = defaultItems, arrow = true } =
-        $props()
+    let {
+        heading = 'Beyond the Work',
+        items = defaultItems,
+        arrow = true,
+    } = $props()
 </script>
 
 <div class="interests-block">
