@@ -6,6 +6,13 @@
     import Interests from '#lib/components/misc/Interests.svelte'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
     import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
+    import {
+        heroPicture,
+        heroPreload,
+        homeLeadSizes,
+        homePhotoSizes,
+    } from '#lib/utils/images/static.js'
+    import StaticPicture from '#lib/components/images/StaticPicture.svelte'
 
     let { data } = $props()
 
@@ -36,18 +43,22 @@
 <SEO />
 
 <svelte:head>
-    <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
+    <link
+        rel="preload"
+        as="image"
+        href={heroPreload}
+        type="image/avif"
+        imagesrcset={heroPicture.avif}
+        imagesizes={heroPicture.sizes}
+        fetchpriority="high"
+    />
 </svelte:head>
 
 <div class="home">
     <section class="hero full-width">
-        <img
-            class="hero-bg"
-            src="/hero.jpg"
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-        />
+        <div class="hero-bg">
+            <StaticPicture {...heroPicture} alt="" fetchpriority="high" />
+        </div>
         <div class="hero-frame">
             <div class="intro">
                 <h1>
@@ -80,6 +91,7 @@
                             width={image.width}
                             height={image.height}
                             customMetadata={image.customMetadata}
+                            sizes={i === 0 ? homeLeadSizes : homePhotoSizes}
                             lockedRatio
                             photoswipe
                         />
@@ -210,10 +222,18 @@
     .hero-bg {
         position: absolute;
         inset: 0;
+        z-index: 0;
+    }
+
+    .hero-bg :global(picture),
+    .hero-bg :global(img) {
+        display: block;
         width: 100%;
         height: 100%;
+    }
+
+    .hero-bg :global(img) {
         object-fit: cover;
-        z-index: 0;
     }
 
     .hero::before {

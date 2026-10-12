@@ -3,6 +3,7 @@
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
     import { mountPhotoSwipe } from './mountPhotoSwipe.js'
+    import { gallerySizes } from '#lib/utils/images/static.js'
 
     $effect(() => {
         let lightbox
@@ -22,10 +23,23 @@
     const gutter = 12
 
     let { images, rowHeight = 300 } = $props()
+
+    let galleryImages = $derived(
+        images.map((image, index) => ({
+            ...image,
+            sizes: gallerySizes,
+            priority: index === 0,
+        }))
+    )
 </script>
 
 <div id="gallery">
     {#key images[0]}
-        <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+        <Gallery
+            images={galleryImages}
+            {rowHeight}
+            {gutter}
+            imageComponent={Image}
+        />
     {/key}
 </div>

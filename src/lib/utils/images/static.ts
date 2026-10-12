@@ -1,0 +1,40 @@
+const HERO_WIDTHS = [640, 960, 1280, 1920, 2560]
+const PORTRAIT_WIDTHS = [160, 320, 480, 640]
+
+function srcset(name: string, extension: string, widths: number[]): string {
+    return widths
+        .map((width) => `/${name}/${name}-${width}.${extension} ${width}w`)
+        .join(', ')
+}
+
+export const heroPicture = {
+    width: 5123,
+    height: 3959,
+    sizes: '100vw',
+    avif: srcset('hero', 'avif', HERO_WIDTHS),
+    webp: srcset('hero', 'webp', HERO_WIDTHS),
+    jpeg: srcset('hero', 'jpg', HERO_WIDTHS),
+    src: '/hero/hero-1280.jpg',
+}
+
+export const heroPreload = '/hero/hero-1280.avif'
+
+export const portraitPicture = {
+    width: 3088,
+    height: 2316,
+    sizes: '(min-width: 901px) 320px, 144px',
+    avif: srcset('portrait', 'avif', PORTRAIT_WIDTHS),
+    webp: srcset('portrait', 'webp', PORTRAIT_WIDTHS),
+    jpeg: srcset('portrait', 'jpg', PORTRAIT_WIDTHS),
+    src: '/portrait/portrait-320.jpg',
+}
+
+export const gallerySizes =
+    '(max-width: 700px) 100vw, (max-width: 1200px) 50vw, 33vw'
+
+export const homeLeadSizes = '(max-width: 900px) 100vw, 650px'
+
+export const homePhotoSizes =
+    '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 325px'
+
+export const eventThumbSizes = '(max-width: 576px) 64px, 96px'

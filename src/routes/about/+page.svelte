@@ -1,6 +1,8 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
     import Interests from '#lib/components/misc/Interests.svelte'
+    import StaticPicture from '#lib/components/images/StaticPicture.svelte'
+    import { portraitPicture } from '#lib/utils/images/static.js'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
 
     $effect(() => {
@@ -42,13 +44,7 @@
                     data-pswp-width="3088"
                     data-pswp-height="2316"
                 >
-                    <img
-                        src="/portrait.jpeg"
-                        alt="Russell McWhae"
-                        width="3088"
-                        height="2316"
-                        decoding="async"
-                    />
+                    <StaticPicture {...portraitPicture} alt="Russell McWhae" />
                 </a>
             </figure>
             <div class="flow">
@@ -122,12 +118,10 @@
                     data-pswp-width="3088"
                     data-pswp-height="2316"
                 >
-                    <img
-                        src="/portrait.jpeg"
+                    <StaticPicture
+                        {...portraitPicture}
                         alt="Russell McWhae"
-                        width="3088"
-                        height="2316"
-                        decoding="async"
+                        loading="lazy"
                     />
                 </a>
             </figure>
@@ -199,8 +193,10 @@
         text-decoration: none;
     }
 
-    .portrait img,
-    .portrait-inline img {
+    .portrait :global(picture),
+    .portrait-inline :global(picture),
+    .portrait :global(img),
+    .portrait-inline :global(img) {
         display: block;
         width: 100%;
         height: auto;

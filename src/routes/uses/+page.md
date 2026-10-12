@@ -60,3 +60,8 @@ Though a bit dated now, these bodies work very well for stills and are quite lig
 - Sony/Zeiss E 24 mm f/1.8: wickedly sharp and good in low light
 - Sony FE 50 mm f/1.8: an excellent medium length
 - Sony FE 70–200 mm f/4 G: quite sharp and much lighter than an f/2.8
+
+## Bikes
+
+- 2020 Norco Optic C2 trail bike
+- 2022 Giant Revolt 2 gravel bike, upgraded with compressionless cables, bars with more flare, and fatter tires

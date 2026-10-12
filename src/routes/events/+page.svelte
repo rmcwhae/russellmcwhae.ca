@@ -1,6 +1,7 @@
 <script>
     import Image from '#lib/components/images/Image.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
+    import { eventThumbSizes } from '#lib/utils/images/static.js'
 
     let { data } = $props()
 
@@ -58,51 +59,53 @@
     </div>
 
     <section class="archive" aria-label="All expeditions">
-    <div class="archive-header">
-        <p class="eyebrow">All expeditions</p>
-        <input
-            class="archive-search"
-            type="search"
-            placeholder="Filter…"
-            bind:value={searchQuery}
-            aria-label="Filter expeditions"
-        />
-    </div>
+        <div class="archive-header">
+            <p class="eyebrow">All expeditions</p>
+            <input
+                class="archive-search"
+                type="search"
+                placeholder="Filter…"
+                bind:value={searchQuery}
+                aria-label="Filter expeditions"
+            />
+        </div>
 
-    {#if eventsByYear.length === 0}
-        <p class="no-results">No expeditions match your search.</p>
-    {:else}
-        {#each eventsByYear as [year, yearEvents] (year)}
-            <div class="year-group">
-                <h2 class="year-label">{year}</h2>
-                <div class="year-items">
-                    {#each yearEvents as event (event.name)}
-                        <a class="event-row" href="/events/{event.name}">
-                            <div class="event-thumb">
-                                {#if event.featuredImage}
-                                    <Image
-                                        filePath={event.featuredImage.filePath}
-                                        width={event.featuredImage.width}
-                                        height={event.featuredImage.height}
-                                        lockedRatio
-                                        photoswipe={false}
-                                    />
-                                {/if}
-                            </div>
-                            <span class="event-copy">
-                                <span class="event-title title-sm"
-                                    >{event.title}</span
-                                >
-                                <span class="event-meta">
-                                    {event.date} · {event.count} photos
+        {#if eventsByYear.length === 0}
+            <p class="no-results">No expeditions match your search.</p>
+        {:else}
+            {#each eventsByYear as [year, yearEvents] (year)}
+                <div class="year-group">
+                    <h2 class="year-label">{year}</h2>
+                    <div class="year-items">
+                        {#each yearEvents as event (event.name)}
+                            <a class="event-row" href="/events/{event.name}">
+                                <div class="event-thumb">
+                                    {#if event.featuredImage}
+                                        <Image
+                                            filePath={event.featuredImage
+                                                .filePath}
+                                            width={event.featuredImage.width}
+                                            height={event.featuredImage.height}
+                                            sizes={eventThumbSizes}
+                                            lockedRatio
+                                            photoswipe={false}
+                                        />
+                                    {/if}
+                                </div>
+                                <span class="event-copy">
+                                    <span class="event-title title-sm"
+                                        >{event.title}</span
+                                    >
+                                    <span class="event-meta">
+                                        {event.date} · {event.count} photos
+                                    </span>
                                 </span>
-                            </span>
-                        </a>
-                    {/each}
+                            </a>
+                        {/each}
+                    </div>
                 </div>
-            </div>
-        {/each}
-    {/if}
+            {/each}
+        {/if}
     </section>
 </div>
 
