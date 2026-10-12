@@ -84,7 +84,10 @@
         margin: 0 auto var(--s2);
         text-align: left;
         padding-bottom: var(--s1);
-        border-bottom: 1px solid var(--light-grey);
+        background-image: linear-gradient(var(--light-grey), var(--light-grey));
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: min(62ch, 100%) 1px;
     }
     header h1 {
         width: 100%;
