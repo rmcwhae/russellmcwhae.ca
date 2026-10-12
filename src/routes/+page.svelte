@@ -551,23 +551,7 @@
         }
     }
 
-    @include for-tablet-landscape-up {
-        .moments {
-            grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
-            grid-template-rows: repeat(2, clamp(12rem, 17vw, 17rem));
-            grid-auto-rows: auto;
-        }
-
-        .photo.lead {
-            grid-column: 1;
-            grid-row: 1 / -1;
-        }
-
-        .photo.tall {
-            grid-column: 2;
-            grid-row: 1 / -1;
-        }
-
+    @include for-tablet-wide-up {
         .journal-band {
             display: grid;
             grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -636,6 +620,24 @@
         .interests-col {
             grid-area: interests;
             margin-top: 0;
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        .moments {
+            grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(2, clamp(12rem, 17vw, 17rem));
+            grid-auto-rows: auto;
+        }
+
+        .photo.lead {
+            grid-column: 1;
+            grid-row: 1 / -1;
+        }
+
+        .photo.tall {
+            grid-column: 2;
+            grid-row: 1 / -1;
         }
     }
 </style>

@@ -208,7 +208,7 @@
         margin: 0.15rem 0 0.35rem 1rem;
     }
 
-    @include for-tablet-landscape-up {
+    @include for-tablet-wide-up {
         .page-header {
             margin-bottom: var(--s2);
         }

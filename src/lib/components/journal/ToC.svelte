@@ -103,16 +103,21 @@
         const container = sidebarEl.parentElement
         if (!container) return
 
-        const closeWhenSidebarFits = () => {
-            if (window.getComputedStyle(sidebarEl).display !== 'none')
-                drawerOpen = false
+        const syncFab = () => {
+            const sidebarHidden =
+                window.getComputedStyle(sidebarEl).display === 'none'
+            if (!sidebarHidden) drawerOpen = false
+            document.body.classList.toggle('toc-fab-visible', sidebarHidden)
         }
 
-        const observer = new ResizeObserver(closeWhenSidebarFits)
+        const observer = new ResizeObserver(syncFab)
         observer.observe(container)
-        closeWhenSidebarFits()
+        syncFab()
 
-        return () => observer.disconnect()
+        return () => {
+            observer.disconnect()
+            document.body.classList.remove('toc-fab-visible')
+        }
     })
 
     $effect(() => {

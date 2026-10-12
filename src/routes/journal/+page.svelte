@@ -157,7 +157,7 @@
         color: var(--medium-grey);
     }
 
-    @include for-tablet-landscape-up {
+    @include for-tablet-wide-up {
         .page-header {
             margin-bottom: var(--s2);
         }

@@ -50,4 +50,10 @@
             align-items: flex-start;
         }
     }
+
+    :global(body.toc-fab-visible) footer {
+        padding-bottom: calc(
+            56px + var(--s2) + 0.75rem + env(safe-area-inset-bottom, 0px)
+        );
+    }
 </style>

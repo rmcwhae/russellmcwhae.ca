@@ -5,6 +5,7 @@ $breakpoint-xs: 320px !default;
 $breakpoint-phone-max: 576px !default;
 $breakpoint-tablet-portrait-min: 577px !default;
 $breakpoint-tablet-portrait-max: 900px !default;
+$breakpoint-tablet-wide-min: 768px !default;
 $breakpoint-tablet-landscape-min: 901px !default;
 $restricted-width: 1080px !default;
 $breakpoint-tablet-landscape-max: 1200px !default;
@@ -26,6 +27,12 @@ $breakpoint-xl: 1300px !default;
 
 @mixin for-tablet-portrait-down {
     @media (max-width: $breakpoint-tablet-portrait-max) {
+        @content;
+    }
+}
+
+@mixin for-tablet-wide-up {
+    @media (min-width: $breakpoint-tablet-wide-min) {
         @content;
     }
 }

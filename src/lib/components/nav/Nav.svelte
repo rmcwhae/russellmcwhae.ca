@@ -210,6 +210,12 @@
         display: none;
     }
 
+    @include for-tablet-portrait-down {
+        nav :global(a) {
+            padding-inline: 0;
+        }
+    }
+
     @include for-tablet-landscape-up {
         #desktop-switcher {
             display: inherit;
