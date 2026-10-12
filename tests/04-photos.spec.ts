@@ -41,12 +41,16 @@ test.describe('Photos and Events', () => {
         await expect(page.locator('.archive')).toBeVisible()
     })
 
-    test('events page has link to photography', async ({ page }) => {
+    test('events page describes the expedition archive', async ({ page }) => {
         await page.goto('/events')
 
-        const photography = page.locator('.eyebrow a[href="/photography"]')
-        await expect(photography).toBeVisible()
-        await expect(photography).toContainText('Photography')
+        await expect(page.locator('.lede')).toContainText(
+            'Complete photo sets from individual trips.'
+        )
+        await expect(page.locator('.archive')).toBeVisible()
+        await expect(
+            page.getByRole('searchbox', { name: 'Filter expeditions' })
+        ).toBeVisible()
     })
 
     test('events display with correct information', async ({ page }) => {

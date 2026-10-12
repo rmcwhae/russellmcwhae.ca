@@ -1,6 +1,6 @@
 <script>
-    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
     import Date from '#lib/components/misc/Date.svelte'
+    import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
     import CategoryLink from './CategoryLink.svelte'
 
@@ -52,10 +52,10 @@
             </div>
         {/if}
         <svelte:element this={`h${level}`} class="entry-title">
-            <a {href}>{@html preventLastTwoWordWrap(title)}</a>
+            <a {href}><NoWrapLastTwoWords text={title} /></a>
         </svelte:element>
         {#if featuredPreview}
-            <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
+            <p><NoWrapLastTwoWords text={featuredPreview} /></p>
         {/if}
         <Button {href} text="Continue reading" right />
     {:else}
@@ -66,10 +66,10 @@
         {/if}
         <div class="body">
             <svelte:element this={`h${level}`} class="entry-title title-sm">
-                <a {href}>{@html preventLastTwoWordWrap(title)}</a>
+                <a {href}><NoWrapLastTwoWords text={title} /></a>
             </svelte:element>
             {#if featuredPreview}
-                <p>{@html preventLastTwoWordWrap(featuredPreview)}</p>
+                <p><NoWrapLastTwoWords text={featuredPreview} /></p>
             {/if}
         </div>
         {#if readingTime || (category && showCategory)}

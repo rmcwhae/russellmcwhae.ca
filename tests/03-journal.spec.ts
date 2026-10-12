@@ -10,20 +10,18 @@ test.describe('Journal Page', () => {
         // Check that the page has content
         await expect(page.locator('.restricted-width')).toBeVisible()
 
-        // Check welcome text in the sidebar
+        // Check the sidebar introduction
         await expect(page.locator('.sidebar')).toContainText(
-            'Welcome to my online journal'
+            'I’ve kept an online journal since 2016'
         )
     })
 
-    test('journal displays featured post', async ({ page }) => {
+    test('journal displays the entry archive', async ({ page }) => {
         await page.goto('/journal')
 
-        // Check that featured post section exists
-        await expect(page.locator('.featured').first()).toBeVisible()
-
-        // Check that there's a featured journal entry
-        await expect(page.locator('.featured section').first()).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
+        await expect(page.getByText('All entries')).toBeVisible()
+        await expect(page.locator('.entries section').first()).toBeVisible()
     })
 
     test('journal displays word count', async ({ page }) => {
@@ -31,14 +29,14 @@ test.describe('Journal Page', () => {
 
         // Check that word count is displayed
         await expect(page.locator('.sidebar .count')).toContainText(
-            'Total written words:'
+            'Total words:'
         )
 
         // Check that word count is a number with thousands separators
         const wordCountText = await page
             .locator('.sidebar .count')
             .textContent()
-        expect(wordCountText).toMatch(/Total written words: \d{1,3}(,\d{3})*/)
+        expect(wordCountText).toMatch(/Total words: \d{1,3}(,\d{3})*/)
     })
 
     test('journal entries are clickable', async ({ page }) => {

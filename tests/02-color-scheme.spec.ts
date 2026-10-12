@@ -5,7 +5,20 @@ const mobileSwitcher = '#mobile-switcher [data-test="theme-switcher"]'
 
 async function openThemeMenu(page: Page, switcher = desktopSwitcher) {
     const themeSwitcher = page.locator(switcher)
-    await themeSwitcher.getByRole('button', { name: 'Color scheme' }).click()
+    const button = themeSwitcher.getByRole('button', { name: 'Color scheme' })
+
+    // The load event can fire before Svelte hydrates, and a click in that
+    // gap is ignored. Wait until the client has attached the menu handler.
+    await page.waitForFunction((selector) => {
+        const element = document.querySelector(`${selector} button`)
+        if (!element) return false
+
+        return Object.getOwnPropertySymbols(element).some((symbol) =>
+            String(symbol).includes('events')
+        )
+    }, switcher)
+
+    await button.click()
     await expect(themeSwitcher.getByRole('menu')).toBeVisible()
 }
 

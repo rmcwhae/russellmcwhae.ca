@@ -25,24 +25,6 @@ export function extractDate(filename: string | null | undefined): string {
     return filename.substring(underscoreIndex + 1).replace('-', ' ')
 }
 
-export function preventLastTwoWordWrap(
-    string: string | null | undefined
-): string {
-    if (!string || typeof string !== 'string') {
-        return string || ''
-    }
-
-    const words = string.split(' ')
-    if (words.length <= 2) {
-        return string
-    }
-
-    const firstWords = words.slice(0, -2).join(' ')
-    const lastTwoWords =
-        ' <span class="nowrap">' + words.slice(-2).join(' ') + '</span>'
-    return firstWords + lastTwoWords
-}
-
 function stripFrontmatter(raw: string): string {
     return raw.replace(/^---[\r\n][\s\S]*?[\r\n]---[\r\n]?/, '')
 }

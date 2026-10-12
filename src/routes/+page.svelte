@@ -4,8 +4,8 @@
     import Button from '#lib/components/buttons/Button.svelte'
     import JournalEntry from '#lib/components/journal/Entry.svelte'
     import Interests from '#lib/components/misc/Interests.svelte'
+    import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
-    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
     import {
         heroPicture,
         heroPreload,
@@ -130,16 +130,16 @@
                             <article class="recent-entry">
                                 <h3 class="recent-title title-sm">
                                     <a href={post.href}
-                                        >{@html preventLastTwoWordWrap(
-                                            post.title
-                                        )}</a
+                                        ><NoWrapLastTwoWords
+                                            text={post.title}
+                                        /></a
                                     >
                                 </h3>
                                 {#if post.description}
                                     <p>
-                                        {@html preventLastTwoWordWrap(
-                                            post.description
-                                        )}
+                                        <NoWrapLastTwoWords
+                                            text={post.description}
+                                        />
                                     </p>
                                 {/if}
                             </article>
