@@ -60,7 +60,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </div>
-    <div class="nav-overlay" class:active={mobileMenuOpen}></div>
+    <div
+        class="nav-overlay"
+        class:active={mobileMenuOpen}
+        onclick={hideMenu}
+    ></div>
 </header>
 
 <style lang="scss">
