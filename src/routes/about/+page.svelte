@@ -170,6 +170,9 @@
     }
 
     .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s2);
         order: 2;
         min-width: 0;
         margin-top: var(--s3);
