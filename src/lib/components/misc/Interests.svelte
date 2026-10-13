@@ -1,6 +1,4 @@
 <script>
-    import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
-
     const defaultItems = [
         {
             href: '/reading-list',
@@ -14,11 +12,7 @@
         },
     ]
 
-    let {
-        heading = 'Beyond the Work',
-        items = defaultItems,
-        arrow = true,
-    } = $props()
+    let { heading = 'Beyond the Work', items = defaultItems } = $props()
 </script>
 
 <div class="interests-block">
@@ -28,16 +22,10 @@
             <li>
                 <a
                     href={item.href}
-                    class:has-arrow={arrow}
                     target={item.external ? '_blank' : undefined}
                     rel={item.external ? 'noopener noreferrer' : undefined}
                 >
-                    <span class="title-row">
-                        <h3>{item.title}</h3>
-                        {#if arrow}
-                            <ArrowNorthEast />
-                        {/if}
-                    </span>
+                    <h3>{item.title}</h3>
                     {#if item.description}
                         <p>{item.description}</p>
                     {/if}
@@ -67,21 +55,6 @@
 
     a:hover {
         text-decoration: none;
-    }
-
-    .title-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    .title-row :global(.icon) {
-        flex: none;
-    }
-
-    a.has-arrow:hover {
-        color: var(--alpine);
     }
 
     h3 {

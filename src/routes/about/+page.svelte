@@ -127,7 +127,6 @@
             </figure>
             <Interests
                 heading="My work"
-                arrow
                 items={[
                     { href: '/photography', title: 'Photography' },
                     { href: '/journal', title: 'Journal' },
