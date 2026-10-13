@@ -131,7 +131,7 @@
     .wrapper {
         position: relative;
         z-index: 1;
-        margin: 0 clamp(1.25rem, 4vw, 2.75rem);
+        margin: 0 var(--page-gutter);
         display: grid;
         grid-template-columns:
             1fr

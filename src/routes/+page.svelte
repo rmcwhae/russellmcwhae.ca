@@ -216,7 +216,7 @@
         box-sizing: border-box;
         height: 100vh;
         height: 100lvh;
-        padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(1.5rem, 4vh, 3rem);
+        padding: 0 var(--page-gutter) clamp(1.5rem, 4vh, 3rem);
     }
 
     .hero-bg {

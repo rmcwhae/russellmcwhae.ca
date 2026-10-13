@@ -2,12 +2,9 @@
 @use 'breakpoints' as *;
 
 .full-width {
-    width: 100vw;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: calc(100% + 2 * var(--page-gutter));
+    margin-inline: calc(-1 * var(--page-gutter));
 }
 
 .two-col-grid {

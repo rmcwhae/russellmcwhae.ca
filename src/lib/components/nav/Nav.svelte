@@ -149,6 +149,8 @@
     .nav-overlay.active {
         opacity: 1;
         visibility: visible;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
 
     .nav-toggle {
@@ -189,8 +191,6 @@
         position: fixed;
         inset: 0;
         background-color: var(--background-color-transparent);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
         z-index: 11;
         opacity: 0;
         visibility: hidden;
