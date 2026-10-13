@@ -11,6 +11,8 @@ category: Tech
     import Caption from '#lib/components/images/Caption.svelte'
 </script>
 
+_Note: This article was originally written as an assignment for the Lighthouse Labs web development boot camp curriculum._
+
 <Image src="/journal-images/rails-1.jpg" alt="Ruby on Rails" />
 
 ## Introduction
