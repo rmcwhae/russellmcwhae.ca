@@ -51,7 +51,6 @@
 
         <div class="main">
             <div class="archive">
-                <p class="eyebrow">All entries</p>
                 <JournalEntrySet {posts} />
             </div>
         </div>
@@ -85,10 +84,6 @@
     .archive {
         min-width: 0;
         margin-top: var(--s1);
-
-        .eyebrow {
-            margin: 0 0 var(--s0);
-        }
 
         :global(.entries > section:last-child) {
             border-bottom: none;
