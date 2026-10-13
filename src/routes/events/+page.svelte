@@ -156,7 +156,7 @@
         padding-top: var(--s-1);
         font-family: var(--font-sans);
         font-size: var(--text-sm);
-        font-weight: 400;
+        font-weight: 600;
         line-height: var(--leading-body);
         letter-spacing: 0;
         color: var(--medium-grey);

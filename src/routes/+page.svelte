@@ -215,7 +215,7 @@
         align-items: flex-end;
         box-sizing: border-box;
         height: 100vh;
-        height: 100dvh;
+        height: 100lvh;
         padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(1.5rem, 4vh, 3rem);
     }
 
@@ -324,6 +324,18 @@
         border-top: none;
     }
 
+    @include for-phone-only {
+        .hero + .band {
+            margin-top: var(--s1);
+            padding-top: 0;
+        }
+
+        .hero + .band + .band,
+        .about-band {
+            margin-top: var(--s2);
+        }
+    }
+
     .section-label {
         display: flex;
         justify-content: space-between;
@@ -350,6 +362,12 @@
         gap: 0.75rem 1rem;
     }
 
+    @include for-phone-only {
+        .moments {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
     .caption {
         display: flex;
         align-items: baseline;
@@ -368,6 +386,12 @@
         font-variant-numeric: tabular-nums;
         letter-spacing: var(--tracking-caps);
         opacity: 0.7;
+    }
+
+    @include for-phone-only {
+        .index {
+            display: none;
+        }
     }
 
     .photo {

@@ -169,6 +169,39 @@
         color: var(--text-color);
     }
 
+    @include for-phone-only {
+        section.featured .entry-title {
+            font-size: var(--text-md);
+        }
+
+        section.featured p {
+            font-size: var(--text-sm);
+        }
+
+        section:not(.featured) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 0.5rem;
+        }
+
+        section:not(.featured) .body {
+            flex: 1 0 100%;
+            order: 1;
+        }
+
+        section:not(.featured) .when {
+            order: 2;
+        }
+
+        section:not(.featured) .meta {
+            order: 3;
+            flex-direction: row;
+            align-items: baseline;
+            text-align: left;
+        }
+    }
+
     @include for-tablet-portrait-up {
         section:not(.featured) {
             grid-template-columns: max-content 1fr auto;

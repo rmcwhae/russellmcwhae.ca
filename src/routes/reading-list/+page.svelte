@@ -73,9 +73,10 @@
                             <div class="book-row">
                                 <span class="book-title">{book.title}</span>
                                 <span class="book-meta">
-                                    {book.author}{book.audiobook
-                                        ? ' · Audiobook'
-                                        : ''}
+                                    <span>{book.author}</span>
+                                    {#if book.audiobook}
+                                        <span class="caps book-format">Audio</span>
+                                    {/if}
                                 </span>
                             </div>
                         {/each}
@@ -133,7 +134,7 @@
         padding-top: var(--s-1);
         font-family: var(--font-sans);
         font-size: var(--text-sm);
-        font-weight: 400;
+        font-weight: 600;
         line-height: var(--leading-body);
         letter-spacing: 0;
         color: var(--medium-grey);
@@ -176,8 +177,13 @@
         font-size: var(--text-sm);
         font-weight: 400;
         color: var(--medium-grey);
-        white-space: nowrap;
         flex-shrink: 0;
+    }
+
+    .book-format {
+        margin-inline-start: 0.65rem;
+        color: var(--medium-grey);
+        white-space: nowrap;
     }
 
     .no-results {
@@ -189,10 +195,11 @@
         .year-group {
             grid-template-columns: 5rem minmax(0, 1fr);
             gap: var(--s2);
+            align-items: baseline;
         }
 
         .year-label {
-            padding-top: calc(var(--s0) + 0.1rem);
+            padding-top: 0;
         }
 
         .book-row {
@@ -204,7 +211,6 @@
         .book-meta {
             max-width: 16rem;
             justify-self: end;
-            white-space: normal;
             text-align: right;
             text-wrap: pretty;
         }

@@ -101,7 +101,7 @@
         color: var(--text-color);
     }
 
-    @include for-desktop-up {
+    @include for-tablet-portrait-up {
         header {
             align-items: center;
             text-align: center;

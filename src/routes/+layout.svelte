@@ -101,8 +101,15 @@
 
         @include for-tablet-portrait-down {
             :global(header:has(.nav-menu.active) #logo a),
-            :global(header:has(.nav-menu.active) #logo a:hover) {
+            :global(header:has(.nav-menu.active) #logo a:hover),
+            :global(header:has(.nav-menu.active) .theme-trigger),
+            :global(header:has(.nav-menu.active) .theme-trigger:hover),
+            :global(header:has(.nav-menu.active) .theme-trigger:focus-visible) {
                 color: var(--high-contrast-color);
+            }
+
+            :global(header:has(.nav-menu.active) .icon-bar) {
+                background-color: var(--high-contrast-color);
             }
         }
 
@@ -111,6 +118,12 @@
             :global(header nav a:hover),
             :global(header nav a[aria-current]) {
                 color: var(--paper);
+            }
+        }
+
+        @include for-phone-only {
+            :global(footer) {
+                margin-top: var(--s2);
             }
         }
     }

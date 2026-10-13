@@ -64,8 +64,21 @@ test.describe('Basic Navigation', () => {
         await page.setViewportSize({ width: 375, height: 667 })
         await page.goto('/')
 
-        // Check that mobile navigation links exist
-        await page.locator('.nav-toggle').click()
+        // The closed menu is visibility: hidden, so wait for Svelte to hydrate
+        // the toggle before clicking, or the click is ignored.
+        await page.waitForFunction(() => {
+            const element = document.querySelector('.nav-toggle')
+            if (!element) return false
+
+            return Object.getOwnPropertySymbols(element).some((symbol) =>
+                String(symbol).includes('events')
+            )
+        })
+
+        const toggle = page.locator('.nav-toggle')
+        await expect(page.locator('.nav-menu a[href="/about"]')).toBeHidden()
+        await toggle.click()
+        await expect(toggle).toHaveAttribute('aria-expanded', 'true')
 
         await expect(
             page.locator('.nav-menu a[href="/photography"]')

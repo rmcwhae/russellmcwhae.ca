@@ -52,10 +52,9 @@
         list-style: none;
         margin: var(--s1) 0 0;
         padding: 0;
-        border-top: 1px solid var(--light-grey);
     }
 
-    li {
+    li:not(:last-child) {
         border-bottom: 1px solid var(--light-grey);
     }
 

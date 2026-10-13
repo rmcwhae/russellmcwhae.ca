@@ -21,12 +21,16 @@
     }
 </script>
 
+<svelte:window
+    onkeydown={(e) => e.key === 'Escape' && mobileMenuOpen && hideMenu()}
+/>
+
 <header>
     <div id="logo">
         <a href="/" onclick={hideMenu}>Russell McWhae</a>
     </div>
     <nav>
-        <div class="nav-menu" class:active={mobileMenuOpen}>
+        <div id="nav-menu" class="nav-menu" class:active={mobileMenuOpen}>
             <ul>
                 {#each links as link (link.href)}
                     <li>
@@ -46,20 +50,19 @@
     <div id="mobile-switcher" data-test="mobile-colour-scheme-switcher">
         <ThemeSwitcher instanceId="mobile" />
     </div>
-    <div
+    <button
+        type="button"
         class="nav-toggle"
-        role="button"
-        tabindex="0"
-        aria-pressed={mobileMenuOpen}
+        aria-expanded={mobileMenuOpen}
+        aria-controls="nav-menu"
         aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         onclick={toggle}
-        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggle()}
         class:active={mobileMenuOpen}
     >
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-    </div>
+    </button>
     <div
         class="nav-overlay"
         class:active={mobileMenuOpen}
@@ -133,10 +136,12 @@
         height: 0;
         padding: 0;
         overflow: hidden;
+        visibility: hidden;
         z-index: 12;
     }
 
     .nav-menu.active {
+        visibility: visible;
         height: auto;
         padding: var(--s1) 0 var(--s2);
     }
@@ -151,6 +156,10 @@
         position: relative;
         width: 2.5rem;
         height: 2.5rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: inherit;
         cursor: pointer;
     }
 
@@ -237,6 +246,7 @@
         .nav-menu {
             position: static;
             height: auto;
+            visibility: visible;
             display: flex;
             align-items: center;
             justify-content: flex-end;
