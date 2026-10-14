@@ -226,9 +226,9 @@
         display: flex;
         align-items: flex-end;
         box-sizing: border-box;
-        /* 100vh is the fallback; 100dvh tracks the visible iOS viewport */
+        /* 100vh is the fallback; 100svh stays fixed when the iPad toolbar collapses */
         min-height: 100vh;
-        min-height: 100dvh;
+        min-height: 100svh;
         padding: 0 var(--page-gutter) clamp(1.5rem, 4vh, 3rem);
     }
 
