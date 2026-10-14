@@ -1,4 +1,5 @@
 @use './lib/scss/reset.scss';
+@use './lib/scss/fonts.scss';
 @use './lib/scss/themes.scss';
 @use './lib/scss/variables.scss';
 @use './lib/scss/breakpoints.scss';
@@ -7,15 +8,16 @@
 @use './lib/scss/utilities.scss';
 
 body {
-    overflow-x: hidden;
     color: var(--text-color);
     background: var(--background-color);
-    transition: all ease var(--duration);
+    transition:
+        background-color ease var(--duration),
+        color ease var(--duration);
     margin: 0;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--font-sans);
     font-size-adjust: from-font;
-    font-size: 1.125rem;
-    line-height: 1.5;
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
 
     display: flex;
     flex-direction: column; // And main gets flex: 1;
@@ -23,15 +25,11 @@ body {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-
-    /* Mobile Safari fix via: https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
-    min-height: -webkit-fill-available;
 }
 
 html {
     scroll-behavior: smooth;
     width: 100%;
-    height: -webkit-fill-available;
 }
 
 @media (prefers-reduced-motion) {

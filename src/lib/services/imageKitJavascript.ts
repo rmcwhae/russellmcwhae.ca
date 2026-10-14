@@ -1,11 +1,9 @@
-import { buildSrc } from '@imagekit/javascript'
+import { buildSrc, type Transformation } from '@imagekit/javascript'
 
 interface UrlOptions {
     path: string
     urlEndpoint: string
-    transformation?: Record<string, string | number>[]
-    [key: string]:
-        string | number | Record<string, string | number>[] | undefined
+    transformation?: Transformation[]
 }
 
 export function url(options: UrlOptions): string {

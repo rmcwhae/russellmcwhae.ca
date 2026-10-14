@@ -7,6 +7,7 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import ToC from '#lib/components/journal/ToC.svelte'
     import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
+    import { mountFootnotes } from '#lib/components/journal/mountFootnotes.js'
 
     let { data } = $props()
 
@@ -19,17 +20,27 @@
     let relatedPosts = $derived(data.relatedPosts)
 
     const SvelteComponent = $derived(component)
+
+    /** @type {HTMLElement | undefined} */
+    let article = $state()
+
+    $effect(() => {
+        if (!article || !component) return
+
+        const footnotes = mountFootnotes(article)
+        return () => footnotes.destroy()
+    })
 </script>
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header>
+<header class="restricted-width">
     <div class="sub">
         <Date {date} />
     </div>
     <h1><NoWrapLastTwoWords text={title} /></h1>
     {#if description}
-        <p><NoWrapLastTwoWords text={description} /></p>
+        <p class="lede"><NoWrapLastTwoWords text={description} /></p>
     {/if}
     <div class="sub">
         {#if category}
@@ -42,11 +53,11 @@
     </div>
 </header>
 
-<div class="wrapper">
-    <ToC allowedHeadings={['h2', 'h3']} />
-    <article class="char-limit flow">
+<div class="article-columns">
+    <article class="char-limit flow" bind:this={article}>
         <SvelteComponent />
     </article>
+    <ToC allowedHeadings={['h2', 'h3']} />
 </div>
 
 <div class="restricted-width">
@@ -60,20 +71,54 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../../lib/scss/breakpoints' as *;
+
     header {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: var(--s-1);
-        margin-bottom: var(--s1);
-        text-align: center;
-        padding-bottom: var(--s0);
-        border-bottom: 1px solid var(--light-grey);
+        width: 100%;
+        max-width: $restricted-width;
+        margin: 0 auto var(--s2);
+        text-align: left;
+        padding-bottom: var(--s1);
+        background-image: linear-gradient(var(--light-grey), var(--light-grey));
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: min(62ch, 100%) 1px;
     }
-    h1,
-    p {
+    header h1 {
+        width: 100%;
+        max-width: none;
         margin: 0;
+    }
+    header p {
+        margin: 0;
+    }
+    header .sub {
+        color: var(--text-color);
+    }
+
+    @include for-tablet-portrait-up {
+        header {
+            align-items: center;
+            text-align: center;
+        }
+    }
+    .article-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) min(62ch, 100%) minmax(0, 1fr);
+        align-items: start;
+        container: article-columns / inline-size;
+    }
+    .article-columns > article {
+        grid-column: 2;
+        min-width: 0;
+    }
+    .restricted-width {
+        width: 100%;
     }
     article {
         margin: 0 auto;

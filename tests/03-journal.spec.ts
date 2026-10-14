@@ -10,33 +10,33 @@ test.describe('Journal Page', () => {
         // Check that the page has content
         await expect(page.locator('.restricted-width')).toBeVisible()
 
-        // Check welcome text
-        await expect(page.locator('p').first()).toContainText(
-            'Welcome to my online journal'
+        // Check the sidebar introduction
+        await expect(page.locator('.sidebar')).toContainText(
+            'I’ve kept an online journal since 2016'
         )
     })
 
-    test('journal displays featured post', async ({ page }) => {
+    test('journal displays the entry archive', async ({ page }) => {
         await page.goto('/journal')
 
-        // Check that featured post section exists
-        await expect(page.locator('.featured').first()).toBeVisible()
-
-        // Check that there's a featured journal entry
-        await expect(page.locator('.featured section').first()).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
+        await expect(page.getByText('All entries')).toBeVisible()
+        await expect(page.locator('.entries section').first()).toBeVisible()
     })
 
     test('journal displays word count', async ({ page }) => {
         await page.goto('/journal')
 
         // Check that word count is displayed
-        await expect(page.locator('.count')).toContainText(
-            'Total written words:'
+        await expect(page.locator('.sidebar .count')).toContainText(
+            'Total words:'
         )
 
-        // Check that word count is a number
-        const wordCountText = await page.locator('.count').textContent()
-        expect(wordCountText).toMatch(/Total written words: \d+/)
+        // Check that word count is a number with thousands separators
+        const wordCountText = await page
+            .locator('.sidebar .count')
+            .textContent()
+        expect(wordCountText).toMatch(/Total words: \d{1,3}(,\d{3})*/)
     })
 
     test('journal entries are clickable', async ({ page }) => {
@@ -187,7 +187,7 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Get all journal entry dates
-        const entryDates = await page.locator('section .sub').allTextContents()
+        const entryDates = await page.locator('section time').allTextContents()
 
         if (entryDates.length > 1) {
             // Convert dates to Date objects for comparison
@@ -208,5 +208,72 @@ test.describe('Journal Page', () => {
                 }
             }
         }
+    })
+
+    for (const viewport of [
+        { width: 1280, height: 800 },
+        { width: 375, height: 667 },
+    ]) {
+        test(`footnotes open inline within the viewport at ${viewport.width}px`, async ({
+            page,
+        }) => {
+            await page.setViewportSize(viewport)
+            await page.goto('/journal/30-going-on-13')
+
+            await expect(page.locator('.footnotes')).toBeHidden()
+
+            const refs = page.locator('a.footnote-ref')
+            const count = await refs.count()
+            expect(count).toBeGreaterThan(0)
+
+            for (let i = 0; i < count; i++) {
+                const ref = refs.nth(i)
+                await ref.scrollIntoViewIfNeeded()
+                await ref.click()
+
+                const popover = page.locator(
+                    `#${await ref.getAttribute('aria-controls')}`
+                )
+                await expect(popover).toBeVisible()
+                await expect(ref).toHaveAttribute('aria-expanded', 'true')
+
+                const box = await popover.boundingBox()
+                expect(box).not.toBeNull()
+                expect(box!.x).toBeGreaterThanOrEqual(0)
+                expect(box!.y).toBeGreaterThanOrEqual(0)
+                expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width)
+                expect(box!.y + box!.height).toBeLessThanOrEqual(
+                    viewport.height
+                )
+
+                await ref.click()
+                await expect(popover).toBeHidden()
+            }
+        })
+    }
+
+    test('footnote opens above when the reference is near the bottom', async ({
+        page,
+    }) => {
+        await page.setViewportSize({ width: 1280, height: 800 })
+        await page.goto('/journal/30-going-on-13')
+
+        await expect(page.locator('.footnotes')).toBeHidden()
+
+        const ref = page.locator('a.footnote-ref').first()
+        await ref.evaluate((el) => {
+            const { top } = el.getBoundingClientRect()
+            window.scrollBy({
+                top: top - window.innerHeight + 40,
+                behavior: 'instant',
+            })
+        })
+        await ref.click()
+
+        const popover = page.locator('.footnote-popover:popover-open')
+        await expect(popover).toHaveAttribute('data-placement', 'top')
+
+        await page.keyboard.press('Escape')
+        await expect(popover).toHaveCount(0)
     })
 })

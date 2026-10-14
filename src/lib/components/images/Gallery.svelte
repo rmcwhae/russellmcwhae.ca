@@ -2,83 +2,44 @@
     // PhotoSwipe must only load on the client
     import Gallery from 'svelte-gallery'
     import Image from './Image.svelte'
-    import 'photoswipe/dist/photoswipe.css'
+    import { mountPhotoSwipe } from './mountPhotoSwipe.js'
+    import { gallerySizes } from '#lib/utils/images/static.js'
 
-    $effect(async () => {
-        // Dynamic imports to avoid linter issues
-        const { default: PhotoSwipeLightbox } =
-            await import('photoswipe/lightbox')
-        const { default: PhotoSwipe } = await import('photoswipe')
+    $effect(() => {
+        let lightbox
+        let cancelled = false
 
-        const lightbox = new PhotoSwipeLightbox({
-            pswpModule: PhotoSwipe,
-            gallery: '#gallery',
-            children: 'a',
-            zoomSVG: '',
+        mountPhotoSwipe('#gallery').then((instance) => {
+            if (cancelled) instance.destroy()
+            else lightbox = instance
         })
-
-        lightbox.on('uiRegister', function () {
-            lightbox.pswp.ui.registerElement({
-                name: 'custom-caption',
-                order: 9,
-                isButton: false,
-                appendTo: 'root',
-                html: 'Caption text',
-                onInit: (el) => {
-                    lightbox.pswp.on('change', () => {
-                        const currSlideElement =
-                            lightbox.pswp.currSlide.data.element
-                        let captionHTML = ''
-                        if (currSlideElement) {
-                            // get caption from alt attribute
-                            captionHTML = currSlideElement
-                                .querySelector('img')
-                                .getAttribute('alt')
-                        }
-                        el.innerHTML = captionHTML || ''
-                        if (!captionHTML) {
-                            el.classList.add('no-caption')
-                        } else {
-                            el.classList.remove('no-caption')
-                        }
-                    })
-                },
-            })
-        })
-
-        lightbox.init()
 
         return () => {
-            lightbox.destroy()
+            cancelled = true
+            lightbox?.destroy()
         }
     })
 
-    const rowHeight = 500
     const gutter = 12
 
-    let { images } = $props()
+    let { images, rowHeight = 300 } = $props()
+
+    let galleryImages = $derived(
+        images.map((image, index) => ({
+            ...image,
+            sizes: gallerySizes,
+            priority: index === 0,
+        }))
+    )
 </script>
 
 <div id="gallery">
     {#key images[0]}
-        <Gallery {images} {rowHeight} {gutter} imageComponent={Image} />
+        <Gallery
+            images={galleryImages}
+            {rowHeight}
+            {gutter}
+            imageComponent={Image}
+        />
     {/key}
 </div>
-
-<style>
-    :global(.pswp__custom-caption) {
-        background: var(--background-color-transparent);
-        color: var(--high-contrast-color);
-        max-width: 400px;
-        padding: var(--s-4) var(--s0);
-        border-radius: var(--radius);
-        position: absolute;
-        left: 50%;
-        bottom: var(--s0);
-        transform: translateX(-50%);
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    }
-    :global(.no-caption) {
-        display: none;
-    }
-</style>

@@ -1,227 +1,743 @@
 <script>
-    import Image from 'svimg/Image.svelte'
+    import Image from '#lib/components/images/Image.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
-    import Gallery from '#lib/components/images/Gallery.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
-    import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
-    import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
+    import JournalEntry from '#lib/components/journal/Entry.svelte'
+    import Interests from '#lib/components/misc/Interests.svelte'
+    import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
+    import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
+    import {
+        heroPicture,
+        heroPreload,
+        homeLeadSizes,
+        homePhotoSizes,
+        homeTallSizes,
+    } from '#lib/utils/images/static.js'
+    import StaticPicture from '#lib/components/images/StaticPicture.svelte'
+    import Camera from '#lib/components/icons/Camera.svelte'
 
     let { data } = $props()
 
-    let images = $derived(data.images)
-    let latestPosts = $derived(data.latestPosts)
+    let images = $derived(Array.isArray(data.images) ? data.images : [])
+    let latestPosts = $derived(data.latestPosts ?? [])
+    let latestPost = $derived(latestPosts[0])
+    let recentPosts = $derived(latestPosts.slice(1, 4))
+    let favourites = $derived(images.slice(0, 4))
 
-    const etCetera = [
-        {
-            href: 'reading-list',
-            title: 'Reading List',
-            description: 'Books I have read',
-        },
-        {
-            href: 'uses',
-            title: 'What I use',
-            description: 'Tools used in my work',
-        },
-        {
-            href: 'videos',
-            title: 'Outdoor Videos',
-            description: 'A list of my favourite outdoor videos',
-        },
-        {
-            href: 'ski-footage',
-            title: 'Skiing GoPro Footage',
-            description: 'Some backcountry skiing GoPro footage',
-        },
-    ]
+    $effect(() => {
+        if (!favourites.length) return
+
+        let lightbox
+        let cancelled = false
+
+        mountPhotoSwipe('#home-favourites').then((instance) => {
+            if (cancelled) instance.destroy()
+            else lightbox = instance
+        })
+
+        return () => {
+            cancelled = true
+            lightbox?.destroy()
+        }
+    })
 </script>
 
 <SEO />
 
-<div class="home restricted-width">
-    <div class="hero border-bottom">
-        <div class="mb-2">
-            <h1>Hi, I’m Russell.</h1>
-            <p class="big mt-2 mb-2 char-limit">
-                I’m a web developer with a background in structural engineering
-                and biomedical research who likes spending <span class="nowrap"
-                    >time outside.</span
-                >
+<svelte:head>
+    <link
+        rel="preload"
+        as="image"
+        href={heroPreload}
+        type="image/avif"
+        imagesrcset={heroPicture.avif}
+        imagesizes={heroPicture.sizes}
+        fetchpriority="high"
+    />
+</svelte:head>
+
+<div class="home">
+    <section class="hero full-width">
+        <div class="hero-bg">
+            <StaticPicture {...heroPicture} alt="" fetchpriority="high" />
+        </div>
+        <div class="hero-frame">
+            <div class="intro">
+                <h1>
+                    <span class="line-sans">Thoughtful work.</span>
+                    <span class="line-serif">Open horizons.</span>
+                </h1>
+                <p class="lede">
+                    I’m Russell—a web developer, photographer, and writer<br />
+                    with a deep appreciation for the natural world.
+                </p>
+            </div>
+            <p class="hero-caption">
+                <span class="hero-camera" aria-hidden="true">
+                    <Camera />
+                </span>
+                Elbow Lake
             </p>
-            <Button href="#about" text="About me" right />
         </div>
+    </section>
 
-        <div class="portrait">
-            <Image src="/russell.png" alt="Russell portrait" />
-        </div>
-    </div>
+    {#if favourites.length}
+        <section class="band">
+            <div class="section-label">
+                <h2 class="eyebrow">Favourite Landscapes</h2>
+                <Button href="/photography" text="View all photos" right />
+            </div>
+            <div class="moments" id="home-favourites">
+                {#each favourites as image, i (image.filePath)}
+                    <figure
+                        class="photo"
+                        class:lead={i === 0}
+                        class:tall={i === 1}
+                    >
+                        <Image
+                            filePath={image.filePath}
+                            width={image.width}
+                            height={image.height}
+                            customMetadata={image.customMetadata}
+                            sizes={i === 0
+                                ? homeLeadSizes
+                                : i === 1
+                                  ? homeTallSizes
+                                  : homePhotoSizes}
+                            lockedRatio
+                            photoswipe
+                        />
+                        {#if image.customMetadata?.caption}
+                            <figcaption class="caption">
+                                <span class="index"
+                                    >{String(i + 1).padStart(2, '0')}</span
+                                >
+                                <span class="caption-text"
+                                    >{image.customMetadata.caption}</span
+                                >
+                            </figcaption>
+                        {/if}
+                    </figure>
+                {/each}
+            </div>
+        </section>
+    {/if}
 
-    <div class="boxes">
-        <div>
-            <a href="/photography" class="hover-underline-animation"
-                ><span
-                    >see my <h3>photos</h3></span
-                ></a
-            >
-        </div>
-        <div>
-            <a href="/calendars" class="hover-underline-animation"
-                ><span
-                    >preview my <h3>calendars</h3></span
-                ></a
-            >
-        </div>
-        <div>
-            <a href="/projects" class="hover-underline-animation"
-                ><span
-                    >check out my <h3>projects</h3></span
-                ></a
-            >
-        </div>
-        <div>
-            <a href="/journal" class="hover-underline-animation"
-                ><span
-                    >read my <h3>journal</h3></span
-                ></a
-            >
-        </div>
-    </div>
+    {#if latestPost}
+        <section class="band journal-band">
+            <h2 class="eyebrow journal-heading">Journal</h2>
+            <div class="journal-grid">
+                <div class="journal-featured">
+                    <JournalEntry
+                        post={latestPost}
+                        featured
+                        showCategory={false}
+                        level={3}
+                    />
+                </div>
+                <div class="journal-recent">
+                    <p class="eyebrow">Recent entries</p>
+                    <div class="recent-list">
+                        {#each recentPosts as post (post.href)}
+                            <article class="recent-entry">
+                                <h3 class="recent-title title-sm">
+                                    <a href={post.href}
+                                        ><NoWrapLastTwoWords
+                                            text={post.title}
+                                        /></a
+                                    >
+                                </h3>
+                                {#if post.description}
+                                    <p>
+                                        <NoWrapLastTwoWords
+                                            text={post.description}
+                                        />
+                                    </p>
+                                {/if}
+                            </article>
+                        {/each}
+                        <Button href="/journal" text="View all" right />
+                    </div>
+                </div>
+            </div>
+        </section>
+    {/if}
 
-    <h2>Photos</h2>
-
-    <p class="mb-3">Here are a few of my all-time favourites.</p>
-</div>
-
-<Gallery {images} />
-
-<div class="mt-3 mb-5">
-    <ButtonSet>
-        <Button href="photography" text="Portfolio" right />
-        <Button href="events" text="Events" right />
-    </ButtonSet>
-</div>
-
-<div class="restricted-width">
-    <h2 id="about">About Me</h2>
-
-    <div class="two-col-grid">
-        <div class="flow">
+    <section class="band about-band">
+        <h2 class="eyebrow about-kicker">About</h2>
+        <p class="about-title">
+            A balance of logic, curiosity, and creativity.
+        </p>
+        <div class="about-copy">
             <p>
-                Growing up in Calgary, Alberta, Canada I spent time mountain
-                biking, hiking and downhill skiing in the Canadian Rocky
-                Mountains. My interest in outdoor pursuits has continually
-                increased and now includes backcountry skiing and basic
-                mountaineering. As my outdoor experience grew, I began to
-                venture further into the backcountry and started bringing a
-                camera to share my experiences in hard-to-reach places. This has
-                become my preferred style of photography: finding awe-inspiring
-                landscapes, frequently far and high in the mountains.
+                My work has moved through structural engineering, biomedical
+                research, and web development. Across those fields, I’ve always
+                enjoyed the same process: understanding how things work, then
+                making them work better.
             </p>
             <p>
-                Similar to photography, graphic design—especially web
-                design—requires a keen technical understanding. Coding has
-                always come naturally to me, but it is the combination of the
-                logic of coding and the creative side of design that makes the
-                web a rewarding medium to design for. I cut my teeth back in the
-                days of Internet Explorer 6 and have kept up with the evolution
-                of the web over the years.
+                Away from the computer, you’ll find me exploring the natural
+                world on foot, skis, or a bike, with my camera along for the
+                journey.
             </p>
+            <p>
+                This website is my creative outlet, a place to share the world
+                as I see it through photographs and words.
+            </p>
+
+            <div class="about-actions">
+                <Button href="/about" text="More about me" right />
+                <Button
+                    href="https://github.com/rmcwhae"
+                    text="My GitHub profile"
+                    external
+                    right
+                />
+            </div>
         </div>
-        <div class="flow">
-            <p>
-                Photography and design are complementary skills. Design
-                principles provide an expanded tool kit to use in photography.
-                Similarly, being able to take photos allows me to readily
-                incorporate them into my design work.
-            </p>
-            <p>
-                Professionally, I have had a few different careers. In 2011, I
-                graduated from civil engineering at the University of Alberta
-                and worked as a structural engineer-in-training for just over
-                three years. In early 2019, I earned an MSc. in biomedical
-                engineering from the University of Calgary. My thesis, “<a
-                    href="https://prism.ucalgary.ca/handle/1880/109915"
-                    rel="noopener noreferrer nofollow"
-                    target="_blank"
-                    >Intercellular Gap Junction Communication in the Bovine
-                    Annulus Fibrosus</a
-                >,” investigated cell-cell signaling in the intervertebral disc.
-            </p>
-            <p>
-                Wanting to further my coding skills, I took the <a
-                    href="https://www.lighthouselabs.ca"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow">Lighthouse Labs</a
-                > web development boot camp course from July to October 2019. I now
-                work as a web developer, specializing in front-end work.
-            </p>
+        <div class="interests-col">
+            <Interests />
         </div>
-    </div>
-
-    <h2 class="mt-5 mb-3">Latest Journal Entries</h2>
-
-    <JournalEntrySet posts={latestPosts} />
-
-    <div class="mt-3 mb-5">
-        <ButtonSet>
-            <Button href="/journal" text="All entries" right />
-        </ButtonSet>
-    </div>
-
-    <h2>Et Cetera</h2>
-
-    <p class="mb-3">A few bits of content that had nowhere else to go.</p>
-
-    <JournalEntrySet posts={etCetera} />
+    </section>
 </div>
 
 <style lang="scss">
     @use '../lib/scss/breakpoints' as *;
+
     .home {
-        margin-top: var(--s1);
+        display: grid;
+        grid-template-columns:
+            1fr
+            min(#{$breakpoint-xl}, 100%)
+            1fr;
+    }
+
+    .hero,
+    .band {
+        grid-column: 1 / -1;
+    }
+
+    .band {
+        width: min(#{$breakpoint-xl}, 100%);
+        margin-inline: auto;
+    }
+
+    .hero {
+        display: flex;
+        align-items: flex-end;
+        box-sizing: border-box;
+        /* 100vh is the fallback; 100svh stays fixed when the iPad toolbar collapses */
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 0 var(--page-gutter) clamp(1.5rem, 4vh, 3rem);
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero-bg :global(picture),
+    .hero-bg :global(img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-bg :global(img) {
+        object-fit: cover;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        height: 28%;
+        pointer-events: none;
+        background: linear-gradient(
+            to bottom,
+            rgb(0 0 0 / 42%) 0%,
+            rgb(0 0 0 / 16%) 46%,
+            transparent 100%
+        );
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+            to top,
+            rgb(9 10 9 / 75%) 0%,
+            rgb(9 10 9 / 42%) 28%,
+            transparent 58%
+        );
+    }
+
+    .hero-frame {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        column-gap: 2rem;
+        row-gap: 0.75rem;
+        width: min(#{$breakpoint-xl}, 100%);
+        margin-inline: auto;
+    }
+
+    .hero-caption {
+        display: flex;
+        flex: none;
+        align-items: center;
+        gap: 0.4em;
+        margin: 0 0 0 auto;
+        color: var(--paper);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: var(--text-md);
+        line-height: var(--leading-compact);
+    }
+
+    .hero-camera {
+        display: flex;
+        color: #a7aaa2;
+    }
+
+    @include for-phone-only {
+        .hero-frame {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .hero-caption {
+            font-size: var(--text-xs);
+        }
+    }
+
+    .intro {
+        max-width: 40rem;
+        color: var(--paper);
+    }
+
+    .intro h1,
+    .intro .lede {
+        color: var(--paper);
+    }
+
+    h1 {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        margin: 0 0 1.25rem;
+        font-size: var(--text-display);
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.08;
     }
-    .hero {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--s1);
 
-        @include for-tablet-portrait-down {
-            grid-template-columns: 2fr 1fr;
-        }
-        @include for-phone-only {
-            grid-template-columns: 1fr;
-        }
+    .line-sans {
+        font-family: var(--font-sans);
+        font-style: normal;
+        font-weight: 500;
     }
-    .portrait {
-        margin-top: auto;
-        @include for-tablet-portrait-down {
-            width: 50vw;
-        }
-        @include for-phone-only {
-            margin-left: auto;
-            margin-top: -100px;
-        }
-    }
-    .boxes {
-        margin: var(--s4) auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--s0);
-    }
-    .boxes a {
-        text-decoration: none;
+
+    .line-serif {
+        font-family: var(--font-serif);
+        font-style: italic;
         font-weight: 400;
-        display: block;
-        padding: var(--s-1) var(--s3) var(--s-3) 0;
+        letter-spacing: -0.03em;
     }
 
-    .boxes a h3 {
-        margin-bottom: 0;
-        line-height: 1.1;
+    .intro .lede {
+        max-width: 34rem;
+        margin: 0;
     }
-    .boxes a:hover {
+
+    /* Keep the break after “writer” once that line fits on its own. */
+    .intro .lede br {
+        display: none;
+    }
+
+    @media (min-width: 420px) {
+        .intro .lede br {
+            display: inline;
+        }
+    }
+
+    .band {
+        margin-top: var(--s4);
+        padding-top: var(--s2);
+        border-top: 1px solid var(--light-grey);
+    }
+
+    .hero + .band {
+        margin-top: var(--s3);
+        padding-top: var(--s0);
+        border-top: none;
+    }
+
+    @include for-phone-only {
+        .hero + .band {
+            margin-top: var(--s1);
+            padding-top: 0;
+        }
+
+        .hero + .band + .band,
+        .about-band {
+            margin-top: var(--s2);
+        }
+    }
+
+    .section-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: var(--s1);
+    }
+
+    @include for-phone-only {
+        .section-label {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+    }
+
+    .section-label :global(h2) {
+        margin: 0;
+    }
+
+    .moments {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem 1rem;
+    }
+
+    @include for-phone-only {
+        .moments {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .caption {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        margin: 0.5rem 0 0;
+        color: var(--text-color);
+        font-size: var(--text-xs);
+        font-weight: 400;
+        line-height: var(--leading-compact);
+    }
+
+    .index {
+        flex: none;
+        font-family: var(--font-sans);
+        font-size: var(--text-caps);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: var(--tracking-caps);
+        opacity: 0.7;
+    }
+
+    @include for-phone-only {
+        .index {
+            display: none;
+        }
+    }
+
+    .photo {
+        display: block;
+        position: relative;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .photo :global(.lockedRatio) {
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .photo :global(img) {
+            transition: transform 600ms ease;
+        }
+
+        .photo:hover :global(img) {
+            transform: scale(1.03);
+        }
+    }
+
+    .photo :global(a),
+    .photo :global(a:hover) {
         text-decoration: none;
+        cursor: pointer;
+    }
+
+    .about-band {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .about-title {
+        margin: 0;
+        max-width: 16ch;
+        font-family: var(--font-serif);
+        font-size: var(--text-xl);
+        font-weight: 500;
+        line-height: var(--leading-tight);
+        letter-spacing: var(--tracking-heading);
+        color: var(--high-contrast-color);
+    }
+
+    .about-copy {
+        max-width: 42ch;
+        margin-top: var(--s1);
+    }
+
+    .about-copy p {
+        margin: 0 0 1.25rem;
+    }
+
+    .about-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--s1);
+    }
+
+    .interests-col {
+        width: 100%;
+        margin-top: var(--s2);
+    }
+
+    .journal-heading {
+        margin: 0 0 var(--s1);
+    }
+
+    .journal-grid {
+        display: grid;
+        gap: var(--s2);
+    }
+
+    .journal-featured,
+    .journal-recent {
+        min-width: 0;
+    }
+
+    .journal-recent,
+    .recent-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .journal-recent .eyebrow {
+        margin: 0 0 var(--s0);
+    }
+
+    .recent-entry {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        width: 100%;
+        margin-inline: 0;
+        gap: 0.35rem;
+        padding-bottom: var(--s0);
+        border-bottom: 1px solid var(--light-grey);
+
+        & + & {
+            padding-top: var(--s0);
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    .recent-title {
+        margin: 0;
+    }
+
+    .recent-entry p {
+        margin: 0;
+        color: var(--text-color);
+        font-size: var(--text-sm);
+        font-weight: 400;
+        line-height: var(--leading-compact);
+    }
+
+    .journal-recent :global(a.button) {
+        align-self: flex-start;
+        margin-top: var(--s1);
+    }
+
+    @include for-tablet-portrait-up {
+        .moments {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-auto-rows: clamp(10rem, 22vw, 15rem);
+        }
+
+        .photo {
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .photo.lead {
+            grid-column: 1 / -1;
+            grid-row: span 2;
+        }
+
+        .photo.tall {
+            grid-row: span 2;
+        }
+
+        /* Let the grid cell set the size instead of the 3:2 ratio */
+        .photo :global(.lockedRatio) {
+            height: 100%;
+        }
+
+        .photo :global(.lockedRatio::after) {
+            aspect-ratio: auto;
+        }
+
+        .caption {
+            position: absolute;
+            inset: auto 0 0;
+            margin: 0;
+            padding: 2.5rem 1rem 0.85rem;
+            color: var(--paper);
+            background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+            pointer-events: none;
+        }
+
+        .caption-text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: var(--text-sm);
+        }
+
+        .lead .caption {
+            padding: 3.5rem 1.25rem 1.1rem;
+        }
+
+        .lead .caption-text {
+            font-size: var(--text-md);
+        }
+    }
+
+    @include for-tablet-wide-up {
+        .journal-band {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            column-gap: var(--s3);
+            row-gap: var(--s1);
+            align-items: start;
+            grid-template-areas:
+                'heading recent-heading'
+                'featured recent';
+        }
+
+        .journal-heading {
+            grid-area: heading;
+            margin: 0;
+        }
+
+        .journal-grid,
+        .journal-recent {
+            display: contents;
+        }
+
+        .journal-featured {
+            grid-area: featured;
+        }
+
+        .journal-recent .eyebrow {
+            grid-area: recent-heading;
+            margin: 0;
+            padding-left: var(--s2);
+        }
+
+        .recent-list {
+            grid-area: recent;
+            border-left: 1px solid var(--light-grey);
+            padding-left: var(--s2);
+        }
+
+        .about-band {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr) minmax(
+                    0,
+                    0.9fr
+                );
+            column-gap: var(--s3);
+            row-gap: 0.6rem;
+            align-items: start;
+            grid-template-areas:
+                'kicker . interests'
+                'title copy interests';
+        }
+
+        .about-kicker {
+            grid-area: kicker;
+        }
+
+        .about-title {
+            grid-area: title;
+        }
+
+        .about-copy {
+            grid-area: copy;
+            max-width: none;
+            margin-top: 0;
+        }
+
+        .interests-col {
+            grid-area: interests;
+            display: grid;
+            grid-template-rows: subgrid;
+            margin-top: 0;
+        }
+
+        .interests-col :global(.interests-block) {
+            display: grid;
+            grid-row: 1 / -1;
+            grid-template-rows: subgrid;
+        }
+
+        .interests-col :global(ul.interests) {
+            margin-block-start: 0;
+        }
+
+        .interests-col :global(ul.interests > li:first-child > a) {
+            padding-block-start: 0;
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        .moments {
+            grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(2, clamp(12rem, 17vw, 17rem));
+            grid-auto-rows: auto;
+        }
+
+        .photo.lead {
+            grid-column: 1;
+            grid-row: 1 / -1;
+        }
+
+        .photo.tall {
+            grid-column: 2;
+            grid-row: 1 / -1;
+        }
     }
 </style>

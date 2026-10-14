@@ -1,4 +1,4 @@
-import { error } from '@sveltejs/kit'
+import { error, isHttpError } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
 import { parseTitleAndDate } from '#lib/utils/string/index.js'
@@ -67,7 +67,7 @@ export const load: PageServerLoad = async ({ params }) => {
         }
     } catch (err: unknown) {
         // If it's already a SvelteKit error, re-throw it
-        if (err.status) {
+        if (isHttpError(err)) {
             throw err
         }
 

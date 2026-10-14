@@ -1,6 +1,6 @@
 ---
 title: Two Weeks in the Galápagos
-description: A travelogue
+description: A travelogue in an unforgettable landscape
 author: Russell McWhae
 date: 2025-08-19
 draft: 0

@@ -2,8 +2,8 @@
     // Use native lazy loading; remove lazysizes dependency
     import {
         generateSrcSets,
-        sizes,
         buildURL,
+        DISPLAY_WIDTH,
     } from '#lib/utils/images/index.js'
 
     /**
@@ -14,6 +14,8 @@
      * @property {any} customMetadata
      * @property {boolean} [lockedRatio]
      * @property {boolean} [photoswipe]
+     * @property {boolean} [priority]
+     * @property {string} sizes
      */
 
     /** @type {Props} */
@@ -24,43 +26,47 @@
         customMetadata,
         lockedRatio = false,
         photoswipe = false,
+        priority = false,
+        sizes,
     } = $props()
 
-    const src = $derived(buildURL(filePath, { width, height }))
+    const src = $derived(
+        buildURL(filePath, {
+            width: Math.min(DISPLAY_WIDTH, Number(width) || DISPLAY_WIDTH),
+        })
+    )
+    const fullSrc = $derived(buildURL(filePath, { width }))
     const srcset = $derived(generateSrcSets(filePath))
     const caption = $derived(customMetadata?.caption ?? '')
 </script>
 
+{#snippet photo()}
+    <img
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
+        {sizes}
+        {srcset}
+        {src}
+        {width}
+        {height}
+        alt={caption}
+    />
+{/snippet}
+
 <div class:lockedRatio>
     {#if photoswipe}
         <a
-            class="no-shadow"
-            href={src}
+            href={fullSrc}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={src}
+            data-pswp-src={fullSrc}
             data-pswp-srcset={srcset}
+            data-cropped={lockedRatio ? 'true' : undefined}
         >
-            <img
-                loading="lazy"
-                {sizes}
-                {srcset}
-                {src}
-                {width}
-                {height}
-                alt={caption}
-            />
+            {@render photo()}
         </a>
     {:else}
-        <img
-            loading="lazy"
-            {sizes}
-            {srcset}
-            {src}
-            {width}
-            {height}
-            alt={caption}
-        />
+        {@render photo()}
     {/if}
 </div>
 
@@ -81,6 +87,11 @@
         display: block;
         content: '';
         aspect-ratio: 3 / 2;
+    }
+
+    .lockedRatio a {
+        position: absolute;
+        inset: 0;
     }
 
     /* Image is positioned absolutely relative to the parent element */

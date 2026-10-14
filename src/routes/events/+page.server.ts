@@ -1,31 +1,15 @@
 import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
+import type { ProcessedFile } from '#lib/services/imageKitNode.js'
 import { parseTitleAndDate } from '#lib/utils/string/index.js'
 
 export const prerender = true
 
-interface EventWithImages {
-    name: string
+type EventWithImages = ProcessedFile & {
     title: string
     date: string
     count: number
-    featuredImage: {
-        name: string
-        filePath: string
-        width: number
-        height: number
-    } | null
-    [key: string]:
-        | string
-        | number
-        | {
-              name: string
-              filePath: string
-              width: number
-              height: number
-          }
-        | null
-        | undefined
+    featuredImage: ProcessedFile | null
 }
 
 export const load: PageServerLoad = async () => {
@@ -105,13 +89,7 @@ export const load: PageServerLoad = async () => {
     }
 }
 
-function getImagesForEvent(name: string): Promise<
-    Array<{
-        filePath: string
-        url?: string
-        [key: string]: string | number | boolean | undefined
-    }>
-> {
+function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
     if (!name) {
         return Promise.resolve([])
     }
@@ -122,18 +100,7 @@ function getImagesForEvent(name: string): Promise<
     })
 }
 
-function getFeaturedImage(
-    images: Array<{
-        filePath: string
-        url?: string
-        [key: string]: string | number | boolean | undefined
-    }>
-): {
-    name: string
-    filePath: string
-    width: number
-    height: number
-} | null {
+function getFeaturedImage(images: ProcessedFile[]): ProcessedFile | null {
     if (!Array.isArray(images) || images.length === 0) {
         return null
     }
@@ -141,7 +108,7 @@ function getFeaturedImage(
     try {
         return (
             images.find(
-                (image) => image.tags && image.tags.includes('featured')
+                (image) => 'tags' in image && image.tags?.includes('featured')
             ) || images[0]
         )
     } catch (error) {

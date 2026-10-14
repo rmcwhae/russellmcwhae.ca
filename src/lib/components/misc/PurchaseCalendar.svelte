@@ -27,12 +27,6 @@
     button {
         display: inline-flex;
         align-items: center;
-        border-color: var(--medium-grey);
-        background-color: var(--light-grey);
-        cursor: pointer;
-    }
-    button:hover {
-        /* border-color: var(--high-contrast-color); */
     }
     .right {
         margin-left: var(--s-2);

@@ -7,52 +7,16 @@ blockquote > * + * {
 }
 // HACK using blockquote here probably is not the best…
 
-.flex {
-    display: flex;
-}
-
-.items-center {
-    align-items: center;
-}
-
-.justify-between {
-    justify-content: space-between;
-}
-
-.border-bottom {
-    border-bottom: 1px solid var(--light-grey);
-}
-
-.border-top {
-    border-top: 1px solid var(--light-grey);
-}
-
 .mt-5 {
     margin-top: var(--s5);
-}
-
-.mt-4 {
-    margin-top: var(--s4);
 }
 
 .mt-3 {
     margin-top: var(--s3);
 }
 
-.mt-2 {
-    margin-top: var(--s2);
-}
-
 .mt-1 {
     margin-top: var(--s1);
-}
-
-.mt-s0 {
-    margin-bottom: var(--s0);
-}
-
-.mt-0 {
-    margin-top: 0;
 }
 
 .mb-s0 {
@@ -71,55 +35,15 @@ blockquote > * + * {
     margin-bottom: var(--s3);
 }
 
-.mb-4 {
-    margin-bottom: var(--s4);
-}
-
-.mb-5 {
-    margin-bottom: var(--s5);
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
 .char-limit {
-    max-width: 70ch;
-}
-
-.margin-0-auto {
-    margin: 0 auto;
-}
-
-.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-}
-
-.hover-underline-animation:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--high-contrast-color);
-    transform-origin: bottom left;
-    transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover:after,
-.hover-underline-animation[aria-current]:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    max-width: var(--measure);
 }
 
 .toc ul {
     list-style: none;
     margin: 0 0 var(--s1);
     padding-left: 0;
-    font-size: 1rem;
+    font-size: var(--text-sm);
     line-height: 1.2;
     border-left: 1px solid var(--light-grey);
 }

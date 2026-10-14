@@ -1,6 +1,6 @@
 <script>
+    import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
     import LeftChevron from '#lib/components/icons/LeftChevron.svelte'
-    import RightChevron from '#lib/components/icons/RightChevron.svelte'
 
     /**
      * @typedef {Object} Props
@@ -27,7 +27,7 @@
     <span>{text}</span>
     {#if right}
         <span class="right">
-            <RightChevron />
+            <ArrowNorthEast />
         </span>
     {/if}
 </a>

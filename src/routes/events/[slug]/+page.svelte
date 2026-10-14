@@ -1,6 +1,5 @@
 <script>
     import Gallery from '#lib/components/images/Gallery.svelte'
-    import Button from '#lib/components/buttons/Button.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
 
     let { data } = $props()
@@ -13,17 +12,21 @@
 
 <SEO {title} />
 
-<div class="flex items-center justify-between">
+<div class="page-header">
+    <p class="eyebrow">
+        <a href="/events">Field Expeditions</a>
+    </p>
     <h1>{title}</h1>
-    <Button href="/events" text="Events" left />
+    <p class="meta">{date} · {count} photos</p>
 </div>
-<div class="sub mb-s0">{date} &middot; {count} photos</div>
 
 <Gallery {images} />
 
 <style>
-    .sub {
-        margin-top: var(--s-1);
-        margin-bottom: var(--s1);
+    .meta {
+        margin: 0;
+        color: var(--medium-grey);
+        font-family: var(--font-sans);
+        font-size: var(--text-sm);
     }
 </style>

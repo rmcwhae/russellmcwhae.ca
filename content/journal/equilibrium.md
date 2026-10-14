@@ -13,7 +13,7 @@ Through our local nordic ski club, we learned to ski: classic technique first, t
 
 Still, I stuck with nordic-ski racing for many years. In solo races, I rarely finished faster than the middle of the pack, though podium finishes were occasionally realized in relays when buoyed up by faster teammates.
 
-In grade five, I experienced my first-ever downhill ski day at Nakiska ski resort. My brother and I were able to skip a few levels of basic lessons thanks to our nordic-skiing backgrounds. At the time, clever marketers offered a promotion to students in grade five: three free ski days at most ski resorts in western Canada. It occurs to me now that drug-dealers employ similar tactics: get 'em hooked for free, then jack up the prices. If you think about it, the outcome is similar: you may well find yourself up to your eyeballs in white powder! (I couldn’t _not_ make this joke.) My first ever pair of alpine skis were actually telemark skis, with leather boots and three-pin bindings, purchased after the success of the downhill-ski experiment. At the end of that first day of taking chairlifts to go uphill, I asked, “What, exactly, is the exercise value in downhill skiing?”
+In grade five, I experienced my first-ever downhill ski day at Nakiska ski resort. My brother and I were able to skip a few levels of basic lessons thanks to our nordic-skiing backgrounds. At the time, clever marketers offered a promotion to students in grade five: three free ski days at most ski resorts in western Canada. It occurs to me now that drug-dealers employ similar tactics: get ’em hooked for free, then jack up the prices. If you think about it, the outcome is similar: you may well find yourself up to your eyeballs in white powder! (I couldn’t _not_ make this joke.) My first ever pair of alpine skis were actually telemark skis, with leather boots and three-pin bindings, purchased after the success of the downhill-ski experiment. At the end of that first day of taking chairlifts to go uphill, I asked, “What, exactly, is the exercise value in downhill skiing?”
 
 Come junior high school, my interests took to video games, and my middling racing career took a backseat to electronic entertainment. At least insofar as was permitted by my parents: maximum one hour of computer time per day, usually stretched in the presence of unsuspecting babysitters. One fall with a particular lack of motivation on my part about the upcoming ski season, new skis to fit my rapidly growing adolescent body were not invested in.
 
@@ -167,7 +167,7 @@ Cathy and Johnny rope up and climb a multi-pitch route together. (This was befor
 >
 > “Job, no. Love, yes, by all means, as long as there aren’t any boring consequences.” He opened his lazy eyes at last and gave her his impudent monkey look; … She said coldly, with Puritan disapproval:
 >
-> “That's cheating.”
+> “That’s cheating.”
 >
 > “Oh well, yes, if you like,” agreed Johnny, preparing to go to sleep again.
 >
