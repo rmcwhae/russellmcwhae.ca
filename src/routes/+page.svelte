@@ -11,8 +11,10 @@
         heroPreload,
         homeLeadSizes,
         homePhotoSizes,
+        homeTallSizes,
     } from '#lib/utils/images/static.js'
     import StaticPicture from '#lib/components/images/StaticPicture.svelte'
+    import Camera from '#lib/components/icons/Camera.svelte'
 
     let { data } = $props()
 
@@ -66,10 +68,16 @@
                     <span class="line-serif">Open horizons.</span>
                 </h1>
                 <p class="lede">
-                    I’m Russell—a web developer, photographer, and writer with a
-                    deep appreciation for the natural world.
+                    I’m Russell—a web developer, photographer, and writer<br />
+                    with a deep appreciation for the natural world.
                 </p>
             </div>
+            <p class="hero-caption">
+                <span class="hero-camera" aria-hidden="true">
+                    <Camera />
+                </span>
+                Elbow Lake
+            </p>
         </div>
     </section>
 
@@ -91,7 +99,11 @@
                             width={image.width}
                             height={image.height}
                             customMetadata={image.customMetadata}
-                            sizes={i === 0 ? homeLeadSizes : homePhotoSizes}
+                            sizes={i === 0
+                                ? homeLeadSizes
+                                : i === 1
+                                  ? homeTallSizes
+                                  : homePhotoSizes}
                             lockedRatio
                             photoswipe
                         />
@@ -214,8 +226,9 @@
         display: flex;
         align-items: flex-end;
         box-sizing: border-box;
-        height: 100vh;
-        height: 100lvh;
+        /* 100vh is the fallback; 100dvh tracks the visible iOS viewport */
+        min-height: 100vh;
+        min-height: 100dvh;
         padding: 0 var(--page-gutter) clamp(1.5rem, 4vh, 3rem);
     }
 
@@ -270,8 +283,44 @@
     .hero-frame {
         position: relative;
         z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        column-gap: 2rem;
+        row-gap: 0.75rem;
         width: min(#{$breakpoint-xl}, 100%);
         margin-inline: auto;
+    }
+
+    .hero-caption {
+        display: flex;
+        flex: none;
+        align-items: center;
+        gap: 0.4em;
+        margin: 0 0 0 auto;
+        color: var(--paper);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: var(--text-md);
+        line-height: var(--leading-compact);
+    }
+
+    .hero-camera {
+        display: flex;
+        color: #a7aaa2;
+    }
+
+    @include for-phone-only {
+        .hero-frame {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .hero-caption {
+            font-size: var(--text-xs);
+        }
     }
 
     .intro {
@@ -310,6 +359,17 @@
     .intro .lede {
         max-width: 34rem;
         margin: 0;
+    }
+
+    /* Keep the break after “writer” once that line fits on its own. */
+    .intro .lede br {
+        display: none;
+    }
+
+    @media (min-width: 420px) {
+        .intro .lede br {
+            display: inline;
+        }
     }
 
     .band {
@@ -643,7 +703,23 @@
 
         .interests-col {
             grid-area: interests;
+            display: grid;
+            grid-template-rows: subgrid;
             margin-top: 0;
+        }
+
+        .interests-col :global(.interests-block) {
+            display: grid;
+            grid-row: 1 / -1;
+            grid-template-rows: subgrid;
+        }
+
+        .interests-col :global(ul.interests) {
+            margin-block-start: 0;
+        }
+
+        .interests-col :global(ul.interests > li:first-child > a) {
+            padding-block-start: 0;
         }
     }
 

@@ -37,4 +37,8 @@ export const homeLeadSizes = '(max-width: 900px) 100vw, 650px'
 export const homePhotoSizes =
     '(max-width: 576px) 100vw, (max-width: 900px) 50vw, 325px'
 
+/** Uncropped width `object-fit: cover` needs for the tall 3:2 homepage cell. */
+export const homeTallSizes =
+    '(max-width: 576px) 50vw, (max-width: 900px) calc(1.5 * (2 * clamp(10rem, 22vw, 15rem) + 0.75rem)), calc(1.5 * (2 * clamp(12rem, 17vw, 17rem) + 0.75rem))'
+
 export const eventThumbSizes = '(max-width: 576px) 64px, 96px'
