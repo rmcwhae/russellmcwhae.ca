@@ -8,6 +8,12 @@ export type Book = {
 export const books: Book[] = [
     {
         year: '2026',
+        title: 'Outsider: An Old Man, a Mountain and the Search for a Hidden Past',
+        author: 'Brett Popplewell',
+        audiobook: true,
+    },
+    {
+        year: '2026',
         title: 'Hot Lights, Cold Steel: Life, Death and Sleepless Nights in a Surgeon’s First Years',
         author: 'Michael J. Collins, MD',
         audiobook: false,
