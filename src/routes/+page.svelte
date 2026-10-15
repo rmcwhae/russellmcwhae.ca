@@ -3,7 +3,6 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
     import JournalEntry from '#lib/components/journal/Entry.svelte'
-    import Interests from '#lib/components/misc/Interests.svelte'
     import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
     import {
@@ -15,8 +14,11 @@
     } from '#lib/utils/images/static.js'
     import StaticPicture from '#lib/components/images/StaticPicture.svelte'
     import Camera from '#lib/components/icons/Camera.svelte'
+    import { books } from './reading-list/books'
 
     let { data } = $props()
+
+    let latestBook = books[0]
 
     let images = $derived(Array.isArray(data.images) ? data.images : [])
     let latestPosts = $derived(data.latestPosts ?? [])
@@ -196,7 +198,20 @@
             </div>
         </div>
         <div class="interests-col">
-            <Interests />
+            <div class="latest-book">
+                <h2 class="eyebrow">Latest Book Read</h2>
+                <div class="latest-book-body">
+                    <div class="latest-book-copy">
+                        <p class="title-sm">{latestBook.title}</p>
+                        <p class="latest-book-author">{latestBook.author}</p>
+                    </div>
+                    <Button
+                        href="/reading-list"
+                        text="Full reading list"
+                        right
+                    />
+                </div>
+            </div>
         </div>
     </section>
 </div>
@@ -521,6 +536,29 @@
         margin-top: var(--s2);
     }
 
+    .latest-book-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--s1);
+        margin-top: var(--s1);
+    }
+
+    .latest-book-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .latest-book-author {
+        margin: 0;
+        color: var(--text-color);
+        font-family: var(--font-sans);
+        font-size: var(--text-sm);
+        font-weight: 400;
+        line-height: var(--leading-compact);
+    }
+
     .journal-heading {
         margin: 0 0 var(--s1);
     }
@@ -708,18 +746,14 @@
             margin-top: 0;
         }
 
-        .interests-col :global(.interests-block) {
+        .latest-book {
             display: grid;
             grid-row: 1 / -1;
             grid-template-rows: subgrid;
         }
 
-        .interests-col :global(ul.interests) {
-            margin-block-start: 0;
-        }
-
-        .interests-col :global(ul.interests > li:first-child > a) {
-            padding-block-start: 0;
+        .latest-book-body {
+            margin-top: 0;
         }
     }
 
