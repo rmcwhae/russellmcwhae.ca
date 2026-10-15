@@ -1,6 +1,6 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
-    import { books } from './books'
+    import { books, earlierYear } from './books'
 
     let searchQuery = $state('')
 
@@ -17,7 +17,7 @@
     )
 
     let booksByYear = $derived.by(() => {
-        /** @type {Map<string, typeof filteredBooks>} */
+        /** @type {Map<number, typeof filteredBooks>} */
         // eslint-disable-next-line svelte/prefer-svelte-reactivity -- recreated inside $derived.by
         const groups = new Map()
         for (const book of filteredBooks) {
@@ -26,16 +26,7 @@
             else groups.set(book.year, [book])
         }
 
-        return Array.from(groups.entries()).sort(([a], [b]) => {
-            const aYear = Number(a)
-            const bYear = Number(b)
-            const aValid = Number.isInteger(aYear)
-            const bValid = Number.isInteger(bYear)
-            if (aValid && bValid) return bYear - aYear
-            if (aValid) return -1
-            if (bValid) return 1
-            return 0
-        })
+        return Array.from(groups.entries()).sort(([a], [b]) => b - a)
     })
 </script>
 
@@ -67,7 +58,9 @@
         {:else}
             {#each booksByYear as [year, yearBooks] (year)}
                 <div class="year-group">
-                    <h2 class="year-label">{year}</h2>
+                    <h2 class="year-label">
+                        {year === earlierYear ? 'Earlier' : year}
+                    </h2>
                     <div class="year-items">
                         {#each yearBooks as book (book.title)}
                             <div class="book-row">
@@ -75,7 +68,9 @@
                                 <span class="book-meta">
                                     <span>{book.author}</span>
                                     {#if book.audiobook}
-                                        <span class="caps book-format">Audio</span>
+                                        <span class="caps book-format"
+                                            >Audio</span
+                                        >
                                     {/if}
                                 </span>
                             </div>
