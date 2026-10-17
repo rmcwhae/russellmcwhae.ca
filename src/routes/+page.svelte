@@ -66,8 +66,8 @@
         <div class="hero-frame">
             <div class="intro">
                 <h1>
-                    <span class="line-sans">Thoughtful work.</span>
-                    <span class="line-serif">Open horizons.</span>
+                    <span class="line-sans">A life observed.</span>
+                    <span class="line-serif">In words & images.</span>
                 </h1>
                 <p class="lede">
                     I’m Russell—a web developer, photographer, and writer<br />
