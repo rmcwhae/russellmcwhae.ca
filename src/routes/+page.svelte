@@ -87,7 +87,9 @@
         <section class="band">
             <div class="section-label">
                 <h2 class="eyebrow">Favourite Landscapes</h2>
-                <Button href="/photography" text="View all photos" right />
+                <div class="photos-link photos-link-aside">
+                    <Button href="/photography" text="View all photos" right />
+                </div>
             </div>
             <div class="moments" id="home-favourites">
                 {#each favourites as image, i (image.filePath)}
@@ -121,6 +123,9 @@
                         {/if}
                     </figure>
                 {/each}
+            </div>
+            <div class="photos-link photos-link-below">
+                <Button href="/photography" text="View all photos" right />
             </div>
         </section>
     {/if}
@@ -419,11 +424,18 @@
         margin-bottom: var(--s1);
     }
 
+    .photos-link-below {
+        display: none;
+    }
+
     @include for-phone-only {
-        .section-label {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.65rem;
+        .photos-link-aside {
+            display: none;
+        }
+
+        .photos-link-below {
+            display: block;
+            margin-top: var(--s1);
         }
     }
 
@@ -522,6 +534,12 @@
 
     .about-copy p {
         margin: 0 0 1.25rem;
+    }
+
+    @include for-phone-only {
+        .about-copy p {
+            font-size: var(--text-sm);
+        }
     }
 
     .about-actions {
