@@ -32,7 +32,8 @@
     <header class="page-header">
         <h1>About Me</h1>
         <p class="lede">
-            Developer, photographer, writer, and lifelong outdoor adventurer.
+            Software developer, photographer, writer, and lifelong outdoor
+            adventurer.
         </p>
     </header>
 

@@ -101,7 +101,7 @@ main a.text-link {
 .lede {
     max-width: 36rem;
     color: color-mix(in srgb, var(--text-color) 72%, var(--background-color));
-    font-size: var(--text-base);
+    font-size: var(--text-md);
     font-weight: 500;
     line-height: var(--leading-compact);
 }
