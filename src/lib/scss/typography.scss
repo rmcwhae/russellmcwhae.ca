@@ -129,7 +129,7 @@ article a {
 .title-sm {
     font-family: var(--font-serif);
     font-size: var(--text-md);
-    font-weight: 500;
+    font-weight: var(--serif-heading-weight);
     line-height: var(--leading-snug);
     letter-spacing: var(--tracking-heading);
     color: var(--high-contrast-color);
@@ -206,7 +206,7 @@ h6 {
     font-family: var(--font-serif);
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
-    font-weight: 500;
+    font-weight: var(--serif-heading-weight);
     letter-spacing: var(--tracking-heading);
 }
 
@@ -224,7 +224,14 @@ h2 {
 h3 {
     font-family: var(--font-sans);
     font-size: var(--text-md);
+    font-weight: 500;
     line-height: var(--leading-snug);
+}
+
+@include for-phone-only {
+    :root {
+        --serif-heading-weight: 700;
+    }
 }
 
 h4 {

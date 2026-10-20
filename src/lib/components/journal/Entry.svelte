@@ -99,10 +99,11 @@
     .entry-title {
         margin: 0;
         font-family: var(--font-serif);
+        font-weight: var(--serif-heading-weight);
     }
 
     .entry-title a {
-        font-weight: 500;
+        font-weight: inherit;
         text-decoration: none;
     }
 

@@ -376,6 +376,12 @@
         letter-spacing: -0.03em;
     }
 
+    @include for-phone-only {
+        .line-serif {
+            font-weight: var(--serif-heading-weight);
+        }
+    }
+
     .intro .lede {
         max-width: 34rem;
         margin: 0;
@@ -521,7 +527,7 @@
         max-width: 16ch;
         font-family: var(--font-serif);
         font-size: var(--text-xl);
-        font-weight: 500;
+        font-weight: var(--serif-heading-weight);
         line-height: var(--leading-tight);
         letter-spacing: var(--tracking-heading);
         color: var(--high-contrast-color);
