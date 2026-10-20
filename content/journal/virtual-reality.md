@@ -1,6 +1,6 @@
 ---
 title: Virtual Reality
-description: I finally tried VR.
+description: Virtual Reality has struggled to find a compelling use case. I propose at least one.
 author: Russell McWhae
 date: 2024-06-06
 draft: 0
