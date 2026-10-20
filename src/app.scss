@@ -15,7 +15,7 @@ body {
         color ease var(--duration);
     margin: 0;
     font-family: var(--font-sans);
-    font-size-adjust: from-font;
+    font-size-adjust: var(--font-sans-ex);
     font-size: var(--text-base);
     line-height: var(--leading-body);
 
