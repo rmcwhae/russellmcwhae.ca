@@ -6,7 +6,7 @@
 
 <SEO title="Calendars" />
 
-<div class="page-header mb-2">
+<div class="page-header">
     <h1>Calendars</h1>
     <p class="lede">
         After a ten-year run, I am no longer actively making annual wall
@@ -14,41 +14,44 @@
     </p>
 </div>
 
-<div class="three-col-grid">
-    <Calendar filename="2024calendar.pdf">
-        <Image src="/calendar-images/2024.jpg" />
-    </Calendar>
-    <Calendar filename="2023calendar.pdf">
-        <Image src="/calendar-images/2023.jpg" />
-    </Calendar>
-    <Calendar filename="2022calendar.pdf">
-        <Image src="/calendar-images/2022.jpg" />
-    </Calendar>
-    <Calendar filename="2021calendar.pdf">
-        <Image src="/calendar-images/2021.jpg" />
-    </Calendar>
-    <Calendar filename="2020calendar.pdf">
-        <Image src="/calendar-images/2020.jpg" />
-    </Calendar>
-    <Calendar filename="2019calendar.pdf">
-        <Image src="/calendar-images/2019.jpg" />
-    </Calendar>
-    <Calendar filename="2018calendar.pdf">
-        <Image src="/calendar-images/2018.jpg" />
-    </Calendar>
-    <Calendar filename="2017calendar.pdf">
-        <Image src="/calendar-images/2017.jpg" />
-    </Calendar>
-    <Calendar filename="2016calendar.pdf">
-        <Image src="/calendar-images/2016.jpg" />
-    </Calendar>
-    <Calendar filename="2015calendar.pdf">
-        <Image src="/calendar-images/2015.jpg" />
-    </Calendar>
-</div>
+<section class="archive" aria-label="Past editions">
+    <p class="eyebrow archive-heading">Past editions</p>
+    <div class="three-col-grid">
+        <Calendar filename="2024calendar.pdf">
+            <Image src="/calendar-images/2024.jpg" />
+        </Calendar>
+        <Calendar filename="2023calendar.pdf">
+            <Image src="/calendar-images/2023.jpg" />
+        </Calendar>
+        <Calendar filename="2022calendar.pdf">
+            <Image src="/calendar-images/2022.jpg" />
+        </Calendar>
+        <Calendar filename="2021calendar.pdf">
+            <Image src="/calendar-images/2021.jpg" />
+        </Calendar>
+        <Calendar filename="2020calendar.pdf">
+            <Image src="/calendar-images/2020.jpg" />
+        </Calendar>
+        <Calendar filename="2019calendar.pdf">
+            <Image src="/calendar-images/2019.jpg" />
+        </Calendar>
+        <Calendar filename="2018calendar.pdf">
+            <Image src="/calendar-images/2018.jpg" />
+        </Calendar>
+        <Calendar filename="2017calendar.pdf">
+            <Image src="/calendar-images/2017.jpg" />
+        </Calendar>
+        <Calendar filename="2016calendar.pdf">
+            <Image src="/calendar-images/2016.jpg" />
+        </Calendar>
+        <Calendar filename="2015calendar.pdf">
+            <Image src="/calendar-images/2015.jpg" />
+        </Calendar>
+    </div>
+</section>
 
 <style>
-    article {
-        margin: 0 auto var(--s2);
+    .archive-heading {
+        margin: 0 0 var(--s1);
     }
 </style>

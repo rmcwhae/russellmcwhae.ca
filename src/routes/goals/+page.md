@@ -1,6 +1,7 @@
 ---
 title: Goals
 layout: page
+lede: Personal goals, kept here for a small measure of accountability.
 ---
 
 This is a list of various personal goals, documented on this unlisted page to provide a small level of accountability.

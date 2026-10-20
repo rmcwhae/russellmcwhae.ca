@@ -1,14 +1,17 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
 
-    let { title, children, ledeHeading = false } = $props()
+    let { title, children, lede = undefined } = $props()
 </script>
 
 <SEO {title} />
 
 <article>
-    <header>
-        <h1 class:lede-heading={ledeHeading}>{title}</h1>
+    <header class="page-header">
+        <h1>{title}</h1>
+        {#if lede}
+            <p class="lede">{lede}</p>
+        {/if}
     </header>
     <div class="flow">
         {@render children?.()}
@@ -23,19 +26,5 @@
         max-width: var(--measure);
         margin-inline: auto;
         justify-self: center;
-    }
-
-    header {
-        margin-bottom: var(--s2);
-    }
-
-    h1.lede-heading {
-        font-size: var(--text-2xl);
-    }
-
-    @include for-phone-only {
-        header {
-            margin-bottom: var(--s0);
-        }
     }
 </style>

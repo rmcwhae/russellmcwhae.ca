@@ -28,7 +28,9 @@
                 <span class="nowrap">of 2025.</span>
             </p>
             <p>
-                <a href={resolve('/reading-list')}>Reading list</a>
+                <a class="text-link" href={resolve('/reading-list')}
+                    >Reading list</a
+                >
             </p>
             <div class="start-here">
                 <p class="eyebrow">Start Here</p>
@@ -114,18 +116,6 @@
         line-height: 1.3;
     }
 
-    .sidebar p a {
-        text-decoration: underline;
-        text-decoration-color: currentColor;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.18em;
-
-        &:hover {
-            color: var(--alpine);
-            text-decoration-color: currentColor;
-        }
-    }
-
     .starters {
         list-style: none;
         margin: 0;
@@ -143,12 +133,6 @@
         font-size: var(--text-sm);
         font-weight: 500;
         line-height: var(--leading-compact);
-        text-decoration: none;
-    }
-
-    .starters a:hover {
-        color: var(--alpine);
-        text-decoration: none;
     }
 
     .count {

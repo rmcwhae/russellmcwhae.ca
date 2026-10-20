@@ -90,13 +90,7 @@
         justify-content: space-between;
         gap: 1rem;
         padding: 0.85rem 0;
-        text-decoration: none;
         border-bottom: 1px solid var(--light-grey);
-    }
-
-    .destinations a:hover {
-        color: var(--alpine);
-        text-decoration: none;
     }
 
     @include for-tablet-portrait-up {

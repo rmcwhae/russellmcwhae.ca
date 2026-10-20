@@ -50,11 +50,6 @@
         display: grid;
         gap: 0.2rem;
         padding: 0.9rem 0;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: none;
     }
 
     h3 {
@@ -63,10 +58,7 @@
         font-size: var(--text-base);
         font-weight: 500;
         letter-spacing: 0;
-    }
-
-    a:hover h3 {
-        color: var(--alpine);
+        color: inherit;
     }
 
     p {

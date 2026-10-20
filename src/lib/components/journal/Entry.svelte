@@ -104,14 +104,6 @@
 
     .entry-title a {
         font-weight: inherit;
-        text-decoration: none;
-    }
-
-    .entry-title a:hover {
-        color: var(--alpine);
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.18em;
     }
 
     p {

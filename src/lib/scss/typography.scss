@@ -39,6 +39,12 @@ a {
     }
 }
 
+// Link dialects:
+// 1. UI / row / title (default in main) — no underline, alpine on hover
+// 2. Prose / inline (article a, .text-link) — underline always, alpine on hover
+// 3. CTA (.button) — bottom border, alpine on hover
+// 4. Chrome (nav, footer) — component-scoped; footer keeps underline + alpine
+
 main a {
     text-decoration: none;
     color: var(--high-contrast-color);
@@ -46,12 +52,13 @@ main a {
     text-underline-offset: 0.18em;
 
     &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
+        color: var(--alpine);
+        text-decoration: none;
     }
 }
 
-article a {
+article a,
+main a.text-link {
     color: var(--high-contrast-color);
     text-decoration: underline;
     text-decoration-color: currentColor;
@@ -60,6 +67,7 @@ article a {
 
     &:hover {
         color: var(--alpine);
+        text-decoration: underline;
         text-decoration-color: currentColor;
     }
 }
@@ -102,22 +110,13 @@ article a {
     margin-bottom: var(--s1);
 
     h1 {
-        margin: var(--s-3) 0;
-    }
-
-    .lede {
         margin: 0;
+        font-size: var(--text-2xl);
     }
 
-    &:has(.lede) {
-        h1 {
-            margin: 0;
-            font-size: var(--text-2xl);
-        }
-
-        .lede {
-            margin-top: var(--s-1);
-        }
+    .lede,
+    .meta {
+        margin: var(--s-1) 0 0;
     }
 }
 
@@ -129,6 +128,26 @@ article a {
     line-height: var(--leading-snug);
     letter-spacing: var(--tracking-heading);
     color: var(--high-contrast-color);
+}
+
+// Serif captions on dark image overlays (home favourites, event cards)
+.media-caption {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: var(--serif-heading-weight);
+    letter-spacing: var(--tracking-heading);
+    font-size: var(--text-xs);
+    line-height: 1.45;
+
+    @include for-tablet-portrait-up {
+        font-size: var(--text-sm);
+    }
+}
+
+.media-caption-lg {
+    @include for-tablet-portrait-up {
+        font-size: var(--text-md);
+    }
 }
 
 article h2:not(:first-child) {
@@ -187,9 +206,7 @@ h6 a {
 
     &:hover {
         color: var(--alpine);
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.18em;
+        text-decoration: none;
     }
 }
 

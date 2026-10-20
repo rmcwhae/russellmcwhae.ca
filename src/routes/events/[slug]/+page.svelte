@@ -24,7 +24,6 @@
 
 <style>
     .meta {
-        margin: 0;
         color: var(--medium-grey);
         font-family: var(--font-sans);
         font-size: var(--text-sm);

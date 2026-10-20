@@ -34,7 +34,7 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header class="restricted-width">
+<header class="page-header page-header-entry restricted-width">
     <div class="sub">
         <Date {date} />
     </div>
@@ -74,7 +74,7 @@
 <style lang="scss">
     @use '../../../lib/scss/breakpoints' as *;
 
-    header {
+    .page-header-entry {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,15 +89,14 @@
         background-position: center bottom;
         background-size: min(62ch, 100%) 1px;
     }
-    header h1 {
+    .page-header-entry h1 {
         width: 100%;
         max-width: none;
+    }
+    .page-header-entry .lede {
         margin: 0;
     }
-    header p {
-        margin: 0;
-    }
-    header .sub {
+    .page-header-entry .sub {
         color: var(--text-color);
     }
 

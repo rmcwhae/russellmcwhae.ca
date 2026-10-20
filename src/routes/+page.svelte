@@ -116,7 +116,9 @@
                                 <span class="index"
                                     >{String(i + 1).padStart(2, '0')}</span
                                 >
-                                <span class="caption-text"
+                                <span
+                                    class="caption-text media-caption"
+                                    class:media-caption-lg={i === 0}
                                     >{image.customMetadata.caption}</span
                                 >
                             </figcaption>
@@ -492,12 +494,6 @@
 
         .caption-text {
             display: block;
-            font-family: var(--font-serif);
-            font-style: normal;
-            font-size: var(--text-caps);
-            font-weight: var(--serif-heading-weight);
-            line-height: 1.25;
-            letter-spacing: var(--tracking-heading);
             white-space: nowrap;
             overflow: visible;
         }
@@ -707,18 +703,8 @@
             pointer-events: none;
         }
 
-        .caption-text {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: var(--text-sm);
-        }
-
         .lead .caption {
             padding: 3.5rem 1.25rem 1.1rem;
-        }
-
-        .lead .caption-text {
-            font-size: var(--text-md);
         }
     }
 

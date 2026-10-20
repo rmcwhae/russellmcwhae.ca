@@ -31,7 +31,7 @@
         <div class="event-placeholder"></div>
     {/if}
     <span class="event-title">
-        <span class="event-title-text">{title}</span>
+        <span class="event-title-text media-caption">{title}</span>
     </span>
 </a>
 
@@ -70,7 +70,7 @@
     }
 
     .event-title {
-        /* Room for Cardo bold descenders between lines and above the card edge */
+        /* Room for Cardo italic descenders between lines and above the card edge */
         --title-leading: 1.55;
 
         position: absolute;
@@ -78,11 +78,7 @@
         margin: 0;
         padding: 1.5rem 0.55rem 0.4rem;
         color: var(--paper);
-        font-family: var(--font-serif);
-        font-size: var(--text-xs);
-        font-weight: var(--serif-heading-weight);
         line-height: var(--title-leading);
-        letter-spacing: var(--tracking-heading);
         background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
         pointer-events: none;
     }
@@ -117,7 +113,6 @@
             --title-leading: 1.45;
 
             padding: 2.5rem 1rem 0.5rem;
-            font-size: var(--text-md);
         }
     }
 </style>
