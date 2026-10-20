@@ -133,11 +133,15 @@
         }
     }
 
+    // A single column until the sidebar fits; an empty second column would
+    // still take the gap and narrow the article on small screens
     .article-columns {
-        display: grid;
-        grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
-        column-gap: var(--s3);
-        align-items: start;
+        @include when-entry-sidebar-fits {
+            display: grid;
+            grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
+            column-gap: var(--s3);
+            align-items: start;
+        }
     }
     .article-columns > article {
         min-width: 0;
