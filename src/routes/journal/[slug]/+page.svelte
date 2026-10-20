@@ -61,7 +61,7 @@
 </div>
 
 <div class="restricted-width">
-    <h2 class="mt-5 mb-3">Related Entries</h2>
+    <h2 class="related-heading">Related Entries</h2>
     <JournalEntrySet posts={relatedPosts} />
 
     <div class="mt-3">
@@ -122,5 +122,17 @@
     }
     article {
         margin: 0 auto;
+    }
+
+    .related-heading {
+        margin-top: var(--s5);
+        margin-bottom: var(--s3);
+    }
+
+    @include for-phone-only {
+        .related-heading {
+            margin-top: var(--s2);
+            margin-bottom: var(--s1);
+        }
     }
 </style>
