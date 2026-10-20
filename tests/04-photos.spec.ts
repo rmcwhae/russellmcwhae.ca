@@ -8,7 +8,7 @@ test.describe('Photos and Events', () => {
         await expect(page).toHaveTitle(/Photography/)
 
         // Check main heading
-        await expect(page.locator('h1')).toContainText('Portfolio')
+        await expect(page.locator('h1')).toContainText('Photography')
 
         // Check that gallery is present
         await expect(page.locator('#gallery')).toBeVisible()

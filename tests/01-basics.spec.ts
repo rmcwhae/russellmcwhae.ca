@@ -33,7 +33,7 @@ test.describe('Basic Navigation', () => {
         // Test Photos link
         await page.goto('/photography')
         await expect(page).toHaveURL('/photography')
-        await expect(page.locator('h1')).toContainText('Portfolio')
+        await expect(page.locator('h1')).toContainText('Photography')
 
         // Test Calendars link
         await page.goto('/calendars')
@@ -92,6 +92,11 @@ test.describe('Basic Navigation', () => {
         ).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/journal"]')).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/about"]')).toBeVisible()
+
+        // Page content outside the header is inert while the menu is open
+        await expect(
+            page.locator('main > :not(header)').first()
+        ).toHaveAttribute('inert', '')
     })
 
     test('footer is present on all pages', async ({ page }) => {

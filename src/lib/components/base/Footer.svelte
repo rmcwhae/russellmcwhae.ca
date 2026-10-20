@@ -41,7 +41,7 @@
     }
 
     a:hover {
-        color: var(--high-contrast-color);
+        color: var(--alpine);
     }
 
     @include for-phone-only {

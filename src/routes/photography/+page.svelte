@@ -47,7 +47,7 @@
 </script>
 
 <div class="page-header">
-    <h1>Portfolio</h1>
+    <h1>Photography</h1>
     <p class="lede">
         A collection of landscape images from Western Canada and beyond.
     </p>

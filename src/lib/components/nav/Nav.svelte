@@ -1,8 +1,16 @@
 <script>
+    import { browser } from '$app/env'
+    import { tick } from 'svelte'
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 
     let mobileMenuOpen = $state(false)
+    /** @type {HTMLElement | undefined} */
+    let headerEl = $state()
+    /** @type {HTMLButtonElement | undefined} */
+    let toggleEl = $state()
+    /** @type {HTMLElement | undefined} */
+    let menuEl = $state()
 
     const links = [
         { title: 'Photography', href: '/photography' },
@@ -12,25 +20,56 @@
 
     function toggle() {
         mobileMenuOpen = !mobileMenuOpen
-        window.document.body.classList.toggle('no-scroll-mobile')
+        window.document.body.classList.toggle(
+            'no-scroll-mobile',
+            mobileMenuOpen
+        )
     }
 
-    function hideMenu() {
+    async function hideMenu() {
+        if (!mobileMenuOpen) return
         mobileMenuOpen = false
         window.document.body.classList.remove('no-scroll-mobile')
+        // Toggle is inert until the open-menu effect cleans up
+        await tick()
+        toggleEl?.focus()
     }
+
+    $effect(() => {
+        if (!browser || !mobileMenuOpen || !headerEl) return
+
+        // Keep focus inside the header chrome by making page content inert
+        const inerted = []
+        for (const sibling of headerEl.parentElement?.children ?? []) {
+            if (sibling === headerEl) continue
+            if (sibling.inert) continue
+            sibling.inert = true
+            inerted.push(sibling)
+        }
+
+        menuEl?.querySelector('a')?.focus()
+
+        return () => {
+            inerted.forEach((el) => (el.inert = false))
+        }
+    })
 </script>
 
 <svelte:window
     onkeydown={(e) => e.key === 'Escape' && mobileMenuOpen && hideMenu()}
 />
 
-<header>
+<header bind:this={headerEl}>
     <div id="logo">
         <a href="/" onclick={hideMenu}>Russell McWhae</a>
     </div>
-    <nav>
-        <div id="nav-menu" class="nav-menu" class:active={mobileMenuOpen}>
+    <nav aria-label="Primary">
+        <div
+            id="nav-menu"
+            class="nav-menu"
+            class:active={mobileMenuOpen}
+            bind:this={menuEl}
+        >
             <ul>
                 {#each links as link (link.href)}
                     <li>
@@ -53,6 +92,7 @@
     <button
         type="button"
         class="nav-toggle"
+        bind:this={toggleEl}
         aria-expanded={mobileMenuOpen}
         aria-controls="nav-menu"
         aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}

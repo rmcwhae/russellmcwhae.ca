@@ -39,12 +39,12 @@ export async function mountPhotoSwipe(
             onInit: (el) => {
                 pswp.on('change', () => {
                     const currSlideElement = pswp.currSlide?.data?.element
-                    const captionHTML =
+                    const caption =
                         currSlideElement
                             ?.querySelector('img')
                             ?.getAttribute('alt') ?? ''
-                    el.innerHTML = captionHTML
-                    el.classList.toggle('no-caption', !captionHTML)
+                    el.textContent = caption
+                    el.classList.toggle('no-caption', !caption)
                 })
             },
         })
