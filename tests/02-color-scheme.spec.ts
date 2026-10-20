@@ -107,6 +107,49 @@ test.describe('Color Scheme Dropdown', () => {
         )
     })
 
+    test('the first light/dark switch does not change type size', async ({
+        page,
+    }) => {
+        await page.setViewportSize({ width: 1200, height: 800 })
+        await page.goto('/')
+        await page.evaluate(() => document.fonts.ready)
+
+        const sizes = () =>
+            page.evaluate(() => {
+                const take = (selector) => {
+                    const el = document.querySelector(selector)
+                    if (!el) return null
+                    const cs = getComputedStyle(el)
+                    return {
+                        fontSize: cs.fontSize,
+                        adjust: cs.fontSizeAdjust,
+                    }
+                }
+                return {
+                    body: take('body'),
+                    h1: take('h1'),
+                    lede: take('.lede'),
+                    eyebrow: take('.eyebrow'),
+                    logo: take('#logo a'),
+                }
+            })
+
+        const before = await sizes()
+        await selectTheme(page, 'dark')
+        await expect(page.locator('body')).toHaveCSS(
+            'background-color',
+            'rgb(19, 21, 20)'
+        )
+        expect(await sizes()).toEqual(before)
+
+        await selectTheme(page, 'light')
+        await expect(page.locator('body')).toHaveCSS(
+            'background-color',
+            'rgb(247, 246, 242)'
+        )
+        expect(await sizes()).toEqual(before)
+    })
+
     test('selecting system mode follows the operating system', async ({
         page,
     }) => {

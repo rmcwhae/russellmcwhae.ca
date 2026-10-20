@@ -80,7 +80,7 @@ main a.text-link {
     letter-spacing: var(--tracking-caps);
     line-height: var(--leading-compact);
     text-transform: uppercase;
-    font-size-adjust: cap-height from-font;
+    font-size-adjust: cap-height var(--font-sans-cap);
 }
 
 .eyebrow {

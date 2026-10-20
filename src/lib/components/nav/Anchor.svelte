@@ -28,7 +28,7 @@
         line-height: 1;
         text-decoration: none;
         text-transform: uppercase;
-        font-size-adjust: cap-height from-font;
+        font-size-adjust: cap-height var(--font-sans-cap);
     }
 
     a[aria-current],

@@ -1,6 +1,11 @@
 :root {
     --font-sans: 'Schibsted Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
     --font-serif: 'Cardo', 'Iowan Old Style', 'Palatino Linotype', serif;
+    // Schibsted Grotesk metrics (x-height/em, cap-height/em). Pinned numbers
+    // rather than `from-font`, which can re-resolve against a fallback when
+    // `color-scheme` first changes and jump the inherited type size.
+    --font-sans-ex: 0.527;
+    --font-sans-cap: 0.703;
 }
 
 @font-face {
