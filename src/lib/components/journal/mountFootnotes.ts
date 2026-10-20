@@ -3,6 +3,8 @@ const GAP = 10
 const ARROW_INSET = 12
 const ROOT_CLASS = 'has-footnote-popovers'
 
+const FOCUSABLE = 'a[href], button, input, select, textarea, [tabindex]'
+
 const clamp = (min: number, value: number, max: number) =>
     Math.min(Math.max(value, min), max)
 
@@ -83,6 +85,7 @@ export function mountFootnotes(root: Element): { destroy: () => void } {
         popover.id = `footnote-popover-${index + 1}`
         popover.setAttribute('popover', 'auto')
         popover.setAttribute('role', 'note')
+        popover.tabIndex = -1
         const body = document.createElement('div')
         body.className = 'footnote-popover-body'
         for (const node of definition.childNodes) {
@@ -108,12 +111,39 @@ export function mountFootnotes(root: Element): { destroy: () => void } {
             else popover.togglePopover()
             wasOpen = false
         }
+        // Links only activate on Enter, so Space needs handling as a button.
+        const onRefKeydown = (event: KeyboardEvent) => {
+            if (event.key !== ' ') return
+            event.preventDefault()
+            popover.togglePopover()
+        }
+        // The popover sits at the end of <body>, so tabbing past either end
+        // of it returns to the reference instead of leaving the page.
+        const onPopoverKeydown = (event: KeyboardEvent) => {
+            if (event.key !== 'Tab') return
+            const focusable = [
+                popover,
+                ...popover.querySelectorAll<HTMLElement>(FOCUSABLE),
+            ]
+            const edge = event.shiftKey ? focusable[0] : focusable.at(-1)
+            if (document.activeElement !== edge) return
+            popover.hidePopover()
+            // Forward Tab continues from the reference to what follows it
+            if (event.shiftKey) event.preventDefault()
+        }
+        const onBeforeToggle = (event: Event) => {
+            const closing = (event as ToggleEvent).newState === 'closed'
+            if (closing && popover.contains(document.activeElement)) {
+                ref.focus({ preventScroll: true })
+            }
+        }
         const onToggle = (event: Event) => {
             const isOpen = (event as ToggleEvent).newState === 'open'
             ref.setAttribute('aria-expanded', String(isOpen))
             if (isOpen) {
                 open = { ref, popover }
                 position()
+                popover.focus({ preventScroll: true })
             } else if (open?.popover === popover) {
                 open = null
             }
@@ -121,11 +151,15 @@ export function mountFootnotes(root: Element): { destroy: () => void } {
 
         ref.addEventListener('pointerdown', onPointerDown)
         ref.addEventListener('click', onClick)
+        ref.addEventListener('keydown', onRefKeydown)
+        popover.addEventListener('keydown', onPopoverKeydown)
+        popover.addEventListener('beforetoggle', onBeforeToggle)
         popover.addEventListener('toggle', onToggle)
 
         cleanups.push(() => {
             ref.removeEventListener('pointerdown', onPointerDown)
             ref.removeEventListener('click', onClick)
+            ref.removeEventListener('keydown', onRefKeydown)
             ref.removeAttribute('role')
             ref.removeAttribute('aria-controls')
             ref.removeAttribute('aria-expanded')

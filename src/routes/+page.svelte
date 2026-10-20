@@ -376,16 +376,6 @@
         letter-spacing: -0.03em;
     }
 
-    @include for-phone-only {
-        h1 {
-            font-size: var(--text-2xl);
-        }
-
-        .line-serif {
-            font-weight: var(--serif-heading-weight);
-        }
-    }
-
     .intro .lede {
         max-width: 34rem;
         margin: 0;
@@ -504,7 +494,7 @@
             display: block;
             font-family: var(--font-serif);
             font-style: normal;
-            font-size: 0.75rem;
+            font-size: var(--text-caps);
             font-weight: var(--serif-heading-weight);
             line-height: 1.25;
             letter-spacing: var(--tracking-heading);
@@ -573,10 +563,6 @@
     }
 
     @include for-phone-only {
-        .about-title {
-            font-size: var(--text-lg);
-        }
-
         .about-copy p {
             font-size: var(--text-sm);
         }
@@ -662,7 +648,7 @@
 
     .recent-title {
         margin: 0;
-        font-weight: 700;
+        font-weight: var(--serif-heading-weight);
     }
 
     .recent-title a {

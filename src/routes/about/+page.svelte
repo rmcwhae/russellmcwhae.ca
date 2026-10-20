@@ -40,9 +40,9 @@
         <article class="main">
             <figure class="portrait-inline">
                 <a
-                    href="/portrait.jpeg"
-                    data-pswp-width="3088"
-                    data-pswp-height="2316"
+                    href="/portrait/portrait-2048.jpg"
+                    data-pswp-width="2048"
+                    data-pswp-height="1536"
                 >
                     <StaticPicture {...portraitPicture} alt="Russell McWhae" />
                 </a>
@@ -114,9 +114,9 @@
         <aside class="sidebar">
             <figure class="portrait">
                 <a
-                    href="/portrait.jpeg"
-                    data-pswp-width="3088"
-                    data-pswp-height="2316"
+                    href="/portrait/portrait-2048.jpg"
+                    data-pswp-width="2048"
+                    data-pswp-height="1536"
                 >
                     <StaticPicture
                         {...portraitPicture}

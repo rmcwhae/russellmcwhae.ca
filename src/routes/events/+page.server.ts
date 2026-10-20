@@ -13,80 +13,36 @@ type EventWithImages = ProcessedFile & {
 }
 
 export const load: PageServerLoad = async () => {
-    try {
-        const events = await ImageKitNodeServices.listFiles({
-            path: '/events/',
-            type: 'folder',
-        })
+    const events = await ImageKitNodeServices.listFiles({
+        path: '/events/',
+        type: 'folder',
+    })
 
-        if (!Array.isArray(events)) {
-            console.error(
-                'Non-array response from ImageKit for events:',
-                events
-            )
-            return { events: [] }
-        }
-
-        const sortedEvents = events
-            .filter((event) => event && event.name) // Filter out invalid events
-            .map((event) => {
-                try {
-                    const { name } = event
-                    const { title, date } = parseTitleAndDate(name)
-                    return {
-                        ...event,
-                        title,
-                        date,
-                    }
-                } catch (error) {
-                    console.error('Error processing event:', event, error)
-                    return {
-                        ...event,
-                        title: 'Untitled Event',
-                        date: 'Unknown Date',
-                    }
-                }
-            })
-            .sort((a, b) => {
-                try {
-                    return (
-                        new Date(b.date).getTime() - new Date(a.date).getTime()
-                    )
-                } catch (error) {
-                    console.error('Error sorting events:', error)
-                    return 0
-                }
-            })
-
-        // Process images for each event with error handling
-        const eventsWithImages: EventWithImages[] = []
-        for (const event of sortedEvents) {
-            try {
-                const images = await getImagesForEvent(event.name)
-                eventsWithImages.push({
-                    ...event,
-                    count: Array.isArray(images) ? images.length : 0,
-                    featuredImage: getFeaturedImage(images),
-                })
-            } catch (error) {
-                console.error(
-                    'Error processing images for event:',
-                    event.name,
-                    error
-                )
-                eventsWithImages.push({
-                    ...event,
-                    count: 0,
-                    featuredImage: null,
-                })
+    const sortedEvents = events
+        .filter((event) => event && event.name) // Filter out invalid events
+        .map((event) => {
+            const { title, date } = parseTitleAndDate(event.name)
+            return {
+                ...event,
+                title,
+                date,
             }
-        }
+        })
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
-        return { events: eventsWithImages }
-    } catch (error) {
-        console.error('Error in events load function:', error)
-        return { events: [] }
-    }
+    // Fetch every event’s images in parallel
+    const eventsWithImages: EventWithImages[] = await Promise.all(
+        sortedEvents.map(async (event) => {
+            const images = await getImagesForEvent(event.name)
+            return {
+                ...event,
+                count: images.length,
+                featuredImage: getFeaturedImage(images),
+            }
+        })
+    )
+
+    return { events: eventsWithImages }
 }
 
 function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
@@ -96,6 +52,7 @@ function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
 
     return ImageKitNodeServices.listFiles({
         path: '/events/' + name,
+        type: 'file',
         sort: 'ASC_NAME',
     })
 }

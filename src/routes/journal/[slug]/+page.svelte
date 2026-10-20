@@ -77,12 +77,12 @@
     header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: var(--s-1);
         width: 100%;
         max-width: $restricted-width;
         margin: 0 auto var(--s2);
-        text-align: left;
+        text-align: center;
         padding-bottom: var(--s1);
         background-image: linear-gradient(var(--light-grey), var(--light-grey));
         background-repeat: no-repeat;
@@ -101,12 +101,6 @@
         color: var(--text-color);
     }
 
-    @include for-tablet-portrait-up {
-        header {
-            align-items: center;
-            text-align: center;
-        }
-    }
     .article-columns {
         display: grid;
         grid-template-columns: minmax(0, 1fr) min(62ch, 100%) minmax(0, 1fr);

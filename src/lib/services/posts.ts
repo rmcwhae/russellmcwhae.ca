@@ -108,9 +108,10 @@ export async function getPosts(): Promise<Post[]> {
         })
     )
 
+    // Front matter dates may parse as Date or string; compare as timestamps
     return postsWithMetadata
         .filter((post) => !post.draft)
-        .sort((a, b) => (a.date < b.date ? 1 : -1))
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 // For backward compatibility, we'll need to load posts on first access

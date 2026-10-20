@@ -9,7 +9,6 @@ declare module 'reading-time/lib/reading-time' {
     }
 
     // Keep the readingTime function signature
-    // eslint-disable-next-line no-unused-vars
     function readingTime(text: string): ReadTimeResults
     export = readingTime
 }

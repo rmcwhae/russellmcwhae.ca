@@ -20,6 +20,10 @@
     let open = $state(false)
     /** @type {HTMLDivElement | null} */
     let rootElement = $state(null)
+    /** @type {HTMLButtonElement | null} */
+    let triggerElement = $state(null)
+    /** @type {HTMLUListElement | null} */
+    let menuElement = $state(null)
 
     $effect(() => {
         if (!browser) return
@@ -42,10 +46,14 @@
 
         /** @param {KeyboardEvent} event */
         function handleKeydown(event) {
-            if (event.key === 'Escape') {
-                open = false
-            }
+            if (event.key === 'Escape') closeMenu()
         }
+
+        // Start on the checked option, as the menu pattern expects
+        const checked = /** @type {HTMLElement | null | undefined} */ (
+            menuElement?.querySelector('[aria-checked="true"]')
+        )
+        checked?.focus()
 
         const timeoutId = setTimeout(() => {
             document.addEventListener('click', handleClickOutside)
@@ -60,10 +68,44 @@
         }
     })
 
+    // Closing from inside the menu would otherwise drop focus to <body>
+    function closeMenu() {
+        const hadFocus = rootElement?.contains(document.activeElement)
+        open = false
+        if (hadFocus) triggerElement?.focus()
+    }
+
     /** @param {import('#lib/stores/theme.js').ThemeMode} value */
     function selectTheme(value) {
         mode.set(value)
-        open = false
+        closeMenu()
+    }
+
+    /** @param {KeyboardEvent} event */
+    function handleMenuKeydown(event) {
+        const items = [
+            ...(menuElement?.querySelectorAll('[role="menuitemradio"]') ?? []),
+        ]
+        const current = items.indexOf(
+            /** @type {Element} */ (document.activeElement)
+        )
+        /** @type {Record<string, number>} */
+        const targets = {
+            ArrowDown: (current + 1) % items.length,
+            ArrowUp: (current - 1 + items.length) % items.length,
+            Home: 0,
+            End: items.length - 1,
+        }
+        if (!(event.key in targets)) return
+        event.preventDefault()
+        const target = /** @type {HTMLElement} */ (items[targets[event.key]])
+        target.focus()
+    }
+
+    /** @param {FocusEvent} event */
+    function handleFocusout(event) {
+        const next = /** @type {Node | null} */ (event.relatedTarget)
+        if (open && next && !rootElement?.contains(next)) open = false
     }
 
     /** @param {MouseEvent} event */
@@ -156,7 +198,12 @@
     {/if}
 {/snippet}
 
-<div class="theme-switcher" data-test="theme-switcher" bind:this={rootElement}>
+<div
+    class="theme-switcher"
+    data-test="theme-switcher"
+    bind:this={rootElement}
+    onfocusout={handleFocusout}
+>
     <button
         type="button"
         class="theme-trigger"
@@ -164,6 +211,7 @@
         aria-expanded={open}
         aria-controls={menuId}
         aria-label="Color scheme"
+        bind:this={triggerElement}
         onclick={toggleMenu}
     >
         <span class="theme-trigger-icon" aria-hidden="true">
@@ -177,6 +225,8 @@
             class="theme-menu"
             role="menu"
             aria-label="Color scheme options"
+            bind:this={menuElement}
+            onkeydown={handleMenuKeydown}
         >
             {#each options as value (value)}
                 <li role="none">
@@ -186,6 +236,7 @@
                         class:active={$mode === value}
                         role="menuitemradio"
                         aria-checked={$mode === value}
+                        tabindex="-1"
                         data-test="theme-option-{value}"
                         onclick={() => selectTheme(value)}
                     >

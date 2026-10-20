@@ -1,4 +1,5 @@
 <script>
+    import { MediaQuery } from 'svelte/reactivity'
     import Gallery from 'svelte-gallery'
     import EventCard from '#lib/components/images/EventCard.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
@@ -6,20 +7,11 @@
     let { data } = $props()
 
     let events = $derived(data.events ?? [])
-    let rowHeight = $state(260)
-
-    let gutter = $state(12)
-
-    $effect(() => {
-        const mobile = window.matchMedia('(max-width: 576px)')
-        const sync = () => {
-            rowHeight = mobile.matches ? 112 : 300
-            gutter = mobile.matches ? 8 : 12
-        }
-        sync()
-        mobile.addEventListener('change', sync)
-        return () => mobile.removeEventListener('change', sync)
-    })
+    // Read synchronously on the client so the gallery lays out once with the
+    // right row height; the server renders the desktop values.
+    const phone = new MediaQuery('max-width: 576px', false)
+    let rowHeight = $derived(phone.current ? 112 : 300)
+    let gutter = $derived(phone.current ? 8 : 12)
 
     /** @param {string} date */
     function groupLabel(date) {

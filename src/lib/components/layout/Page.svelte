@@ -34,10 +34,6 @@
     }
 
     @include for-phone-only {
-        h1.lede-heading {
-            font-size: var(--text-xl);
-        }
-
         header {
             margin-bottom: var(--s0);
         }

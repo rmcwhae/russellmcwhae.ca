@@ -1,7 +1,7 @@
 ---
 title: HTTP/2 and Website Optimization
 description: A look at the latest iteration of HyperText Transfer Protocol.
-date: '2019-09-15'
+date: 2019-09-15
 draft: false
 category: Tech
 ---

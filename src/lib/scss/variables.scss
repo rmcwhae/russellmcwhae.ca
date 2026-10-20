@@ -25,10 +25,14 @@
     --text-sm: 0.95rem; // secondary text: excerpts, sidebars, form fields, code
     --text-base: 1.0625rem; // body
     --text-md: 1.2rem; // list-item titles, h3, h4
-    --text-lg: 1.35rem; // h2
-    --text-xl: clamp(1.65rem, 1.3rem + 1.2vw, 2rem); // h1
-    --text-2xl: clamp(2.15rem, 1.6rem + 2.4vw, 3.25rem); // h1 with a lede
-    --text-display: clamp(2.6rem, 4.6vw, 4.35rem); // home hero only
+    // Fluid sizes scale linearly from a 375px to a 1440px viewport, so no
+    // breakpoint overrides are needed
+    --text-lg: clamp(1.375rem, 1.331rem + 0.188vw, 1.5rem); // h2: 22–24px
+    --text-xl: clamp(1.625rem, 1.405rem + 0.939vw, 2.25rem); // h1: 26–36px
+    // h1 with a lede: 32–48px
+    --text-2xl: clamp(2rem, 1.648rem + 1.502vw, 3rem);
+    // Home hero only: 36–70px
+    --text-display: clamp(2.25rem, 1.51rem + 3.155vw, 4.35rem);
 
     --leading-tight: 1.22; // h1, h2
     --leading-snug: 1.32; // h3, h4, list titles
@@ -37,7 +41,7 @@
 
     --tracking-caps: 0.12em;
     --tracking-heading: -0.02em;
-    --serif-heading-weight: 500;
+    --serif-heading-weight: 400; // Cardo ships 400 and 700 only
 
     --measure: 68ch;
 }

@@ -20,7 +20,7 @@ a {
 
 .button {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     line-height: var(--leading-compact);
     padding: 0 0 4px;
@@ -93,13 +93,9 @@ article a {
 .lede {
     max-width: 36rem;
     color: color-mix(in srgb, var(--text-color) 72%, var(--background-color));
-    font-size: var(--text-xs);
-    font-weight: 600;
+    font-size: var(--text-base);
+    font-weight: 500;
     line-height: var(--leading-compact);
-
-    @include for-tablet-landscape-up {
-        font-size: var(--text-sm);
-    }
 }
 
 .page-header {
@@ -151,7 +147,7 @@ blockquote {
     margin-right: var(--s1);
     border-left: 1px solid var(--stone);
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: var(--leading-compact);
 }
 
@@ -229,24 +225,8 @@ h3 {
 }
 
 @include for-phone-only {
-    :root {
-        --serif-heading-weight: 700;
-    }
-
-    h1:not(.eyebrow) {
-        font-size: var(--text-lg);
-    }
-
-    h2:not(.eyebrow) {
-        font-size: var(--text-md);
-    }
-
     .page-header {
         margin-bottom: var(--s0);
-    }
-
-    .page-header:has(.lede) h1 {
-        font-size: var(--text-xl);
     }
 }
 

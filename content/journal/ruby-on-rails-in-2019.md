@@ -1,7 +1,7 @@
 ---
 title: Ruby on Rails in 2019
 description: An overview of Ruby on Rails and its current relevance.
-date: '2019-09-22'
+date: 2019-09-22
 draft: false
 category: Tech
 ---

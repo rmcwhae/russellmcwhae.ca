@@ -61,14 +61,13 @@ test.describe('Photos and Events', () => {
 
         const eventCards = page.locator('.event-card')
         const eventCount = await eventCards.count()
+        expect(eventCount).toBeGreaterThan(0)
 
-        if (eventCount > 0) {
-            const firstEvent = eventCards.first()
+        const firstEvent = eventCards.first()
 
-            await expect(firstEvent).toBeVisible()
-            await expect(firstEvent.locator('.event-title')).toBeVisible()
-            await expect(page.locator('.year-label').first()).toBeVisible()
-        }
+        await expect(firstEvent).toBeVisible()
+        await expect(firstEvent.locator('.event-title')).toBeVisible()
+        await expect(page.locator('.year-label').first()).toBeVisible()
     })
 
     test('event links navigate to event detail page', async ({ page }) => {
@@ -79,22 +78,20 @@ test.describe('Photos and Events', () => {
 
         const eventCards = page.locator('.event-card')
         const eventCount = await eventCards.count()
+        expect(eventCount).toBeGreaterThan(0)
 
-        if (eventCount > 0) {
-            const firstEventLink = eventCards.first()
-            const href = await firstEventLink.getAttribute('href')
+        const firstEventLink = eventCards.first()
+        const href = await firstEventLink.getAttribute('href')
+        expect(href).toBeTruthy()
 
-            if (href) {
-                // Click the event
-                await firstEventLink.click()
+        // Click the event
+        await firstEventLink.click()
 
-                // Should navigate to event detail page
-                await expect(page).toHaveURL(href)
+        // Should navigate to event detail page
+        await expect(page).toHaveURL(href!)
 
-                // Check that we're on an event detail page
-                await expect(page.locator('h1')).toBeVisible()
-            }
-        }
+        // Check that we're on an event detail page
+        await expect(page.locator('h1')).toBeVisible()
     })
 
     test('event detail page displays images', async ({ page }) => {
@@ -105,19 +102,18 @@ test.describe('Photos and Events', () => {
 
         const eventCards = page.locator('.event-card')
         const eventCount = await eventCards.count()
+        expect(eventCount).toBeGreaterThan(0)
 
-        if (eventCount > 0) {
-            // Click first event
-            await eventCards.first().click()
+        // Click first event
+        await eventCards.first().click()
 
-            // Wait for images to load
-            await page.waitForSelector('img', { timeout: 10000 })
+        // Wait for images to load
+        await page.waitForSelector('img', { timeout: 10000 })
 
-            // Check that images are present
-            const images = page.locator('img')
-            const imageCount = await images.count()
-            expect(imageCount).toBeGreaterThan(0)
-        }
+        // Check that images are present
+        const images = page.locator('img')
+        const imageCount = await images.count()
+        expect(imageCount).toBeGreaterThan(0)
     })
 
     test('photography gallery displays images', async ({ page }) => {
@@ -140,14 +136,13 @@ test.describe('Photos and Events', () => {
 
         const images = page.locator('#gallery img')
         const imageCount = await images.count()
+        expect(imageCount).toBeGreaterThan(0)
 
-        if (imageCount > 0) {
-            // Click first image
-            await images.first().click()
+        // Click first image
+        await images.first().click()
 
-            // Check that PhotoSwipe lightbox opens
-            await expect(page.locator('.pswp')).toBeVisible()
-        }
+        // Check that PhotoSwipe lightbox opens
+        await expect(page.locator('.pswp')).toBeVisible()
     })
 
     test('PhotoSwipe lightbox functionality', async ({ page }) => {
@@ -158,29 +153,30 @@ test.describe('Photos and Events', () => {
 
         const images = page.locator('#gallery img')
         const imageCount = await images.count()
+        expect(imageCount).toBeGreaterThan(0)
 
-        if (imageCount > 0) {
-            // Click first image to open lightbox
-            await images.first().click()
+        // Click first image to open lightbox
+        await images.first().click()
 
-            // Check that lightbox is open
-            await expect(page.locator('.pswp')).toBeVisible()
+        // Check that lightbox is open
+        await expect(page.locator('.pswp')).toBeVisible()
 
-            // Check that lightbox has navigation buttons (may be hidden on mobile)
-            await expect(
-                page.locator('.pswp__button--arrow--next')
-            ).toBeAttached()
+        // Check that lightbox has navigation buttons (may be hidden on mobile)
+        await expect(page.locator('.pswp__button--arrow--next')).toBeAttached()
 
-            // Check that lightbox is functional by verifying it has the expected structure
-            await expect(page.locator('.pswp__button--close')).toBeVisible()
+        // Check that lightbox is functional by verifying it has the expected structure
+        await expect(page.locator('.pswp__button--close')).toBeVisible()
 
-            // Check that lightbox has the expected classes
-            const lightboxClasses = await page
-                .locator('.pswp')
-                .getAttribute('class')
-            expect(lightboxClasses).toContain('pswp--open')
-            expect(lightboxClasses).toContain('pswp--zoom-allowed')
-        }
+        // Check that lightbox has the expected classes
+        const lightboxClasses = await page
+            .locator('.pswp')
+            .getAttribute('class')
+        expect(lightboxClasses).toContain('pswp--open')
+
+        // The active slide shows the image rather than a placeholder
+        await expect(
+            page.locator('.pswp__item[aria-hidden="false"] img.pswp__img')
+        ).toBeVisible()
     })
 
     test('images have proper alt text', async ({ page }) => {
@@ -191,13 +187,12 @@ test.describe('Photos and Events', () => {
 
         const images = page.locator('#gallery img')
         const imageCount = await images.count()
+        expect(imageCount).toBeGreaterThan(0)
 
-        if (imageCount > 0) {
-            // Check that first image has alt text
-            const firstImage = images.first()
-            const altText = await firstImage.getAttribute('alt')
-            expect(altText).toBeTruthy()
-        }
+        // Check that first image has alt text
+        const firstImage = images.first()
+        const altText = await firstImage.getAttribute('alt')
+        expect(altText).toBeTruthy()
     })
 
     test('events are sorted by date', async ({ page }) => {
@@ -208,16 +203,15 @@ test.describe('Photos and Events', () => {
 
         const yearLabels = page.locator('.year-label')
         const yearCount = await yearLabels.count()
+        expect(yearCount).toBeGreaterThan(1)
 
-        if (yearCount > 1) {
-            const years = (await yearLabels.allTextContents())
-                .map((text) => Number(text.trim()))
-                .filter((year) => Number.isInteger(year))
+        const years = (await yearLabels.allTextContents())
+            .map((text) => Number(text.trim()))
+            .filter((year) => Number.isInteger(year))
 
-            // Check that years are in descending order (newest first)
-            for (let i = 0; i < years.length - 1; i++) {
-                expect(years[i]).toBeGreaterThanOrEqual(years[i + 1])
-            }
+        // Check that years are in descending order (newest first)
+        for (let i = 0; i < years.length - 1; i++) {
+            expect(years[i]).toBeGreaterThanOrEqual(years[i + 1])
         }
     })
 
@@ -249,14 +243,13 @@ test.describe('Photos and Events', () => {
 
         const eventCards = page.locator('.event-card')
         const eventCount = await eventCards.count()
+        expect(eventCount).toBeGreaterThan(0)
 
-        if (eventCount > 0) {
-            // Click first event
-            await eventCards.first().click()
+        // Click first event
+        await eventCards.first().click()
 
-            const back = page.locator('a[href="/events"]')
-            await expect(back).toBeVisible()
-            await expect(back).toContainText('Field Expeditions')
-        }
+        const back = page.locator('a[href="/events"]')
+        await expect(back).toBeVisible()
+        await expect(back).toContainText('Field Expeditions')
     })
 })

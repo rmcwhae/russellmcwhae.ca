@@ -1,5 +1,6 @@
 import ImageKit from '@imagekit/nodejs'
 import { IMAGEKIT_PRIVATE_KEY } from '$app/env/private'
+import { building, dev } from '$app/env'
 
 const CONFIG_OPTIONS = { privateKey: IMAGEKIT_PRIVATE_KEY }
 let client: ImageKit | null = null
@@ -26,22 +27,47 @@ function isFile(item: ImageKitItem): item is ImageKit.File {
     return 'filePath' in item && typeof item.filePath === 'string'
 }
 
-export async function listFiles(
+/** Shares in-flight and settled listings across prerendered pages */
+const cache = new Map<string, Promise<ProcessedFile[]>>()
+
+export function listFiles(
     options: ImageKit.AssetListParams
 ): Promise<ProcessedFile[]> {
+    if (!building) {
+        return fetchFiles(options)
+    }
+
+    const key = JSON.stringify(options)
+    let result = cache.get(key)
+
+    if (!result) {
+        result = fetchFiles(options)
+        cache.set(key, result)
+        // Drop failures so a retry isn’t served the same rejection
+        result.catch(() => cache.delete(key))
+    }
+
+    return result
+}
+
+async function fetchFiles(
+    options: ImageKit.AssetListParams
+): Promise<ProcessedFile[]> {
+    // Local dev can run without ImageKit credentials; builds can’t
+    if (!IMAGEKIT_PRIVATE_KEY && dev) {
+        console.warn('IMAGEKIT_PRIVATE_KEY is not set; listing no files')
+        return []
+    }
+
     try {
-        // Add timeout to prevent hanging requests
-        const timeoutPromise = new Promise<never>((_, reject) => {
-            setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
+        const items = await getClient().assets.list(options, {
+            timeout: 10000,
         })
 
-        const listPromise = getClient().assets.list(options)
-
-        const items = await Promise.race([listPromise, timeoutPromise])
-
         if (!Array.isArray(items)) {
-            console.error('ImageKit returned non-array response:', items)
-            return []
+            throw new Error(
+                `ImageKit returned a non-array response: ${JSON.stringify(items)}`
+            )
         }
 
         return items.map((item) => {
@@ -56,8 +82,12 @@ export async function listFiles(
             }
         })
     } catch (error) {
+        // Fail builds and prerendering loudly rather than ship empty pages
+        if (!dev) {
+            throw error
+        }
+
         console.error('Error in listFiles:', error)
-        // Return empty array instead of throwing to prevent server crashes
         return []
     }
 }

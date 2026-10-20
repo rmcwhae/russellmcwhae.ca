@@ -171,10 +171,6 @@
     }
 
     @include for-phone-only {
-        section.featured .entry-title {
-            font-size: var(--text-md);
-        }
-
         section.featured p {
             font-size: var(--text-sm);
         }

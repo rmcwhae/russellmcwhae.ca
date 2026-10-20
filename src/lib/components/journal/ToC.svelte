@@ -1,18 +1,15 @@
 <script>
     import { browser } from '$app/env'
     import { page } from '$app/state'
+    import { tick } from 'svelte'
 
     /**
      * @typedef {Object} Props
      * @property {any} [allowedHeadings]
-     * @property {any} [activeHeading]
      */
 
     /** @type {Props} */
-    let {
-        allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-        activeHeading = null,
-    } = $props()
+    let { allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] } = $props()
 
     const PROGRESS_RADIUS = 25
     const PROGRESS_CIRCUMFERENCE = 2 * Math.PI * PROGRESS_RADIUS
@@ -123,23 +120,61 @@
     $effect(() => {
         if (!browser || !drawerOpen) return
 
+        // Keep focus inside the modal drawer by making everything outside
+        // it inert, apart from the backdrop that closes it
+        const inerted = []
+        for (let el = drawerEl; el && el !== document.body;) {
+            const parent = el.parentElement
+            for (const sibling of parent?.children ?? []) {
+                if (
+                    sibling === el ||
+                    sibling.classList.contains('toc-backdrop')
+                )
+                    continue
+                if (sibling.inert) continue
+                sibling.inert = true
+                inerted.push(sibling)
+            }
+            el = parent
+        }
+
         document.addEventListener('keydown', handleKeydown)
         drawerEl?.querySelector('a, button')?.focus()
 
-        return () => document.removeEventListener('keydown', handleKeydown)
+        return () => {
+            inerted.forEach((el) => (el.inert = false))
+            document.removeEventListener('keydown', handleKeydown)
+        }
     })
 
     function toggleDrawer() {
         drawerOpen = !drawerOpen
     }
 
-    function closeDrawer() {
+    async function closeDrawer() {
         drawerOpen = false
+        // The trigger is inert until the drawer effect cleans up
+        await tick()
         triggerEl?.focus()
     }
 
-    function handleLinkClick() {
-        closeDrawer()
+    // Move focus to the chosen heading so reading continues from there
+    async function handleLinkClick(event) {
+        const id = decodeURIComponent(event.currentTarget.hash.slice(1))
+        drawerOpen = false
+        await tick()
+
+        const target = document.getElementById(id)
+        if (!target) return
+        if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1')
+            target.addEventListener(
+                'blur',
+                () => target.removeAttribute('tabindex'),
+                { once: true }
+            )
+        }
+        target.focus({ preventScroll: true })
     }
 
     function handleBackdropClick() {
@@ -173,7 +208,7 @@
         })
 
         if (visibleHeadings.length > 0) {
-            const activeHeading = visibleHeadings.reduce((prev, current) => {
+            const mostVisible = visibleHeadings.reduce((prev, current) => {
                 if (current.visibilityRatio > prev.visibilityRatio)
                     return current
                 if (
@@ -189,7 +224,7 @@
                 element.classList.remove('active')
             })
             document
-                .querySelectorAll(`.toc li a[href="#${activeHeading.id}"]`)
+                .querySelectorAll(`.toc li a[href="#${mostVisible.id}"]`)
                 .forEach((activeElement) => {
                     activeElement.parentElement.classList.add('active')
                 })
@@ -200,10 +235,7 @@
 {#snippet headingList(closeOnClick)}
     <ul>
         {#each headings as heading (heading.node.id)}
-            <li
-                class="toc-level-{heading.depth}"
-                class:active={activeHeading?.node === heading.node}
-            >
+            <li class="toc-level-{heading.depth}">
                 <a
                     href={`#${heading.node.id}`}
                     onclick={closeOnClick ? handleLinkClick : undefined}

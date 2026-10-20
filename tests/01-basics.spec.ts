@@ -10,14 +10,21 @@ test.describe('Basic Navigation', () => {
         // Check that the logo is present
         await expect(page.locator('#logo')).toBeVisible()
 
-        // Check that navigation is present (may be hidden on mobile)
-        const nav = page.locator('nav')
-        if (await nav.isVisible()) {
-            await expect(nav).toBeVisible()
-        } else {
-            // On mobile, nav might be hidden until menu is opened
-            await expect(page.locator('.nav-toggle')).toBeVisible()
-        }
+        // Navigation links are attached on every viewport (mobile hides
+        // them behind the toggle, covered below)
+        await expect(
+            page.locator('header nav a[href="/journal"]')
+        ).toBeAttached()
+    })
+
+    test('desktop navigation links are visible', async ({ page }) => {
+        await page.setViewportSize({ width: 1280, height: 800 })
+        await page.goto('/')
+
+        const nav = page.locator('header nav')
+        await expect(nav.locator('a[href="/photography"]')).toBeVisible()
+        await expect(nav.locator('a[href="/journal"]')).toBeVisible()
+        await expect(nav.locator('a[href="/about"]')).toBeVisible()
     })
 
     test('navigation links work correctly', async ({ page }) => {

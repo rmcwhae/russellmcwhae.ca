@@ -17,7 +17,7 @@
     let { filePath, width = 3, height = 2, title, href } = $props()
 </script>
 
-<a class="event-card" {href} title={title}>
+<a class="event-card" {href} {title}>
     {#if filePath}
         <Image
             {filePath}
