@@ -459,12 +459,6 @@
         gap: 0.75rem 1rem;
     }
 
-    @include for-phone-only {
-        .moments {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
     .caption {
         display: flex;
         align-items: baseline;
@@ -486,8 +480,40 @@
     }
 
     @include for-phone-only {
+        .moments {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .index {
             display: none;
+        }
+
+        .caption {
+            position: absolute;
+            inset: auto 0 0;
+            display: block;
+            margin: 0;
+            padding: 1.35rem 0.45rem 0.55rem;
+            color: var(--paper);
+            background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .caption-text {
+            display: block;
+            font-family: var(--font-serif);
+            font-style: normal;
+            font-size: 0.75rem;
+            font-weight: var(--serif-heading-weight);
+            line-height: 1.25;
+            letter-spacing: var(--tracking-heading);
+            white-space: nowrap;
+            overflow: visible;
+        }
+
+        .photo {
+            overflow: visible;
         }
     }
 
