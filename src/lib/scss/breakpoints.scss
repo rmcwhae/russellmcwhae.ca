@@ -53,3 +53,16 @@ $breakpoint-xl: 1300px !default;
         @content;
     }
 }
+
+// Journal entries show a sidebar beside the article once the article-columns
+// container fits the measure, the gap and the sidebar. $measure mirrors
+// --measure, which container queries can’t read.
+$measure: 68ch;
+$entry-sidebar-gap: 3.375rem; // --s3
+$entry-sidebar-width: 20rem;
+
+@mixin when-entry-sidebar-fits {
+    @container article-columns (min-width: calc(#{$measure} + #{$entry-sidebar-gap} + #{$entry-sidebar-width})) {
+        @content;
+    }
+}

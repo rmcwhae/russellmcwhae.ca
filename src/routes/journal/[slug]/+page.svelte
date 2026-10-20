@@ -7,6 +7,7 @@
     import SEO from '#lib/components/base/SEO.svelte'
     import ToC from '#lib/components/journal/ToC.svelte'
     import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
+    import LinkList from '#lib/components/misc/LinkList.svelte'
     import { mountFootnotes } from '#lib/components/journal/mountFootnotes.js'
 
     let { data } = $props()
@@ -18,6 +19,10 @@
     let readingTime = $derived(data.readingTime)
     let component = $derived(data.component)
     let relatedPosts = $derived(data.relatedPosts)
+    let wordCount = $derived(readingTime.words.toLocaleString('en-US'))
+    let relatedLinks = $derived(
+        relatedPosts.map((post) => ({ href: post.href, title: post.title }))
+    )
 
     const SvelteComponent = $derived(component)
 
@@ -34,44 +39,78 @@
 
 <SEO title={'Journal » ' + title} {description} />
 
-<header class="page-header page-header-entry">
-    <div class="sub">
-        <Date {date} />
-    </div>
-    <h1><NoWrapLastTwoWords text={title} /></h1>
-    {#if description}
-        <p class="lede"><NoWrapLastTwoWords text={description} /></p>
-    {/if}
-    <div class="sub">
-        {#if category}
-            <CategoryLink {category} />
-            &middot;
+<div class="entry">
+    <header class="page-header page-header-entry">
+        <div class="sub">
+            <Date {date} />
+        </div>
+        <h1><NoWrapLastTwoWords text={title} /></h1>
+        {#if description}
+            <p class="lede"><NoWrapLastTwoWords text={description} /></p>
         {/if}
-        <span class="nowrap">{readingTime.words} words</span>
-        &middot;
-        <span class="nowrap">{readingTime.text}</span>
-    </div>
-</header>
+        <!-- Moves into the sidebar once it fits -->
+        <div class="sub header-meta">
+            {#if category}
+                <CategoryLink {category} />
+                &middot;
+            {/if}
+            <span class="nowrap">{wordCount} words</span>
+            &middot;
+            <span class="nowrap">{readingTime.text}</span>
+        </div>
+    </header>
 
-<div class="article-columns">
-    <article class="char-limit flow" bind:this={article}>
-        <SvelteComponent />
-    </article>
-    <ToC allowedHeadings={['h2', 'h3']} />
+    <div class="article-columns">
+        <article class="char-limit flow" bind:this={article}>
+            <SvelteComponent />
+        </article>
+        <aside class="entry-sidebar">
+            <dl class="facts">
+                {#if category}
+                    <div>
+                        <dt class="eyebrow">Category</dt>
+                        <dd><CategoryLink {category} /></dd>
+                    </div>
+                {/if}
+                <div>
+                    <dt class="eyebrow">Length</dt>
+                    <dd>{wordCount} words</dd>
+                </div>
+                <div>
+                    <dt class="eyebrow">Reading time</dt>
+                    <dd>{readingTime.text}</dd>
+                </div>
+            </dl>
+            <ToC allowedHeadings={['h2', 'h3']} />
+            {#if relatedLinks.length}
+                <div class="sidebar-related">
+                    <LinkList heading="Related entries" items={relatedLinks} />
+                    <Button href="/journal" text="All entries" right />
+                </div>
+            {/if}
+        </aside>
+    </div>
+
+    <!-- Moves into the sidebar once it fits -->
+    <section class="related section-break">
+        <h2 class="eyebrow">Related entries</h2>
+        <JournalEntrySet posts={relatedPosts} />
+
+        <div class="mt-3">
+            <ButtonSet>
+                <Button href="/journal" text="All entries" right />
+            </ButtonSet>
+        </div>
+    </section>
 </div>
 
-<section class="related section-break">
-    <h2 class="eyebrow">Related entries</h2>
-    <JournalEntrySet posts={relatedPosts} />
+<style lang="scss">
+    @use '../../../lib/scss/breakpoints' as *;
 
-    <div class="mt-3">
-        <ButtonSet>
-            <Button href="/journal" text="All entries" right />
-        </ButtonSet>
-    </div>
-</section>
+    .entry {
+        container: article-columns / inline-size;
+    }
 
-<style>
     .page-header-entry {
         display: flex;
         flex-direction: column;
@@ -88,19 +127,82 @@
         color: var(--text-color);
     }
 
+    .header-meta {
+        @include when-entry-sidebar-fits {
+            display: none;
+        }
+    }
+
     .article-columns {
         display: grid;
         grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
         column-gap: var(--s3);
         align-items: start;
-        container: article-columns / inline-size;
     }
     .article-columns > article {
         min-width: 0;
     }
 
+    // Only the ToC’s floating button and drawer render until the sidebar fits
+    .entry-sidebar {
+        display: contents;
+
+        @include when-entry-sidebar-fits {
+            display: flex;
+            flex-direction: column;
+            gap: var(--s2);
+            position: sticky;
+            top: var(--s0);
+            max-width: $entry-sidebar-width;
+            max-height: calc(100vh - var(--s0));
+            overflow: auto;
+        }
+    }
+
+    .facts {
+        display: none;
+        margin: 0;
+
+        @include when-entry-sidebar-fits {
+            display: flex;
+            flex-direction: column;
+            gap: var(--s0);
+        }
+
+        dt {
+            margin: 0;
+        }
+
+        dd {
+            margin: 0;
+            color: var(--high-contrast-color);
+            font-size: var(--text-sm);
+            line-height: var(--leading-compact);
+        }
+    }
+
+    .sidebar-related {
+        display: none;
+
+        @include when-entry-sidebar-fits {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--s0);
+        }
+
+        // The list spans the sidebar; the button keeps its own width
+        > :global(div) {
+            align-self: stretch;
+        }
+    }
+
     .related {
         max-width: var(--measure);
+
+        @include when-entry-sidebar-fits {
+            display: none;
+        }
     }
     .related h2 {
         margin: 0;

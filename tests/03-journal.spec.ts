@@ -86,15 +86,12 @@ test.describe('Journal Page', () => {
         // Click the entry
         await firstEntry.click()
 
-        // Check that reading time is displayed
-        await expect(page.locator('header .sub').last()).toBeVisible()
-
-        // Check that reading time contains "min read"
-        const readingTimeText = await page
-            .locator('header .sub')
-            .last()
-            .textContent()
-        expect(readingTimeText).toMatch(/\d+ min read/)
+        // Reading time shows under the title, or in the sidebar once it fits
+        const readingTime = page
+            .locator('.header-meta, .facts')
+            .filter({ visible: true })
+        await expect(readingTime).toHaveCount(1)
+        await expect(readingTime).toContainText(/\d+ min read/)
     })
 
     test('journal entry has publication date', async ({ page }) => {

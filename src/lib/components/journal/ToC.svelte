@@ -247,9 +247,15 @@
 {/snippet}
 
 {#if headings.length}
-    <aside class="toc toc-sidebar" data-test="toc" bind:this={sidebarEl}>
+    <nav
+        class="toc toc-sidebar"
+        aria-labelledby="toc-sidebar-heading"
+        data-test="toc"
+        bind:this={sidebarEl}
+    >
+        <h2 id="toc-sidebar-heading" class="eyebrow">On this page</h2>
         {@render headingList(false)}
-    </aside>
+    </nav>
 
     <div class="toc-fab-wrap" data-test="toc-fab">
         <svg class="toc-progress-ring" viewBox="0 0 56 56" aria-hidden="true">
@@ -350,14 +356,10 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    // $measure matches --measure, which container queries can’t read. The
-    // sidebar stays hidden until the space beside the article fits it.
-    $measure: 68ch;
-    $toc-gap: 3.375rem; // --s3
-    $toc-sidebar-max: 238px;
-
+    // The sidebar list lives in the entry’s sidebar; the floating button and
+    // drawer take over when that sidebar doesn’t fit
     @mixin when-sidebar-fits {
-        @container article-columns (min-width: calc(#{$measure} + #{$toc-gap} + #{$toc-sidebar-max})) {
+        @include when-entry-sidebar-fits {
             @content;
         }
     }
@@ -367,14 +369,10 @@
 
         @include when-sidebar-fits {
             display: block;
-            grid-column: 2;
-            justify-self: start;
-            align-self: start;
-            max-width: $toc-sidebar-max;
-            position: sticky;
-            top: var(--s0);
-            max-height: calc(100vh - var(--s0));
-            overflow: auto;
+        }
+
+        h2 {
+            margin: 0 0 var(--s-1);
         }
     }
 
