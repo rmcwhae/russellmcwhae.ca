@@ -19,7 +19,7 @@
     ]
 </script>
 
-<SEO {title} description={lede} />
+<SEO {title} description={lede} noindex />
 
 <div class="char-limit">
     <header class="page-header">

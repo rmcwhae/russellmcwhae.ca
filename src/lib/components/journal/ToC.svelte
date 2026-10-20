@@ -1,7 +1,7 @@
 <script>
     import { browser } from '$app/env'
     import { page } from '$app/state'
-    import { tick } from 'svelte'
+    import { tick, untrack } from 'svelte'
 
     /**
      * @typedef {Object} Props
@@ -12,24 +12,19 @@
     let { allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] } = $props()
 
     const PROGRESS_RADIUS = 25
+    // A heading becomes current once it scrolls above this share of the viewport
+    const READING_LINE = 0.25
     const PROGRESS_CIRCUMFERENCE = 2 * Math.PI * PROGRESS_RADIUS
 
     let headings = $state([])
     let scrollProgress = $state(0)
-    let observer
+    let activeId = $state(null)
     let drawerOpen = $state(false)
     let drawerEl = $state(null)
     let triggerEl = $state(null)
     let sidebarEl = $state(null)
 
     let progressOffset = $derived(PROGRESS_CIRCUMFERENCE * (1 - scrollProgress))
-
-    function disconnectObserver() {
-        if (observer) {
-            observer.disconnect()
-            observer = undefined
-        }
-    }
 
     function updateScrollProgress() {
         const scrollTop = window.scrollY
@@ -40,9 +35,33 @@
             maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0
     }
 
-    function updateHeadings() {
-        disconnectObserver()
+    // The current section is the last heading above the reading line, or the
+    // last heading once the page can’t scroll further to reach it
+    function updateActiveHeading() {
+        if (headings.length === 0) {
+            activeId = null
+            return
+        }
 
+        const line = window.innerHeight * READING_LINE
+        let current = null
+
+        for (const heading of headings) {
+            if (heading.node.getBoundingClientRect().top > line) break
+            current = heading
+        }
+
+        if (scrollProgress >= 1) current = headings.at(-1)
+
+        activeId = current?.node.id ?? null
+    }
+
+    function handleScroll() {
+        updateScrollProgress()
+        updateActiveHeading()
+    }
+
+    function updateHeadings() {
         const nodes = [
             ...document.querySelectorAll(
                 `article :where(${allowedHeadings.join(', ')})`
@@ -62,12 +81,6 @@
             depth: depths[idx] - minDepth,
             node,
         }))
-
-        observer = new IntersectionObserver(handleIntersect)
-
-        nodes.forEach((heading) => {
-            observer.observe(heading)
-        })
     }
 
     $effect(() => {
@@ -76,21 +89,22 @@
         // Re-run when navigating between journal entries
         void page.url.pathname
 
-        updateHeadings()
-        updateScrollProgress()
+        // Reads and writes headings and progress, which mustn’t re-run this
+        untrack(() => {
+            updateHeadings()
+            handleScroll()
+        })
         drawerOpen = false
 
-        window.addEventListener('scroll', updateScrollProgress, {
-            passive: true,
-        })
-        window.addEventListener('resize', updateScrollProgress)
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        window.addEventListener('resize', handleScroll)
 
         return () => {
             headings = []
+            activeId = null
             drawerOpen = false
-            disconnectObserver()
-            window.removeEventListener('scroll', updateScrollProgress)
-            window.removeEventListener('resize', updateScrollProgress)
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleScroll)
         }
     })
 
@@ -184,60 +198,20 @@
     function handleKeydown(event) {
         if (event.key === 'Escape' && drawerOpen) closeDrawer()
     }
-
-    function handleIntersect(entries) {
-        const visibleHeadings = []
-
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const rect = entry.boundingClientRect
-                const viewportHeight = window.innerHeight
-
-                const visibleHeight =
-                    Math.min(rect.bottom, viewportHeight) -
-                    Math.max(rect.top, 0)
-                const visibilityRatio = visibleHeight / viewportHeight
-
-                visibleHeadings.push({
-                    id: entry.target.getAttribute('id'),
-                    element: entry.target,
-                    visibilityRatio,
-                    top: rect.top,
-                })
-            }
-        })
-
-        if (visibleHeadings.length > 0) {
-            const mostVisible = visibleHeadings.reduce((prev, current) => {
-                if (current.visibilityRatio > prev.visibilityRatio)
-                    return current
-                if (
-                    current.visibilityRatio === prev.visibilityRatio &&
-                    current.top < prev.top
-                )
-                    return current
-
-                return prev
-            })
-
-            document.querySelectorAll('.toc li').forEach((element) => {
-                element.classList.remove('active')
-            })
-            document
-                .querySelectorAll(`.toc li a[href="#${mostVisible.id}"]`)
-                .forEach((activeElement) => {
-                    activeElement.parentElement.classList.add('active')
-                })
-        }
-    }
 </script>
 
 {#snippet headingList(closeOnClick)}
     <ul>
         {#each headings as heading (heading.node.id)}
-            <li class="toc-level-{heading.depth}">
+            <li
+                class="toc-level-{heading.depth}"
+                class:active={heading.node.id === activeId}
+            >
                 <a
                     href={`#${heading.node.id}`}
+                    aria-current={heading.node.id === activeId
+                        ? 'location'
+                        : undefined}
                     onclick={closeOnClick ? handleLinkClick : undefined}
                     >{heading.title}</a
                 >

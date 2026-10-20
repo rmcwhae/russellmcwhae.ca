@@ -37,7 +37,7 @@
     })
 </script>
 
-<SEO title={'Journal » ' + title} {description} />
+<SEO title={'Journal » ' + title} {description} type="article" />
 
 <div class="entry">
     <div class="entry-grid">
