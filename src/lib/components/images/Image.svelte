@@ -60,6 +60,7 @@
         bind:this={img}
         class:pending={mounted && !loaded}
         onload={() => (loaded = true)}
+        onerror={() => (loaded = true)}
         loading={priority ? 'eager' : 'lazy'}
         fetchpriority={priority ? 'high' : undefined}
         {sizes}
@@ -84,6 +85,7 @@
             data-pswp-src={fullSrc}
             data-pswp-srcset={srcset}
             data-cropped={lockedRatio ? 'true' : undefined}
+            aria-label={caption ? undefined : 'View photo'}
         >
             {@render photo()}
         </a>

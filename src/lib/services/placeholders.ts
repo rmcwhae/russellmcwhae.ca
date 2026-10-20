@@ -37,7 +37,8 @@ async function limit<T>(task: () => Promise<T>): Promise<T> {
 
 async function generate(filePath: string): Promise<string> {
     const response = await fetch(
-        buildURL(filePath, { width: PLACEHOLDER_WIDTH * 2, quality: 50 })
+        buildURL(filePath, { width: PLACEHOLDER_WIDTH * 2, quality: 50 }),
+        { signal: AbortSignal.timeout(10_000) }
     )
     if (!response.ok) {
         throw new Error(`${response.status} fetching ${filePath}`)

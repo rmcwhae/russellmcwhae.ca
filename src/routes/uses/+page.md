@@ -42,7 +42,7 @@ A few useful apps that make macOS a bit more polished:
 - [27-inch LG 27UD68-W 4K display](/journal/the-upgrade-to-4k)
 - Magic Trackpad 2
 - Pulsar Xlite V2 wireless mouse
-- Desktop PC: NZXT H1 V2 case, Intel Core i3-12100F, 16 GB RAM, 1 TD SSD, MSI GeForce RTX 3060 Ti (see [Project PC Upgrades](/journal/project-pc-upgrades)).
+- Desktop PC: NZXT H1 V2 case, Intel Core i3-12100F, 16 GB RAM, 1 TB SSD, MSI GeForce RTX 3060 Ti (see [Project PC Upgrades](/journal/project-pc-upgrades)).
 - Previous PC: Intel Core i5-3570K overclocked to 4.2 GHz, 16 GB RAM, 500 GB SSD, 3 TB hardware RAID 5 array (4 x 1 TB drives), ~~NVIDIA GeForce GTX 670 4 GB~~ AMD Radeon RX 580 4 GB (upgraded in April 2020).
 
 ## Camera Gear

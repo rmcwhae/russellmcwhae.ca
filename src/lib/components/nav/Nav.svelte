@@ -1,6 +1,8 @@
 <script>
     import { browser } from '$app/env'
+    import { afterNavigate } from '$app/navigation'
     import { tick } from 'svelte'
+    import { MediaQuery } from 'svelte/reactivity'
     import Anchor from './Anchor.svelte'
     import ThemeSwitcher from './ThemeSwitcher.svelte'
 
@@ -26,14 +28,32 @@
         )
     }
 
-    async function hideMenu() {
-        if (!mobileMenuOpen) return
+    // Matches for-tablet-landscape-up, where the menu is always shown
+    const wide = new MediaQuery('min-width: 901px', false)
+
+    function closeMenu() {
         mobileMenuOpen = false
         window.document.body.classList.remove('no-scroll-mobile')
+    }
+
+    async function hideMenu() {
+        if (!mobileMenuOpen) return
+        closeMenu()
         // Toggle is inert until the open-menu effect cleans up
         await tick()
         toggleEl?.focus()
     }
+
+    // Back/forward navigation doesn’t pass through the menu links
+    afterNavigate(() => {
+        if (mobileMenuOpen) closeMenu()
+    })
+
+    // The toggle and overlay are hidden on wide screens, so an open menu
+    // would leave the page inert with no way to close it
+    $effect(() => {
+        if (wide.current && mobileMenuOpen) closeMenu()
+    })
 
     $effect(() => {
         if (!browser || !mobileMenuOpen || !headerEl) return
