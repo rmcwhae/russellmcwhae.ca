@@ -1,22 +1,25 @@
 <script>
-    import Image from '#lib/components/images/Image.svelte'
+    import Gallery from 'svelte-gallery'
+    import EventCard from '#lib/components/images/EventCard.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
-    import { eventThumbSizes } from '#lib/utils/images/static.js'
 
     let { data } = $props()
 
     let events = $derived(data.events ?? [])
-    let searchQuery = $state('')
+    let rowHeight = $state(260)
 
-    let filteredEvents = $derived(
-        searchQuery.trim()
-            ? events.filter((event) =>
-                  event.title
-                      .toLowerCase()
-                      .includes(searchQuery.trim().toLowerCase())
-              )
-            : events
-    )
+    let gutter = $state(12)
+
+    $effect(() => {
+        const mobile = window.matchMedia('(max-width: 576px)')
+        const sync = () => {
+            rowHeight = mobile.matches ? 112 : 300
+            gutter = mobile.matches ? 8 : 12
+        }
+        sync()
+        mobile.addEventListener('change', sync)
+        return () => mobile.removeEventListener('change', sync)
+    })
 
     /** @param {string} date */
     function groupLabel(date) {
@@ -26,11 +29,27 @@
         return Number.isNaN(year) ? date : String(year)
     }
 
+    /**
+     * @param {typeof events} yearEvents
+     */
+    function mosaicImages(yearEvents) {
+        return yearEvents.map((event) => {
+            const featured = event.featuredImage
+            return {
+                filePath: featured?.filePath,
+                width: featured?.width || 3,
+                height: featured?.height || 2,
+                title: event.title,
+                href: `/events/${event.name}`,
+            }
+        })
+    }
+
     let eventsByYear = $derived.by(() => {
-        /** @type {Map<string, typeof filteredEvents>} */
+        /** @type {Map<string, typeof events>} */
         // eslint-disable-next-line svelte/prefer-svelte-reactivity -- recreated inside $derived.by
         const groups = new Map()
-        for (const event of filteredEvents) {
+        for (const event of events) {
             const label = groupLabel(event.date)
             const yearEvents = groups.get(label)
             if (yearEvents) yearEvents.push(event)
@@ -59,53 +78,21 @@
     </div>
 
     <section class="archive" aria-label="All expeditions">
-        <div class="archive-header">
-            <p class="eyebrow">All expeditions</p>
-            <input
-                class="archive-search"
-                type="search"
-                placeholder="Filter…"
-                bind:value={searchQuery}
-                aria-label="Filter expeditions"
-            />
-        </div>
+        <p class="eyebrow archive-heading">All expeditions</p>
 
-        {#if eventsByYear.length === 0}
-            <p class="no-results">No expeditions match your search.</p>
-        {:else}
-            {#each eventsByYear as [year, yearEvents] (year)}
-                <div class="year-group">
-                    <h2 class="year-label">{year}</h2>
-                    <div class="year-items">
-                        {#each yearEvents as event (event.name)}
-                            <a class="event-row" href="/events/{event.name}">
-                                <div class="event-thumb">
-                                    {#if event.featuredImage}
-                                        <Image
-                                            filePath={event.featuredImage
-                                                .filePath}
-                                            width={event.featuredImage.width}
-                                            height={event.featuredImage.height}
-                                            sizes={eventThumbSizes}
-                                            lockedRatio
-                                            photoswipe={false}
-                                        />
-                                    {/if}
-                                </div>
-                                <span class="event-copy">
-                                    <span class="event-title title-sm"
-                                        >{event.title}</span
-                                    >
-                                    <span class="event-meta">
-                                        {event.date} · {event.count} photos
-                                    </span>
-                                </span>
-                            </a>
-                        {/each}
-                    </div>
+        {#each eventsByYear as [year, yearEvents] (year)}
+            <div class="year-group">
+                <h2 class="year-label">{year}</h2>
+                <div class="year-mosaic">
+                    <Gallery
+                        images={mosaicImages(yearEvents)}
+                        {rowHeight}
+                        {gutter}
+                        imageComponent={EventCard}
+                    />
                 </div>
-            {/each}
-        {/if}
+            </div>
+        {/each}
     </section>
 </div>
 
@@ -116,27 +103,8 @@
         width: 100%;
     }
 
-    .archive-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--s1);
-        margin-bottom: var(--s1);
-        flex-wrap: wrap;
-    }
-
-    .archive-header .eyebrow {
-        margin: 0;
-    }
-
-    .archive-search {
-        font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        padding: var(--s-3) var(--s-1);
-        border: 1px solid var(--light-grey);
-        background: var(--background-color);
-        color: var(--high-contrast-color);
-        width: 12rem;
+    .archive-heading {
+        margin: 0 0 var(--s1);
     }
 
     .year-group {
@@ -146,9 +114,9 @@
     }
 
     .year-group + .year-group {
-        margin-top: -1px;
+        margin-top: var(--s2);
+        padding-top: var(--s1);
         border-top: 1px solid var(--light-grey);
-        padding-top: var(--s-1);
     }
 
     .year-label {
@@ -162,59 +130,24 @@
         color: var(--medium-grey);
     }
 
-    .event-row {
-        display: flex;
-        align-items: center;
-        gap: var(--s1);
-        padding: var(--s-1) 0;
-        border-bottom: 1px solid var(--light-grey);
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .event-row:last-child {
-        border-bottom: none;
-    }
-
-    .event-row:hover {
-        text-decoration: none;
-    }
-
-    .event-row:hover .event-title {
-        color: var(--alpine);
-    }
-
-    .event-thumb {
-        width: 96px;
-        flex-shrink: 0;
-        overflow: hidden;
-    }
-
-    .event-copy {
-        display: flex;
-        align-items: baseline;
-        gap: var(--s1);
-        flex: 1;
+    .year-mosaic {
         min-width: 0;
     }
 
-    .event-title {
-        flex: 1;
-        min-width: 0;
-    }
+    @include for-phone-only {
+        .year-group {
+            gap: 0.35rem;
+        }
 
-    .event-meta {
-        font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        font-weight: 400;
-        color: var(--medium-grey);
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
+        .year-group + .year-group {
+            margin-top: var(--s0);
+            padding-top: var(--s0);
+        }
 
-    .no-results {
-        margin: var(--s0) 0;
-        color: var(--text-color);
+        .year-label {
+            padding-top: 0;
+            font-size: var(--text-xs);
+        }
     }
 
     @include for-tablet-landscape-up {
@@ -224,25 +157,7 @@
         }
 
         .year-label {
-            padding-top: calc(var(--s0) + 0.1rem);
-        }
-    }
-
-    @include for-tablet-portrait-down {
-        .event-copy {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.15rem;
-        }
-
-        .event-meta {
-            white-space: normal;
-        }
-    }
-
-    @include for-phone-only {
-        .event-thumb {
-            width: 64px;
+            padding-top: 0.35rem;
         }
     }
 </style>

@@ -41,4 +41,3 @@ export const homePhotoSizes =
 export const homeTallSizes =
     '(max-width: 576px) 50vw, (max-width: 900px) calc(1.5 * (2 * clamp(10rem, 22vw, 15rem) + 0.75rem)), calc(1.5 * (2 * clamp(12rem, 17vw, 17rem) + 0.75rem))'
 
-export const eventThumbSizes = '(max-width: 576px) 64px, 96px'

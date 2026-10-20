@@ -48,31 +48,26 @@ test.describe('Photos and Events', () => {
             'Complete photo sets from individual trips.'
         )
         await expect(page.locator('.archive')).toBeVisible()
-        await expect(
-            page.getByRole('searchbox', { name: 'Filter expeditions' })
-        ).toBeVisible()
+        await expect(page.locator('.archive-heading')).toContainText(
+            'All expeditions'
+        )
     })
 
     test('events display with correct information', async ({ page }) => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.event-row', { timeout: 10000 })
+        await page.waitForSelector('.event-card', { timeout: 10000 })
 
-        const eventRows = page.locator('.event-row')
-        const eventCount = await eventRows.count()
+        const eventCards = page.locator('.event-card')
+        const eventCount = await eventCards.count()
 
         if (eventCount > 0) {
-            const firstEvent = eventRows.first()
+            const firstEvent = eventCards.first()
 
             await expect(firstEvent).toBeVisible()
             await expect(firstEvent.locator('.event-title')).toBeVisible()
-            await expect(firstEvent.locator('.event-meta')).toBeVisible()
-
-            const dateAndCountText = await firstEvent
-                .locator('.event-meta')
-                .textContent()
-            expect(dateAndCountText).toMatch(/.*\d+ photos/)
+            await expect(page.locator('.year-label').first()).toBeVisible()
         }
     })
 
@@ -80,13 +75,13 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.event-row', { timeout: 10000 })
+        await page.waitForSelector('.event-card', { timeout: 10000 })
 
-        const eventRows = page.locator('.event-row')
-        const eventCount = await eventRows.count()
+        const eventCards = page.locator('.event-card')
+        const eventCount = await eventCards.count()
 
         if (eventCount > 0) {
-            const firstEventLink = eventRows.first()
+            const firstEventLink = eventCards.first()
             const href = await firstEventLink.getAttribute('href')
 
             if (href) {
@@ -106,14 +101,14 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.event-row', { timeout: 10000 })
+        await page.waitForSelector('.event-card', { timeout: 10000 })
 
-        const eventRows = page.locator('.event-row')
-        const eventCount = await eventRows.count()
+        const eventCards = page.locator('.event-card')
+        const eventCount = await eventCards.count()
 
         if (eventCount > 0) {
             // Click first event
-            await eventRows.first().click()
+            await eventCards.first().click()
 
             // Wait for images to load
             await page.waitForSelector('img', { timeout: 10000 })
@@ -209,32 +204,19 @@ test.describe('Photos and Events', () => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.event-row', { timeout: 10000 })
+        await page.waitForSelector('.year-label', { timeout: 10000 })
 
-        const eventRows = page.locator('.event-row')
-        const eventCount = await eventRows.count()
+        const yearLabels = page.locator('.year-label')
+        const yearCount = await yearLabels.count()
 
-        if (eventCount > 1) {
-            // Get all event dates
-            const eventDates = await eventRows
-                .locator('.event-meta')
-                .allTextContents()
+        if (yearCount > 1) {
+            const years = (await yearLabels.allTextContents())
+                .map((text) => Number(text.trim()))
+                .filter((year) => Number.isInteger(year))
 
-            // Extract dates from the text (format: "September 2025 · X photos")
-            const dates = eventDates
-                .map((text) => {
-                    // Try to parse the date from various formats
-                    const dateStr = text.split(' · ')[0] // Get the date part before "· X photos"
-                    const date = new Date(dateStr)
-                    return isNaN(date.getTime()) ? null : date
-                })
-                .filter(Boolean)
-
-            // Check that dates are in descending order (newest first)
-            for (let i = 0; i < dates.length - 1; i++) {
-                expect(dates[i]!.getTime()).toBeGreaterThanOrEqual(
-                    dates[i + 1]!.getTime()
-                )
+            // Check that years are in descending order (newest first)
+            for (let i = 0; i < years.length - 1; i++) {
+                expect(years[i]).toBeGreaterThanOrEqual(years[i + 1])
             }
         }
     })
@@ -247,7 +229,7 @@ test.describe('Photos and Events', () => {
 
         await page.goto('/events')
         await expect(page.locator('.archive')).toBeVisible()
-        await expect(page.locator('.event-row').first()).toBeVisible()
+        await expect(page.locator('.event-card').first()).toBeVisible()
 
         // Test mobile view
         await page.setViewportSize({ width: 375, height: 667 })
@@ -256,21 +238,21 @@ test.describe('Photos and Events', () => {
 
         await page.goto('/events')
         await expect(page.locator('.archive')).toBeVisible()
-        await expect(page.locator('.event-row').first()).toBeVisible()
+        await expect(page.locator('.event-card').first()).toBeVisible()
     })
 
     test('event detail page has back navigation', async ({ page }) => {
         await page.goto('/events')
 
         // Wait for events to load
-        await page.waitForSelector('.event-row', { timeout: 10000 })
+        await page.waitForSelector('.event-card', { timeout: 10000 })
 
-        const eventRows = page.locator('.event-row')
-        const eventCount = await eventRows.count()
+        const eventCards = page.locator('.event-card')
+        const eventCount = await eventCards.count()
 
         if (eventCount > 0) {
             // Click first event
-            await eventRows.first().click()
+            await eventCards.first().click()
 
             const back = page.locator('a[href="/events"]')
             await expect(back).toBeVisible()
