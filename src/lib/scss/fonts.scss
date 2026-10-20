@@ -1,0 +1,52 @@
+:root {
+    --font-sans: 'Schibsted Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+    --font-serif: 'Cardo', 'Iowan Old Style', 'Palatino Linotype', serif;
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/schibsted-grotesk-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/schibsted-grotesk-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/schibsted-grotesk-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/cardo-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/cardo-latin-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/cardo-latin-700-normal.woff2') format('woff2');
+}

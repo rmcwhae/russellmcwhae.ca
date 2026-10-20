@@ -10,23 +10,31 @@
     let otherCategories = $derived(data.otherCategories)
 </script>
 
-<SEO title="Journal" />
+<SEO title={`Journal » ${category}`} />
 
-<div class="restricted-width">
-    <h2 class="mb-s0">Posts categorized as “{category}”</h2>
-    <p class="mb-2">
-        <a href="/journal">All posts</a><span>|</span>Other categories:
+<div class="char-limit">
+    <header class="page-header">
+        <p class="eyebrow"><a href="/journal">Journal</a></p>
+        <h1>Posts categorized as “{category}”</h1>
+    </header>
+    <p class="categories">
+        Other categories:
         {#each otherCategories as otherCategory, i (otherCategory)}
             <CategoryLink
                 category={otherCategory}
-            />{#if i !== otherCategories.length - 1}<span>|</span>{/if}
+            />{#if i !== otherCategories.length - 1}<span>&middot;</span>{/if}
         {/each}
     </p>
 
-    <JournalEntrySet {posts} />
+    <JournalEntrySet {posts} level={2} />
 </div>
 
 <style>
+    .categories {
+        margin: 0 0 var(--s2);
+        font-size: var(--text-sm);
+    }
+
     span {
         margin-left: var(--s-2);
         margin-right: var(--s-2);

@@ -2,8 +2,8 @@
     // Use native lazy loading; remove lazysizes dependency
     import {
         generateSrcSets,
-        sizes,
         buildURL,
+        DISPLAY_WIDTH,
     } from '#lib/utils/images/index.js'
 
     /**
@@ -14,6 +14,9 @@
      * @property {any} customMetadata
      * @property {boolean} [lockedRatio]
      * @property {boolean} [photoswipe]
+     * @property {boolean} [priority]
+     * @property {string} sizes
+     * @property {string} [placeholder] Blurred preview data URI
      */
 
     /** @type {Props} */
@@ -24,54 +27,109 @@
         customMetadata,
         lockedRatio = false,
         photoswipe = false,
+        priority = false,
+        sizes,
+        placeholder = undefined,
     } = $props()
 
-    const src = $derived(buildURL(filePath, { width, height }))
+    /** @type {HTMLImageElement | undefined} */
+    let img = $state()
+    let mounted = $state(false)
+    let loaded = $state(false)
+
+    // Images can finish loading before hydration, when onload has no
+    // listener yet. Fading only starts once mounted, so without JavaScript
+    // images are simply visible.
+    $effect(() => {
+        mounted = true
+        if (img?.complete) loaded = true
+    })
+
+    const src = $derived(
+        buildURL(filePath, {
+            width: Math.min(DISPLAY_WIDTH, Number(width) || DISPLAY_WIDTH),
+        })
+    )
+    const fullSrc = $derived(buildURL(filePath, { width }))
     const srcset = $derived(generateSrcSets(filePath))
     const caption = $derived(customMetadata?.caption ?? '')
 </script>
 
-<div class:lockedRatio>
+{#snippet photo()}
+    <img
+        bind:this={img}
+        class:pending={mounted && !loaded}
+        onload={() => (loaded = true)}
+        onerror={() => (loaded = true)}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
+        {sizes}
+        {srcset}
+        {src}
+        {width}
+        {height}
+        alt={caption}
+    />
+{/snippet}
+
+<div
+    class:lockedRatio
+    class:has-lqip={placeholder}
+    style={placeholder ? `--lqip: url("${placeholder}")` : undefined}
+>
     {#if photoswipe}
         <a
-            class="no-shadow"
-            href={src}
+            href={fullSrc}
             data-pswp-width={width}
             data-pswp-height={height}
-            data-pswp-src={src}
+            data-pswp-src={fullSrc}
             data-pswp-srcset={srcset}
+            data-cropped={lockedRatio ? 'true' : undefined}
+            aria-label={caption ? undefined : 'View photo'}
         >
-            <img
-                loading="lazy"
-                {sizes}
-                {srcset}
-                {src}
-                {width}
-                {height}
-                alt={caption}
-            />
+            {@render photo()}
         </a>
     {:else}
-        <img
-            loading="lazy"
-            {sizes}
-            {srcset}
-            {src}
-            {width}
-            {height}
-            alt={caption}
-        />
+        {@render photo()}
     {/if}
 </div>
 
 <style>
     div {
         line-height: 0;
+        background-color: var(--stone);
     }
     img {
         border-radius: var(--radius);
         width: 100%;
         height: auto;
+    }
+
+    /* The tiny preview, blurred and scaled up a touch to hide soft edges */
+    .has-lqip {
+        position: relative;
+        overflow: hidden;
+    }
+    .has-lqip::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--lqip) center / cover no-repeat;
+        filter: blur(12px);
+        transform: scale(1.1);
+    }
+    /* Stacks above the preview; locked-ratio images are already positioned */
+    .has-lqip:not(.lockedRatio) img {
+        position: relative;
+    }
+
+    .pending {
+        opacity: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        img {
+            transition: opacity 0.3s ease;
+        }
     }
     .lockedRatio {
         position: relative;
@@ -81,6 +139,11 @@
         display: block;
         content: '';
         aspect-ratio: 3 / 2;
+    }
+
+    .lockedRatio a {
+        position: absolute;
+        inset: 0;
     }
 
     /* Image is positioned absolutely relative to the parent element */

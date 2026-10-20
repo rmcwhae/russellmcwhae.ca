@@ -1,7 +1,7 @@
 ---
 title: Ruby on Rails in 2019
 description: An overview of Ruby on Rails and its current relevance.
-date: '2019-09-22'
+date: 2019-09-22
 draft: false
 category: Tech
 ---
@@ -10,6 +10,8 @@ category: Tech
   import Image from 'svimg/Image.svelte'
     import Caption from '#lib/components/images/Caption.svelte'
 </script>
+
+_Note: This article was originally written as an assignment for the Lighthouse Labs web development boot camp curriculum._
 
 <Image src="/journal-images/rails-1.jpg" alt="Ruby on Rails" />
 

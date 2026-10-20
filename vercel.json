@@ -1,5 +1,25 @@
 {
     "regions": ["pdx1"],
     "buildCommand": "pnpm run build",
-    "framework": "sveltekit"
+    "framework": "sveltekit",
+    "headers": [
+        {
+            "source": "/(fonts|g)/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(hero|portrait|journal-images|calendar-images)/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=604800, stale-while-revalidate=86400"
+                }
+            ]
+        }
+    ]
 }

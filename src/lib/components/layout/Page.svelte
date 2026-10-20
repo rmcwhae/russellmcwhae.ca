@@ -1,25 +1,26 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
 
-    let { title, children } = $props()
+    let { title, children, lede = undefined } = $props()
 </script>
 
-<SEO {title} />
+<SEO {title} description={lede} />
 
 <article>
-    <header>
+    <header class="page-header">
         <h1>{title}</h1>
+        {#if lede}
+            <p class="lede">{lede}</p>
+        {/if}
     </header>
-    <div class="char-limit flow margin-0-auto">
+    <div class="flow">
         {@render children?.()}
     </div>
 </article>
 
 <style>
-    /* TODO make me DRYer with routes/journal/[slug].svelte */
-    header {
-        padding-bottom: var(--s0);
-        margin-bottom: var(--s2);
-        border-bottom: 1px solid var(--light-grey);
+    article {
+        width: 100%;
+        max-width: var(--measure);
     }
 </style>

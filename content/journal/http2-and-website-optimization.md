@@ -1,7 +1,7 @@
 ---
 title: HTTP/2 and Website Optimization
 description: A look at the latest iteration of HyperText Transfer Protocol.
-date: '2019-09-15'
+date: 2019-09-15
 draft: false
 category: Tech
 ---
@@ -10,6 +10,8 @@ category: Tech
   import Image from 'svimg/Image.svelte'
     import Caption from '#lib/components/images/Caption.svelte'
 </script>
+
+_Note: This article was originally written as an assignment for the Lighthouse Labs web development boot camp curriculum._
 
 ## Introduction
 
@@ -110,7 +112,7 @@ _Ilya Grigorik and Surma’s_ [Introduction to HTTP/2](https://developers.google
 
 While performance enhancements are highly desirable in web development, adoption can be hindered by difficult implementation procedures and complex code changes. Fortunately, HTTP/2 is enabled via a server upgrade, which should require no website code modification in the majority of cases (unless more advanced optimization techniques are effected — see the next section, ‘HTTP/2 and site optimization’). HTTP/2 is also backward compatible, so older browsers will still be able to access an HTTP/2-enabled server over HTTP/1.1.
 
-Having remained largely ignorant of the onset of HTTP/2, I was delighted to find that [my website](http://russellmcwhae.ca) was delivered over the HTTP/2 protocol, without any updating or configuring on my part (Yes, my homepage comes in at a hefty 4.8 MB download, contradicting my earlier remark about web-page optimization. For now, this is a case of _do as I say, not as I do_):
+Having remained largely ignorant of the onset of HTTP/2, I was delighted to find that [my website](/) was delivered over the HTTP/2 protocol, without any updating or configuring on my part (Yes, my homepage comes in at a hefty 4.8 MB download, contradicting my earlier remark about web-page optimization. For now, this is a case of _do as I say, not as I do_):
 
 <Caption text="My portfolio homepage (a previous version). Note the “h2” under Protocol corresponding to HTTP/2.">
 <Image src="/journal-images/http2-site.png" alt="My portfolio homepage. Note the “h2” under Protocol corresponding to HTTP/2." />

@@ -32,8 +32,8 @@ export function create(key: string): Storage {
     }
 }
 
-function identity<T>(arg: T): T {
-    return arg
+function identity<T>(arg?: T): T {
+    return arg as T
 }
 
 function noop(): void {}

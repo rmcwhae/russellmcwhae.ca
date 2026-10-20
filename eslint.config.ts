@@ -50,6 +50,8 @@ export default [
                 Blob: 'readonly',
                 IntersectionObserver: 'readonly',
                 ResizeObserver: 'readonly',
+                requestAnimationFrame: 'readonly',
+                cancelAnimationFrame: 'readonly',
                 // Node/browser common
                 console: 'readonly',
                 setTimeout: 'readonly',
@@ -64,8 +66,10 @@ export default [
             'svelte/require-each-key': 'warn',
             'svelte/no-unused-svelte-ignore': 'warn',
             'svelte/no-navigation-without-resolve': 'warn',
-            // Prefer warnings for unused variables to avoid blocking builds
-            'no-unused-vars': 'warn',
+            // Prefer warnings for unused variables to avoid blocking builds.
+            // The TS-aware rule skips parameter names in type signatures.
+            'no-unused-vars': 'off',
+            '@typescript-eslint/no-unused-vars': 'warn',
         },
     },
 ]

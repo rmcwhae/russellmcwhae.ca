@@ -1,5 +1,7 @@
 import ImageKit from '@imagekit/nodejs'
 import { IMAGEKIT_PRIVATE_KEY } from '$app/env/private'
+import { building, dev } from '$app/env'
+import { placeholderFor } from './placeholders.js'
 
 const CONFIG_OPTIONS = { privateKey: IMAGEKIT_PRIVATE_KEY }
 let client: ImageKit | null = null
@@ -14,95 +16,116 @@ function getClient(): ImageKit {
     return client
 }
 
-interface ImageKitFile {
+export type ImageKitItem = ImageKit.File | ImageKit.Folder
+
+/**
+ * An ImageKit file or folder, with a path for either, a lightbox flag, and
+ * a blurred placeholder data URI for images
+ */
+export type ProcessedFile = ImageKitItem & {
     filePath: string
-    url?: string
-    [key: string]: string | number | boolean | undefined
-}
-
-interface ProcessedFile extends ImageKitFile {
     photoswipe: boolean
+    placeholder?: string
 }
 
-interface ListFilesOptions {
-    path?: string
-    skip?: number
-    limit?: number
-    sort?: string
-    type?: string
-    fileType?: string
-    searchQuery?: string
-    [key: string]: string | number | boolean | undefined
+/** The fields pages render, so page data skips EXIF, tags and the rest */
+export interface Photo {
+    filePath: string
+    width?: number
+    height?: number
+    photoswipe: boolean
+    placeholder?: string
+    customMetadata?: { caption?: string }
 }
 
-function isFile(item: {
-    filePath?: string
-    folderPath?: string
-}): item is { filePath: string; url?: string; [key: string]: unknown } {
+export function toPhoto(file: ProcessedFile): Photo {
+    const caption =
+        'customMetadata' in file
+            ? (file.customMetadata?.caption as string | undefined)
+            : undefined
+
+    return {
+        filePath: file.filePath,
+        width: 'width' in file ? file.width : undefined,
+        height: 'height' in file ? file.height : undefined,
+        photoswipe: file.photoswipe,
+        ...(file.placeholder && { placeholder: file.placeholder }),
+        ...(caption && { customMetadata: { caption } }),
+    }
+}
+
+function isFile(item: ImageKitItem): item is ImageKit.File {
     return 'filePath' in item && typeof item.filePath === 'string'
 }
 
-export async function listFiles(
-    options: ListFilesOptions
+/** Shares in-flight and settled listings across prerendered pages */
+const cache = new Map<string, Promise<ProcessedFile[]>>()
+
+export function listFiles(
+    options: ImageKit.AssetListParams
 ): Promise<ProcessedFile[]> {
+    if (!building) {
+        return fetchFiles(options)
+    }
+
+    const key = JSON.stringify(options)
+    let result = cache.get(key)
+
+    if (!result) {
+        result = fetchFiles(options)
+        cache.set(key, result)
+        // Drop failures so a retry isn’t served the same rejection
+        result.catch(() => cache.delete(key))
+    }
+
+    return result
+}
+
+async function fetchFiles(
+    options: ImageKit.AssetListParams
+): Promise<ProcessedFile[]> {
+    // Local dev can run without ImageKit credentials; builds can’t
+    if (!IMAGEKIT_PRIVATE_KEY && dev) {
+        console.warn('IMAGEKIT_PRIVATE_KEY is not set; listing no files')
+        return []
+    }
+
     try {
-        // Add timeout to prevent hanging requests
-        const timeoutPromise = new Promise<never>((_, reject) => {
-            setTimeout(() => reject(new Error('Request timeout')), 10000) // 10 second timeout
+        const items = await getClient().assets.list(options, {
+            timeout: 10000,
         })
-
-        const listPromise = getClient().assets.list({
-            path: options.path as string | undefined,
-            skip: options.skip as number | undefined,
-            limit: options.limit as number | undefined,
-            sort: options.sort as
-                | 'ASC_NAME'
-                | 'DESC_NAME'
-                | 'ASC_CREATED'
-                | 'DESC_CREATED'
-                | 'ASC_UPDATED'
-                | 'DESC_UPDATED'
-                | 'ASC_HEIGHT'
-                | 'DESC_HEIGHT'
-                | 'ASC_WIDTH'
-                | 'DESC_WIDTH'
-                | 'ASC_SIZE'
-                | 'DESC_SIZE'
-                | 'ASC_RELEVANCE'
-                | 'DESC_RELEVANCE'
-                | undefined,
-            type: options.type as 'file' | 'folder' | 'all' | undefined,
-            fileType: options.fileType as
-                'all' | 'image' | 'non-image' | undefined,
-            searchQuery: options.searchQuery as string | undefined,
-        })
-
-        const items = await Promise.race([listPromise, timeoutPromise])
 
         if (!Array.isArray(items)) {
-            console.error('ImageKit returned non-array response:', items)
-            return []
+            throw new Error(
+                `ImageKit returned a non-array response: ${JSON.stringify(items)}`
+            )
         }
 
-        return items.map((item) => {
-            const filePath =
-                'filePath' in item && item.filePath
-                    ? item.filePath
-                    : 'folderPath' in item && item.folderPath
-                      ? item.folderPath
-                      : ''
-            const base: ImageKitFile = {
-                ...item,
-                filePath,
-            }
-            return {
-                ...base,
-                photoswipe: isFile(item),
-            } as ProcessedFile
-        })
+        return await Promise.all(
+            items.map(async (item) => {
+                const file = isFile(item)
+                const filePath = file
+                    ? (item.filePath ?? '')
+                    : ('folderPath' in item && item.folderPath) || ''
+                const placeholder =
+                    file && item.width && item.height
+                        ? await placeholderFor({ ...item, filePath })
+                        : undefined
+                return {
+                    ...item,
+                    filePath,
+                    photoswipe: file,
+                    ...(placeholder && { placeholder }),
+                }
+            })
+        )
     } catch (error) {
+        // Fail builds and prerendering loudly rather than ship empty pages
+        if (!dev) {
+            throw error
+        }
+
         console.error('Error in listFiles:', error)
-        // Return empty array instead of throwing to prevent server crashes
         return []
     }
 }

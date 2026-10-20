@@ -1,39 +1,26 @@
 import { error } from '@sveltejs/kit'
-import { getPosts } from '#lib/services/posts.js'
+import type { Component } from 'svelte'
 import type { PageLoad } from './$types'
 
-export const prerender = true // Needs to be false if using a hit counter
+export const prerender = true
 
-export const load: PageLoad = async ({ params }) => {
-    const { slug } = params
-    const posts = await getPosts()
-    const index = posts.findIndex((post) => slug === post.slug)
+// One lazy chunk per post, so a page only downloads its own component
+const postModules = import.meta.glob('/content/journal/*.md') as Record<
+    string,
+    () => Promise<{ default: Component }>
+>
 
-    if (index === -1) {
+export const load: PageLoad = async ({ params, data }) => {
+    const loadPost = postModules[`/content/journal/${params.slug}.md`]
+
+    if (!loadPost) {
         throw error(404, 'Page not found')
     }
 
-    const post = posts[index]
-    const { title, date, description, category } = post
-
-    // Load component and reading time asynchronously
-    const [component, readingTime] = await Promise.all([
-        post.loadComponent(),
-        post.loadReadingTime(),
-    ])
-
-    const relatedPosts = posts
-        .filter((p) => p.title !== title)
-        .filter((p) => p.category === category)
-        .slice(0, 4)
+    const { default: component } = await loadPost()
 
     return {
-        title,
-        date,
-        category,
-        readingTime,
-        description,
-        relatedPosts,
+        ...data,
         component,
     }
 }

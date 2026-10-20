@@ -1,75 +1,214 @@
 <script>
-    import { preventLastTwoWordWrap } from '#lib/utils/string/index.js'
     import Date from '#lib/components/misc/Date.svelte'
+    import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
+    import Button from '#lib/components/buttons/Button.svelte'
     import CategoryLink from './CategoryLink.svelte'
 
     /**
      * @typedef {Object} Props
      * @property {any} post
      * @property {boolean} [featured]
+     * @property {boolean} [showCategory]
+     * @property {boolean} [showDescription]
+     * @property {boolean} [showPreview]
+     * @property {number} [level] Heading level for the title
      */
 
     /** @type {Props} */
-    let { post, featured = false } = $props()
+    let {
+        post,
+        featured = false,
+        showCategory = true,
+        showDescription = true,
+        showPreview = true,
+        level = featured ? 2 : 3,
+    } = $props()
 
-    let { href, title, description, date, readingTime, category } =
+    let { href, title, description, preview, date, readingTime, category } =
         $derived(post)
+
+    let featuredPreview = $derived(
+        featured
+            ? showPreview
+                ? preview || description
+                : description
+            : showDescription
+              ? description
+              : ''
+    )
 </script>
 
 <section class:featured>
-    {#if date}
-        <div class="sub">
-            <Date {date} />
+    {#if featured}
+        {#if date}
+            <div class="sub">
+                <span class="eyebrow">Latest</span>
+                &middot;
+                <Date {date} />
+                {#if readingTime}
+                    &middot;
+                    <span class="nowrap">{readingTime.text}</span>
+                {/if}
+            </div>
+        {/if}
+        <svelte:element this={`h${level}`} class="entry-title">
+            <a {href}><NoWrapLastTwoWords text={title} /></a>
+        </svelte:element>
+        {#if featuredPreview}
+            <p><NoWrapLastTwoWords text={featuredPreview} /></p>
+        {/if}
+        <Button {href} text="Continue reading" right />
+    {:else}
+        {#if date}
+            <div class="when">
+                <Date {date} compact />
+            </div>
+        {/if}
+        <div class="body">
+            <svelte:element this={`h${level}`} class="entry-title title-sm">
+                <a {href}><NoWrapLastTwoWords text={title} /></a>
+            </svelte:element>
+            {#if featuredPreview}
+                <p><NoWrapLastTwoWords text={featuredPreview} /></p>
+            {/if}
         </div>
-    {/if}
-    <h3>
-        <a {href}>{@html preventLastTwoWordWrap(title)}</a>
-    </h3>
-    {#if description}
-        <p class:big={featured}>{@html preventLastTwoWordWrap(description)}</p>
-    {/if}
-    {#if category && readingTime}
-        <div class="sub">
-            <CategoryLink {category} />
-            &middot;
-            <span>{readingTime.text}</span>
-        </div>
+        {#if readingTime || (category && showCategory)}
+            <div class="meta">
+                {#if readingTime}
+                    <div class="time">{readingTime.text}</div>
+                {/if}
+                {#if category && showCategory}
+                    <CategoryLink {category} />
+                {/if}
+            </div>
+        {/if}
     {/if}
 </section>
 
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    h3 {
-        margin: 0;
-        line-height: 1.2;
-    }
-    p {
-        margin: 0;
-    }
-    section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-3);
-        padding-bottom: var(--s0);
+    section:not(.featured) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.35rem 1rem;
+        padding: var(--s0) 0;
         border-bottom: 1px solid var(--light-grey);
     }
-    section.featured {
-        padding-top: var(--s0);
+
+    .entry-title {
+        margin: 0;
+        font-family: var(--font-serif);
+        font-weight: var(--serif-heading-weight);
     }
 
-    @media (max-width: 640px) {
-        section {
-            padding-bottom: var(--s0);
+    .entry-title a {
+        font-weight: inherit;
+    }
+
+    p {
+        margin: 0.35rem 0 0;
+        color: var(--text-color);
+        font-size: var(--text-sm);
+        line-height: var(--leading-compact);
+    }
+
+    .when {
+        grid-column: 1 / -1;
+        color: var(--medium-grey);
+        font-size: var(--text-xs);
+    }
+
+    .meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.15rem;
+        color: var(--medium-grey);
+        font-size: var(--text-xs);
+        text-align: right;
+    }
+
+    .time {
+        white-space: nowrap;
+    }
+
+    section.featured {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--s-1);
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    section.featured .entry-title {
+        width: 100%;
+        max-width: none;
+        font-size: var(--text-xl);
+        line-height: var(--leading-tight);
+    }
+
+    section.featured p {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    section.featured .sub {
+        color: var(--text-color);
+    }
+
+    @include for-phone-only {
+        section.featured p {
+            font-size: var(--text-sm);
+        }
+
+        section:not(.featured) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 0.5rem;
+        }
+
+        section:not(.featured) .body {
+            flex: 1 0 100%;
+            order: 1;
+        }
+
+        section:not(.featured) .when {
+            order: 2;
+            margin-right: auto;
+        }
+
+        section:not(.featured) .meta {
+            order: 3;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-left: auto;
+            text-align: right;
         }
     }
 
     @include for-tablet-portrait-up {
-        section.featured {
-            padding: var(--s4) 0;
+        section:not(.featured) {
+            grid-template-columns: max-content 1fr auto;
+            align-items: baseline;
+            gap: 0.25rem 1.5rem;
         }
-        .featured h3 {
-            font-size: 3.052rem;
+
+        section:not(.featured) .when {
+            grid-column: auto;
+        }
+
+        :global(.entries) > section:not(.featured) {
+            grid-column: 1 / -1;
+            grid-template-columns: subgrid;
         }
     }
 </style>

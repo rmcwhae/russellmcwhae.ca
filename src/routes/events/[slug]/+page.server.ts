@@ -1,4 +1,4 @@
-import { error } from '@sveltejs/kit'
+import { error, isHttpError } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
 import { parseTitleAndDate } from '#lib/utils/string/index.js'
@@ -6,29 +6,16 @@ import { parseTitleAndDate } from '#lib/utils/string/index.js'
 export const prerender = true
 
 export async function entries() {
-    try {
-        const events = await ImageKitNodeServices.listFiles({
-            path: '/events/',
-            type: 'folder',
-        })
+    const events = await ImageKitNodeServices.listFiles({
+        path: '/events/',
+        type: 'folder',
+    })
 
-        if (!Array.isArray(events)) {
-            console.error(
-                'Non-array response from ImageKit for events:',
-                events
-            )
-            return []
-        }
-
-        return events
-            .filter((event) => event && event.name)
-            .map((event) => ({
-                slug: event.name,
-            }))
-    } catch (error) {
-        console.error('Error generating event entries:', error)
-        return []
-    }
+    return events
+        .filter((event) => event && event.name)
+        .map((event) => ({
+            slug: event.name,
+        }))
 }
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -42,6 +29,7 @@ export const load: PageServerLoad = async ({ params }) => {
     try {
         const images = await ImageKitNodeServices.listFiles({
             path: '/events/' + slug,
+            type: 'file',
             sort: 'ASC_NAME',
         })
 
@@ -59,7 +47,7 @@ export const load: PageServerLoad = async ({ params }) => {
                     count: images.length,
                     title,
                     date,
-                    images,
+                    images: images.map(ImageKitNodeServices.toPhoto),
                 },
             }
         } else {
@@ -67,7 +55,7 @@ export const load: PageServerLoad = async ({ params }) => {
         }
     } catch (err: unknown) {
         // If it's already a SvelteKit error, re-throw it
-        if (err.status) {
+        if (isHttpError(err)) {
             throw err
         }
 

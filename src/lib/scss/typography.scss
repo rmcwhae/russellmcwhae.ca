@@ -1,94 +1,224 @@
 @use 'breakpoints' as *;
 
-// Links
+:focus-visible {
+    outline: 2px solid var(--alpine);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: light-dark(#c9d9e8, #314e64);
+    color: var(--high-contrast-color);
+}
 
 a {
     color: var(--high-contrast-color);
-    transition: var(--duration);
+    transition:
+        color var(--duration),
+        background-color var(--duration),
+        text-decoration-color var(--duration);
 }
+
 .button {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
     font-weight: 600;
-    font-size: 1rem;
-    padding: var(--s-1) var(--s1);
+    line-height: var(--leading-compact);
+    padding: 0 0 4px;
     text-decoration: none;
-    border: 1px solid var(--light-grey);
-    border-radius: var(--circle-radius);
-    box-shadow: none;
-    color: var(--high-contrast-color);
+    border: none;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+    color: var(--medium-grey);
+    background: none;
     position: relative;
+    cursor: pointer;
 
     &:hover {
-        box-shadow: none;
-        color: var(--text-color);
+        color: var(--alpine);
         text-decoration: none;
     }
 }
+
+// Link dialects:
+// 1. UI / row / title (default in main) — no underline, alpine on hover
+// 2. Prose / inline (article a, .text-link) — underline always, alpine on hover
+// 3. CTA (.button) — bottom border, alpine on hover
+// 4. Chrome (nav, footer) — component-scoped; footer keeps underline + alpine
+
 main a {
     text-decoration: none;
     color: var(--high-contrast-color);
-    font-weight: 600;
+    font-weight: 500;
+    text-underline-offset: 0.18em;
 
     &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
+        color: var(--alpine);
+        text-decoration: none;
     }
 }
-a.no-shadow,
-a.no-shadow:hover {
-    box-shadow: none;
+
+article a,
+main a.text-link {
+    color: var(--high-contrast-color);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+
+    &:hover {
+        color: var(--alpine);
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+    }
 }
 
-// Article styles
+.caps,
+.eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-caps);
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    line-height: var(--leading-compact);
+    text-transform: uppercase;
+    font-size-adjust: cap-height from-font;
+}
+
+.eyebrow {
+    color: var(--medium-grey);
+
+    a {
+        color: inherit;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--alpine);
+            text-decoration: none;
+        }
+    }
+}
+
+.lede {
+    max-width: 36rem;
+    color: var(--medium-grey);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: var(--leading-compact);
+}
+
+.page-header {
+    margin-bottom: var(--s1);
+
+    h1 {
+        margin: 0;
+        font-size: var(--text-2xl);
+    }
+
+    .lede,
+    .meta {
+        margin: var(--s-1) 0 0;
+    }
+}
+
+// Titles of items in a list: journal entries, events, destinations
+.title-sm {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    font-weight: var(--serif-heading-weight);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-heading);
+    color: var(--high-contrast-color);
+}
+
+// Serif captions on dark image overlays (home favourites, event cards)
+.media-caption {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: var(--serif-heading-weight);
+    letter-spacing: var(--tracking-heading);
+    font-size: var(--text-xs);
+    line-height: var(--leading-compact);
+
+    @include for-tablet-portrait-up {
+        font-size: var(--text-sm);
+    }
+}
+
+.media-caption-lg {
+    @include for-tablet-portrait-up {
+        font-size: var(--text-md);
+    }
+}
 
 article h2:not(:first-child) {
-    margin-top: var(--s4) !important;
+    margin-top: var(--s3);
 }
 
-article h3 {
-    margin-top: var(--s3) !important;
-}
-.micro h3 {
-    margin-top: var(--s-5) !important;
-    margin-bottom: 0 !important;
-}
-.micro :first-child {
-    margin-top: 0 !important;
-}
-@media (max-width: 1023px) {
-    article {
-        margin: 0 auto;
+// Bordered rows of links: sidebars and the photography destinations
+.link-list {
+    list-style: none;
+    margin: var(--s0) 0 0;
+    padding: 0;
+
+    > li:not(:last-child) {
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    a {
+        display: grid;
+        gap: 0.2rem;
+        padding: var(--s-1) 0;
     }
 }
+
+.link-list-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 500;
+    line-height: var(--leading-compact);
+}
+
+.link-list-description {
+    color: var(--text-color);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: var(--leading-compact);
+}
+
 blockquote {
     margin-left: 0;
     padding-left: var(--s1);
     margin-right: var(--s1);
-    border-left: 1px solid var(--light-grey);
-    font-size: 1.05rem;
+    border-left: 1px solid var(--stone);
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    line-height: var(--leading-compact);
 }
+
 pre {
     padding: var(--s-1) var(--s1);
     border: 1px solid var(--light-grey);
     border-radius: var(--radius);
 }
+
 ul {
     list-style-type: disc;
 }
+
 article li p {
     margin: 0;
 }
+
 hr {
     height: 1px;
     padding: 0;
     border: none;
-    border-top: 1px dashed var(--light-grey);
+    border-top: 1px solid var(--light-grey);
     color: var(--light-grey);
     text-align: center;
     overflow: visible;
     margin: var(--s3) 0 !important;
 }
-
-// Headings
 
 h1 a,
 h2 a,
@@ -97,94 +227,224 @@ h4 a,
 h5 a,
 h6 a {
     color: var(--high-contrast-color);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--alpine);
+        text-decoration: none;
+    }
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    font-family: var(--font-serif);
     color: var(--high-contrast-color);
     margin-bottom: var(--s0);
-    font-weight: 600;
+    font-weight: var(--serif-heading-weight);
+    letter-spacing: var(--tracking-heading);
 }
+
 h1 {
-    font-size: 3.052rem;
-    line-height: 1;
+    font-size: var(--text-xl);
+    line-height: var(--leading-tight);
     margin: var(--s-1) 0;
 }
+
 h2 {
-    font-size: 1.953rem;
-    font-weight: 700;
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
 }
+
 h3 {
-    font-weight: 600;
-    font-size: 1.536rem;
+    font-size: var(--text-md);
+    line-height: var(--leading-snug);
 }
-h4 {
-    font-size: 1.25rem;
-}
-.big {
-    @include for-tablet-landscape-up {
-        font-size: 1.3rem;
-    }
-    @include for-desktop-up {
-        line-height: 1.2;
-        font-size: 1.563rem;
-    }
-}
-@include for-tablet-portrait-down {
-    // Via https://type-scale.com (Major Second scale for mobile; Major Third otherwise)
-    h1 {
-        font-size: 1.802rem;
-    }
-    h2 {
-        font-size: 1.602rem;
-    }
-    h3 {
-        font-size: 1.424rem;
-    }
-    h4 {
-        font-size: 1.266rem;
+
+@include for-phone-only {
+    .page-header {
+        margin-bottom: var(--s0);
     }
 }
 
-// Other tags
+h4 {
+    font-size: var(--text-base);
+    line-height: var(--leading-snug);
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+// Headings and pull quotes stay in Cardo; keep their italics in serif
+:is(h1, h2, h3, h4, h5, h6, blockquote) :is(em, i) {
+    font-family: var(--font-serif);
+    font-size: inherit;
+}
 
 main ul {
     padding-left: var(--s1);
 }
+
 pre,
 code {
-    font-family: monospace, monospace;
+    font-family: ui-monospace, 'SFMono-Regular', monospace;
     white-space: pre-wrap;
-    font-size: 1rem;
+    font-size: var(--text-sm);
     word-break: break-word;
 }
+
 sup {
     position: relative;
     top: -0.5em;
-    font-size: 0.7em;
+    font-size: var(--text-caps);
     line-height: 0;
     vertical-align: baseline;
 }
 
-// Other classes
-
-.uppercase,
-article strong {
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 0.075em;
-    font-weight: 600;
-}
 .nowrap {
     white-space: nowrap;
 }
+
 .footnote-backref {
     margin-left: var(--s-2);
 }
+
+article a.footnote-ref {
+    display: inline-block;
+    min-width: 1.6em;
+    padding: 0.15em 0.35em;
+    margin-inline: 0.1em;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    color: var(--high-contrast-color);
+    background-color: var(--stone);
+    cursor: pointer;
+
+    &:hover,
+    &[aria-expanded='true'] {
+        color: var(--background-color);
+        background-color: var(--alpine);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--alpine);
+        outline-offset: 2px;
+    }
+}
+
+.has-footnote-popovers .footnotes {
+    display: none;
+
+    @media print {
+        display: block;
+    }
+}
+
+.footnote-popover {
+    --popover-border: color-mix(
+        in oklch,
+        var(--stone),
+        var(--high-contrast-color) 20%
+    );
+
+    position: fixed;
+    inset: auto;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    max-width: min(24rem, calc(100vw - 32px));
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--popover-border);
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 12%);
+    font-size: var(--text-xs);
+    line-height: var(--leading-compact);
+
+    &:not(:popover-open) {
+        display: none;
+    }
+
+    // Focus moves to the container on open (tabIndex -1); Safari would ring it
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+
+    // Arrow: a rotated square straddling the edge that faces the reference
+    &::before {
+        content: '';
+        position: absolute;
+        left: var(--arrow-x, 50%);
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: var(--background-color);
+        border: 1px solid var(--popover-border);
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &[data-placement='bottom']::before {
+        top: 0;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    &[data-placement='top']::before {
+        top: 100%;
+        border-left: none;
+        border-top: none;
+    }
+
+    a {
+        color: var(--high-contrast-color);
+        font-weight: 500;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+
+        &:hover {
+            color: var(--alpine);
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition:
+            opacity var(--duration),
+            overlay var(--duration) allow-discrete,
+            display var(--duration) allow-discrete;
+
+        @starting-style {
+            &:popover-open {
+                opacity: 0;
+            }
+        }
+
+        &:not(:popover-open) {
+            opacity: 0;
+        }
+    }
+}
+
+.footnote-popover-body {
+    min-height: 0;
+    padding: var(--s-1) var(--s0);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
 .sub {
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
 }

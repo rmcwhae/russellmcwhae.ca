@@ -29,22 +29,54 @@
             color="#5bbad5"
         />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <!-- data-color keeps each scheme’s colour when a choice overrides it -->
         <meta
             name="theme-color"
-            content="#fff"
+            content="#F7F6F2"
+            data-color="#F7F6F2"
+            data-scheme="light"
             media="(prefers-color-scheme: light)"
         />
         <meta
             name="theme-color"
-            content="#000000"
+            content="#131514"
+            data-color="#131514"
+            data-scheme="dark"
             media="(prefers-color-scheme: dark)"
         />
 
         <!-- Responsive design -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="date=no" />
 
         <!-- Light and dark modes -->
         <meta name="color-scheme" content="light dark" />
+        <script>
+            try {
+                var raw = localStorage.getItem('user-theme')
+                var mode = raw ? JSON.parse(raw) : ''
+                if (mode === 'light' || mode === 'dark') {
+                    var meta = document.querySelector(
+                        'meta[name="color-scheme"]'
+                    )
+                    if (meta) meta.setAttribute('content', mode)
+
+                    // Mirrors applyThemeColor in ThemeSwitcher.svelte
+                    var colors = document.querySelectorAll(
+                        'meta[name="theme-color"]'
+                    )
+                    var chosen = document.querySelector(
+                        'meta[name="theme-color"][data-scheme="' + mode + '"]'
+                    )
+                    for (var i = 0; i < colors.length; i++) {
+                        colors[i].setAttribute(
+                            'content',
+                            chosen.getAttribute('data-color')
+                        )
+                    }
+                }
+            } catch (e) {}
+        </script>
 
         %sveltekit.head%
     </head>

@@ -1,32 +1,67 @@
 <script>
     import { browser } from '$app/env'
     import { page } from '$app/state'
+    import { tick, untrack } from 'svelte'
 
     /**
      * @typedef {Object} Props
      * @property {any} [allowedHeadings]
-     * @property {any} [activeHeading]
      */
 
     /** @type {Props} */
-    let {
-        allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-        activeHeading = null,
-    } = $props()
+    let { allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] } = $props()
+
+    const PROGRESS_RADIUS = 25
+    // A heading becomes current once it scrolls above this share of the viewport
+    const READING_LINE = 0.25
+    const PROGRESS_CIRCUMFERENCE = 2 * Math.PI * PROGRESS_RADIUS
 
     let headings = $state([])
-    let observer
+    let scrollProgress = $state(0)
+    let activeId = $state(null)
+    let drawerOpen = $state(false)
+    let drawerEl = $state(null)
+    let triggerEl = $state(null)
+    let sidebarEl = $state(null)
 
-    function disconnectObserver() {
-        if (observer) {
-            observer.disconnect()
-            observer = undefined
+    let progressOffset = $derived(PROGRESS_CIRCUMFERENCE * (1 - scrollProgress))
+
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY
+        const maxScroll =
+            document.documentElement.scrollHeight - window.innerHeight
+
+        scrollProgress =
+            maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0
+    }
+
+    // The current section is the last heading above the reading line, or the
+    // last heading once the page can’t scroll further to reach it
+    function updateActiveHeading() {
+        if (headings.length === 0) {
+            activeId = null
+            return
         }
+
+        const line = window.innerHeight * READING_LINE
+        let current = null
+
+        for (const heading of headings) {
+            if (heading.node.getBoundingClientRect().top > line) break
+            current = heading
+        }
+
+        if (scrollProgress >= 1) current = headings.at(-1)
+
+        activeId = current?.node.id ?? null
+    }
+
+    function handleScroll() {
+        updateScrollProgress()
+        updateActiveHeading()
     }
 
     function updateHeadings() {
-        disconnectObserver()
-
         const nodes = [
             ...document.querySelectorAll(
                 `article :where(${allowedHeadings.join(', ')})`
@@ -46,11 +81,6 @@
             depth: depths[idx] - minDepth,
             node,
         }))
-        observer = new IntersectionObserver(handleIntersect)
-
-        nodes.forEach((heading) => {
-            observer.observe(heading)
-        })
     }
 
     $effect(() => {
@@ -59,98 +89,458 @@
         // Re-run when navigating between journal entries
         void page.url.pathname
 
-        updateHeadings()
+        // Reads and writes headings and progress, which mustn’t re-run this
+        untrack(() => {
+            updateHeadings()
+            handleScroll()
+        })
+        drawerOpen = false
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        window.addEventListener('resize', handleScroll)
 
         return () => {
             headings = []
-            disconnectObserver()
+            activeId = null
+            drawerOpen = false
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleScroll)
         }
     })
 
-    function handleIntersect(entries) {
-        const visibleHeadings = []
+    $effect(() => {
+        if (!browser || !sidebarEl) return
 
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const rect = entry.boundingClientRect
-                const viewportHeight = window.innerHeight
+        const container = sidebarEl.parentElement
+        if (!container) return
 
-                // Calculate how much of the heading's content is visible
-                const visibleHeight =
-                    Math.min(rect.bottom, viewportHeight) -
-                    Math.max(rect.top, 0)
-
-                const visibilityRatio = visibleHeight / viewportHeight
-
-                visibleHeadings.push({
-                    id: entry.target.getAttribute('id'),
-                    element: entry.target,
-                    visibilityRatio,
-                    top: rect.top,
-                })
-            }
-        })
-
-        if (visibleHeadings.length > 0) {
-            // Find the heading with the highest visibility ratio
-            // or if tied, the one closest to the top
-            const activeHeading = visibleHeadings.reduce((prev, current) => {
-                if (current.visibilityRatio > prev.visibilityRatio)
-                    return current
-                if (
-                    current.visibilityRatio === prev.visibilityRatio &&
-                    current.top < prev.top
-                )
-                    return current
-
-                return prev
-            })
-
-            // Update active state
-            document.querySelectorAll('.toc li').forEach((element) => {
-                element.classList.remove('active')
-            })
-            const activeElement = document.querySelector(
-                `.toc li a[href="#${activeHeading.id}"]`
-            )
-            if (activeElement) {
-                activeElement.parentElement.classList.add('active')
-            }
+        const syncFab = () => {
+            const sidebarHidden =
+                window.getComputedStyle(sidebarEl).display === 'none'
+            if (!sidebarHidden) drawerOpen = false
+            document.body.classList.toggle('toc-fab-visible', sidebarHidden)
         }
+
+        const observer = new ResizeObserver(syncFab)
+        observer.observe(container)
+        syncFab()
+
+        return () => {
+            observer.disconnect()
+            document.body.classList.remove('toc-fab-visible')
+        }
+    })
+
+    $effect(() => {
+        if (!browser || !drawerOpen) return
+
+        // Keep focus inside the modal drawer by making everything outside
+        // it inert, apart from the backdrop that closes it
+        const inerted = []
+        for (let el = drawerEl; el && el !== document.body;) {
+            const parent = el.parentElement
+            for (const sibling of parent?.children ?? []) {
+                if (
+                    sibling === el ||
+                    sibling.classList.contains('toc-backdrop')
+                )
+                    continue
+                if (sibling.inert) continue
+                sibling.inert = true
+                inerted.push(sibling)
+            }
+            el = parent
+        }
+
+        document.addEventListener('keydown', handleKeydown)
+        drawerEl?.querySelector('a, button')?.focus()
+
+        return () => {
+            inerted.forEach((el) => (el.inert = false))
+            document.removeEventListener('keydown', handleKeydown)
+        }
+    })
+
+    function toggleDrawer() {
+        drawerOpen = !drawerOpen
+    }
+
+    async function closeDrawer() {
+        drawerOpen = false
+        // The trigger is inert until the drawer effect cleans up
+        await tick()
+        triggerEl?.focus()
+    }
+
+    // Move focus to the chosen heading so reading continues from there
+    async function handleLinkClick(event) {
+        const id = decodeURIComponent(event.currentTarget.hash.slice(1))
+        drawerOpen = false
+        await tick()
+
+        const target = document.getElementById(id)
+        if (!target) return
+        if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1')
+            target.addEventListener(
+                'blur',
+                () => target.removeAttribute('tabindex'),
+                { once: true }
+            )
+        }
+        target.focus({ preventScroll: true })
+    }
+
+    function handleBackdropClick() {
+        closeDrawer()
+    }
+
+    function handleKeydown(event) {
+        if (event.key === 'Escape' && drawerOpen) closeDrawer()
     }
 </script>
 
-{#if headings.length}
-    <aside class="toc char-limit" data-test="toc">
-        <ul>
-            {#each headings as heading (heading.node.id)}
-                <li
-                    class="toc-level-{heading.depth}"
-                    class:active={activeHeading?.node === heading.node}
+{#snippet headingList(closeOnClick)}
+    <ul>
+        {#each headings as heading (heading.node.id)}
+            <li
+                class="toc-level-{heading.depth}"
+                class:active={heading.node.id === activeId}
+            >
+                <a
+                    href={`#${heading.node.id}`}
+                    aria-current={heading.node.id === activeId
+                        ? 'location'
+                        : undefined}
+                    onclick={closeOnClick ? handleLinkClick : undefined}
+                    >{heading.title}</a
                 >
-                    <a href={`#${heading.node.id}`}>{heading.title}</a>
-                </li>
-            {/each}
-        </ul>
-    </aside>
+            </li>
+        {/each}
+    </ul>
+{/snippet}
+
+{#if headings.length}
+    <nav
+        class="toc toc-sidebar"
+        aria-labelledby="toc-sidebar-heading"
+        data-test="toc"
+        bind:this={sidebarEl}
+    >
+        <h2 id="toc-sidebar-heading" class="eyebrow">On this page</h2>
+        {@render headingList(false)}
+    </nav>
+
+    <div class="toc-fab-wrap" data-test="toc-fab">
+        <svg class="toc-progress-ring" viewBox="0 0 56 56" aria-hidden="true">
+            <circle
+                class="toc-progress-track"
+                cx="28"
+                cy="28"
+                r={PROGRESS_RADIUS}
+            />
+            <circle
+                class="toc-progress-fill"
+                cx="28"
+                cy="28"
+                r={PROGRESS_RADIUS}
+                style="stroke-dasharray: {PROGRESS_CIRCUMFERENCE}; stroke-dashoffset: {progressOffset}"
+            />
+        </svg>
+
+        <button
+            class="toc-fab"
+            type="button"
+            aria-expanded={drawerOpen}
+            aria-controls="toc-drawer"
+            aria-label="Table of contents"
+            bind:this={triggerEl}
+            onclick={toggleDrawer}
+        >
+            <svg class="toc-fab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="4.5" cy="6" r="1.25" fill="currentColor" />
+                <line
+                    x1="8"
+                    y1="6"
+                    x2="20"
+                    y2="6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+                <circle cx="4.5" cy="12" r="1.25" fill="currentColor" />
+                <line
+                    x1="8"
+                    y1="12"
+                    x2="15"
+                    y2="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+                <circle cx="4.5" cy="18" r="1.25" fill="currentColor" />
+                <line
+                    x1="8"
+                    y1="18"
+                    x2="17"
+                    y2="18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <button
+        class="toc-backdrop"
+        class:active={drawerOpen}
+        type="button"
+        aria-label="Close table of contents"
+        tabindex="-1"
+        onclick={handleBackdropClick}
+    ></button>
+
+    <div
+        id="toc-drawer"
+        class="toc-drawer"
+        class:active={drawerOpen}
+        role="dialog"
+        aria-modal={drawerOpen}
+        aria-hidden={!drawerOpen}
+        aria-label="Table of contents"
+        bind:this={drawerEl}
+    >
+        <div class="toc-drawer-header">
+            <p class="toc-drawer-title">On this page</p>
+            <button
+                class="toc-drawer-close"
+                type="button"
+                aria-label="Close table of contents"
+                onclick={closeDrawer}
+                ><span aria-hidden="true">&times;</span></button
+            >
+        </div>
+        <nav class="toc" aria-label="Table of contents">
+            {@render headingList(true)}
+        </nav>
+    </div>
 {/if}
 
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    aside {
-        max-width: 70ch;
-        margin: 0 auto;
+    // The sidebar list lives in the entry’s sidebar; the floating button and
+    // drawer take over when that sidebar doesn’t fit
+    @mixin when-sidebar-fits {
+        @include when-entry-sidebar-fits {
+            @content;
+        }
+    }
 
-        @include for-desktop-up {
-            margin: inherit;
-            max-width: 238px;
-            position: sticky;
-            top: var(--s0);
-            left: var(--s0);
-            float: left;
-            max-height: calc(100vh - var(--s0));
-            overflow: auto;
+    .toc-sidebar {
+        display: none;
+
+        @include when-sidebar-fits {
+            display: block;
+        }
+
+        // Matches .link-list below it: the list’s --s0 margin plus its --s-1
+        // row padding. The first item’s top margin collapses into this one.
+        h2 {
+            margin: 0 0 calc(var(--s0) + var(--s-1));
+        }
+    }
+
+    .toc-fab-wrap {
+        position: fixed;
+        bottom: var(--s2);
+        right: var(--s1);
+        z-index: 8;
+        width: 56px;
+        height: 56px;
+
+        @include for-tablet-portrait-down {
+            bottom: max(var(--s-2), env(safe-area-inset-bottom, 0px));
+            right: var(--s0);
+        }
+
+        @include when-sidebar-fits {
+            display: none;
+        }
+    }
+
+    .toc-progress-ring {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        pointer-events: none;
+    }
+
+    .toc-progress-track,
+    .toc-progress-fill {
+        fill: none;
+        stroke-width: 2;
+    }
+
+    .toc-progress-track {
+        stroke: var(--light-grey);
+    }
+
+    .toc-progress-fill {
+        stroke: var(--high-contrast-color);
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.15s ease;
+    }
+
+    .toc-fab {
+        position: absolute;
+        inset: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--background-color);
+        color: var(--high-contrast-color);
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+        transition:
+            color var(--duration),
+            box-shadow var(--duration);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--alpine);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        }
+    }
+
+    .toc-fab-icon {
+        width: 22px;
+        height: 22px;
+        display: block;
+    }
+
+    .toc-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 9;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: var(--background-color-transparent);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity var(--duration) ease,
+            visibility 0s linear var(--duration);
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition:
+                opacity var(--duration) ease,
+                visibility 0s linear 0s;
+        }
+
+        @include when-sidebar-fits {
+            display: none;
+        }
+    }
+
+    .toc-drawer {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        max-height: min(60vh, 28rem);
+        background-color: var(--background-color);
+        border-top: 1px solid var(--light-grey);
+        border-radius: var(--radius) var(--radius) 0 0;
+        padding: var(--s0) var(--s1)
+            max(var(--s1), env(safe-area-inset-bottom, 0px));
+        overflow: hidden;
+        transform: translateY(100%);
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            transform var(--duration) ease,
+            visibility 0s linear var(--duration);
+
+        &.active {
+            transform: translateY(0);
+            visibility: visible;
+            pointer-events: auto;
+            transition:
+                transform var(--duration) ease,
+                visibility 0s linear 0s;
+        }
+
+        .toc {
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+        }
+
+        .toc ul {
+            margin-bottom: 0;
+        }
+
+        @include when-sidebar-fits {
+            display: none;
+        }
+    }
+
+    .toc-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+        margin-bottom: var(--s-1);
+        padding-bottom: var(--s-1);
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .toc-drawer-title {
+        margin: 0;
+        font-size: var(--text-base);
+        font-weight: 500;
+        color: var(--high-contrast-color);
+    }
+
+    .toc-drawer-close {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--high-contrast-color);
+        line-height: 1;
+        padding: var(--s-2);
+        display: flex;
+        align-items: center;
+        font: inherit;
+        font-size: var(--text-lg);
+        border-radius: var(--radius);
+        transition: color var(--duration);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--alpine);
         }
     }
 </style>

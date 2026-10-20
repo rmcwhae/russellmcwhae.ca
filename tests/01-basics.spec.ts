@@ -10,14 +10,21 @@ test.describe('Basic Navigation', () => {
         // Check that the logo is present
         await expect(page.locator('#logo')).toBeVisible()
 
-        // Check that navigation is present (may be hidden on mobile)
-        const nav = page.locator('nav')
-        if (await nav.isVisible()) {
-            await expect(nav).toBeVisible()
-        } else {
-            // On mobile, nav might be hidden until menu is opened
-            await expect(page.locator('.nav-toggle')).toBeVisible()
-        }
+        // Navigation links are attached on every viewport (mobile hides
+        // them behind the toggle, covered below)
+        await expect(
+            page.locator('header nav a[href="/journal"]')
+        ).toBeAttached()
+    })
+
+    test('desktop navigation links are visible', async ({ page }) => {
+        await page.setViewportSize({ width: 1280, height: 800 })
+        await page.goto('/')
+
+        const nav = page.locator('header nav')
+        await expect(nav.locator('a[href="/photography"]')).toBeVisible()
+        await expect(nav.locator('a[href="/journal"]')).toBeVisible()
+        await expect(nav.locator('a[href="/about"]')).toBeVisible()
     })
 
     test('navigation links work correctly', async ({ page }) => {
@@ -26,23 +33,19 @@ test.describe('Basic Navigation', () => {
         // Test Photos link
         await page.goto('/photography')
         await expect(page).toHaveURL('/photography')
-        await expect(page.locator('h1')).toContainText('Portfolio')
+        await expect(page.locator('h1')).toContainText('Photography')
 
         // Test Calendars link
         await page.goto('/calendars')
         await expect(page).toHaveURL('/calendars')
 
-        // Test Projects link
-        await page.goto('/projects')
-        await expect(page).toHaveURL('/projects')
-
         // Test Journal link
         await page.goto('/journal')
         await expect(page).toHaveURL('/journal')
 
-        // Test Micro link
-        await page.goto('/micro')
-        await expect(page).toHaveURL('/micro')
+        // Test About link
+        await page.goto('/about')
+        await expect(page).toHaveURL('/about')
     })
 
     test('logo link returns to homepage', async ({ page }) => {
@@ -68,33 +71,50 @@ test.describe('Basic Navigation', () => {
         await page.setViewportSize({ width: 375, height: 667 })
         await page.goto('/')
 
-        // Check that mobile navigation links exist
+        // The closed menu is visibility: hidden, so wait for Svelte to hydrate
+        // the toggle before clicking, or the click is ignored.
+        await page.waitForFunction(() => {
+            const element = document.querySelector('.nav-toggle')
+            if (!element) return false
+
+            return Object.getOwnPropertySymbols(element).some((symbol) =>
+                String(symbol).includes('events')
+            )
+        })
+
+        const toggle = page.locator('.nav-toggle')
+        await expect(page.locator('.nav-menu a[href="/about"]')).toBeHidden()
+        await toggle.click()
+        await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+
         await expect(
             page.locator('.nav-menu a[href="/photography"]')
         ).toBeVisible()
         await expect(page.locator('.nav-menu a[href="/journal"]')).toBeVisible()
+        await expect(page.locator('.nav-menu a[href="/about"]')).toBeVisible()
+
+        // Page content outside the header is inert while the menu is open
         await expect(
-            page.locator('.nav-menu a[href="/projects"]')
-        ).toBeVisible()
-        await expect(
-            page.locator('.nav-menu a[href="/calendars"]')
-        ).toBeVisible()
-        await expect(page.locator('.nav-menu a[href="/micro"]')).toBeVisible()
+            page.locator('main > :not(header)').first()
+        ).toHaveAttribute('inert', '')
     })
 
     test('footer is present on all pages', async ({ page }) => {
-        const pages = [
-            '/',
-            '/photography',
-            '/journal',
-            '/projects',
-            '/calendars',
-            '/micro',
-        ]
+        const pages = ['/', '/photography', '/journal', '/about', '/calendars']
 
         for (const pagePath of pages) {
             await page.goto(pagePath)
-            await expect(page.locator('footer')).toBeVisible()
+            const footer = page.locator('footer')
+            await expect(footer).toBeVisible()
+            await expect(footer).toContainText(
+                'A personal collection of images and words.'
+            )
+            await expect(footer.locator('a[href="/photography"]')).toHaveText(
+                'images'
+            )
+            await expect(footer.locator('a[href="/journal"]')).toHaveText(
+                'words'
+            )
         }
     })
 })

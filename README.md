@@ -1,6 +1,6 @@
 # My Portfolio
 
-This is my portfolio, deployed to https://russellmcwhae.ca, featuring a fully responsive design and a light/dark mode toggle. Feel free to have a look under the hood. Built using [SvelteKit](https://kit.svelte.dev/). For some more detail on this project, see my journal entry, “[That New-Website Look](https://russellmcwhae.ca/journal/new-website/)”.
+This is my portfolio, deployed to https://russellmcwhae.ca, featuring a fully responsive design and a light/dark mode toggle. Feel free to have a look under the hood. Built using [SvelteKit](https://kit.svelte.dev/).
 
 !["Desktop view"](./docs/desktop.png)
 

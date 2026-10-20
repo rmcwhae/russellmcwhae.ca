@@ -1,6 +1,6 @@
 <script>
     // Thanks to https://github.com/elianiva/elianiva.my.id
-    import { beforeNavigate, afterNavigate } from '$app/navigation'
+    import { beforeNavigate } from '$app/navigation'
 
     const resetProgress = () => {
         clearInterval(counter)
@@ -8,6 +8,8 @@
         speed = 0
     }
     const startProgress = () => {
+        // A second navigation can start before the first one settles
+        resetProgress()
         counter = setInterval(() => {
             if (width === 95) {
                 clearInterval(counter)
@@ -23,19 +25,26 @@
     let width = $state(0)
     let speed = 10
     let isNavigating = $state(false)
+    let latest = 0
 
-    beforeNavigate(({ shallow, type }) => {
-        if (shallow && type === 'goto') return
+    beforeNavigate(({ shallow, type, willUnload, complete }) => {
+        // Leaving the site never completes, and a page restored from the
+        // back/forward cache would show the bar stuck where it stopped
+        if ((shallow && type === 'goto') || willUnload) return
 
+        const id = ++latest
         isNavigating = true
         startProgress()
-    })
 
-    afterNavigate(({ shallow, type }) => {
-        if (shallow && type === 'goto') return
-
-        isNavigating = false
-        resetProgress()
+        // Settles on success, failure or cancellation alike; a superseded
+        // navigation leaves the bar to the one that replaced it
+        complete
+            .catch(() => {})
+            .finally(() => {
+                if (id !== latest) return
+                isNavigating = false
+                resetProgress()
+            })
     })
 </script>
 
@@ -49,7 +58,7 @@
         top: 0;
         left: 0;
         height: 0.25rem;
-        background-color: var(--medium-grey);
+        background-color: var(--alpine);
         z-index: 50;
         transition: width ease-out 0.5s;
         width: 0;
