@@ -760,18 +760,18 @@
             padding-left: var(--s2);
         }
 
+        // Two columns on tablets, with the latest book as a full-width row
+        // below that repeats the label | content split
         .about-band {
             display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr) minmax(
-                    0,
-                    0.9fr
-                );
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
             column-gap: var(--s3);
             row-gap: 0.6rem;
             align-items: start;
             grid-template-areas:
-                'kicker . interests'
-                'title copy interests';
+                'kicker .'
+                'title copy'
+                'interests interests';
         }
 
         .about-kicker {
@@ -790,19 +790,46 @@
 
         .interests-col {
             grid-area: interests;
-            display: grid;
-            grid-template-rows: subgrid;
-            margin-top: 0;
+            padding-top: var(--s1);
+            border-top: 1px solid var(--light-grey);
         }
 
         .latest-book {
             display: grid;
-            grid-row: 1 / -1;
-            grid-template-rows: subgrid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+            column-gap: var(--s3);
+            align-items: baseline;
         }
 
         .latest-book-body {
             margin-top: 0;
+        }
+    }
+
+    @include for-desktop-up {
+        .about-band {
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr) minmax(
+                    0,
+                    0.9fr
+                );
+            grid-template-areas:
+                'kicker . interests'
+                'title copy interests';
+        }
+
+        .interests-col {
+            display: grid;
+            grid-template-rows: subgrid;
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .latest-book {
+            grid-row: 1 / -1;
+            grid-template-columns: none;
+            grid-template-rows: subgrid;
+            align-items: normal;
         }
     }
 
