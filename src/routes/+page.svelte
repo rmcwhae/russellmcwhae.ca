@@ -749,8 +749,9 @@
 
         .interests-col {
             grid-area: interests;
-            padding-top: var(--s1);
-            border-top: 1px solid var(--light-grey);
+            margin-top: var(--s0);
+            padding-top: 0;
+            border-top: none;
         }
 
         .latest-book {
