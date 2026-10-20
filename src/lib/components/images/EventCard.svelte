@@ -17,7 +17,7 @@
     let { filePath, width = 3, height = 2, title, href } = $props()
 </script>
 
-<a class="event-card" {href}>
+<a class="event-card" {href} title={title}>
     {#if filePath}
         <Image
             {filePath}
@@ -30,7 +30,9 @@
     {:else}
         <div class="event-placeholder"></div>
     {/if}
-    <span class="event-title">{title}</span>
+    <span class="event-title">
+        <span class="event-title-text">{title}</span>
+    </span>
 </a>
 
 <style>
@@ -68,19 +70,36 @@
     }
 
     .event-title {
+        /* Room for Cardo bold descenders between lines and above the card edge */
+        --title-leading: 1.55;
+
         position: absolute;
         inset: auto 0 0;
         margin: 0;
-        padding: 1.5rem 0.55rem 0.45rem;
+        padding: 1.5rem 0.55rem 0.4rem;
         color: var(--paper);
         font-family: var(--font-serif);
         font-size: var(--text-xs);
         font-weight: var(--serif-heading-weight);
-        line-height: var(--leading-snug);
+        line-height: var(--title-leading);
         letter-spacing: var(--tracking-heading);
-        text-wrap: pretty;
         background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
         pointer-events: none;
+    }
+
+    .event-title-text {
+        /*
+         * Clamp on an inner span — padding/gradient on the parent confuse line-clamp.
+         * max-height matches two line boxes so descenders aren’t shaved off.
+         */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        max-height: calc(var(--title-leading) * 2em);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow-wrap: anywhere;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -95,18 +114,10 @@
 
     @media (min-width: 577px) {
         .event-title {
-            padding: 2.5rem 1rem 0.85rem;
-            font-size: var(--text-md);
-        }
-    }
+            --title-leading: 1.45;
 
-    @media (max-width: 576px) {
-        .event-title {
-            /* Keep long titles from dominating the shorter mosaic cells */
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            overflow: hidden;
+            padding: 2.5rem 1rem 0.5rem;
+            font-size: var(--text-md);
         }
     }
 </style>
