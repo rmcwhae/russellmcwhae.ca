@@ -100,6 +100,7 @@
                             width={image.width}
                             height={image.height}
                             customMetadata={image.customMetadata}
+                            placeholder={image.placeholder}
                             sizes={i === 0
                                 ? homeLeadSizes
                                 : i === 1
@@ -487,7 +488,9 @@
 
     @media (prefers-reduced-motion: no-preference) {
         .photo :global(img) {
-            transition: transform 600ms ease;
+            transition:
+                transform 600ms ease,
+                opacity 0.3s ease;
         }
 
         .photo:hover :global(img) {

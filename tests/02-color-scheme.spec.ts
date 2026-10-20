@@ -103,7 +103,7 @@ test.describe('Color Scheme Dropdown', () => {
         )
         await expect(page.locator('body')).toHaveCSS(
             'background-color',
-            'rgb(25, 27, 26)'
+            'rgb(19, 21, 20)'
         )
     })
 
@@ -128,7 +128,7 @@ test.describe('Color Scheme Dropdown', () => {
         )
         await expect(page.locator('body')).toHaveCSS(
             'background-color',
-            'rgb(25, 27, 26)'
+            'rgb(19, 21, 20)'
         )
     })
 

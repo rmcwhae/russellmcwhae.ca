@@ -11,10 +11,18 @@
      * @property {number} [height]
      * @property {string} title
      * @property {string} href
+     * @property {string} [placeholder]
      */
 
     /** @type {Props} */
-    let { filePath, width = 3, height = 2, title, href } = $props()
+    let {
+        filePath,
+        width = 3,
+        height = 2,
+        title,
+        href,
+        placeholder = undefined,
+    } = $props()
 </script>
 
 <a class="event-card" {href} {title}>
@@ -26,6 +34,7 @@
             customMetadata={undefined}
             sizes={gallerySizes}
             photoswipe={false}
+            {placeholder}
         />
     {:else}
         <div class="event-placeholder"></div>
@@ -106,7 +115,9 @@
 
     @media (prefers-reduced-motion: no-preference) {
         .event-card :global(img) {
-            transition: transform 600ms ease;
+            transition:
+                transform 600ms ease,
+                opacity 0.3s ease;
         }
 
         .event-card:hover :global(img) {

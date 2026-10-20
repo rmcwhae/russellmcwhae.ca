@@ -14,6 +14,19 @@ test.describe('Photos and Events', () => {
         await expect(page.locator('#gallery')).toBeVisible()
     })
 
+    test('photography thumbnails have blurred placeholders', async ({
+        page,
+    }) => {
+        await page.goto('/photography')
+
+        const tile = page.locator('#gallery .has-lqip').first()
+        await expect(tile).toBeVisible()
+        const lqip = await tile.evaluate((el) =>
+            el.style.getPropertyValue('--lqip')
+        )
+        expect(lqip).toContain('data:image/webp;base64,')
+    })
+
     test('photography page has links to events and calendars', async ({
         page,
     }) => {

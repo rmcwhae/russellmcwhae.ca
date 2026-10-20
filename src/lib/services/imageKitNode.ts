@@ -1,6 +1,7 @@
 import ImageKit from '@imagekit/nodejs'
 import { IMAGEKIT_PRIVATE_KEY } from '$app/env/private'
 import { building, dev } from '$app/env'
+import { placeholderFor } from './placeholders.js'
 
 const CONFIG_OPTIONS = { privateKey: IMAGEKIT_PRIVATE_KEY }
 let client: ImageKit | null = null
@@ -17,10 +18,14 @@ function getClient(): ImageKit {
 
 export type ImageKitItem = ImageKit.File | ImageKit.Folder
 
-/** An ImageKit file or folder, with a path for either and a lightbox flag */
+/**
+ * An ImageKit file or folder, with a path for either, a lightbox flag, and
+ * a blurred placeholder data URI for images
+ */
 export type ProcessedFile = ImageKitItem & {
     filePath: string
     photoswipe: boolean
+    placeholder?: string
 }
 
 function isFile(item: ImageKitItem): item is ImageKit.File {
@@ -70,17 +75,24 @@ async function fetchFiles(
             )
         }
 
-        return items.map((item) => {
-            const file = isFile(item)
-            const filePath = file
-                ? (item.filePath ?? '')
-                : ('folderPath' in item && item.folderPath) || ''
-            return {
-                ...item,
-                filePath,
-                photoswipe: file,
-            }
-        })
+        return await Promise.all(
+            items.map(async (item) => {
+                const file = isFile(item)
+                const filePath = file
+                    ? (item.filePath ?? '')
+                    : ('folderPath' in item && item.folderPath) || ''
+                const placeholder =
+                    file && item.width && item.height
+                        ? await placeholderFor({ ...item, filePath })
+                        : undefined
+                return {
+                    ...item,
+                    filePath,
+                    photoswipe: file,
+                    ...(placeholder && { placeholder }),
+                }
+            })
+        )
     } catch (error) {
         // Fail builds and prerendering loudly rather than ship empty pages
         if (!dev) {

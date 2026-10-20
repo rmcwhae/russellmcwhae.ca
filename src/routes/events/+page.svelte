@@ -36,6 +36,7 @@
                 filePath: featured?.filePath,
                 width: featured?.width || 3,
                 height: featured?.height || 2,
+                placeholder: featured?.placeholder,
                 title: event.title,
                 href: `/events/${event.name}`,
             }

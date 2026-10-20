@@ -16,6 +16,7 @@
      * @property {boolean} [photoswipe]
      * @property {boolean} [priority]
      * @property {string} sizes
+     * @property {string} [placeholder] Blurred preview data URI
      */
 
     /** @type {Props} */
@@ -28,7 +29,21 @@
         photoswipe = false,
         priority = false,
         sizes,
+        placeholder = undefined,
     } = $props()
+
+    /** @type {HTMLImageElement | undefined} */
+    let img = $state()
+    let mounted = $state(false)
+    let loaded = $state(false)
+
+    // Images can finish loading before hydration, when onload has no
+    // listener yet. Fading only starts once mounted, so without JavaScript
+    // images are simply visible.
+    $effect(() => {
+        mounted = true
+        if (img?.complete) loaded = true
+    })
 
     const src = $derived(
         buildURL(filePath, {
@@ -42,6 +57,9 @@
 
 {#snippet photo()}
     <img
+        bind:this={img}
+        class:pending={mounted && !loaded}
+        onload={() => (loaded = true)}
         loading={priority ? 'eager' : 'lazy'}
         fetchpriority={priority ? 'high' : undefined}
         {sizes}
@@ -53,7 +71,11 @@
     />
 {/snippet}
 
-<div class:lockedRatio>
+<div
+    class:lockedRatio
+    class:has-lqip={placeholder}
+    style={placeholder ? `--lqip: url("${placeholder}")` : undefined}
+>
     {#if photoswipe}
         <a
             href={fullSrc}
@@ -73,11 +95,39 @@
 <style>
     div {
         line-height: 0;
+        background-color: var(--stone);
     }
     img {
         border-radius: var(--radius);
         width: 100%;
         height: auto;
+    }
+
+    /* The tiny preview, blurred and scaled up a touch to hide soft edges */
+    .has-lqip {
+        position: relative;
+        overflow: hidden;
+    }
+    .has-lqip::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--lqip) center / cover no-repeat;
+        filter: blur(12px);
+        transform: scale(1.1);
+    }
+    /* Stacks above the preview; locked-ratio images are already positioned */
+    .has-lqip:not(.lockedRatio) img {
+        position: relative;
+    }
+
+    .pending {
+        opacity: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        img {
+            transition: opacity 0.3s ease;
+        }
     }
     .lockedRatio {
         position: relative;
