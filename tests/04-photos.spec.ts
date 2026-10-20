@@ -21,11 +21,11 @@ test.describe('Photos and Events', () => {
 
         const expeditions = page.locator('a[href="/events"]')
         await expect(expeditions).toBeVisible()
-        await expect(expeditions).toContainText('Field Expeditions')
+        await expect(expeditions).toContainText('Field expeditions')
 
         const calendars = page.locator('a[href="/calendars"]')
         await expect(calendars).toBeVisible()
-        await expect(calendars).toContainText('Looking for Calendars?')
+        await expect(calendars).toContainText('Looking for calendars?')
     })
 
     test('events page loads correctly', async ({ page }) => {
@@ -48,9 +48,7 @@ test.describe('Photos and Events', () => {
             'Complete photo sets from individual trips.'
         )
         await expect(page.locator('.archive')).toBeVisible()
-        await expect(page.locator('.archive-heading')).toContainText(
-            'All expeditions'
-        )
+        await expect(page.locator('.year-group').first()).toBeVisible()
     })
 
     test('events display with correct information', async ({ page }) => {

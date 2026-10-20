@@ -8,10 +8,10 @@ test.describe('Journal Page', () => {
         await expect(page).toHaveTitle(/Journal/)
 
         // Check that the page has content
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
 
         // Check the sidebar introduction
-        await expect(page.locator('.sidebar')).toContainText(
+        await expect(page.locator('.sidebar-layout-aside')).toContainText(
             'I’ve kept an online journal since 2016'
         )
     })
@@ -27,13 +27,13 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         // Check that word count is displayed
-        await expect(page.locator('.sidebar .count')).toContainText(
-            'Total words:'
-        )
+        await expect(
+            page.locator('.sidebar-layout-aside .count')
+        ).toContainText('Total words:')
 
         // Check that word count is a number with thousands separators
         const wordCountText = await page
-            .locator('.sidebar .count')
+            .locator('.sidebar-layout-aside .count')
             .textContent()
         expect(wordCountText).toMatch(/Total words: \d{1,3}(,\d{3})*/)
     })
@@ -162,12 +162,12 @@ test.describe('Journal Page', () => {
         // Test desktop view
         await page.setViewportSize({ width: 1200, height: 800 })
         await page.goto('/journal')
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
 
         // Test mobile view
         await page.setViewportSize({ width: 375, height: 667 })
         await page.goto('/journal')
-        await expect(page.locator('.restricted-width')).toBeVisible()
+        await expect(page.locator('.archive')).toBeVisible()
     })
 
     test('journal entries are sorted by date', async ({ page }) => {

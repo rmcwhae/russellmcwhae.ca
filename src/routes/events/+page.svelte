@@ -68,93 +68,29 @@
 
 <SEO title="Field Expeditions" />
 
-<div class="restricted-width">
-    <div class="page-header">
-        <h1>Field Expeditions</h1>
-        <p class="lede">Complete photo sets from individual trips.</p>
-    </div>
+<header class="page-header">
+    <h1>Field Expeditions</h1>
+    <p class="lede">Complete photo sets from individual trips.</p>
+</header>
 
-    <section class="archive" aria-label="All expeditions">
-        <p class="eyebrow archive-heading">All expeditions</p>
-
-        {#each eventsByYear as [year, yearEvents] (year)}
-            <div class="year-group">
-                <h2 class="year-label">{year}</h2>
-                <div class="year-mosaic">
-                    <Gallery
-                        images={mosaicImages(yearEvents)}
-                        {rowHeight}
-                        {gutter}
-                        imageComponent={EventCard}
-                    />
-                </div>
+<section class="archive" aria-label="All expeditions">
+    {#each eventsByYear as [year, yearEvents] (year)}
+        <div class="year-group">
+            <h2 class="year-label">{year}</h2>
+            <div class="year-mosaic">
+                <Gallery
+                    images={mosaicImages(yearEvents)}
+                    {rowHeight}
+                    {gutter}
+                    imageComponent={EventCard}
+                />
             </div>
-        {/each}
-    </section>
-</div>
+        </div>
+    {/each}
+</section>
 
-<style lang="scss">
-    @use '../../lib/scss/breakpoints' as *;
-
-    .restricted-width {
-        width: 100%;
-    }
-
-    .archive-heading {
-        margin: 0 0 var(--s1);
-    }
-
-    .year-group {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--s-2);
-    }
-
-    .year-group + .year-group {
-        margin-top: var(--s2);
-        padding-top: var(--s1);
-        border-top: 1px solid var(--light-grey);
-    }
-
-    .year-label {
-        margin: 0;
-        padding-top: var(--s-1);
-        font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        font-weight: 600;
-        line-height: var(--leading-body);
-        letter-spacing: 0;
-        color: var(--medium-grey);
-    }
-
+<style>
     .year-mosaic {
         min-width: 0;
-    }
-
-    @include for-phone-only {
-        .year-group {
-            gap: 0.35rem;
-        }
-
-        .year-group + .year-group {
-            margin-top: var(--s0);
-            padding-top: var(--s0);
-        }
-
-        .year-label {
-            padding-top: 0;
-            font-size: var(--text-xs);
-        }
-    }
-
-    @include for-tablet-landscape-up {
-        .year-group {
-            grid-template-columns: 5rem minmax(0, 1fr);
-            gap: var(--s2);
-        }
-
-        .year-label {
-            padding-top: 0.35rem;
-        }
     }
 </style>

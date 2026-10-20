@@ -41,27 +41,31 @@
     })
 
     const destinations = [
-        { href: '/events', text: 'Field Expeditions' },
-        { href: '/calendars', text: 'Looking for Calendars?' },
+        { href: '/events', text: 'Field expeditions' },
+        { href: '/calendars', text: 'Looking for calendars?' },
     ]
 </script>
 
-<div class="page-header">
+<SEO title="Photography" />
+
+<header class="page-header">
     <h1>Photography</h1>
     <p class="lede">
         A collection of landscape images from Western Canada and beyond.
     </p>
-    <nav class="destinations" aria-label="Related">
-        {#each destinations as destination (destination.href)}
-            <a class="title-sm" href={destination.href}>
-                <span>{destination.text}</span>
-                <ArrowNorthEast />
-            </a>
-        {/each}
+    <nav aria-label="Related">
+        <ul class="link-list destinations">
+            {#each destinations as destination (destination.href)}
+                <li>
+                    <a href={destination.href}>
+                        <span class="link-list-title">{destination.text}</span>
+                        <ArrowNorthEast />
+                    </a>
+                </li>
+            {/each}
+        </ul>
     </nav>
-</div>
-
-<SEO title="Photography" />
+</header>
 
 <Gallery images={visibleImages} rowHeight={300} />
 
@@ -78,19 +82,18 @@
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
 
+    // Framed by rules above and below, side by side from tablet width
     .destinations {
         display: grid;
-        margin: var(--s1) 0 0;
-        border-top: 1px solid var(--light-grey);
+        margin-top: var(--s1);
+        border-block: 1px solid var(--light-grey);
     }
 
     .destinations a {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
-        padding: 0.85rem 0;
-        border-bottom: 1px solid var(--light-grey);
+        gap: var(--s0);
     }
 
     @include for-tablet-portrait-up {
@@ -98,12 +101,13 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        .destinations a:first-child {
+        .destinations li:first-child {
             padding-right: var(--s1);
             border-right: 1px solid var(--light-grey);
+            border-bottom: none;
         }
 
-        .destinations a:last-child {
+        .destinations li:last-child {
             padding-left: var(--s1);
         }
     }

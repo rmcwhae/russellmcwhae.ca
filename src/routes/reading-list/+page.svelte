@@ -32,62 +32,54 @@
 
 <SEO title="Reading List" />
 
-<div class="restricted-width">
-    <div class="page-header">
-        <h1>Reading List</h1>
-        <p class="lede">
-            Reading is one of the ways I make sense of the world. Since 2012,
-            I’ve tracked all the books I’ve read.
-        </p>
+<header class="page-header">
+    <h1>Reading List</h1>
+    <p class="lede">
+        Reading is one of the ways I make sense of the world. Since 2012, I’ve
+        tracked all the books I’ve read.
+    </p>
+</header>
+
+<section class="archive" aria-label="All books">
+    <div class="archive-header">
+        <p class="eyebrow">All books</p>
+        <input
+            class="archive-search"
+            type="search"
+            placeholder="Filter…"
+            bind:value={searchQuery}
+            aria-label="Filter books"
+        />
     </div>
 
-    <section class="archive" aria-label="All books">
-        <div class="archive-header">
-            <p class="eyebrow">All books</p>
-            <input
-                class="archive-search"
-                type="search"
-                placeholder="Filter…"
-                bind:value={searchQuery}
-                aria-label="Filter books"
-            />
-        </div>
-
-        {#if booksByYear.length === 0}
-            <p class="no-results">No books match your search.</p>
-        {:else}
-            {#each booksByYear as [year, yearBooks] (year)}
-                <div class="year-group">
-                    <h2 class="year-label">
-                        {year === earlierYear ? 'Earlier' : year}
-                    </h2>
-                    <div class="year-items">
-                        {#each yearBooks as book (book.title)}
-                            <div class="book-row">
-                                <span class="book-title">{book.title}</span>
-                                <span class="book-meta">
-                                    <span>{book.author}</span>
-                                    {#if book.audiobook}
-                                        <span class="caps book-format"
-                                            >Audio</span
-                                        >
-                                    {/if}
-                                </span>
-                            </div>
-                        {/each}
-                    </div>
+    {#if booksByYear.length === 0}
+        <p class="no-results">No books match your search.</p>
+    {:else}
+        {#each booksByYear as [year, yearBooks] (year)}
+            <div class="year-group">
+                <h2 class="year-label">
+                    {year === earlierYear ? 'Earlier' : year}
+                </h2>
+                <div class="year-items">
+                    {#each yearBooks as book (book.title)}
+                        <div class="book-row">
+                            <span class="book-title">{book.title}</span>
+                            <span class="book-meta">
+                                <span>{book.author}</span>
+                                {#if book.audiobook}
+                                    <span class="caps book-format">Audio</span>
+                                {/if}
+                            </span>
+                        </div>
+                    {/each}
                 </div>
-            {/each}
-        {/if}
-    </section>
-</div>
+            </div>
+        {/each}
+    {/if}
+</section>
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
-
-    .restricted-width {
-        width: 100%;
-    }
 
     .archive-header {
         display: flex;
@@ -110,37 +102,6 @@
         background: var(--background-color);
         color: var(--high-contrast-color);
         width: 12rem;
-    }
-
-    .year-group {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--s-2);
-    }
-
-    .year-group + .year-group {
-        margin-top: -1px;
-        border-top: 1px solid var(--light-grey);
-        padding-top: var(--s-1);
-    }
-
-    .year-label {
-        margin: 0;
-        padding-top: var(--s-1);
-        font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        font-weight: 600;
-        line-height: var(--leading-body);
-        letter-spacing: 0;
-        color: var(--medium-grey);
-    }
-
-    .earlier-note {
-        margin: 0;
-        padding-top: var(--s-1);
-        color: var(--text-color);
-        font-size: var(--text-sm);
-        line-height: var(--leading-compact);
     }
 
     .book-row {
@@ -188,13 +149,7 @@
 
     @include for-tablet-landscape-up {
         .year-group {
-            grid-template-columns: 5rem minmax(0, 1fr);
-            gap: var(--s2);
             align-items: baseline;
-        }
-
-        .year-label {
-            padding-top: 0;
         }
 
         .book-row {

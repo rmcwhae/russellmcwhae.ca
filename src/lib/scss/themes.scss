@@ -17,6 +17,10 @@
     --light-grey: var(--stone);
     --medium-grey: light-dark(#5e615c, #a7aaa2);
 
+    // Fixed in both schemes: scrims and muted text over photographs
+    --scrim-color: #090a09;
+    --on-image-muted: #a7aaa2;
+
     accent-color: var(--alpine);
 
     &:has(> head > meta[name='color-scheme'][content='dark']) {

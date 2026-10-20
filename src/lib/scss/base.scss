@@ -31,9 +31,85 @@
     }
 }
 
-.restricted-width {
-    max-width: $restricted-width;
-    margin-inline: auto;
+// Main column at the reading measure with a sidebar beside it; on phones
+// the sidebar drops below the main column. On desktop the sidebar follows the
+// measure at a fixed gap rather than sitting against the right edge.
+.sidebar-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+
+    @include for-tablet-wide-up {
+        display: grid;
+        grid-template-columns: minmax(0, 2.75fr) minmax(0, 1.25fr);
+        align-items: start;
+    }
+
+    @include for-desktop-up {
+        grid-template-columns: minmax(0, var(--measure)) 20rem;
+    }
+}
+
+.sidebar-layout-main {
+    min-width: 0;
+    max-width: var(--measure);
+}
+
+.sidebar-layout-aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    min-width: 0;
+
+    @include for-tablet-wide-up {
+        justify-self: end;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    @include for-desktop-up {
+        justify-self: start;
+    }
+}
+
+// A ruled break before a labelled section
+.section-break {
+    margin-top: var(--s4);
+    padding-top: var(--s2);
+    border-top: 1px solid var(--light-grey);
+
+    @include for-phone-only {
+        margin-top: var(--s2);
+    }
+}
+
+// Year-grouped archives: the year sits above each group, or beside it on
+// wider screens
+.year-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-2);
+
+    & + & {
+        margin-top: var(--s1);
+        padding-top: var(--s0);
+        border-top: 1px solid var(--light-grey);
+    }
+
+    @include for-tablet-landscape-up {
+        grid-template-columns: 5rem minmax(0, 1fr);
+        gap: var(--s2);
+    }
+}
+
+.year-label {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: var(--leading-body);
+    letter-spacing: 0;
+    color: var(--medium-grey);
 }
 
 article img {
@@ -44,14 +120,6 @@ article img {
 
 article header {
     text-align: left;
-}
-
-@media screen and (max-width: 1200px) {
-    article header,
-    article nav {
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 picture img {

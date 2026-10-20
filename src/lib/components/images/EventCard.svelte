@@ -35,7 +35,9 @@
     </span>
 </a>
 
-<style>
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
+
     .event-card {
         display: block;
         position: relative;
@@ -79,7 +81,11 @@
         padding: 1.5rem 0.55rem 0.4rem;
         color: var(--paper);
         line-height: var(--title-leading);
-        background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+        background: linear-gradient(
+            to top,
+            color-mix(in srgb, var(--scrim-color) 70%, transparent),
+            transparent
+        );
         pointer-events: none;
     }
 
@@ -108,7 +114,7 @@
         }
     }
 
-    @media (min-width: 577px) {
+    @include for-tablet-portrait-up {
         .event-title {
             --title-leading: 1.45;
 

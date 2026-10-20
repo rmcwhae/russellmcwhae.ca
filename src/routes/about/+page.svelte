@@ -1,6 +1,6 @@
 <script>
     import SEO from '#lib/components/base/SEO.svelte'
-    import Interests from '#lib/components/misc/Interests.svelte'
+    import LinkList from '#lib/components/misc/LinkList.svelte'
     import StaticPicture from '#lib/components/images/StaticPicture.svelte'
     import { portraitPicture } from '#lib/utils/images/static.js'
     import { mountPhotoSwipe } from '#lib/components/images/mountPhotoSwipe.js'
@@ -28,7 +28,7 @@
     description="Russell McWhae is a web developer, photographer, and outdoor adventurer."
 />
 
-<div class="about restricted-width">
+<div class="about">
     <header class="page-header">
         <h1>About Me</h1>
         <p class="lede">
@@ -37,8 +37,8 @@
         </p>
     </header>
 
-    <div class="split">
-        <article class="main">
+    <div class="sidebar-layout">
+        <article class="sidebar-layout-main">
             <figure class="portrait-inline">
                 <a
                     href="/portrait/portrait-2048.jpg"
@@ -112,7 +112,7 @@
             </div>
         </article>
 
-        <aside class="sidebar">
+        <aside class="sidebar-layout-aside">
             <figure class="portrait">
                 <a
                     href="/portrait/portrait-2048.jpg"
@@ -126,7 +126,7 @@
                     />
                 </a>
             </figure>
-            <Interests
+            <LinkList
                 heading="My work"
                 items={[
                     { href: '/photography', title: 'Photography' },
@@ -138,39 +138,27 @@
                     },
                 ]}
             />
-            <Interests />
+            <LinkList
+                heading="Beyond the work"
+                items={[
+                    {
+                        href: '/reading-list',
+                        title: 'Reading list',
+                        description: 'Books I have read.',
+                    },
+                    {
+                        href: '/uses',
+                        title: 'What I use',
+                        description: 'Tools used in my work.',
+                    },
+                ]}
+            />
         </aside>
     </div>
 </div>
 
 <style lang="scss">
     @use '../../lib/scss/breakpoints' as *;
-
-    .about {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .split {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main {
-        order: 1;
-        margin: 0;
-        min-width: 0;
-    }
-
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s2);
-        order: 2;
-        min-width: 0;
-        margin-top: var(--s3);
-    }
 
     .portrait,
     .portrait-inline {
@@ -209,37 +197,6 @@
     }
 
     @include for-tablet-wide-up {
-        .page-header {
-            margin-bottom: var(--s2);
-        }
-
-        .split {
-            display: grid;
-            grid-template-columns: minmax(0, 2.75fr) minmax(0, 1.25fr);
-            align-items: start;
-        }
-
-        .sidebar,
-        .main {
-            order: 0;
-        }
-
-        .main {
-            grid-column: 1;
-            grid-row: 1;
-            padding-inline-end: var(--s2);
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: var(--s2);
-            grid-column: 2;
-            grid-row: 1;
-            margin-top: 0;
-            padding-inline-start: var(--s2);
-        }
-
         .portrait-inline {
             display: none;
         }

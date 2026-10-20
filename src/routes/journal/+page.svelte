@@ -2,27 +2,37 @@
     import { resolve } from '$app/paths'
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
+    import LinkList from '#lib/components/misc/LinkList.svelte'
     import { EDITOR_PICKS } from '#lib/constants/journal'
 
     let { data } = $props()
     let posts = $derived(data.posts)
     let totalWordCount = $derived(data.totalWordCount)
+
+    const starters = EDITOR_PICKS.map((pick) => ({
+        href: resolve('/journal/[slug]', { slug: pick.slug }),
+        title: pick.title,
+    }))
 </script>
 
 <SEO title="Journal" />
 
-<div class="journal restricted-width">
-    <div class="page-header">
-        <h1>Journal</h1>
-        <p class="lede">
-            Long-form thoughts on technology, the outdoors, and life.
-        </p>
+<header class="page-header">
+    <h1>Journal</h1>
+    <p class="lede">
+        Long-form thoughts on technology, the outdoors, and life.
+    </p>
+</header>
+
+<div class="sidebar-layout">
+    <div class="sidebar-layout-main archive">
+        <JournalEntrySet {posts} />
     </div>
 
-    <div class="split">
-        <aside class="sidebar">
-            <p class="eyebrow">About</p>
-            <p class="about-copy">
+    <aside class="sidebar-layout-aside">
+        <div class="about">
+            <h2 class="eyebrow">About</h2>
+            <p>
                 I’ve kept an online journal since 2016. Text generation and
                 ideas are my own, though I do use AI for editing and refining as
                 <span class="nowrap">of 2025.</span>
@@ -32,147 +42,32 @@
                     >Reading list</a
                 >
             </p>
-            <div class="start-here">
-                <p class="eyebrow">Start Here</p>
-                <ul class="starters">
-                    {#each EDITOR_PICKS as pick (pick.slug)}
-                        <li>
-                            <a
-                                href={resolve('/journal/[slug]', {
-                                    slug: pick.slug,
-                                })}>{pick.title}</a
-                            >
-                        </li>
-                    {/each}
-                </ul>
-            </div>
-            <p class="count">
-                Total words: {totalWordCount.toLocaleString('en-US')}
-            </p>
-        </aside>
-
-        <div class="main">
-            <div class="archive">
-                <JournalEntrySet {posts} />
-            </div>
         </div>
-    </div>
+        <LinkList heading="Start here" items={starters} />
+        <p class="count">
+            Total words: {totalWordCount.toLocaleString('en-US')}
+        </p>
+    </aside>
 </div>
 
-<style lang="scss">
-    @use '../../lib/scss/breakpoints' as *;
-
-    .journal {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+<style>
+    .archive :global(.entries > section:last-child) {
+        border-bottom: none;
     }
 
-    .split {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main {
-        order: 1;
-    }
-
-    .sidebar {
-        order: 2;
-        min-width: 0;
-        margin-top: var(--s3);
-    }
-
-    .archive {
-        min-width: 0;
-        margin-top: var(--s1);
-
-        :global(.entries > section:last-child) {
-            border-bottom: none;
-        }
-    }
-
-    @include for-phone-only {
-        .archive {
-            margin-top: 0;
-        }
-    }
-
-    .sidebar .eyebrow {
-        margin: 0 0 0.75rem;
-    }
-
-    .start-here {
-        margin-top: var(--s2);
-    }
-
-    .sidebar p:not(.eyebrow):not(.count) {
-        margin: 0 0 1rem;
-        font-size: var(--text-sm);
-        line-height: var(--leading-compact);
-    }
-
-    .sidebar p.about-copy:not(.eyebrow) {
-        line-height: 1.3;
-    }
-
-    .starters {
-        list-style: none;
+    .about h2 {
         margin: 0;
-        padding: 0;
     }
 
-    .starters li:not(:last-child) {
-        border-bottom: 1px solid var(--light-grey);
-    }
-
-    .starters a {
-        display: block;
-        padding: 0.75rem 0;
-        font-family: var(--font-sans);
+    .about p {
+        margin: var(--s0) 0 0;
         font-size: var(--text-sm);
-        font-weight: 500;
         line-height: var(--leading-compact);
     }
 
     .count {
-        margin: var(--s1) 0 0;
+        margin: 0;
         font-size: var(--text-sm);
         color: var(--medium-grey);
-    }
-
-    @include for-tablet-wide-up {
-        .page-header {
-            margin-bottom: var(--s2);
-        }
-
-        .split {
-            display: grid;
-            grid-template-columns: minmax(0, 2.75fr) minmax(0, 1.25fr);
-            align-items: start;
-        }
-
-        .sidebar,
-        .main {
-            order: 0;
-        }
-
-        .main {
-            grid-column: 1;
-            grid-row: 1;
-            min-width: 0;
-            padding-inline-end: var(--s2);
-        }
-
-        .sidebar {
-            grid-column: 2;
-            grid-row: 1;
-            margin-top: 0;
-            padding-inline-start: var(--s2);
-        }
-
-        .archive {
-            margin-top: 0;
-        }
     }
 </style>

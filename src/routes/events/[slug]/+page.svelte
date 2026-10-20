@@ -12,13 +12,13 @@
 
 <SEO {title} />
 
-<div class="page-header">
+<header class="page-header">
     <p class="eyebrow">
         <a href="/events">Field Expeditions</a>
     </p>
     <h1>{title}</h1>
     <p class="meta">{date} · {count} photos</p>
-</div>
+</header>
 
 <Gallery {images} />
 

@@ -85,12 +85,7 @@
 
     {#if favourites.length}
         <section class="band">
-            <div class="section-label">
-                <h2 class="eyebrow">Favourite Landscapes</h2>
-                <div class="photos-link photos-link-aside">
-                    <Button href="/photography" text="View all photos" right />
-                </div>
-            </div>
+            <h2 class="eyebrow band-heading">Favourite landscapes</h2>
             <div class="moments" id="home-favourites">
                 {#each favourites as image, i (image.filePath)}
                     <figure
@@ -126,15 +121,15 @@
                     </figure>
                 {/each}
             </div>
-            <div class="photos-link photos-link-below">
+            <div class="photos-link">
                 <Button href="/photography" text="View all photos" right />
             </div>
         </section>
     {/if}
 
     {#if latestPost}
-        <section class="band journal-band">
-            <h2 class="eyebrow journal-heading">Journal</h2>
+        <section class="band section-break journal-band">
+            <h2 class="eyebrow band-heading journal-heading">Journal</h2>
             <div class="journal-grid">
                 <div class="journal-featured">
                     <JournalEntry
@@ -172,11 +167,11 @@
         </section>
     {/if}
 
-    <section class="band about-band">
-        <h2 class="eyebrow about-kicker">About</h2>
-        <p class="about-title">
+    <section class="band section-break about-band">
+        <p class="eyebrow about-kicker">About</p>
+        <h2 class="about-title">
             A balance of logic, curiosity, and creativity.
-        </p>
+        </h2>
         <div class="about-copy">
             <p>
                 My work has moved through structural engineering, biomedical
@@ -206,7 +201,7 @@
         </div>
         <div class="interests-col">
             <div class="latest-book">
-                <h2 class="eyebrow">Latest Book Read</h2>
+                <h3 class="eyebrow">Latest book read</h3>
                 <div class="latest-book-body">
                     <div class="latest-book-copy">
                         <p class="title-sm">{latestBook.title}</p>
@@ -282,8 +277,8 @@
         pointer-events: none;
         background: linear-gradient(
             to bottom,
-            rgb(0 0 0 / 42%) 0%,
-            rgb(0 0 0 / 16%) 46%,
+            color-mix(in srgb, var(--scrim-color) 42%, transparent) 0%,
+            color-mix(in srgb, var(--scrim-color) 16%, transparent) 46%,
             transparent 100%
         );
     }
@@ -296,8 +291,8 @@
         pointer-events: none;
         background: linear-gradient(
             to top,
-            rgb(9 10 9 / 75%) 0%,
-            rgb(9 10 9 / 42%) 28%,
+            color-mix(in srgb, var(--scrim-color) 75%, transparent) 0%,
+            color-mix(in srgb, var(--scrim-color) 42%, transparent) 28%,
             transparent 58%
         );
     }
@@ -331,7 +326,7 @@
 
     .hero-camera {
         display: flex;
-        color: #a7aaa2;
+        color: var(--on-image-muted);
     }
 
     @include for-phone-only {
@@ -394,16 +389,9 @@
         }
     }
 
-    .band {
-        margin-top: var(--s4);
-        padding-top: var(--s2);
-        border-top: 1px solid var(--light-grey);
-    }
-
     .hero + .band {
         margin-top: var(--s3);
         padding-top: var(--s0);
-        border-top: none;
     }
 
     @include for-phone-only {
@@ -411,38 +399,14 @@
             margin-top: var(--s1);
             padding-top: 0;
         }
-
-        .hero + .band + .band,
-        .about-band {
-            margin-top: var(--s2);
-        }
     }
 
-    .section-label {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 1rem;
-        margin-bottom: var(--s1);
+    .band-heading {
+        margin: 0 0 var(--s1);
     }
 
-    .photos-link-below {
-        display: none;
-    }
-
-    @include for-phone-only {
-        .photos-link-aside {
-            display: none;
-        }
-
-        .photos-link-below {
-            display: block;
-            margin-top: var(--s1);
-        }
-    }
-
-    .section-label :global(h2) {
-        margin: 0;
+    .photos-link {
+        margin-top: var(--s1);
     }
 
     .moments {
@@ -465,10 +429,10 @@
     .index {
         flex: none;
         font-family: var(--font-sans);
+        color: var(--on-image-muted);
         font-size: var(--text-caps);
         font-variant-numeric: tabular-nums;
         letter-spacing: var(--tracking-caps);
-        opacity: 0.7;
     }
 
     @include for-phone-only {
@@ -487,7 +451,11 @@
             margin: 0;
             padding: 1.35rem 0.45rem 0.55rem;
             color: var(--paper);
-            background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+            background: linear-gradient(
+                to top,
+                color-mix(in srgb, var(--scrim-color) 70%, transparent),
+                transparent
+            );
             pointer-events: none;
             overflow: visible;
         }
@@ -599,10 +567,6 @@
         line-height: var(--leading-compact);
     }
 
-    .journal-heading {
-        margin: 0 0 var(--s1);
-    }
-
     .journal-grid {
         display: grid;
         gap: var(--s2);
@@ -699,7 +663,11 @@
             margin: 0;
             padding: 2.5rem 1rem 0.85rem;
             color: var(--paper);
-            background: linear-gradient(to top, rgb(9 10 9 / 70%), transparent);
+            background: linear-gradient(
+                to top,
+                color-mix(in srgb, var(--scrim-color) 70%, transparent),
+                transparent
+            );
             pointer-events: none;
         }
 

@@ -5,7 +5,7 @@
 <footer>
     <p>
         &copy; {year} Russell McWhae.
-        <a href="mailto:russell.mcwhae@gmail.com">Email Me</a>.
+        <a href="mailto:russell.mcwhae@gmail.com">Email me</a>.
     </p>
     <p>
         A personal collection of <a href="/photography">images</a> and

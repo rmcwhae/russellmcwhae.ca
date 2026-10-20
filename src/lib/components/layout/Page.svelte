@@ -18,13 +18,9 @@
     </div>
 </article>
 
-<style lang="scss">
-    @use '../../scss/breakpoints' as *;
-
+<style>
     article {
         width: 100%;
         max-width: var(--measure);
-        margin-inline: auto;
-        justify-self: center;
     }
 </style>

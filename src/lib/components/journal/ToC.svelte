@@ -350,12 +350,14 @@
 <style lang="scss">
     @use '../../scss/breakpoints' as *;
 
-    // Matches the article's 62ch column. The sidebar stays hidden until each
-    // side gutter is wide enough for a 238px sidebar.
+    // $measure matches --measure, which container queries can’t read. The
+    // sidebar stays hidden until the space beside the article fits it.
+    $measure: 68ch;
+    $toc-gap: 3.375rem; // --s3
     $toc-sidebar-max: 238px;
 
     @mixin when-sidebar-fits {
-        @container article-columns (min-width: calc(62ch + 2 * #{$toc-sidebar-max})) {
+        @container article-columns (min-width: calc(#{$measure} + #{$toc-gap} + #{$toc-sidebar-max})) {
             @content;
         }
     }
@@ -365,8 +367,8 @@
 
         @include when-sidebar-fits {
             display: block;
-            grid-column: 3;
-            justify-self: end;
+            grid-column: 2;
+            justify-self: start;
             align-self: start;
             max-width: $toc-sidebar-max;
             position: sticky;
@@ -559,7 +561,7 @@
         display: flex;
         align-items: center;
         font: inherit;
-        font-size: 1.5rem;
+        font-size: var(--text-lg);
         border-radius: var(--radius);
         transition: color var(--duration);
 

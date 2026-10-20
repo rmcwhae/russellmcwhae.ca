@@ -60,7 +60,7 @@ blockquote > * + * {
     display: inline-block;
 }
 .toc-level-1 {
-    font-size: 0.9em;
+    font-size: var(--text-xs);
 }
 .toc-level-1 a {
     padding-left: var(--s1);
