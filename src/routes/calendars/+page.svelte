@@ -47,52 +47,8 @@
     </Calendar>
 </div>
 
-<article class="restricted-width">
-    <h2>About</h2>
-    <div class="two-col-grid">
-        <p>
-            Initially created as Christmas gifts for family and friends, these
-            calendars are an effort to do more with my photography. It’s hard to
-            stand out in the crowded, high-volume world of online photography,
-            so printing can be a way to make photography less ephemeral.
-            Calendars provide a high-density collection of photographs in an
-            affordable physical product.
-        </p>
-        <p>
-            I design the calendars in Adobe Indesign with the <a
-                href="http://calendarwizard.sourceforge.net"
-                target="_blank"
-                rel="noopener noreferrer nofollow">Calendar Wizard</a
-            >
-            plugin to create the basic table layout before heavy customization. There’s
-            a steep learning curve, but the result is highly original. I then send
-            a print-ready PDF to
-            <a
-                href="https://www.dhq.ca"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                >Digital Headquarters Imaging Centre</a
-            > for printing and binding.
-        </p>
-    </div>
-</article>
-
 <style>
     article {
         margin: 0 auto var(--s2);
     }
-    :global(.shadow) {
-        text-shadow: 0 0 30px rgb(0 0 0 / 70%);
-    }
-    :global(.shadow > *) {
-        color: white;
-    }
-    :global(.knockout) {
-        border: 1px solid white;
-        padding: var(--s-2) var(--s-1);
-    }
-    /* p span {
-        text-decoration: underline;
-        text-decoration-color: red;
-    } */
 </style>
