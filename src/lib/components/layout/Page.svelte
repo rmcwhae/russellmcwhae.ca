@@ -15,7 +15,9 @@
     </div>
 </article>
 
-<style>
+<style lang="scss">
+    @use '../../scss/breakpoints' as *;
+
     article {
         width: 100%;
         max-width: var(--measure);
@@ -29,5 +31,15 @@
 
     h1.lede-heading {
         font-size: var(--text-2xl);
+    }
+
+    @include for-phone-only {
+        h1.lede-heading {
+            font-size: var(--text-xl);
+        }
+
+        header {
+            margin-bottom: var(--s0);
+        }
     }
 </style>
