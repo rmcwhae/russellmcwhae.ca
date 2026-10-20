@@ -47,7 +47,7 @@ export const load: PageServerLoad = async ({ params }) => {
                     count: images.length,
                     title,
                     date,
-                    images,
+                    images: images.map(ImageKitNodeServices.toPhoto),
                 },
             }
         } else {

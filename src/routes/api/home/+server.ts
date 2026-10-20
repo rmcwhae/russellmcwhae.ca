@@ -7,5 +7,5 @@ export const GET: RequestHandler = async () => {
         searchQuery: 'tags IN ["homepage"]',
     })
 
-    return Response.json(homepageImages)
+    return Response.json(homepageImages.map(ImageKitNodeServices.toPhoto))
 }

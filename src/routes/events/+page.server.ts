@@ -1,15 +1,16 @@
 import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
-import type { ProcessedFile } from '#lib/services/imageKitNode.js'
+import type { Photo, ProcessedFile } from '#lib/services/imageKitNode.js'
 import { parseTitleAndDate } from '#lib/utils/string/index.js'
 
 export const prerender = true
 
-type EventWithImages = ProcessedFile & {
+interface EventWithImages {
+    name: string
     title: string
     date: string
     count: number
-    featuredImage: ProcessedFile | null
+    featuredImage: Photo | null
 }
 
 export const load: PageServerLoad = async () => {
@@ -23,7 +24,7 @@ export const load: PageServerLoad = async () => {
         .map((event) => {
             const { title, date } = parseTitleAndDate(event.name)
             return {
-                ...event,
+                name: event.name!,
                 title,
                 date,
             }
@@ -57,19 +58,19 @@ function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
     })
 }
 
-function getFeaturedImage(images: ProcessedFile[]): ProcessedFile | null {
+function getFeaturedImage(images: ProcessedFile[]): Photo | null {
     if (!Array.isArray(images) || images.length === 0) {
         return null
     }
 
     try {
-        return (
+        return ImageKitNodeServices.toPhoto(
             images.find(
                 (image) => 'tags' in image && image.tags?.includes('featured')
             ) || images[0]
         )
     } catch (error) {
         console.error('Error getting featured image:', error)
-        return images[0] || null
+        return ImageKitNodeServices.toPhoto(images[0])
     }
 }

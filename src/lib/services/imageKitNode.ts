@@ -28,6 +28,32 @@ export type ProcessedFile = ImageKitItem & {
     placeholder?: string
 }
 
+/** The fields pages render, so page data skips EXIF, tags and the rest */
+export interface Photo {
+    filePath: string
+    width?: number
+    height?: number
+    photoswipe: boolean
+    placeholder?: string
+    customMetadata?: { caption?: string }
+}
+
+export function toPhoto(file: ProcessedFile): Photo {
+    const caption =
+        'customMetadata' in file
+            ? (file.customMetadata?.caption as string | undefined)
+            : undefined
+
+    return {
+        filePath: file.filePath,
+        width: 'width' in file ? file.width : undefined,
+        height: 'height' in file ? file.height : undefined,
+        photoswipe: file.photoswipe,
+        ...(file.placeholder && { placeholder: file.placeholder }),
+        ...(caption && { customMetadata: { caption } }),
+    }
+}
+
 function isFile(item: ImageKitItem): item is ImageKit.File {
     return 'filePath' in item && typeof item.filePath === 'string'
 }

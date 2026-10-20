@@ -1,23 +1,24 @@
-import { getPosts } from '#lib/services/posts.js'
+import { getPosts } from '#lib/services/posts.server.js'
 import { error } from '@sveltejs/kit'
-import type { PageLoad } from './$types'
+import type { PageServerLoad } from './$types'
 
 export const prerender = true
 
-export async function entries() {
-    const posts = await getPosts()
+export function entries() {
     const categories = [
-        ...new Set(posts.map((post) => post.category).filter(Boolean)),
+        ...new Set(
+            getPosts()
+                .map((post) => post.category)
+                .filter(Boolean)
+        ),
     ]
     return categories.map((category) => ({ category: category! }))
 }
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageServerLoad = ({ params }) => {
     const { category } = params
-    const posts = await getPosts()
-    const filteredPosts = [...posts].filter(
-        (post) => post.category === category
-    )
+    const posts = getPosts()
+    const filteredPosts = posts.filter((post) => post.category === category)
     const allCategories = new Set(
         posts.map((post) => post.category).filter(Boolean)
     )

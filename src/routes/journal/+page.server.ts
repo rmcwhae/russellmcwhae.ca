@@ -1,10 +1,10 @@
-import { getPosts } from '#lib/services/posts.js'
-import type { PageLoad } from './$types'
+import { getPosts } from '#lib/services/posts.server.js'
+import type { PageServerLoad } from './$types'
 
 export const prerender = true
 
-export const load: PageLoad = async () => {
-    const posts = await getPosts()
+export const load: PageServerLoad = () => {
+    const posts = getPosts()
 
     // Calculate total word count from reading times
     const totalWordCount = posts.reduce((acc, post) => {

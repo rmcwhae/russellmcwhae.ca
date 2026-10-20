@@ -9,6 +9,6 @@ export const GET: RequestHandler = async () => {
     })
 
     return Response.json({
-        images,
+        images: images.map(ImageKitNodeServices.toPhoto),
     })
 }
