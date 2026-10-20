@@ -21,20 +21,17 @@
             lightbox?.destroy()
         }
     })
+
+    const lede =
+        'Software developer, photographer, writer, and lifelong outdoor adventurer.'
 </script>
 
-<SEO
-    title="About"
-    description="Russell McWhae is a web developer, photographer, and outdoor adventurer."
-/>
+<SEO title="About" description={lede} />
 
 <div class="about">
     <header class="page-header">
         <h1>About Me</h1>
-        <p class="lede">
-            Software developer, photographer, writer, and lifelong outdoor
-            adventurer.
-        </p>
+        <p class="lede">{lede}</p>
     </header>
 
     <div class="sidebar-layout">

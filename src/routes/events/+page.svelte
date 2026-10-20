@@ -64,13 +64,15 @@
             return 0
         })
     })
+
+    const lede = 'Complete photo sets from individual trips.'
 </script>
 
-<SEO title="Field Expeditions" />
+<SEO title="Field Expeditions" description={lede} />
 
 <header class="page-header">
     <h1>Field Expeditions</h1>
-    <p class="lede">Complete photo sets from individual trips.</p>
+    <p class="lede">{lede}</p>
 </header>
 
 <section class="archive" aria-label="All expeditions">

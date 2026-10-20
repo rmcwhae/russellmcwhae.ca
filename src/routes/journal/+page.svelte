@@ -13,15 +13,15 @@
         href: resolve('/journal/[slug]', { slug: pick.slug }),
         title: pick.title,
     }))
+
+    const lede = 'Long-form thoughts on technology, the outdoors, and life.'
 </script>
 
-<SEO title="Journal" />
+<SEO title="Journal" description={lede} />
 
 <header class="page-header">
     <h1>Journal</h1>
-    <p class="lede">
-        Long-form thoughts on technology, the outdoors, and life.
-    </p>
+    <p class="lede">{lede}</p>
 </header>
 
 <div class="sidebar-layout">

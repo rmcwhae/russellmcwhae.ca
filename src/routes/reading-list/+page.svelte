@@ -28,16 +28,16 @@
 
         return Array.from(groups.entries()).sort(([a], [b]) => b - a)
     })
+
+    const lede =
+        'Reading is one of the ways I make sense of the world. Since 2012, I’ve tracked all the books I’ve read.'
 </script>
 
-<SEO title="Reading List" />
+<SEO title="Reading List" description={lede} />
 
 <header class="page-header">
     <h1>Reading List</h1>
-    <p class="lede">
-        Reading is one of the ways I make sense of the world. Since 2012, I’ve
-        tracked all the books I’ve read.
-    </p>
+    <p class="lede">{lede}</p>
 </header>
 
 <section class="archive" aria-label="All books">

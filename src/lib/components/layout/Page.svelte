@@ -4,7 +4,7 @@
     let { title, children, lede = undefined } = $props()
 </script>
 
-<SEO {title} />
+<SEO {title} description={lede} />
 
 <article>
     <header class="page-header">

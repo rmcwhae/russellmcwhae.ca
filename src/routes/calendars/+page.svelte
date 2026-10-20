@@ -2,16 +2,16 @@
     import Image from 'svimg/Image.svelte'
     import Calendar from '#lib/components/misc/Calendar.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
+
+    const lede =
+        'After a ten-year run, I am no longer actively making annual wall calendars. Below is an archive of all previous editions.'
 </script>
 
-<SEO title="Calendars" />
+<SEO title="Calendars" description={lede} />
 
 <header class="page-header">
     <h1>Calendars</h1>
-    <p class="lede">
-        After a ten-year run, I am no longer actively making annual wall
-        calendars. Below is an archive of all previous editions.
-    </p>
+    <p class="lede">{lede}</p>
 </header>
 
 <section aria-label="Past editions">

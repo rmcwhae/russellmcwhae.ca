@@ -44,7 +44,9 @@
     })
 </script>
 
-<SEO />
+<SEO
+    description="I’m Russell—a web developer, photographer, and writer with a deep appreciation for the natural world."
+/>
 
 <svelte:head>
     <link

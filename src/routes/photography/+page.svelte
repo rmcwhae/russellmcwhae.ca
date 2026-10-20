@@ -44,15 +44,16 @@
         { href: '/events', text: 'Field expeditions' },
         { href: '/calendars', text: 'Looking for calendars?' },
     ]
+
+    const lede =
+        'A collection of landscape images from Western Canada and beyond.'
 </script>
 
-<SEO title="Photography" />
+<SEO title="Photography" description={lede} />
 
 <header class="page-header">
     <h1>Photography</h1>
-    <p class="lede">
-        A collection of landscape images from Western Canada and beyond.
-    </p>
+    <p class="lede">{lede}</p>
     <nav aria-label="Related">
         <ul class="link-list destinations">
             {#each destinations as destination (destination.href)}

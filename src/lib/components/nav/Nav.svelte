@@ -103,11 +103,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <div
+    <button
+        type="button"
         class="nav-overlay"
         class:active={mobileMenuOpen}
+        aria-label="Close menu"
+        tabindex="-1"
         onclick={hideMenu}
-    ></div>
+    ></button>
 </header>
 
 <style lang="scss">
@@ -236,6 +239,9 @@
     .nav-overlay {
         position: fixed;
         inset: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
         background-color: var(--background-color-transparent);
         z-index: 11;
         opacity: 0;
