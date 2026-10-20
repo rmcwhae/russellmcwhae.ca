@@ -3,14 +3,15 @@
 
     --paper: #f7f6f2;
     --charcoal: #191b1a;
+    --night: #131514; // dark-mode background, a step below charcoal
     --alpine: light-dark(#4a749e, #8eb6d4);
     --stone: light-dark(#d9d9d0, #3a3d3a);
     --ink: light-dark(#3c3e3c, #c8c6be);
 
-    --background-color: light-dark(var(--paper), var(--charcoal));
+    --background-color: light-dark(var(--paper), var(--night));
     --background-color-transparent: light-dark(
         rgb(247 246 242 / 88%),
-        rgb(25 27 26 / 88%)
+        rgb(19 21 20 / 88%)
     );
     --high-contrast-color: light-dark(var(--charcoal), var(--paper));
     --text-color: var(--ink);
