@@ -377,6 +377,10 @@
     }
 
     @include for-phone-only {
+        h1 {
+            font-size: var(--text-2xl);
+        }
+
         .line-serif {
             font-weight: var(--serif-heading-weight);
         }
@@ -543,6 +547,10 @@
     }
 
     @include for-phone-only {
+        .about-title {
+            font-size: var(--text-lg);
+        }
+
         .about-copy p {
             font-size: var(--text-sm);
         }

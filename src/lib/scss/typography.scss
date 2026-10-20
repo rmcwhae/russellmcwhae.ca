@@ -232,6 +232,22 @@ h3 {
     :root {
         --serif-heading-weight: 700;
     }
+
+    h1:not(.eyebrow) {
+        font-size: var(--text-lg);
+    }
+
+    h2:not(.eyebrow) {
+        font-size: var(--text-md);
+    }
+
+    .page-header {
+        margin-bottom: var(--s0);
+    }
+
+    .page-header:has(.lede) h1 {
+        font-size: var(--text-xl);
+    }
 }
 
 h4 {
