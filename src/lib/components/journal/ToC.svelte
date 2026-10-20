@@ -418,7 +418,6 @@
         &:hover,
         &:focus-visible {
             color: var(--alpine);
-            outline: none;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
         }
     }
@@ -542,7 +541,6 @@
         &:hover,
         &:focus-visible {
             color: var(--alpine);
-            outline: none;
         }
     }
 </style>

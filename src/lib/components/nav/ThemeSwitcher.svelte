@@ -32,7 +32,22 @@
         if (!meta) return
 
         meta.setAttribute('content', $mode === 'system' ? 'light dark' : $mode)
+        applyThemeColor($mode)
     })
+
+    // The browser toolbar follows prefers-color-scheme unless a choice
+    // overrides it, so every theme-color meta takes the chosen colour
+    /** @param {import('#lib/stores/theme.js').ThemeMode} value */
+    function applyThemeColor(value) {
+        const metas = /** @type {NodeListOf<HTMLMetaElement>} */ (
+            document.querySelectorAll('meta[name="theme-color"]')
+        )
+        const chosen = [...metas].find((meta) => meta.dataset.scheme === value)
+
+        for (const meta of metas) {
+            meta.content = (chosen ?? meta).dataset.color ?? meta.content
+        }
+    }
 
     $effect(() => {
         if (!browser || !open) return
@@ -214,9 +229,17 @@
         bind:this={triggerElement}
         onclick={toggleMenu}
     >
-        <span class="theme-trigger-icon" aria-hidden="true">
-            {@render icon($mode)}
-        </span>
+        <!-- All three render so CSS can pick one from the color-scheme meta,
+             which app.html sets before first paint; $mode isn’t known until
+             hydration -->
+        {#each options as value (value)}
+            <span
+                class="theme-trigger-icon theme-trigger-icon-{value}"
+                aria-hidden="true"
+            >
+                {@render icon(value)}
+            </span>
+        {/each}
     </button>
 
     {#if open}
@@ -279,7 +302,11 @@
     .theme-option:hover,
     .theme-option:focus-visible {
         color: var(--alpine);
-        outline: none;
+    }
+
+    // Inset so the ring stays inside the menu’s padding
+    .theme-option:focus-visible {
+        outline-offset: -2px;
     }
 
     .theme-trigger-icon,
@@ -289,6 +316,23 @@
         justify-content: center;
         width: 1.15rem;
         height: 1.15rem;
+    }
+
+    // The trigger shows the icon matching the color-scheme meta
+    .theme-trigger-icon-light,
+    .theme-trigger-icon-dark,
+    :global(html:has(meta[name='color-scheme'][content='light']))
+        .theme-trigger-icon-system,
+    :global(html:has(meta[name='color-scheme'][content='dark']))
+        .theme-trigger-icon-system {
+        display: none;
+    }
+
+    :global(html:has(meta[name='color-scheme'][content='light']))
+        .theme-trigger-icon-light,
+    :global(html:has(meta[name='color-scheme'][content='dark']))
+        .theme-trigger-icon-dark {
+        display: flex;
     }
 
     :global(.theme-trigger-icon svg),

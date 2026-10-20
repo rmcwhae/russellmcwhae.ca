@@ -29,14 +29,19 @@
             color="#5bbad5"
         />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <!-- data-color keeps each scheme’s colour when a choice overrides it -->
         <meta
             name="theme-color"
             content="#F7F6F2"
+            data-color="#F7F6F2"
+            data-scheme="light"
             media="(prefers-color-scheme: light)"
         />
         <meta
             name="theme-color"
             content="#131514"
+            data-color="#131514"
+            data-scheme="dark"
             media="(prefers-color-scheme: dark)"
         />
 
@@ -55,6 +60,20 @@
                         'meta[name="color-scheme"]'
                     )
                     if (meta) meta.setAttribute('content', mode)
+
+                    // Mirrors applyThemeColor in ThemeSwitcher.svelte
+                    var colors = document.querySelectorAll(
+                        'meta[name="theme-color"]'
+                    )
+                    var chosen = document.querySelector(
+                        'meta[name="theme-color"][data-scheme="' + mode + '"]'
+                    )
+                    for (var i = 0; i < colors.length; i++) {
+                        colors[i].setAttribute(
+                            'content',
+                            chosen.getAttribute('data-color')
+                        )
+                    }
                 }
             } catch (e) {}
         </script>
