@@ -277,11 +277,12 @@ h4 {
 
 em,
 i {
-    font-family: var(--font-serif);
     font-style: italic;
 }
 
+// Headings and pull quotes stay in Cardo; keep their italics in serif
 :is(h1, h2, h3, h4, h5, h6, blockquote) :is(em, i) {
+    font-family: var(--font-serif);
     font-size: inherit;
 }
 
@@ -373,6 +374,12 @@ article a.footnote-ref {
 
     &:not(:popover-open) {
         display: none;
+    }
+
+    // Focus moves to the container on open (tabIndex -1); Safari would ring it
+    &:focus,
+    &:focus-visible {
+        outline: none;
     }
 
     // Arrow: a rotated square straddling the edge that faces the reference
