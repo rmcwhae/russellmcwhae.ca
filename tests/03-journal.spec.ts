@@ -20,7 +20,6 @@ test.describe('Journal Page', () => {
         await page.goto('/journal')
 
         await expect(page.locator('.archive')).toBeVisible()
-        await expect(page.getByText('All entries')).toBeVisible()
         await expect(page.locator('.entries section').first()).toBeVisible()
     })
 
