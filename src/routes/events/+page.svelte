@@ -23,6 +23,11 @@
 
     /** @param {string} date */
     function groupLabel(date) {
+        // Prefer a 4-digit year from the string — Safari rejects Date.parse of
+        // values like “September 2025”, which would otherwise group by month.
+        const match = String(date).match(/\b(19|20)\d{2}\b/)
+        if (match) return match[0]
+
         const parsed = new Date(date)
         if (Number.isNaN(parsed.getTime())) return date
         const year = parsed.getFullYear()
