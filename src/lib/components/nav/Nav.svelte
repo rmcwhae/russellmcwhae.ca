@@ -82,6 +82,12 @@
         margin-bottom: var(--s3);
     }
 
+    @include for-phone-only {
+        header {
+            margin-bottom: var(--s0);
+        }
+    }
+
     #logo {
         margin-right: auto;
         z-index: 13;
