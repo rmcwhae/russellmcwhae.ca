@@ -186,7 +186,9 @@ test.describe('Photos and Events', () => {
 
         // The active slide shows the image rather than a placeholder
         await expect(
-            page.locator('.pswp__item[aria-hidden="false"] img.pswp__img')
+            page.locator(
+                '.pswp__item[aria-hidden="false"] img.pswp__img:not(.pswp__img--placeholder)'
+            )
         ).toBeVisible()
     })
 
