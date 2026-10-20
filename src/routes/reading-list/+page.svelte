@@ -161,7 +161,7 @@
         font-family: var(--font-sans);
         font-size: var(--text-base);
         font-weight: 400;
-        line-height: var(--leading-body);
+        line-height: var(--leading-compact);
         letter-spacing: 0;
         color: var(--text-color);
         text-wrap: pretty;
