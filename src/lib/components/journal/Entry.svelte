@@ -193,13 +193,17 @@
 
         section:not(.featured) .when {
             order: 2;
+            margin-right: auto;
         }
 
         section:not(.featured) .meta {
             order: 3;
             flex-direction: row;
             align-items: baseline;
-            text-align: left;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-left: auto;
+            text-align: right;
         }
     }
 

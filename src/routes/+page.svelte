@@ -636,6 +636,11 @@
 
     .recent-title {
         margin: 0;
+        font-weight: 700;
+    }
+
+    .recent-title a {
+        font-weight: inherit;
     }
 
     .recent-entry p {
