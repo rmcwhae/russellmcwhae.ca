@@ -40,31 +40,29 @@
 <SEO title={'Journal » ' + title} {description} />
 
 <div class="entry">
-    <header class="page-header page-header-entry">
-        <div class="sub">
-            <Date {date} />
-        </div>
-        <h1><NoWrapLastTwoWords text={title} /></h1>
-        {#if description}
-            <p class="lede"><NoWrapLastTwoWords text={description} /></p>
-        {/if}
-        <!-- Moves into the sidebar once it fits -->
-        <div class="sub header-meta">
-            {#if category}
-                <CategoryLink {category} />
-                &middot;
-            {/if}
-            <span class="nowrap">{wordCount} words</span>
-            &middot;
-            <span class="nowrap">{readingTime.text}</span>
-        </div>
-    </header>
-
-    <div class="article-columns">
-        <article class="char-limit flow" bind:this={article}>
-            <SvelteComponent />
-        </article>
-        <aside class="entry-sidebar">
+    <div class="entry-grid">
+        <header class="page-header page-header-entry">
+            <div class="header-main">
+                <div class="sub">
+                    <Date {date} />
+                </div>
+                <h1><NoWrapLastTwoWords text={title} /></h1>
+                {#if description}
+                    <p class="lede">
+                        <NoWrapLastTwoWords text={description} />
+                    </p>
+                {/if}
+                <!-- Becomes the facts list once the sidebar fits -->
+                <div class="sub header-meta">
+                    {#if category}
+                        <CategoryLink {category} />
+                        &middot;
+                    {/if}
+                    <span class="nowrap">{wordCount} words</span>
+                    &middot;
+                    <span class="nowrap">{readingTime.text}</span>
+                </div>
+            </div>
             <dl class="facts">
                 {#if category}
                     <div>
@@ -81,6 +79,12 @@
                     <dd>{readingTime.text}</dd>
                 </div>
             </dl>
+        </header>
+
+        <article class="char-limit flow" bind:this={article}>
+            <SvelteComponent />
+        </article>
+        <aside class="entry-sidebar">
             <ToC allowedHeadings={['h2', 'h3']} />
             {#if relatedLinks.length}
                 <div class="sidebar-related">
@@ -89,19 +93,19 @@
                 </div>
             {/if}
         </aside>
+
+        <!-- Moves into the sidebar once it fits -->
+        <section class="related section-break">
+            <h2 class="eyebrow">Related entries</h2>
+            <JournalEntrySet posts={relatedPosts} />
+
+            <div class="mt-3">
+                <ButtonSet>
+                    <Button href="/journal" text="All entries" right />
+                </ButtonSet>
+            </div>
+        </section>
     </div>
-
-    <!-- Moves into the sidebar once it fits -->
-    <section class="related section-break">
-        <h2 class="eyebrow">Related entries</h2>
-        <JournalEntrySet posts={relatedPosts} />
-
-        <div class="mt-3">
-            <ButtonSet>
-                <Button href="/journal" text="All entries" right />
-            </ButtonSet>
-        </div>
-    </section>
 </div>
 
 <style lang="scss">
@@ -111,14 +115,39 @@
         container: article-columns / inline-size;
     }
 
+    // A single column until the sidebar fits; an empty second column would
+    // still take the gap and narrow the article on small screens. Once it
+    // fits, the header and body share one grid from the logo edge: article
+    // and title on the left, facts and sidebar in the right column.
+    .entry-grid {
+        @include when-entry-sidebar-fits {
+            display: grid;
+            grid-template-columns:
+                minmax(0, var(--measure))
+                $entry-sidebar-width;
+            column-gap: var(--s3);
+            align-items: start;
+        }
+    }
+
     .page-header-entry {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-1);
         max-width: var(--measure);
         margin-bottom: var(--s2);
         padding-bottom: var(--s1);
         border-bottom: 1px solid var(--light-grey);
+
+        @include when-entry-sidebar-fits {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: subgrid;
+            align-items: end;
+            max-width: none;
+        }
+    }
+    .header-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-1);
     }
     .page-header-entry .lede {
         margin: 0;
@@ -133,44 +162,24 @@
         }
     }
 
-    // A single column until the sidebar fits; an empty second column would
-    // still take the gap and narrow the article on small screens
-    .article-columns {
-        @include when-entry-sidebar-fits {
-            display: grid;
-            grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
-            column-gap: var(--s3);
-            align-items: start;
-        }
-    }
-    .article-columns > article {
+    article {
         min-width: 0;
     }
 
-    // Only the ToC’s floating button and drawer render until the sidebar fits
-    .entry-sidebar {
-        display: contents;
-
-        @include when-entry-sidebar-fits {
-            display: flex;
-            flex-direction: column;
-            gap: var(--s2);
-            position: sticky;
-            top: var(--s0);
-            max-width: $entry-sidebar-width;
-            max-height: calc(100vh - var(--s0));
-            overflow: auto;
-        }
-    }
-
+    // Label and value side by side, one row per fact
     .facts {
         display: none;
         margin: 0;
 
         @include when-entry-sidebar-fits {
-            display: flex;
-            flex-direction: column;
-            gap: var(--s0);
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: baseline;
+            gap: var(--s-2) var(--s0);
+        }
+
+        > div {
+            display: contents;
         }
 
         dt {
@@ -185,6 +194,21 @@
         }
     }
 
+    // Only the ToC’s floating button and drawer render until the sidebar fits
+    .entry-sidebar {
+        display: contents;
+
+        @include when-entry-sidebar-fits {
+            display: flex;
+            flex-direction: column;
+            gap: var(--s2);
+            position: sticky;
+            top: var(--s0);
+            max-height: calc(100vh - var(--s0));
+            overflow: auto;
+        }
+    }
+
     .sidebar-related {
         display: none;
 
@@ -193,6 +217,12 @@
             flex-direction: column;
             align-items: flex-start;
             gap: var(--s0);
+        }
+
+        // Ruled off from the ToC when there is one above it
+        &:not(:first-child) {
+            padding-top: var(--s1);
+            border-top: 1px solid var(--light-grey);
         }
 
         // The list spans the sidebar; the button keeps its own width

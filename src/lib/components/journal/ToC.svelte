@@ -371,8 +371,10 @@
             display: block;
         }
 
+        // Matches .link-list below it: the list’s --s0 margin plus its --s-1
+        // row padding. The first item’s top margin collapses into this one.
         h2 {
-            margin: 0 0 var(--s-1);
+            margin: 0 0 calc(var(--s0) + var(--s-1));
         }
     }
 
