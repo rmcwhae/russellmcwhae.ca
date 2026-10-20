@@ -43,3 +43,22 @@
         />
     {/key}
 </div>
+
+<style>
+    #gallery :global(.image) {
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        #gallery :global(img) {
+            transition:
+                transform 600ms ease,
+                opacity 0.3s ease;
+        }
+
+        #gallery :global(.image:hover img) {
+            transform: scale(1.03);
+        }
+    }
+</style>
