@@ -40,8 +40,10 @@
         text-underline-offset: 0.18em;
     }
 
+    // Overrides main a:hover, which drops the underline
     a:hover {
         color: var(--alpine);
+        text-decoration: underline;
     }
 
     @include for-phone-only {
