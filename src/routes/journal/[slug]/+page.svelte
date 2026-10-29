@@ -76,7 +76,7 @@
                 </div>
                 <div>
                     <dt class="eyebrow">Reading time</dt>
-                    <dd>{readingTime.text}</dd>
+                    <dd>{readingTime.text.replace(/ read$/, '')}</dd>
                 </div>
             </dl>
         </header>

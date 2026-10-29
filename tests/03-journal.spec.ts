@@ -91,7 +91,7 @@ test.describe('Journal Page', () => {
             .locator('.header-meta, .facts')
             .filter({ visible: true })
         await expect(readingTime).toHaveCount(1)
-        await expect(readingTime).toContainText(/\d+ min read/)
+        await expect(readingTime).toContainText(/\d+ min/)
     })
 
     test('journal entry has publication date', async ({ page }) => {
