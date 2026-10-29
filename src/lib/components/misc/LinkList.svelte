@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     /**
      * @typedef {Object} Item
      * @property {string} href
@@ -17,23 +18,31 @@
     let { heading, items } = $props()
 </script>
 
+{#snippet content(/** @type {Item} */ item)}
+    <span class="link-list-title">{item.title}</span>
+    {#if item.description}
+        <span class="link-list-description">{item.description}</span>
+    {/if}
+{/snippet}
+
 <div>
     <h2 class="eyebrow">{heading}</h2>
     <ul class="link-list">
         {#each items as item (item.href)}
             <li>
-                <a
-                    href={item.href}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
-                >
-                    <span class="link-list-title">{item.title}</span>
-                    {#if item.description}
-                        <span class="link-list-description"
-                            >{item.description}</span
-                        >
-                    {/if}
-                </a>
+                {#if item.external}
+                    <a
+                        href={item.href}
+                        target="_blank"
+                        rel="external noopener noreferrer"
+                    >
+                        {@render content(item)}
+                    </a>
+                {:else}
+                    <a href={resolve(item.href)}>
+                        {@render content(item)}
+                    </a>
+                {/if}
             </li>
         {/each}
     </ul>

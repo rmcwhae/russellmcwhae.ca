@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Gallery from '#lib/components/images/Gallery.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
 
@@ -14,7 +15,7 @@
 
 <header class="page-header">
     <p class="eyebrow">
-        <a href="/events">Field Expeditions</a>
+        <a href={resolve('/events')}>Field Expeditions</a>
     </p>
     <h1>{title}</h1>
     <p class="meta">{date} · {count} photos</p>

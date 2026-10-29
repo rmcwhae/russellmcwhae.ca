@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Image from './Image.svelte'
     import { gallerySizes } from '#lib/utils/images/static.js'
 
@@ -25,7 +26,7 @@
     } = $props()
 </script>
 
-<a class="event-card" {href} {title}>
+<a class="event-card" href={resolve(href)} {title}>
     {#if filePath}
         <Image
             {filePath}

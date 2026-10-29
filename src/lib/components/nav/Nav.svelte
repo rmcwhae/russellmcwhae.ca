@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import { browser } from '$app/env'
     import { afterNavigate } from '$app/navigation'
     import { tick } from 'svelte'
@@ -81,7 +82,7 @@
 
 <header bind:this={headerEl}>
     <div id="logo">
-        <a href="/" onclick={hideMenu}>Russell McWhae</a>
+        <a href={resolve('/')} onclick={hideMenu}>Russell McWhae</a>
     </div>
     <nav aria-label="Primary">
         <div

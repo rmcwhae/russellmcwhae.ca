@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
     import LeftChevron from '#lib/components/icons/LeftChevron.svelte'
 
@@ -13,12 +14,9 @@
 
     /** @type {Props} */
     let { href, text, external = false, left = false, right = false } = $props()
-
-    const rel = $derived(external ? 'noopener noreferrer nofollow' : '')
-    const target = $derived(external ? '_blank' : '')
 </script>
 
-<a {href} class="button" {rel} {target}>
+{#snippet content()}
     {#if left}
         <span class="left">
             <LeftChevron />
@@ -30,7 +28,22 @@
             <ArrowNorthEast />
         </span>
     {/if}
-</a>
+{/snippet}
+
+{#if external}
+    <a
+        {href}
+        class="button"
+        rel="external noopener noreferrer nofollow"
+        target="_blank"
+    >
+        {@render content()}
+    </a>
+{:else}
+    <a href={resolve(href)} class="button">
+        {@render content()}
+    </a>
+{/if}
 
 <style>
     a {

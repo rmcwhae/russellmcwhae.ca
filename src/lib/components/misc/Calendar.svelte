@@ -1,4 +1,5 @@
 <script>
+    import { asset } from '$app/paths'
     import Button from '#lib/components/buttons/Button.svelte'
     import ButtonSet from '#lib/components/buttons/ButtonSet.svelte'
     import PurchaseCalendar from '#lib/components/misc/PurchaseCalendar.svelte'
@@ -13,12 +14,14 @@
     /** @type {Props} */
     let { filename, purchase = false, children } = $props()
 
-    const href = $derived('/pdf/' + filename)
+    const href = $derived(asset('/pdf/' + filename))
 </script>
 
 <section>
-    <a {href} target="_blank" rel="noopener noreferrer nofollow"
-        >{@render children?.()}</a
+    <a
+        href={asset('/pdf/' + filename)}
+        target="_blank"
+        rel="noopener noreferrer nofollow">{@render children?.()}</a
     >
     <div class="mb-2">
         {#if purchase}

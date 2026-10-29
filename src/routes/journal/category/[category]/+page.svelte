@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import JournalEntrySet from '#lib/components/journal/EntrySet.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
     import CategoryLink from '#lib/components/journal/CategoryLink.svelte'
@@ -14,7 +15,7 @@
 
 <div class="char-limit">
     <header class="page-header">
-        <p class="eyebrow"><a href="/journal">Journal</a></p>
+        <p class="eyebrow"><a href={resolve('/journal')}>Journal</a></p>
         <h1>Posts categorized as “{category}”</h1>
     </header>
     <p class="categories">

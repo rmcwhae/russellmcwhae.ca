@@ -10,7 +10,7 @@
     let totalWordCount = $derived(data.totalWordCount)
 
     const starters = EDITOR_PICKS.map((pick) => ({
-        href: resolve('/journal/[slug]', { slug: pick.slug }),
+        href: '/journal/' + pick.slug,
         title: pick.title,
     }))
 

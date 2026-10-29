@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Image from '#lib/components/images/Image.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
@@ -148,7 +149,7 @@
                         {#each recentPosts as post (post.href)}
                             <article class="recent-entry">
                                 <h3 class="recent-title title-sm">
-                                    <a href={post.href}
+                                    <a href={resolve(post.href)}
                                         ><NoWrapLastTwoWords
                                             text={post.title}
                                         /></a

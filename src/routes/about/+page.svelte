@@ -1,4 +1,5 @@
 <script>
+    import { asset, resolve } from '$app/paths'
     import SEO from '#lib/components/base/SEO.svelte'
     import LinkList from '#lib/components/misc/LinkList.svelte'
     import StaticPicture from '#lib/components/images/StaticPicture.svelte'
@@ -38,7 +39,7 @@
         <article class="sidebar-layout-main">
             <figure class="portrait-inline">
                 <a
-                    href="/portrait/portrait-2048.jpg"
+                    href={asset('/portrait/portrait-2048.jpg')}
                     data-pswp-width="2048"
                     data-pswp-height="1536"
                 >
@@ -85,8 +86,9 @@
                     After years of career uncertainty, I decided to embrace my
                     inner coder and enrolled in the Lighthouse Labs web
                     development boot camp in 2019 (see <a
-                        href="/journal/my-journey-into-tech"
-                        >My Journey into Tech</a
+                        href={resolve('/journal/[slug]', {
+                            slug: 'my-journey-into-tech',
+                        })}>My Journey into Tech</a
                     >). That high-school hobby has since become my full-time
                     career—and one I truly enjoy. Technology combines many of
                     the things that have always appealed to me: logical
@@ -97,9 +99,17 @@
                     That career pivot, combined with my love of the outdoors,
                     brought me to Revelstoke in 2020, where I spent five years.
                     (See my journal for some more detailed reflections:
-                    <a href="/journal/a-new-chapter">A New Chapter</a>, and
-                    <a href="/journal/11-months-later">11 Months Later</a>.) In
-                    2025, I moved farther west to the coast of British Columbia.
+                    <a
+                        href={resolve('/journal/[slug]', {
+                            slug: 'a-new-chapter',
+                        })}>A New Chapter</a
+                    >, and
+                    <a
+                        href={resolve('/journal/[slug]', {
+                            slug: '11-months-later',
+                        })}>11 Months Later</a
+                    >.) In 2025, I moved farther west to the coast of British
+                    Columbia.
                 </p>
                 <p>
                     This website is my creative outlet—a place to share the
@@ -112,7 +122,7 @@
         <aside class="sidebar-layout-aside">
             <figure class="portrait">
                 <a
-                    href="/portrait/portrait-2048.jpg"
+                    href={asset('/portrait/portrait-2048.jpg')}
                     data-pswp-width="2048"
                     data-pswp-height="1536"
                 >

@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Date from '#lib/components/misc/Date.svelte'
     import NoWrapLastTwoWords from '#lib/components/misc/NoWrapLastTwoWords.svelte'
     import Button from '#lib/components/buttons/Button.svelte'
@@ -52,7 +53,7 @@
             </div>
         {/if}
         <svelte:element this={`h${level}`} class="entry-title">
-            <a {href}><NoWrapLastTwoWords text={title} /></a>
+            <a href={resolve(href)}><NoWrapLastTwoWords text={title} /></a>
         </svelte:element>
         {#if featuredPreview}
             <p><NoWrapLastTwoWords text={featuredPreview} /></p>
@@ -66,7 +67,7 @@
         {/if}
         <div class="body">
             <svelte:element this={`h${level}`} class="entry-title title-sm">
-                <a {href}><NoWrapLastTwoWords text={title} /></a>
+                <a href={resolve(href)}><NoWrapLastTwoWords text={title} /></a>
             </svelte:element>
             {#if featuredPreview}
                 <p><NoWrapLastTwoWords text={featuredPreview} /></p>
