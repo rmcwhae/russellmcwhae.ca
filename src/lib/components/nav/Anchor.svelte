@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import { page } from '$app/state'
 
     let { href, title, onClose } = $props()
@@ -9,7 +10,7 @@
 </script>
 
 <a
-    {href}
+    href={resolve(href)}
     onclick={handleClick}
     aria-current={page.url.pathname.search(href) > -1 ? 'page' : undefined}
 >

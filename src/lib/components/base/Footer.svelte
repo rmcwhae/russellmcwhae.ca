@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     const year = new Date().getFullYear()
 </script>
 
@@ -8,8 +9,9 @@
         <a href="mailto:russell.mcwhae@gmail.com">Email me</a>.
     </p>
     <p>
-        A personal collection of <a href="/photography">images</a> and
-        <a href="/journal">words</a>.
+        A personal collection of <a href={resolve('/photography')}>images</a>
+        and
+        <a href={resolve('/journal')}>words</a>.
     </p>
 </footer>
 

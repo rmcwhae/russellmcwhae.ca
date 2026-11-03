@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths'
     import Gallery from '#lib/components/images/Gallery.svelte'
     import ArrowNorthEast from '#lib/components/icons/ArrowNorthEast.svelte'
     import SEO from '#lib/components/base/SEO.svelte'
@@ -58,7 +59,7 @@
         <ul class="link-list destinations">
             {#each destinations as destination (destination.href)}
                 <li>
-                    <a href={destination.href}>
+                    <a href={resolve(destination.href)}>
                         <span class="link-list-title">{destination.text}</span>
                         <ArrowNorthEast />
                     </a>

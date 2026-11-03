@@ -80,6 +80,7 @@
     {#if photoswipe}
         <a
             href={fullSrc}
+            rel="external"
             data-pswp-width={width}
             data-pswp-height={height}
             data-pswp-src={fullSrc}

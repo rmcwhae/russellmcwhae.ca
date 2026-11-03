@@ -91,7 +91,7 @@ test.describe('Journal Page', () => {
             .locator('.header-meta, .facts')
             .filter({ visible: true })
         await expect(readingTime).toHaveCount(1)
-        await expect(readingTime).toContainText(/\d+ min read/)
+        await expect(readingTime).toContainText(/\d+ min/)
     })
 
     test('journal entry has publication date', async ({ page }) => {
@@ -282,5 +282,22 @@ test.describe('Journal Page', () => {
 
         await page.keyboard.press('Escape')
         await expect(popover).toHaveCount(0)
+    })
+
+    test('RSS feed lists journal entries', async ({ page, request }) => {
+        const response = await request.get('/rss.xml')
+        expect(response.status()).toBe(200)
+
+        const body = await response.text()
+        expect(body).toContain('<rss')
+        expect(body).toContain('<channel>')
+        expect(body).toMatch(
+            /<item>[\s\S]*<link>https:\/\/russellmcwhae\.ca\/journal\//
+        )
+
+        await page.goto('/journal')
+        await expect(
+            page.locator('link[rel="alternate"][type="application/rss+xml"]')
+        ).toHaveAttribute('href', '/rss.xml')
     })
 })

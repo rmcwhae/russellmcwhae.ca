@@ -40,6 +40,12 @@
 
 <svelte:head>
     <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="Russell’s Journal"
+        href="/rss.xml"
+    />
+    <link
         rel="preload"
         href="/fonts/schibsted-grotesk-latin-400-normal.woff2"
         as="font"
