@@ -11,11 +11,6 @@ const config: UserConfig = {
     ssr: {
         noExternal: [],
     },
-    server: {
-        fs: {
-            allow: ['..'],
-        },
-    },
     plugins: [
         sveltekit({
             extensions: ['.svelte', ...mdsvexConfig.extensions],

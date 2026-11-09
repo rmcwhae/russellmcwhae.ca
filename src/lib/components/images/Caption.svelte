@@ -5,6 +5,8 @@
 <figure>
     {@render children?.()}
     <figcaption>
+        <!-- Captions are author-written in content/*.md and may contain links -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html text}
     </figcaption>
 </figure>

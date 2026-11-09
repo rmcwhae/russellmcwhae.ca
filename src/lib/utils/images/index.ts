@@ -1,6 +1,5 @@
 import { PUBLIC_IMAGEKIT_URL_ENDPOINT } from '$app/env/public'
-import type { Transformation } from '@imagekit/javascript'
-import * as ImageKitJavascriptServices from '#lib/services/imageKitJavascript.js'
+import { buildSrc, type Transformation } from '@imagekit/javascript'
 
 const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 
@@ -8,8 +7,8 @@ const BREAKPOINTS = [300, 500, 700, 900, 1200, 1600, 1800]
 export const DISPLAY_WIDTH = 1200
 
 export function buildURL(path: string, options: Transformation = {}): string {
-    return ImageKitJavascriptServices.url({
-        path,
+    return buildSrc({
+        src: path,
         urlEndpoint: PUBLIC_IMAGEKIT_URL_ENDPOINT,
         transformation: [{ format: 'auto', ...options }],
     })

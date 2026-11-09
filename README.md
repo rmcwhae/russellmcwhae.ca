@@ -23,7 +23,7 @@ To display images, you will need an [ImageKit](https://imagekit.io) account and 
         - etc.
     - etc.
 
-For homepage images, add a “featured” tag to four ImageKit images in `/portfolio`. Captions can be added via a `caption` custom metadata field in ImageKit.
+For homepage images, add a “homepage” tag to four ImageKit images in `/portfolio`. Captions can be added via a `caption` custom metadata field in ImageKit.
 
 Next, install dependencies with `pnpm install`, then start the development server:
 

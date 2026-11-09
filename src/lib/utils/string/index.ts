@@ -1,30 +1,3 @@
-export function createTitle(filename: string | null | undefined): string {
-    if (!filename || typeof filename !== 'string') {
-        return 'Untitled'
-    }
-
-    const underscoreIndex = filename.indexOf('_')
-    if (underscoreIndex === -1) {
-        return filename.replace(/-/g, ' ')
-    }
-
-    filename = filename.substring(0, underscoreIndex)
-    return filename.replace(/-/g, ' ')
-}
-
-export function extractDate(filename: string | null | undefined): string {
-    if (!filename || typeof filename !== 'string') {
-        return 'Unknown Date'
-    }
-
-    const underscoreIndex = filename.indexOf('_')
-    if (underscoreIndex === -1) {
-        return 'Unknown Date'
-    }
-
-    return filename.substring(underscoreIndex + 1).replace('-', ' ')
-}
-
 function stripFrontmatter(raw: string): string {
     return raw.replace(/^---[\r\n][\s\S]*?[\r\n]---[\r\n]?/, '')
 }
@@ -73,14 +46,7 @@ function splitSentences(text: string): string[] {
     return matches?.map((sentence) => sentence.trim()).filter(Boolean) ?? []
 }
 
-export function extractPreview(
-    raw: string | null | undefined,
-    maxSentences = 2
-): string {
-    if (!raw || typeof raw !== 'string') {
-        return ''
-    }
-
+export function extractPreview(raw: string, maxSentences = 2): string {
     const paragraphs = markdownParagraphs(stripFrontmatter(raw))
     if (!paragraphs.length) {
         return ''
@@ -105,26 +71,16 @@ interface TitleAndDate {
     date: string
 }
 
-export function parseTitleAndDate(
-    slug: string | null | undefined
-): TitleAndDate {
-    if (!slug || typeof slug !== 'string') {
-        return {
-            title: 'Untitled',
-            date: 'Unknown Date',
-        }
+/** Splits an event folder name like `Name-Of-Event_Month-YEAR` */
+export function parseTitleAndDate(slug: string): TitleAndDate {
+    const underscoreIndex = slug.indexOf('_')
+
+    if (underscoreIndex === -1) {
+        return { title: slug.replace(/-/g, ' '), date: 'Unknown Date' }
     }
 
-    try {
-        return {
-            title: createTitle(slug),
-            date: extractDate(slug),
-        }
-    } catch (error) {
-        console.error('Error parsing title and date from slug:', slug, error)
-        return {
-            title: 'Untitled',
-            date: 'Unknown Date',
-        }
+    return {
+        title: slug.substring(0, underscoreIndex).replace(/-/g, ' '),
+        date: slug.substring(underscoreIndex + 1).replace('-', ' '),
     }
 }

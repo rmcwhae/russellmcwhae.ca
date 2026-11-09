@@ -20,14 +20,10 @@ export const load: PageServerLoad = async () => {
     })
 
     const sortedEvents = events
-        .filter((event) => event && event.name) // Filter out invalid events
+        .filter((event) => event.name)
         .map((event) => {
-            const { title, date } = parseTitleAndDate(event.name)
-            return {
-                name: event.name!,
-                title,
-                date,
-            }
+            const name = event.name!
+            return { name, ...parseTitleAndDate(name) }
         })
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -46,11 +42,7 @@ export const load: PageServerLoad = async () => {
     return { events: eventsWithImages }
 }
 
-function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
-    if (!name) {
-        return Promise.resolve([])
-    }
-
+function getImagesForEvent(name: string): Promise<ProcessedFile[]> {
     return ImageKitNodeServices.listFiles({
         path: '/events/' + name,
         type: 'file',
@@ -59,18 +51,13 @@ function getImagesForEvent(name: string | undefined): Promise<ProcessedFile[]> {
 }
 
 function getFeaturedImage(images: ProcessedFile[]): Photo | null {
-    if (!Array.isArray(images) || images.length === 0) {
+    if (images.length === 0) {
         return null
     }
 
-    try {
-        return ImageKitNodeServices.toPhoto(
-            images.find(
-                (image) => 'tags' in image && image.tags?.includes('featured')
-            ) || images[0]
-        )
-    } catch (error) {
-        console.error('Error getting featured image:', error)
-        return ImageKitNodeServices.toPhoto(images[0])
-    }
+    const featured = images.find(
+        (image) => 'tags' in image && image.tags?.includes('featured')
+    )
+
+    return ImageKitNodeServices.toPhoto(featured ?? images[0])
 }
