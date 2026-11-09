@@ -63,7 +63,21 @@
                 <div class="year-items">
                     {#each yearBooks as book (book.title)}
                         <div class="book-row">
-                            <span class="book-title">{book.title}</span>
+                            <span class="book-title">
+                                {#if book.url}
+                                    <!-- External link; resolve() only applies to app routes -->
+                                    <!-- eslint-disable svelte/no-navigation-without-resolve -->
+                                    <a
+                                        href={book.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >{book.title}</a
+                                    >
+                                    <!-- eslint-enable svelte/no-navigation-without-resolve -->
+                                {:else}
+                                    {book.title}
+                                {/if}
+                            </span>
                             <span class="book-meta">
                                 <span>{book.author}</span>
                                 {#if book.audiobook}
@@ -126,6 +140,19 @@
         letter-spacing: 0;
         color: var(--text-color);
         text-wrap: pretty;
+    }
+
+    .book-title a {
+        font-weight: inherit;
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--light-grey);
+        text-underline-offset: 0.2em;
+    }
+
+    .book-title a:hover {
+        color: var(--high-contrast-color);
+        text-decoration-color: currentColor;
     }
 
     .book-meta {

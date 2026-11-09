@@ -6,9 +6,17 @@ export type Book = {
     title: string
     author: string
     audiobook: boolean
+    url?: string
 }
 
 export const books: Book[] = [
+    {
+        year: 2026,
+        title: 'Magnifica Humanitas',
+        author: 'Pope Leo XIV',
+        audiobook: false,
+        url: 'https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html',
+    },
     {
         year: 2026,
         title: 'Outsider: An Old Man, a Mountain and the Search for a Hidden Past',

@@ -208,7 +208,21 @@
                 <h3 class="eyebrow">Latest book read</h3>
                 <div class="latest-book-body">
                     <div class="latest-book-copy">
-                        <p class="title-sm">{latestBook.title}</p>
+                        <p class="title-sm">
+                            {#if latestBook.url}
+                                <!-- External link; resolve() only applies to app routes -->
+                                <!-- eslint-disable svelte/no-navigation-without-resolve -->
+                                <a
+                                    href={latestBook.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >{latestBook.title}</a
+                                >
+                                <!-- eslint-enable svelte/no-navigation-without-resolve -->
+                            {:else}
+                                {latestBook.title}
+                            {/if}
+                        </p>
                         <p class="latest-book-author">{latestBook.author}</p>
                     </div>
                     <Button
