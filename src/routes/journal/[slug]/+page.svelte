@@ -20,9 +20,6 @@
     let component = $derived(data.component)
     let relatedPosts = $derived(data.relatedPosts)
     let wordCount = $derived(readingTime.words.toLocaleString('en-US'))
-    let relatedLinks = $derived(
-        relatedPosts.map((post) => ({ href: post.href, title: post.title }))
-    )
 
     const SvelteComponent = $derived(component)
 
@@ -86,9 +83,9 @@
         </article>
         <aside class="entry-sidebar">
             <ToC allowedHeadings={['h2', 'h3']} />
-            {#if relatedLinks.length}
+            {#if relatedPosts.length}
                 <div class="sidebar-related">
-                    <LinkList heading="Related entries" items={relatedLinks} />
+                    <LinkList heading="Related entries" items={relatedPosts} />
                     <Button href="/journal" text="All entries" right />
                 </div>
             {/if}

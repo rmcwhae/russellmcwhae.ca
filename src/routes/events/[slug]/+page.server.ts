@@ -1,4 +1,4 @@
-import { error, isHttpError } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 import * as ImageKitNodeServices from '#lib/services/imageKitNode.js'
 import { parseTitleAndDate } from '#lib/utils/string/index.js'
@@ -12,54 +12,31 @@ export async function entries() {
     })
 
     return events
-        .filter((event) => event && event.name)
-        .map((event) => ({
-            slug: event.name,
-        }))
+        .filter((event) => event.name)
+        .map((event) => ({ slug: event.name }))
 }
 
 export const load: PageServerLoad = async ({ params }) => {
     const { slug } = params
 
-    // Validate slug parameter
-    if (!slug || typeof slug !== 'string') {
-        throw error(400, 'Invalid event slug')
+    const images = await ImageKitNodeServices.listFiles({
+        path: '/events/' + slug,
+        type: 'file',
+        sort: 'ASC_NAME',
+    })
+
+    if (images.length === 0) {
+        throw error(404, 'No images found for this event')
     }
 
-    try {
-        const images = await ImageKitNodeServices.listFiles({
-            path: '/events/' + slug,
-            type: 'file',
-            sort: 'ASC_NAME',
-        })
+    const { title, date } = parseTitleAndDate(slug)
 
-        // Ensure images is an array
-        if (!Array.isArray(images)) {
-            console.error('Non-array response from ImageKit:', images)
-            throw error(500, 'Invalid response from image service')
-        }
-
-        const { title, date } = parseTitleAndDate(slug)
-
-        if (images.length > 0) {
-            return {
-                event: {
-                    count: images.length,
-                    title,
-                    date,
-                    images: images.map(ImageKitNodeServices.toPhoto),
-                },
-            }
-        } else {
-            throw error(404, 'No images found for this event')
-        }
-    } catch (err: unknown) {
-        // If it's already a SvelteKit error, re-throw it
-        if (isHttpError(err)) {
-            throw err
-        }
-
-        console.error('Error loading event:', err)
-        throw error(500, 'Failed to load event')
+    return {
+        event: {
+            count: images.length,
+            title,
+            date,
+            images: images.map(ImageKitNodeServices.toPhoto),
+        },
     }
 }

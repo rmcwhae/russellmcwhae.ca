@@ -2,7 +2,6 @@ import * as path from 'path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
 
 import { frontMatterSlug } from './src/lib/markdown/front-matter.ts'
 import remarkFootnotes from './src/lib/markdown/remark-footnotes.ts'
@@ -16,7 +15,7 @@ const config = {
         page: path.join(layoutRoot, 'Page.svelte'),
     },
 
-    remarkPlugins: [remarkGfm, frontMatterSlug, remarkFootnotes],
+    remarkPlugins: [frontMatterSlug, remarkFootnotes],
     rehypePlugins: [
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: 'wrap' }],
