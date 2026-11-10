@@ -12,6 +12,12 @@ export type Book = {
 export const books: Book[] = [
     {
         year: 2026,
+        title: 'Neuromancer',
+        author: 'William Gibson',
+        audiobook: true,
+    },
+    {
+        year: 2026,
         title: 'Magnifica Humanitas',
         author: 'Pope Leo XIV',
         audiobook: false,
