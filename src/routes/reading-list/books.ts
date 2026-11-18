@@ -12,6 +12,12 @@ export type Book = {
 export const books: Book[] = [
     {
         year: 2026,
+        title: 'It’s Not Always Depression: Working the Change Triangle to Listen to the Body, Discover Core Emotions, and Connect to Your Authentic Self',
+        author: 'Hilary Jacobs Hendel',
+        audiobook: false,
+    },
+    {
+        year: 2026,
         title: 'Neuromancer',
         author: 'William Gibson',
         audiobook: true,
